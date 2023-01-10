@@ -1,0 +1,600 @@
+---
+title: "SLR: Prediction + model evaluation"
+subtitle: "STA 210 - Spring 2022"
+author: "Dr. Mine Çetinkaya-Rundel"
+footer:  "[sta210-s22.github.io/website](https://sta210-s22.github.io/website/)"
+logo: "images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    incremental: true 
+editor: visual
+execute:
+  freeze: auto
+---
+
+```{r setup}
+#| include: false
+
+library(countdown)
+
+knitr::opts_chunk$set(
+  fig.width = 8,
+  fig.asp = 0.618,
+  fig.retina = 3,
+  dpi = 300,
+  out.width = "80%"
+)
+```
+
+# Welcome
+
+## Announcements
+
+-   New on the course website: [FAQ](/course-faq.html)
+-   New communication tool: Slack
+    -   Find the invite link in your inbox / on Sakai announcements
+    -   Use #general for questions, #random for random 🤪
+    -   Use code formatting for for questions involving code (see Course FAQ for a demo video)
+-   My office hours: All virtual for now, hope to move 1 hour / week to in person later in the semester
+
+## Hybrid teaching {.smaller}
+
+-   Lectures:
+    -   In person as long as university says so (and I don't have COVID)
+    -   If you can't be in class (and you're well enough to follow along), watch live (or the recording later) on [Panopto](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22d6c1d58a-cb6d-4732-9d4b-ae0c011bf767%22)
+    -   Watching live and have questions? Post on Slack!
+    -   In class and see someone ask a question on Slack? Please raise it to me!
+-   Labs:
+    -   Not live streamed / recorded
+    -   Lab 2 (next Monday) - individual
+    -   Lab 3 onwards - in teams, if teammates are in isolation, set up team Zoom calls
+
+## Computational setup
+
+```{r packages}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(usdata)      # for the county_2019 dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
+```
+
+# Application exercise
+
+::: appex
+📋 [github.com/sta210-s22/ae-2-dcbikeshare](https://github.com/sta210-s22/?q=ae-2-dcbikeshare&type=all&language=&sort=)
+:::
+
+# Uninsurance and high school graduation rates in NC
+
+## Data source
+
+-   The data come from [`usdata::county_2019`](https://openintrostat.github.io/usdata/reference/county_2019.html)
+-   These data have been compiled from the 2019 American Community Survey
+
+```{r map-prep}
+# data prop for mapping
+dfips <- maps::county.fips %>%
+  as_tibble() %>% 
+  extract(polyname, c("region", "subregion"), "^([^,]+),([^,]+)$") %>%
+  filter(region %in% c("north carolina", "new york"))
+
+map_county_2019 <- map_data("county") %>%
+  as_tibble() %>%
+  filter(region %in% c("north carolina", "new york")) %>%
+  left_join(dfips) %>%
+  mutate(fips = if_else(
+    subregion == "currituck" & region == "north carolina", 37053L, fips
+  )) %>%
+  left_join(county_2019, by = "fips")
+
+map_county_2019_nc <- map_county_2019 %>%
+  filter(state == "North Carolina")
+```
+
+## Uninsurance rate
+
+```{r}
+#| out.width: "100%"
+ggplot(map_county_2019_nc, 
+       aes(x = long, y = lat, group = group)) +
+  geom_polygon(aes(fill = uninsured)) +
+  scale_fill_viridis_c(option = "E", labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(
+    x = NULL, y = NULL, fill = NULL,
+    title = "Percent uninsured (2015 - 2019)",
+    subtitle = "Civilian noninstitutionalized population in NC"
+  ) +
+  coord_quickmap(clip = "off") +
+  theme_void() +
+  theme(
+    legend.direction = "horizontal",
+    legend.position = c(0.2, 0.1),
+  ) +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "durham"), aes(fill = uninsured), color = "white") +
+  annotate("text", x = -78.7, y = 36.3, label = "Durham County\n(12%)", hjust = 0, size = 4, color = "white", fontface = "bold") +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "swain"), aes(fill = uninsured), color = "black") +
+  annotate("text", x = -83.4, y = 35.9, label = "Swain County\n(21.5%)", hjust = 1, size = 4, fontface = "bold") +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "gates"), aes(fill = uninsured), color = "black") +
+  annotate("text", x = -76.9, y = 36.8, label = "Gates County\n(6.6%)", hjust = 0, size = 4, color = "black", fontface = "bold")
+```
+
+## High school graduation rate
+
+```{r}
+#| out.width: "100%"
+map_county_2019 %>%
+  filter(state == "North Carolina") %>%
+  ggplot(aes(x = long, y = lat, group = group)) +
+  geom_polygon(aes(fill = hs_grad)) +
+  scale_fill_viridis_c(option = "D", labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(x = NULL, y = NULL, fill = NULL,
+    title = "Percent high school graduate (2015 - 2019)",
+    subtitle = "25 and older population in NC") +
+  coord_quickmap(clip = "off") +
+  theme_void() +
+  theme(
+    legend.direction = "horizontal",
+    legend.position = c(0.2, 0.1),
+  ) +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "durham"), aes(fill = hs_grad), color = "white") +
+  annotate("text", x = -78.7, y = 36.3, label = "Durham County\n(88.4%)", hjust = 0, size = 4, color = "white", fontface = "bold") +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "tyrrell"), aes(fill = hs_grad), color = "black") +
+  annotate("text", x = -76.4, y = 36.3, label = "Tyrrell\nCounty\n(74%)", hjust = 0, size = 4, color = "black", fontface = "bold") +
+  geom_polygon(data = map_county_2019_nc %>% filter(subregion == "dare"), aes(fill = hs_grad), color = "black") +
+  annotate("text", x = -75.9, y = 35.2, label = "Dare\nCounty\n(94.2%)", hjust = 0, size = 4, color = "black", fontface = "bold")
+```
+
+## Examining the relationship
+
+-   The [NC Labor and Economic Analysis Division (LEAD)](https://www.nc.gov/agency/labor-and-economic-analysis-division), which "administers and collects data, conducts research, and publishes information on the state's economy, labor force, educational, and workforce-related issues".
+-   Suppose that an analyst working for LEAD is interested in the relationship between uninsurance and high school graduation rates in NC counties.
+
+. . .
+
+::: question
+What type of visualization should the analyst make to examine the relationship between these two variables?
+:::
+
+## Data prep
+
+```{r}
+#| echo: true
+
+county_2019_nc <- county_2019 %>%
+  as_tibble() %>%
+  filter(state == "North Carolina") %>%
+  select(name, hs_grad, uninsured)
+
+county_2019_nc
+```
+
+## Uninsurance vs. HS graduation rates
+
+```{r nc-uninsured-hsgrad-scatter}
+#| code-fold: true
+#| echo: true
+
+ggplot(county_2019_nc,
+       aes(x = hs_grad, y = uninsured)) +
+  geom_point() +
+  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(
+    x = "High school graduate", y = "Uninsured",
+    title = "Uninsurance vs. HS graduation rates",
+    subtitle = "North Carolina counties, 2015 - 2019"
+  ) +
+  geom_point(data = county_2019_nc %>% filter(name == "Durham County"), aes(x = hs_grad, y = uninsured), shape = "circle open", color = "#8F2D56", size = 4, stroke = 2) +
+  geom_text(data = county_2019_nc %>% filter(name == "Durham County"), aes(x = hs_grad, y = uninsured, label = name), color = "#8F2D56", fontface = "bold", nudge_y = 3, nudge_x = 2)
+```
+
+## Modeling the relationship
+
+```{r nc-uninsured-hsgrad-scatter-line}
+#| code-fold: true
+#| echo: true
+ggplot(county_2019_nc, aes(x = hs_grad, y = uninsured)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "#8F2D56") +
+  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(
+    x = "High school graduate", y = "Uninsured",
+    title = "Uninsurance vs. HS graduation rates",
+    subtitle = "North Carolina counties, 2015 - 2019"
+  )
+```
+
+## Fitting the model
+
+With `fit()`:
+
+```{r}
+#| echo: true
+
+nc_fit <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(uninsured ~ hs_grad, data = county_2019_nc)
+
+tidy(nc_fit)
+```
+
+## Augmenting the data
+
+With `augment()` to add columns for predicted values (`.fitted`), residuals (`.resid`), etc.:
+
+```{r}
+#| echo: true
+
+nc_aug <- augment(nc_fit$fit)
+nc_aug
+```
+
+## Visualizing the model I {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: nonincremental
+-   **Black circles:** Observed values (`y = uninsured`)
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out-width: "100%"
+
+p_nc_aug_base <- ggplot(nc_aug, aes(x = hs_grad)) +
+  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(x = "High school graduate", y = "Uninsured")
+
+p_nc_aug_base +
+  geom_point(aes(y = uninsured))
+```
+:::
+:::
+
+## Visualizing the model II {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: nonincremental
+-   Black circles: Observed values (`y = uninsured`)
+-   **Pink solid line:** Least squares regression line
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out-width: "100%"
+
+p_nc_aug_base +
+  geom_point(aes(y = uninsured)) +
+  geom_smooth(aes(y = uninsured), method = "lm", se = FALSE, color = "pink")
+```
+:::
+:::
+
+## Visualizing the model III {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: nonincremental
+-   Black circles: Observed values (`y = uninsured`)
+-   Pink solid line: Least squares regression line
+-   **Maroon triangles:** Predicted values (`y = .fitted`)
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out-width: "100%"
+
+p_nc_aug_base +
+  geom_point(aes(y = uninsured)) +
+  geom_smooth(aes(y = uninsured), method = "lm", se = FALSE, color = "pink") +
+  geom_point(aes(y = .fitted), color = "maroon", shape = "triangle", size = 2)
+```
+:::
+:::
+
+## Visualizing the model IV {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: nonincremental
+-   Black circles: Observed values (`y = uninsured`)
+-   Pink solid line: Least squares regression line
+-   Maroon triangles: Predicted values (`y = .fitted`)
+-   **Gray dashed lines:** Residuals
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out-width: "100%"
+
+p_nc_aug_base +
+  geom_segment(aes(xend = hs_grad, y = uninsured, yend = .fitted), size = 0.3, linetype = "dashed", color = "gray20") +
+  geom_point(aes(y = uninsured)) +
+  geom_smooth(aes(y = uninsured), method = "lm", se = FALSE, color = "pink") +
+  geom_point(aes(y = .fitted), color = "maroon", shape = "triangle", size = 2)
+```
+:::
+:::
+
+## Evaluating the model fit
+
+::: question
+How can we evaluate whether the model for predicting uninsurance rate from high school graduation rate for NC counties is a good fit?
+:::
+
+# Model evaluation
+
+## Two statistics {.smaller}
+
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+
+    $$
+    R^2 = Cor(x,y)^2 = Cor(y, \hat{y})^2
+    $$
+
+-   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+    $$
+    RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
+    $$
+
+. . .
+
+::: question
+What indicates a good model fit?
+Higher or lower $R^2$?
+Higher or lower RMSE?
+:::
+
+## R-squared {.smaller}
+
+-   Ranges between 0 (terrible predictor) and 1 (perfect predictor)
+
+-   Unitless
+
+-   Calculate with `rsq()`:
+
+    ```{r}
+    #| echo: true
+    rsq(nc_aug, truth = uninsured, estimate = .fitted)
+    ```
+
+## Interpreting R-squared {.smaller}
+
+```{r}
+nc_fit_rsq <- round(glance(nc_fit)$r.squared * 100, 1)
+```
+
+::: poll
+🗳️ **Vote on Slack**
+
+The $R^2$ of the model for predicting uninsurance rate from high school graduation rate for NC counties is `r nc_fit_rsq`%.
+Which of the following is the correct interpretation of this value?
+
+::: nonincremental
+-   High school graduation rates correctly predict `r nc_fit_rsq`% of uninsurance rates in NC counties.
+-   `r nc_fit_rsq`% of the variability in uninsurance rates in NC counties can be explained by high school graduation rates.
+-   `r nc_fit_rsq`% of the variability in high school graduation rates in NC counties can be explained by uninsurance rates.
+-   `r nc_fit_rsq`% of the time uninsurance rates in NC counties can be predicted by high school graduation rates.
+:::
+:::
+
+## Alternative approach for R-squared
+
+Alternatively, use `glance()` to construct a single row summary of the model fit, including $R^2$:
+
+```{r}
+#| echo: true
+
+glance(nc_fit)
+glance(nc_fit)$r.squared
+```
+
+## RMSE
+
+-   Ranges between 0 (perfect predictor) and infinity (terrible predictor)
+
+-   Same units as the outcome variable
+
+-   Calculate with `rmse()`:
+
+    ```{r}
+    #| echo: true
+
+    rmse(nc_aug, truth = uninsured, estimate = .fitted)
+    ```
+
+-   The value of RMSE is not very meaningful on its own, but it's useful for comparing across models (more on this when we get to regression with multiple predictors)
+
+## Obtaining R-squared and RMSE {.smaller}
+
+-   Use `rsq()` and `rmse()`, respectively
+
+    ```{r}
+    #| echo: true
+    #| eval: false
+
+    rsq(nc_aug, truth = uninsured, estimate = .fitted)
+    rmse(nc_aug, truth = uninsured, estimate = .fitted)
+    ```
+
+-   First argument: data frame containing `truth` and `estimate` columns
+
+-   Second argument: name of the column containing `truth` (observed outcome)
+
+-   Third argument: name of the column containing `estimate` (predicted outcome)
+
+## Purpose of model evaluation
+
+-   $R^2$ tells us how our model is doing to predict the data we *already have*
+-   But generally we are interested in prediction for a new observation, not for one that is already in our sample, i.e. **out-of-sample prediction**
+-   We have a couple ways of *simulating* out-of-sample prediction before actually getting new data to evaluate the performance of our models
+
+# Splitting data
+
+## Spending our data
+
+-   There are several steps to create a useful model: parameter estimation, model selection, performance assessment, etc.
+-   Doing all of this on the entire data we have available leaves us with no other data to assess our choices
+-   We can allocate specific subsets of data for different tasks, as opposed to allocating the largest possible amount to the model parameter estimation only (which is what we've done so far)
+
+## Simulation: data splitting {.smaller}
+
+::: columns
+::: {.column width="30%"}
+::: nonincremental
+-   Take a random sample of 10% of the data and set aside (testing data)
+-   Fit a model on the remaining 90% of the data (training data)
+-   Use the coefficients from this model to make predictions for the testing data
+-   Repeat 10 times
+:::
+:::
+
+::: {.column width="70%"}
+```{r}
+#| out.width: "100%"
+
+set.seed(345)
+
+n_folds <- 10
+
+county_2019_nc_folds <- county_2019_nc %>%
+  slice_sample(n = nrow(county_2019_nc)) %>%
+  mutate(fold = rep(1:n_folds, n_folds)) %>%
+  arrange(fold)
+
+predict_folds <- function(i) {
+  fit <- lm(uninsured ~ hs_grad, data = county_2019_nc_folds %>% filter(fold != i))
+  predict(fit, newdata = county_2019_nc_folds %>% filter(fold == i)) %>%
+    bind_cols(county_2019_nc_folds %>% filter(fold == i), .fitted = .)
+}
+
+nc_fits <- map_df(1:n_folds, predict_folds)
+
+p_nc_fits <- ggplot(nc_fits, aes(x = hs_grad, y = .fitted, group = fold)) +
+  geom_line(stat = "smooth", method = "lm", se = FALSE, size = 0.3, alpha = 0.5) +
+  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(
+    x = "High school graduate", y = "Uninsured",
+    title = "Predicted uninsurance rate in NC",
+    subtitle = glue("For {n_folds} different testing datasets")
+    )
+
+p_nc_fits
+```
+:::
+:::
+
+## Predictive performance {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: question
+::: nonincremental
+-   How consistent are the predictions for different testing datasets?
+-   How consistent are the predictions for counties with high school graduation rates in the middle of the plot vs. in the edges?
+:::
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out.width: "100%"
+
+p_nc_fits
+```
+:::
+:::
+
+# Bootstrapping
+
+## Bootstrapping our data {.smaller}
+
+-   The idea behind bootstrapping is that if a given observation exists in a sample, there may be more like it in the population
+-   With bootstrapping, we simulate resampling from the population by resampling from the sample we observed
+-   Bootstrap samples are the sampled *with replacement* from the original sample and same size as the original sample
+    -   For example, if our sample consists of the observations {A, B, C}, bootstrap samples could be {A, A, B}, {A, C, A}, {B, C, C}, {A, B, C}, etc.
+
+## Simulation: bootstrapping {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: nonincremental
+-   Take a bootstrap sample -- sample with replacement from the original data, same size as the original data
+-   Fit model to the sample and make predictions for that sample
+-   Repeat many times
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out.width: "100%"
+
+n_boot <- 100
+
+predict_boots <- function(i){
+  boot <- county_2019_nc %>%
+    slice_sample(n = nrow(county_2019_nc), replace = TRUE) %>%
+    mutate(boot_samp = i)
+  fit <- lm(uninsured ~ hs_grad, data = boot)
+  predict(fit) %>% bind_cols(boot, .fitted = .)
+}
+
+set.seed(1234)
+county_2019_nc_boots <- map_df(1:n_boot, predict_boots)
+
+p_nc_boots <- ggplot(county_2019_nc_boots, aes(x = hs_grad, y = .fitted, group = boot_samp)) +
+  geom_line(stat = "smooth", method = "lm", se = FALSE, size = 0.3, alpha = 0.5) +
+  scale_x_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  scale_y_continuous(labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(
+    x = "High school graduate", y = "Uninsured",
+    title = "Predicted uninsurance rate in NC",
+    subtitle = glue("For {n_boot} bootstrap samples")
+    )
+
+p_nc_boots
+```
+:::
+:::
+
+## Predictive performance {.smaller}
+
+::: columns
+::: {.column width="25%"}
+::: question
+::: nonincremental
+-   How consistent are the predictions for different bootstrap datasets?
+-   How consistent are the predictions for counties with high school graduation rates in the middle of the plot vs. in the edges?
+:::
+:::
+:::
+
+::: {.column width="75%"}
+```{r}
+#| out.width: "100%"
+
+p_nc_boots
+```
+:::
+:::
