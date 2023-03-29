@@ -1,42 +1,184 @@
 ---
-title: "Week 5"
-subtitle: "TBA"
+title: "Week Five: Diving Deeper into Regression (Multiple Linear Regression)"
+format: html
+embed-resources: true
+standalone: true
 editor: visual
 ---
 
-::: callout-important
--   Due date: Lab 2 - Fri, Feb 4, 5pm ET
--   Exam 1 released on Fri, Feb 4, due Mon, Feb 7 at 11:59pm
+```{r}
+#| include: false
+
+library(tidyverse)
+library(emo)
+library(moderndive)
+```
+
+Welcome!
+
+In this week's coursework we are going to build off the concepts we learned last week and delve deeper into linear regression. We are going to explore *multiple linear regression*, a statistical model where we have multiple explanatory variables and a single numerical response. We are going to refresh how to visualize these types of models, practice fitting these types of models in `R`, and the learn how to interpret these types of models.
+
+## Learning Outcomes
+
+By the end of this coursework you should be able to:
+
+-   describe to someone what a multiple linear regression is
+-   outline how a categorical explanatory variable can be included in a simple linear regression
+-   visualize multiple linear regression models with one numerical and one categorical explanatory variable
+-   calculate the simple linear regression line for each group of a categorical variable
+-   outline how a second numerical explanatory variable can be included in a simple linear regression
+-   visualize multiple linear regression models with two numerical explanatory variables
+-   interpret the coefficient of each explanatory variable included in the regression model
+-   recite different methods that can be used to decide what multiple linear regression model is "best"
+-   describe the benefits and costs of using "model selection" for deciding on a multiple linear regression model
+
+## This Week's TODOs
+
+`r emo::ji("book")` Reading: 45-60 minutes (submit completed reading guide on Canvas)
+
+`r emo::ji("check")` Concept Quiz: 1 (submit on Canvas)
+
+`r emo::ji("computer")` R Tutorial: 1 (submit completion screenshot on Canvas)
+
+`r emo::ji("pencil")` Midterm Project
+
+------------------------------------------------------------------------
+
+# `r emo::ji("book")` Chapter Reading: Multiple Regression
+
+::: columns
+::: {.column width="40%"}
+</br>
+
+```{r}
+#| echo: false
+knitr::include_graphics(here::here("images", 
+                                   "modern_dive.png")
+                        )
+```
 :::
 
-## Prepare
-
-📖 Read Introduction to Modern Statistics, Sec 8.1: [Indicator and categorical predictors](https://openintro-ims.netlify.app/model-mlr.html#ind-and-cat-predictors)
-
-📖 Read Introduction to Modern Statistics, Sec 8.2: [Many predictors in a model](https://openintro-ims.netlify.app/model-mlr.html#many-predictors-in-a-model)
-
-📖 Read Introduction to Modern Statistics, Sec 8.3: [Adjusted R-squared](https://openintro-ims.netlify.app/model-mlr.html#adjusted-r-squared)
-
-## Participate
-
-🖥️ [Lab 3 - Coffee ratings](/slides/lab-3.html)
-
-🖥️ [Lecture 8 - Multiple linear regression (MLR)](/slides/lec-8.html)
-
-🖥️ [Lecture 9 - Exam 1 review](/slides/lec-9.html)
-
-## Practice
-
-📋 [Application Exercise 4 - Exam 1 Review](/ae/ae-4-exam-1-review.html)
-
-## Perform
-
-⌨️ [Lab 3 - Coffee ratings](labs/lab-3.html)
-
-✅ [Exam 1](/exams/exam-1.html)
-
-<br><br>
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
+::: {.column width="5%"}
 :::
+
+::: {.column width="55%"}
+</br> [Chapter 6 (https://moderndive.com/6-multiple-regression.html)](https://moderndive.com/6-multiple-regression.html)
+:::
+:::
+
+### Reading Guide -- Due Tuesday by noon
+
+-   [Download the Chapter 6 reading guide (Word)](reading_guide/week5_reading_guide.docx)
+
+-   [Download the Chapter 6 reading guide (HTML)](reading_guide/week5_reading_guide.html)
+
+# `r emo::ji("check")` Week 6 Cocept Quiz -- Due Tuesday by noon
+
+```{r}
+#| layout-nrow: 1
+#| echo: false
+#| message: false
+#| warning: false
+
+evals %>% 
+  ggplot(mapping = aes(x = age, y = score, color = ethnicity)) +
+  geom_jitter(width = 0.2, height = 0.2, alpha = 0.75) + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(x = "Age of Professor", 
+       y = "Evaluation Score", 
+       color = "Ethnicity", 
+       title = "Interaction Model") + 
+  theme_bw()
+
+evals %>% 
+  ggplot(mapping = aes(x = age, y = score, color = ethnicity)) +
+  geom_jitter(width = 0.2, height = 0.2, alpha = 0.75) + 
+  geom_parallel_slopes(method = "lm", se = FALSE) + 
+  labs(x = "Age of Professor", 
+       y = "Evaluation Score", 
+       color = "Ethnicity", 
+       title = "Interaction Model") + 
+  theme_bw()
+```
+
+**Question 1** -- Based on the visualizations above, I believe the \[interaction / parallel slopes\] model is more appropriate because the slopes between the groups are \[very different / very similar\].
+
+**Question 2** -- What type of model does the following code obtain?
+
+```{r}
+minority_lm <- lm(score ~ age * ethnicity, data = evals)
+```
+
+-   interaction model
+-   parallel slopes model
+-   simple linear regression model
+
+</br>
+
+The following is the output from the above regression model (from Question 2):
+
+```{r}
+#| echo: false
+get_regression_table(minority_lm)
+```
+
+</br>
+
+**Question 3** -- The `intercept` line represents the \[evaluation score / mean evaluation score\] for \[male / female / minority / non-minority\] faculty.
+
+</br>
+
+**Question 4** -- The `age` line represents the relationship between age and evaluation scores for \[male / female / minority / non-minority\] faculty.
+
+</br>
+
+**Question 5** -- The `ethnicity:not minority` line represents the \[mean / adjustment to the mean\] evaluation score for \[male / female / minority / non-minority\] faculty.
+
+</br>
+
+**Question 6** -- The `age:ethnicitynot minority` line represents the \[slope / adjustment to the slope\] for the relationship between age and evaluation scores for \[male / female / minority / non-minority\] faculty.
+
+</br>
+
+**Question 7** -- The value of the `age:ethnicitynot minority` line (-0.004) \[does / does not \] match the decision I made in Question 1 as there is \[little difference / substantial difference\] in the slopes between the minority and non-minority faculty.
+
+</br>
+
+**Question 8** -- What type of model does the following code obtain?
+
+```{r}
+bty_lm <- lm(score ~ age + bty_avg, data = evals)
+```
+
+-   multiple linear regression with two numerical predictors
+-   interaction model
+-   parallel slopes
+
+</br>
+
+The following is the output from the above regression model (from Question 8):
+
+```{r}
+#| echo: false
+get_regression_table(bty_lm)
+```
+
+</br>
+
+**Question 9** -- The intercept represents the \[\] for professors whose age is \_\_ and who have a average beauty score of \_\_\_.
+
+</br>
+
+**Question 10** -- We interpret the value of -0.003 by age as:
+
+For every \[1 day / 1 year / 1 evaluation\] increase in professor's \[evaluation score / age / average beauty\] we expect the \[course evaluation score / mean course evaluation score\] to \[increase / decrease\] by \_\_, after accounting for \[ethnicity / gender / average beauty scores\].
+
+# `r emo::ji("computer")` R Tutorial -- Due Thursday by noon
+
+1.  [Regression modeling: Parallel Slopes](https://openintro.shinyapps.io/ims-03-model-06/)
+
+2.  [Regression modeling: Evaluating and extending parallel slopes model](https://openintro.shinyapps.io/ims-03-model-07/#section-evaluating-and-extending-parallel-slopes-model)
+
+# Midterm Project
+
+**Details will be announced in class on Tuesday and posted here afterward.**

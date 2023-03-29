@@ -1,0 +1,259 @@
+---
+title: "Lab 3: Grading Guide"
+format: 
+  html: 
+    self-contained: true
+editor: visual
+execute: 
+  eval: false
+---
+
+Q1\
+Q2\
+Q3\
+Q4\
+Q5\
+Q6\
+Q7\
+Q8\
+Q9\
+Q10\
+Q11\
+Q12\
+Q13
+
+# Question 1 -- Size of `and_vertebrates` dataset
+
+**Success**: 
+
+- has `glimpse()` somewhere in their code
+- states there are **32,209** rows and **16** columns
+
+**Growing**: 
+
+- If no code is present
+- If they flip the rows and columns
+- If they do not provide size of data
+
+*Feedback for no code:* For Question 1, you needed to write code to explore the size of the data and the types of variables. 
+
+*Feedback for no / incorrect dimensions:* For Question 1, look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?
+
+# Question 2 -- Categorical variables in dataset
+
+**Success**: 
+
+- Lists all variables with a `chr` data type: 
+  * `sitecode`
+  * `section`
+  * `reach`
+  * `unittype`
+  * `species`
+  * `clip`
+  * `notes`
+- Permitted to miss 1 variable
+  
+**Growing**:
+
+- If misses 2 or more variables
+- If includes date variable (`sampledate`)
+
+*Feedback:* For Question 2, you need to be careful to include ALL of the
+variables that R believes are categorical. What data types did we say in class
+that categorical variables can have?
+
+# Question 3 -- Levels of the species variable
+
+**Success**
+
+- Provides code that uses `distinct()` function
+- States there are 4 levels: Cutthroat trout, Coastal giant salamander, Olympic
+torrent salamander, and NA
+
+**Growing:** Does not use `distinct()` function
+
+*Feedback:* For Question 3, there is a function which finds the *distinct* levels
+of a categorical variable. What function might that be?
+
+# Question 4 -- Filtering to including only trout
+
+**Success:** Code should look similar to:
+
+```{r fish-filter-1}
+trout <- filter(and_vertebrates, 
+                species == "Cutthroat trout")
+```
+
+::: {.callout-note}
+The can use %>% or pass in `and_vertebrates` as first argument
+:::
+
+**Growing:** If `filter()` is not correct
+
+# Question 5 -- Filtering to include only catchable trout
+
+**Success:** Code should look similar to:
+
+```{r fish-filter-2}
+trout <- filter(trout, 
+                length_1_mm > 101)
+```
+
+**Growing:** If `filter()` is not correct 
+
+- using `and_vertebrates` 
+
+- using the wrong variable / value 
+
+- making a new dataset instead of updating the `trout` dataset
+
+*Feedback:* Careful! In Question 5 you were given code that would update the 
+trout dataset, *not* make a new dataset. By making a new dataset, you forgot to 
+use the correct name of the dataset later on! 
+
+## Question 6 -- Distribution of trout lengths 
+
+**Success**: Acceptable `geom`s:
+
+  * `geom_histogram()`
+  * `geom_dotplot()` (though not great)
+  * `geom_density()` 
+
+::: {.callout-note}
+Note: Axis labels are not required! But, if they don't change it, give the 
+following feedback:
+
+*For Question 6, it is always nice to have professional looking axis labels!*
+:::
+
+**Growing**: 
+
+- Uses `geom_boxplot()`
+
+*Feedback:* For Question 6, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
+
+
+## Question 7 -- Sources of variation
+
+**Success:** Names three "reasonable" sources of variation in fish length
+
+**Growing:** Names an unreasonable source of variation in fish lengths
+
+*Feedback:* For Question 7, we are interested in variables that, if changed, we
+would expect changes in the length of the Cutthroat trout. 
+
+## Question 8 -- Ridge plot
+
+**Success:** Code should look like the following
+
+```{r}
+ggplot(data = fish, 
+       mapping = aes(x = length_1_mm, y = unittype)) +
+  geom_density_ridges() +
+  labs(x = "Length (mm)", 
+       y = "Channel Section")
+```
+
+**Growing:** 
+
+- Doesn't change axis labels
+
+*Feedback:* For Question 8, you were asked to give your visualization nice axis
+labels. Note that means BOTH axes!  
+
+- Doesn't include units (mm) in x-axis label
+
+*Feedback:* For Question 8, it is important for the axis label to contain the
+units of the variable. What units were the lengths measured in?
+
+- Y-axis should say something about the type of channel
+
+*Feedback:* For Question 8, it is important for the axis label to describe the variable that is being measured.
+
+## Question 9 -- Adding another categorical variable
+
+**Success:** Uses either color or facets to incorporate `species`
+
+```{r channel-section}
+## Option 1
+ggplot(data = fish, 
+       mapping = aes(x = length_1_mm, y = unittype)) +
+  geom_density_ridges() +
+  facet_wrap(~species)
+
+## Option 2
+ggplot(data = fish, 
+       mapping = aes(x = length_1_mm, y = unittype, color = species)) +
+  geom_density_ridges() 
+
+```
+
+**Growing:** If doesn't use facets or colors
+
+::: {.callout-note}
+If they got a growing on #8 for an axis label, they don't get a growing here. 
+:::
+
+**Question 10** -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?
+
+## Question 10 -- Based on the plot, how different are the lengths between the channel types and forest sections?
+
+**Success:** Must have all of the following
+
+- Comparisons between forest sections (centers, spreads, shapes)
+- Comparisons between channel types
+- State what channel types did not have both types of forest
+
+**Growing:**
+
+- Comparisons are incomplete
+- Does not state what channel types did not have both types of forest
+
+*Feedback:* Careful! For Question 10 you should note if not every forest type 
+was observed for every type of channel.
+
+## Question 11 -- Average length of Cutthroat trout between channel types
+
+**Success:** Code should look similar to:
+
+```{r mean-length}
+trout %>%
+  group_by(unittype) %>%
+  summarize(mean_length = mean(length_1_mm))
+```
+
+If they don't name their summary statistics
+
+*Feedback:* For Question 11, the output of your summary statistics looks a lot
+nicer if you give them names! (like the example that was given)
+
+**Growing:** If process is not correct
+
+## Question 12 -- Find the average length of Cutthroat trout between channel
+types and forest section
+
+**Success:** Code should look similar to:
+
+```{r mean-length-2}
+trout %>%
+  group_by(unittype, species) %>%
+  summarize(mean_length = mean(length_1_mm))
+```
+
+**Growing:** If process is not correct
+
+## Question 13 -- Differences in averages compared to plot
+
+**Success:**
+
+- States that the averages are all fairly similar
+- 
+
+**Growing:** If all they say is that the differences in means are similar to the
+visualization 
+
+*Feedback:* For Question 13, *how* are the differences similar to the
+visualizations? How does what you saw in the visualizations manifest in these
+means? 
+
+

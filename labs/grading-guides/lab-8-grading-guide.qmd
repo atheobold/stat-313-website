@@ -1,0 +1,274 @@
+---
+title: "Lab 8 Grading Guide"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+Q1:\
+Q2:\
+Q3:\
+Q4:\
+Q5:\
+Q6:\
+Q7:\
+Q8:\
+Q9:\
+Q10:\
+Q11:\
+Q12:\
+Q13:\
+Q14:\
+Q15:
+
+## Question 1
+
+**To earn a Success**: Creates a scatterplot with the following qualities:
+
+- life expectancy on y-axis
+- GDP per capita on the x-axis
+- axis labels for both axes, including units
+
+*If they swap $x$ and $y$*:
+
+> Careful! What variable should be the response variable (located on the y-axis)? 
+
+::: {.callout-tip}
+# No axis labels if forgiveable
+:::
+
+## Question 2
+
+**To earn a Success**:
+
+- takes log of GDP (using `scale_x_log10()`)
+- renames x-axis label to indicate log GDP (or log $) is what is being plotted
+
+*If they log transform life expectancy (y)*:
+
+> Similar to Occam's Razor, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notibly better?
+
+*If their x-axis doesn't indicate the log was taken*:
+
+> Careful! You axis label needs to indicate how the variable was transformed!
+
+## Question 3
+
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
+```
+
+*If they swap `lifeExp` and `gdpPercap`*:
+
+> Careful! What variable comes first in the lm() function? The response or explanatory variable?
+
+*If they don't use `log(gdpPercap)` when fitting their regression*:
+
+> What variable did you decide to transform in #2? How should that variable appear in the regression model you are fitting here?
+
+## Question 4
+
+**To earn a Success**:
+
+- Says "no", it is not reasonable to assume the observations are independent
+- Describes how observations are not independent citing **at least one** of the following:
+
+  * each country has repeated observations
+  * observations for each country are related in time
+  * countries of close geographical proximity may share information
+
+*If their justification doesn't talk about the context of the data (e.g., temporal relationships between observations)*:
+
+> Your justification needs to make direct reference to the context of the data. 
+
+*If their reasoning doesn't include any of the above justifications*:
+
+> How many observations are their for each country? Are these observations related in some way? If so, how? Are the observations between countries related? If so, how?
+
+## Question 5
+
+**To earn a Success**:
+
+::: columns
+::: {.column width="45%"}
+- Says the condition is violated
+- Justifies with the left skew of the distribution
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+- Says the condition is not violated
+- Justifies with characteristics of the distribution
+:::
+:::
+
+*If their justification is insufficient*:
+
+> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. 
+
+
+## Question 6
+
+**To earn a Success**:
+
+- Says the condition is violated
+- Justifies with the decreased variability in larger values of log(GDP)
+
+
+*If they say the condition is not violated*:
+
+> Equal variance requires that the variability of the residuals (vertical distance) says the same for ALL values of the explanatory variable. Is that the case? Why or why not?
+
+*If they say the condition is violated but reference the spread around the line*:
+
+> Equal variance is not about the spread of points above / below the line. The condition requires the variability of the residuals (vertical distance) to say the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+
+*If they say the condition is violated but have insufficient justification as to why*:
+
+> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. 
+
+
+## Question 7
+
+**To earn a Success**:
+
+- $H_0$ there is no linear relationship between log GDP per capita and life expectancy
+- $H_A$ there is a linear relationship between log GDP per capita and life expectancy
+
+*If they say GDP instead of log GDP*:
+
+> Careful! How did you transform your variable(s) in #2? What variables are you looking at the linear relationship between? 
+
+*If they say there is a __positive__ relationship in their alternative*:
+
+> The standard hypothesis test for the slope uses a two-sided alternative hypothesis, unless we knew 100% going in that the relationship between $x$ and $y$ was positive. Did you know that the relationship was positive BEFORE you made your visualizations?
+
+## Question 8
+
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| echo: true
+#| eval: false
+obs_slope <-  gapminder %>%
+  specify(response = lifeExp, explanatory = log(gdpPercap)) %>%
+  calculate(stat = "slope")
+```
+
+*If they swap `lifeExp` and `gdpPercap`*:
+
+> Careful! What variable is your response variable?
+
+## Question 9
+
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| echo: true
+#| eval: false
+null_dist <- gapminder %>%
+  specify(response = lifeExp, explanatory = log(gdpPercap)) %>%
+  hypothesise(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "slope")
+```
+
+::: {.callout-note}
+There shouldn't be any wrong answers here, since their code would output a warning message if they did have something wrong. :)
+:::
+
+## Question 10
+
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+visualise(null_dist)  +
+  shade_p_value(obs_stat = obs_slope, 
+                direction = "two-sided")
+```
+
+*If they don't use `"two-sided"` for their alternative*: 
+
+> How many tails are there in the hypotheses stated in #7? 
+
+## Question 11
+
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+get_p_value(null_dist, 
+            obs_stat = obs_slope, 
+            direction = "two-sided")
+```
+
+*If they don't use `"two-sided"` for their alternative*: 
+
+> How many tails are there in the hypotheses stated in #7? 
+
+## Question 12
+
+**To earn a Success**: States they reject $H_0$ because the p-value is less than 0.1
+
+*If they don't say why they rejected:*
+
+> Careful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?
+
+*If they do not make a decision*:
+
+> You were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?
+
+## Question 13
+
+**To earn a Success**: States that the p-value is essentially the same
+
+## Question 14
+
+**To earn a Success**:
+
+- states that the permutation distribution is approximately Normal
+- states that a t-distribution is a reasonable approximation
+
+*If they don't reference the permutation distribution*:
+
+> What is the requirement for using a theory-based method to obtain your p-value? When is the t-distribution a good approximation of the true sampling distribution?
+
+## Question 15
+
+**To earn a Success**: Answer must agree with what they said in #4-6
+
+::: columns
+::: {.column width="30%"}
+If they said equal variance was violated, they must say that **neither** p-value is reliable.
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="30%"}
+If they said normality was violated but equal variance was not violated, they must say that the **simulation-based** p-value is more reliable.
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="30%"}
+If they said neither equal variance or normality were violated, they must say that **both** p-values are reliable.
+:::
+:::
+
+*If they choose the wrong method*:
+
+> Look back at the conditions required for each of these methods. Which conditions did you say were violated? What does that imply for the method(s) which give you the most reliable p-value?
+
+

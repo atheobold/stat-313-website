@@ -1,0 +1,340 @@
+---
+title: "Lab 9 -- Grading Guide"
+format: 
+  html:
+    self-contained: true
+editor: visual
+execute: 
+  eval: false
+---
+
+Q1:\
+Q2:\
+Q3:\
+Q4:\
+Q5:\
+Q6:\
+Q7:\
+Q8:\
+Q9:\
+Q10:\
+Q11:\
+Q12:\
+Q13:\
+Q14:\
+Q15:\
+Q16:\
+Q17:\
+Q18:\
+Q19:\
+Q20:\
+
+## Question 1
+
+**To earn a Success:**
+
+- fills in code
+- adds axis label
+
+::: {.callout-warning}
+Their axis label needs to indicate this is a score for Grade 8 Math
+:::
+
+*If they do not have "grade 8" or "math score" in their title:*
+
+> What context are these math scores for? What exam? What grade?
+
+## Question 2
+
+**To earn a Success:**
+
+- compares centers of plots
+- compares spreads of plots
+
+
+## Question 3
+
+**To earn a Success:**
+
+- fills in code
+- adds axis label
+
+::: {.callout-warning}
+Their axis label needs to indicate this is a score for Grade 8 Math
+:::
+
+*If they do not have "grade 8" or "math score" in their title:*
+
+> What context are these math scores for? What exam? What grade?
+
+## Question 4 
+
+**To earn a Success:**
+
+- compares centers of plots
+- compares spreads of plots
+
+## Question 5 -- Important!
+
+**To earn a Success:**
+
+::: columns
+::: {.column width="40%"}
+Using fill:
+
+```{r}
+ggplot(data = math_scores, 
+       mapping = aes(x = grade_8_math_score, 
+                     y = year_cat, 
+                     fill = continent)) +
+  geom_density_ridges(alpha = 0.5, scale = 1) + 
+  labs(x = "Grade 8 Math Score on TIMSS", 
+       y = "Year", 
+       fill = "Continent")
+```
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+Using facets:
+
+```{r}
+ggplot(data = math_scores, 
+       mapping = aes(x = grade_8_math_score, 
+                     y = year_cat)) +
+  geom_density_ridges(alpha = 0.5, scale = 1) + 
+  labs(x = "Grade 8 Math Score on TIMSS", 
+       y = "Year") + 
+  facet_wrap(~continent)
+```
+
+:::
+:::
+
+::: {.callout-warning}
+Their axis label needs to indicate this is a score for Grade 8 Math
+:::
+
+*If they don't change the transparency of their plots:* 
+
+> Remember you can use alpha to change the transparency of the density ridges so you can see them all!
+
+*If they do not have "grade 8" or "math score" in their title:*
+
+> What context are these math scores for? What exam? What grade?
+
+## Question 6 -- Important! 
+
+**To earn a Success:** compares if distributions of continents move over time or if they stay similar 
+
+## Question 7 -- Important!
+
+**To earn a Success:** 
+
+- compares observations within a continent
+- notices countries are recorded multiple times
+- states the condition is violated
+
+*If they do not state the condition is violated:*
+
+> Look at the observations for Africa! How many observations for Ghana are there? Is it reasonable to assume those observations are independent? 
+
+*If they say observations for continents are related in time:*
+
+> Do we have one observation per continent? If not, what are the observations of? Are these observations within a continent related? 
+
+## Question 8 -- Important!
+
+**To earn a Success:**
+
+- connects comparison with observations within a year or between continents
+
+::: columns
+::: {.column width="40%"}
+- says countries / continents are not related 
+- justifies decision (no)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+- says countries / continents are related 
+- justifies decision (spatial relationship)
+:::
+:::
+
+*If they do not justify their decision:*
+
+> An essential part of evaluating model conditions is to justify the decisions you make. What was your reasoning for your decision?
+
+## Question 9 -- Important!
+
+**To earn a Success:**
+
+- compares observations between continents
+- states that a country can only belong to one continent
+- says condition is not violated
+
+*If they don't discuss how many continents a county can belong to:*
+
+> How many continents can a country belong to? What does that say about between continent independence?
+
+*If they do not justify their decision:*
+
+> An essential part of evaluating model conditions is to justify the decisions you make. What was your reasoning for your decision?
+
+## Question 10 -- Important!
+
+**To earn a Success:**
+
+- compares observations between years
+- states that observations are related in time
+- says condition is violated
+
+*If they do not state the condition is violated:*
+
+> Is the observation for Ghana in 2003 related to the observation for Ghana in 2007?
+
+*If they do not justify their decision:*
+
+> An essential part of evaluating model conditions is to justify the decisions you make. What was your reasoning for your decision?
+
+## Question 11 -- Important!
+
+**To earn a Success:**
+
+- discusses the shape of the distributions 
+- says some distributions have more than one mode
+- says condition is violated
+
+*If they do not state the condition is violated:*
+
+> How many peaks does the Normal distribution have? How many peaks do you see in some of these distributions?
+
+*If they don't make a decision (violated / not):* 
+
+> A critical part of evaluation model conditions is to make a decision! Do you feel that this condition is or is not violated?
+
+## Question 12 -- Important!
+
+**To earn a Success:**
+
+- compares the log variances between continents / years
+- says there are large differences in the log variances
+- says condition is violated
+
+*If they do not state the condition is violated:*
+
+> How many times larger is the largest variance than the smallest variance? If it is less than 2, they could be similar values, but larger than 2 they start to seem pretty different. 
+
+## Question 13 
+
+**To earn a Success:** Code should look like:
+
+```{r}
+aov(grade_8_math_score ~ year, data = math_scores) %>% 
+  broom::tidy()
+```
+
+*If they swap $y$ and $x$:*
+
+> Careful! In the lm() function the response goes first! 
+
+
+## Question 14
+
+**To earn a Success:**
+
+- reject $H_0$
+- state that the p-value was less than 0.1
+
+::: {.callout-note}
+# Fine to not include p-value
+
+*If they don't state what the p-value was:*
+
+> Remember it is important to be transparent with your decision, what p-value did you obtain for this test?
+:::
+
+*If they don't state their $\alpha$:*
+
+> What alpha was used for your decision? 
+
+## Question 15 
+
+**To earn a Success:** Conclude at least on year has a different mean grade 8 math score
+
+*If they say all the years have different means:*
+
+> What is the alternative hypothesis for a one-way ANOVA? Is it that all of the years have different means?
+
+## Question 16 
+
+**To earn a Success:** Code should look like:
+
+```{r}
+null_dist <- math_scores %>%
+  specify(response = grade_8_math_score, explanatory = continent) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "F")
+```
+
+## Question 17 
+
+**To earn a Success:** Code should look like:
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = obs_F, direction = "greater")
+```
+
+*If they don't use `"greater"` in their direction:*
+
+> Careful! F-statistics can only be positive! What direction should we use to calculate the p-value for statistics that cannot be negative?
+
+## Question 18
+
+**To earn a Success:** Code should look like:
+
+```{r}
+get_p_value(null_dist, 
+            obs_stat = obs_F, 
+            direction = "greater")
+```
+
+*If they don't use `"greater"` in their direction:*
+
+> Careful! F-statistics can only be positive! What direction should we use to calculate the p-value for statistics that cannot be negative?
+
+## Question 19
+
+**To earn a Success:**
+
+- reject $H_0$
+- state that the p-value was less than 0.1
+
+::: {.callout-note}
+# Fine to not include p-value
+
+*If they don't state what the p-value was:*
+
+> Remember it is important to be transparent with your decision, what p-value did you obtain for this test?
+:::
+
+*If they don't state their $\alpha$:*
+
+> What alpha was used for your decision? 
+
+## Question 20
+
+**To earn a Success:** Conclude at least on continent has a different mean grade 8 math score
+
+*If they say all the continents have different means:*
+
+> What is the alternative hypothesis for a one-way ANOVA? Is it that all of the continents have different means?
+

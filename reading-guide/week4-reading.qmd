@@ -1,0 +1,215 @@
+---
+title: "Week 4 Reading Guide: Basic Regression"
+format: 
+  docx:
+    self-contained: true
+editor: visual
+---
+
+# [Modern Dive Chapter 5](https://moderndive.com/5-regression.html)
+
+In Statistics we like to call our $y$ variable the "response" variable. What are some other names $y$ can be called?
+
+</br> </br>
+
+In Statistics we like to call our $x$ variable the "explanatory" variable. What are some other names $x$ can be called?
+
+</br> </br>
+
+What is the difference between "explanatory modeling" and "predictive modeling"?
+
+</br> </br>
+
+In "basic" / simple linear regression, how many explanatory variables are included in the model?
+
+</br> </br>
+
+In linear regression, what type of variable must our response **always** be?
+
+</br> </br>
+
+## 5.1 -- One Numerical Explanatory Variable
+
+### 5.1.1 -- Exploratory data analysis
+
+What is the response variable for the evaluation study? What is the explanatory variable?
+
+</br> </br>
+
+What is "EDA"? Why should you do EDA *before* you analyze your data?
+
+</br> </br>
+
+In the `evals_ch5` dataset, can an instructor appear more than once?
+
+</br> </br>
+
+What statistics does the `skim()` function output?
+
+</br> </br>
+
+What does a *correlation coefficient* measure? Specifically, what type of relationship?
+
+</br> </br>
+
+For correlation coefficients:
+
+-   values near -1 indicate:
+
+-   values near +1 indicate:
+
+-   values near 0 indicate:
+
+</br>
+
+**Quick! -- Which correlation is larger, -0.75 or +0.45?**
+
+</br>
+
+Why did the authors jitter the points in the scatterplot?
+
+</br> </br>
+
+What function adds a regression line to a scatterplot?
+
+</br>
+
+What `method` do you need to specify to get a straight line?
+
+</br>
+
+Based on the scatterplot, how would you describe the relationship between instructor's beauty score and their evaluation score?
+
+</br> </br>
+
+### 5.1.2 -- Simple Linear Regression
+
+In your math class you've seen the equation of a line presented as $y = m \times x + b$. How does this equation change in a statistics class?
+
+-   $m$ becomes:
+
+-   $b$ becomes:
+
+-   $y$ becomes:
+
+-   $x$ becomes:
+
+</br>
+
+What does the hat on top of $y$ represent?
+
+</br> </br>
+
+The intercept ($b_0$) is the value of $\hat{y}$ when $x$ is:
+
+</br>
+
+::: column-margin
+![Image by Allison Horst](images/dragon_slope.png)
+:::
+
+The slope ($b_1$) is the expected change in $\hat{y}$ when $x$ is increased by:
+
+</br>
+
+What function do we use to "fit" a linear regression?
+
+</br>
+
+What function do we use to get the table of regression estimates?
+
+</br>
+
+How do you find the value of the intercept from the regression table?
+
+</br>
+
+How do you find the value of the slope from the regression table?
+
+</br>
+
+### 5.1.3 -- Observed / Fitted Values and Residuals
+
+::: column-margin
+![Image by Allison Horst](images/dragon_residual.png)
+:::
+
+How do you calculate the *fitted value* of an observation?
+
+</br>
+
+How do you calculate the *residual* of an observation?
+
+</br>
+
+What function can you use to obtain **every** residual for a regression model?
+
+</br>
+
+## 5.2 -- One Categorical Explanatory Variable
+
+### 5.2.1. -- Exploratory Data Analysis
+
+What are the "levels" of the `continent` variable?
+
+</br>
+
+How would you describe the distribution of life expectancy?
+
+</br> </br>
+
+Which continent has the largest variation in life expectancy?
+
+</br>
+
+### 5.2.2 -- Linear Regression
+
+What is an *offset*?
+
+</br> </br>
+
+How does `R` choose what group is the "baseline"?
+
+</br>
+
+When the explanatory variable is categorical the numbers in the regression table associated with each group is the:
+
+</br> </br>
+
+What is an "indicator function"?
+
+</br>
+
+The estimated regression equation for the life expectancy with `continent` as an explanatory variable is:
+
+$$\widehat{\text{life exp}} = 54.8 + 18.8 \cdot 1_{\text{Amer}}(x) + 15.9 \cdot 1_{\text{Asia}}(x) + 22.8 \cdot 1_{\text{Euro}}(x) + 25.9 \cdot 1_{\text{Ocean}}(x)$$
+
+When finding the mean life expectancy for Europe, what value do $1_{\text{Amer}}(x)$, $1_{\text{Asia}}(x)$, and $1_{\text{Ocean}}(x)$ take on?
+
+</br>
+
+For a categorical explanatory variable with $k$ levels, how many offsets will you have?
+
+</br>
+
+### 5.2.3 -- Observed / Fitted Values and Residuals
+
+True or False -- For a linear regression with one categorical explanatory variable, **every** observation associated with the same group (e.g., every country in Asia) will have the **same** fitted value
+
+</br>
+
+## 5.3 -- Related Topics
+
+### 5.3.1. -- Correlation is not necessarily causation
+
+Most people have heard the saying "correlation does not imply causation," but *sometimes* correlation **does** imply causation. What does a study need to have in order for cause and effect statements to be used?
+
+</br> </br>
+
+When this (what you stated above) is not present in a study, you have to worry about *confounding* / *lurking* variables. What is a *confounding* variable?
+
+</br> </br>
+
+### 5.3.1 -- Best-fitting line
+
+<!-- include sum of squares visual -->

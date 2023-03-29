@@ -1,0 +1,63 @@
+---
+title: "Week 6 Reading Guide: Model Selection"
+format: 
+  html:
+  #docx:
+    self-contained: true
+editor: visual
+---
+
+::: callout-warning
+## Answers in different color text
+
+It is **really** helpful for me if you make your answers in a different color, so I can easily pick them out!
+:::
+
+
+**What is parsimony? How does parsimony relate to Occam's Razor?**
+
+</br> </br>
+
+**What do we mean by the term "full model"?**
+
+</br> </br>
+
+**What is the relationship between the variance of** $\hat{y}$ the variance of $y$ and the variance of the residuals?
+
+</br> </br>
+
+**What is the formula for** $R^2$?
+
+</br> </br>
+
+**What values must** $R^2$ fall between?
+
+</br> </br>
+
+**How do you interpret** $R^2$?
+
+</br> </br>
+
+**Why can't you use** $R^2$ for regressions with more than one (1) explanatory variable?
+
+</br> </br>
+
+**How does adjusted** $R^2$ remedy this issue?
+
+</br> </br>
+
+**Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. What value will you use for** $k$ in the calculation of $n - k - 1$?
+
+</br> </br>
+
+**What is stepwise model selection?**
+
+</br> </br>
+
+**How does backward selection work?**
+
+</br> </br> </br> </br>
+
+**How does forward selection work?**
+
+</br> </br> </br> </br>

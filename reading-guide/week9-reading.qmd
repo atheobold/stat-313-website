@@ -1,0 +1,118 @@
+---
+title: "Week 9 -- Comparing Many Means (ANOVA)"
+format: 
+  #docx: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+```
+
+
+# Chapter 22
+
+**What does ANOVA stand for?**
+
+</br>
+</br>
+
+**What is the null hypothesis for an ANOVA?**
+
+</br>
+</br>
+
+**What is the alternative hypothesis for an ANOVA?**
+
+</br>
+</br>
+
+**What are the conditions for an ANOVA?**
+
+</br>
+</br>
+
+## Section 2 -- Randomization Test for Comparing Many Means
+
+### Conditions
+
+**What are ways to assess the equal variability condition?**
+
+</br>
+</br>
+
+**If it appears that the variability between groups is similar can we say that the equal variance condition is met?**
+
+</br>
+</br>
+
+### Comparing every mean
+
+**Why should we compare every mean rather than only the means that look the most different?**
+
+</br>
+</br>
+
+## Test statistic
+**What is the statistic used in an ANOVA?**
+
+</br>
+</br>
+
+**How is this statistic calculated?**
+
+</br>
+</br>
+
+## Creating a permuted sample
+
+Last week, we used cards to simulate what could have happened if $H_0$ was true by ripping the cards in half to separate the $x$ and $y$ values. We then shuffled the cards and created new ($x$, $y$) pairs by resampling from the data without replacement. 
+
+**How do we simulate what could have happened if $H_0$ was true for an ANOVA?**
+
+</br>
+</br>
+
+**What tail do we use to calculate the p-value for an ANOVA?**
+
+</br>
+</br>
+
+**If you reject $H_0$ in an ANOVA what can you conclude?**
+
+</br>
+</br>
+
+## Section 3 -- Mathematical Model
+
+**What distribution do we use to calculate the p-value for a theory-based ANOVA?**
+
+</br>
+</br>
+
+```{r}
+#| echo: false
+lm(score ~ gender, data = moderndive::evals) %>% 
+  anova() %>% 
+  broom::tidy() %>% 
+  knitr::kable()
+```
+
+**In the ANOVA table above, what does the `statistic` column represent?**
+
+</br>
+</br>
+
+**How was that `statistic` calculated? Specifically, what values from the table were used to obtain it?**
+
+</br>
+</br>
+
+**What distribution was used to calculate the `p.value`?**
+
+</br>
+</br>

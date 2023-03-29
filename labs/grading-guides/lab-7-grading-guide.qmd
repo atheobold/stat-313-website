@@ -1,0 +1,243 @@
+---
+title: "Lab 7 Grading Guide"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+Q1:\
+Q2:\
+Q3:\
+Q4:\
+Q5:\
+Q6:\
+Q7:\
+Q8:\
+Q9:\
+Q10:\
+Q11:\
+Q12:
+
+## Question 1
+
+**To earn a Success**:
+
+-   includes either `latitude` or `site` inside of `group_by()`
+
+*If uses another variable:*
+
+> What variable(s) uniquely define each marsh?
+
+## Question 2
+
+**To earn a Success**:
+
+Creates scatterplot with:
+
+-   `latitude` on x-axis
+-   `water temperature` on y-axis
+-   axis labels include variable units (Celsius for water temp; degrees for latitude)
+
+::: callout-note
+They are not required to include a regression line, but if they do, great!
+:::
+
+*If they don't have axis labels with the units*:
+
+> It is important to include an axis label stating what the units of each variable are! 
+
+## Question 3
+
+**To earn a Success**:
+
+Description includes **all** of the following:
+
+-   form of relationship (linear)
+-   direction of relationship (negative)
+-   strength of relationship (strong)
+-   location of any outliers (e.g., at a latitude of 45 degrees and 17.5 C temperature)
+
+*If they forget one of these*:
+
+> Careful! You were asked to describe the form, direction, strength, and unusual points for the plot.
+
+*If they don't state [where]{.underline} the outlier is*:
+
+> It is important to explicitly state where you believe the outliers are, so the reader knows where to look!
+
+## Question 4
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+get_correlation(data = pie_crab_clean, 
+                formula = latitude ~ water_temp)
+```
+
+## Question 5
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+obs_slope <- pie_crab_clean %>% 
+  specify(response = water_temp, 
+          explanatory = latitude) %>% 
+  calculate(stat = "slope")
+```
+
+## Question 6
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+bootstrap_dist <- pie_crab_clean %>% 
+  specify(response = water_temp, 
+          explanatory = latitude) %>% 
+  generate(reps = 500, 
+           type = "bootstrap") %>% 
+  calculate(stat = "slope")
+```
+
+## Question 7
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+visualise(bootstrap_dist) + 
+  labs(x = "<SOME AXIS LABEL>")
+```
+
+Their axis label **must** describe what is being plotted (e.g., slope statistics, sample slope, etc.)
+
+*If they did not include an axis label*:
+
+> It is important to include an axis label stating what is being plotted! What is being plotted on this bootstrap distribution?
+
+## Question 8
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+get_confidence_interval(bootstrap_dist, 
+                        level = 0.85)
+```
+
+*If they use a `level` other than 0.85*:
+
+> Look back at the lab instructions, what percentage confidence interval were you asked to construct?
+
+## Question 9
+
+**To earn a Success**:
+
+The interpretation must state:
+
+-   **confidence**: they are 85% confident
+-   **statistic**: the slope between water temperature and latitude
+-   **population**: for all marshes along the eastern US
+-   **interval**: is between [lower bound] and [upper bound]
+
+::: callout-note
+Note that every group will get a different interval, due to the randomness of bootstrapping!
+:::
+
+*If they don't state their confidence*:
+
+> How much confidence do you have in your interval?
+
+*If they don't state the statistic in context*:
+
+> We need to be specific about the what parameter we believe is in our interval. What variables is the slope between?
+
+*If they have state an incorrect population*:
+
+> What population were these 13 marshes drawn from? What population does your confidence interval apply to?
+
+## Question 10
+
+**To earn a Success:**
+
+Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+
+get_confidence_interval(bootstrap_dist, 
+                        level = 0.85, 
+                        point_estimate = obs_slope, 
+                        type = "se")
+```
+
+*If they don't have `type = "se"`*:
+
+> What method do you want the function to use when calculating your confidence interval? Percentile intervals are the default! 
+
+::: {.callout-note}
+If they type in the actual number for the estimated slope rather than using the `obs_slope` object, you can give them this reminder:
+
+> It is better practice not to "hard-code" numbers in our code, but to reference values stored in objects. This makes our code more resistant to changes in the dataset. 
+
+:::
+
+## Question 11
+
+**To earn a Success:**
+
+-   states the intervals are similar
+-   states similarity is due to the normality of the bootstrap distribution
+
+*If they say the intervals are different*:
+
+> Give these intervals another look, yes thier endpoints differ, but how different are they?
+
+*If they don't talk about the bootstrap distribution being approximately normal*:
+
+> What condition do we need to check when using the SE method to construct confidence intervals? Would you say this condition is violated?
+
+## Question 12 (incorrectly labeled 11 again...)
+
+**To earn a Success:**
+
+-   states whether they do / do not believe the sample of 13 marshes is representative of all marshes along the eastern US
+-   justifies why using something something that is true?
+
+::: callout-note
+I'm willing to be pretty flexible here, but the key aspect is that they need to **justify** their reasoning.
+:::
+
+*If their justification is not reasonable*:
+
+> Where were these 13 marshes located geographically? Do you believe that these 13 marshes are representative of the broader population they were sampled from? 
+
+*If their justification is about the shape of the bootstrap distribution*:
+
+> You are on the right track, we need for the sample to be representative of the population from which it was sampled. However, we cannot assess the representativeness of a sample using a bootstrap distribution. This can only be assessed by inspecting how the data were collected.
+
+

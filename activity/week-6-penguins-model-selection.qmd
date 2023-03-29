@@ -1,0 +1,217 @@
+---
+title: ""
+format: docx
+editor: visual
+---
+
+```{r set-up}
+library(palmerpenguins)
+library(moderndive)
+```
+
+<!-- full model -->
+
+```{r full}
+lm(body_mass_g ~ . , data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- delete one -->
+
+```{r minus-year}
+lm(body_mass_g ~ . -year, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.872 -->
+
+```{r minus-sex}
+lm(body_mass_g ~ . -sex, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.849 -->
+
+```{r minus-flipper-length}
+lm(body_mass_g ~ . -flipper_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.86 -->
+
+```{r minus-bill-depth}
+lm(body_mass_g ~ . -bill_depth_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.87 -->
+
+```{r minus-bill-length}
+lm(body_mass_g ~ . -bill_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island}
+lm(body_mass_g ~ . -island, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.874 -->
+
+```{r minus-species}
+lm(body_mass_g ~ . -species, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.843 -->
+
+<!-- delete island -->
+<!-- baseline = 0.873 -->
+
+```{r minus-island-year}
+lm(body_mass_g ~ . - island - year, data = penguins) |> 
+  get_regression_summaries()
+```
+
+```{r minus-island-sex}
+lm(body_mass_g ~ . - island - sex, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.849 -->
+
+```{r minus-island-flipper-length}
+lm(body_mass_g ~ . - island - flipper_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.861 -->
+
+```{r minus-island-bill-depth}
+lm(body_mass_g ~ . - island - bill_depth_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island-bill-length}
+lm(body_mass_g ~ . - island - bill_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island-species}
+lm(body_mass_g ~ . - island - species, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.829 -->
+
+<!-- model missing island is best = 0.871  -->
+
+<!-- now choose the simplest model that is within 1% of the best model = 0.861 -->
+
+
+<!-- can choose either model as new "baseline" -->
+
+```{r minus-island-bill-depth-bill-length}
+lm(body_mass_g ~ . - island - bill_depth_mm - bill_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.867 -->
+
+```{r minus-island-bill-depth-year}
+lm(body_mass_g ~ . - island - bill_depth_mm - year, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.869 -->
+
+```{r minus-island-bill-depth-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - species, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.815 -->
+
+```{r minus-island-bill-depth-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - flipper_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.853 -->
+
+```{r minus-island-bill-depth-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - sex, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.829 -->
+
+
+<!-- deleting year has highest resulting adjusted R-sq = 0.869 -->
+
+```{r minus-island-bill-depth-year-bill-length}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.865 -->
+
+```{r minus-island-bill-depth-year-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - flipper_length_mm, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.854 -->
+
+```{r minus-island-bill-depth-year-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - sex, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.822 -->
+
+```{r minus-island-bill-depth-year-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - species, data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.805 -->
+
+
+<!-- deleting bill length has highest resulting R-sq = 0.865 -->
+<!-- still greater than lowest bound of 0.861 -->
+
+```{r minus-island-bill-depth-year-bill-length-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - sex, 
+   data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.785 -->
+
+```{r minus-island-bill-depth-year-bill-length-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - species, 
+   data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.805 -->
+
+```{r minus-island-bill-depth-year-bill-length-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - flipper_length_mm, 
+   data = penguins) |> 
+  get_regression_summaries()
+```
+
+<!-- 0.845 -->
+
+<!-- none of these models have high enough R-squared! -->
+
+<!-- final model removes: island, bill_depth_mm, year, bill_length_mm -->
+<!-- final model contains: sex, species, flipper_length_mm -->

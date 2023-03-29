@@ -1,0 +1,127 @@
+---
+title: "STAT 313 Last Day"
+title-slide-attributes:
+    data-background-image: images/sad_cat.jpeg
+    data-background-size: contain
+    data-background-opacity: "0.5"
+format: 
+  revealjs: 
+    embed-resources: true
+    standalone: true
+editor: visual
+---
+
+##  {background-color="#0F4C81"}
+
+::: {style="font-size: 4em; color: #000000;"}
+Some Closing Thoughts...
+:::
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+I hope you leave this class understanding...
+:::
+
+-   Reproducibility is a foundational aspect to scientific research.
+
+-   Data visualizations tell you a story, where statistical tests only tell you a summary.
+
+-   Multiple regression and ANOVA are powerful tools to explore multivariate relationships.
+
+-   A well thought out study is more powerful than any statistical analysis.
+
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+The Discipline of Statistics
+:::
+
+> The field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines.
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+**Foundational ideas taught in statistics courses were invented by:**
+:::
+
+-   Francis Galton
+-   Karl Pearson
+-   Ronald Fisher
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+**Eugenics & Statistics**
+:::
+
+::: {style="font-size: 0.75em;"}
+> *Ideally, statisticians would like to divorce these tools from the lives and times of the people who created them. It would be convenient if statistics existed outside of history, but that's not the case. Statistics, as a lens through which scientists investigate real-world questions, has always been smudged by the fingerprints of the people holding the lens. Statistical thinking and eugenicist thinking are, in fact, deeply intertwined, and many of the theoretical problems with methods like significance testing---first developed to identify racial differences---are remnants of their original purpose, to support eugenics.*
+:::
+
+[How Eugenics Shaped Statistics](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+**Statistical Significance** -- The New "S" Word
+:::
+
+
+::: {style="font-size: 0.75em;"}
+
+> "Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science."
+
+:::
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+
+> "When used in statistics, significant does not mean important or meaningful, as it does in everyday speech."
+
+:::
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+
+> "I advocate a simple solution: Replace the s-word with words describing what you actually mean by it."
+
+
+:::
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+**Moving to a World Beyond 0.05**
+:::
+
+-   Accept & Acknowledge Uncertainty
+
+-   Be Thoughtful
+
+-   Be Open
+
+-   Be Modest
+
+## 
+
+::: columns
+::: {.column width="40%"}
+![](images/happy-cat.webp)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 3em; color: #000000;"}
+Remember to give yourself praise!
+:::
+:::
+:::
+
+
+

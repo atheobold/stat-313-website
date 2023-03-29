@@ -1,46 +1,114 @@
 ---
-title: "Week 4"
-subtitle: "TBA"
+title: "Week Four: Introduction to Linear Regression (Basic Regression)"
+format: html
 editor: visual
+embed-resources: true
+standalone: true
 ---
 
-::: callout-important
--   If you can't be in class for the lectures, you can watch the live stream or watch the recording later on [Panopto](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22d6c1d58a-cb6d-4732-9d4b-ae0c011bf767%22).
--   Due dates:
-    -   HW 1: Fri, Jan 28, 5pm ET
-    -   Lab 1: Fri, Jan 28, 5pm ET
+```{r}
+#| include: false
+
+library(gapminder)
+library(emo)
+library(openintro)
+library(moderndive)
+library(skimr)
+```
+
+Welcome!
+
+In this week's coursework we are going to start exploring statistical methods---linear regression. We will start with the "basic" case or simple linear regression, with a single quantitative explanatory variable and a quantitative response. We will review the concepts behind linear regression, learn how to visualize regression models, and practice obtaining the estimated regression lines in `R`.
+
+## Learning Outcomes
+
+By the end of this coursework you should be able to:
+
+-   describe the difference between explanatory and predictive modeling
+-   produce data visualizations for a simple linear regression
+-   describe how `R` decides on the "best" regression line
+-   fit a simple linear regression in `R`
+-   write out an estimated regression line
+-   interpret the slope of an estimated regression line
+-   interpret the intercept of an estimated regression line
+-   describe what an "offset" is in a simple linear regression
+-   interpret the offsets of an estimated regression line
+-   calculate a residual for an observation
+
+## This Week's TODOs
+
+`r emo::ji("book")` Reading: 45-60 minutes (submit completed reading guide on Canvas)
+
+`r emo::ji("check")` Concept Quiz: 1 (submit on Canvas)
+
+`r emo::ji("computer")` R Tutorial: 2 (submit completion screenshot on Canvas)
+
+------------------------------------------------------------------------
+
+# `r emo::ji("book")` Chapter Reading: Basic Regression
+
+::: columns
+::: {.column width="40%"}
+```{r}
+#| echo: false
+knitr::include_graphics(here::here("images", 
+                                   "modern_dive.png")
+                        )
+```
 :::
 
-## Prepare
-
-📖 Read Introduction to Modern Statistics, Sec 24.4: [Mathematical model for testing the slope](https://openintro-ims.netlify.app/inf-model-slr.html#mathslope)
-
-📖 Read Introduction to Modern Statistics, Sec 24.5: [Mathematical model, interval for the slope](https://openintro-ims.netlify.app/inf-model-slr.html#mathematical-model-interval-for-the-slope)
-
-📖 Read Introduction to Modern Statistics, Sec 24.6: [Checking model conditions](https://openintro-ims.netlify.app/inf-model-slr.html#tech-cond-linmod)
-
-📖 Read Introduction to Modern Statistics, Sec 24.7: [Chapter review](https://openintro-ims.netlify.app/inf-model-slr.html#chp24-review)
-
-## Participate
-
-🖥️ [Lab 2 - College scorecard](/slides/lab-1.html)
-
-🖥️ [Lecture 6 - SLR: Mathematical models for inference](/slides/lec-6.html)
-
-🖥️ [Lecture 7 - SLR: Model diagnostics](/slides/lec-7.html)
-
-## Practice
-
-📋 [Application Exercise 3 - Checking model conditions](/ae/ae-3-duke-forest.html)
-
-## Perform
-
-⌨️ [Lab 2 - College scorecard](/labs/lab-2.html "Lab instructions")
-
-✍️ [HW 1 - In-person voting trends](/hw/hw-1.html)
-
-<br><br>
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
+::: {.column width="5%"}
 :::
+
+::: {.column width="55%"}
+</br> [Chapter 5 (https://moderndive.com/5-regression.html)](https://moderndive.com/5-regression.html)
+:::
+:::
+
+::: callout-note
+Don't worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.
+:::
+
+-   [Download the Chapter 5 reading guide (Word)](reading_guide/week4_reading_guide.docx)
+
+-   [Download the Chapter 5 reading guide (HTML)](reading_guide/week4_reading_guide.html)
+
+# `r emo::ji("check")` Concept Quiz: Basic Linear Regression -- Due Tuesday by noon
+
+**1. What does the correlation coefficient measure?**
+
+-   strength of a relationship between two variables
+-   strength of a linear relationship between two variables
+-   strength of a relationship between two numerical variables
+-   strength of a linear relationship between two numerical variables
+
+**2. How do you interpret a slope coefficient?**
+
+-   For any increase of $x$, the slope is the expected increase in $y$
+-   For any increase of $x$, the slope is the expected increase in the mean of $y$
+-   For a 1-unit increase in $x$, the slope is the expected increase in $y$
+-   For a 1-unit increase in $x$, the slope is the expected increase in the mean of $y$
+
+**3. How do you interpret an intercept coefficient?**
+
+-   For a 1-unit increase in $x$, the intercept is the expected increase in $y$
+-   For a 1-unit increase in $x$, the intercept is the expected increase in the mean of $y$
+-   For an $x$ value of 0, the intercept is the expected value of $y$
+-   For an $x$ value of 0, the intercept is the expected value of the mean of $y$
+
+**4. Match the *explanatory* and *response* variables to the correct variables in the `lm()` function syntax.**
+
+`lm(variable1 ~ variable2, data = <NAME OF DATASET>)`
+
+**5. What `geom_` adds a linear regression line to a scatterplot?**
+
+-   `geom_line()`
+-   `geom_smoother()`
+-   `geom_regression()`
+-   `geom_smooth()`
+
+# `r emo::ji("computer")` R Tutorial -- Due Thursday by noon
+
+1.  [Regression modeling: Simple linear regression](https://openintro.shinyapps.io/ims-03-model-03/)
+
+2.  [Regression modeling: Interpreting regression models](https://openintro.shinyapps.io/ims-03-model-04/)

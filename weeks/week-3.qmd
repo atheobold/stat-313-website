@@ -1,39 +1,164 @@
 ---
-title: "Week 3"
-subtitle: "TBA"
+title: "Week Two: Incorporating Categorical Variables"
+format: 
+  html: 
+    theme: minty
+    fontsize: 1em
+    mainfont: sans-serif
+    number-sections: true
+    number-depth: 2
+    code-block-bg: "#76b5c5"
+    highlight-style: monochrome
 editor: visual
+embed-resources: true
+standalone: true
 ---
 
-::: callout-important
--   We're back to in person classes this week! See [here](/course-syllabus.html#course-info) for class locations. And don't forget to wear your mask! 😷
--   Due dates:
-    -   AE 2: Fri, Jan 21, 11:59pm ET
+```{r packages}
+#| include: false
+library(tidyverse)
+library(flair)
+library(emo)
+```
+
+Welcome!
+
+In this week's coursework we are going to dive deeper into exploring data, by incorporating categorical variables. Specifically, we will explore how we can incorporate categorical variables into our visualizations through the use of colors and facets. We will also explore how we can obtain summary statistics for different groups of a categorical variable, making our summaries more specific.
+
+## Learning Outcomes
+
+By the end of this coursework you should be able to:
+
+-   describe what a categorical variable is and how these types of variables are stored in `R`
+-   determine whether a variable in a dataset is categorical
+-   incorporate categorical variables into visualizations of two and three variables
+-   obtain summary statistics for each level of a categorical variable
+
+## This Week's TODOs
+
+`r emo::ji("book")` Readings: 30-45 minutes
+
+`r emo::ji("computer")` Tutorials: 1
+
+`r emo::ji("check")` Check-ins: 1 (submit on Canvas)
+
+------------------------------------------------------------------------
+
+# `r emo::ji("book")` Chapter Reading
+
+The Week 3 reading guide can be downloaded here [(Word Document)](reading_guide/week3_reading_guide.docx) or here [(HTML file)](reading_guide/week3_reading_guide.html).
+
+## Incorporating Categorical Variables into Visualizations -- IMS Chapter 4, Section 6 -- Comparing Numerical Data Across Groups\](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
+
+## [Incorporating Categorical Variables into Summary Statistics -- Modern Dive Chapter 3, Sections 1 through 6](https://moderndive.com/3-wrangling.html)
+
+------------------------------------------------------------------------
+
+# `r emo::ji("computer")` R Tutorial
+
+[**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
+
+------------------------------------------------------------------------
+
+# `r emo::ji("check")` Concept Quiz
+
+**1. Suppose you've run the following code to make side-by-side boxplots of life expectancy:**
+
+    ggplot(data = health, mapping = aes(x = country, y = lifeExp)) + 
+        geom_boxplot()
+
+**Your resulting plot looks like this:**
+
+![](images/boxplot_with_overlapping_axis_labels.webp)
+
+**What should you do?**
+
+-   Move country to the y-axis.
+-   Remove some countries so the names don't overlap.
+-   Nothing, it looks great!
+
+**2. If you didn't want to stack your boxplots side-by-side, how else could you separate the groups?**
+
+::: callout-tip
+This does not go inside the aes() function!
 :::
 
-## Prepare
+**3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?**
 
-📖 Read Introduction to Modern Statistics, Sec 24.1: [Case study: Sandwich store](https://openintro-ims.netlify.app/inf-model-slr.html#case-study-sandwich-store)
+-   `summarize()`
+-   `mutate()`
+-   `arrange()`
+-   `group_by()`
+-   `filter()`
 
-📖 Read Introduction to Modern Statistics, Sec 24.2: [Randomization test for the slope](https://openintro-ims.netlify.app/inf-model-slr.html#randslope)
+**4. A categorical variable could be *correctly* stored as what data types?**
 
-📖 Read Introduction to Modern Statistics, Sec 24.3: [Bootstrap confidence interval for the slope](https://openintro-ims.netlify.app/inf-model-slr.html#bootbeta1)
+-   integer
+-   double
+-   character
+-   factor
 
-## Participate
+**5. In Lab 2, you worked with the `nycflights` dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use?**
 
-🖥️ [Lecture 4 - SLR: Prediction + model evaluation](/slides/lec-4.html)
+::: columns
+::: {.column width="40%"}
+First Step
 
-🖥️ [Lecture 5 - SLR: Simulation-based inference](/slides/lec-5.html)
+Second Step
 
-## Practice
-
-📋 [Application Exercise 2 - Bike rentals in DC](/ae/ae-2-dcbikeshare.html)
-
-## Perform
-
-None.
-
-<br><br>
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
+Third Step
 :::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+`nycflights`
+
+`group_by(airline)`
+
+`filter(dest == "SFO")`
+
+`summarize(mean_dd = mean(dep_delay))`
+:::
+:::
+
+**6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?**
+
+-   `mutate()`
+-   `filter()`
+-   `if_else()`
+-   `group_by()`
+
+**7. The `arrange()` function sorts or reorder a data frame's rows according to the values of the specified variable. By default, what ordering does it use for the rows?**
+
+-   ascending (smallest to largest)
+-   descending (largest to smallest)
+
+# Connecting Back to Week 2
+
+**1. In the chapter readings and the tutorials you've learned about different data types. Fill in the associated data types (e.g. character, factor, integer, double) with each type of variable.**
+
+| Variable                      | Data Type in R |
+|-------------------------------|----------------|
+| Categorical variable          |                |
+| Continuous numerical variable |                |
+| Discrete numerical variable   |                |
+
+**2. In the [Language of Data tutorial](https://openintro.shinyapps.io/ims-01-data-01), you were tasked with creating a new *categorical* variable based on a *numerical* variable, a process called "discretizing." You were given the code below:**
+
+```{r tutorial-code}
+#| eval: false
+
+# Calculate median number of characters: med_num_char
+med_num_char <- median(email50$num_char)
+
+# Create num_char_cat variable in email50
+email50_updated <- email50 %>%
+  mutate(num_char_cat = if_else(num_char < med_num_char,
+                                "[VALUE IF TRUE]",
+                                "[VALUE IF FALSE]")
+         )
+```
+
+Fill in the code with the correct inputs (in place of `[VALUE IF TRUE]` and `[VALUE IF FALSE]`) **and** explain what is happening in each line of the code.

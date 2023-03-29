@@ -1,0 +1,1048 @@
+---
+title: "Week 8 -- Hypothesis Test for Slope & Inference Conditions"
+format: 
+  html:
+    self-contained: true
+    table-of-contents: true
+    number-sections: true
+    number-depth: 3
+editor: visual
+bibliography: references.bib
+execute: 
+  echo: false
+  message: false
+  warning: false
+resources: 
+  - reading_guide/week8_reading_guide.docx
+  - reading_guide/week8_reading_guide.html
+---
+
+```{r set-up}
+#| include: false
+
+library(tidyverse)
+library(openintro)
+library(moderndive)
+library(infer)
+
+# Set output digit precision
+options(scipen = 999) # , digits = 4)
+set.seed(1234)
+
+births14 <- births14 |> 
+  mutate(ID = 1:n()) |> 
+  relocate(ID, mage, weight)
+
+obs_slope <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  calculate(stat = "slope") %>% 
+  pull(stat) %>% 
+  round(digits = 3)
+
+my_theme <- theme(axis.title.x = element_text(size = 18), 
+                  axis.title.y = element_text(size = 18), 
+                  axis.text.x = element_text(size = 14), 
+                  axis.text.y = element_text(size = 14), 
+                  
+                  )
+
+births_lm <- lm(weight ~ mage, data = births14)
+
+slope_table <- get_regression_table(births_lm) %>% 
+  filter(term == "mage") %>% 
+  mutate(across(.cols = -term, 
+                .fns = ~round(.x, digits = 3)
+                )
+         )
+```
+
+In this week's coursework we are **finally** talking about p-values! What we learned last week should have helped make the connection between a sampling distribution and a bootstrap (resampling) distribution. Hopefully, you understand that we create confidence intervals based the statistics we saw in other samples.
+
+This week we are going to connect these ideas to the framework of hypothesis testing. Hypothesis testing requires an additional component we didn't see last week---the null hypothesis. We will learn how we integrate the null hypothesis in our resampling procedure to create a sampling distribution that could have happened if the null hypothesis was true. We will use this distribution to compare what we saw in our data and evaluate the plausibility of competing hypotheses.
+
+This reading will walk you through the general framework for understanding hypothesis tests. By understanding this general framework, you'll be able to adapt it to many different scenarios. The same can be said for confidence intervals. There was one general framework that applies to all confidence intervals. I believe this focus on the conceptual framework is better for long-term learning than focusing on specific details for specific instances.
+
+::: column-margin
+::: callout-note
+This week's reading is a compilation of [Chapter 8](https://moderndive.com/8-confidence-intervals.html) from *ModernDive* [@kim2020], [Chapter 24](openintro-ims.netlify.app/inf-model-slr.html) from *Introduction to Modern Statistics* [@ims], with a smattering of my own ideas.
+:::
+:::
+
+## Reading Guide
+
+Download the reading guide as a [Word Document here](reading_guide/week8_reading_guide.docx)
+
+Download the reading guide as an [HTML file here](reading_guide/week8_reading_guide.html)
+
+# Birth weights & mother's age
+
+Last week we considered the question of assessing the relationship between a baby's birth weight and the age of the mother. To explore this relationship, we used the [`births14`](http://openintrostat.github.io/openintro/reference/births14.html) dataset--a random sample of 1,000 cases from a large public dataset of all US birth records released in 2014.
+
+```{r data-preview}
+births14 %>% 
+  slice_sample(n = 10) %>% 
+  DT::datatable(caption = "A sample of 10 rows from the births14 dataset.")
+```
+
+## Observed data
+
+@fig-births-slr visualizes the relationship between `mage` and `weight` for this sample of 1,000 birth records.
+
+```{r births-slr-plot}
+#| label: fig-births-slr
+#| fig-cap: "Weight of baby at birth (in lbs) as explained by mother's age."
+#| echo: true
+#| 
+
+ggplot(data = births14, 
+       mapping = aes(x = mage, y = weight)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Mother's Age", 
+       y = "Birth Weight of Baby (lbs)") + 
+  my_theme
+```
+
+@tbl-births-slr displays the estimated regression coefficients for modeling the relationship between `mage` and `weight` for this sample of 1,000 birth records.
+
+```{r births-slr-code}
+#| echo: true
+#| eval: false
+
+births_lm <- lm(weight ~ mage, data = births14)
+
+get_regression_table(births_lm)
+```
+
+```{r}
+#| label: tbl-births-slr
+#| tbl-cap: "The least squares estimates of the intercept and slope for modeling the relationship between baby's birth weight and mother's age."
+
+births_lm <- lm(weight ~ mage, data = births14)
+
+births_table <- get_regression_table(births_lm) 
+
+births_table |> 
+  select(term:estimate) %>% 
+  knitr::kable() |> 
+  kableExtra::kable_styling()
+
+```
+
+Based on these coefficients, the estimated regression equation is:
+
+$$ \widehat{\text{birth weight}} = -6.793 + 0.014 \times \text{mother's age}$$
+
+Based on the regression equation, it appear that for every year older a mother is, we would expect the mean birth weight to increase by approximately `r obs_slope` lbs. This seems like a small value, which is confirmed when we increase the mother's age by 10-years, which is associated with a `r obs_slope * 10` lb increase in birth weight.
+
+## Research question
+
+This raises the question of whether this change is "large[^1] enough" to suggest that there **is** a relationship between the birth weight of a baby and the age of the mother. Could we obtain a slope statistic of `r obs_slope` occur just by chance, in a hypothetical world where there is no relationship between a baby's birth weight and a mother's age? In other words, what role does *sampling variation* play in this hypothetical world? To answer this question, we'll again rely on a computer to run *simulations*.
+
+[^1]: I prefer to use the term meaningful.
+
+## Simulating data {#sec-ht-activity}
+
+First, try to imagine a hypothetical universe where there is no relationship between the birth weight of a baby and a mother's age. In such a hypothetical universe, the birth weight of a baby would be entirely determined from other variables (e.g., genetics, mother's habits, etc.)
+
+Bringing things back to the `births14` data frame, the `mage` variable would thus be an irrelevant label, as is has no relationship with the birth weight of the baby. Since is has no bearing on the birth weight, we could randomly reassign these ages by "shuffling" them!
+
+To illustrate this idea, let's narrow our focus to six arbitrarily chosen birth records (of the 1,000) @tbl-shuffled-mage. The `weight` column displays the birth weight of the baby. The `mage` column displays the age of the mother. However, in our hypothesized universe there is no relationship between a baby's birth weight and a mother's age, so it would be of no consequence to randomly "shuffle" the values of `mage`. The `shuffled_mage` column shows one such possible random shuffling.
+
+```{r births-shuffle}
+#| label: tbl-shuffled-mage
+#| tbl-cap: "One example of shuffling mage variable."
+
+births14 %>% 
+  slice_sample(n = 6) %>% 
+  select(ID, weight, mage) %>% 
+  mutate(shuffled_mage = sample(mage)) %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling()
+```
+
+Again, such random shuffling of the `mage` label only makes sense in our hypothesized universe where there is no relationship between the birth weight of a baby and a mother's age. How could we extend this shuffling of the `mage` variable to all 1,000 birth records by hand?
+
+One way would be writing the 1,000 `weight`s and `mage`s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 `weight` cards in one hat and 1,000 `mage` cards in a *different* hat. You could then draw one card out of the `weight` hat and one card out of the `mage` hat and staple them together to make a new (`weight`, `mage`) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until
+
+I've done one such reshuffling and plotted the original dataset and the shuffled dataset side-by-side in @fig-original-shuffle-comparison. It appears that the slope of the regression line for the shuffled data is much less steep (closer to horizontal) than in the original data.
+
+```{r original-shuffle-comparison}
+#| label: fig-original-shuffle-comparison
+#| fig-cap: "Scatterplots of relationship between baby's birth weight and mother's age."
+#| fig-subcap:
+#|   - "Original values of mother's age"
+#|   - "Shuffled values of mother's age"
+#| layout-nrow: 1
+
+shuffled_births14 <- births14 %>% 
+  mutate(shuffled_mage = sample(mage))
+
+ggplot(data = births14, 
+       mapping = aes(x = mage, y = weight)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Mother's Age", 
+       y = "Birth Weight of Baby (lbs)") + 
+  my_theme
+  
+
+ggplot(data = shuffled_births14, 
+      mapping = aes(x = shuffled_mage, y = weight)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Mother's Age", 
+       y = "Birth Weight of Baby (lbs)") + 
+  my_theme
+```
+
+Let's compare these slope estimates between the two datasets:
+
+```{r shuffled-slope}
+#| echo: true
+shuffled_births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  calculate(stat = "slope")
+```
+
+So, in this hypothetical universe where there is no relationship between a baby's birth weight and a mother's age, we obtained a slope of `r obs_slope`.
+
+Notice that this slope statistic is not the same as the slope statistic of `r obs_slope` that we originally observed. This is once again due to *sampling variation*. How can we better understand the effect of this sampling variation? By repeating this shuffling several times!
+
+## Shuffling 10 times
+
+Alright, I've carried out the process of shuffling the dataset 9 more times. @tbl-ten-shuffled-mage displays the results of these shufflings.
+
+```{r nine-shuffles}
+#| label: tbl-ten-shuffled-mage
+#| tbl-cap: "One example of shuffling mage variable."
+
+shuffled_births14 <- births14 %>% 
+  mutate(shuffle1 = sample(mage), 
+         shuffle2 = sample(mage),
+         shuffle3 = sample(mage),
+         shuffle4 = sample(mage),
+         shuffle5 = sample(mage),
+         shuffle6 = sample(mage),
+         shuffle7 = sample(mage), 
+         shuffle8 = sample(mage), 
+         shuffle9 = sample(mage), 
+         shuffle10 = sample(mage)
+         )
+
+shuffled_births14 %>% 
+  slice_sample(n = 6) %>% 
+  select(ID, weight, mage, shuffle1:shuffle10) %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling()
+```
+
+<!-- lineup plot -->
+
+For each of these 10 shuffles, I computed the slope statistic, and in @fig-ten-shuffles I display their distribution in a histogram. I've also marked the observed slope statistic with a dark red line.
+
+```{r}
+#| label: fig-ten-shuffles
+#| fig-cap: "Distribution of shuffled slope statistics."
+
+randomize_10 <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  hypothesise(null = "independence") %>% 
+  generate(reps = 10, type = "permute") %>% 
+  calculate(stat = "slope")
+
+ggplot(randomize_10, mapping = aes(x = stat)) +
+  geom_histogram(binwidth = 0.005) +
+  geom_vline(xintercept = obs_slope, lwd = 1.5, color = "red")
+```
+
+Before we discuss the distribution of the histogram, we need to remember one key detail: this histogram represents relationship between a baby's birth weight and mother's age that one would observe in our hypothesized universe where there is no relationship between these variables.
+
+Observe first that the histogram is roughly centered at 0, which makes sense. A slope of 0 means there is no relationship between a baby's birth weight and mother's age, which is exactly what our hypothetical universe assumes!
+
+However, while the values are centered at 0, there is variation about 0. This is because even in a hypothesized universe of no relationship between a baby's birth weight and mother's age, you will still likely observe a slight relationship because of chance sampling variation. Looking at the histogram in @fig-ten-shuffles, such differences could even be as extreme as 0.02.
+
+Turning our attention to what we observed in the `births14` dataset: the observed slope of `r obs_slope` is is marked with a vertical dark line. Ask yourself: in a hypothesized world of no relationship between a baby's birth weight and mother's age, how likely would it be that we observe this slope statistic? That's hard to say! It looks like there is only one statistic larger than the observed statistic out of ten, but that means we would expect to see a statistic bigger than what we saw 10% of the time in this hypothetical universe. To me, something happening 10% of the time doesn't seem like a rare event.
+
+## What just happened?
+
+What we just demonstrated in this activity is the statistical procedure known as hypothesis testing using a permutation test. The term ""permutation" is the mathematical term for "shuffling": taking a series of values and reordering them randomly, as you did with the `mage` values.
+
+In fact, permutations are another form of resampling, like the bootstrap method you performed last week. While the bootstrap method involves resampling *with* replacement, permutation methods involve resampling *without* replacement.
+
+Think back to the exercise involving the slips of paper representing the 1,000 birth records from last week. After sampling a paper, you put the paper back into the hat. However, in this scenario, once we drew a `weight` and `age` card they were stapled together and never redrawn.
+
+In our example, we saw that the observed slope in the `births14` dataset was somewhat inconsistent with the hypothetical universe, but only slightly. Thus, I would not be inclined to say that the observed relationship between a baby's birth weight and a mother's age (seen in the `births14` dataset) is that different from what I would expect to see if there was no relationship between these variables.
+
+# Hypothesis tests {#sec-understanding-ht}
+
+Much like the terminology, notation, and definitions relating to sampling you saw last week, there are a lot of terminology, notation, and definitions related to hypothesis testing as well. Learning these may seem like a very daunting task at first. However, with practice, practice, and more practice, anyone can master them.
+
+First, a **hypothesis** is a statement about the value of an unknown population parameter. In our example, our population parameter of interest is the slope of the relationship between baby's birth weight and mother's age for **every** baby born in the US in 2014. This parameter is notated with $\beta_1$. Hypothesis tests can involve any of the population parameters. You may have seen hypothesis tests for means or proportions previously, and later in this class we will discuss tests for many means (ANOVA).
+
+Second, a **hypothesis test** consists of a test between two competing hypotheses: (1) a **null hypothesis** $H_0$ (pronounced "H-naught") versus (2) an **alternative hypothesis** $H_A$ (sometimes denoted $H_1$).
+
+Generally the null hypothesis is a claim that there is "no effect" or "no relationship." In many cases, the null hypothesis represents the status quo or a situation that nothing interesting is happening. Furthermore, generally the alternative hypothesis is the claim the experimenter or researcher wants to establish or find evidence to support. It is viewed as a "competing" hypothesis to the null hypothesis $H_0$. In our birth weights example, an appropriate hypothesis test would be:
+
+<center>
+
+$H_0:$ there is no relationship between a baby's birth weight and a mother's age
+
+$H_A:$ there is a relationship between a baby's birth weight and a mother's age
+
+</center>
+
+Note some of the choices we have made. First, we set the null hypothesis $H_0$ to be that there is no relationship between a baby's birth weight and a mother's age and the competing alternative hypothesis $H_A$ to be that there is a relationship between a baby's birth weight and a mother's age. While it would not be wrong in principle to reverse the two, it is a convention in statistical inference that the null hypothesis is set to reflect a "null" situation where "nothing is going on."
+
+As we discussed earlier, in this case, $H_0$ corresponds to there being no relationship between a baby's birth weight and a mother's age. Furthermore, we set $H_A$ to be that there is a relationship between a baby's birth weight and a mother's age, which does not state what direction that relationship may be. This is called a **two-sided alternative**, whereas an alternative hypothesis which indicates the direction of the relationship (e.g., as age increases birth weight decreases) is called a **one-sided alternative**.
+
+We can re-express the formulation of our hypothesis test using the mathematical notation for our population parameter of interest, the slope of the relationship between a baby's birth weight and a mother's age for all babies born in the US in 2014 -- $\beta_1$:
+
+<center>
+
+$H_0: \beta_1 = 0$
+
+$H_A: \beta_1 \neq 0$
+
+</center>
+
+Observe how the alternative hypothesis $H_A$ is two-sided with $\beta_1 \neq 0$. Had we opted for a one-sided alternative, we would have set $\beta_1 > 0$ or $\beta_1 > 0$. To keep things simple for now, we'll stick with the simpler two-sided alternative. We will discuss why I believe it is better for science to do two-sided tests later this week in your Statistical Critique.
+
+Third, a **test statistic** is a *point estimate / sample statistic* formula used for hypothesis testing. Note that a sample statistic is merely a summary statistic based on a sample of observations. Fourth, the **observed test statistic** is the value of the test statistic that we observed in real life. In our case, we computed this value using the data saved in the `births14` data frame. It was the observed slope for the relationship between baby birth weights and mother's age $b_1 =$ `r round(obs_slope, 3)`.
+
+Fifth, the **null distribution** is the sampling distribution of the test statistic *assuming the null hypothesis* $H_0$ is true. Ooof! That's a long one! Let's unpack it slowly. The key to understanding the null distribution is that the null hypothesis $H_0$ is *assumed* to be true. We're not saying that $H_0$ is true at this point, we're only assuming it to be true for hypothesis testing purposes. In our case, this corresponds to our hypothesized universe of no relationship between baby birth weights and mother's age. Assuming the null hypothesis $H_0$, also stated as "Under $H_0$," how does the test statistic vary due to sampling variation? In our case, how will the slope statistics $b_1$ vary due to sampling under $H_0$? Recall from last week that distributions displaying how point estimates vary due to sampling variation are called *sampling distributions*. The only additional thing to keep in mind about null distributions is that they are sampling distributions *assuming the null hypothesis* $H_0$ is true.
+
+In our case, we previously visualized a null distribution in @fig-ten-shuffles, which we re-display in @fig-ten-shuffles-revised using our new notation and terminology. It is the distribution of the `r nrow(randomize_10)` sample slopes computed *assuming* a hypothetical universe of no relationship between baby birth weights and mother's age. I've marked the value of the observed test statistic of `r obs_slope` with a vertical line.
+
+```{r null-distribution-2}
+#| label: fig-ten-shuffles-revised
+#| fig-cap: "Null distribution and observed test statistic."
+
+ggplot(randomize_10, mapping = aes(x = stat)) +
+  geom_histogram(binwidth = 0.005, color = "white") +
+  geom_vline(xintercept = obs_slope, lwd = 1.5, color = "red") +
+  labs(x = expression(paste("Sample slope statistic ", b[1])))
+```
+
+Sixth, the $p$-value is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic *assuming the null hypothesis* $H_0$ is true. Double ooof! Let's unpack this slowly as well. You can think of the $p$-value as a quantification of "surprise": assuming $H_0$ is true, how surprised are we with what we observed? Or in our case, in our hypothesized universe of no relationship between baby birth weights and mother's age, how surprised are we that we observed a slope statistic `r obs_slope` from our collected samples assuming $H_0$ is true? Very surprised? Somewhat surprised? Not surprised?
+
+The $p$-value quantifies this probability, or in the case of our `r nrow(randomize_10)` slope statistics in @fig-ten-shuffles-revised, what proportion had a more "extreme" result? Here, extreme is defined in terms of the alternative hypothesis $H_A$ that there is a relationship between baby birth weights and mother's age, which does not state a direction. So, we need to look for statistics in **both tails**, for positive relationships and negative relationships.
+
+```{r ten-shuffle-p-value}
+num <- sum(randomize_10$stat >= obs_slope)
+denom <- nrow(randomize_10)
+p_val <- round(num / denom, 3)
+```
+
+::: column-margin
+::: callout-caution
+# Accepting the null
+
+Careful! Failing to reject the null hypothesis is not the same as accepting the null hypothesis! You cannot state that someone is innocent just because there was not sufficient evidence they were guilty.
+:::
+:::
+
+In this case, `r sum(randomize_10$stat >= obs_slope)` times out of `r nrow(randomize_10)`, we obtained a difference in proportion greater than or equal to the observed slope of `r obs_slope`. As I suggested before, this event doesn't seem that rare as it could occur 10% of the time. As our observed slope is not vastly different from what we would expect to occur if the null was true, we should *fail to reject* the hypothesized universe.
+
+Seventh and lastly, in many hypothesis testing procedures, it is commonly recommended to set the **significance level** of the test beforehand. It is denoted by the Greek letter $\alpha$ (pronounced "alpha"). This value acts as a cutoff on the $p$-value, where if the $p$-value falls below $\alpha$, we would "reject the null hypothesis $H_0$." Alternatively, if the $p$-value does not fall below $\alpha$, we would "fail to reject $H_0$."
+
+While different fields tend to use different values of $\alpha$, some commonly used values for $\alpha$ are 0.1, 0.01, and 0.05; with 0.05 being the choice people often make without putting much thought into it. We'll talk more about $\alpha$ significance levels in @sec-ht-interpretation, but first let's fully conduct the hypothesis test corresponding to our `births14` example using the `infer` package.
+
+# Conducting a hypothesis test using **infer** {#infer-workflow-ht}
+
+Last week, you learned how to to construct confidence intervals using the **infer** R package. The infer package contains a workflow for constructing confidence intervals which emphasizes each of the steps in the underlying process. In @fig-infer-ci, we see that this workflow is comprised of functions whose names describe what they do:
+
+1.  `specify()` the variables of interest in your data frame.
+2.  `generate()` replicates of bootstrap resamples with replacement.
+3.  `calculate()` the summary statistic of interest.
+4.  `visualize()` the resulting bootstrap distribution and confidence interval.
+
+![Process for constructing **confidence intervals** with the infer package.](images/whole_process_ci.png){#fig-infer-ci}
+
+This week, we'll see how we can modify this process to instead conduct hypothesis tests. You'll notice that the basic outline of the workflow is almost identical, except for an additional `hypothesize()` step between the `specify()` and `generate()` steps, as can be seen in @fig-infer-ht.
+
+![Process for conducting **hypothesis tests** with the infer package.](images/whole_process_ht.png){#fig-infer-ht}
+
+Throughout this section, we'll use a pre-specified significance level $\alpha$ = 0.05 for our hypothesis tests. I'll leave the discussion on the choice of this $\alpha$ value until later on in @sec-choosing-alpha.
+
+## `specify()` variables
+
+Recall that we use the `specify()` verb to specify the response variable and, if needed, any explanatory variables for our study. In this case, since we are interested in the linear relationship between a baby's birth weight and a mother's age, we set `weight` as the response variable and `mage` as the explanatory variable.
+
+```{r specify}
+#| echo: true
+
+births14 %>% 
+  specify(response = weight, explanatory = mage) 
+```
+
+Again, notice how the `births14` data itself doesn't change, but the `Response: weight (numeric)` and `Explanatory: mage (numeric)` *meta-data* do. This is similar to how the `group_by()` verb from `dplyr` doesn't change the data, but only adds "grouping" meta-data, as we saw in Week 3.
+
+## `hypothesize()` the null
+
+In order to conduct hypothesis tests using the `infer` workflow, we need a new step not present for confidence intervals: `hypothesize()`. Recall from @sec-understanding-ht that our hypothesis test was
+
+<center>
+
+$H_0: \beta_1 = 0$
+
+$H_A: \beta_1 \neq 0$
+
+</center>
+
+In other words, the null hypothesis $H_0$ corresponding to our "hypothesized universe" stated that there was no relationship between a baby's birth weight and a mother's age. We set this null hypothesis $H_0$ in our `infer` workflow using the `hypothesize()` function. We do, however, need to declare what we are assuming about the relationship between our variables. For our regression we are assuming there is no relationship between our variables or that they are`"independent"`.
+
+```{r hypothesize}
+#| echo: true
+
+births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  hypothesize(null = "independence")
+```
+
+Again, the data has not changed yet. In fact, we've just added one additional piece of *meta-data* the null hypothesis we are assuming.
+
+## `generate()` replicates
+
+```{r nreps}
+n_reps <- 1000L
+```
+
+After we `hypothesize()` the null hypothesis, we `generate()` replicates of "shuffled" datasets assuming the null hypothesis is true. We do this by repeating the shuffling exercise you performed in @sec-ht-activity several times. Instead of merely doing it 10 times, let's use the computer to repeat this `r n_reps` times by setting `` reps = `r n_reps` `` in the `generate()` function. However, unlike for confidence intervals where we generated replicates using `type = "bootstrap"` resampling with replacement, we'll now perform shuffles/permutations by setting `type = "permute"`. Recall that shuffles / permutations are a kind of resampling, but unlike the bootstrap method, they involve resampling *without* replacement.
+
+```{r generate}
+#| eval: true
+#| echo: true
+births_generate <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 1000, type = "permute")
+
+births_generate
+```
+
+Observe that the resulting data frame has `r nrow(births_generate) %>% scales::comma()` rows. This is because we performed shuffles / permutations for each of the `r nrow(births14)` rows `r n_reps` times and $`r (nrow(births14)*n_reps) %>% scales::comma()` = `r n_reps` \cdot `r nrow(births14)`$. If you explore the `births_generate` data frame, you would notice that the variable `replicate` indicates which resample each row belongs to. So it has the value `1` `r nrow(births14)` times, the value `2` `r nrow(births14)` times, all the way through to the value `r n_reps` `r nrow(births14)` times.
+
+## `calculate()` summary statistics
+
+Now that we have generated `r n_reps` replicates of "shuffles" assuming the null hypothesis is true, let's `calculate()` the appropriate summary statistic for each of our `r n_reps` shuffles. From @sec-understanding-ht, point estimates related to hypothesis testing have a specific name: *test statistics*. Since the unknown population parameter of interest is the relationship between baby birth weights and mother's ages for all births in the US in 2014, $\beta_1$, the test statistic here is the sample slope, $b_1$. For each of our `r n_reps` shuffles, we can calculate this test statistic by setting `stat = "slope"`.
+
+Let's save the result in a data frame called `null_distribution`:
+
+```{r calculate}
+#| eval: true
+#| echo: true
+null_distribution <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 1000, type = "permute")%>% 
+  calculate(stat = "slope")
+
+null_distribution
+```
+
+Observe that we have `r n_reps` values of `stat`, each representing one instance of $b_1$ in a hypothesized world of no relationship between these variables. Observe as well that we chose the name of this data frame carefully: `null_distribution`. Recall once again from @sec-understanding-ht that sampling distributions when the null hypothesis $H_0$ is assumed to be true have a special name: the *null distribution*.
+
+What was the *observed* relationship between a baby's birth weight and a mother's age in the `births14` dataset? In other words, what was the *observed test statistic* $b_1$? We could calculate this statistic two ways:
+
+1.  fitting a `lm()` and grabbing the coefficients using `get_regression_table()`
+2.  using infer to `calculate()` the observed statistic
+
+Going with option two, the process would look like this:
+
+```{r obs-slope}
+#| echo: true
+#| eval: false
+obs_slope <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  calculate(stat = "slope")
+```
+
+```{r}
+obs_slope
+```
+
+## `visualize()` the p-value
+
+The final step is to measure how surprised we are by a slope of `r obs_slope` in a hypothesized universe where there is no relationship between a baby's birth weight and a mother's age. If the observed slope of `r obs_slope` is highly unlikely, then we would be inclined to reject the validity of our hypothesized universe.
+
+We start by visualizing the *null distribution* of our `r n_reps` values of $b_1$ using `visualize()` in @fig-null-distribution-infer. Recall that these are values of the sample slope assuming $H_0$ is true.
+
+```{r null-distribution-infer}
+#| label: fig-null-distribution-infer
+#| fig-cap: "Null distribution of slope statistic."
+
+visualize(null_distribution) + 
+  labs(x = "Permuted (Shuffled) Slope Statistic")
+```
+
+Let's now add what happened in real life to @fig-null-distribution-infer, the observed slope for the relationship between baby birth weights and mother's ages of `r obs_slope`. Instead of merely adding a vertical line using `geom_vline()`, let's use the `shade_p_value()` function with `obs_stat` set to the observed test statistic (observed slope statistic) value we saved in `obs_slope`.
+
+Furthermore, we'll set the `direction = "two-sided"` reflecting our alternative hypothesis $H_A: \beta_1 \neq 0$, stating that there is a relationship between a baby's birth weight and a mother's age. As stated in @sec-understanding-ht, a two-sided hypothesis test does not make any assumptions about the direction of the relationship, meaning $\beta_1 < 0$ and $\beta_1 > 0$ are equally plausible. So, when calculating statistics that are "more extreme" than what we observed, we need to look in *both* tails.
+
+```{r null-distribution-infer-2}
+#| echo: true
+#| label: fig-null-distribution-infer-2
+#| fig-cap: "Shaded histogram to show $p$-value."
+
+visualize(null_distribution, bins = 10) + 
+  labs(x = "Permuted (Shuffled) Slope Statistic") +
+  shade_p_value(obs_stat = obs_slope, direction = "two-sided")
+```
+
+In the resulting @fig-null-distribution-infer-2, the solid dark line marks `r obs_slope`. However, what does the shaded-region correspond to? This is the $p$-value. Recall the definition of the $p$-value from @sec-understanding-ht:
+
+> A $p$-value is the probability of obtaining a test statistic just as or more extreme than the observed test statistic *assuming the null hypothesis* $H_0$ is true.
+
+So judging by the shaded region in @fig-null-distribution-infer-2, it seems we would somewhat rarely observe a slope statistic of `r obs_slope` or more extreme in a hypothesized universe where there is no relationship between a baby's birth weight and a mother's age. In other words, the $p$-value is somewhat small. Hence, we might be inclined to reject this hypothesized universe, or using statistical language we would "reject $H_0$."
+
+What fraction of the null distribution is shaded? In other words, what is the exact value of the $p$-value? We can compute it using the `get_p_value()` function with the same arguments as the previous `shade_p_value()` code:
+
+```{r p-value}
+null_distribution %>% 
+  get_p_value(obs_stat = obs_slope, direction = "two-sided")
+```
+
+```{r p-value-store}
+p_value <- null_distribution %>% 
+  get_p_value(obs_stat = obs_slope, direction = "two-sided") %>%
+  mutate(p_value = round(p_value, 3))
+```
+
+Keeping the definition of a $p$-value in mind, the probability of observing a slope statistic as large as `r round(obs_slope, digits = 3)` or something more extreme due to sampling variation alone in the null distribution is `r pull(p_value)` = `r pull(p_value) * 100`%. Since this $p$-value is larger than our pre-specified significance level $\alpha$ = 0.05, we fail to reject the null hypothesis $H_0: \beta_1 = 0$. In other words, this $p$-value **is not** small enough to reject our hypothesized universe where there is no relationship between a baby's birth weight and a mother's age. Notice how our interpretation of this p-value does not state that we *accept* the null hypothesis. Rather, we have insufficient evidence to reject it. I will discuss these differences more in @sec-trial.
+
+Observe that whether we reject the null hypothesis $H_0$ or not depends in large part on our choice of significance level $\alpha$, as if we had chosen an $\alpha$ of 0.1, we would have had sufficient evidence to reject the null hypothesis. We'll discuss this more in @sec-errors.
+
+# Interpreting a hypothesis test {#sec-ht-interpretation}
+
+Interpreting the results of hypothesis tests is one of the more challenging aspects of this method for statistical inference. In this section, we focus on ways to help with deciphering the process and address some common misconceptions.
+
+## Two possible outcomes {#sec-trial}
+
+In @sec-understanding-ht, we mentioned that given a pre-specified significance level $\alpha$ there are two possible outcomes of a hypothesis test:
+
+-   If the $p$-value is less than $\alpha$, then we *reject* the null hypothesis $H_0$ in favor of $H_A$.
+-   If the $p$-value is greater than or equal to $\alpha$, we *fail to reject* the null hypothesis $H_0$.
+
+Unfortunately, the latter result is often misinterpreted as "accepting the null hypothesis $H_0$." While at first glance it may seem that the statements "failing to reject $H_0$" and "accepting $H_0$" are equivalent, there actually is a subtle difference. Saying that we "accept the null hypothesis $H_0$" is equivalent to stating that "we think the null hypothesis $H_0$ is true." However, saying that we "fail to reject the null hypothesis $H_0$" is saying something else: "While $H_0$ might still be false, we don't have enough evidence to say so." In other words, there is an absence of enough proof. However, the absence of proof is not proof of absence. 🧐
+
+To further shed light on this distinction, let's use the United States criminal justice system as an analogy. A criminal trial in the United States is a similar situation to hypothesis tests whereby a choice between two contradictory claims must be made about a defendant who is on trial:
+
+1.  The defendant is truly either "innocent" or "guilty."
+2.  The defendant is presumed "innocent until proven guilty."
+3.  The defendant is found guilty only if there is *strong evidence* that the defendant is guilty. The phrase "beyond a reasonable doubt" is often used as a guideline for determining a cutoff for when enough evidence exists to find the defendant guilty.
+4.  The defendant is found to be either "not guilty" or "guilty" in the ultimate verdict.
+
+In other words, *not guilty* verdicts are not suggesting the defendant is *innocent*, but instead that "while the defendant may still actually be guilty, there wasn't enough evidence to prove this fact." Now let's make the connection with hypothesis tests:
+
+1.  Either the null hypothesis $H_0$ or the alternative hypothesis $H_A$ is true.
+2.  Hypothesis tests are conducted assuming the null hypothesis $H_0$ is true.
+3.  We reject the null hypothesis $H_0$ in favor of $H_A$ only if the evidence found in the sample suggests that $H_A$ is true. The significance level $\alpha$ is used as a guideline to set the threshold on just how strong of evidence we require.
+4.  We ultimately decide to either "fail to reject $H_0$" or "reject $H_0$."
+
+So while gut instinct may suggest "failing to reject $H_0$" and "accepting $H_0$" are equivalent statements, they are not. "Accepting $H_0$" is equivalent to finding a defendant innocent. However, courts do not find defendants "innocent," but rather they find them "not guilty." Putting things differently, defense attorneys do not need to prove that their clients are innocent, rather they only need to prove that clients are not "guilty beyond a reasonable doubt".
+
+So going back to the `births14` dataset, recall that our hypothesis test was $H_0: \beta_1 = 0$ versus $H_A: \beta_1 \neq 0$ and that we used a pre-specified significance level of $\alpha$ = 0.05. We found a $p$-value of `r pull(p_value)`. Since the $p$-value was smaller than $\alpha$ = 0.05, we rejected $H_0$. In other words, we found needed levels of evidence in this particular sample to say that $H_0$ is false at the $\alpha$ = 0.05 significance level. We also state this conclusion using non-statistical language: we found enough evidence in this data to suggest that there was gender discrimination at play.
+
+## Types of errors {#sec-errors}
+
+Unfortunately, there is some chance a jury or a judge can make an incorrect decision in a criminal trial by reaching the wrong verdict. For example, finding a truly innocent defendant "guilty". Or on the other hand, finding a truly guilty defendant "not guilty." This can often stem from the fact that prosecutors don't have access to all the relevant evidence, but instead are limited to whatever evidence the police can find.
+
+The same holds for hypothesis tests. We can make incorrect decisions about a population parameter because we only have a sample of data from the population and thus sampling variation can lead us to incorrect conclusions.
+
+There are two possible erroneous conclusions in a criminal trial: either (1) a truly innocent person is found guilty or (2) a truly guilty person is found not guilty. Similarly, there are two possible errors in a hypothesis test: either (1) rejecting $H_0$ when in fact $H_0$ is true, called a **Type I error** or (2) failing to reject $H_0$ when in fact $H_0$ is false, called a **Type II error**. Another term used for "Type I error" is "false positive," while another term for "Type II error" is "false negative."
+
+This risk of error is the price researchers pay for basing inference on a sample instead of performing a census on the entire population. But as we've seen in our numerous examples and activities so far, censuses are often very expensive and other times impossible, and thus researchers have no choice but to use a sample. Thus in any hypothesis test based on a sample, we have no choice but to tolerate some chance that a Type I error will be made and some chance that a Type II error will occur.
+
+To help understand the concepts of Type I error and Type II errors, we apply these terms to our criminal justice analogy in @fig-trial-errors-table.
+
+![Type I and Type II errors in criminal trials.](images/gt_error_table.png){#fig-trial-errors-table}
+
+Thus a Type I error corresponds to incorrectly putting a truly innocent person in jail, whereas a Type II error corresponds to letting a truly guilty person go free. Let's show the corresponding table in @fig-trial-errors-table-ht for hypothesis tests.
+
+![Type I and Type II errors in hypothesis tests.](images/gt_error_table_ht.png){#fig-trial-errors-table-ht}
+
+## How do we choose alpha? {#sec-choosing-alpha}
+
+If we are using a sample to make inferences about a population, we run the risk of making errors. For confidence intervals, a corresponding "error" would be constructing a confidence interval that does not contain the true value of the population parameter. For hypothesis tests, this would be making either a Type I or Type II error. Obviously, we want to minimize the probability of either error; we want a small probability of making an incorrect conclusion:
+
+-   The probability of a Type I Error occurring is denoted by $\alpha$. The value of $\alpha$ is called the *significance level* of the hypothesis test, which we defined in @sec-understanding-ht.
+-   The probability of a Type II Error is denoted by $\beta$. The value of $1-\beta$ is known as the *power* of the hypothesis test.
+
+In other words, $\alpha$ corresponds to the probability of incorrectly rejecting $H_0$ when in fact $H_0$ is true. On the other hand, $\beta$ corresponds to the probability of incorrectly failing to reject $H_0$ when in fact $H_0$ is false.
+
+Ideally, we want $\alpha = 0$ and $\beta = 0$, meaning that the chance of making either error is 0. However, this can never be the case in any situation where we are sampling for inference. There will always be the possibility of making either error when we use sample data. Furthermore, these two error probabilities are inversely related. As the probability of a Type I error goes down, the probability of a Type II error goes up.
+
+What is typically done in practice is to fix the probability of a Type I error by pre-specifying a significance level $\alpha$ and then try to minimize $\beta$. In other words, we will tolerate a certain fraction of incorrect rejections of the null hypothesis $H_0$, and then try to minimize the fraction of incorrect non-rejections of $H_0$.
+
+So for example if we used $\alpha$ = 0.01, we would be using a hypothesis testing procedure that in the long run would incorrectly reject the null hypothesis $H_0$ one percent of the time. This is analogous to setting the confidence level of a confidence interval.
+
+So what value should you use for $\alpha$? Different fields have different conventions, but some commonly used values include 0.10, 0.05, 0.01, and 0.001. However, it is important to keep in mind that if you use a relatively small value of $\alpha$, then all things being equal, $p$-values will have a harder time being less than $\alpha$. Thus we would reject the null hypothesis less often. In other words, we would reject the null hypothesis $H_0$ only if we have *very strong* evidence to do so. This is known as a "conservative" test.
+
+On the other hand, if we used a relatively large value of $\alpha$, then all things being equal, $p$-values will have an easier time being less than $\alpha$. Thus we would reject the null hypothesis more often. In other words, we would reject the null hypothesis $H_0$ even if we only have *mild* evidence to do so. This is known as a "liberal" test.
+
+# Comparison with confidence intervals {#comparing-infer-workflows}
+
+One of the great things about the `infer` package is that we can jump seamlessly between conducting hypothesis tests and constructing confidence intervals with minimal changes! Recall the code from the previous section that creates the null distribution, which in turn is needed to compute the $p$-value:
+
+```{r null-dist-again}
+#| eval: false
+null_distribution <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "slope")
+```
+
+To create the corresponding bootstrap distribution needed to construct a 95% confidence interval for $\beta_1$, we only need to make two changes. First, we remove the `hypothesize()` step since we are no longer assuming a null hypothesis $H_0$ is true. We can do this by deleting or commenting out the `hypothesize()` line of code. Second, we switch the `type` of resampling in the `generate()` step to be `"bootstrap"` instead of `"permute"`.
+
+```{r bootstrap-dist}
+#| echo: true
+bootstrap_distribution <- births14 %>% 
+  specify(response = weight, explanatory = mage) %>% 
+  # Change 1 - Remove hypothesize():
+  #hypothesize(null = "independence") %>% 
+  # Change 2 - Switch type from "permute" to "bootstrap":
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "slope")
+```
+
+Using this `bootstrap_distribution`, let's first compute the percentile-based confidence intervals, the same way we did last week:
+
+```{r}
+percentile_ci <- bootstrap_distribution %>% 
+  get_confidence_interval(level = 0.95, type = "percentile")
+percentile_ci
+```
+
+Using our shorthand interpretation for 95% confidence intervals we learned last week, we are 95% "confident" that the relationship between baby birth weights and mother's ages for all babies born in the US in 2014 is between (`r percentile_ci[["lower_ci"]] %>% round(4)`, `r percentile_ci[["upper_ci"]] %>% round(4)`). Let's visualize `bootstrap_distribution` and this percentile-based 95% confidence interval for $\beta_1$ in @fig-bootstrap-distribution-percentile.
+
+```{r visualize-ci}
+#| label: fig-bootstrap-distribution-percentile
+#| fig-cap: "Percentile-based 95% confidence interval."
+visualize(bootstrap_distribution) + 
+  shade_confidence_interval(endpoints = percentile_ci)
+```
+
+Notice a key value that is not included in the 95% confidence interval for $\beta_1$: the value 0. In other words, a difference of 0 is not included in our net, suggesting that the slope of the regression line is not 0.
+
+::: column-margin
+::: callout-tip
+If there is no linear relationship between two variables, then as $x$ increases nothing should happen with $y$. This corresponds to the slope of the regression line being 0.
+:::
+:::
+
+Since the bootstrap distribution appears to be roughly normally shaped, we can also use the standard error method as we did last week. In this case, we must specify the `point_estimate` argument as the observed slope statistic of `r obs_slope`. This value acts as the center of the confidence interval.
+
+```{r}
+se_ci <- get_confidence_interval(bootstrap_distribution, 
+                                 level = 0.95, 
+                                 type = "se", 
+                                 point_estimate = obs_slope)
+se_ci
+```
+
+Let's visualize `bootstrap_distribution` again, but now the standard error based 95% confidence interval for $\beta_1$ in @fig-bootstrap-distribution-se. Again, notice how the value 0 is not included in our confidence interval, again suggesting that there is a relationship between a baby's birth weight and a mother's age!
+
+```{r se-interval}
+#| label: fig-bootstrap-distribution-se
+#| fig-cap: "Standard error-based 95\\% confidence interval."
+
+visualize(bootstrap_distribution) + 
+  shade_confidence_interval(endpoints = se_ci)
+```
+
+## Statistical versus practical significance
+
+You might be wondering, how could we have rejected the null hypothesis that $\beta_1 = 0$, when the lower bound of our confidence interval is **really** close to 0. That's a great question! This question gets at the heart of the difference between statistical and practical significance.
+
+Statistical significance is defined by a $p$-value being smaller than some predetermined $\alpha$ threshold. However, the size of a p-value is not synonymous with the "effect size". By this I mean, a study can obtain a small $p$-value but have the estimated effect of the variable(s) be so small they would not be practically meaningful. In the context of the `births14` data, our hypothesis test concluded that there is a relationship between baby birth weights and mother's ages. Yet, based on the confidence interval, the estimated increase in birth weight for a 10-year increase in age is at most 0.2 lbs. I would not believe that the medical profession needs to provide medical interventions for younger mothers whose babies would have lower birth weights.
+
+This is why I frequently favor confidence intervals over hypothesis tests, as they allow for you to assess *both* the statistical significance--by checking if the null hypothesized value is included in the interval---**and** the practical significance--by assessing the size of the estimated effect.
+
+<!-- For example, suppose Cal Poly administrators are interested in studying the relationship between a student's GPA and the number of sporting events they attend. The administrators fit the regression model^[Well, likely their statistician or data scientist does. 😆] and find that there is a relationship between going to one a -->
+
+# Theory-based hypothesis tests & confidence intervals
+
+We've so far focused only on obtaining confidence intervals and p-values using simulation-based methods, where we resampled from our original dataset. There is, however, another method we could have used to do both these things. This method is called a "theory-based" method, which relies on probability models, probability distributions, and a few assumptions to approximate the sampling and null distributions. This is in contrast to the approaches we've used thus far, where we relied on computer simulations to construct the bootstrap and null distribution.
+
+These traditional theory-based methods have been used for decades mostly because researchers didn't have access to computers that could run thousands of calculations quickly and efficiently. Now that computing power is much cheaper and more accessible, simulation-based methods are much more feasible. However, researchers in many fields continue to use theory-based methods. Hence, I make it a point to include an example here. As we'll see in this section, any theory-based method is ultimately an approximation to the simulation-based method.
+
+## Interpreting regression tables {#regression-interp}
+
+Previously, when we interpreted a regression table, like the one shown in @tbl-regression, we focused entirely on the `term` and `estimate` columns. Let's now shift our attention to the remaining columns: `std_error`, `statistic`, `p_value`, `lower_ci` and `upper_ci`.
+
+```{r regression-table}
+#| label: tbl-regression
+#| tbl-cap: "Regression table for estimated coefficients from regression on birth weight and mother's age."
+
+births_lm <- lm(weight ~ mage, data = births14)
+
+get_regression_table(births_lm) %>%
+  knitr::kable(
+    digits = 4,
+    booktabs = TRUE,
+    linesep = ""
+  ) %>%
+  kableExtra::kable_styling()
+```
+
+R, the programming language has been around since roughly 1997, a period when computers were not able to run the simulations we can today. Thus, the calculations R provides in the `std_error`, `statistic`, `p_value`, `lower_ci` and `upper_ci` columns **are not** found using simulation-based methods. Rather, R uses a theory-based approach using mathematical formulas. These formulas were derived in a time when computers didn't exist, so it would've been incredibly labor intensive to run extensive simulations.
+
+### Standard error {#regression-se}
+
+The third column of the regression table in @tbl-regression, `std_error`, corresponds to the *standard error* of our estimates. Recall the definition of **standard error** we saw last week:
+
+> The *standard error* is the standard deviation of any point estimate computed from a sample.
+
+So what does this mean in terms of the fitted slope $b_1$ = `r obs_slope`? This value is just one possible value of the fitted slope resulting from *this particular sample* of $n$ = `r nrow(births14)` birth records. However, if we collected a different sample of $n$ = `r nrow(births14)` birth records, we will almost certainly obtain a different fitted slope $b_1$. This is due to *sampling variability*.
+
+Say we hypothetically collected `r n_reps` such birth records, computed the `r n_reps` resulting values of the fitted slope $b_1$, and visualized them in a histogram. This would be a visualization of the *sampling distribution* of $b_1$, which we defined last week. Further recall that the standard deviation of the *sampling distribution* of $b_1$ has a special name: the *standard error*.
+
+Last week, we used the `infer` package to construct the bootstrap distribution for $b_1$ in this case. Recall that the bootstrap distribution is an *approximation* to the sampling distribution in that they have a similar shape. Since they have a similar shape, they have similar *standard errors*. However, unlike the sampling distribution, the bootstrap distribution is constructed from a *single* sample, which is a practice more aligned with what's done in real life.
+
+Rather than resampling from our original sample to create a bootstrap distribution, we could have instead used theory-based methods to estimated the standard error of the sampling distribution. In particular, there is a formula for the standard error of the fitted slope $b_1$:
+
+$$\text{SE}_{b_1} = \dfrac{\dfrac{s_y}{s_x} \cdot \sqrt{1-r^2}}{\sqrt{n-2}}$$
+
+As with many formulas in statistics, there's a lot going on here, so let's first break down what each symbol represents. First $s_x$ and $s_y$ are the *sample standard deviations* of the explanatory variable `mage` and the response variable `weight`, respectively. Second, $r$ is the sample *correlation coefficient* between `mage` and `weight`. This was computed as `r cor(births14$weight, births14$mage) %>% round(3)`. Lastly, $n$ is the number of pairs of points (birth weight, mother's age) in the `births14` data frame, here `r nrow(births14)`.
+
+To put this formula into words, the standard error of $b_1$ depends on the relationship between the variability of the response variable and the variability of the explanatory variable as measured in the $s_y / s_x$ term. Next, it looks into how the two variables relate to each other in the $\sqrt{1-r^2}$ term.
+
+However, the most important observation to make in the previous formula is that there is an $n - 2$ in the denominator. In other words, as the sample size $n$ increases, the standard error $\text{SE}_{b_1}$ decreases. Just as we demonstrated last week, when we increase our sample size the amount of sampling variation of the fitted slope $b_1$ will depend on the sample size $n$. In particular, as the sample size increases, both the sampling and bootstrap distributions narrow and the standard error $\text{SE}_{b_1}$ decreases. Hence, our estimates of $b_1$ for the true population slope $\beta_1$ get more and more *precise*.
+
+### Test statistic {#regression-test-statistic}
+
+The fourth column of the regression table in @tbl-regression, `statistic`, corresponds to a *test statistic* relating to the following *hypothesis test*:
+
+<center>
+
+$H_0: \beta_1 = 0$
+
+$H_A: \beta_1 \neq 0$
+
+</center>
+
+Here, our *null hypothesis* $H_0$ assumes that the population slope $\beta_1$ is 0. If the population slope $\beta_1$ is truly 0, then this is saying that there is *no relationship* between a baby's birth weight and a mother's age for *all* births in the US in 2014. In other words, $x$ = mother's age would have no associated effect on $y$ = baby's birth weight.
+
+The *alternative hypothesis* $H_A$, on the other hand, assumes that the population slope $\beta_1$ is not 0, meaning it could be either positive or negative. This suggests either a positive or negative relationship between a baby's birth weight and a mother's age. Recall we called such alternative hypotheses *two-sided*.
+
+::: column-margin
+::: callout-caution
+By convention, all hypothesis testing for regression assumes two-sided alternatives.
+:::
+:::
+
+The `statistic` column in the regression table is a tricky one, however. It corresponds to a standardized *t-test statistic*. The *null distribution* can be mathematically proven to be a $t$-distribution, under specific conditions (described in @sec-conditions). R uses the following $t$-statistic as the test statistic for hypothesis testing:
+
+$$
+t = \dfrac{ b_1 - \beta_1}{ \text{SE}_{b_1}}
+$$
+
+And since the null hypothesis $H_0: \beta_1 = 0$ is assumed during the hypothesis test, the $t$-statistic becomes
+
+$$
+t = \dfrac{ b_1 - 0}{ \text{SE}_{b_1}} = \dfrac{ b_1 }{ \text{SE}_{b_1}}
+$$
+
+What are the values of $b_1$ and $\text{SE}_{b_1}$? They are in the `estimate` and `std_error` column of the regression table in @tbl-regression. Thus the value of `r slope_table$statistic` in the table is computed as `r slope_table$estimate` / `r slope_table$std_error` = `r round(slope_table$estimate / slope_table$std_error, digits = 3)`. Note there is a difference due to some rounding error here.
+
+### p-value
+
+The fifth column of the regression table in @tbl-regression, `p_value`, corresponds to the *p-value* of the hypothesis test $H_0: \beta_1 = 0$ versus $H_A: \beta_1 \neq 0$.
+
+Again recalling our terminology, notation, and definitions related to hypothesis tests we introduced in @sec-understanding-ht, let's focus on the definition of the $p$-value:
+
+> A *p-value* is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic *assuming the null hypothesis* $H_0$ is true.
+
+Recall that you can intuitively think of the $p$-value as quantifying how "extreme" the observed fitted slope of $b_1$ = `r round(obs_slope, digits = 3)` is in a "hypothesized universe" where there is no relationship between a baby's birth weight and a mother's age.
+
+::: callout-tip
+If you're a bit rusty on the $t$-distribution, [here](https://www.jmp.com/en_us/statistics-knowledge-portal/t-test/t-distribution.html#:~:text=The%20shape%20of%20the%20t,more%20like%20a%20z%2Ddistribution) is an article describing how degrees of freedom relate to the shape of the $t$-distribution.
+:::
+
+More precisely, however, the $p$-value corresponds to how extreme the observed test statistic of `r obs_slope` is when compared to the appropriate *null distribution*. Recall from @sec-understanding-ht, that a null distribution is the sampling distribution of the test statistic *assuming the null hypothesis* $H_0$ is true. It can be mathematically proven that a $t$-distribution with degrees of freedom equal to $df = n - 2 = `r nrow(births14)` - 2 = `r nrow(births14) - 2`$ is a reasonable approximation to the null distribution, if certain conditions for inference are not violated. We will discuss these conditions shortly in @sec-conditions.
+
+### Confidence interval
+
+The two rightmost columns of the regression table in @tbl-regression, `lower_ci` and `upper_ci`, correspond to the endpoints of the 95% *confidence interval* for the population slope $\beta_1$. What are the calculations that went into computing the two endpoints of the 95% confidence interval for $\beta_1$?
+
+Recall from the SE method for constructing confidence intervals, for any distribution that resemble a Normal Distribution[^2], we could use the empiracle rule to create a 95% confidence interval:
+
+[^2]: meaning they are bell shaped and symmetric
+
+```{r multiplier}
+z_star <- qnorm(0.975) %>% round(2)
+```
+
+<center>$b_1 \pm SE_{b_1} \times$ `r z_star`</center>
+
+</br>
+
+What is the value of the standard error $SE_{b_1}$? It is in fact in the third column of the regression table in @tbl-regression: `r slope_table$std_error`. Plugging in the respective values, we have:
+
+<center>
+
+`r slope_table$estimate` $\pm$ `r slope_table$std_error` $\times$ `r z_star`
+
+`r slope_table$estimate` $\pm$ `r slope_table$std_error * z_star`
+
+(`r slope_table$estimate - (slope_table$std_error * z_star)`, `r slope_table$estimate + (slope_table$std_error * z_star)`)
+
+</center>
+
+</br>
+
+This closely matches the $(`r slope_table$lower_ci`,`r slope_table$upper_ci`)$ confidence interval in the last two columns of @tbl-regression, with slight differences due to rounding.
+
+Much like p-values, the results of this confidence interval also are only valid if the conditions for inference are not violated.
+
+## Conclusion
+
+Don't worry if you're feeling a little overwhelmed at this point. There is a lot of background theory to understand before you can fully make sense of the equations for theory-based methods. That being said, theory-based methods and simulation-based methods for constructing confidence intervals and conducting hypothesis tests often yield consistent results. As mentioned before, in my opinion, two large benefits of simulation-based methods over theory-based are that (1) they are easier for people new to statistical inference to understand, and (2) they also work in situations where theory-based methods and mathematical formulas don't exist.
+
+## Everything is one test
+
+While this is a lot to digest, especially the first time you encounter hypothesis testing, the nice thing is that once you understand this general framework, then you can understand *any* hypothesis test. In a famous blog post, computer scientist Allen Downey called this the ["There is only one test"](http://allendowney.blogspot.com/2016/06/there-is-still-only-one-test.html) framework, for which he created the flowchart displayed in @fig-htdowney.
+
+![Allen Downey's hypothesis testing framework.](images/there_is_only_one_test.png){#fig-htdowney}
+
+Notice its similarity with the "hypothesis testing with `infer`" diagram you saw in @fig-infer-ht. That's because the `infer` package was explicitly designed to match the "There is only one test" framework. So if you can understand the framework, you can easily generalize these ideas for all hypothesis testing scenarios.
+
+# Checking Model Conditions {#sec-conditions}
+
+Recall last week how we stated that we could only use the standard-error-based method for constructing confidence intervals if the bootstrap distribution was bell shaped. Similarly, there are certain conditions that cannot be violated for the results of our hypothesis tests and confidence intervals to have meaning.
+
+::: callout-caution
+Notice how I'm saying the conditions cannot be viola ted and not that the conditions need to be met? To me, this language is very similar to the difference between failing to reject the null and accepting the null. Let's pose these two options as hypotheses:
+
+$H_0$: the conditions are met
+
+$H_A$: the conditions are violated
+
+If we have insufficient evidence to say that the conditions are violated, then that's all we can say. We cannot say that the conditions are met, as that would be equivalent to saying that we've accepted our null hypothesis!
+:::
+
+## Conditions for regression
+
+For inference for regression, there are four conditions that cannot be violated. Note the first four letters of these conditions are highlighted in bold in what follows: **LINE**. This can serve as a nice reminder of what to check for whenever you perform linear regression.
+
+1.  **L**inearity of relationship between variables
+2.  **I**ndependence of the residuals
+3.  **N**ormality of the residuals
+4.  **E**quality of variance of the residuals
+
+Conditions **L**, **N**, and **E** can be verified through what is known as a *residual analysis*. Condition **I** can only be verified through an understanding of how the data was collected.
+
+### Residuals refresher
+
+Recall our definition of a residual: it is the *observed value* minus the *fitted value* denoted by $y - \widehat{y}$. Recall that residuals can be thought of as the error or the "lack-of-fit" between the observed value $y$ and the fitted value $\widehat{y}$ on the regression line in @fig-births-slr. In @fig-residual-example, we illustrate one particular residual out of `r nrow(births14)` using an arrow, as well as its corresponding observed and fitted values using a circle and a square, respectively.
+
+```{r residual-example}
+#| label: fig-residual-example
+#| fig-cap: "Example of observed value, fitted value, and residual."
+
+# Pick out one particular point to drill down on
+index <- filter(births14, 
+                mage > 42, 
+                mage < 45,
+                weight < 5)
+  
+target_point <- births_lm %>%
+  get_regression_points() %>%
+  semi_join(index, by = "ID")
+
+x <- target_point$mage
+y <- target_point$weight
+y_hat <- target_point$weight_hat
+resid <- target_point$residual
+
+# Plot residual
+ggplot(data = births14, 
+                        mapping = aes(x = mage, y = weight)) +
+  geom_jitter() +
+  labs(
+    x = "Mother's Age", 
+    y = "Baby's Birth Weight (lbs)",
+    ) +
+  geom_smooth(method = "lm", se = FALSE) +
+  annotate("point", x = x, y = y, col = "red", size = 5) +
+  annotate("point", x = x, y = y_hat, col = "red", shape = 15, size = 4) +
+  annotate("segment",
+           x = x, 
+           xend = x,
+           y = y, 
+           yend = y_hat, 
+           color = "blue",
+           arrow = arrow(type = "closed",
+                         length = unit(0.02, "npc")
+                         )
+           )
+```
+
+Furthermore, we can automate the calculation of all $n$ = `r nrow(births14)` residuals by applying the `get_regression_points()` function to our saved regression model in `births_lm`. Observe how the resulting values of `residual` are roughly equal to `mage - mage_hat` (there is potentially a slight difference due to rounding error).
+
+```{r regression-points}
+#| echo: true
+# Fit regression model:
+births_lm <- lm(weight ~ mage, data = births14)
+# Get regression points:
+regression_points <- get_regression_points(births_lm)
+regression_points
+```
+
+A *residual analysis* is used to verify conditions **L**, **N**, and **E** and can be performed using appropriate data visualizations. While there are more sophisticated statistical approaches that can also be done, we'll focus on the much simpler approach of looking at plots.
+
+### Linearity of relationship
+
+The first condition is that the relationship between the outcome variable $y$ and the explanatory variable $x$ must be **L**inear. Recall the scatterplot in @fig-births-slr where we had the explanatory variable $x$ as mother's age and the outcome variable $y$ as baby's birth weight. Would you say that the relationship between $x$ and $y$ is linear? It's hard to say because of the scatter of the points about the line. In my opinion, this relationship is "linear enough."
+
+Let's present an example where the relationship between $x$ and $y$ is clearly not linear in @fig-non-linear. In this case, the points clearly follow a curved relationship, more closely resembling a [logarithmic scale](https://www.rapidtables.com/math/algebra/logarithm/logarithm-graph.html). In this case, any results from an inference for regression would not be valid.
+
+```{r non-linear}
+#| label: fig-non-linear
+#| fig-cap: "Example of a clearly non-linear relationship."
+#| warning: false
+#| message: false
+
+lterdatasampler::and_vertebrates %>% 
+  filter(species == "Cutthroat trout") %>% 
+  ggplot(mapping = aes(x = weight_g, y = length_1_mm)) +
+  geom_point() +
+  labs(x = "Weight (g)",
+       y = "Length (mm)", 
+       title = "Cutthroat trout in Mack Creek, Andrews Forest LTER") +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+### Independence of residuals
+
+The second condition is that the residuals must be **I**ndependent. In other words, the different observations in our data must be independent of one another.
+
+For the `evals` dataset, while there is data on `r nrow(evals)` courses, these `r nrow(evals)` courses were actually taught by `r evals %>% select(prof_ID) %>% n_distinct()` unique instructors. In other words, the same professor is often included more than once in our data. For a professor in the `evals` data who taught multiple classes, it seems reasonable to expect that their teaching scores will be related to each other. If a professor gets a high `score` in one class, chances are fairly good they'll get a high `score` in another. This dataset thus provides different information than if we had `r nrow(evals)` unique instructors teaching the `r nrow(evals)` courses.
+
+In this case, we say there exists *dependence* between observations. So in this case, the independence condition is violated. The most appropriate analysis would take into account that we have *repeated measures* for the same profs, but that is beyond the scope of this class. What we could do, however, is devise a method to collapse the multiple observations for each professor into **one** observation. This could be done a variety of ways:
+
+-   randomly selecting one observation per professor
+-   taking the mean of their scores[^3]
+-   selecting the maximum / minimum / median value
+
+[^3]: Taking the mean of observations assumes they are inherently similar, so we shouldn't calculate the mean of evaluation scores that are very different!
+
+### Normality of residuals
+
+The third condition is that the residuals should follow a **N**ormal distribution. Furthermore, the center of this distribution should be 0. In other words, sometimes the regression model will make positive errors: $y - \widehat{y} > 0$. Other times, the regression model will make equally negative errors: $y - \widehat{y} < 0$. However, *on average* the errors should equal 0 and their shape should be similar to that of a bell.
+
+The simplest way to check the normality of the residuals is to look at a histogram, which we visualize in @fig-model1residualshist.
+
+```{r error-hist}
+#| echo: true
+#| eval: false
+
+regression_points <- get_regression_points(births_lm)
+
+ggplot(data = regression_points, 
+       mapping = aes(x = residual)) +
+  geom_histogram(binwidth = 0.25, color = "white") +
+  labs(x = "Residual")
+```
+
+```{r model1residualshist}
+#| label: fig-model1residualshist
+#| fig-cap: "Histogram of residuals from regression model for baby birth weight as predicted by mother's age."
+
+ggplot(data = regression_points, 
+       mapping = aes(x = residual)) +
+  geom_histogram(binwidth = 0.25, color = "white") +
+  labs(x = "Residual")
+```
+
+This histogram shows that we have more negative residuals than negative. Since the residual $y-\widehat{y}$ is negative when $y < \widehat{y}$, it seems our regression model's fitted baby birth weights ($\widehat{y}$) tend to *overestimate* the birth weight $y$. Furthermore, this histogram has a *left-skew* in that there is a longer tail on the left. This is another way to say the residuals exhibit a *negative skew*.
+
+Is this a problem? Again, there is a certain amount of subjectivity in the response. In my opinion, while there is a slight skew to the residuals, I don't believe it is so bad that I would say this condition is violated. On the other hand, others might disagree with our assessment.
+
+Let's present examples where the residuals clearly do and don't follow a normal distribution in @fig-normal-residuals. In this case of the model yielding the clearly non-normal residuals on the right, any results from an inference for regression would not be valid.
+
+```{r normal-residuals}
+#| label: fig-normal-residuals
+#| fig-cap: "Example of clearly normal and clearly not normal residuals."
+
+tibble(
+  `Clearly normal` = rnorm(n = 1000, 0, sd = 2),
+  `Clearly not normal` = rnorm(n = 1000, mean = 0, sd = 2)^2
+  ) %>% 
+  mutate(`Clearly not normal` = `Clearly not normal` - mean(`Clearly not normal`)
+         ) %>%
+  pivot_longer(cols = everything(), 
+               names_to = "type", 
+               values_to = "eps") %>%
+  ggplot(mapping = aes(x = eps)) +
+  geom_histogram(binwidth = 1) +
+  labs(x = "Residual") +
+  facet_wrap(~type, scales = "free")
+```
+
+### Equality of variance
+
+The fourth and final condition is that the residuals should exhibit **E**qual variance across all values of the explanatory variable $x$. In other words, the value and spread of the residuals should not depend on the value of the explanatory variable $x$.
+
+Recall the scatterplot in @fig-births-slr: we had the explanatory variable $x$ of mother's age on the x-axis and the outcome variable $y$ of baby's birth weight on the y-axis. Instead, let's create a scatterplot that has the same values on the x-axis, but now with the residual $y-\widehat{y}$ on the y-axis as seen in @fig-equal-var.
+
+```{r equal-var-code}
+#| eval: false
+#| echo: true
+
+ggplot(data = regression_points, 
+       mapping = aes(x = mage, y = residual)) +
+  geom_point() +
+  labs(x = "Mother's Age", y = "Residual") +
+  geom_hline(yintercept = 0, col = "blue", size = 1)
+```
+
+```{r equal-var}
+#| label: fig-equal-var
+#| fig-cap: "Plot of residuals over mother's age."
+
+ggplot(data = regression_points, 
+       mapping = aes(x = mage, y = residual)) +
+  geom_point() +
+  labs(x = "Mother's Age", y = "Residual") +
+  geom_hline(yintercept = 0, col = "blue", size = 1)
+```
+
+You can think of @fig-equal-var a modified version of the plot with the regression line in @fig-births-slr, but with the regression line flattened out to $y=0$. Looking at this plot, would you say that the spread of the residuals around the line at $y=0$ is constant across all values of the explanatory variable $x$ of mother's age? This question is rather qualitative and subjective in nature, thus different people may respond with different answers. For example, some people might say that there is slightly more variation in the residuals for ages between 20 and 40 than for ages below 20 and above 40. However, it can be argued that there isn't a *drastic* non-constancy. Moreover, this could be an artifact of having smaller numbers of younger / older mothers in the sample.
+
+In @fig-non-equal-variance-residuals I present an example where the residuals clearly do not have equal variance across all values of the explanatory variable $x$.
+
+```{r equal-variance-residuals}
+#| label: fig-non-equal-variance-residuals
+#| fig-cap: "Example of clearly non-equal variance."
+
+evals %>%
+  mutate(eps = (rnorm(n(), 0, 0.075 * bty_avg^2)) * 0.4) %>%
+  ggplot(aes(x = bty_avg, y = eps)) +
+  geom_point() +
+  labs(x = "Beauty Score", y = "Residual") +
+  geom_hline(yintercept = 0, col = "blue", size = 1)
+```
+
+Observe how the spread of the residuals increases as the value of $x$ increases. This is a situation known as *heteroskedasticity*. Any inference for regression based on a model yielding such a pattern in the residuals would not be valid.
+
+### What's the conclusion? {#what-is-the-conclusion}
+
+Let's list our four conditions for inference for regression again and indicate whether or not they were violated in our analysis:
+
+1.  **L**inearity of relationship between variables: No
+2.  **I**ndependence of residuals: No
+3.  **N**ormality of residuals: Slight left-skew, but not too concerning
+4.  **E**quality of variance: No
+
+So what does this mean for the results of our confidence intervals and hypothesis tests in @sec-ht-interpretation? Since none of the conditions were viola ted, we can have faith in the confidence intervals and $p$-values calculated before. If, however, any of these conditions were violated, we would need to pause and reconsider our model.
+
+When the **I**ndependence condition is violated, there exist dependencies between the observations in the dataset. To remedy this, you will need to use a statistical model which accounts for this dependency structure. One such technique is called hierarchical/multilevel modeling, which you may learn about in more advanced statistics courses.
+
+When conditions **L**, **N**, **E** are violated, it often means there is a shortcoming in our model. For example, it may be the case that using only a single explanatory variable is insufficient. We may need to incorporate more explanatory variables in a multiple regression model as we did in previously, or perhaps use a transformation of one or more of your variables, or use an entirely different modeling technique. To learn more about addressing such shortcomings, you'll have to take a class on or read up on more advanced regression modeling methods.
+
+The conditions for inference in regression problems are a key part of regression analysis that are of vital importance to the processes of constructing confidence intervals and conducting hypothesis tests. However, it is often the case with regression analysis in the real world that some of these conditions may be violated. Furthermore, as you saw, there is a level of subjectivity in the residual analyses to verify the **L**, **N**, and **E** conditions. So what can you do? As a statistics educator, I advocate for transparency in communicating all results. This lets the stakeholders of any analysis know about a model's shortcomings or whether the model is "good enough." So while this checking of assumptions has lead to some fuzzy "it depends" results, we decided as authors to show you these scenarios to help prepare you for difficult statistical decisions you may need to make down the road.
+
+# References

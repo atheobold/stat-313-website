@@ -1,0 +1,16 @@
+{
+  "hash": "3564fa5c6410c4ced8937d1c75392143",
+  "result": {
+    "markdown": "---\ntitle: \"Model Justification\"\nformat: pdf\neditor: visual\nexecute: \n  echo: false\n  message: false\n  warning: false\n---\n\n\n\n\nThis study seeks to investigate how the relationship between average SAT math\nscores and the percentage of students who are economically disadvantaged \ndiffers based on the size of the school. As seen in the plot below, the slope\nfor this relationship was found to be similar across the different levels of\nschools. Therefore, this study used a parallel slopes (additive) multiple linear\nregression model.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](week-5-model-justification_files/figure-pdf/unnamed-chunk-2-1.pdf)\n:::\n:::\n\n\n\\vspace{0.5in}\n\n\\begin{center}\n\n\\textbf{What do you feel is missing from this model justification?}\n\n\\end{center}\n",
+    "supporting": [
+      "week-5-model-justification_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

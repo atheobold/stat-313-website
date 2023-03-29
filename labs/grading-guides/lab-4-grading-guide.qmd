@@ -1,0 +1,210 @@
+---
+title: "Lab 4: Grading Guide"
+format: 
+  html: 
+    self-contained: true
+editor: visual
+execute: 
+  eval: false
+---
+
+Q1 - \
+Q2 - \
+Q3 - \
+Q4 - \
+Q5 - \
+Q6 - \
+Q7 - \
+Q8 - \
+Q9 - \
+Q10 - \
+
+
+# Question 1 -- Size of `ntl_icecover` dataset
+
+**Success**:
+
+-   has `glimpse()` somewhere in their code
+-   states there are **334** rows and **5** columns
+
+**Growing**:
+
+-   If no code is present
+-   If they provide incorrect size of data
+
+::: {.callout-note}
+If they say there are 431 rows, they got their answer from the help file! 
+
+*Feedback:* Careful! The best way to obtain information about the dataset is using the glimpse() function! 
+:::
+
+# Question 2 -- Scatterplot
+
+**Success:** Code should look like the following
+
+```{r}
+ggplot(data = ntl_icecover, 
+       mapping = aes(y = ice_duration, x = year)) +
+  geom_point() +
+  labs(x = "Year", 
+       y = "Ice Duration (days)")
+```
+
+**Growing:**
+
+-   Doesn't change axis labels
+
+*Feedback:* For Question 2, you were asked to give your visualization nice axis labels. Note that means BOTH axes!
+
+-   Doesn't include units (days) in y-axis label
+
+*Feedback:* For Question 2, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?
+
+
+# Question 3 -- Describe the regression line
+
+**Success**: Addresses form, direction, strength and unusual points.
+
+- Form: Linear
+- Direction: Negative
+- Strength: Moderate
+- Outliers: Maybe the 2001 observation with ~20 days of ice?
+
+
+**Growing**:
+
+- If they don't discuss one of the for aspects.
+
+*Feedback:* For Question 3, you were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!
+
+- If they say there are unusual points / outliers but don't say where.
+
+*Feedback:* For Question 3, if you believe there are unusual observations you need to tell the reader where these points are! 
+
+
+# Question 4 -- Add a regression line
+
+**Success**:
+
+-   Includes regression line with `geom_smooth()` **and** `method = "lm"` option
+
+::: {.callout-note}
+They don't need to turn the standard errors off (`se = FALSE`), but great if they did! 
+:::
+
+**Growing**:
+
+- If they do not add regression line
+
+*Feedback:* For Question 4, you needed to add a regression line to the previous scatterplot!
+
+- If they do not use `method = "lm"` to get straight line
+
+*Feedback:* For Question 4, you need to have a **straight** line, not a wiggly line! 
+
+# Question 5 -- Find correlation
+
+**Success:** Code should look like the following
+
+```{r}
+get_correlation(data = ntl_icecover, ice_duration ~ year, na.rm = TRUE)
+```
+
+**Growing:**
+
+- Doesn't remove NAs
+
+*Feedback:* For Question 5, it is important to remove the NAs before calculation the correlation! Is there another argument (input) for the get_correlation() function that allows you to remove the missing values?
+
+# Question 6 -- Fit linear regression
+
+**Success:** Code should look like the following
+
+```{r}
+my_model <- lm(ice_duration ~ year, data = ntl_icecover)
+```
+
+**Growing**:
+
+- Swaps response and explanatory
+
+*Feedback:* Careful! With the `lm()` function the response variable goes first (before the `~`) and the explanatory comes second (after the `~`).
+
+# Question 7 -- Get regression table
+
+**Success:** Code should look like the following
+
+```{r}
+get_regression_table(my_model)
+```
+
+**Growing**:
+
+- Doesn't use the `get_regression_table()` function
+
+*Feedback:* For Question 7, we want out model output to look tidy, which is why we use the `get_regression_table()` function! 
+
+# Question 8 -- Write out regression equation
+
+**Success**:
+
+$$ \widehat{\text{ice duration}} = 495 - 0.203 \times (\text{year})$$
+
+- Indicates the response (ice duration not y) is estimated / predicted / the mean with either a hat or with language
+- Inputs values in correct location
+- References `year`(not x)
+
+**Growing**:
+
+- Does not indicate the response (ice duration) is estimated / predicted / the mean
+
+*Feedback:* For Question 8, remember the estimated regression equation has a hat over y. What does that hat mean? How can you incorporate that into your regression equation? 
+
+- Uses x and y instead of variable names
+
+*Feedback:* When writing out the regression equation, you need to reference the context of the line that was found. What variable was the response? What variable was the explanatory? 
+
+::: {.callout-note}
+If they use x and y in the equation but then define what variables they are associated with, that is okay!
+:::
+
+
+# Question 9 -- Interpret slope 
+
+**Success**:
+
+- Correct interpretation of slope for 1 year increase
+  * 1 year increase
+  * mean / predicted / estimated ice duration 
+  * decreases by 0.203 days
+
+- Correct interpretation of slope for 100 year increase
+  * 100 year increase
+  * mean / predicted / estimated ice duration 
+  * decreases by 20.3 days
+  
+**Growing**:
+
+- Incorrect interpretation of the slope
+
+*Feedback:* For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable.
+
+- Does not interpret the slope for a 100 year change.
+
+*Feedback:* For Question 9, you were asked to interpret the slope for a 100 year increase, too!
+
+# Question 10 -- Multivariate plot
+
+**Success:** Code should look like the following
+
+```{r}
+ggplot(data = ntl_icecover, 
+       mapping = aes(y = ice_duration, x = year, color = lakeid)) +
+  geom_point() +
+  labs(x = "Year", 
+       y = "Ice Duration (days)")
+```
+
+**Growing**:
+
+????

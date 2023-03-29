@@ -1,230 +1,184 @@
 ---
-title: "Lab 2 - College scorecard"
+title: "Visualizing and Summarizing Numerical Data"
+author: "Your group's names here!"
+date: "The date goes here!"
+format: html
+embed-resources: true
+standalone: true
 editor: visual
-reference-location: margin
+execute: 
+  echo: true
+  eval: false
+  warning: false
+  message: false
 ---
-
-## Introduction
-
-In today's lab, you'll use simple linear regression to analyze the relationship between the admissions rate and total cost for colleges and universities in the United States.
-
-### Learning goals
-
-By the end of the lab you will...
-
--   Be able to fit a simple linear regression model using R.
--   Be able to interpret the slope and intercept for the model.
--   Be able to use statistical inference to draw conclusions about the slope.
--   Continue developing a workflow for reproducible data analysis.
 
 ## Getting started
 
--   Go to the [sta210-s22](https://www.github.com/sta210-s22) organization on GitHub.
-    Click on the repo with the prefix **lab-2**.
-    It contains the starter documents you need to complete the lab.
+### Load packages
 
--   Clone the repo and start a new project in RStudio.
-    See the [Lab 1 instructions](labs/lab-1.html) for details on cloning a repo, starting a new R project and configuring git.
+Let's load the following packages:
 
-## Packages
+-   The **tidyverse** "umbrella" package which houses a suite of many different `R` packages for data wrangling and data visualization
 
-We will use the following package in today's lab.
+-   Note: This did not work last week, but should this week!
 
-```{r}
-#| message: false
+-   The **openintro** `R` package: houses the dataset we will be working with
 
-library(tidyverse)  # for data wrangling + visualization
-library(tidymodels) # for modeling
-library(knitr)      # for pretty printing of tables
+```{r packages}
+# Package for functions 
+library(tidyverse)
+
+# Package for data
+library(openintro)
 ```
 
-## Data: College scorecard
+### The data
 
-The data for this lab is from the `scorecard` data set in the **rcfss** R package.
-It includes information originally obtained from the [U.S. Department of Education's College Scorecard](https://collegescorecard.ed.gov/data/) for 1753 colleges and universities during the 2018 - 2019 academic year.
+The [Bureau of Transportation Statistics](http://www.rita.dot.gov/bts/about/) (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.
 
-The lab focuses on the following variables:
+First, we'll view the `nycflights` data frame. Run the following code to load in the data:
 
--   `admrate`: Undergraduate admissions rate (from 0-100%)
-
--   `cost`: The average annual total cost of attendance, including tuition and fees, books and supplies, and living expenses
-
--   `type`: Type of college (Public; Private, nonprofit; Private, for-profit)
-
-[Click here](https://uc-cfss.github.io/rcfss/reference/scorecard.html) to see a full list of variables and definitions.
-
-Use the code below to load the data set.
-
-```{r}
-#| message: false
-
-scorecard <- read_csv("data/scorecard.csv")
+```{r data}
+data(nycflights)
 ```
 
-## Exercises
+The **codebook** (description of the variables) can be accessed by pulling up the help file by typing a `?` before the name of the dataset:
 
-::: callout-note
-Include axis labels and an informative title for all plots.
-Use the `kable()` function to neatly print tables and regression output.
-:::
-
-### Exercise 1
-
-Create a histogram to examine the distribution of `admrate` and calculate summary statistics for the center (mean and median) and the spread (standard deviation and IQR).
-
-### Exercise 2
-
-Use the results from the previous exercise to describe the distribution of `admrate`.
-Include the shape, center, spread, and if there are potential outliers.
-
-### Exercise 3
-
-Plot the distribution of `cost` and calculate the appropriate summary statistics.
-Describe the distribution of `cost` (shape, center, and spread, and outliers) using the plot and appropriate summary statistics.
-
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
-Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
-After you push the changes, the Git pane in RStudio should be empty.
-:::
-
-### Exercise 4
-
-The goal of this analysis is to fit a regression model that can be used to understand the variability in the cost of college based on the admission rate.
-Before fitting the model, let's look at the relationship between the two variables.
-Create a scatterplot to display the relationship between cost and admissions rate.
-Describe the relationship between the two variables based on the plot.
-
-### Exercise 5
-
-Does the relationship between cost and admissions rate differ by type of college?
-Modify the plot from the previous exercise visualize the relationship by type of college.
-
-### Exercise 6
-
-Describe two new observations from the scatterplot in Exercise 5 that you didn't see in the scatterplot from Exercise 4.
-
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
-Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
-After you push the changes, the Git pane in RStudio should be empty.
-:::
-
-### Exercise 7
-
-Fit the linear regression model.
-Use the `kable` function to neatly display the results with a reasonable number of decimals.
-
-### Exercise 8
-
-Consider the model from the previous exercise.
-
--   Interpret the slope in the context of the problem.
--   Does the intercept have a meaningful interpretation? If so, write the interpretation in the context of the problem. Otherwise, explain why the interpretation is not meaningful.
-
-### Exercise 9
-
-Construct a 95% confidence interval for the slope using bootstrapping.
-Follow these steps to accomplish this:
-
--   First set a seed for simulating reproducibly.
--   Then, simulate the bootstrap distribution of the slope using 1,000 bootstrap samples.
--   Then, visually estimate the bounds of the bootstrap interval based on a histogram of the distribution of the bootstrapped slopes, using the percentile method.
--   And then, use the `get_confidence_interval()` function to explicitly calculate the bounds of the confidence interval using the percentile method.
--   Finally, interpret the confidence interval in the context of the data.
-
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
-Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
-After you push the changes, the Git pane in RStudio should be empty.
-:::
-
-### Exercise 10
-
-Finally, we want to answer the question "Do the data provide sufficient evidence of a linear relationship between cost and admissions rate, i.e. $\beta_1$ is different from 0?"
-
-To answer this question we will use a hypothesis test.
-We can conduct a hypothesis test via simulation (what we'll do in this lab) or using mathematical models (what we'll do in the next class).
-
-Before we can conduct the hypothesis test, let's first set our hypotheses.
-Remember that the null hypothesis represents the status quo (nothing going on, i.e. there is no relationship) and the alternative hypothesis represents our research question (there is something going on, i.e. there is a relationship).
-
--   $H_0$: There is no linear relationship between the admissions rate and cost of colleges in the United States, $\beta_1 = 0$
--   $H_A$: There is a linear relationship between the admissions rate and cost of colleges in the United States, $\beta_1 \ne 0$
-
-To test these hypotheses, we will use a permutation test, where we
-
--   Simulate new samples from the original sample via permutation under the assumption that the null hypothesis is true
--   Fit models to each of the samples and estimate the slope
--   Use features of the distribution of the permuted slopes to calculate the p-value for the hypothesis test
-
-The major difference between constructing a confidence interval and conducting a hypothesis test is that for the hypothesis test we assume that the null hypothesis is true.
-This requires a simulation scheme that will allow us to measure the natural variability in the data due to sampling but **not** due to cost and admission rate being correlated by permuting permute one variable to eliminate any existing relationship between the variables.
-To do so, we randomly assign each `admrate` value to `cost` of a given university, i.e. `cost` and `admrate` are no longer matched for a given university.
-
-In the following code chunk we
-
--   First set a seed for simulating reproducibly.
--   Then, we start with our data frame and specify our model as `cost` vs. `admrate`.
--   Then, we set our null hypothesis (`cost` and `admrate` are independent)
--   And then we generate 1000 replicates of our data where, for each replicate, we permute values of `admrate` to randomly assign them to values of `cost`
--   Finally, we fit our model to each of our 1000 permuted datasets
-
-```{r}
-set.seed(1234)
-
-perm_fits <- scorecard %>%
-  specify(cost ~ admrate) %>%
-  hypothesize(null = "independence") %>%
-  generate(reps = 1000, type = "permute") %>%
-  fit()
+```{r help}
+#| eval: false
+?nycflights
 ```
 
-The resulting dataset `perm_fits` has `nrow(perm_fits)` and `ncol(perm_fits)` columns.
-The first column, `replicate` indicates the replicate number of the dataset the models were fit to; the values in this column range between 1 and 1000.
-The second column, `term`, tells us which term (intercept of the model or slope of `admrate`) the `estimate` value in the third column is for.
+Remember that you can use `glimpse()` to take a quick peek at your data to understand its contents better.
 
-```{r}
-perm_fits
+**Question 1**
+
+**(a) How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)**
+
+**(b) Are there numerical variables in the dataset? If so, what are their names?**
+
+### Departure Delays
+
+Let's start by examining the distribution of departure delays (`dep_delay`) of all flights with a histogram.
+
+**Question 2** -- Create a histogram of the `dep_delay` variable from the `nycflights` data
+
+```{r histogram}
+# Your code for question 2 goes here! 
+
 ```
 
--   Create a histogram of the slope estimates in `perm_fits`. (Hint: Filter the dataset for just the slope values, `term == "admrate".`)
--   Estimate the p-value of the hypothesis test based on this distribution.
--   State your conclusion for the test in context.
--   Indicate whether or not it is consistent with the results of the hypothesis test from the previous exercise. Briefly explain your response.
+Histograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data is split between the different bins.
 
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub.
-Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push.
-After you push the changes, the Git pane in RStudio should be empty.
-:::
+You can easily define the binwidth you want to use, by specifying the `binwidth` argument inside of `geom_histogram()`, like so: `geom_histogram(binwidth = 15)`
 
-## Submission
+**Question 3** **(a) Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.**
 
-::: callout-warning
-Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.
-We will be checking these to make sure you have been practicing how to commit and push changes.
+```{r binwidth}
+#| layout-nrow: 1
+# Your code for question 3 goes here! 
 
-Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
-:::
 
-To submit your assignment:
+```
 
--   Go to [http://www.gradescope.com](http://www.gradescope.com/) and click *Log in* in the top right corner.
--   Click *School Credentials* ➡️ *Duke NetID* and log in using your NetID credentials.
--   Click on your *STA 210* course.
--   Click on the assignment, and you'll be prompted to submit it.
--   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be "checked").
--   Select the first page of your PDF submission to be associated with the *"Workflow & formatting"* section.
+**(b) How do these three histograms compare? Are features revealed in one that are obscured in another?**
 
-## Grading
+## SFO Dstinations
 
-Total points available: 50 points.
+One of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a `dest` of `"LAX"`, flights into San Francisco have a `dest` of `"SFO"`, and flights into Chicago (O'Hare) have a `dest` of `"ORD"`.
 
-| Component             | Points |
-|-----------------------|--------|
-| Ex 1 - 10             | 45     |
-| Workflow & formatting | 5[^1]  |
+If you want to visualize only on delays of flights headed to Los Angeles, you need to first `filter()` the data for flights with that destination (`filter(dest == "LAX")`) and then make a histogram of the departure delays of only those flights.
 
-[^1]: The "Workflow & formatting" grade is to assess the reproducible workflow.
-    This includes having at least 3 informative commit messages and updating the name and date in the YAML.
+**Logical operators:** Filtering for certain observations (e.g. flights from a particular airport) is often of interest in data frames where we might want to examine observations with certain characteristics separately from the rest of the data. To do so, you can use the `filter()` function and a series of **logical operators**. The most commonly used logical operators for data analysis are as follows:
+
+-   `==` means "equal to"
+-   `!=` means "not equal to"
+-   `>` or `<` means "greater than" or "less than"
+-   `>=` or `<=` means "greater than or equal to" or "less than or equal to"
+
+**Question 4** -- Fill in the code to create a new dataframe named `sfo_flights` that is the result of `filter()`ing only the observations whose destination was San Francisco.
+
+```{r sfo}
+# Your code for question 4 goes here! 
+
+sfo_flights <- filter(nycflights, 
+                      dest == )
+```
+
+### Multiple Data Filters
+
+You can also filter based on multiple criteria. You can separate these criteria using commas in the `filter()` function. Suppose you are interested in flights leaving from LaGuardia (LGA) in February:
+
+```{r lga-feb}
+filter(nycflights, 
+       origin == "LGA", 
+       month == 2)
+```
+
+Note that you can separate the conditions using commas if you want flights that are both leaving from LGA **and** flights in February. If you are interested in either flights leaving from LGA **or** flights that happened in February, you can use the `|` instead of the comma.
+
+**Question 5** -- Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?
+
+```{r}
+## Code for exercise 5 here! 
+
+filter(sfo_flights, 
+       month == __, 
+       arr_delay > __) |> 
+  dim()
+```
+
+## Data Summaries
+
+You can also obtain numerical summaries for the flights headed to SFO, using the `summarise()` function:
+
+```{r summary-stats}
+summarise(sfo_flights, 
+          mean_dd   = mean(dep_delay), 
+          median_dd = median(dep_delay), 
+          n         = n())
+```
+
+Note that in the `summarise()` function I've created a list of three different numerical summaries that we're interested in.
+
+The names of these elements are user defined, like `mean_dd`, `median_dd`, `n`, and you can customize these names as you like (just don't use spaces in your names).
+
+Calculating these summary statistics also requires that you know the summary functions you would like to use.
+
+**Summary statistics:** Some useful function calls for summary statistics for a single numerical variable are as follows:
+
+-   `mean()`: calculates the average
+-   `median()`: calculates the median
+-   `sd()`: calculates the standard deviation
+-   `var()`: calculates the variances
+-   `IQR()`: calculates the inner quartile range (Q3 - Q1)
+-   `min()`: finds the minimum
+-   `max()`: finds the maximum
+-   `n()`: reports the sample size
+
+Note that each of these functions takes a single variable as an argument and returns a single value.
+
+## Summaries vs. Visualizations
+
+*Which month would you expect to have the highest average delay departing from an NYC airport?*
+
+Let's think about how you could answer this question. One option is to summarize the data and inspect the output. Another option is to plot the delays and inspect the plots. Let's try both!
+
+**Question 6** -- Calculate the following statistics for the arrival delays in the `sfo_flights` dataset: - mean - median - max - min
+
+```{r arr-delay-stats}
+## Code for exercise 6 goes here! 
+
+
+```
+
+**Question 7** -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. Be sure to give your visualization nice axis labels!
+
+```{r arr-delay-plot}
+## Code for exercise 7 goes here! 
+
+
+```
+
+**Question 8** -- What information can you obtain from the visualization that you could not from the data summaries?

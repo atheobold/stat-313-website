@@ -1,0 +1,287 @@
+---
+title: "Lab 2 - Grading Guide"
+format: 
+  html:
+    self-contained: true
+editor: visual
+execute: 
+  eval: false
+---
+
+Q1 (a)   
+Q1 (b)   
+Q2   
+Q3 (a)   
+Q3 (b)   
+Q4   
+Q5   
+Q6  
+Q7    
+Q8  
+
+
+## 1 (a)
+__How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)__
+<!-- Your response goes below this line! -->
+
+**Success**:
+
+- Must have code that gives size of dataset, with a preference for `glimpse()`
+- Size of 32,735 rows and 16 columns
+
+::: {.callout-tip}
+Note most may put the `glimpse(nycflights)` code in the code chunk before
+Question 1, which will not produce output. 
+:::
+
+**Growing**:
+
+- If no code is present
+- If they flip the rows and columns
+- If they do not provide size of data
+
+*Feedback for no code:* For Question 1(a), you needed to write code to explore the size of the data and the types of variables. 
+
+*Feedback for no / incorrect dimensions:* For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?
+
+
+## 1 (b)
+__Are there numerical variables in the dataset? If so, what are their names?__  
+<!-- Your response goes below this line! -->
+
+**Success**: 
+
+- Lists all variables with an `int` or `dbl` data type: 
+  * year
+  * month
+  * day
+  * dep_time
+  * dep_delay
+  * arr_time
+  * arr_delay
+  * flight (many may miss)
+  * air_time
+  * distance
+  * hour
+  * minute
+- Permitted to miss 1-2 variables
+  
+**Growing**:
+
+- If misses 3 or more variables
+- If includes categorical variables (labeled `chr`)
+
+*Feedback:* For Question 1(b), you need to be careful to include ALL of the variables that R believes are numerical, that includes variables which may behave more like a categorical variable. 
+
+## 2 
+
+__Create a histogram of the `dep_delay` variable from the `nycflights` data__ 
+
+**Success**: Code should look like 
+
+```{r histogram}
+ggplot(data = nycflights, mapping = aes(x = dep_delay)) + 
+  geom_histogram()
+
+```
+
+::: {.callout-note}
+Note: Axis labels are not required! 
+:::
+
+**Growing**: If maps `dep_delay` to y-axis instead of x-axis
+
+*Feedback:* For Question 2, our histograms are always made with our quantitative variable on the x-axis! 
+
+## 3 (a)
+
+__Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.__
+
+**Success**: Code should look like: 
+
+```{r binwidth}
+ggplot(data = nycflights, 
+       mapping = aes(x = dep_delay)) + 
+  geom_histogram(binwidth = 15)
+
+ggplot(data = nycflights, 
+       mapping = aes(x = dep_delay)) + 
+  geom_histogram(binwidth = 150)
+
+```
+
+**Growing**: If code does not use correct `binwidth`s
+
+*Feedback:* For Question 3(a), pay attention to what binwidth you need to use 
+*within* your geom_histogram()
+
+
+## 3 (b)
+
+__How do these three histograms compare? Are features revealed in one that are obscured in another?__
+<!-- Your answer goes below this line -- do not remove this!  -->
+
+**Success**: 
+
+- Discusses how wider bins make it hard to see where there are small
+differences and / or how smaller bins make it easier to see differences
+
+**Growing**:
+
+- If description only references how the bins are larger or smaller, but doesn't talk about shape the distribution 
+- Only talks about how the y-axis scale changes
+
+*Feedback:* For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution or what you are able to see.  
+
+## 4 
+
+__Fill in the code to create a new dataframe named sfo_flights that is the result of `filter()`ing only the observations whose destination was San Francisco.__ 
+
+**Success**: Code should look like:
+
+```{r}
+
+sfo_flights <- filter(nycflights, 
+                      dest == "SFO")
+
+```
+
+**Growing**: If they use the wrong destination in their `filter()` 
+
+*Feedback:* For Question 4, you need to look at the description for how the airport names were coded! 
+
+## 5 
+
+__Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?__ 
+
+**Success**: Code should look like:
+
+```{r}
+filter(sfo_flights, 
+       month == 7, 
+       arr_delay < 0) %>% 
+  dim()
+```
+
+**AND**
+
+They should state that 45 flights arrived early in July out of the 1345 flights
+to SFO.
+
+**Growing**:
+
+- If they don't interpret the output
+
+*Feedback:* For Question 5, you were asked to interpret the output of the code.
+
+- If they don't interpret 45 as the number of flights
+
+*Feedback:* For Question 5, what does the 45 refer to? 
+
+- If they interpret 45 and 16 as flight numbers
+
+*Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset? 
+
+- If they don't say how many SFO flights there were to begin with (1345)
+
+*Feedback:* For Question 5, how many SFO flight were there to begin with?
+
+- If they don't interpret the conditions of the filter (arrived early in July)
+
+*Feedback:* For Question 5, what were the conditions of these 45 flights? 
+
+## 6 
+
+__Calculate the following statistics for the arrival delays in the sfo_flights dataset:__ 
+
+- mean
+- median
+- max
+- min
+
+**Success**: Code should look like:
+
+```{r}
+summarise(sfo_flights, 
+          mean_ad = mean(arr_delay), 
+          median_ad = median(arr_delay), 
+          max_ad = max(arr_delay),
+          min_ad = min(arr_delay)
+          )
+```
+
+::: {.callout-note}
+- I'd give full credit for using either the `nycflights` dataset or the 
+`sfo_flights` dataset
+:::
+
+- If they don't name their summary statistics
+
+*Feedback:* For Question 6, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
+
+- I'd write a comment if they used `_dd` in their names, since it should be `_ad` for the arrival delays. 
+
+*Feedback:* For Question 6, it would be more clear to use _ad at the end of your names, since you are summarizing the arrival delays (not the departure delays). 
+
+**Growing**: 
+
+*Feedback:* For Question 6, you were asked to provide four (4) statistics! 
+
+## 7 
+
+__Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays. Be sure to give your visualization nice axis labels!__
+
+You choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. 
+
+**Success**: Code should look like:
+
+```{r}
+ggplot(data = nycflights, 
+       mapping = aes(x = arr_delay)) + 
+  geom_histogram()
+```
+
+- I'd give full credit for using either the `sfo_flights` dataset or accidentally
+using the `nycflights` dataset
+
+- Acceptable `geom`s:
+  * `geom_histogram()`
+  * `geom_dotplot()` (though not great)
+  * `geom_density()`
+  
+- It's okay for them not to change the `binwidth`
+
+**Growing**: 
+
+- Uses `geom_boxplot()`
+
+*Feedback:* For Question 7, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
+
+- Doesn't change x-axis label
+
+*Feedback:* For Question 7, you were asked to give your visualization nice axis labels. 
+
+- Doesn't include units (minutes) in axis label
+
+*Feedback:* For Question 7, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
+
+## 8 
+
+__What information can you obtain from the visualization that you could not from the data summaries?__
+
+**Success**: Answer should address *all* of the following
+
+- visualization allows for you to see skew
+- visualization allows for you to see mode / peak
+
+**Growing**: 
+
+- Response addresses either skew or modes, but not both
+
+*Feedback:* For Question 8, you should address the shape of the distribution, which includes the skew and the mode(s).
+
+- Response doesn't make much sense
+
+*Feedback:* For Question 8, what can you *see* in the visualization that was not apparent from the data summaries?
+
+

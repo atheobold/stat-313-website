@@ -1,38 +1,217 @@
 ---
-title: "Week 2"
-subtitle: "Simple linear regression"
+title: "Week Two: Summarizing & Visualizing Numerical Data"
+subtitle: Winter 2023
+format:
+  html:
+    theme: minty
+    fontsize: 1em
+    mainfont: "sans-serif"
+    number-sections: true
+    section-divs: true
+    code-block-bg: '#76b5c5'
+    highlight-style: monochrome
+embed-resources: true
+standalone: true
 editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
 ---
 
-::: callout-important
--   Classes are virtual this week. Find Zoom links [here](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/d5eef508-07a4-4c6d-b7bd-4614a9631562 "Sakai - Zoom meetings").
--   Due dates:
-    -   Lab 1: Fri, Jan 14, 5pm ET
-    -   AE 1: Sun, Jan 16, 11:59pm ET
+```{r}
+#| include: false
+
+library(tidyverse)
+library(gapminder)
+library(flair)
+library(emo)
+library(openintro)
+library(unvotes)
+library(lubridate)
+library(DT)
+library(gridExtra)
+```
+
+Welcome!
+
+In this week's coursework we are going to continuing exploring data, through data summaries and visualizations, focusing specifically on **numerical** variables. We will be using the **dplyr** package in `R` to wrangle our data and the **ggplot2** package to created data visualizations.
+
+## Learning Outcomes
+
+By the end of this coursework you should be able to:
+
+-   outline the differences between numerical and categorical variables
+-   describe what type of summary statistic is appropriate for a given distribution of a numerical variable
+-   discuss when it is / is not appropriate to summarize a variable with a mean
+-   create visualizations of one and two numerical variables
+-   discuss the benefits and shortcomings of different visualizations
+
+## This Week's TODOs
+
+`r emo::ji("book")` Reading: 30-45 minutes
+
+`r emo::ji("computer")` Tutorials: 60-75 minutes
+
+`r emo::ji("check")` Check-ins: 2 (submit on Canvas)
+
+`r emo::ji("scroll")` Group Discussion Homework: 3 Questions
+
+------------------------------------------------------------------------
+
+# Exploring Numerical Data
+
+## `r emo::ji("book")` Textbook Reading
+
+::: column-margin
+```{r}
+#| echo: false
+#| out-width: 50%
+knitr::include_graphics(here::here("images", 
+                                   "ims.jpeg")
+                        )
+```
 :::
 
-## Prepare
+[**Required Reading:** Exploring Numerical Data](https://openintro-ims.netlify.app/explore-numerical.html)
 
-📖 Read Introduction to Modern Statistics, Chp 7: [Linear regression with a single predictor](https://openintro-ims.netlify.app/model-slr.html)
-
-## Participate
-
-🖥️ [Lab 1 - Meet the toolkit](/slides/lab-1.html)
-
-🖥️ [Lecture 2 - Simple linear regression](/slides/lec-2.html)
-
-🖥️ [Lecture 3 - Model fitting in R with tidymodels](/slides/lec-3.html)
-
-## Practice
-
-📋 [Application Exercise 1 - Bike rentals in DC](/ae/ae-1-dcbikeshare.html) *(Post-class note: complete only Part 1 - Daily counts and temperature)*
-
-## Perform
-
-⌨️ [Lab 1 - Meet the toolkit](/labs/lab-1.html "Lab instructions")
-
-<br><br>
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
+::: callout-tip
+See Canvas for the Week 2 Reading Guides.
 :::
+
+## `r emo::ji("check")` Concept Quiz Questions
+
+1.  Suppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?
+
+-   right skew
+-   left skew
+-   bimodal
+-   mutimodal
+-   uniform
+
+*Hint:* Think about how you would "typically" expect flight delays to behave.
+
+2.  To better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the *distribution* of departure delays.
+
+What type of visualizations could we make? (select all that apply)
+
+-   boxplot
+-   histogram
+-   barplot
+-   density plot
+-   scatterplot
+
+------------------------------------------------------------------------
+
+# Visualizing Numerical Data
+
+## `r emo::ji("book")` Textbook Reading
+
+::: column-margin
+```{r}
+#| echo: false
+knitr::include_graphics(here::here("images", 
+                                   "modern_dive.png")
+                        )
+```
+:::
+
+[**Required Reading:** Data Visualization](https://moderndive.com/2-viz.html)
+
+::: callout-tip
+See Canvas for the Week 2 Reading Guides.
+:::
+
+## `r emo::ji("check")` Concept Quiz Questions
+
+1.  What aesthetics are being used in the following plot?
+
+Hint: Think about what goes inside of the `aes()` function and what does not.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| out-width: 70%
+#| fig-align: center
+
+
+un_votes %>%
+  filter(country %in% c("United States", "Turkey")) %>%
+  inner_join(un_roll_calls, by = "rcid") %>%
+  inner_join(un_roll_call_issues, by = "rcid") %>%
+  mutate(issue = as.character(issue),
+         issue = case_when(
+           issue == "Nuclear weapons and nuclear material" ~ 
+             "Nuclear weapons and \nmaterials",
+           issue == "Arms control and disarmament" ~ 
+             "Arms control and \ndisarmament", 
+           TRUE ~ issue)
+         ) %>%
+  group_by(country, year = year(date), issue) %>%
+  summarize(
+    votes = n(),
+    percent_yes = mean(vote == "yes")
+    ) %>%
+  filter(votes > 5) %>%  # only use records where there are more than 5 votes
+  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = FALSE) +
+    facet_wrap(~ issue) +
+    labs(
+      title = "Percentage of 'Yes' votes in the UN General Assembly",
+      y = "",
+      x = "Year",
+      color = "Country"
+    )
+```
+
+-   `x` axis
+-   `y` axis
+-   `color`
+-   `facet`s
+-   `fill`
+-   `point`s
+-   `line`s
+
+2.  What geometric objects are being used in the displayed visualization?
+
+Hint: Think about what `geom`s you would use to make this plot!
+
+-   points
+-   lines / smoothers
+-   colors
+-   facets
+
+3.  What aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?
+
+```{r}
+#| echo: false 
+#| message: false
+#| warning: false
+#| layout-nrow: 1
+
+nycflights %>% 
+  ggplot(mapping = aes(x = dep_delay)) + 
+  geom_boxplot() + 
+  scale_x_log10() + 
+  labs(x = "Departure Delay (min) -- log transformed")
+
+  
+nycflights %>% 
+  ggplot(mapping = aes(x = dep_delay)) + 
+  geom_histogram(binwidth = 0.5) + 
+  scale_x_log10() + 
+  labs(x = "Departure Delay (min) -- log transformed")
+```
+
+-   shape of distribution
+-   median
+-   outliers
+-   mode
+
+### R Tutorial
+
+`r emo::ji("computer")` [**Required Tutorial:** Exploring Numerical Data](https://openintro.shinyapps.io/ims-02-explore-02/)
+
+`r emo::ji("computer")` [**Required Tutorial:** Summarizing with Statistics](https://openintro.shinyapps.io/ims-02-explore-03/)

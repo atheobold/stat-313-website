@@ -1,157 +1,279 @@
 ---
-title: "Lab 6 - Why Many Americans Don’t Vote"
+title: "Predicting Professor Evaluation Scores"
+author: "Your group's names here!"
+format: html
 editor: visual
+embed-resources: true
+standalone: true
+execute: 
+  eval: false
 ---
 
-## Introduction
-
-In today's lab you will analyze data from an online Ipsos survey that was conducted for the FiveThirtyEight article ["Why Many Americans Don't Vote"](https://projects.fivethirtyeight.com/non-voters-poll-2020-election/).
-
-### Learning goals
-
-By the end of the lab you will be able to...
-
--   Conduct exploratory data analysis for multinomial logistic regression.
--   Fit and interpret coefficients of the multinomial logistic regression model.
--   Use the multinomial logistic regression model for prediction.
-
-## Getting started
-
--   A repository has already been created for you and your teammates. Everyone in your team has access to the same repo.
--   Go to the [sta210-s22](https://www.github.com/sta210-s22) organization on GitHub. Click on the repo with the prefix **lab-6**. It contains the starter documents you need to complete the lab.
--   Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.
-
-## Packages
-
-The following packages are used in the lab.
-
-```{r}
-#| label: load-packages
-#| message: false
-
+```{r set-up}
 library(tidyverse)
-library(tidymodels)
-library(knitr)
+library(moderndive)
+
+# This is needed to make sure everyone gets the SAME testing / training datasets!
+set.seed(1234)
+
+evals <- evals |> 
+  mutate(large_class = if_else(cls_students > 100, 
+                               "large class", 
+                               "regular class"), 
+         eval_completion = cls_did_eval / cls_students 
+         ) |> 
+  select(-cls_did_eval, 
+         -cls_students)
 ```
 
-## Data: Five Thirty Eight
+## Your Challenge
 
-The data for this assignment comes from an online Ipsos survey that was conducted for the FiveThirtyEight article ["Why Many Americans Don't Vote"](https://projects.fivethirtyeight.com/non-voters-poll-2020-election/).
-You can read more about the survey design and respondents in the README of the [GitHub repo](https://github.com/fivethirtyeight/data/tree/master/non-voters) for the data.
+This week you have learned about model selection. During class you worked on performing a backward selection process to determine the "best" model for penguin body mass.
 
-Respondents were asked a variety of questions about their political beliefs, thoughts on multiple issues, and voting behavior.
-We will focus on using the demographic variables and someone's party identification to understand whether a person is a probable voter.
+Today, you are going to use **forward selection** to determine the "best" model for professor's evaluation score. There is an extra layer to this challenge, you are going to test how well your model predicts the evaluation scores of professors **not** in your dataset. The group(s) with the lowest prediction error will win **two** extra tokens.
 
-The variables we'll focus on are (definitions from the codebook in data set GitHub repo):
+This task will require you to fit **tons** of linear regressions. **You must be able to show me exactly how you got to your top model.** Meaning, I need to see a record of **every** model you fit and compared along the way.
 
--   `ppage`: Age of respondent
+### Your Datasets
 
--   `educ`: Highest educational attainment category.
+I've used the `slice_sample()` function to divide the `evals` dataset into two datasets:
 
--   `race`: Race of respondent, census categories.
-    Note: all categories except Hispanic are non-Hispanic.
+1.  `evals_train` contains 80% of the observations in the original `evals` dataset -- **this is the dataset you will use for your models**
 
--   `gender`: Gender of respondent
+2.  `evals_test` contains the other 20% of observations -- **this is the dataset you will use for your predictions**
 
--   `income_cat`: Household income category of respondent
-
--   `Q30`: Response to the question "Generally speaking, do you think of yourself as a..."
-
-    -   1: Republican
-    -   2: Democrat
-    -   3: Independent
-    -   4: Another party, please specify
-    -   5: No preference
-    -   -1: No response
-
--   `voter_category`: past voting behavior:
-
-    -   **always**: respondent voted in all or all-but-one of the elections they were eligible in
-    -   **sporadic**: respondent voted in at least two, but fewer than all-but-one of the elections they were eligible in
-    -   **rarely/never**: respondent voted in 0 or 1 of the elections they were eligible in
-
-You can read in the data directly from the GitHub repo:
-
-```{r}
-#| warning: false
-
-voters <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/non-voters/nonvoters_data.csv")
+```{r test-train}
+evals_train <- slice_sample(evals, prop = 0.8)
+evals_test <- anti_join(evals, evals_train, by = "ID")
 ```
 
-**Note that the authors use weighting to make the final sample more representative on the US population for their article. We will [not]{.underline} use weighting in this assignment, so we should treat the sample as a convenience sample rather than a random sample of the population.**
+## Forward Selection
 
-## Exercises
+The forward selection process starts with a model with **no** predictor variables. That means, this model predicts the *same* mean evaluation score for every professor. I've fit this model for you below!
 
-1.  Why do you think the authors chose to only include data from people who were eligible to vote for at least four election cycles?
+```{r one-mean}
+one_mean <- lm(score ~ 1, data = evals_train)
+```
 
-2.  Let's prepare the data for analysis and modeling.
+You can pull out the adjusted $R^2$ for this model using the `get_regression_summaries()` function.
 
-    -   The variable `Q30` contains the respondent's political party identification. Make a new variable that simplifies `Q30` into four categories: "Democrat", "Republican", "Independent", "Other" ("Other" also includes respondents who did not answer the question).
-    -   The variable `voter_category` identifies the respondent's past voter behavior. Relevel the variable to make rarely/never the baseline level, followed by sporadic, then always.
+```{r one-mean-summary}
+get_regression_summaries(one_mean)
+```
 
-3.  In the [FiveThirtyEight article](https://projects.fivethirtyeight.com/non-voters-poll-2020-election/), the authors include visualizations of the relationship between the voter category and demographic variables such as race, age, education, etc.
-    Select two demographic variables.
-    For each variable, interpret the plot to describe its relationship with voter category.
+Based on this output, we are starting with a **really** low adjusted $R^2$. So, things can only get better from here!
 
-4.  Fit a model using mean-centered age, race, gender, income, and education to predict voter category.
-    Show the code used to fit the model, but do **not** display the model output.
+### Step 1
 
-Next, we want to determine whether party identification be added to the model.
-In order to do this we need to compare two *nested* models.
+**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01)
 
--   The *reduced* model is the one we fit so far, including the predictors mean-centered age, race, gender, income, and education.
+Alright, so now we get cooking. The next step is to fit **every** model with **one** explanatory variable. I've provided a list of every explanatory variable you are allowed to consider!
 
--   The *full* model is the one that includes, in addition to these predictors, party identification.
+-   `prof_ID` -- identification variable for each professor
+-   `age` -- age of the professor
+-   `bty_avg` -- average beauty rating of the professor
+-   `gender` -- gender of the professor
+-   `ethnicity` -- ethnicity of the professor
+-   `language` -- language of school where professor received education
+-   `rank` -- rank of professor
+-   `pic_outfit` -- outfit of professor in picture
+-   `pic_color` -- color of professor's picture
+-   `large_class` -- whether the class had over 100 students
+-   `eval_completion` -- proportion of students who completed the evaluation
+-   `cls_level` -- class level
 
-5.  *Should party identification be added to the model?* Use a drop-in-deviance test to determine if party identification should be added to the model. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data. Then, neatly display the model you selected.
+Woof, that's 12 different variables. That means, for this first round, you will need to compare the adjusted $R^2$ for 12 different models to decide what variable should be added.
 
-**Use the model you select for the remainder of the assignment**.
+Every model you fit will have the *same* format:
 
-6.  Interpret the following coefficients in the context of the data in terms of the odds of voting sporadically versus rarely/never.
+    name_of_model <- lm(score ~ <variable>, data = evals_train)
 
-    -   Interpret the intercept in the context of the data. *Use actual values in the interpretation.*
-    -   Interpret the effect of age in the context of the data.
-    -   Interpret the effect of party ID in the context of the data. Include discussion about which level(s) differ from the baseline.
+But, the name of the model will need to change. I've started the process for you, using the naming style of `one_` followed by the variable name (e.g., `one_id`, `one_bty`, etc.).
 
-7.  In the article, the authors write
+```{r all-one-variable-models}
 
-    > *"Nonvoters were more likely to have lower incomes; to be young; to have lower levels of education; and to say they don't belong to either political party, which are all traits that square with what we know about people less likely to engage with the political system."*
+one_id <- lm(score ~ prof_ID, data = evals_train)
+one_age <- lm(score ~ age, data = evals_train)
+one_bty <- lm(score ~ bty_avg, data = evals_train)
+one_gender <- lm(score ~ gender, data = evals_train)
+one_ethnicity <- lm(score ~ ethnicity, data = evals_train)
+one_language <- lm(score ~ language, data = evals_train)
 
-    Does your model support this statement?
-    Briefly explain why or why not.
+## Now, you need to fit the other six models! 
 
-8.  Let's use the model to predict the voting categories.
-    Obtain the predicted voter category for each observation.
 
-    -   Create a table of the actual versus predicted voter categories and a visualization of the association between the two.
-    -   How well did the model perform? Briefly assess the model performance using 2 - 3 observations from the table and/or visualization to support your response.
+```
 
-## Submission
+Alright, now that you've fit the models, you need to inspect the adjusted $R^2$ values to see which of these 12 models is the "top" model -- the model with the highest adjusted $R^2$! Similar to before, I've provided you with some code to get you started, but you need to write the remaining code.
 
-::: callout-warning
-Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.
-We will be checking these to make sure you have been practicing how to commit and push changes.
+```{r one-variable_model-summaries}
+get_regression_summaries(one_id)
+get_regression_summaries(one_age)
+get_regression_summaries(one_bty)
+get_regression_summaries(one_gender)
+get_regression_summaries(one_ethnicity)
+get_regression_summaries(one_language)
 
-Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
-:::
+## Now, you need to compare the other six models! 
 
-To submit your assignment:
 
--   Go to [http://www.gradescope.com](http://www.gradescope.com/) and click *Log in* in the top right corner.
--   Click *School Credentials* ➡️ *Duke NetID* and log in using your NetID credentials.
--   Click on your *STA 210* course.
--   Click on the assignment, and you'll be prompted to submit it.
--   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be "checked").
--   Select the first page of your PDF submission to be associated with the *"Workflow & formatting"* section.
+```
 
-## Grading
+**1. What model was your top model? Specifically, what variable was selected to be included in your top model?**
 
-Total points available: 50 points.
+### Step 2
 
-| Component             | Points |
-|-----------------------|--------|
-| Ex 1 - 10             | 45     |
-| Workflow & formatting | 5[^1]  |
+Alright, you've added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: **every model you fit needs to contain the variable you decided to add**. So, if you decided to add the `bty_avg` variable, every model you fit would look like this:
 
-[^1]: The "Workflow & formatting" grade is to assess the reproducible workflow.
-    This includes having at least 3 informative commit messages and updating the name and date in the YAML.
+    name_of_model <- lm(score ~ bty_avg + <variable>, data = evals_train)
+
+Again, the name of the model will need to change. This round, you are on your own -- I've provided you with no code. Here are my recommendations:
+
+-   name each model `two_` followed by the names of both variables (e.g., `two_bty_id`)
+-   go through each variable step-by-step just like you did before
+
+```{r adding-a-second-variable}
+## Code to fit all 11 models that add a second variable to your top model goes here!
+
+
+
+```
+
+Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 101models is the "top" model.
+
+**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01) from the model you chose in Question 1.
+
+```{r two-variable-model-summaries}
+## Code to compare all 11 models you fit goes here!
+
+
+
+```
+
+**2. What model was your top model? Specifically, what variables are included in your top model?**
+
+### Step 3
+
+As you might have expected, in this step we add a *third* variable to our top model from the previous step. This process should be getting familiar at this point!
+
+This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how what the code looks:
+
+    evals_train %>% 
+      map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+      map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+      select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+      pivot_longer(cols = everything(), 
+                   names_to = "variable", 
+                   values_to = "adj_r_sq") %>% 
+      slice_max(adj_r_sq)
+
+Woah, that's a lot. The only thing you need to change is:
+
+-   add in the names of the variables you selected in Steps 1 & 2 in the `~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)` step
+
+-   add in the names of the variables you selected in Steps 1 & 2 in the `select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>)` step
+
+```{r adding-a-third-variable}
+## Code to fit all  models that add a third variable to your top model goes here!
+
+## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1 & 2
+## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1 & 2
+
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
+
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
+
+**3. What model was your top model? Specifically, what variables are included in your top model?**
+
+### Step 4
+
+As you might have expected, in this step we add a *fourth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
+
+```{r adding-a-forth-variable}
+## Code to fit all  models that add a forth variable to your top model goes here!
+
+## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, & 3
+## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2 & 3
+
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
+
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+
+**4. What model was your top model? Specifically, what variables are included in your top model?**
+
+### Step 5
+
+As you might have expected, in this step we add a *fifth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
+
+```{r adding-a-fifth-variable}
+## Code to fit all  models that add a forth variable to your top model goes here!
+
+## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4
+## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4
+
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
+
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+
+**5. What model was your top model? Specifically, what variables are included in your top model?**
+
+### Step 6
+
+As you might have expected, in this step we add a *sixth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
+
+```{r adding-a-sixth-variable}
+## Code to fit all  models that add a forth variable to your top model goes here!
+
+## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
+## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
+
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
+
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 5 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+
+**6. What model was your top model? Specifically, what variables are included in your top model?**
+
+## Testing Your Top Model
+
+```{r prediction-error}
+
+top_model <- lm(score ~ <ALL VARIABLES SELECTED>, data = evals_train)
+
+evals_test %>% 
+  mutate(predictions = predict(top_model, newdata = evals_test), 
+         residuals = score - predictions) %>%
+  summarize(RMSE = sd(residuals))
+
+```

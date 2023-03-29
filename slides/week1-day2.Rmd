@@ -1,0 +1,124 @@
+---
+title: "Philosophy of Statistics"
+date: "September 23, 2021"
+author: "Dr. Allison Theobold"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slide-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---        
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# R options
+options(
+  htmltools.dir.version = FALSE,
+  tibble.width = 65,
+  width = 65
+  )
+
+# figure height, width, dpi
+knitr::opts_chunk$set(fig.width = 8, 
+                      fig.asp = 0.618,
+                      out.width = "60%",
+                      dpi = 300)
+
+# fontawesome
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+# magick
+dev.off <- function(){
+  invisible(grDevices::dev.off())
+}
+
+# xaringanExtra
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+
+library(emo)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+```{r set-theme, include = FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#b76352", # mango
+  secondary_color    = "#34605f", # bayberry
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  header_color = "#793540", #rhubarb
+  white_color = "#F5F5F5", # lightest color
+  black_color = "#36454F", # darkest color
+  text_font_size = "30px", 
+  link_color = "#696969" #grey
+)
+```
+
+class: middle
+
+.huge[Warm-up]
+
+Sketch out what you recall the scientific method / process looking like.
+
+---
+
+class: inverse, center
+
+.huge[.hand[Where does statistics happen?]]
+
+---
+
+class: inverse, center
+
+.honey[
+.huge[
+.hand[
+Why?
+]
+]
+]
+
+---
+
+class: middle 
+
+.bayberry[
+.larger[For a scientific study, what is the purpose of a statistical analysis?] 
+]
+
+---
+
+class: middle, inverse
+
+.larger[What does it mean for an analysis to be objective?]
+
+---
+
+class: middle
+
+.rhubarb[
+.larger[What would help you feel more confident in someone else's statistical 
+analysis?]
+]
+
+---
+
+```{r, echo = FALSE, warning = FALSE, fig.align='center'}
+penguins %>% 
+  ggplot(aes(x = species, y = bill_length_mm)) + 
+  geom_jitter() +
+  labs(x = "Penguin Species", 
+       y = "Bill Length (mm)")
+```
+

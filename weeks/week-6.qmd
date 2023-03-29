@@ -1,35 +1,661 @@
 ---
-title: "Week 6"
-subtitle: "MLR: Model building and comparison"
+title: "Model Selection"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+embed-resources: true
+standalone: true
 editor: visual
 ---
 
-::: callout-important
-Due dates: Exam 1 - Mon, Feb 7 at 11:59pm
+#### Reading Guides
+
+-   [Word Doc](reading_guide/week6_reading_guide.docx)
+-   [HTML](reading_guide/week6_reading_guide.html)
+
+```{r}
+#| include: false
+source("_common.R")
+
+set.seed(1234)
+```
+
+The best model is not always the most complicated. Sometimes including variables that are not evidently important can actually reduce the accuracy of predictions. This week, we will learn about model selection strategies -- strategies which can help us eliminate variables from the model that are found to be less important. It's common (and hip, at least in the statistical world) to refer to models that have undergone such variable pruning as **parsimonious**.
+
+In practice, the model that includes all available predictors is often referred to as the **full model**. The full model may not be the best model, and if it isn't, we want to identify a smaller model that is preferable.
+
+In [Section 6.3.1 of *ModernDive*](https://moderndive.com/6-multiple-regression.html#model-selection), you used visualizations to compare an interaction model (different slopes) with a parallel slopes model. In the figures below, both the parallel slope and the interaction model attempt to explain $y =$ the average math SAT score for various high schools in Massachusetts.
+
+When comparing the left and right-hand plots below, we observed that the three lines corresponding to small, medium, and large high schools were not that different. Given this similarity, we stated it could be argued that the "simpler" parallel slopes model should be favored.
+
+```{r sat-plots}
+#| echo: true
+#| layout-nrow: 1
+
+# Interaction model
+ggplot(MA_schools, 
+       aes(x = perc_disadvan, y = average_sat_math, color = size)) +
+  geom_point(alpha = 0.25) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percent economically disadvantaged", y = "Math SAT Score", 
+       color = "School size", title = "Interaction model")
+
+# Parallel slopes model
+ggplot(MA_schools, 
+       aes(x = perc_disadvan, y = average_sat_math, color = size)) +
+  geom_point(alpha = 0.25) +
+  geom_parallel_slopes(se = FALSE) +
+  labs(x = "Percent economically disadvantaged", y = "Math SAT Score", 
+       color = "School size", title = "Parallel slopes model")
+```
+
+In @tbl-interaction-coef and @tbl-parallel-coef, we observed that the interaction model was "more complex" in that the regression table had six (6) rows versus the four (4) rows of the parallel slopes model.
+
+```{r interaction-lm}
+#| echo: true
+#| eval: false
+
+sat_interaction <- lm(average_sat_math ~ perc_disadvan * size, 
+                          data = MA_schools)
+get_regression_table(sat_interaction)
+```
+
+```{r interaction-kable}
+#| echo: false
+#| label: tbl-interaction-coef
+#| tbl-cap: "Interaction model coefficient estimates"
+ 
+
+sat_interaction <- lm(average_sat_math ~ perc_disadvan * size, 
+                          data = MA_schools)
+
+get_regression_table(sat_interaction) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling()
+```
+
+```{r parallel-lm}
+#| echo: true
+#| eval: false
+
+sat_parallel_slopes <- lm(average_sat_math ~ perc_disadvan + size, 
+                              data = MA_schools)
+get_regression_table(sat_parallel_slopes)
+```
+
+```{r}
+#| echo: false
+#| label: tbl-parallel-coef
+#| tbl-cap: "Parallel slopes model coefficient estimates"
+
+sat_parallel_slopes <- lm(average_sat_math ~ perc_disadvan + size, 
+                              data = MA_schools)
+
+get_regression_table(sat_parallel_slopes) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling()
+```
+
+In this reading, we'll mimic the model selection we just performed using the qualitative "eyeball test," but this time using a numerical and quantitative approach. Specifically, we'll use the $R^2$ summary statistic (pronounced "R-squared"), also called the "coefficient of determination." But first, we must introduce one new concept: the *variance* of a numerical variable.
+
+# R-squared ($R^2$)
+
+We've previously studied two summary statistics of the *spread* (or *variation*) of a numerical variable: the standard deviation and the interquartile range (IQR). We now introduce a third summary statistic of spread: *the variance*. The variance is merely the standard deviation squared and it can be computed in `R` using the `var()` summary function within `summarize()`[^1].
+
+[^1]: The formula for variance is the square of the standard deviation, or $\text{variance} = \text{sd}^2 = \frac{(x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \cdots + (x_n - \bar{x})^2}{n - 1}$
+
+Let's investigate the variability of the SAT math scores, using the `MA_schools` dataset. In the first plot, we visualize the overall spread / variability in these scores, using a histogram. In the second plot, we investigate the relationship between SAT math scores and the percent of students who are economically disadvantaged.
+
+```{r}
+#| echo: true
+#| layout-nrow: 1
+#| message: false
+#| fig-cap: "Exploring the variability of SAT math scores"
+
+ggplot(MA_schools, 
+       aes(x = average_sat_math)) +
+  geom_histogram(binwidth = 30) +
+  labs(x = "Math SAT Score")
+
+ggplot(MA_schools, 
+       aes(x = perc_disadvan, y = average_sat_math)) +
+  geom_point(alpha = 0.25) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percent economically disadvantaged", y = "Math SAT Score")
+```
+
+As evidenced by the plot, there appears to be a moderately strong relationship between SAT math scores and the percent of students who are economically disadvantaged. Next, let's fit the linear regression for modeling the relationship between SAT math scores and the percent of students who are economically disadvantaged.
+
+```{r sat-slr}
+
+sat_simple <- lm(average_sat_math ~ perc_disadvan, data = MA_schools)
+```
+
+Recall, we can use the `get_regression_points()` function[^2] to our saved linear model (fit with the `lm()` function) to get:
+
+[^2]: Technically, the `get_regression_points()` function does the **same** thing as the `augment()` function you learned in the R tutorials last week!
+
+1.  the observed values ($y$)
+2.  the fitted values ($\hat{y}$)
+3.  the residuals ($y - \hat{y}$)
+
+```{r slr-augment}
+#| echo: true
+get_regression_points(sat_simple) 
+```
+
+Let's now use the `var()` summary function within a `summarize()` to compute the variance of these three terms:
+
+```{r slr-variances}
+#| echo: true
+
+get_regression_points(sat_simple) %>% 
+  summarize(var_y = var(average_sat_math), 
+                      var_y_hat = var(average_sat_math_hat), 
+                      var_residual = var(residual))
+```
+
+Observe that the variance of $y$ is equal to the variance of $\hat{y}$ plus the variance of the residuals. But what do these three terms tell us individually?
+
+First, the variance of $y$ (denoted as $\text{var}(y)$) tells us how much do Massachusetts high schools differ in average math SAT scores. The goal of regression modeling is to fit a model that hopefully explains this variation. In other words, we want to understand what factors explain why certain schools have high math SAT scores, while others have low scores. This is independent of the model; this is just data. In other words, whether we fit an interaction or parallel slopes model, $\text{var}(y)$ remains the same.
+
+Second, the variance of $\hat{y}$ (denoted as $\text{var}(\hat{y})$) tells us how much the fitted values from our interaction model vary. That is to say, after accounting for (1) the percentage of the study body that is socioeconomically disadvantaged and (2) school size in an interaction model, how much do our model's explanations of average math SAT scores vary?
+
+Third, the variance of the residuals tells us how much do "the left-overs" from the model vary. Observe how the points in the interaction plot above (on the left) scatter around the three lines. Say instead all the points fell exactly on one of the three lines. Then all residuals would be zero and hence the variance of the residuals would be zero.
+
+We're now ready to introduce $R^2$!
+
+$$R^2 = 1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)}$$
+
+$R^2$ is the proportion of the spread / variation of the outcome variable $y$ that is explained by our model, where our model's explanatory power is embedded in the fitted values $\hat{y}$. Furthermore, since it can be mathematically proven that $0 \leq \text{var}(y) \leq \text{var}(\hat{y})$ (a fact we leave for an advanced class on regression), we are guaranteed that:
+
+$$0 \leq R^2 \leq 1$$
+
+Thus, $R^2$ can be interpreted as follows:
+
+1.  $R^2$ values of 0 tell us that our model explains 0% of the variation in $y$. Say we fit a model to the Massachusetts high school data and obtained $R^2 = 0$. This would be telling us that the combination of explanatory variables ($x$) we used and model form we chose (interaction or parallel slopes) explains 0% of the variation in the SAT math scores. Or, in other words, the combination of explanatory variables ($x$) we used and model form we chose tell us **nothing** about average math SAT scores. The model is a poor fit.
+
+2.  $R^2$ values of 1 tell us that our model explains 100% of the variation in $y$. Say we fit a model to the Massachusetts high school data and obtained $R^2 = 1$. This would be telling us that the combination of explanatory variables ($x$) we used and model form we chose (interaction or parallel slopes) explains 0% of the variation in the SAT math scores. Or, in other words, the combination of explanatory variables ($x$) we used and model form we chose tell us **everything** we need to know about average math SAT scores.
+
+In practice however, $R^2$ values of 1 almost never occur. Think about it in the context of Massachusetts high schools. There are an infinite number of factors that influence why certain high schools perform well on SAT's on average while others don't perform well. The idea that a human-designed statistical model can capture all the heterogeneity of all high school students in Massachusetts is bordering on hubris. However, even if such models are not perfect, they may still prove useful in determining educational policy. A general principle of modeling we should keep in mind is a famous quote by eminent statistician George Box: ["All models are wrong, but some are useful."](https://jamesclear.com/all-models-are-wrong)
+
+## Model selection using R-squared
+
+When we learned about simple / basic regression, we discussed how, given a set of basic regressions, you could choose the "best" basic regression as the one where the explanatory variable has the strongest relationship with the response. We discussed this in terms of *correlation*, but for simple linear regression, $R^2$ is the square of the correlation.
+
+The `ncbirths` dataset contains a variety of variables on the habits and practices of expectant mothers and the birth of their children. Suppose, we were interested in choosing a simple linear regression with the variable that has the strongest relationship with `weight` (the birth weight of the baby). For explanatory variables, we have:
+
+-   `weeks` -- length of pregnancy
+-   `mage` -- mother's age
+-   `visits` -- number of hospital visits during pregnancy
+-   `gained` -- weight gained during pregnancy
+
+Let's explore each of these basic regression models!
+
+```{r slr-comparison}
+#| label: tbl-slr-comparison
+#| tbl-cap: "Comparison of four different simple regressions on birth weight of baby"
+
+weeks_lm <- lm(weight ~ weeks, data = ncbirths)
+
+weeks_table <- get_regression_points(weeks_lm) |> 
+    summarize(cor = cor(weight, weeks), 
+              var_y = var(weight), 
+              var_y_hat = var(weight_hat), 
+              var_residual = var(residual), 
+              r_sq = 1 - (var_residual / var_y)
+              )
+
+mage_lm <- lm(weight ~ mage, data = ncbirths)
+
+mage_table <- get_regression_points(mage_lm) |> 
+    summarize(cor = cor(weight, mage), 
+              var_y = var(weight), 
+              var_y_hat = var(weight_hat), 
+              var_residual = var(residual), 
+              r_sq = 1 - (var_residual / var_y)
+              )
+
+
+visits_lm <- lm(weight ~ visits, data = ncbirths)
+
+visits_table <- get_regression_points(visits_lm) |> 
+    summarize(cor = cor(weight, visits), 
+              var_y = var(weight), 
+              var_y_hat = var(weight_hat), 
+              var_residual = var(residual), 
+              r_sq = 1 - (var_residual / var_y)
+              )
+
+gained_lm <- lm(weight ~ gained, data = ncbirths)
+
+gained_table <- get_regression_points(gained_lm) |> 
+    summarize(cor = cor(weight, gained), 
+              var_y = var(weight), 
+              var_y_hat = var(weight_hat), 
+              var_residual = var(residual), 
+              r_sq = 1 - (var_residual / var_y)
+              )
+
+
+all_models_table <- bind_rows(weeks_table, 
+                              mage_table, 
+                              visits_table, 
+                              gained_table) |> 
+  mutate(model = c("Weeks", "Mother's Age", "Visits", "Gained")) |> 
+  column_to_rownames(var = "model")
+
+all_models_table |> 
+  arrange(desc(cor)) |> 
+  knitr::kable() |>
+  kableExtra::kable_styling()
+```
+
+From @tbl-slr-comparison, we can see that `weeks` has by far the strongest relationship with the birth `weight` of the baby, with a correlation of 0.670. Notice how we could get the $R^2$ for this regression model (`weight ~ weeks`) two ways:
+
+1.  We could square the correlation: $0.670^2 =$ `r 0.670^2`
+2.  We could find $1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)} =$ `r 1 - (1.25/2.27)`
+
+Both methods produce an $R^2$ of `r 0.670^2`. This value tells us that the simple linear regression with `weeks` as the explanatory variable is able to explain 44.9% of the variability in the birth `weight` of a baby.
+
+## Adding more variables
+
+You might say, well why not add more than one variable into the model. That makes sense, given what we've learned about multiple linear regression. However, when we have a regression with more than one explanatory variable, $R^2$ is no longer a good summary measure of how much variability in the response we've explained with our model. The problem lies in the formula for $R^2$!
+
+This strategy for estimating $R^2$ is acceptable when there is just a **single** explanatory variable. However, it becomes less helpful when there are many variables. The regular $R^2$ is a biased estimate of the amount of variability explained by the model when applied to model with more than one predictor. This is because **any** variable when added to the model will *decrease* the residuals, even just by a little bit.
+
+Decreasing the residuals leads to:
+
+-   a smaller value of $\text{var}(\text{residuals})$
+
+-   a smaller fraction of $\frac{\text{var}(\text{residuals})}{\text{var}(y)}$
+
+-   a larger number of $1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)}$
+
+Thus, adding *any* variable will **always** result in a larger value of $R^2$.
+
+For example, I've added a new column to the `ncbirths` dataset, one that is entirely simulated noise and has **no** relationship with the birth weight of the baby. Here is a plot of my variable, just to confirm!
+
+```{r add-noise-column}
+# create a variable that is just noise
+# use it as a predictor
+# show R^2 increases
+
+ncbirths_noise <- ncbirths |> 
+  rowwise() |> 
+  mutate(noise = rnorm(n = 1, 
+                       mean = 0,
+                       sd = 5)
+         )
+```
+
+```{r plot-noise}
+ggplot(data = ncbirths_noise, 
+       mapping = aes(x = noise, y = weight)) +
+  geom_point() + 
+  labs(x = "Noise Variable", 
+       y = "Birth weight of baby (lbs)")
+```
+
+Alright, now I'm including this `noise` variable as an explanatory variable in the multiple linear regression, where `weeks` is also an explanatory variable.
+
+```{r model-with-noise}
+#| echo: true
+
+noise_lm <- lm(weight ~ weeks + noise, data = ncbirths_noise)
+
+get_regression_points(noise_lm) |> 
+    summarize(var_y = var(weight), 
+              var_y_hat = var(weight_hat), 
+              var_residual = var(residual), 
+              r_sq = 1 - (var_residual / var_y)
+              )
+```
+
+From the table above, we can see that the $R^2$ value has increased. Not by much, but still! We went from an $R^2$ of 0.449 when `weeks` was the only explanatory variable, to an $R^2$ of 0.45 when `noise` was added as an explanatory variable. This may seem like a small change, but it may not necessarily always be small! Thus, this behavior was concerning to Statisticians, and they invented an alternative.
+
+# Adjusted $R^2$
+
+To get a better estimate, we use the adjusted $R^2$!
+
+::: callout-note
+## Adjusted R-squared as a tool for model assessment.
+
+The adjusted R-squared is computed as:
+
+$$R^2_{adj} = 1 - \frac{\text{var(residuals)} / (n - k - 1)}{\text{var}(y) / (n - 1)}$$ $$R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1)}{(n - k - 1)}$$ where $n$ is the number of observations used to fit the model and $k$ is the number of predictor variables in the model. Remember that a categorical predictor with $p$ levels will contribute $p - 1$ to the number of variables in the model because we need $p - 1$ offsets!
 :::
 
-## Prepare
+Because $k$ is never negative, the adjusted $R^2$ will be smaller -- often times just a little smaller -- than the unadjusted $R^2$. The reasoning behind the adjusted $R^2$ lies in the degrees of freedom associated with each variance, which is equal to $n - k - 1$ in the multiple regression context. If we were to make predictions for new data using our current model, we would find that the unadjusted $R^2$ would tend to be slightly overly optimistic, while the adjusted $R^2$ formula helps correct this bias.
 
-No reading (take a break after the exam! 😴)
-
-## Participate
-
-🖥️ [Lecture 10 - MLR: Types of predictors](/slides/lec-10.html)
-
-🖥️ [Lecture 11 - MLR: Model comparison](/slides/lec-11.html)
-
-## Practice
-
-No application exercises
-
-## Perform
-
-No lab
-
-✅ [Exam 1](/exams/exam-1.html)
-
-<br><br>
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
+::: callout-caution
+Adjusted $R^2$ could also have been used instead of unadjusted $R^2$ for basic regressions. However, when there is only $k = 1$ explanatory variables, adjusted $R^2$ is very close to regular $R^2$, so this nuance isn't typically important when the model has only one predictor.
 :::
+
+Coming back to the multiple linear regression where I included a second `noise` variable, we can compare the unadjusted $R^2$ to the adjusted $R^2$. Rather than calculating all of these summary statistics "by hand", we can use the `get_regression_summaries()` function to obtain interesting summary statistics about the model:
+
+```{r noise-summaries-code}
+#| echo: true
+#| eval: false
+
+get_regression_summaries(noise_lm)
+```
+
+```{r noise-summaries}
+#| echo: false
+#| label: tbl-noise-summaries
+#| tbl-cap: "Summary statistics from multiple linear regression with noise and weeks as predictor variables"
+
+get_regression_summaries(noise_lm) |> 
+  select(r_squared:rmse) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling()
+```
+
+Notice, @tbl-noise-summaries shows that adjusted $R^2$ is lower than unadjusted $R^2$. This is exactly what we want! We want our $R^2$ to increase **only** if the extra variable we added was "worth it." Here, the adjusted $R^2$ suggests that adding a second explanatory variable (`noise`) is not worth the additional model complexity.
+
+## Model selection using adjusted $R^2$
+
+Alright, let's apply the concept of adjusted $R^2$ to a multiple linear regression we are actually interested in. At the beginning of this reading, you were asked to recall the "eyeball" selection method we used to determine that the interaction model and parallel slopes model were unnecessarily more complicated than the simple linear regression model.
+
+In @tbl-r-sq-compare-sat below, I've calculated the adjusted $R^2$ for both the interaction model and parallel slopes model, and compared them to the simple linear regression model:
+
+```{r parallel-variances}
+#| echo: false
+#| message: false
+#| label: tbl-r-sq-compare-sat
+#| tbl-cap: "Comparing R-squared values for three different models for SAT math scores"
+
+
+slr_r_sq <- get_regression_summaries(sat_simple) |> 
+  select(r_squared:rmse)
+
+parallel_r_sq <- get_regression_summaries(sat_parallel_slopes) |> 
+  select(r_squared:rmse)
+
+interaction_r_sq <- get_regression_summaries(sat_interaction) |> 
+  select(r_squared:rmse)
+
+interaction_r_sq |> 
+  bind_rows(parallel_r_sq) |>
+  bind_rows(slr_r_sq) |> 
+  mutate(model = c("Interaction Model", 
+                   "Parallel Slopes Model", 
+                   "Simple Linear Regression Model")
+         ) |> 
+  column_to_rownames(var = "model") |> 
+  knitr::kable() |>
+  kableExtra::kable_styling()
+```
+
+Observe how the adjusted $R^2$ values for the interaction model and parallel slopes model are nearly identical to the unadjusted $R^2$ value from the simple linear regression model. These summaries suggest, there is no justification for added model complexity. The simple linear regression model with percent of students economically disadvantaged is able to explain the same amount of variance in the SAT math scores as the more complex models which include the size of the school.
+
+### Extending to `evals` data
+
+Now let's repeat this $R^2$ comparison between interaction and parallel slopes model for our models of $y$ = teaching score for UT Austin professors. In the *ModernDive* textbook, you visually compared using parallel slopes or different slopes to model the relationship between `age` and teaching `score` for male and female professors.
+
+```{r evals-model-compare}
+#| echo: false
+#| message: false
+#| label: tbl-evals-model-compare
+#| tbl-cap: "Comparing R-squared values from interaction and parallel slope models for UT Austin evaluation scores data"
+
+evals_interaction <- lm(score ~ age * gender, data = evals)
+
+interaction_var <- get_regression_summaries(evals_interaction) |> 
+  select(r_squared:rmse) 
+
+evals_parallel <- lm(score ~ age + gender, data = evals)
+
+parallel_var <- get_regression_summaries(evals_parallel) |> 
+  select(r_squared:rmse)
+
+interaction_var |> 
+  bind_rows(parallel_var) |>
+  mutate(model = c("Interaction Model", "Parallel Slopes Model")
+         ) |> 
+  column_to_rownames(var = "model") |> 
+  knitr::kable() |>
+  kableExtra::kable_styling()
+```
+
+Observe how the adjusted $R^2$ values in @tbl-evals-model-compare are now very different! The adjusted $R^2$ for the interaction model is 0.045 (or 4.5%) and the adjusted $R^2$ for the parallel slopes model is 0.035 (or 3.5%). This may seem like a small change (of 1%), but if we calculate the *percent change* ($\frac{0.045 - 0.035}{0.035}$), we see that by allowing the slopes to be different, we improved our adjusted $R^2$ by almost 30%! Thus, it could be argued that the additional complexity is warranted.
+
+# Step-wise Selection
+
+Another method for model selection is called "stepwise selection." This method considers **every** possible explanatory variable in the dataset and decides if each variable should be included in the model, using a stepwise approach.
+
+### Data Context
+
+For our investigation of this method, we will consider data about loans from the peer-to-peer lender, Lending Club. The loan data includes terms of the loan as well as information about the borrower. The outcome variable we would like to better understand is the interest rate assigned to the loan. For instance, all other characteristics held constant, does it matter how much debt someone already has? Does it matter if their income has been verified? Multiple regression will help us answer these and other questions.
+
+The dataset includes results from 10,000 loans, and we'll be looking at a subset of the available variables. The first six observations in the dataset are shown in @tbl-loans-preview below, and descriptions for each variable are provided in @tbl-loans-variables. Notice that the past bankruptcy variable (`bankruptcy`) is an indicator variable, where it takes the value 1 if the borrower had a past bankruptcy in their record and 0 if not. Using an indicator variable in place of a category name allows for these variables to be directly used in regression. Two of the other variables are categorical (`verified_income` and `issue_month`), each of which can take one of a few different non-numerical values.
+
+::: {.data data-latex=""}
+The [`loans_full_schema`](http://openintrostat.github.io/openintro/reference/loans_full_schema.html) data can be found in the [**openintro**](http://openintrostat.github.io/openintro) R package. Based on the data in this dataset we have created two new variables: `credit_util` which is calculated as the total credit utilized divided by the total credit limit and `bankruptcy` which turns the number of bankruptcies to an indicator variable (0 for no bankruptcies and 1 for at least 1 bankruptcy). We will refer to this modified dataset as `loans`.
+:::
+
+```{r loans-data-matrix}
+#| label: tbl-loans-preview
+#| tbl-cap: "First six rows of the `loans` dataset."
+
+loans <- loans_full_schema %>%
+  mutate(
+    credit_util = total_credit_utilized / total_credit_limit,
+    bankruptcy  = as.factor(if_else(public_record_bankrupt == 0, 0, 1)),
+    verified_income = droplevels(verified_income)
+    ) %>%
+  rename(credit_checks = inquiries_last_12m) %>%
+  select(interest_rate, verified_income, debt_to_income, credit_util, bankruptcy, term, credit_checks, issue_month) 
+
+loans %>%
+  slice_head(n = 6) %>%
+  kbl(linesep = "", booktabs = TRUE,
+      align = "rlrrrr") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "scale_down", "hold_position"), 
+                full_width = FALSE)
+```
+
+```{r loans-variables}
+#| label: tbl-loans-variables
+#| tbl-cap: "Variables and their descriptions for the `loans` dataset."
+
+loans_var_def <- tribble(
+  ~variable,         ~description,
+  "interest_rate",   "Interest rate on the loan, in an annual percentage.",
+  "verified_income", "Categorical variable describing whether the borrower's income source and amount have been verified, with levels `Verified`, `Source Verified`, and `Not Verified`.",
+  "debt_to_income",  "Debt-to-income ratio, which is the percentage of total debt of the borrower divided by their total income.",
+  "credit_util",     "Of all the credit available to the borrower, what fraction are they utilizing. For example, the credit utilization on a credit card would be the card's balance divided by the card's credit limit.",
+  "bankruptcy",      "An indicator variable for whether the borrower has a past bankruptcy in their record. This variable takes a value of `1` if the answer is *yes* and `0` if the answer is *no*.",
+  "term",            "The length of the loan, in months.",
+  "issue_month",     "The month and year the loan was issued, which for these loans is always during the first quarter of 2018.", 
+  "credit_checks",   "Number of credit checks in the last 12 months. For example, when filing an application for a credit card, it is common for the company receiving the application to run a credit check.",
+)
+loans_var_def %>%
+  kbl(linesep = "", booktabs = TRUE,
+      col.names = c("Variable", "Description")) %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position"), full_width = TRUE) %>%
+  column_spec(1, monospace = TRUE) %>%
+  column_spec(2, width = "30em")
+```
+
+## Stepwise selection
+
+Two common strategies for adding or removing variables in a multiple regression model are called backward elimination and forward selection. These techniques are often referred to as **stepwise selection** strategies, because they add or delete one variable at a time as they "step" through the candidate predictors.
+
+**Backward elimination** starts with the full model (the model that includes every potential predictor variable). Variables are eliminated one-at-a-time from the model until we cannot improve the model any further.
+
+**Forward selection** is the reverse of the backward elimination technique. Instead, of eliminating variables one-at-a-time, we add variables one-at-a-time until we cannot find any variables that improve the model any further.
+
+An important consideration in implementing either of these stepwise selection strategies is the criterion used to decide whether to eliminate or add a variable. One commonly used decision criterion is adjusted $R^2$. When using adjusted $R^2$ as the decision criterion, we seek to eliminate or add variables depending on whether they lead to the largest improvement in adjusted $R^2$ and we stop when adding or elimination of another variable does not lead to further improvement in adjusted $R^2$.
+
+### Backward Selection
+
+Let's consider two models, which are shown in @tbl-loans-full-for-model-selection and @tbl-loans-full-except-issue-month below. The first table summarizes the full model since it includes **all** predictors, while the second does not include the `issue_month` variable.
+
+```{r loans-full-for-model-selection}
+#| label: tbl-loans-full-for-model-selection
+#| tbl-cap: "The fit for the full regression model, including the adjusted R-squared."
+
+options(digits = 6) # to get more digits
+
+m_full <- lm(interest_rate ~ ., data = loans)
+
+m_full_r_sq_adj <- glance(m_full)$adj.r.squared %>% round(4)
+options(digits = 3) # to get back to default set in _common.R
+m_full_df_residual <- glance(m_full)$df.residual
+
+m_full_w_rsq <- m_full %>%
+  tidy() %>%
+  mutate(p.value = ifelse(p.value < 0.001, "<0.0001", round(p.value, 4))) %>%
+  add_row(term = glue("Adjusted R-sq = {m_full_r_sq_adj}")) %>%
+  add_row(term = glue("df = {m_full_df_residual}"))
+
+m_full_w_rsq %>%
+  kbl(linesep = "", booktabs = TRUE, 
+      caption = "The fit for the full regression model, including the adjusted $R^2$.", 
+      digits = 2, align = "lrrrr")  %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position")) %>%
+  column_spec(1, width = "17em") %>%
+  column_spec(1, monospace = ifelse(as.numeric(rownames(m_full_w_rsq)) < 11, TRUE, FALSE)) %>%
+  column_spec(2:5, width = "5em") %>%
+  pack_rows("", 11, 12) %>%
+  add_indent(11:12) %>%
+  row_spec(11:12, italic = TRUE)
+```
+
+```{r loans-full-except-issue-month}
+#| label: tbl-loans-full-except-issue-month
+#| tbl-cap: "he fit for the regression model after dropping issue month, including the adjusted R-squared."
+ 
+m_full_minus_issue_month <- lm(interest_rate ~ . - issue_month, data = loans)
+
+options(digits = 6) # to get more digits
+m_full_minus_issue_month_r_sq_adj <- glance(m_full_minus_issue_month)$adj.r.squared %>% round(4)
+options(digits = 3) # to get back to default set in _common.R
+m_full_minus_issue_month_df_residual <- glance(m_full_minus_issue_month)$df.residual
+
+m_full_minus_issue_month_w_rsq <- m_full_minus_issue_month %>%
+  tidy() %>%
+  mutate(p.value = ifelse(p.value < 0.001, "<0.0001", round(p.value, 4))) %>%
+  add_row(term = glue("Adjusted R-sq = {m_full_minus_issue_month_r_sq_adj}")) %>%
+  add_row(term = glue("df = {m_full_minus_issue_month_df_residual}"))
+
+m_full_minus_issue_month_w_rsq %>%
+  kbl(linesep = "", booktabs = TRUE, 
+      caption = "The fit for the regression model after dropping issue month, including the adjusted $R^2$.",
+      digits = 2, align = "lrrrr")  %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = c("striped", "hold_position")) %>%
+  column_spec(1, width = "17em") %>%
+  column_spec(1, monospace = ifelse(as.numeric(rownames(m_full_minus_issue_month_w_rsq)) < 9, TRUE, FALSE)) %>%
+  column_spec(2:5, width = "5em") %>%
+  pack_rows("", 9, 10) %>%
+  add_indent(9:10) %>%
+  row_spec(9:10, italic = TRUE)
+```
+
+::: callout-note
+Which of the two models is better?
+
+We compare the adjusted $R^2$ of each model to determine which to choose. Since the second model has a higher $R^2_{adj}$ compared to the first model, we prefer the second model to the first.
+:::
+
+Will the model without `issue_month` be better than the model with `issue_month`? We cannot know for sure, but based on the adjusted $R^2$, this is our best assessment.
+
+Results corresponding to the full model for the `loans` data are shown in @tbl-loans-full-for-model-selection. How should we proceed under the backward elimination strategy?
+
+Our baseline adjusted $R^2$ from the full model is 0.2597, and we need to determine whether dropping a predictor will improve the adjusted $R^2$. To check, we fit models that each drop a different predictor, and we record the adjusted $R^2$ for each model:
+
+-   Excluding `verified_income`: 0.2238
+-   Excluding `debt_to_income`: 0.2557
+-   Excluding `credit_util`: 0.1916
+-   Excluding `bankruptcy`: 0.2589
+-   Excluding `term`: 0.1468
+-   Excluding `credit_checks`: 0.2484
+-   Excluding `issue_month`: 0.2598
+
+The model without `issue_month` has the highest adjusted $R^2$ of 0.2598, higher than the adjusted $R^2$ for the full model. Because eliminating `issue_month` leads to a model with a higher adjusted $R^2$, we drop `issue_month` from the model.
+
+Since we eliminated a predictor from the model in the first step, we see whether we should eliminate any additional predictors. Our baseline adjusted $R^2$ is now $R^2_{adj} = 0.2598$ -- the adjusted $R^2$ from the model without `issue_month`. We now fit new models, which consider eliminating `issue_month` and each of the remaining predictors:
+
+-   Excluding `issue_month` and `verified_income`: 0.22395
+-   Excluding `issue_month` and `debt_to_income`: 0.25579
+-   Excluding `issue_month` and `credit_util`: 0.19174
+-   Excluding `issue_month` and `bankruptcy`: 0.25898
+-   Excluding `issue_month` and `term`: 0.14692
+-   Excluding `issue_month` and `credit_checks`: 0.24801
+
+None of these models lead to an improvement in adjusted $R^2$, so we do not eliminate any of the remaining predictors. That is, after backward elimination, we are left with the model that keeps all predictors except `issue_month`, which we can summarize using the coefficients from @tbl-loans-full-except-issue-month.
+
+<!-- $\widehat{\text{interest_rate}}$ -->
+
+<!-- = 1.90 + 1.00 \times \texttt{verified_income}_\texttt{Source only}  + \\ -->
+
+<!-- 2.56 \times \texttt{verified_income}_\texttt{Verified}  + 0.02 \times \texttt{debt_to_income} + \\ -->
+
+<!-- 4.90 \times \texttt{credit_util} + 0.39 \times \texttt{bankruptcy} + \\ -->
+
+<!-- 0.15 \times \texttt{term} + 0.23 \times \texttt{credit_check}$$ -->
+
+### Forward Selection
+
+Next, let's use forward selection to construct a model for predicting `interest_rate` from the `loans` data.
+
+We start with the model that includes **no** predictors. Then we fit each of the possible models with just *one* predictor. Then we examine the $R^2$ for each of these models[^3]:
+
+[^3]: Remember, for a basic regression with only one variable, we use (unadjusted) $R^2$!
+
+-   Including `verified_income`: 0.05926
+-   Including `debt_to_income`: 0.01946
+-   Including `credit_util`: 0.06452
+-   Including `bankruptcy`: 0.00222
+-   Including `term`: 0.12855
+-   Including `credit_checks`: -0.0001
+-   Including `issue_month`: 0.01711
+
+In this first step, we compare the unadjusted $R^2$ against a baseline model that has no predictors. The no-predictors model always has $R^2 = 0$. The model with one predictor that has the largest $R^2$ is the model with the `term` predictor, and because this $R^2$ is larger than the $R^2$ from the model with no predictors ($R^2 = 0$), we will add this variable to our model.
+
+We repeat the process again, this time considering the adjusted $R^2$[^4] for all 2-predictor models where one of the predictors is `term` and with a new baseline of $R^2 = 0.12855:$
+
+[^4]: We've moved to adjusted $R^2$ because we now have more than one predictor variable!
+
+-   Including `term` and `verified_income`: 0.16851
+-   Including `term` and `debt_to_income`: 0.14368
+-   Including `term` and `credit_util`: 0.20046
+-   Including `term` and `bankruptcy`: 0.13070
+-   Including `term` and `credit_checks`: 0.12840
+-   Including `term` and `issue_month`: 0.14294
+
+Adding `credit_util` yields the highest increase in adjusted $R^2$ and has a higher adjusted $R^2$ (0.20046) than the baseline (0.12855). Thus, we will also add `credit_util` to the model as a predictor.
+
+Since we have again added a predictor to the model, we again have a new baseline adjusted $R^2$ of 0.20046. We can continue on and see whether it would be beneficial to add a third predictor:
+
+-   Including `term`, `credit_util, and verified_income`: 0.24183
+-   Including `term`, `credit_util, and debt_to_income`: 0.20810
+-   Including `term`, `credit_util, and bankruptcy`: 0.20169
+-   Including `term`, `credit_util, and credit_checks`: 0.20031
+-   Including `term`, `credit_util, and issue_month`: 0.21629
+
+The model including `verified_income` has the largest increase in adjusted $R^2$ (0.24183) from the baseline (0.20046), so we add `verified_income` to the model as a predictor as well.
+
+We continue on in this way, next adding `debt_to_income`, then `credit_checks`, and `bankruptcy`. At this point, we come again to the `issue_month` variable: adding this as a predictor leads to $R_{adj}^2 = 0.25843$, while keeping all the other predictors but excluding `issue_month` has a higher $R_{adj}^2 = 0.25854$. This means we **do not** add `issue_month` to the model as a predictor. In this example, we have arrived at the same model that we identified from backward elimination.
+
+### A recap
+
+Backward elimination begins with the model having the largest number of predictors and eliminates variables one-by-one until we are satisfied that all remaining variables are important to the model. Forward selection starts with no variables included in the model, then it adds in variables according to their importance until no other important variables are found. Notice that, for both methods, we have always chosen to retain the model with the largest adjusted $R^2$ value, even if the difference is less than half a percent (e.g., 0.2597 versus 0.2598). One could argue that the difference between these two models is negligible, as they both explain nearly the same amount of variability in the `interest_rate`. These negligible differences are an important aspect to model selection. It is highly advised that *before* you begin the model selection process, you decide what a "meaningful" difference in adjusted $R^2$ is for the context of your data. Maybe this difference is 1% or maybe it is 5%. This "threshold" is what you will then use to decide if one model is "better" than another model. Using meaningful thresholds in model selection requires more critical thinking about what the adjusted $R^2$ values mean.
+
+Additionally, backward elimination and forward selection sometimes arrive at different final models. This is because the decision for whether to include a given variable or not depends on the other variables that are already in the model. With forward selection, you start with a model that includes no variables and add variables one at a time. In backward elimination, you start with a model that includes all of the variables and remove variables one at a time. How much a given variable changes the percentage of the variability in the outcome that is explained by the model depends on what other variables are in the model. This is especially important if the predictor variables are correlated with each other.
+
+There is no "one size fits all" model selection strategy, which is why there are so many different model selection methods. We hope you walk away from this exploration understanding how stepwise selection is carried out and the considerations that should be made when using stepwise selection with regression models.
+
+# Other model selection strategies
+
+Stepwise selection using adjusted $R^2$ as the decision criteria is one of many commonly used model selection strategies. Stepwise selection can also be carried out with decision criteria other than adjusted $R^2$, such as p-values, which you'll learn about in later weeks, or AIC (Akaike information criterion) or BIC (Bayesian information criterion), which you might learn about in more advanced statistics courses or your disciplinary courses.
+
+Alternatively, one could choose to include or exclude variables from a model based on expert opinion or due to research focus. In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
