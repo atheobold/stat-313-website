@@ -18,3 +18,121 @@ execute:
   warning: false
   message: false
 ---
+
+# Prepare
+
+## Textbook Reading -- Part 1
+
+[**Required Reading:** Exploring Sampling Variability](chapters/week7-reading1.html)
+
+### Reading Guide -- Due Tuesday by noon
+
+[Download the Word Document](reading-guide/week7-reading1.docx)
+
+::: {.callout-note}
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
+## Textbook Reading -- Part 2
+
+[**Required Reading:** Confidence Intervals for the Slope](https://moderndive.com/3-wrangling.html)
+
+### Reading Guide -- Due Thursday by noon (note the new time!)
+
+[Download the Word Document](reading-guide/week7-reading2.docx)
+
+::: {.callout-note}
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
+## Concept Quiz -- Due Thursday by noon (note the new time!)
+
+**1. Match each item to it's respective analogy:**
+
+::: columns
+::: {.column width="40%"}
+point estimate
+
+confidence interval
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+fishing with a net
+
+fishing with a spear
+:::
+:::
+
+**2. To create a 95% confidence interval using the percentile method, what percentiles of the bootstrap distribution do you need to calculate?**
+
+- 0th
+- 2.5th
+- 5th
+- 90th
+- 95th
+- 97.5th
+
+**3. To create a 95% confidence interval using the standard error method, what standard error do you use?**
+
+- the sample standard deviation
+- the bootstrap distribution standard deviation
+- a resample standard deviation
+- 1.96
+
+**4. We almost never know if our confidence interval captured the true population parameter.**
+
+- True
+- False
+
+**5. What percentage of 99% confidence intervals do you expect to capture the true population parameter?**
+
+**6. The word “confident” in a confidence interval interpretation corresponds to what aspect of the interval?**
+
+- the accuracy of the original sample
+- the reliability of the procedure for constructing confidence intervals
+- the precision of the bootstrap samples
+
+**7. Which of the following are true?** 
+
+- Smaller sample sizes tend to produce narrower confidence intervals.
+- Smaller sample sizes tend to produce wider confidence intervals.
+- Lower confidence levels tend to produce wider confidence intervals.
+- Lower confidence levels tend to produce narrower confidence intervals.
+
+**8. In a regression table, what does the “std_error” value associated with the slope represent?**
+
+- the standard deviation of the sample
+- the standard deviation of the bootstrap distribution
+- the estimated standard deviation of the sampling distribution
+- the standard error of the sample
+
+**9. In a regression table, how is the "std_error" value calculated?**
+
+- a mathematical formula
+- the standard deviation of the sample
+- the standard deviation of the bootstrap distribution
+
+
+**10. What percentage confidence interval is output in a regression table?**
+
+- 99%
+- 95%
+- 90%
+
+## R Tutorial -- Due Thursday by noon
+
+[**Required Tutorial:** Practice the infer Workflow](tutorial/infer-CI-tutorial.html)
+
+::: {.callout-note}
+# Submission
+
+Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
+:::
+

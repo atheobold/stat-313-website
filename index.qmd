@@ -6,18 +6,18 @@ tbl-colwidths: [5,10,30,5,5,5,5,5,5,5]
 This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.
 
 ::: column-screen-inset-right
-<table style="width:89%;">
+<table style="width:78%;">
 <colgroup>
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -84,7 +84,7 @@ This page contains an outline of the topics, content, and assignments for the se
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><p><a href="/weeks/week-2.html">2</a></p></td>
-<td><p>Sun, April 9 </p></td>
+<td><p>Sun, April 9</p></td>
 <td><p>Exploring Numerical Variables</p></td>
 <td style="text-align: center;"><p><a href="/weeks/week-2.html"><span class="emoji" data-emoji="book">📖</span></a></p></td>
 <td style="text-align: center;"></td>
@@ -205,7 +205,7 @@ This page contains an outline of the topics, content, and assignments for the se
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
-<td><p>Sun, </p></td>
+<td><p>Sun,</p></td>
 <td><p>Midterm Project Proposal</p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -362,7 +362,7 @@ This page contains an outline of the topics, content, and assignments for the se
 <tr class="even">
 <td style="text-align: center;"><p><a href="/weeks/week-8.html">8</a></p></td>
 <td><p>Sun, May 21</p></td>
-<td><p><a href="/weeks/week-8.html#prepare"><span class="emoji" data-emoji="book">📖</span></a></p></td>
+<td><p><span class="emoji" data-emoji="book">📖</span></p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -423,7 +423,7 @@ This page contains an outline of the topics, content, and assignments for the se
 <td style="text-align: center;"><p><a href="/weeks/week-9.html">9</a></p></td>
 <td><p>Sun, May 28</p></td>
 <td><p>Analysis of Variance</p></td>
-<td style="text-align: center;"><p><a href="/weeks/week-9.html#prepare"><span class="emoji" data-emoji="book">📖</span></a></p></td>
+<td style="text-align: center;"><p><span class="emoji" data-emoji="book">📖</span></p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td></td>
@@ -457,7 +457,7 @@ This page contains an outline of the topics, content, and assignments for the se
 </tr>
 <tr class="even">
 <td style="text-align: center;"></td>
-<td><p>Sun, </p></td>
+<td><p>Sun,</p></td>
 <td><p>Final Project First Draft</p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -471,7 +471,7 @@ This page contains an outline of the topics, content, and assignments for the se
 <td style="text-align: center;"><p><a href="/weeks/week-10.html">10</a></p></td>
 <td><p>Sun, June 4</p></td>
 <td><p>Two-way ANOVA</p></td>
-<td style="text-align: center;"><p><a href="/weeks/week-10.html"><span class="emoji" data-emoji="book">📖</span></a></p></td>
+<td style="text-align: center;"><p><span class="emoji" data-emoji="book">📖</span></p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td><p><a href="/tutorial/week-10.html"><span class="emoji" data-emoji="computer">💻</span></a></p></td>
@@ -518,7 +518,7 @@ This page contains an outline of the topics, content, and assignments for the se
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><p>Finals Week</p></td>
-<td><p>Thu, June 15 </p></td>
+<td><p>Thu, June 15</p></td>
 <td><p>Due: Final Project Presentation</p></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>

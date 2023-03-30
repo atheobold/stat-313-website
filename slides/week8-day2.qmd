@@ -32,11 +32,11 @@ Plan for Revisions
 Revisions will be accepted until Sunday, March 19.
 :::
 
-- Week 8: **two** revisions will be accepted
-- Week 9: **one** revision will be accepted
-- Week 10: **two** revisions will be accepted
+-   Week 8: **two** revisions will be accepted
+-   Week 9: **one** revision will be accepted
+-   Week 10: **two** revisions will be accepted
 
-##
+## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 What did we do on Tuesday?
@@ -210,7 +210,6 @@ legend(2.5, 0.4,
 )
 
 ```
-
 :::
 :::
 
@@ -220,9 +219,8 @@ legend(2.5, 0.4,
 What about the observed statistic?
 :::
 
-::: {.panel-tabset}
-
-## Before 
+::: panel-tabset
+## Before
 
 ```{r obs-slop}
 #| echo: true
@@ -246,17 +244,15 @@ evals_lm <- lm(score ~ bty_avg,
 
 get_regression_table(evals_lm)
 ```
-
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 How did R calculate the $t$-statistic?
 :::
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## Step 1: SE
 
 ::: columns
@@ -280,7 +276,6 @@ se <- se_num / se_denom
 
 se
 ```
-
 :::
 :::
 
@@ -300,17 +295,17 @@ t <- pull(obs_slope) / se
 
 t
 ```
-
 :::
 :::
 
 ## Proof!
+
 ```{r}
 get_regression_table(evals_lm)
 ```
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 How does R calculate the p-value?
@@ -336,9 +331,9 @@ ggplot(data = tibble(x = c(-5, 5)),
 
 . . .
 
-**How many degrees of freedom does this $t$-distribution have?**
+**How many degrees of freedom does this** $t$-distribution have?
 
-##
+## 
 
 ::: {style="font-size: 3.5em; color: #B6CADA;"}
 Did we get similar results between these methods?
@@ -422,7 +417,7 @@ and_vertebrates %>%
 
 **What should we do?**
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Variable transformation!
@@ -444,8 +439,7 @@ and_vertebrates %>%
   my_theme
 ```
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 **I**ndependence of observations
@@ -453,7 +447,7 @@ and_vertebrates %>%
 
 ::: columns
 ::: {.column width="40%"}
-The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, prof_ID) %>% nrow()` professors. Meaning, professors have **multiple** observations. 
+The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, prof_ID) %>% nrow()` professors. Meaning, professors have **multiple** observations.
 
 </br>
 
@@ -470,7 +464,7 @@ The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, 
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 **N**ormality of residuals
@@ -494,7 +488,7 @@ get_regression_points(curved_lm) %>%
 
 **What should we do?**
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Variable transformation!
@@ -508,6 +502,7 @@ fish <- and_vertebrates %>%
 not_curved_lm <- lm(log(weight_g) ~ log(length_1_mm), data = fish)
 
 broom::augment(not_curved_lm) %>% 
+  mutate(.resid = `log(weight_g)` - `.fitted`) %>% 
   ggplot(mapping = aes(x = .resid)) + 
   geom_histogram(binwidth = 0.1) + 
   labs(x = "Residual") +
@@ -515,8 +510,7 @@ broom::augment(not_curved_lm) %>%
   my_theme
 ```
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 **E**qual variance of residuals
@@ -565,8 +559,7 @@ ggplot(data = hbr_maples,
   my_theme
 ```
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Are these conditions required for **both** methods?
@@ -581,11 +574,11 @@ Simulation-based Methods
 :::
 
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
-- Linearity of Relationship
+-   Linearity of Relationship
 
-- Independence of Observations
+-   Independence of Observations
 
-- Equal Variance of Residuals
+-   Equal Variance of Residuals
 :::
 :::
 
@@ -598,22 +591,21 @@ Theory-based Methods
 :::
 
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
-- Linearity of Relationship
-- Independence of Observations
+-   Linearity of Relationship
+-   Independence of Observations
 :::
 
 ::: {style="font-size: 0.75em; color: #B6CADA;"}
-- Normality of Residuals
+-   Normality of Residuals
 :::
 
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
-- Equal Variance of Residuals
+-   Equal Variance of Residuals
+:::
+:::
 :::
 
-:::
-:::
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 What happens if the conditions are violated?

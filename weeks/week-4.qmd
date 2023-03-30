@@ -35,17 +35,9 @@ By the end of this coursework you should be able to:
 -   interpret the offsets of an estimated regression line
 -   calculate a residual for an observation
 
-## This Week's TODOs
+# Prepare 
 
-`r emo::ji("book")` Reading: 45-60 minutes (submit completed reading guide on Canvas)
-
-`r emo::ji("check")` Concept Quiz: 1 (submit on Canvas)
-
-`r emo::ji("computer")` R Tutorial: 2 (submit completion screenshot on Canvas)
-
-------------------------------------------------------------------------
-
-# `r emo::ji("book")` Chapter Reading: Basic Regression
+## Textbook Reading
 
 ::: columns
 ::: {.column width="40%"}
@@ -69,11 +61,17 @@ knitr::include_graphics(here::here("images",
 Don't worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.
 :::
 
--   [Download the Chapter 5 reading guide (Word)](reading_guide/week4_reading_guide.docx)
+### Reading Guide
 
--   [Download the Chapter 5 reading guide (HTML)](reading_guide/week4_reading_guide.html)
+[Download the Word Document](reading-guide/week3-reading.docx)
 
-# `r emo::ji("check")` Concept Quiz: Basic Linear Regression -- Due Tuesday by noon
+::: {.callout-note}
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
+## Concept Quiz -- Due Tuesday by noon
 
 **1. What does the correlation coefficient measure?**
 
@@ -107,7 +105,7 @@ Don't worry about Section 5.3.3, it goes a bit too in the weeds for what we are 
 -   `geom_regression()`
 -   `geom_smooth()`
 
-# `r emo::ji("computer")` R Tutorial -- Due Thursday by noon
+## `r emo::ji("computer")` R Tutorial -- Due Thursday by noon
 
 1.  [Regression modeling: Simple linear regression](https://openintro.shinyapps.io/ims-03-model-03/)
 

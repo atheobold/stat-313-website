@@ -1,0 +1,245 @@
+---
+title: "Chapter 5: Exploring Numerical Data"
+format: docx 
+embed-resources: true
+standalone: true
+editor: visual
+---
+
+### Section 5.1: Scatterplots for Paired Data
+
+Define the following terms:
+
+Scatterplot:
+
+</br> </br>
+
+Linear Relationship:
+
+</br> </br>
+
+Nonlinear Relationship:
+
+</br> </br>
+
+#### Notes:
+
+What are the four characteristics of a scatterplot?
+
+</br> </br>
+
+What are two variables that would have a horseshoe-shaped association in a scatterplot (∩ or ⌢)?
+
+</br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.2: Dot Plots and the Mean
+
+Define the following terms:
+
+Dot plot:
+
+</br> </br>
+
+Mean / Average:
+
+</br> </br>
+
+Distribution:
+
+</br> </br>
+
+$\mu$
+
+</br> </br>
+
+$\bar{x}$
+
+</br> </br>
+
+Point Estimate:
+
+</br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.3: Histograms and Shape
+
+Define the following terms:
+
+Histogram:
+
+</br> </br>
+
+What is the tail of a distribution?
+
+</br> </br>
+
+How does a right skewed distribution look?
+
+</br> </br>
+
+How does a left skewed distribution look?
+
+</br> </br>
+
+How does a right symmetric distribution look?
+
+</br> </br>
+
+**Density Plot:**
+
+</br> </br>
+
+Can can you tell what the mode of a distribution is?
+
+</br> </br>
+
+How does a unimodal distribution look?
+
+</br> </br>
+
+How does a bimodal distribution look?
+
+</br> </br>
+
+How does a multimodal distribution look?
+
+</br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.4: Variance and Standard Deviation
+
+</br>
+
+What is variability?
+
+</br> </br>
+
+What does deviation mean?
+
+</br> </br>
+
+What is the variance of a numerical variable? How is it calculated?
+
+</br> </br>
+
+What is the standard deviation of a numerical variable? How is it calculated?
+
+</br> </br>
+
+What does $\sigma$ represent?
+
+</br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.5: Boxplots, Quartiles & The Median
+
+</br>
+
+Sketch what a boxplot looks like:
+
+</br> </br>
+
+What is a median?
+
+</br> </br>
+
+What is the inner quartile range (IQR)?
+
+</br> </br>
+
+What is the first quartile (Q1)?
+
+</br> </br>
+
+What is the third quartile (Q3)?
+
+</br> </br>
+
+What do the whiskers of a boxplot correspond with?
+
+</br> </br>
+
+How are "outliers" plotted in a boxplot?
+
+</br> </br>
+
+#### Notes:
+
+How can you mathematically determine if an observation is an "outlier"?
+
+</br> </br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.6: Robust Statistics
+
+</br>
+
+What makes a statistic "robust"?
+
+</br> </br>
+
+What are some robust statistics?
+
+</br> </br>
+
+#### Notes:
+
+What are the two ways to measure the 'center' of a distribution? Which one is considered robust to skew/outliers?
+
+</br> </br> </br>
+
+What are the three ways to measure the 'variability' of a distribution? Which one is considered robust to skew/outliers?
+
+</br> </br> </br>
+
+------------------------------------------------------------------------
+
+### Section 5.7: Transforming Data
+
+</br>
+
+What is a variable transformation?
+
+</br> </br>
+
+Why would you decide to transform a variable?
+
+</br> </br>
+
+------------------------------------------------------------------------
+
+### Wrap-up
+
+</br>
+
+What type of plot(s) are appropriate for displaying one quantitative variable?
+
+</br> </br>
+
+What type of plot(s) are appropriate for displaying two quantitative variables?
+
+</br> </br>
+
+How are variance and standard deviation related?
+
+</br> </br>
+
+Fill in the following table with the appropriate notation.
+
+|  Summary Measure   | Parameter | Statistic  |
+|:------------------:|:---------:|:----------:|
+|        Mean        |           | </br></br> |
+|      Variance      |           | </br></br> |
+| Standard deviation |           | </br></br> |
+
+</br>
+
+Statistics summarize \_\_\_\_\_\_\_\_\_\_\_\_\_ .
+
+Parameters summarize \_\_\_\_\_\_\_\_\_\_\_\_\_.

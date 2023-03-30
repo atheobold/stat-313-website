@@ -47,21 +47,9 @@ By the end of this coursework you should be able to:
 -   create visualizations of one and two numerical variables
 -   discuss the benefits and shortcomings of different visualizations
 
-## This Week's TODOs
+# Prepare
 
-`r emo::ji("book")` Reading: 30-45 minutes
-
-`r emo::ji("computer")` Tutorials: 60-75 minutes
-
-`r emo::ji("check")` Check-ins: 2 (submit on Canvas)
-
-`r emo::ji("scroll")` Group Discussion Homework: 3 Questions
-
-------------------------------------------------------------------------
-
-# Exploring Numerical Data
-
-## `r emo::ji("book")` Textbook Reading
+## Textbook Reading -- Part 1
 
 ::: column-margin
 ```{r}
@@ -75,11 +63,11 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Exploring Numerical Data](https://openintro-ims.netlify.app/explore-numerical.html)
 
-::: callout-tip
-See Canvas for the Week 2 Reading Guides.
-:::
+### Reading Guide -- Due Tuesday by noon
 
-## `r emo::ji("check")` Concept Quiz Questions
+[Download the Word Document](reading-guide/week2-reading1.docx)
+
+## Concept Quiz
 
 1.  Suppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?
 
@@ -101,11 +89,7 @@ What type of visualizations could we make? (select all that apply)
 -   density plot
 -   scatterplot
 
-------------------------------------------------------------------------
-
-# Visualizing Numerical Data
-
-## `r emo::ji("book")` Textbook Reading
+## Textbook Reading -- Part 2
 
 ::: column-margin
 ```{r}
@@ -118,11 +102,17 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Data Visualization](https://moderndive.com/2-viz.html)
 
-::: callout-tip
-See Canvas for the Week 2 Reading Guides.
+### Reading Guide -- Due Tuesday by noon
+
+[Download the Word Document](reading-guide/week2-reading2.docx)
+
+::: {.callout-note}
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
 :::
 
-## `r emo::ji("check")` Concept Quiz Questions
+## Concept Quiz -- Due Tuesday by noon
 
 1.  What aesthetics are being used in the following plot?
 
@@ -210,8 +200,14 @@ nycflights %>%
 -   outliers
 -   mode
 
-### R Tutorial
+# R Tutorial -- Due Thursday by noon
 
 `r emo::ji("computer")` [**Required Tutorial:** Exploring Numerical Data](https://openintro.shinyapps.io/ims-02-explore-02/)
 
 `r emo::ji("computer")` [**Required Tutorial:** Summarizing with Statistics](https://openintro.shinyapps.io/ims-02-explore-03/)
+
+::: {.callout-note}
+# Submission
+
+Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
+:::

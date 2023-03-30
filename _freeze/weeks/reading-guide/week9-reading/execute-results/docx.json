@@ -1,0 +1,14 @@
+{
+  "hash": "56d73075ce15e298ab2f881c8b0c395d",
+  "result": {
+    "markdown": "---\ntitle: \"Week 9 -- Comparing Many Means (ANOVA)\"\nformat: docx \n  #html:\nembed-resources: true\nstandalone: true\neditor: visual\n---\n\n\n\n\n# Chapter 22\n\n**What does ANOVA stand for?**\n\n</br> </br>\n\n**What is the null hypothesis for an ANOVA?**\n\n</br> </br>\n\n**What is the alternative hypothesis for an ANOVA?**\n\n</br> </br>\n\n**What are the conditions for an ANOVA?**\n\n</br> </br>\n\n## Section 2 -- Randomization Test for Comparing Many Means\n\n### Conditions\n\n**What are ways to assess the equal variability condition?**\n\n</br> </br>\n\n**If it appears that the variability between groups is similar can we say that the equal variance condition is met?**\n\n</br> </br>\n\n### Comparing every mean\n\n**Why should we compare every mean rather than only the means that look the most different?**\n\n</br> </br>\n\n## Test statistic\n\n**What is the statistic used in an ANOVA?**\n\n</br> </br>\n\n**How is this statistic calculated?**\n\n</br> </br>\n\n## Creating a permuted sample\n\nLast week, we used cards to simulate what could have happened if $H_0$ was true by ripping the cards in half to separate the $x$ and $y$ values. We then shuffled the cards and created new ($x$, $y$) pairs by resampling from the data without replacement.\n\n**How do we simulate what could have happened if** $H_0$ was true for an ANOVA?\n\n</br> </br>\n\n**What tail do we use to calculate the p-value for an ANOVA?**\n\n</br> </br>\n\n**If you reject** $H_0$ in an ANOVA what can you conclude?\n\n</br> </br>\n\n## Section 3 -- Mathematical Model\n\n**What distribution do we use to calculate the p-value for a theory-based ANOVA?**\n\n</br> </br>\n\n\n::: {.cell}\n::: {.cell-output-display}\n|term      |  df|      sumsq|    meansq| statistic|  p.value|\n|:---------|---:|----------:|---------:|---------:|--------:|\n|gender    |   1|   2.260213| 2.2602134|  7.753005| 0.005583|\n|Residuals | 461| 134.394128| 0.2915274|        NA|       NA|\n:::\n:::\n\n\n**In the ANOVA table above, what does the `statistic` column represent?**\n\n</br> </br>\n\n**How was that `statistic` calculated? Specifically, what values from the table were used to obtain it?**\n\n</br> </br>\n\n**What distribution was used to calculate the `p.value`?**\n\n</br> </br>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

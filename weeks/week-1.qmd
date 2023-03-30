@@ -19,17 +19,6 @@ execute:
   message: false
 ---
 
-```{r packages}
-#| include: false
-
-library(tidyverse)
-library(flair)
-library(emo)
-library(unvotes)
-library(lubridate)
-library(DT)
-```
-
 Welcome!
 
 In this coursework, you'll get a refresher on the foundational components of statistics and data, investigate how statistics is used in your major, and think critically about the philosophy of statistical inference.
@@ -60,35 +49,27 @@ By the end of this coursework you should be able to:
 
 -   explain issues with using the term "significant" in Statistics
 
-## This Week's TODOs
-
-`r emo::ji("play button")` Watch Video: 9 minutes
-
-`r emo::ji("book")` Readings: 60-75 minutes
-
-`r emo::ji("computer")` Activities: 15 minutes
-
-`r emo::ji("check")` Check-ins: 2 (submit on Canvas)
-
-`r emo::ji("scroll")` Group Discussion Homework: 6 Questions
-
-------------------------------------------------------------------------
-
-# Data Refresher
+# Prepare
 
 Let's start off by reading a refresher on some of the foundational concepts for data!
+
+## Textbook Reading
 
 `r emo::ji("book")` [**Required Reading:** *Introduction to Modern Statistics* -- Hello Data](https://openintro-ims.netlify.app/data-hello.html)
 
 `r emo::ji("book")` [**Required Reading:** *Introduction to Modern Statistics* -- Study Design](https://openintro-ims.netlify.app/data-design.html)
 
-`r emo::ji("book")` [**Required Reading:** statistics versus Statistics](https://critical-inference.com/statistics-vs-statistics/)
+### Reading Guide -- Due Tuesday by noon
 
-## `r emo::ji("pen")` Week 1 Reading Guide
+[Download the Word Document](reading-guide/week1-reading.docx)
 
-Access the Word and HTML versions of the Week 1 Reading Guide on Canvas, under the Week 1 module.
+::: {.callout-note}
+# Submission
 
-## `r emo::ji("check")` Check-in
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
+## Concept Quiz -- Due Tuesday by noon
 
 1.  What are the different types of variables that can appear in a dataset? (select all that apply)
 
@@ -136,7 +117,15 @@ Access the Word and HTML versions of the Week 1 Reading Guide on Canvas, under t
 :::
 :::
 
-------------------------------------------------------------------------
+# R Tutorial -- Due Thursday by noon
+
+`r emo::ji("computer")` [**Required Tutorial:** Language of Data](https://openintro.shinyapps.io/ims-01-data-01/#section-welcome)
+
+::: {.callout-note}
+# Submission
+
+Submit a screenshot of the completion page to the Canvas assignment portal!
+:::
 
 # Statistics in Your Field
 
@@ -148,40 +137,10 @@ Find a peer-reviewed article from a journal in your field that performs a statis
 
 The Library is a great resource for this! The following website <https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU> has a list of journals by discipline that are available through the library.
 
-## `r emo::ji("check")` Check-in
+## Research Paper -- Due Friday by 5pm
 
 Upload a PDF of your journal article to the Canvas assignment portal.
 
-</br>
-
-------------------------------------------------------------------------
-
-# The Philosophy of Statistical Inference
-
-`r emo::ji("play button")` [**Required Video:** Philosophy of Statistics (3 minutes)](https://www.youtube.com/watch?v=K511BpyoTzU)
-
-`r emo::ji("book")` [**Required Reading:** Our love of dichotomizing](https://critical-inference.com/our-love-of-dichotomizing/)
-
-`r emo::ji("book")` [**Required Reading:** Science is Human](https://critical-inference.com/science-is-human/)
-
-`r emo::ji("book")` [**Required Reading:** *Do We Really Need the S-word?*](https://www.americanscientist.org/article/do-we-really-need-the-s-word)
-
-</br>
-
-## Conceptual Questions
-
-Throughout the week, you will be asked to reflect on the following questions:
-
--   What is **S**tatistics?
-
--   What are two similarities and two differences between Statistics and Mathematics?
-
--   What is the role of Statistics in the progression of science?
-
--   How is dichotomous thinking used in Statistics? What are two benefits and drawbacks of dichotomous thinking?
-
--   What does it mean for an analysis to be "objective"? Do you believe statistical analyses can be objective? Why or why not?
-
--   What are 4-5 synonyms of "significant" that come to your mind?
-
--   What are two issues that you see with using the term "significant" to denote "small" p-values?
+::: {style="font-size: 0.875em;"}
+Back to [course schedule](/ "Course schedule") ⏎
+:::

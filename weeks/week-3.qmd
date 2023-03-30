@@ -34,33 +34,56 @@ By the end of this coursework you should be able to:
 -   incorporate categorical variables into visualizations of two and three variables
 -   obtain summary statistics for each level of a categorical variable
 
-## This Week's TODOs
+# Prepare
 
-`r emo::ji("book")` Readings: 30-45 minutes
+## Textbook Reading -- Part 1
 
-`r emo::ji("computer")` Tutorials: 1
+::: column-margin
+```{r}
+#| echo: false
+#| out-width: 50%
+knitr::include_graphics(here::here("images", 
+                                   "ims.jpeg")
+                        )
+```
+:::
 
-`r emo::ji("check")` Check-ins: 1 (submit on Canvas)
+[**Required Reading:** Incorporating Categorical Variables into Visualizations](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
 
-------------------------------------------------------------------------
+### Reading Guide -- Due Tuesday by noon
 
-# `r emo::ji("book")` Chapter Reading
+[Download the Word Document](reading-guide/week3-reading.docx)
 
-The Week 3 reading guide can be downloaded here [(Word Document)](reading_guide/week3_reading_guide.docx) or here [(HTML file)](reading_guide/week3_reading_guide.html).
+::: {.callout-note}
+# Submission
 
-## Incorporating Categorical Variables into Visualizations -- IMS Chapter 4, Section 6 -- Comparing Numerical Data Across Groups\](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
+Submit your completed reading guide to the Canvas assignment portal!
+:::
 
-## [Incorporating Categorical Variables into Summary Statistics -- Modern Dive Chapter 3, Sections 1 through 6](https://moderndive.com/3-wrangling.html)
+## Textbook Reading -- Part 2
 
-------------------------------------------------------------------------
+::: column-margin
+```{r}
+#| echo: false
+knitr::include_graphics(here::here("images", 
+                                   "modern_dive.png")
+                        )
+```
+:::
 
-# `r emo::ji("computer")` R Tutorial
+[**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
 
-[**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
+### Reading Guide -- Due Tuesday by noon
 
-------------------------------------------------------------------------
+[Download the Word Document](reading-guide/week2-reading2.docx)
 
-# `r emo::ji("check")` Concept Quiz
+::: {.callout-note}
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
+## Concept Quiz -- Due Tuesday by noon
 
 **1. Suppose you've run the following code to make side-by-side boxplots of life expectancy:**
 
@@ -135,30 +158,12 @@ Third Step
 -   ascending (smallest to largest)
 -   descending (largest to smallest)
 
-# Connecting Back to Week 2
+## R Tutorial -- Due Thursday by noon
 
-**1. In the chapter readings and the tutorials you've learned about different data types. Fill in the associated data types (e.g. character, factor, integer, double) with each type of variable.**
+[**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
 
-| Variable                      | Data Type in R |
-|-------------------------------|----------------|
-| Categorical variable          |                |
-| Continuous numerical variable |                |
-| Discrete numerical variable   |                |
+::: {.callout-note}
+# Submission
 
-**2. In the [Language of Data tutorial](https://openintro.shinyapps.io/ims-01-data-01), you were tasked with creating a new *categorical* variable based on a *numerical* variable, a process called "discretizing." You were given the code below:**
-
-```{r tutorial-code}
-#| eval: false
-
-# Calculate median number of characters: med_num_char
-med_num_char <- median(email50$num_char)
-
-# Create num_char_cat variable in email50
-email50_updated <- email50 %>%
-  mutate(num_char_cat = if_else(num_char < med_num_char,
-                                "[VALUE IF TRUE]",
-                                "[VALUE IF FALSE]")
-         )
-```
-
-Fill in the code with the correct inputs (in place of `[VALUE IF TRUE]` and `[VALUE IF FALSE]`) **and** explain what is happening in each line of the code.
+Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
+:::

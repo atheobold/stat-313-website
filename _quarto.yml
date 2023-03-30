@@ -6,6 +6,15 @@ website:
   title: "STAT 313 - Spring 2023"
   description: "Homepage for STAT 313 - Applied Experimental Design and Regression Models at Cal Poly, Spring 2023."
   #site-url: ""
+  # render:
+  #   - weeks/week-0.qmd
+  #   - weeks/week-1.qmd
+  #   - weeks/week-2.qmd
+  #   - weeks/week-3.qmd
+  #   - weeks/week-4.qmd
+  #   - weeks/week-5.qmd
+  #   - weeks/week-6.qmd
+  #   - weeks/week-7.qmd
 
   repo-url: https://github.com/atheobold/stat-313-website
   repo-actions: [issue]

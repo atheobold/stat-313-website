@@ -1,0 +1,95 @@
+---
+title: "Week 7 Reading Guide Part 2 -- Confidence Intervals"
+format: docx 
+embed-resources: true
+standalone: true
+editor: visual
+---
+
+## Section 1 -- Baby Birth Weights
+
+**What is the process of obtaining one bootstrap resample?**
+
+</br> </br> </br>
+
+**With a bootstrap resample, do we put the cards back into the hat once they are drawn? Why not leave them out?**
+
+</br> </br>
+
+**With a bootstrap resample, will every observation be sampled at least once?**
+
+</br> </br>
+
+**How similar was the resampled slope statistic to the original slope statistic found in the original data?**
+
+</br> </br>
+
+## Section 2 -- Computer simulation and resampling
+
+**What function comes first in the infer workflow for obtaining multiple resamples?**
+
+</br>
+
+**What function comes second in the infer workflow for obtaining multiple resamples?**
+
+</br>
+
+**What function comes third in the infer workflow for obtaining multiple resamples?**
+
+</br>
+
+**What function comes forth in the infer workflow for obtaining multiple resamples?**
+
+</br>
+
+**What is the chief difference between a bootstrap distribution and a sampling distribution?**
+
+</br> </br>
+
+**Looking at the bootstrap distribution for the sample slope in Figure 13, between what two values would you say most values lie?**
+
+</br> </br>
+
+## Section 3 -- Understanding confidence intervals
+
+**If you were to construct a 90% confidence interval using the percentile method, what percentiles would you use to construct the interval?**
+
+</br> </br>
+
+**What condition about the bootstrap distribution cannot be violated for us to be able to construct confidence intervals using the standard error method?**
+
+</br> </br>
+
+**Say we wanted to construct a 68% confidence interval instead of a 95% confidence interval for** $\beta_1$. Describe what changes are needed to make this happen.
+
+::: callout-tip
+Hint: I suggest you look at the normal distribution rules from the last chapter.
+:::
+
+</br> </br>
+
+## Section 4 -- Constructing confidence intervals
+
+**What function helps you visualize your confidence interval?**
+
+</br> </br>
+
+## Section 5 -- Interpreting confidence intervals
+
+**What value do we hope is contained in our confidence interval?**
+
+</br> </br>
+
+**Do we typically know if this value is contained in our interval?**
+
+</br> </br>
+
+**If I made 200 90% confidence intervals, how many would you expect to contain the true parameter?**
+
+</br> </br>
+
+**What is wrong with the following interpretation of a confidence interval?**
+
+> There is a 95% probability that $\beta_1$ lies between -0.0018 and 0.0285.
+
+</br> </br>

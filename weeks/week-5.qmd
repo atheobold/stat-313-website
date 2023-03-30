@@ -32,19 +32,9 @@ By the end of this coursework you should be able to:
 -   recite different methods that can be used to decide what multiple linear regression model is "best"
 -   describe the benefits and costs of using "model selection" for deciding on a multiple linear regression model
 
-## This Week's TODOs
+# Prepare 
 
-`r emo::ji("book")` Reading: 45-60 minutes (submit completed reading guide on Canvas)
-
-`r emo::ji("check")` Concept Quiz: 1 (submit on Canvas)
-
-`r emo::ji("computer")` R Tutorial: 1 (submit completion screenshot on Canvas)
-
-`r emo::ji("pencil")` Midterm Project
-
-------------------------------------------------------------------------
-
-# `r emo::ji("book")` Chapter Reading: Multiple Regression
+## Textbook Reading
 
 ::: columns
 ::: {.column width="40%"}
@@ -68,11 +58,9 @@ knitr::include_graphics(here::here("images",
 
 ### Reading Guide -- Due Tuesday by noon
 
--   [Download the Chapter 6 reading guide (Word)](reading_guide/week5_reading_guide.docx)
+[Download the Word Document](reading-guide/week5-reading.docx)
 
--   [Download the Chapter 6 reading guide (HTML)](reading_guide/week5_reading_guide.html)
-
-# `r emo::ji("check")` Week 6 Cocept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Tuesday by noon
 
 ```{r}
 #| layout-nrow: 1
@@ -173,12 +161,9 @@ get_regression_table(bty_lm)
 
 For every \[1 day / 1 year / 1 evaluation\] increase in professor's \[evaluation score / age / average beauty\] we expect the \[course evaluation score / mean course evaluation score\] to \[increase / decrease\] by \_\_, after accounting for \[ethnicity / gender / average beauty scores\].
 
-# `r emo::ji("computer")` R Tutorial -- Due Thursday by noon
+## R Tutorial -- Due Thursday by noon
 
 1.  [Regression modeling: Parallel Slopes](https://openintro.shinyapps.io/ims-03-model-06/)
 
 2.  [Regression modeling: Evaluating and extending parallel slopes model](https://openintro.shinyapps.io/ims-03-model-07/#section-evaluating-and-extending-parallel-slopes-model)
 
-# Midterm Project
-
-**Details will be announced in class on Tuesday and posted here afterward.**
