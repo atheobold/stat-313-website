@@ -9,10 +9,10 @@ Note that this schedule will be updated as the semester progresses, with all cha
 ::: column-screen-inset-right
 |           Week            | Date        | Topic                                           |       Prepare            |       Lecture Slides           |       Activity        |       Lab              |       Critique        |       Project       |
 |:-------------------------:|-------------|-------------------------------------------------|:------------------------:|:------------------------------:|:---------------------:|:----------------------:|:---------------------:|:-------------------:|
-|  [1](weeks/week-1.html)  | Tue, Jan  5  | Welcome to Stat 313                            | [📖](weeks/week-1.html) | [🖥](slides/week1-day1.html)  |                       |                       |                       |                      |
-|                           | Thu, Jan 6   | Introduction to Data                           |                          | [🖥](slides/week1-day2.html)  |                       | [💻](labs/lab-1.html) |                       |                      |
-|  [2](weeks/week-2.html)  | Tue, Jan 10  | Visualizing & Summarizing Numerical Variables  | [📖](weeks/week-2.html)  | [🖥](slides/week2-day1.html)  |                       |                       |                      |                       |
-|                           | Thu, Jan 11  | The Flaws of Averages                          |                           | [🖥](slides/week2-day2.html) |                       |                       |                      |                       |
+|  [1](weeks/week-1.qmd)  | Tue, Jan  5  | Welcome to Stat 313                            | [📖](weeks/week-1.qmd) | [🖥](slides/week1-day1.qmd)  |                       |                       |                       |                      |
+|                           | Thu, Jan 6   | Introduction to Data                           |                          | [🖥](slides/week1-day2.qmd)  |                       | [💻](labs/lab-1.qmd) |                       |                      |
+|  [2](weeks/week-2.qmd)  | Tue, Jan 10  | Visualizing & Summarizing Numerical Variables  | [📖](weeks/week-2.html)  | [🖥](slides/week2-day1.qmd)  |                       |                       |                      |                       |
+|                           | Thu, Jan 11  | The Flaws of Averages                          |                           | [🖥](slides/week2-day2.qmd) |                       |                       |                      |                       |
 
 
 ```{r}
