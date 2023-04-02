@@ -5,7 +5,7 @@ website:
   page-navigation: true
   title: "STAT 313 - Spring 2023"
   description: "Homepage for STAT 313 - Applied Experimental Design and Regression Models at Cal Poly, Spring 2023."
-  #site-url: ""
+  site-url: "https://atheobold.github.io/stat-313-website"
   repo-url: https://github.com/atheobold/stat-313-website
   #repo-actions: [issue]
 
@@ -23,7 +23,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/sta210-s22
+        href: https://github.com/atheobold/stat-313-website
         text: "GitHub organization"
       - icon: code-square
         href: https://posit.cloud/
@@ -48,20 +48,16 @@ website:
             text: Teaching team
           - href: index.qmd
             text: Schedule
-          # - href: course-links.qmd
-          #   text: Useful links
-          # - href: course-faq.qmd
-          #   text: FAQ
       - section: "Computing"
         contents:
           - href: computing-access.qmd
             text: Access
-      - section: "Projects"
-        contents:
-          - href: projects/midterm-project-directions.qmd
-            text: Midterm Project Description
-          - href: projects/final-project-directions.qmd
-            text: Final Project Description
+      # - section: "Projects"
+      #   contents:
+      #     - href: projects/midterm-project-directions.qmd
+      #       text: Midterm Project Description
+      #     - href: projects/final-project-directions.qmd
+      #       text: Final Project Description
       - section: "Weekly materials"
         contents:
           - href: weeks/week-0.qmd

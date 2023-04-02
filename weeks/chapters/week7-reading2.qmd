@@ -12,9 +12,6 @@ execute:
   echo: false
   message: false
   warning: false
-resources: 
-  - reading_guide/week7_reading_guide_CI.docx
-  - reading_guide/week7_reading_guide_CI.html
 ---
 
 ```{r set-up}
@@ -40,12 +37,6 @@ births14 <- births14 |>
 ```
 
 This week's reading is a compilation of [Chapter 8](https://moderndive.com/8-confidence-intervals.html) from *ModernDive* [@kim2020], [Chapter 24](openintro-ims.netlify.app/inf-model-slr.html) from *Introduction to Modern Statistics* [@ims], with a smattering of my own ideas.
-
-### Reading Guide
-
-Download the reading guide as a [Word Document here](reading_guide/week7_reading_guide_CI.docx)
-
-Download the reading guide as an [HTML file here](reading_guide/week7_reading_guide_CI.html)
 
 ### Sampling Review
 
