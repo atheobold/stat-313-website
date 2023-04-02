@@ -1,0 +1,294 @@
+---
+title: "Working with Data"
+format: 
+  revealjs:
+    theme: night
+editor: visual
+execute: 
+  echo: false
+embed-resources: true
+standalone: true
+---
+
+```{r packages}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(emo)
+library(palmerpenguins)
+library(tidyverse)
+library(kableExtra)
+library(openintro)
+
+nba <- read_csv(here::here("slides", 
+                           "data", 
+                           "NBA_player_of_the_week.csv"
+                           )
+                )
+
+fish <- read_csv(here::here("slides", 
+                           "data", 
+                           "BlackfootFish.csv"
+                           )
+                )
+
+```
+
+::: {style="font-size: 4em; color: #FFFFFF;"}
+Tidy Data
+:::
+
+![Expected layout of "tidy" datasets](images/tidy-1.png)
+
+## 
+
+::: {style="font-size: 3em; color: #FFFFFF;"}
+There's Data
+:::
+
+<center>Gender stereotypes in 5-7 year old children</center>
+
+</br>
+
+::: {style="font-size: 0.75em;"}
+```{r gender-stereotypes}
+#| echo: false
+children_gender_stereo[[2]] %>% 
+  rename(sex = gender) %>% 
+  sample_n(6) %>%
+  kable(format = "html") %>% 
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = "striped")
+  
+```
+:::
+
+## 
+
+::: {style="font-size: 3em; color: #FFFFFF;"}
+Lots of Data
+:::
+
+Body girth measurements and skeletal diameter measurements for 247 men and 260 women.
+
+::: {style="font-size: 0.75em;"}
+```{r body-girth}
+#| echo: false
+bdims %>% 
+  sample_n(6) %>% 
+  select(age, wgt, hgt, sex, sho_gi, wai_gi, nav_gi, hip_gi) %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = "striped")
+```
+:::
+
+## 
+
+::: {style="font-size: 3em; color: #FFFFFF;"}
+In Every Context
+:::
+
+<center>NBA player of the week from 1985 to 2016</center>
+
+</br>
+
+::: {style="font-size: 0.75em;"}
+```{r nba}
+#| echo: false
+nba %>% 
+  sample_n(6) %>%
+  select(Age:Position) %>% 
+  kable(format = "html") %>% 
+    kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = "striped")
+```
+:::
+
+## 
+
+::: {style="font-size: 3em; color: #FFFFFF;"}
+You Can Imagine
+:::
+
+<center>Fish Sampled on Blackfoot River</center>
+
+</br>
+
+::: {style="font-size: 0.75em;"}
+```{r fish}
+#| echo: false
+
+fish %>% 
+  sample_n(6) %>%
+  kable(format = "html") %>% 
+    kable_styling(bootstrap_options = c("striped", "condensed"), 
+                latex_options = "striped")
+```
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 3em; color: #000000;"}
+Your Turn
+:::
+
+::: {style="font-size: 0.75em;"}
+Every year, the US releases to the public a large data set containing information on births recorded in the country.
+
+A total of 13 variables were collected on every birth, including information about:
+
+-   the birth (baby weight, sex of baby, premie status)
+-   the pregnancy (hospital visits, length of gestation, )
+-   the mother's attributes (age, smoking status, marital status, race)
+-   the father's age
+:::
+
+. . .
+
+::: {style="color: #e28743;"}
+How would you expect this dataframe to look?
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Types of Variables
+:::
+
+</br>
+
+![Diagram of types of variables we will analyze!](images/variables.png)
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Examples
+:::
+
+-   A person's height (usually) would be a **continuous, numerical** variable
+
+-   The number of classes someone takes would be a **discrete, numerical** variable
+
+-   A course letter grade would be a **ordinal, categorical** variable
+
+-   The color of someone's hair would be a **regular, categorical** variable
+
+## 
+
+::: {style="font-size: 3em; color: #76b5c5;"}
+Your Turn
+:::
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Suppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.
+:::
+
+. . .
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+What type of variable would year be?
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Types of Studies
+:::
+
+::: columns
+::: {.column width="40%"}
+*Experiment*
+
+-   randomization
+-   replication
+-   controlling
+-   blocking
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+*Observational Study*
+
+-   collect data in a way that does not directly interfere with how the data arise
+:::
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Relationships Between Variables
+:::
+
+</br>
+
+explanatory variable $\rightarrow$ *might affect* $\rightarrow$ response variable
+
+. . .
+
+-   If two variables are not associated, then they are said to be **independent**.
+
+-   If two variables are associated, then they are said to be **dependent**.
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Causal Inference
+:::
+
+</br>
+
+association $\neq$ causation
+
+</br>
+
+. . .
+
+What do you need to say that the explanatory variable [*causes*]{style="color: #e28743;"} a change in the response variable?
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #000000;"}
+Lab Warm-up
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Data Types in `R`
+:::
+
+```{r}
+#| echo: false
+births_small <- births14  %>% 
+  mutate(sex = as.factor(sex)) %>% 
+  select(-visits, -mature, -marital) 
+```
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+glimpse(births_small)
+```
+:::
+
+::: columns
+::: {.column width="45%"}
+What do you think `dbl` means?
+
+How is that different from `int`?
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+What does `chr` mean?
+
+How might it differ from `fct`?
+:::
+:::
