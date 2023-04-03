@@ -1,8 +1,9 @@
 ---
 title: "Confidence Intervals -- Real Life Sampling Distributions"
-format: revealjs
-standalone: true
-embed-resources: true
+format: 
+  revealjs:
+    standalone: true
+    embed-resources: true
 editor: visual
 ---
 
@@ -155,7 +156,6 @@ Approximates the true sampling distribution!
 ##  {background-color="#B6CADA"}
 
 ```{r bootstraps}
-#| cache: true
 boot1 <- penguins %>%
   specify(response = bill_length_mm, 
           explanatory = body_mass_g) %>% 

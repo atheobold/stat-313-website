@@ -20,6 +20,8 @@ library(tidyverse)
 library(moderndive)
 library(infer)
 library(lterdatasampler)
+
+set.seed(1234)
 ```
 
 ## Data
@@ -105,7 +107,6 @@ Let's give this a try!
 **6. Fill in the code to generate 500 bootstrap slope statistics (from 500 bootstrap resamples).**
 
 ```{r boot-dist}
-#| cache: true
 # The cache: true option stores your distribution so you don't get a new one every time you run the code! 
 
 bootstrap_dist <- pie_crab_clean %>% 

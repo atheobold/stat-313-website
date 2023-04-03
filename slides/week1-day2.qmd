@@ -3,11 +3,11 @@ title: "Working with Data"
 format: 
   revealjs:
     theme: night
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: false
-embed-resources: true
-standalone: true
 ---
 
 ```{r packages}

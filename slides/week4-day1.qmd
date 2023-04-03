@@ -1,8 +1,9 @@
 ---
 title: "Introduction to Linear Regression"
-format: revealjs
-embed-resources: true
-standalone: true
+format: 
+  revealjs:
+    embed-resources: true
+    standalone: true
 ---
 
 ```{r packages}
@@ -411,4 +412,3 @@ get_regression_table(habit_lm)
 --
 
 .large\[.honey\[What is the estimated mean birth weight for nonsmoking mothers?\]\]
-

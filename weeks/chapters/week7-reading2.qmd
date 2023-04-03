@@ -3,6 +3,7 @@ title: "Week 7 -- Confidence Intervals for the Slope"
 format: 
   html:
     embed-resources: true
+    standalone: true
     table-of-contents: true
     number-sections: true
     number-depth: 3
@@ -864,7 +865,6 @@ If the interval contained $\beta_1 = 0.0007$, the line is colored grey. If the i
 ```{r fifty-CIs}
 #| label: fig-50-intervals
 #| fig-cap: "50 percentile-based 95% confidence intervals for the true slope for the relationship between mother's age and baby's birth weight, for all babies born in the US in 2014."
-#| cache: true
 
 get_ci_function <- function(x){
   

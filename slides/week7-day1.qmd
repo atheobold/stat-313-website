@@ -2,7 +2,8 @@
 title: "Sampling Variability -- The Heart of Inference"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

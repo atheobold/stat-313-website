@@ -1,8 +1,9 @@
 ---
 title: "Lab 4: Simple Linear Regression"
-format: html
-embed-resources: true
-standalone: true
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: true
