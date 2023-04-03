@@ -54,7 +54,7 @@ website:
             text: Access
       - section: "Projects"
         contents:
-          - href: projects/midterm-project-directions.qmd
+          - href: project/midterm-project-directions.qmd
             text: Midterm Project Description
       #     - href: projects/final-project-directions.qmd
       #       text: Final Project Description
