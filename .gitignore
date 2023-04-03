@@ -11,5 +11,4 @@ staging/
 
 /.quarto/
 _site/
-*.key
-*speaker.html
+site_libs/
