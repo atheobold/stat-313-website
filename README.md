@@ -1,15 +1,10 @@
-# Website for STA 210 at Duke University (Spring 2022)
+# Website for STAT 313 at Cal Poly (Spring 2023)
 
-🔗 https://sta210-s22.github.io/website/
+🔗 https://atheobold.github.io/stat-313-website/
 
-## Colors
+## Inspiration for Website
 
-- website background: #D9E3E4
-- headings: #5B888C
-
-## Attribution
-
-Much of the content is based on [STA 210 - Fall 2021](https://github.com/sta210-fa21/) by Dr. Maria Tackett.
+This website is a derivation of STA 201 at Duke 
 
 <hr> 
 
