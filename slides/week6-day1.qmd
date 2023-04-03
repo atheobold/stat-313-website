@@ -1,0 +1,309 @@
+---
+title: "Variable Selection in Multiple Regression"
+format: 
+  revealjs:
+    self-contained: true
+    theme: night
+editor: visual
+---
+
+```{r set-up}
+library(tidyverse)
+library(moderndive)
+library(palmerpenguins)
+```
+
+::: {style="font-size: 2.5em; color: #B6CADA;"}
+**What is model selection?**
+:::
+
+. . .
+
+</br> </br>
+
+::: {style="font-size: 2.5em; color: #B6CADA;"}
+**Why use model selection?**
+:::
+
+## 
+
+::: {style="font-size: 1.5em;"}
+1.  Lots of available predictor variables
+:::
+
+`evals`:
+
+```{r}
+#| echo: false
+
+slice_sample(evals, n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling()
+```
+
+## 
+
+::: {style="font-size: 1.5em;"}
+2.  Interested in prediction not explanation
+:::
+
+. . .
+
+> You want to predict an outcome variable $y$ based on the information contained in a set of predictor variables $x$. You don't care so much about understanding how all the variables relate and interact with one another, but rather only whether you can make good predictions about $y$ using the information in $x$.
+>
+> *ModernDive*
+
+## 
+
+::: {style="font-size: 2em; color: #B6CADA;"}
+How do you use model selection?
+:::
+
+. . .
+
+::: columns
+::: {.column width="45%"}
+-   Stepwise Selection
+    -   Forward Selection
+    -   Backward Selection
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+-   Resampling Methods
+    -   Cross Validation
+    -   Testing / Training Datasets
+:::
+:::
+
+. . .
+
+::: {style="font-size: 0.9em; color: #0F4C81;"}
+**With any of these methods, you get to choose *how* you decide if one model is better than another model.**
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+$R^2$ -- Coefficient of Determination
+:::
+
+<!-- Wright was one of the giants of 20th century evolutionary biology. -->
+
+::: columns
+::: {.column width="45%"}
+![](images/wright.jpg)
+
+::: {style="font-size: 0.75em;"}
+Wright, Sewall. 1921. Correlation and causation. Journal of Agricultural Research 20: 557-585.
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 0.75em;"}
+> In statistics, the coefficient of determination, denoted $R^2$ or $r^2$ and pronounced "R squared," is the proportion of the variation in the dependent variable that is predictable from the independent variable(s).
+>
+> *Wikipedia*
+:::
+:::
+:::
+
+## 
+
+::: {style="font-size: 2em"}
+$R^2 = 1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)}$
+:::
+
+- $\text{var}(\text{residuals})$ is the variance of the residuals "leftover" from the regression model
+
+- $\text{var}(y)$ is the inherent variability of the response variable
+
+. . .
+
+::: {style="font-size: 1.5em; color: #0F4C81;"}
+**Suppose we have a simple linear regression with an $R^2$ of 0.85. How would you interpret this quantity?**
+:::
+
+## 
+
+::: {style="font-size: 2em;"}
+But! $R^2$ **always** increases as you increase the number of explanatory variables.
+:::
+
+. . .
+
+</br>
+
+::: columns
+::: {.column width="45%"}
+**Simple Linear Regression**
+
+$0.85 = 1 - \frac{0.75}{5}$
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+**One Additional Variable**
+
+$0.86 = 1 - \frac{0.7}{5}$
+:::
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+Adjusted $R^2$
+:::
+
+::: columns
+::: {.column width="45%"}
+![](images/ezekiel.jfif)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 0.75em;"}
+> The use of an adjusted $R^2$ is an attempt to account for the phenomenon of the $R^2$ automatically increasing when extra explanatory variables are added to the model.
+>
+> *Wikipedia*
+:::
+:::
+:::
+
+## 
+
+::: {style="font-size: 1.5em"}
+$R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1)}{(n - k - 1)}$
+:::
+
+- $n$ is the sample size
+
+- $k$ is the number of predictor variables in the model
+
+. . .
+
+::: {style="font-size: 1.25em; color: #0F4C81;"}
+**Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. What value will you use for $k$ in the calculation of $n - k - 1$?**
+
+:::
+
+
+## 
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+p-values
+:::
+
+::: columns
+::: {.column width="45%"}
+![](images/fisher.jfif)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 0.75em;"}
+> In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.
+>
+> *Wikipedia*
+:::
+:::
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+AIC -- An Information Criterion
+:::
+
+::: columns
+::: {.column width="45%"}
+![](images/akaike.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 0.75em;"}
+> The Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.
+>
+> *Wikipedia*
+:::
+:::
+:::
+
+## 
+
+::: {style="font-size: 1.5em; color: #B6CADA;"}
+Well, how do you use AIC to choose a "best" model?
+:::
+
+. . .
+
+</br>
+
+```{r}
+#| echo: false
+
+full_aic <- lm(body_mass_g ~ ., data = penguins) %>% 
+  AIC()
+
+minus_year <- lm(body_mass_g ~ . - year, data = penguins) %>% 
+  AIC()
+
+minus_species <- lm(body_mass_g ~ . - species, data = penguins) %>% 
+  AIC()
+
+minus_flipper <- lm(body_mass_g ~ . - flipper_length_mm, data = penguins) %>% 
+  AIC()
+
+aic_table <- tibble(model = 
+                      c("Full Model", "All Variables Except Year", 
+                        "All Variables Except Species", 
+                        "All Variables Except Flipper Length"), 
+                    AIC = c(full_aic, 
+                            minus_year, 
+                            minus_species, 
+                            minus_flipper)
+                    ) %>% 
+  mutate(`Delta AIC` = AIC - min(AIC))
+
+aic_table %>% 
+  arrange(`Delta AIC`) %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling()
+
+```
+
+. . .
+
+::: {style="font-size: 0.75em; color: #B6CADA;"}
+If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that is mathematically close to $p > 0.05$.
+:::
+
+## 
+
+::: {style="font-size: 4em; color: #B6CADA;"}
+Model Selection Activity!
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #B6CADA;"}
+What should you use instead?
+:::
+
+> In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
+>
+> *Introduction to Modern Statistics*

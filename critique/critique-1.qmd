@@ -1,6 +1,6 @@
 ---
 title: "Statistical Critique 1"
-subtitle: "Due January 29, 2023 by midnight"
+subtitle: "Due April 23, 2023 by midnight"
 format: 
   html:
     self-contained: true
@@ -13,113 +13,82 @@ editor: visual
 
 # Assignment Details
 
-In your first statistical critique will focus on critiquing a key aspect of 
-any statistical argument---data visualization. You have explored data
-visualizations over the last two weeks, thinking about what makes a plot more or
-less clear. You will use your knowledge of data visualizations to provide a 
-critique for two different styles of visualizations, (1) a "pop" visualization, 
-and (2) a "scientific" visualization. 
+In your first statistical critique will focus on critiquing a key aspect of any statistical argument---data visualization. You have explored data visualizations over the last two weeks, thinking about what makes a plot more or less clear. You will use your knowledge of data visualizations to provide a critique for two different styles of visualizations, (1) a "pop" visualization, and (2) a "scientific" visualization.
 
 ## Including your Visualizations
 
-You are expected to include the two visualizations you decide to critique. These
-visualizations must be included in the paragraph surrounding your critique, not
-at the end of your document. 
+You are expected to include the two visualizations you decide to critique. These visualizations must be included in the paragraph surrounding your critique, not at the end of your document.
 
 ### Getting your visualizations
 
-For the New York Times visualization, you can left click on the image and save
-it to your computer. 
+For the New York Times visualization, you can left click on the image and save it to your computer.
 
 ![Figure 1: Options when left clicking on NYT visualization -- either copy the image or save it to your computer](images/save_nyt.png)
 
-For the visualization from your research article, you may need to take
-screenshot of the page and crop it to only include the image. 
+For the visualization from your research article, you may need to take screenshot of the page and crop it to only include the image.
 
 ![Figure 2: Cropped image from scientific article](images/placebo_crop.png)
 
 ## Submission
 
-You are allowed to use any text editing software to make your critique (e.g., 
-Word, Pages, Google Docs), but your submission **must be a PDF**. If you are 
-unsure how to save your file as a PDF, I recommend using Google! 
+You are allowed to use any text editing software to make your critique (e.g., Word, Pages, Google Docs), but your submission **must be a PDF**. If you are unsure how to save your file as a PDF, I recommend using Google!
 
 # Part One: Pop Visualizations
 
-It is common for blogs and online news to use visualizations to convey information 
-to their readers. In this segment you will select a "pop" visualization and 
-provide a critique of what the visualization does well and where it could be 
-improved. 
+It is common for blogs and online news to use visualizations to convey information to their readers. In this segment you will select a "pop" visualization and provide a critique of what the visualization does well and where it could be improved.
 
 ## Getting Started
 
-1. Go to the [What's Going on in This Graph website](https://www.nytimes.com/column/whats-going-on-in-this-graph)
+1.  Go to the [What's Going on in This Graph website](https://www.nytimes.com/column/whats-going-on-in-this-graph)
 
-2. Scroll through the weekly graphs and click on a plot that you are interested in
+2.  Scroll through the weekly graphs and click on a plot that you are interested in
 
-3. Save the image to your computer (as instructed above)
+3.  Save the image to your computer (as instructed above)
 
 ## Visualization Critique
 
-Your critique of the visualization you selected needs to address the following
-questions:
+Your critique of the visualization you selected needs to address the following questions:
 
-1. What aesthetics are being used in the plot? 
+1.  What aesthetics are being used in the plot?
 
-::: {.callout-tip}
+::: callout-tip
 Remember: `aes`thetics map **variables** to aspects of the plot
 :::
 
-2. Name **at least two** things the visualization does well --- What makes the 
-visualization clear to the reader? 
+2.  Name **at least two** things the visualization does well --- What makes the visualization clear to the reader?
 
-3. Name **at least two** ways the visualization could be improved --- What would
-the reader struggle to understand?
+3.  Name **at least two** ways the visualization could be improved --- What would the reader struggle to understand?
 
 # Part Two: Scientific Visualizations
 
-It is becoming increasingly common for scientific articles to be required to
-provide visualizations of the data alongside a statistical analysis. In this
-segment, you will use the scientific article you selected in Week 1 (your 
-submission to the *Week 1: Statistics in Your Field* assignment) and provide a
-critique of what the visualization does well and where it could be improved. 
+It is becoming increasingly common for scientific articles to be required to provide visualizations of the data alongside a statistical analysis. In this segment, you will use the scientific article you selected in Week 1 (your submission to the *Week 1: Statistics in Your Field* assignment) and provide a critique of what the visualization does well and where it could be improved.
 
 ## Getting Started
 
-1. Access the research article you selected in Week 1. If you cannot find it on
-your computer, go to the [Week 1: Statitics in Your Field assignment](https://canvas.calpoly.edu/)
+1.  Access the research article you selected in Week 1. If you cannot find it on your computer, go to the [Week 1: Statitics in Your Field assignment](https://canvas.calpoly.edu/)
 
-2. Save the image to your computer (as instructed above)
+2.  Save the image to your computer (as instructed above)
 
 ## Visualization Critique
 
-Your critique of the visualization you selected needs to address the following
-questions:
+Your critique of the visualization you selected needs to address the following questions:
 
-1. What aesthetics are being used in the plot? 
+1.  What aesthetics are being used in the plot?
 
-::: {.callout-tip}
+::: callout-tip
 Remember: `aes`thetics map **variables** to aspects of the plot
 :::
 
-2. Name **at least two** things the visualization does well --- What makes the 
-visualization clear to the reader? 
+2.  Name **at least two** things the visualization does well --- What makes the visualization clear to the reader?
 
-3. Name **at least two** ways the visualization could be improved --- What would
-the reader struggle to understand?
+3.  Name **at least two** ways the visualization could be improved --- What would the reader struggle to understand?
 
-::: {.callout-caution}
-If the article you selected **does not** have a visualization, you are permitted
-to substitute a *table* for a visualization. You will address the following
-questions:
+::: callout-caution
+If the article you selected **does not** have a visualization, you are permitted to substitute a *table* for a visualization. You will address the following questions:
 
-1. What aesthetics are being used in the table? Similar to a visualization, the
-aesthetics of a table are variables being mapped to aspects of the table.
+1.  What aesthetics are being used in the table? Similar to a visualization, the aesthetics of a table are variables being mapped to aspects of the table.
 
-2. Name **at least two** things the table does well --- What makes the table 
-clear to the reader? 
+2.  Name **at least two** things the table does well --- What makes the table clear to the reader?
 
-3. Name **at least two** ways the table could be improved --- What would
-the reader struggle to understand?
+3.  Name **at least two** ways the table could be improved --- What would the reader struggle to understand?
 :::
-

@@ -1,0 +1,414 @@
+---
+title: "Introduction to Linear Regression"
+format: revealjs
+embed-resources: true
+standalone: true
+---
+
+```{r packages}
+library(emo)
+library(tidyverse)
+library(openintro)
+library(ggridges)
+library(flair)
+library(flair)
+library(broom)
+library(kableExtra)
+library(png)
+library(moderndive)
+
+```
+
+```{r ggplot-theme}
+#| echo: false
+
+my_theme <- theme_bw() + 
+  theme(axis.title.x = element_text(size = 20),
+        axis.title.y = element_text(size = 20), 
+        axis.text.x = element_text(size = 14), 
+        axis.text.y = element_text(size = 14)
+        )
+```
+
+class: middle, inverse, center
+
+.larger\[Data for Today\]
+
+The .honey\[ncbirths\] dataset is a random sample of 1,000 cases taken from a larger dataset collected in North Carolina in 2004.
+
+Each case describes the birth of a single child born in North Carolina, along with various characteristics of the child (e.g. birth weight, length of gestation, etc.), the child's mother (e.g. age, weight gained during pregnancy, smoking habits, etc.) and the child's father (e.g. age).
+
+</br>
+
+--
+
+.large\[.honey\[What do you expect the dataset to look like?\]\]
+
+------------------------------------------------------------------------
+
+.rhubarb\[.larger\[Relationships Between Variables\]\]
+
+-   In a statistical model, we generally have one variable that is the output and one or more variables that are the inputs.
+
+.pull-left\[ - Response variable \* a.k.a. $y$, dependent \* The quantity you want to understand \* In this class -- always numerical\]
+
+--
+
+.pull-right\[ - Explanatory variable \* a.k.a. $x$, independent, explanatory, predictor \* Something you think might be related to the response \* Either numerical or categorical\]
+
+------------------------------------------------------------------------
+
+.mango\[.larger\[Visualizing Linear Regression\]\]
+
+.pull-left\[ - The scatterplot has been called the most "generally useful invention in the history of statistical graphics."
+
+-   It is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation. \]
+
+.pull-right\[
+
+```{r viz}
+#| echo: false
+#| out-width: 100%
+
+ggplot(data = bdims, aes(y = wgt, x = hgt)) + 
+  geom_point() +
+  scale_x_continuous("Explanatory Variable", labels = NULL) + 
+  scale_y_continuous("Response Variable", labels = NULL) + 
+  my_theme
+```
+
+\]
+
+------------------------------------------------------------------------
+
+class: center, middle, inverse
+
+.larger\[Characterizing Relationships\]
+
+Form (e.g. linear, quadratic, non-linear)
+
+Direction (e.g. positive, negative)
+
+Strength (how much scatter/noise?)
+
+Unusual observations (do points not fit the overall pattern?)
+
+------------------------------------------------------------------------
+
+.hand\[.larger\[Your Turn\]\]
+
+.pull-left\[
+
+```{r}
+#| echo: false
+#| out-width: 100%
+
+ncbirths %>% 
+ggplot(aes(x = weeks, y = weight)) +
+  geom_jitter() + 
+  labs(x = "Length of pregnancy (in weeks)",
+       y = "Birth weight of baby (in lbs)") +
+  my_theme
+```
+
+\]
+
+.pull-right\[ How would your characterize this relationship?
+
+-   shape
+-   direction
+-   strength
+-   outliers \]
+
+------------------------------------------------------------------------
+
+.hand\[.bitlarger\[What if you added another variable?\]\]
+
+--
+
+.pull-left\[
+
+```{r}
+#| echo: false
+#| out-width: 90%
+
+ncbirths %>% 
+ggplot(aes(x = weeks, y = weight)) +
+  geom_jitter() + 
+  labs(x = "Length of pregnancy (in weeks)",
+       y = "Birth weight of baby (in lbs)") + 
+  my_theme
+```
+
+\]
+
+.pull-right\[
+
+```{r}
+#| echo: false
+#| out-width: 90%
+
+ncbirths %>% 
+ggplot(aes(x = weeks, y = weight, color = premie)) +
+  geom_jitter() + 
+  labs(x = "Length of pregnancy (in weeks)",
+       y = "Birth weight of baby (in lbs)") + 
+  my_theme +
+  theme(legend.text = element_text(size = 16), 
+        legend.title = element_text(size = 20))
+```
+
+\]
+
+------------------------------------------------------------------------
+
+.bayberry\[.larger\[Summarizing a Linear Relationship\]\]
+
+.pull-left\[ - Correlation: **strength and direction of a *linear* relationship between two *quantitative* variables**
+
+-   Correlation coefficient between -1 and 1
+-   Sign of the correlations shows direction
+-   Magnitude of the correlation shows strength \]
+
+--
+
+.pull-right\[
+
+```{r}
+births_post26 <- ncbirths %>% 
+  drop_na(weight, weeks) %>% 
+  filter(weeks > 26)
+
+
+births_post26 %>% 
+  get_correlation(weeks ~ weight)
+```
+
+\]
+
+------------------------------------------------------------------------
+
+class: middle, inverse
+
+.larger\[Anscombe Correlations\]
+
+.pull-left\[
+
+```{r}
+#| echo: false
+#| out-width: 100%
+
+anscombe <- anscombe %>%
+  mutate(id = 1:nrow(.)) %>%
+  pivot_longer(cols = -id, names_to = "key", values_to = "value") %>%
+  separate(key, into = c("variable", "set"), sep = 1) %>%
+  pivot_wider(names_from = variable, values_from = value)
+
+ggplot(data = anscombe, aes(x = x, y = y)) +
+  geom_point() +
+  facet_wrap(~set)
+```
+
+\]
+
+.pull-right\[
+
+Four datasets, very different graphical presentations
+
+-   same mean and standard deviation in both $x$ and $y$
+-   same correlation
+-   same regression line \]
+
+--
+
+.center\[ .large\[.honey\[For which of these relationships is correlation a reasonable summary measure?\]\]\]
+
+------------------------------------------------------------------------
+
+class: middle
+
+.larger\[The Importance of Language\]
+
+</br>
+
+-   The word "correlation" has both a precise mathematical definition and a more general definition for typical usage in English.
+
+--
+
+-   These uses are obviously related and generally in sync.
+
+-   There are times when these two uses can be conflated and/or misconstrued.
+
+------------------------------------------------------------------------
+
+.gray\[.larger\[Linear Regression\]\]
+
+-   Models are ubiquitous in statistics.
+
+    -   We often assume that the value of our response variable is some function of our explanatory variable, plus some random noise.
+
+--
+
+-   In this case, we assume the relationship between $x$ and $y$ takes the form of a **linear function**.
+
+</br>
+
+.center\[ $$
+  response = intercept + slope \cdot explanatory + noise
+$$\]
+
+------------------------------------------------------------------------
+
+class: inverse, middle
+
+.larger\[.honey\[Estimated / Fitted Regression Model\]\]
+
+$$
+  \hat{y} = b_0 + b_1 \cdot x
+$$
+
+--
+
+.center\[ .large\[.honey\[Why does this equation have a hat on y?\]\]\]
+
+------------------------------------------------------------------------
+
+class: middle
+
+.larger\[Coefficient Estimates\]
+
+```{r}
+  
+weeks_lm <- lm(weight ~ weeks, data = births_post26)
+  
+get_regression_table(weeks_lm)
+```
+
+------------------------------------------------------------------------
+
+class: middle, inverse
+
+.larger\[Our focus (for now...)\]
+
+![](images/coefficients.jpg)
+
+------------------------------------------------------------------------
+
+class: center, inverse
+
+.larger\[Estimated regression equation\]
+
+$$\hat{y} = b_0 + b_1 \cdot x$$
+
+--
+
+```{r}
+get_regression_table(weeks_lm)
+```
+
+.large\[.honey\[Write out the estimated regression equation!\]\]
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.large\[.hand\[How do you interpret the intercept value of -5.34?\]\]
+
+--
+
+.large\[.hand\[How do you interpret the slope value of 0.325?\]\]
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Obtaining Residuals\]
+
+--
+
+$\widehat{weight} = -5.34 + 0.325 \cdot weeks$
+
+.rhubarb\[What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?\]
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[A different explanatory variable\]
+
+```{r}
+weight_gain_lm <- lm(weight ~ gained, data = births_post26)
+  
+get_regression_table(weight_gain_lm)
+```
+
+</br>
+
+.large\[.rhubarb\[Write out this estimated regression equation!\]\]
+
+------------------------------------------------------------------------
+
+class: center, inverse, middle
+
+.larger\[.hand\[How would you choose which model was better?\]\]
+
+--
+
+```{r}
+births_post26 %>% 
+  drop_na(weight, gained, weeks) %>% 
+  summarize(cor_weeks = cor(weight, weeks), 
+            R_sq_weeks = cor_weeks^2, 
+            cor_gained = cor(weight, gained),
+            R_sq_gained = cor_gained^2)
+```
+
+------------------------------------------------------------------------
+
+class: inverse, center
+
+.larger\[Categorical Explanatory Variables\]
+
+```{r}
+births_post26 %>% 
+  distinct(habit)
+```
+
+------------------------------------------------------------------------
+
+.larger\[Indicator Variables\]
+
+$$
+  \hat{y} = b_0 + b_1 \cdot x
+$$
+
+--
+
+.pull-left\[ $x$ is a categorical variable - `"nonsmoker"` - `"smoker"`\]
+
+--
+
+.pull-right\[ Need: - "baseline" mean - "offsets" \]
+
+--
+
+</br>
+
+.center\[ $1_{smoker}(x) = 1$ if the mother was a `"smoker"`, 0 otherwise\]
+
+------------------------------------------------------------------------
+
+class: center, inverse, middle
+
+.larger\[A different equation\]
+
+```{r}
+habit_lm <- lm(weight ~ habit, data = births_post26)
+  
+get_regression_table(habit_lm)
+```
+
+--
+
+.large\[.honey\[What is the estimated mean birth weight for nonsmoking mothers?\]\]
+

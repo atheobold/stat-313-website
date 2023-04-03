@@ -1,0 +1,439 @@
+---
+title: "Introduction to Multiple Linear Regression"
+format: 
+  revealjs:
+    self-contained: true
+editor: visual
+---
+
+```{r set-up}
+#| include: false
+
+library(tidyverse)
+library(moderndive)
+library(openintro)
+
+```
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 3em; color: #000000;"}
+Before...
+:::
+
+```{r old-slr}
+#| echo: false
+ncbirths %>% 
+  ggplot(mapping = aes(x = weeks, y = weight)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Weeks of Gestation", 
+       y = "Weight of Baby (lbs)")
+
+```
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 3em; color: #000000;"}
+Now...
+:::
+
+```{r two-mlr}
+#| echo: false
+
+ncbirths %>% 
+  ggplot(mapping = aes(x = weeks, y = weight, color = habit)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Weeks of Gestation", 
+       y = "Weight of Baby (lbs)", 
+       color = "Mother Smoking Status")
+
+```
+
+##  {background-color="#B6CADA"}
+
+</br> </br>
+
+<center>
+
+::: {style="font-size: 6em; color: #000000;"}
+How?
+:::
+
+</center>
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Offsets!
+:::
+
+::: columns
+::: {.column width="75%"}
+```{r smoke-mlr}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+smoke_lm <- lm(weight ~ weeks * habit, data = ncbirths)
+
+get_regression_table(smoke_lm)
+
+```
+
+```{r smoke-mlr-output}
+#| echo: false
+smoke_lm <- lm(weight ~ weeks * habit, data = ncbirths)
+
+get_regression_table(smoke_lm) %>% 
+  select(term:std_error)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="20%"}
+The * means the variables are interacting!
+:::
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.1em; color: #0F4C81;"}
+What is the regression equation for non-smoker mothers?
+:::
+
+. . .
+
+::: {style="font-size: 1.1em; color: #0F4C81;"}
+What is the regression equation for smoker mothers?
+:::
+
+##  {background-color="#B6CADA"}
+
+<center>
+
+::: {style="font-size: 3em; color: #000000;"}
+What if we have a second numerical explanatory variable?
+:::
+
+</center>
+
+##  {background-color="#D4D4D4"}
+
+```{r mlr-two-num}
+ncbirths %>% 
+  ggplot(mapping = aes(x = weeks, y = weight, color = mage)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Weeks of Gestation", 
+       y = "Weight of Baby (lbs)", 
+       color = "Mother's Age")
+
+```
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Multiple slopes
+:::
+
+```{r age-mlr}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+age_lm <- lm(weight ~ weeks + mage, data = ncbirths)
+
+get_regression_table(age_lm)
+
+```
+
+```{r age-mlr-output}
+#| echo: false
+age_lm <- lm(weight ~ weeks + mage, data = ncbirths)
+
+get_regression_table(age_lm) %>% 
+  select(term:std_error)
+```
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.25em; color: #0F4C81;"}
+How do you interpret the value of 0.346?
+:::
+
+. . .
+
+::: {style="font-size: 1.25em; color: #0F4C81;"}
+How do you interpret the value of 0.02?
+:::
+
+##  {background-color="#B6CADA"}
+
+<center>
+::: {style="font-size: 2.5em; color: #000000;"}
+But how do we decide if the interaction model is "best" without a p-value??????
+:::
+</center>
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 2em; color: #000000;"}
+When investigating if a relationship differs...
+:::
+
+. . .
+
+::: {style="font-size: 1.25em; color: #0F4C81;"}
+Always start with the "interaction" / different slopes model.
+:::
+
+. . .
+
+::: {style="font-size: 1.25em; color: #b76352;"}
+If the slopes look different, you're done!
+:::
+
+. . .
+
+::: {style="font-size: 1.25em; color: #34605f;"}
+If the slopes look similar, then fit the "additive" / parallel slopes model.
+:::
+
+
+##  
+
+::: {style="font-size: 2em; color: #000000;"}
+Different Enough?
+:::
+
+```{r}
+#| echo: false
+
+ggplot(data = MA_schools, 
+       mapping = aes(y = average_sat_math, 
+                       x = perc_disadvan, 
+                       color = size)) + 
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  labs(x = "Percent Economically Disadvantaged", 
+       y = "Average SAT Math", 
+       color = "Size of School")
+```
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Behind the Plot
+:::
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(data = MA_schools, 
+       mapping = aes(y = average_sat_math, 
+                       x = perc_disadvan, 
+                       color = size)) + 
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  labs(x = "Percent Economically Disadvantaged", 
+       y = "Average SAT Math", 
+       color = "Size of School")
+```
+
+</br>
+
+`geom_smooth()` allows for *both* the intercepts and the slopes to differ
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+What about now?
+:::
+
+```{r}
+lm(average_sat_math ~ perc_disadvan*size, data = MA_schools) %>% 
+  get_regression_table() %>% 
+  select(term:std_error)
+```
+
+. . .
+
+::: {style="font-size: 3em; color: #B6CADA;"}
+🤨
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Who is baseline?
+:::
+
+![](images/baseline.jpg)
+
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Deciphering groups -- Small schools
+:::
+
+![](images/small_coefficients.jpg)
+
+. . .
+
+
+
+$$\widehat{SAT}_{small} = 594 - 2.93 \times \text{percent disadvan}$$
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Deciphering groups -- Medium schools
+:::
+
+![](images/medium_coefficients.jpg)
+
+. . .
+
+$$\widehat{SAT}_{medium} = (594 - 17.8) + (- 2.93 + 0.146) \times \text{percent disadvan}$$
+
+. . .
+
+$$\widehat{SAT}_{medium} = 576.2 - 2.784 \times \text{percent disadvan}$$
+
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+Deciphering groups -- Large schools
+:::
+
+![](images/large_coefficients.jpg)
+
+. . .
+
+$$\widehat{SAT}_{large} = (594 - 13.3) + (- 2.93 + 0.189) \times \text{percent disadvan}$$
+
+. . .
+
+$$\widehat{SAT}_{medium} = 580.7 - 2.741 \times \text{percent disadvan}$$
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
+What if they're not very different?
+:::
+
+
+::: columns
+::: {.column width="45%"}
+
+```{r}
+MA_schools %>% 
+  ggplot(mapping = aes(y = average_sat_math, 
+                       x = perc_disadvan, 
+                       color = size)) + 
+  geom_point() +
+  geom_parallel_slopes() + 
+  labs(x = "Percent Economically Disadvantaged", 
+       y = "Average SAT Math", 
+       color = "Size of School")
+```
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+```{r}
+MA_schools %>% 
+  ggplot(mapping = aes(y = average_sat_math, x = perc_disadvan, color = size)) + 
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  labs(y = "Average SAT Math Score", 
+       x = "Percent of Students Economically Disadvantaged", 
+       color = "Size of School")
+```
+:::
+:::
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+Parallel Slopes
+:::
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+lm(average_sat_math ~ perc_disadvan + size, data = MA_schools)
+```
+
+</br>
+
+```{r}
+lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>% 
+  get_regression_table() %>% 
+  select(term:std_error)
+```
+
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Group equations -- Baseline
+:::
+
+```{r}
+lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>% 
+  get_regression_table() %>% 
+  select(term:std_error)
+```
+
+. . .
+
+$$\widehat{SAT}_{small} = 588 - 2.78 \times \text{percent disadvantaged}$$
+
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Group equations -- Offsets
+:::
+
+```{r}
+lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>% 
+  get_regression_table() %>% 
+  select(term:std_error)
+```
+
+. . .
+
+$$\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \times \text{percent disadvan}$$
+
+. . .
+
+$$\widehat{SAT}_{medium} = 576.1 - 2.78 \times \text{percent disadvan}$$
+
+. . .
+
+$$\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}$$
+
+. . .
+
+$$\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}$$
+
+

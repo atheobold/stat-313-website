@@ -1,0 +1,274 @@
+---
+title: ""
+format: html
+editor: visual
+---
+
+```{r set-up}
+library(palmerpenguins)
+library(moderndive)
+```
+
+## Full Model -- ALL Explanatory Variables Included
+
+```{r full}
+lm(body_mass_g ~ . , data = penguins) %>% 
+  get_regression_summaries()
+```
+
+::: {.callout-note}
+# Starting adjusted $R^2$
+
+Note the adjusted $R^2$ value you are starting with, as this will influence your decisions.
+:::
+
+## Variable Selection
+
+Now, starting with our full model, we will use backwards selection to decide what variable(s) should be removed from the model. 
+
+You can only delete a variable if it **increases** adjusted $R^2$. 
+
+::: {.callout-note}
+Note we are not saying how much adjusted $R^2$ needs to be increased, simply that it must be bigger. 
+:::
+
+## Models Deleting One Explanatory Variable
+
+```{r minus-year}
+lm(body_mass_g ~ . -year, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.872 -->
+
+```{r minus-sex}
+lm(body_mass_g ~ . -sex, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.849 -->
+
+```{r minus-flipper-length}
+lm(body_mass_g ~ . -flipper_length_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.86 -->
+
+```{r minus-bill-depth}
+lm(body_mass_g ~ . -bill_depth_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.87 -->
+
+```{r minus-bill-length}
+lm(body_mass_g ~ . -bill_length_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island}
+lm(body_mass_g ~ . -island, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.874 -->
+
+```{r minus-species}
+lm(body_mass_g ~ . -species, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.843 -->
+
+::: {.callout-caution}
+# Which variable should be deleted?
+
+Based on the adjusted $R^2$ values, which variable should be deleted from the model. 
+
+*Remember:* You are looking for the model that has a higher adjusted $R^2$ than what you started with!
+:::
+
+<!-- delete island -->
+
+<!-- baseline = 0.873 -->
+
+## Models Deleting Two Explanatory Variables
+
+```{r minus-island-year}
+lm(body_mass_g ~ . - island - year, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+```{r minus-island-sex}
+lm(body_mass_g ~ . - island - sex, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.849 -->
+
+```{r minus-island-flipper-length}
+lm(body_mass_g ~ . - island - flipper_length_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.861 -->
+
+```{r minus-island-bill-depth}
+lm(body_mass_g ~ . - island - bill_depth_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island-bill-length}
+lm(body_mass_g ~ . - island - bill_length_mm, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.871 -->
+
+```{r minus-island-species}
+lm(body_mass_g ~ . - island - species, data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.829 -->
+
+<!-- model missing island is best = 0.871  -->
+
+::: {.callout-caution}
+# Which variable should be deleted?
+
+Based on the adjusted $R^2$ values, which variable should be deleted from the model. 
+
+*Remember:* You are looking for the model that has a higher adjusted $R^2$ than what you started with!
+:::
+
+
+## New Rules
+
+Now, choose the simplest model that is within 1% of the best adjusted $R^2$ you obtained. 
+
+::: {.callout-note}
+Note, when I say "simplest model" I mean the model with the fewest variables included. 
+:::
+
+<!-- can choose either model as new "baseline" -->
+
+```{r minus-island-bill-depth-bill-length}
+lm(body_mass_g ~ . - island - bill_depth_mm - bill_length_mm, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.867 -->
+
+```{r minus-island-bill-depth-year}
+lm(body_mass_g ~ . - island - bill_depth_mm - year, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.869 -->
+
+```{r minus-island-bill-depth-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - species, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.815 -->
+
+```{r minus-island-bill-depth-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - flipper_length_mm, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.853 -->
+
+```{r minus-island-bill-depth-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - sex, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.829 -->
+
+<!-- deleting year has highest resulting adjusted R-sq = 0.869 -->
+
+```{r minus-island-bill-depth-year-bill-length}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.865 -->
+
+```{r minus-island-bill-depth-year-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - flipper_length_mm, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.854 -->
+
+```{r minus-island-bill-depth-year-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - sex, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.822 -->
+
+```{r minus-island-bill-depth-year-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - species, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.805 -->
+
+<!-- deleting bill length has highest resulting R-sq = 0.865 -->
+
+<!-- still greater than lowest bound of 0.861 -->
+
+```{r minus-island-bill-depth-year-bill-length-sex}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - sex, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.785 -->
+
+```{r minus-island-bill-depth-year-bill-length-species}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - species, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.805 -->
+
+```{r minus-island-bill-depth-year-bill-length-flipper}
+lm(body_mass_g ~ . - island - bill_depth_mm - year - bill_length_mm - flipper_length_mm, 
+   data = penguins) %>% 
+  get_regression_summaries()
+```
+
+<!-- 0.845 -->
+
+<!-- none of these models have high enough R-squared! -->
+
+<!-- final model removes: island, bill_depth_mm, year, bill_length_mm -->
+
+<!-- final model contains: sex, species, flipper_length_mm -->
+
+::: {.callout-caution}
+# What is your best model?
+
+What variables are included in the final model you chose?
+:::
+

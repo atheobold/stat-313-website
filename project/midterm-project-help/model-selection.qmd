@@ -1,0 +1,22 @@
+---
+title: "Model Selection Process"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+</br>
+</br>
+
+## One Categorical & One Numerical Explanatory Variable
+
+![](one_cat_one_quant_flowchart.jpg)
+
+</br>
+</br>
+</br>
+
+## Two Numerical Explanatory Variables
+
+![](two_numerical_vars_flowchart.jpg)

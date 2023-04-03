@@ -1,0 +1,195 @@
+---
+title: "The Ugly History of Linear Regression"
+format: revealjs
+---
+
+```{r pakages}
+library(emo)
+library(tidyverse)
+library(openintro)
+library(ggridges)
+library(flair)
+library(flair)
+library(broom)
+library(gridExtra)
+library(kableExtra)
+library(png)
+library(moderndive)
+
+options(show.signif.stars = FALSE)
+```
+
+class: inverse, center
+
+</br>
+
+```{r, out.width = "60%"}
+knitr::include_graphics("images/bumi-fire.jpg")
+```
+
+------------------------------------------------------------------------
+
+class: center
+
+.larger\[Least Squares\]
+
+.pull-left\[ Published in 1805 by Legendre
+
+```{r, out.width = "50%", out.height = "40%"}
+knitr::include_graphics("images/legendre.jpg")
+```
+
+\]
+
+.pull-right\[ and Gauss in 1809
+
+```{r, out.width = "50%", out.height = "20%"}
+knitr::include_graphics("images/gauss.jpg")
+```
+
+\]
+
+--
+
+Used to determine, from astronomical observations, the orbits of bodies about the Sun.
+
+<!-- Mostly comets, but also later the then newly discovered minor planets. -->
+
+------------------------------------------------------------------------
+
+.larger\["regression"\]
+
+.pull-left\[ ![](images/galton.png)\]
+
+.pull-right\[ - Coined by Francis Galton in the 19th century
+
+-   Described a biological phenomenon
+    -   Heights of children of tall parents tend to be tall, but shorter than their parents \]
+
+<!-- A phenomenon also known as regression toward the mean. -->
+
+------------------------------------------------------------------------
+
+class: center
+
+.larger\[A "polymath"\]
+
+.pull-left\[ ![](images/correlation.jpg)\]
+
+.pull-right\[ - In Statistics, Galton (1822--1911) is a towering figure.
+
+-   He invented standard deviation, correlation, linear regression, ANOVA
+
+-   Galton's developments and discoveries were fueled in large part by his fascination with the science of heredity. \]
+
+<!-- Galton was wrestling with the unanswered question of how different traits stayed stable in a population over generations, building on the work of his cousin Charles Darwin, who had published On the Origin of Species in 1859. -->
+
+------------------------------------------------------------------------
+
+class: middle, inverse
+
+.larger\[The Invention of Eugenics\]
+
+.pull-left\[ - The science of heredity could help humanity better itself through breeding.
+
+-   Based on Greek *eugenes*, meaning "well-born"
+
+-   Galton served as founding president of the British Eugenics Society \]
+
+.pull-right\[ \> "What nature does blindly, slowly and ruthlessly, man may do providently, \> quickly, and kindly. As it lies within his power, so it becomes his duty to \> work in that direction."
+
+\]
+
+------------------------------------------------------------------------
+
+class: center, inverse
+
+</br>
+
+```{r, out.width = "60%"}
+knitr::include_graphics("images/bumi-patio.jpg")
+```
+
+------------------------------------------------------------------------
+
+.larger\[Eugenics and the US\]
+
+-   In 1896 Connecticut made it illegal for people with epilepsy or who were "feeble-minded" to marry.
+
+--
+
+-   John Kellogg established a "pedigree registry"
+
+--
+
+-   From 1909 to 1979 California sterilized nearly 20,000 residents of the state mental institutions
+
+--
+
+-   In 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution --- "...three generations of imbeciles are enough."
+
+--
+
+-   Between 1970 and 1976 between 25 and 50% of Native Americans were sterilized, many without consent
+
+------------------------------------------------------------------------
+
+class: middle
+
+.larger\[And then it spread...\]
+
+.pull-left\[
+
+```{r, out.height = "50%"}
+knitr::include_graphics("images/hitler.jpg")
+```
+
+\]
+
+.pull-right\[ - *Mein Kampf* references American eugenics
+
+-   Declared non-Aryan races inferior
+
+-   Believed Germans should do everything possible to make sure their gene pool stayed "pure" \]
+
+------------------------------------------------------------------------
+
+class: center, inverse
+
+</br>
+
+```{r, out.width = "60%"}
+knitr::include_graphics("images/bumi-water.jpg")
+```
+
+------------------------------------------------------------------------
+
+class: middle, inverse, center
+
+.larger\[Would you exist?\]
+
+--
+
+.pull.left\[ Is your skin white?
+
+Are you blonde?
+
+Do you have blue eyes? \]
+
+--
+
+.pull-right\[ Were your ancestors poor?
+
+Are you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?
+
+Are you LGBTQIQ+? \]
+
+------------------------------------------------------------------------
+
+.larger\[More Information\]
+
+-   Radiolab Presents: G
+    -   "G" is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.
+    -   <https://www.wnycstudios.org/podcasts/radiolab/projects/radiolab-presents-g>
+-   How Eugenics shaped Statistics
+    -   <https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics>

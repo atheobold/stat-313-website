@@ -63,7 +63,9 @@ Let's start off by reading a refresher on some of the foundational concepts for 
 
 [Download the Word Document](reading-guide/week1-reading.docx)
 
-::: {.callout-note}
+*Note:* There is **one** combined reading guide for both chapters. 
+
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -71,7 +73,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 ## Concept Quiz -- Due Tuesday by noon
 
-1.  What are the different types of variables that can appear in a dataset? (select all that apply)
+**1.  What are the different types of variables that can appear in a dataset? Select all that apply!**
 
 -   discrete numerical
 -   ordinal categorical
@@ -79,21 +81,21 @@ Submit your completed reading guide to the Canvas assignment portal!
 -   continuous numerical
 -   discrete categorical
 
-2.  Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? (select all that apply)
+**2.  Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? Select all that apply!**
 
 -   zip code
 -   GPA
 -   height
 -   year in school
 
-3.  Which of the following statements are true about observational studies and experiments? (select all that apply)
+**3.  Which of the following statements are true about observational studies and experiments? Select all that apply!**
 
 -   Experiments randomly assign the explanatory variable
 -   Observational studies randomly assign the explanatory variable
 -   Observational studies can make causal statements about the relationship between the explanatory and response variables
 -   Experiments can make causal statements about the relationship between the explanatory and response variables
 
-4.  What are different methods for sampling from a population? (select all that apply)
+**4.  What are different methods for sampling from a population? Select all that apply!**
 
 -   simple random sampling
 -   stratified random sampling
@@ -101,7 +103,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 -   multistage sampling
 -   convenience sampling
 
-5.  Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.
+**5.  Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.**
 
 ::: columns
 ::: {.column width="35%"}
@@ -121,7 +123,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 `r emo::ji("computer")` [**Required Tutorial:** Language of Data](https://openintro.shinyapps.io/ims-01-data-01/#section-welcome)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit a screenshot of the completion page to the Canvas assignment portal!
@@ -129,15 +131,18 @@ Submit a screenshot of the completion page to the Canvas assignment portal!
 
 # Statistics in Your Field
 
-`r emo::ji("play button")` [**Required Video:** How to Find a Peer Reviewed Journal Article (6 minutes)](https://www.youtube.com/watch?v=ui8ibJ0Pkhs)
-
 Now let's investigate how statistics is used in your discipline.
 
-Find a peer-reviewed article from a journal in your field that performs a statistical analysis somewhere in the paper. You **do not** need to be familiar with the analysis they do. That being said, if you want to find a paper that uses a statistical method we'll cover in this class, look for a paper that uses "regression" or "ANOVA."
+Find a peer-reviewed article from a journal in your field that performs a statistical analysis somewhere in the paper. You **do not** need to be familiar with the analysis they do. That being said, if you want to find a paper that uses a statistical method we'll cover in this class, look for a paper that uses "linear regression" or "ANOVA."
 
-The Library is a great resource for this! The following website <https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU> has a list of journals by discipline that are available through the library.
+The Library is a great resource for this! The [following website (https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU)](https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU) has a list of journals by discipline that are available through the library.
 
-## Research Paper -- Due Friday by 5pm
+::: callout-tip
+
+If you are having a hard time finding a peer reviewed journal article, here is a video of me talking through how I found one: <https://www.youtube.com/watch?v=ui8ibJ0Pkhs>
+:::
+
+## Statistical Critique Step 0 -- Due Friday by 5pm
 
 Upload a PDF of your journal article to the Canvas assignment portal.
 

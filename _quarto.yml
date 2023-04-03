@@ -52,10 +52,10 @@ website:
         contents:
           - href: computing-access.qmd
             text: Access
-      # - section: "Projects"
-      #   contents:
-      #     - href: projects/midterm-project-directions.qmd
-      #       text: Midterm Project Description
+      - section: "Projects"
+        contents:
+          - href: projects/midterm-project-directions.qmd
+            text: Midterm Project Description
       #     - href: projects/final-project-directions.qmd
       #       text: Final Project Description
       - section: "Weekly materials"

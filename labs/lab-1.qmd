@@ -2,43 +2,36 @@
 title: "Welcome to RStudio Cloud!"
 author: "Your Name Here!"
 date: "January 12, 2023"
-format: html
-embed-resources: true
-standalone: true
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: true
 ---
 
-## Quarto
+# Quarto
 
-This is a Quarto document.
+This is a Quarto document!
 
 Quarto is a software that allows you to interweave text and R code to create HTML, PDF, and Microsoft Word documents
 
-The document may look a bit different that you are used to, but we will break it down!
+There are two ways to view a Quarto document, (1) as the "Source" file, or (2) as the "Visual" file. We will **only** use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word.
 
-Section headers are defined with hashtags (#), where one \# is the largest header, two \## is the second largest and so on.
+## Formatting your Document
 
-You can make words boldface with two \*\* or two \_\_ (like **so** or **so**).
+Similar to a Word Doc, there are a variety of ways you can spice up a Quarto document! Let's explore a few.
 
-You can make words italicized with one \* or one \_ (like *so* or *so*).
+**Question 1:** Using the formatting options, make a numbered list of your top three favorite animals.
 
-You can make lists like so:
+**Question 2:** Using the formatting options, insert an image of your favorite animal.
 
--   item 1
--   item 2
--   item 3
+**Question 3:** Now, change the "Formatting your Document" section name to the name of your favorite animal. Make sure your header is a level 1 -- use the Header 1 formatting option!
 
-<!-- This is an comment. It WILL NOT show in your knitted document. -->
-
-```{=html}
-<!-- Comments are great ways to leave yourself notes inside your Quarto
-document that no one can see!  -->
-```
 ## R Code
 
-You can differentiate the R code within a Quarto file from the body of the document, from the three tick marks (\`\`\`) they start and end with.
+You can differentiate the R code within a Quarto file from the body of the document, based on the gray boxes that start with an `{r}.`
 
 Here is an example of an R code chunk:
 
@@ -47,36 +40,46 @@ Here is an example of an R code chunk:
 
 library(tidyverse)
 ## Code to load in package we need
-## <- this creates a code comment. R knows this IS NOT code because it has a # in front! 
+
+## a # INSIDE of a code chunk creates a code comment
+## R knows this IS NOT code because it has a # in front! 
 ```
 
-Notice that after the \`\`\` you see a curly brace with an "r" in it ({r}), this indicates to Quarto that the code inside of that code chunk is R code (not Python code or another type of code).
+Notice that after the `{r}` there is a name (`packages`), that is the name of the code chunk. It is good practice to name your code chunks based on the action they perform. It makes it easier to navigate to them in the navigation pane.
 
-Also, the "packages" after the "r" is the code chunk's name. It is good practice to name your code chunks based on the action they perform. It makes it easier to navigate to them in the navigation pane.
+This code chunk has three things we want to pay attention to:
+
+1.  The `#| include: false` option at the beginning of the code chunk. We use these options to control how the code output looks in our final rendered document.
+
+2.  The `library(tidyverse)` code loads in an R package called the "tidyverse". This is code you will have in **every** lab assignment for this class!
+
+3.  Code comments which are denoted by a `##` symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.
 
 ## Rendering
 
 When you click the **Render** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
-**Question 1:** Do you see the above code chunk when you knit the document? Why do you think this is the case?
+**Question 4:** Do you see the above code chunk when you knit the document? Why do you think this is the case?
 
 ## Including Code Output
 
 You can include code output in your knitted document:
 
-```{r cars}
+```{r mpg-glimpse}
 glimpse(mpg)
 ```
 
-**Question 2:** What do you think the above code does? What output does it give you?
+**Question 5:** What do you think the above code does? What type of output does it give you? \
+*Hint: You have saw this type of output earlier today!\
+*
 
 ## Including Plots
 
-You can also embed plots in the knitted document.
+You can also embed plots in the rendered document.
 
 Here is an example of a plot.
 
-```{r pressure}
+```{r mpg-plot}
 #| echo: false
 
 ggplot(data = mpg, 
@@ -86,8 +89,8 @@ ggplot(data = mpg,
        y = "Car Manufacturer")
 ```
 
-**Question 3**: What do you think the `echo: false` option does in the above code chunk?
+**Question 6**: What do you think the `echo: false` option does in the above code chunk?
 
-**Question 4:** What do you think the `mapping = aes(y = manufacturer, x = hwy))` code does?
+**Question 7:** What do you think the `mapping = aes(y = manufacturer, x = hwy))` code does?
 
-**Question 5:** What do you think the `labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` code does?
+**Question 8:** What do you think the `labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` code does?

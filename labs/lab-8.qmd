@@ -1,0 +1,204 @@
+---
+title: "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests"
+format: html
+embed-resources: true
+standalone: true
+editor: visual
+execute: 
+  echo: true
+  eval: false
+  message: false
+  warning: false
+---
+
+```{r setup}
+library(tidyverse)
+library(gapminder)
+library(infer)
+library(moderndive)
+```
+
+# Today's Data
+
+Here is a description of the `gapminder` dataset as written by two of your peers:
+
+> The gapminder dataset contains data representing three numerical attributes of a country: its average life expectancy in years, its population, and its per-capita GDP in "international dollars" (a hypothetical currency with the purchasing power of the U.S. dollar in 2005).
+
+> GDP data from years 1990 to 2019 come from the World Bank, which was published in May 2022. Data from previous years come from the Madison Project Database and the Penn World Table. The life expectancy data were compiled from three main sources: Mattias Lindgren and Klara Joahansson, gapminder version 7 (1800-1970), the Institute for Health Metrics and Evaluation (1970-2016), and the United Nations population data (2017-present). The geographical data for country and continent are based off of current borders as determined by the United Nations.
+
+> In total, there are 1704 observations and 6 variables, with the country variable being a factor containing 142 levels. The data were retrieved in 2008 and 2009 from [Gapminder](https://gapminder.org/), an organization that collects world data. The dataset was also manually cleaned by Dr. Jenny Bryan and her STAT 545 students.
+
+> Gapminder itself collected its GDP data from the World Bank, its life expectancy data from various studies published by the Institute for Health Metrics and Evaluation, and its population data from the US Census Bureau.
+
+## Question of Interest
+
+The objective of this data analysis is to answer the question:
+
+> What is the relationship between life expectancy GDP per capita?
+
+# Exploratory data analysis
+
+Let's load the `gapminder` data into our workspace and start exploring!
+
+```{r load-data}
+data(gapminder)
+```
+
+## Data Visualization
+
+**1. Create a scatterplot of the relationship between life expectancy (response) and GDP (explanatory).**
+
+*Remember to include nice axis labels (with units!).*
+
+```{r scatter-plot}
+
+```
+
+What you see should make you concerned about using a linear regression! So, let's play with some variable transformations.
+
+You can explore if a log-transformation of the y-variable would make the relationship more linear by adding a `scale_y_log10()` layer to your plot, like so:
+
+```{r}
+lterdatasampler::hbr_maples %>% 
+  ggplot(mapping = aes(x = stem_length, y = stem_dry_mass)) +
+  geom_point() + 
+  scale_y_log10()
+```
+
+Similarly, you can a log-transformation of the x-variable would be helpful by adding a `scale_x_log10()` layer to your plot.
+
+**2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear.**
+
+*Remember to include nice axis labels (with units!).*
+
+```{r log-transformed-plot}
+
+```
+
+# Statistical Model
+
+**3. Use `lm()` to fit the regression model you chose in #2.**
+
+*To include a variable with a log transformation in your model, you input the `variable` as `log(variable)` inside the `lm()` function (e.g., `lm(log(stem_dry_mass) ~ stem_length, data = hbr_maples)`.*
+
+```{r chosen-slr}
+
+```
+
+## Assessing Model Conditions
+
+The next step is to check the conditions of our statistical model, we do this by analyzing our residuals and how the data were collected.
+
+### Independence of Observations
+
+Each row of the `gapminder` dataset is an observation for one country for one year (from 1952 to 2007).
+
+**4. Do you believe is it reasonable to assume these observations are independent of one another?**
+
+### Normality of Residuals
+
+I've provided code to visualize the residuals from the model you fit in #3 below.
+
+```{r normality}
+broom::augment(gapminder_lm) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram(binwidth = 5) +
+  labs(x = "Residual")
+```
+
+**5. Based on the distribution of residuals, do you believe the condition of normality is violated? Why or why not?**
+
+### Equal Variance of Residuals
+
+I've provided code to visualize the residuals versus fitted values from the model you fit in #3 below. With this plot, we want to assess if the variability (spread) of the residuals changes based on the values of the explanatory variable.
+
+```{r equal-variance}
+broom::augment(gapminder_lm) %>% 
+  ggplot(mapping = aes(y = .resid, x = `log(gdpPercap)`)) +
+  geom_point() + 
+  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
+  labs(x = "Log Transformed GDP Per Capita")
+```
+
+**6. Based on the plot above, do you believe the condition of equal variance is violated? Why or why not?**
+
+# Inference
+
+## Stating the Hypotheses
+
+Now that you've decided which regression appears the most linear, let's perform a hypothesis test for the slope coefficient.
+
+**7. Write the hypotheses [*in words*]{.underline} for testing if there is a linear relationship between the variables you used for your model in #3.**
+
+*Keep in mind, if you log-transformed y, you are testing if there is a linear relationship between log(y) and x!*
+
+$H_0$:
+
+$H_A$:
+
+## Obtaining a p-value Using Simulation
+
+Next, we will work through creating a permutation distribution using tools from the **infer** package.
+
+**8. First, we need to find the observed slope statistic, which we will save as `obs_slope`.**
+
+*Keep in mind, if you log-transformed y, you need to use log(y) as your response variable!*
+
+```{r obs-slope}
+obs_slope <-  gapminder %>%
+  specify(response = ____, explanatory = ____) %>%
+  calculate(stat = "slope")
+```
+
+After you have calculated your observed statistic, you need to create a permutation distribution of statistics that might have occurred if the null hypothesis was true.
+
+**9. Generate 500 permuted statistics for the permutation distribution and save these statistics in an object named `null_dist`.**
+
+```{r null-dist}
+# Code for question 7 goes here! 
+
+null_dist <- 
+
+```
+
+We can visualize this null distribution with the following code:
+
+```{r}
+visualise(null_dist) 
+```
+
+**10. Use the `shade_p_value()` function to add (`+`) a vertical red line to the plot above, demonstrating where the observed slope statistic (`obs_slope`) falls on the distribution.**
+
+<!-- Add your code to the plot above! -->
+
+Now that you have calculated the observed statistic and generated a permutation distribution, you can calculate the p-value for your hypothesis test using the function `get_p_value()` from the infer package.
+
+**11. Fill in the code below to calculate the p-value for the hypothesis test you stated in #7.**
+
+```{r p-value}
+get_p_value(null_dist, 
+            obs_stat = ____, 
+            direction = ____)
+```
+
+**12. Based on your p-value and an** $\alpha = 0.1$, **what decision would you reach regarding the hypotheses you stated in #7?**
+
+## Obtaining a p-value Using Theory
+
+As we saw in the reading this week, the output from the `get_regression_table()` function provides us with theory-based estimates of our standard error, $t$-statistic, and p-value.
+
+**Use the `get_regression_table()` function to obtain the theory-based p-value for your hypothesis test.**
+
+*Hint: You'll want to use the model you fit in #3.*
+
+```{r t-test}
+
+```
+
+**13. How does this p-value compare to what you obtained in #11?**
+
+**14. Why do you believe these p-values were similar or different?**
+
+**15. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?**
+
+*Note: If you believe neither are reliable, say so and state why.*

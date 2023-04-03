@@ -1,0 +1,127 @@
+---
+title: "Week 10: Two-Way ANOVA"
+format: 
+  html: 
+    theme: minty
+    fontsize: 1em
+    mainfont: sans-serif
+    number-sections: true
+    number-depth: 2
+    section-divs: true
+    code-block-bg: "#76b5c5"
+    highlight-style: monochrome
+embed-resources: true
+standalone: true
+editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(emo)
+library(gridExtra)
+```
+
+
+Welcome!
+
+This week we explore one final area of ANOVA, a situation where we have multiple explanatory variables. This is called a **two-way ANOVA**. A two-way ANOVA extends the one-way ANOVA to situations with two categorical explanatory variables. This new methods allows researchers to simultaneously study two variables that might explain variability in the responses and explore whether the impacts of one explanatory variable change depending on the level of the other explanatory variable.
+
+# Prepare
+
+## Textbook Reading
+
+As two-way ANOVA is an extension of one-way ANOVA, this week's reading is rather short. I've written a guided tutorial to walk you through the components of a two-way ANOVA. The tutoral also has some coding exercises embedded in it, so it also counts as your R tutorial for the week. 
+
+[Click here to access the textbook reading and R tutorial](tutorial/week-10.html)
+
+### Reading Guide -- Due Tuesday by noon
+
+::: callout-note
+# Submission
+
+Submit a screenshot of the completion page at the end of the reading. 
+:::
+
+## Concept Quiz -- Due Tuesday by noon
+
+1. Which of the following are true about the mean squares between groups?
+
+- it is a standardized measure of the variability in responses between groups
+- it compares the mean of each group to the overall mean across all groups
+- it compares the observations within each group to the mean of that group
+- it is used as the numerator in an F-statistic
+- it is used as the denominator in an F-statistic
+- it is found by dividing the sum of squares between groups by the number of 
+groups minus 1 ($k$ - 1)
+- it is found by dividing the sum of squares between groups by the sample size
+minus the number of groups ($n - k$)
+
+2. Which of the following are true about the mean square errors?
+
+- it is a standardized measure of the variability in responses within each 
+group
+- it compares the mean of each group to the overall mean across all groups
+- it compares the observations within each group to the mean of that group
+- it is used as the numerator in an F-statistic
+- it is used as the denominator in an F-statistic
+- it is found by dividing the sum of square errors by the number of groups
+minus 1 ($k$ - 1)
+- it is found by dividing the sum of square errors by the sample size minus 
+the number of groups ($n - k$)
+
+3. An F-statistic uses which formula? 
+
+- $\frac{MSG}{MSE}$
+
+- $\frac{SSG}{SSE}$
+
+- $\frac{MSE}{MSG}$
+
+- $\frac{SSE}{SSG}$
+
+4. Ideally, in an ANOVA we'd like to see... (select all that apply)
+
+- large variability in the means of the groups 
+- small variability in the means of the groups 
+- large variability in the observations within each group
+- small variability in the observations within each group
+
+5. If the null hypothesis that the means of four groups are all the same is
+rejected using ANOVA at a 5% significance level, then... (select all that apply)
+
+- we can then conclude that all the means are different from one another.
+
+- the variability between groups is higher than the variability within groups.
+
+- the pairwise analysis will identify at least one pair of means that are
+significantly different.
+
+- an appropriate $\alpha$ to be used in pairwise comparisons is
+$\frac{0.05}{4} = 0.0125$ since there are four groups.
+ 
+1. As the total sample size increases, the degrees of freedom for the residuals
+increases.
+
+2. The constant variance condition can be somewhat relaxed when the sample sizes
+are large.
+
+3. The independence assumption can be relaxed when the total sample size is
+large.
+
+4. The normality condition is very important when the sample sizes of each 
+group are small. 
+
+## R Tutorial -- Due Thursday by noon
+
+The tutorial this week is embedded in the reading. 
+
+::: callout-note
+# Submission
+
+Submit a screenshot of the completion page at the end of the reading. Yes, this can be the same screenshot as your reading guide submission. 
+:::

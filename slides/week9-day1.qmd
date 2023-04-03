@@ -1,0 +1,576 @@
+---
+title: "**AN**alysis **O**f **VA**riance"
+format: 
+  revealjs:
+    self-contained: true
+    theme: dark
+editor: visual
+---
+
+```{r set-up}
+library(tidyverse)
+library(palmerpenguins)
+library(broom)
+library(ggridges)
+library(infer)
+
+evals_small <- moderndive::evals %>% 
+  group_by(prof_ID) %>% 
+  mutate(min_eval = min(score), 
+         age_cat = case_when(age < 37 ~ "young faculty",
+                             age >= 37 & age < 45 ~ "middle age", 
+                             age >= 45 & age < 60 ~ "older faculty", 
+                             age >= 60 ~ "nearly retired"),
+         age_cat = factor(age_cat, 
+                          levels = c("young faculty", "middle age",
+                                     "older faculty", "nearly retired")
+                          )
+         ) %>% 
+  distinct(prof_ID, .keep_all = TRUE) 
+```
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Data Visualization Principles 
+:::
+
+. . .
+
+::: columns
+::: {.column width="45%"}
+[Edward Tufte](https://thedoublethink.com/tuftes-principles-for-visualizing-quantitative-information/)
+![](images/tufte.gif)
+
+*Minimalism*
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 0.75em; color: #FFFFFF;"}
+> One of Tufte's ideas is data-to-ink ratio, generally stating that when creating a visualization, you should try to maximize the amount of "ink" (physical or digital) used to represent the data, and minimize the amount used to represent everything else not important to understanding.
+
+:::
+:::
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+`theme_classic()` in `ggplot()`
+:::
+
+```{r minimal}
+#| echo: false
+#| fig-align: center
+
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species)) + 
+  geom_point() +
+  labs(y = "Bill Depth (mm)", 
+       x = "Bill Length (mm)", 
+       color = "Penguin Species") +
+  theme_classic()
+```
+
+## 
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Gestalt Principles
+:::
+
+::: columns
+::: {.column width="40%"}
+[Gestalt psychology](https://en.wikipedia.org/wiki/Gestalt_psychology) is a theory of perception that believes humans are inclined to understand objects as an entire structure rather than the sum of its parts.
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+[Gestalt Principles for Data Visualization](https://medium.com/nightingale/how-to-apply-gestalt-psychology-principles-in-data-visualization-6242f4f1a3de)
+
+::: {style="font-size: 0.75em; color: #FFFFFF;"}
+> The Figure and Ground Principle describes the capacity to perceive the relationship between form and surrounding space to create meaning. A sense of wholeness or unity depends on how you perceive the relationship between an object and the area in which it is contained. The ‘figure’ is the focus element, while the ‘ground’ is the figure’s background.
+
+:::
+:::
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+`theme_bw()` in `ggplot()`
+:::
+
+```{r classic}
+#| echo: false
+#| fig-align: center
+
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species)) + 
+  geom_point() +
+  labs(y = "Bill Depth (mm)", 
+       x = "Bill Length (mm)", 
+       color = "Penguin Species") +
+  theme_bw()
+```
+
+<center>
+[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)
+</center>
+
+## 
+
+::: {style="font-size: 4em; color: #B6CADA;"}
+Moving into ANOVA
+:::
+
+
+## 
+
+::: {style="font-size: 4em; color: #FFFFFF;"}
+Before...
+:::
+
+```{r slr}
+#| echo: false
+
+ggplot(data = evals_small, 
+       mapping = aes(x = age, y = min_eval)) + 
+  geom_point() + 
+  labs(x = "Professor's Age", 
+       y = "Minimum Evaluation Score") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```
+
+##
+
+::: {style="font-size: 4em; color: #FFFFFF;"}
+Now...
+:::
+
+```{r age-cat}
+#| echo: false
+#| out-width: 70%
+ggplot(data = evals_small, 
+       mapping = aes(x = age_cat, y = min_eval)) + 
+  geom_jitter(width = 0.1) + 
+  labs(x = "Professor's Age", 
+       y = "Minimum Evaluation Score") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #000000;"}
+Goal of an ANOVA
+:::
+
+Analysis of variance (ANOVA) compares the means of three of more groups
+to detect if the means of the groups are different.
+
+## 
+
+::: {style="font-size: 4em; color: #B6CADA;"}
+**How???**
+:::
+
+- Compare how different a group of means are
+- Scale the differences relative to the variability of the groups
+- Summarize the differences with one number
+
+##
+
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+Visualizing Group Differences
+:::
+
+</br>
+
+We want visualizations that allow for us to easily compare:  
+
+- the center (mean) of the groups 
+- the spread (variability) of the groups 
+
+##
+
+```{r age-cat-density}
+#| echo: false
+#| out-width: 70%
+
+ggplot(data = evals_small, 
+       mapping = aes(y = age_cat, x = min_eval)) + 
+  geom_density_ridges() + 
+  labs(y = "Professor's Age", 
+       x = "Minimum Evaluation Score") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```
+
+::: {style="font-size: 1.25em; color: #B6CADA;"}
+What can you say about the differences between the groups?
+
+What can you say about the variability within the groups?
+:::
+
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #0F4C81;"}
+Carrying out an ANOVA
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 1: Compare your groups
+:::
+
+![](images/groups.png)
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 2: Find the overall mean
+:::
+
+![](images/overall_mean.png)
+
+::: {style="font-size: 1.5em; color: #B6CADA;"}
+This ignores the groups and finds [one]{.underline} mean for every observation!
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 3: Find the group means
+:::
+
+![](images/group_means.png)
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 4: Calculate the sum of squares 
+:::
+
+![](images/sum_of_squares.png)
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 5: Calculate the F-statistic 
+:::
+
+![](images/f_stat.png)
+
+. . .
+
+</br>
+
+::: {style="color: #B6CADA;"}
+Can an F-statistic be negative?
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 6: Find the p-value
+:::
+
+![](images/f_dist.png)
+
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+**F-distribution**
+:::
+
+An $F$-distribution is a variant of the $t$-distribution, and is also defined by degrees of freedom. 
+
+. . .
+
+</br>
+
+This distribution is defined by __two__ different degrees of freedom:  
+
+1. from the numerator (MSG) : $k - 1$
+2. from the denominator (MSE) : $n - k$ 
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Two degrees of freedom!
+:::
+
+</br>
+
+::: columns
+::: {.column width="45%"}
+Changing the numerator degrees of freedom
+
+![](images/f_num_df.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+Changing the denominator degrees of freedom
+
+![](images/f_denom_df.png)
+:::
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 3em; color: #000000;"}
+Do you always use an F-distribution to get the p-value?
+:::
+
+. . .
+
+<center>
+::: {style="font-size: 3em; color: #0F4C81;"}
+NO!
+:::
+</center>
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+**Conditions of an ANOVA**
+:::
+
+- Independence 
+  * Within groups 
+  * Between groups
+  
+- Normality of the responses
+  * The distribution of each group is approximately normal
+
+- Equal variability of the groups 
+  * The spread of the distributions are similar across groups
+
+##
+
+```{r conditions}
+#| echo: false
+#| out-width: 70%
+
+ggplot(data = evals_small, 
+       mapping = aes(y = age_cat, x = min_eval)) + 
+  geom_density_ridges() + 
+  labs(y = "Professor's Age", 
+       x = "Minimum Evaluation Score") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```
+
+. . .
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+What do you think?
+:::
+
+. . .
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+If the normality condition is violated what type of method should we use?
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #0F4C81;"}
+Simulation-based Methods
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 1: Calculating the Observed F-statistic
+:::
+
+```{r}
+#| echo: true
+obs_F <- evals_small %>% 
+  specify(response = min_eval, 
+          explanatory = age_cat) %>% 
+  calculate(stat = "F")
+```
+
+```{r}
+obs_F
+```
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Step 2: Simulating what could have happened under $H_0$
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.5em; color: #B6CADA;"}
+How could we use cards to simulate what minimum evaluation score a professor would have gotten, if their score was independent from their age?
+:::
+
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Another Permutation Distribution
+:::
+
+```{r null-dist}
+#| echo: true
+null_dist <- evals_small %>% 
+  specify(response = min_eval, 
+          explanatory = age_cat) %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 2000, type = "permute") %>% 
+  calculate(stat = "F")
+```
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Another Permutation Distribution
+:::
+
+```{r}
+#| out-width: 70%
+#| out-height: 50%
+visualise(null_dist)
+```
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.5em; color: #B6CADA;"}
+Why doesn't the distribution have negative numbers?
+:::
+
+##
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+Visualizing the p-value
+:::
+
+```{r, eval = FALSE}
+#| echo: true
+visualise(null_dist) + 
+  shade_p_value(obs_stat = obs_F, direction = "greater")
+```
+
+</br>
+
+```{r}
+#| out-height: 50%
+#| out-width: 70%
+
+p_val <- get_p_value(null_dist, obs_stat = obs_F, direction = "greater") %>% 
+  pull()
+  
+null_dist %>% 
+  visualise() + 
+  shade_p_value(obs_stat = obs_F, direction = "greater") + 
+  annotate(x = pull(obs_F) + 0.5, y = 500, geom = "text", label = p_val, size = 6)
+```
+
+. . .
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+What would you conclude regarding the mean minimum evaluation score and different age groups of professors?
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #000000;"}
+**Theory-based Methods**
+:::
+
+##
+
+Using `aov()`
+
+```{r}
+#| echo: true
+#| eval: false
+aov(min_eval ~ age_cat, 
+    data = evals_small)  %>% 
+  tidy()
+```
+
+```{r}
+aov(min_eval ~ age_cat, 
+    data = evals_small)  %>% 
+  tidy()
+```
+
+. . .
+
+</br>
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+How was the `statistic` calculated?
+:::
+
+. . .
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+What distribution was used to calculate the `p.value`?
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size: 1em; color: #B6CADA;"}
+What would you conclude regarding the mean minimum evaluation score and different age groups of professors?
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em; color: #0F4C81;"}
+Did the two methods yield different results?
+:::
+
+
+
+##
+
+::: {style="font-size: 4em; color: #FFFFFF;"}
+Next...
+:::
+
+```{r age-two-cat}
+#| echo: false
+#| out-width: 70%
+
+ggplot(data = evals_small, 
+       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + 
+  geom_density_ridges(alpha = 0.5) + 
+  labs(y = "Professor's Age", 
+       x = "Minimum Evaluation Score", 
+       fill = "Professor's Sex") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```
