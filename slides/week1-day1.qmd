@@ -57,10 +57,12 @@ About Me...
 knitr::include_graphics(c("images/wedding.png", "images/skiing.JPG", "images/bumi.JPG"))
 ```
 
+::: {style="font-size: 0.75em;"}
 Ph.D. in Statistics from Montana State University
 
-B.S. in Mathematics & B.B.A. in Economics   
+B.S. in Mathematics & B.B.A. in Economics\
 from Colorado Mesa University
+:::
 
 ## 
 
@@ -78,7 +80,7 @@ Statistics is the study of how best to collect, analyze, and draw conclusions fr
 
 > *Introduction to Modern Statistics*
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 What Statistics Is To Me
@@ -90,7 +92,7 @@ What Statistics Is To Me
 
 ![The data science cycle -- Wickham & Grolemund](images/cycle.png)
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 What you can expect in STAT 313
@@ -99,10 +101,10 @@ What you can expect in STAT 313
 This course will teach you the fundamentals of linear models---*simple linear regression, multiple linear regression, and analysis of variance*---and experimental design. You will extend the concepts covered in your Stat I course, to:
 
 ::: {style="font-size: 0.75em;"}
-- work with data in a reproducible way (using R)
-- visualize and summarize a variety of datasets (in R)
-- critically evaluate the use of Statistics
-- perform statistical analyses to answer research questions (using R)
+-   work with data in a reproducible way (using R)
+-   visualize and summarize a variety of datasets (in R)
+-   critically evaluate the use of Statistics
+-   perform statistical analyses to answer research questions (using R)
 :::
 
 ## 
@@ -113,16 +115,14 @@ Coding 🙀
 
 . . .
 
-
 Coding is a **huge** part of how doing statistics in the wild looks.
 
 . . .
 
-- Everyone is coming from a different background
-- Different aspects of the course will be difficult to different people
-- You will be given coding resources each week
-- Use your peers to support your learning
-
+-   Everyone is coming from a different background
+-   Different aspects of the course will be difficult to different people
+-   You will be given coding resources each week
+-   Use your peers to support your learning
 
 ##  {background-color="#B6CADA"}
 
@@ -149,7 +149,6 @@ Course Components
 -   Reading Guides
 -   Concept Quizzes
 -   R Tutorials
-
 :::
 
 ::: {.column width="2%"}
@@ -160,9 +159,9 @@ Course Components
 *During Class*
 :::
 
-- Group Discussion
-- Hands-on Activities
-- Lab Assignments
+-   Group Discussion
+-   Hands-on Activities
+-   Lab Assignments
 :::
 
 ::: {.column width="2%"}
@@ -177,7 +176,7 @@ Course Components
 
 -   Midterm Project
 
--   Final Project 
+-   Final Project
 :::
 :::
 
@@ -191,7 +190,7 @@ How Smart are You?
 ::: {.column width="30%"}
 (1 minute)
 
-- Write two *criteria* would you use to *rank* yourself compared to everyone else in this class
+-   Write two *criteria* would you use to *rank* yourself compared to everyone else in this class
 :::
 
 ::: {.column width="2%"}
@@ -200,7 +199,7 @@ How Smart are You?
 ::: {.column width="30%"}
 (3 minutes)
 
-- Talk with the person on your right about the criteria you proposed
+-   Talk with the person on your right about the criteria you proposed
 :::
 
 ::: {.column width="2%"}
@@ -209,12 +208,12 @@ How Smart are You?
 ::: {.column width="30%"}
 (3 minutes)
 
-- Share out 
-- Person with most vowels in name should be prepared to share!
+-   Share out
+-   Person with most vowels in name should be prepared to share!
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Cooperative Learning
@@ -258,11 +257,11 @@ Group Norms
 
 -   Embrace discomfort
 
--   Make decisions by consensus 
+-   Make decisions by consensus
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 How We Learn Together
@@ -270,7 +269,6 @@ How We Learn Together
 
 ::: columns
 ::: {.column width="45%"}
-
 ::: {style="font-size: 0.85em;"}
 -   No one is done until everyone is done
 
@@ -278,14 +276,12 @@ How We Learn Together
 
 -   You have the *duty* to help **anyone** in your group who asks for help
 :::
-
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-
 ::: {style="font-size: 0.85em;"}
 -   Helping someone means explaining your thinking **not** giving answers or doing the work for them
 
@@ -293,7 +289,6 @@ How We Learn Together
 
 -   Think and work together -- don't divide up the work
 :::
-
 :::
 :::
 
@@ -303,7 +298,7 @@ How We Learn Together
 Break
 :::
 
-##
+## 
 
 ::: {style="font-size: 3em; color: #FFFFFF;"}
 Warm-up
@@ -319,13 +314,13 @@ Sketch out what you recall the scientific method / process looking like.
 Where does statistics happen?
 :::
 
-##
+## 
 
 ::: {style="font-size: 8em; color: #FFFFFF;"}
 Why?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #abdbe3;"}
 For a scientific study, what is the purpose of a statistical analysis?
@@ -353,14 +348,13 @@ What is an example of a dichotomous choice?
 
 . . .
 
-</br>
-</br>
+</br> </br>
 
 (90 seconds)
 
 How is dichotomous thinking used in Statistics?
 
-##
+## 
 
 ::: {style="font-size: 4em; color: #e28743;"}
 The S-word
@@ -377,4 +371,3 @@ What are 2-3 synonyms of "significant" that come to your mind?
 (90 seconds)
 
 What is one issue you see with using the term "significant" to denote "small" p-values?
-
