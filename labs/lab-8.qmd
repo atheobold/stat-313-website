@@ -1,8 +1,11 @@
 ---
 title: "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests"
-format: html
-embed-resources: true
-standalone: true
+author: "Your group's names here!"
+date: "May 26, 2023"
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: true

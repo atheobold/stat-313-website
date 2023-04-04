@@ -1,10 +1,12 @@
 ---
 title: "Predicting Professor Evaluation Scores"
 author: "Your group's names here!"
-format: html
+date: "May 12, 2023"
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
-embed-resources: true
-standalone: true
 execute: 
   eval: false
 ---
@@ -86,7 +88,9 @@ Woof, that's 12 different variables. That means, for this first round, you will 
 
 Every model you fit will have the *same* format:
 
-    name_of_model <- lm(score ~ <variable>, data = evals_train)
+```         
+name_of_model <- lm(score ~ <variable>, data = evals_train)
+```
 
 But, the name of the model will need to change. I've started the process for you, using the naming style of `one_` followed by the variable name (e.g., `one_id`, `one_bty`, etc.).
 
@@ -125,7 +129,9 @@ get_regression_summaries(one_language)
 
 Alright, you've added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: **every model you fit needs to contain the variable you decided to add**. So, if you decided to add the `bty_avg` variable, every model you fit would look like this:
 
-    name_of_model <- lm(score ~ bty_avg + <variable>, data = evals_train)
+```         
+name_of_model <- lm(score ~ bty_avg + <variable>, data = evals_train)
+```
 
 Again, the name of the model will need to change. This round, you are on your own -- I've provided you with no code. Here are my recommendations:
 
@@ -158,14 +164,16 @@ As you might have expected, in this step we add a *third* variable to our top mo
 
 This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how what the code looks:
 
-    evals_train %>% 
-      map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
-      map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-      select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
-      pivot_longer(cols = everything(), 
-                   names_to = "variable", 
-                   values_to = "adj_r_sq") %>% 
-      slice_max(adj_r_sq)
+```         
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
 
 Woah, that's a lot. The only thing you need to change is:
 

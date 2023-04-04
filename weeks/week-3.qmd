@@ -1,5 +1,5 @@
 ---
-title: "Week Two: Incorporating Categorical Variables"
+title: "Week Three: Incorporating Categorical Variables"
 format: 
   html: 
     theme: minty
@@ -87,8 +87,10 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 **1. Suppose you've run the following code to make side-by-side boxplots of life expectancy:**
 
-    ggplot(data = health, mapping = aes(x = country, y = lifeExp)) + 
-        geom_boxplot()
+```         
+ggplot(data = health, mapping = aes(x = country, y = lifeExp)) + 
+    geom_boxplot()
+```
 
 **Your resulting plot looks like this:**
 

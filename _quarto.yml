@@ -56,8 +56,8 @@ website:
         contents:
           - href: project/midterm-project-directions.qmd
             text: Midterm Project Description
-      #     - href: projects/final-project-directions.qmd
-      #       text: Final Project Description
+          - href: project/final-project-directions.qmd
+            text: Final Project Description
       - section: "Weekly materials"
         contents:
           - href: weeks/week-0.qmd
