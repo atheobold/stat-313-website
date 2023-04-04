@@ -7,7 +7,7 @@ website:
   description: "Homepage for STAT 313 - Applied Experimental Design and Regression Models at Cal Poly, Spring 2023."
   site-url: "https://atheobold.github.io/stat-313-website"
   repo-url: https://github.com/atheobold/stat-313-website
-  #repo-actions: [issue]
+  repo-actions: [issue]
 
   #open-graph: true
 
