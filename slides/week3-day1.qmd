@@ -4,7 +4,8 @@ format:
   revealjs:
     logo: images/dplyr.png
     theme: night
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: false
@@ -308,7 +309,6 @@ What are possible causes for the variation in salamander length?
 :::
 :::
 :::
-
 
 ## Faceted Histograms
 

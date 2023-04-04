@@ -1,6 +1,9 @@
 ---
 title: "The Ugly History of Linear Regression"
-format: revealjs
+format: 
+  revealjs:
+    embed-resources: true
+    standalone: true
 ---
 
 ```{r pakages}

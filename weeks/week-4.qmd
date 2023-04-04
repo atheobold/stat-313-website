@@ -1,9 +1,10 @@
 ---
 title: "Week Four: Introduction to Linear Regression (Basic Regression)"
-format: html
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
-embed-resources: true
-standalone: true
 ---
 
 ```{r}
@@ -35,7 +36,7 @@ By the end of this coursework you should be able to:
 -   interpret the offsets of an estimated regression line
 -   calculate a residual for an observation
 
-# Prepare 
+# Prepare
 
 ## Textbook Reading
 
@@ -65,7 +66,7 @@ Don't worry about Section 5.3.3, it goes a bit too in the weeds for what we are 
 
 [Download the Word Document](reading-guide/week3-reading.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!

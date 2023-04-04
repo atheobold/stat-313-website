@@ -5,8 +5,8 @@ format:
     toc: true
     toc-depth: 2
     number-sections: true
-embed-resources: true
-standalone: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

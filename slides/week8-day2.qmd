@@ -3,7 +3,8 @@ title: "`r emo::ji('microscope')` Simulation-Based Methods versus Theory-Based M
 format: 
   revealjs:
     theme: dark
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

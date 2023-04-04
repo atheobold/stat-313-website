@@ -34,7 +34,7 @@ Often when reading a statistical study, you will not know who the researchers th
 
 1.  `hsb2`: "Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics."
 
-\vspace{0.5in}
+\</br\>\</br\>
 
 2.  `evals`: "The data on the 463 courses at UT Austin."
 
@@ -44,17 +44,17 @@ Often when reading a statistical study, you will not know who the researchers th
 
 3.  What is the central tenant of random sampling? i.e. How are observations selected from the study population?
 
-\vspace{1in}
+\</br\>\</br\>
 
 4.  Comment on the "random-ness" of the following studies:
 
 -   A Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of five randomly chosen graduates, contact them, and obtain their answers.
 
-\vspace{1in}
+\</br\>\</br\>
 
 -   You want to know the prevalence of illegal downloading of TV shows among students at a local college. You get the emails of 100 randomly chosen students and ask them, "How many times did you download a pirated TV show last week?".
 
-\vspace{1in}
+\</br\>\</br\>
 
 ## Sampling Randomly
 
@@ -62,31 +62,31 @@ Often when reading a statistical study, you will not know who the researchers th
 
 -   How would we go about randomly sampling observations from the database?
 
-\vspace{1in}
+\</br\>\</br\>
 
 -   Would we allow for individuals to be selected more than once?
 
-\vspace{1in}
+\</br\>\</br\>
 
 -   Would we expect that our sample look like the population at UT Austin?
 
-\vspace{1in}
+\</br\>\</br\>
 
 ## Representative Sampling
 
 6.  What is the central tenant of representative sampling? i.e. How are observations selected from the study population?
 
-\vspace{1in}
+\</br\>\</br\>
 
 7.  Comment on the "representative-ness" of the following studies:
 
 -   The Royal Air Force wants to study how resistant all their airplanes are to bullets. They study the bullet holes on all the airplanes on the tarmac after an air battle against the Luftwaffe (German Air Force).
 
-\vspace{1in}
+\</br\>\</br\>
 
 -   You want to know the average number of people in each household in your city. You randomly pick out 500 phone numbers from the phone book and conduct a phone survey.
 
-\vspace{1in}
+\</br\>\</br\>
 
 ## Sampling Representatively
 
@@ -144,11 +144,11 @@ To investigate the relationship between course evaluation score and the professo
 
 10. What would be the population parameter we are interested in? Do we know its value?
 
-\vspace{1in}
+\</br\>\</br\>
 
 11. What would be our point estimate? What is its purpose?
 
-\vspace{1in}
+\</br\>\</br\>
 
 ```{r slr-age-eval}
 #| echo: false

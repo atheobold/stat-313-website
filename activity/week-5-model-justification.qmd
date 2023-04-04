@@ -33,12 +33,4 @@ MA_schools %>%
        color = "Size of School")
 ```
 
-\vspace{0.5in}
-
-```{=tex}
-\begin{center}
-
-\textbf{What do you feel is missing from this model justification?}
-
-\end{center}
-```
+**What do you feel is missing from this model justification?**

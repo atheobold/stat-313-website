@@ -3,7 +3,8 @@ title: "Machine Learning"
 author: "STAT 313"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 
@@ -14,7 +15,6 @@ editor: visual
 :::
 
 > Supervises algorithms that are used to classify data or predict outcomes
-
 :::
 
 ::: {.column width="5%"}
@@ -26,7 +26,6 @@ editor: visual
 :::
 
 > Allows computers to learn patterns in the dataset without the need for human intervention
-
 :::
 :::
 
@@ -35,9 +34,11 @@ editor: visual
 </br>
 
 <center>
+
 ::: {style="font-size: 5em; color: #000000;"}
 **Data is Power**
 :::
+
 </center>
 
 ## 
@@ -67,7 +68,7 @@ Focuses on the distribution of **power** --- Who has it and who doesn't
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 1.25em; color: #000000;"}
 "**Data is the new oil."**
@@ -85,7 +86,7 @@ Focuses on the distribution of **power** --- Who has it and who doesn't
 
 ![](images/books.jpg)
 
-##
+## 
 
 ![Joy Buolamwini found that she had to put on a white mask for the facial detection program to "see" her face.](images/buolamwini.jpg)
 
@@ -93,6 +94,6 @@ Focuses on the distribution of **power** --- Who has it and who doesn't
 
 ![](images/google.png)
 
-##
+## 
 
 ![](images/cars.jpg)

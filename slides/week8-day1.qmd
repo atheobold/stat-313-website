@@ -3,7 +3,8 @@ title: "`r emo::ji('scientist')` P-values & Hypothesis Tests"
 format: 
   revealjs:
     theme: dark
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 
@@ -29,27 +30,26 @@ Weeks 8, 9, & 10
 ::: {.column width="30%"}
 **Week 8**
 
-- Learn about hypothesis testing for slope
-- Critique use of p-values for statistical arguments
+-   Learn about hypothesis testing for slope
+-   Critique use of p-values for statistical arguments
 :::
 
 ::: {.column width="30%"}
 **Week 9**
 
-- Learn about one-way ANOVA
-- Get started on first portion of Final Project
+-   Learn about one-way ANOVA
+-   Get started on first portion of Final Project
 :::
 
 ::: {.column width="30%"}
 **Week 10**
 
-- Learn about two-way ANOVA
-- Finish Final Project
+-   Learn about two-way ANOVA
+-   Finish Final Project
 :::
 :::
 
-
-##
+## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 you...
