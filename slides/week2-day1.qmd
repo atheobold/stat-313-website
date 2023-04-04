@@ -5,7 +5,8 @@ format:
   revealjs:
     logo: images/ggplot2.png
     theme: night
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   warning: false
@@ -288,9 +289,11 @@ ggplot(data = penguins,
 ## 
 
 <center>
+
 ::: {style="font-size: 1.25em;"}
 Measures of Center
 :::
+
 </center>
 
 ::: columns
@@ -319,9 +322,11 @@ Median
 </br>
 
 <center>
+
 ::: {style="font-size: 1.25em;"}
 Measures of Spread
 :::
+
 </center>
 
 ::: columns
@@ -368,7 +373,6 @@ penguins %>%
 ::: {style="color:#ba9645;"}
 What measure of center would you use? Why?
 :::
-
 
 ## For right skewed data...
 

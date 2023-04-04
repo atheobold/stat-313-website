@@ -2,7 +2,8 @@
 title: "Variable Selection in Multiple Regression"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
     theme: night
 editor: visual
 ---
@@ -119,14 +120,14 @@ Wright, Sewall. 1921. Correlation and causation. Journal of Agricultural Researc
 $R^2 = 1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)}$
 :::
 
-- $\text{var}(\text{residuals})$ is the variance of the residuals "leftover" from the regression model
+-   $\text{var}(\text{residuals})$ is the variance of the residuals "leftover" from the regression model
 
-- $\text{var}(y)$ is the inherent variability of the response variable
+-   $\text{var}(y)$ is the inherent variability of the response variable
 
 . . .
 
 ::: {style="font-size: 1.5em; color: #0F4C81;"}
-**Suppose we have a simple linear regression with an $R^2$ of 0.85. How would you interpret this quantity?**
+**Suppose we have a simple linear regression with an** $R^2$ of 0.85. How would you interpret this quantity?
 :::
 
 ## 
@@ -185,17 +186,15 @@ Adjusted $R^2$
 $R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1)}{(n - k - 1)}$
 :::
 
-- $n$ is the sample size
+-   $n$ is the sample size
 
-- $k$ is the number of predictor variables in the model
+-   $k$ is the number of predictor variables in the model
 
 . . .
 
 ::: {style="font-size: 1.25em; color: #0F4C81;"}
-**Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. What value will you use for $k$ in the calculation of $n - k - 1$?**
-
+**Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. What value will you use for** $k$ in the calculation of $n - k - 1$?
 :::
-
 
 ## 
 

@@ -1,8 +1,9 @@
 ---
 title: "Week Five: Diving Deeper into Regression (Multiple Linear Regression)"
-format: html
-embed-resources: true
-standalone: true
+format: 
+  html:
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 
@@ -32,7 +33,7 @@ By the end of this coursework you should be able to:
 -   recite different methods that can be used to decide what multiple linear regression model is "best"
 -   describe the benefits and costs of using "model selection" for deciding on a multiple linear regression model
 
-# Prepare 
+# Prepare
 
 ## Textbook Reading
 
@@ -166,4 +167,3 @@ For every \[1 day / 1 year / 1 evaluation\] increase in professor's \[evaluation
 1.  [Regression modeling: Parallel Slopes](https://openintro.shinyapps.io/ims-03-model-06/)
 
 2.  [Regression modeling: Evaluating and extending parallel slopes model](https://openintro.shinyapps.io/ims-03-model-07/#section-evaluating-and-extending-parallel-slopes-model)
-

@@ -2,7 +2,8 @@
 title: "**AN**alysis **O**f **VA**riance"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
     theme: dark
 editor: visual
 ---
@@ -30,18 +31,16 @@ evals_small <- moderndive::evals %>%
 ```
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
-Data Visualization Principles 
+Data Visualization Principles
 :::
 
 . . .
 
 ::: columns
 ::: {.column width="45%"}
-[Edward Tufte](https://thedoublethink.com/tuftes-principles-for-visualizing-quantitative-information/)
-![](images/tufte.gif)
+[Edward Tufte](https://thedoublethink.com/tuftes-principles-for-visualizing-quantitative-information/) ![](images/tufte.gif)
 
 *Minimalism*
-
 :::
 
 ::: {.column width="5%"}
@@ -50,12 +49,11 @@ Data Visualization Principles
 ::: {.column width="50%"}
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
 > One of Tufte's ideas is data-to-ink ratio, generally stating that when creating a visualization, you should try to maximize the amount of "ink" (physical or digital) used to represent the data, and minimize the amount used to represent everything else not important to understanding.
-
 :::
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 `theme_classic()` in `ggplot()`
@@ -94,13 +92,12 @@ Gestalt Principles
 [Gestalt Principles for Data Visualization](https://medium.com/nightingale/how-to-apply-gestalt-psychology-principles-in-data-visualization-6242f4f1a3de)
 
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
-> The Figure and Ground Principle describes the capacity to perceive the relationship between form and surrounding space to create meaning. A sense of wholeness or unity depends on how you perceive the relationship between an object and the area in which it is contained. The ‘figure’ is the focus element, while the ‘ground’ is the figure’s background.
-
+> The Figure and Ground Principle describes the capacity to perceive the relationship between form and surrounding space to create meaning. A sense of wholeness or unity depends on how you perceive the relationship between an object and the area in which it is contained. The 'figure' is the focus element, while the 'ground' is the figure's background.
 :::
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 `theme_bw()` in `ggplot()`
@@ -121,16 +118,13 @@ ggplot(data = penguins,
   theme_bw()
 ```
 
-<center>
-[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)
-</center>
+<center>[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)</center>
 
 ## 
 
 ::: {style="font-size: 4em; color: #B6CADA;"}
 Moving into ANOVA
 :::
-
 
 ## 
 
@@ -151,7 +145,7 @@ ggplot(data = evals_small,
         axis.text.x = element_text(size = 14))
 ```
 
-##
+## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 Now...
@@ -176,8 +170,7 @@ ggplot(data = evals_small,
 Goal of an ANOVA
 :::
 
-Analysis of variance (ANOVA) compares the means of three of more groups
-to detect if the means of the groups are different.
+Analysis of variance (ANOVA) compares the means of three of more groups to detect if the means of the groups are different.
 
 ## 
 
@@ -185,11 +178,11 @@ to detect if the means of the groups are different.
 **How???**
 :::
 
-- Compare how different a group of means are
-- Scale the differences relative to the variability of the groups
-- Summarize the differences with one number
+-   Compare how different a group of means are
+-   Scale the differences relative to the variability of the groups
+-   Summarize the differences with one number
 
-##
+## 
 
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 Visualizing Group Differences
@@ -197,12 +190,12 @@ Visualizing Group Differences
 
 </br>
 
-We want visualizations that allow for us to easily compare:  
+We want visualizations that allow for us to easily compare:
 
-- the center (mean) of the groups 
-- the spread (variability) of the groups 
+-   the center (mean) of the groups
+-   the spread (variability) of the groups
 
-##
+## 
 
 ```{r age-cat-density}
 #| echo: false
@@ -224,14 +217,13 @@ What can you say about the differences between the groups?
 What can you say about the variability within the groups?
 :::
 
-
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 4em; color: #0F4C81;"}
 Carrying out an ANOVA
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 1: Compare your groups
@@ -239,7 +231,7 @@ Step 1: Compare your groups
 
 ![](images/groups.png)
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 2: Find the overall mean
@@ -251,7 +243,7 @@ Step 2: Find the overall mean
 This ignores the groups and finds [one]{.underline} mean for every observation!
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 3: Find the group means
@@ -259,18 +251,18 @@ Step 3: Find the group means
 
 ![](images/group_means.png)
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
-Step 4: Calculate the sum of squares 
+Step 4: Calculate the sum of squares
 :::
 
 ![](images/sum_of_squares.png)
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
-Step 5: Calculate the F-statistic 
+Step 5: Calculate the F-statistic
 :::
 
 ![](images/f_stat.png)
@@ -283,7 +275,7 @@ Step 5: Calculate the F-statistic
 Can an F-statistic be negative?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 6: Find the p-value
@@ -291,25 +283,24 @@ Step 6: Find the p-value
 
 ![](images/f_dist.png)
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 **F-distribution**
 :::
 
-An $F$-distribution is a variant of the $t$-distribution, and is also defined by degrees of freedom. 
+An $F$-distribution is a variant of the $t$-distribution, and is also defined by degrees of freedom.
 
 . . .
 
 </br>
 
-This distribution is defined by __two__ different degrees of freedom:  
+This distribution is defined by **two** different degrees of freedom:
 
-1. from the numerator (MSG) : $k - 1$
-2. from the denominator (MSE) : $n - k$ 
+1.  from the numerator (MSG) : $k - 1$
+2.  from the denominator (MSE) : $n - k$
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Two degrees of freedom!
@@ -343,28 +334,28 @@ Do you always use an F-distribution to get the p-value?
 . . .
 
 <center>
+
 ::: {style="font-size: 3em; color: #0F4C81;"}
 NO!
 :::
+
 </center>
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 **Conditions of an ANOVA**
 :::
 
-- Independence 
-  * Within groups 
-  * Between groups
-  
-- Normality of the responses
-  * The distribution of each group is approximately normal
+-   Independence
+    -   Within groups
+    -   Between groups
+-   Normality of the responses
+    -   The distribution of each group is approximately normal
+-   Equal variability of the groups
+    -   The spread of the distributions are similar across groups
 
-- Equal variability of the groups 
-  * The spread of the distributions are similar across groups
-
-##
+## 
 
 ```{r conditions}
 #| echo: false
@@ -398,7 +389,7 @@ If the normality condition is violated what type of method should we use?
 Simulation-based Methods
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 1: Calculating the Observed F-statistic
@@ -416,7 +407,7 @@ obs_F <- evals_small %>%
 obs_F
 ```
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Step 2: Simulating what could have happened under $H_0$
@@ -430,8 +421,7 @@ Step 2: Simulating what could have happened under $H_0$
 How could we use cards to simulate what minimum evaluation score a professor would have gotten, if their score was independent from their age?
 :::
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Another Permutation Distribution
@@ -447,7 +437,7 @@ null_dist <- evals_small %>%
   calculate(stat = "F")
 ```
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Another Permutation Distribution
@@ -467,7 +457,7 @@ visualise(null_dist)
 Why doesn't the distribution have negative numbers?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Visualizing the p-value
@@ -506,7 +496,7 @@ What would you conclude regarding the mean minimum evaluation score and differen
 **Theory-based Methods**
 :::
 
-##
+## 
 
 Using `aov()`
 
@@ -552,9 +542,7 @@ What would you conclude regarding the mean minimum evaluation score and differen
 Did the two methods yield different results?
 :::
 
-
-
-##
+## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 Next...

@@ -10,8 +10,8 @@ format:
     section-divs: true
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
-embed-resources: true
-standalone: true
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: true
@@ -26,48 +26,46 @@ library(emo)
 library(gridExtra)
 ```
 
-
 Welcome!
 
-In this week's coursework we are transitioning into our last topic of the quarter---comparing multiple 
-means. These comparisons have a specific name, ANalysis of VAriance (ANOVA). 
+In this week's coursework we are transitioning into our last topic of the quarter---comparing multiple means. These comparisons have a specific name, ANalysis of VAriance (ANOVA).
 
-We are going to use all of the simulation-based methods we learned previously 
-for this new context. An ANOVA relies on a new statistic, the $F$-statistic, to 
-summarize how different 3 or more means are from each other. 
+We are going to use all of the simulation-based methods we learned previously for this new context. An ANOVA relies on a new statistic, the $F$-statistic, to summarize how different 3 or more means are from each other.
 
-The primary focus of an ANOVA is to detect if the means of 3 or more groups are 
-different. Because of this we focus on hypothesis tests for a difference in the 
-group means and **do not** use confidence intervals. We will generate
-permutation distributions of $F$-statistics that we could have observed
-**if the null hypothesis was true** (there is no difference in the group means).
+The primary focus of an ANOVA is to detect if the means of 3 or more groups are different. Because of this we focus on hypothesis tests for a difference in the group means and **do not** use confidence intervals. We will generate permutation distributions of $F$-statistics that we could have observed **if the null hypothesis was true** (there is no difference in the group means).
 
-## Learning Outcomes 
+## Learning Outcomes
 
 By the end of this coursework you should be able to:
 
-- describe what an ANOVA tests for 
-- use a visualization to outline how the following are calculated: 
-  * total sum of squares
-  * group sum of squares
-  * residual sum of squares
+-   describe what an ANOVA tests for
 
-- describe why the mean squares of groups is called the "between group
-variability" 
-- describe why the mean square error is called the "within group variability" 
-- outline how an F-statistic is calculated
-- explain what a "large" or a "small" F-statistic indicates
+-   use a visualization to outline how the following are calculated:
 
-- describe the conditions for performing an ANOVA procedure
-- outline when it is appropriate to use an $F$-distribution in an ANOVA
-- explain the similarities and differences between parametric ($F$-based)
-methods and non-parametric (simulation-based) methods
+    -   total sum of squares
+    -   group sum of squares
+    -   residual sum of squares
 
-- use R to:
-  * generate a permutation distribution for F-statistics
-  * visualize the permutation distribution
-  * calculate the observed F-statistic statistic
-  * calculate a p-value for a hypothesis test
+-   describe why the mean squares of groups is called the "between group variability"
+
+-   describe why the mean square error is called the "within group variability"
+
+-   outline how an F-statistic is calculated
+
+-   explain what a "large" or a "small" F-statistic indicates
+
+-   describe the conditions for performing an ANOVA procedure
+
+-   outline when it is appropriate to use an $F$-distribution in an ANOVA
+
+-   explain the similarities and differences between parametric ($F$-based) methods and non-parametric (simulation-based) methods
+
+-   use R to:
+
+    -   generate a permutation distribution for F-statistics
+    -   visualize the permutation distribution
+    -   calculate the observed F-statistic statistic
+    -   calculate a p-value for a hypothesis test
 
 # Prepare
 
@@ -85,7 +83,6 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Inference for Comparing Many Means](https://openintro-ims.netlify.app/inference-many-means.html)
 
-
 ### Reading Guide -- Due Tuesday by noon
 
 [Download the Word Document](reading-guide/week9-reading.docx)
@@ -98,81 +95,68 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 ## Concept Quiz -- Due Tuesday by noon
 
-1. Which of the following are true about the mean squares between groups?
+1.  Which of the following are true about the mean squares between groups?
 
-- it is a standardized measure of the variability in responses between groups
-- it compares the mean of each group to the overall mean across all groups
-- it compares the observations within each group to the mean of that group
-- it is used as the numerator in an F-statistic
-- it is used as the denominator in an F-statistic
-- it is found by dividing the sum of squares between groups by the number of 
-groups minus 1 ($k$ - 1)
-- it is found by dividing the sum of squares between groups by the sample size
-minus the number of groups ($n - k$)
+-   it is a standardized measure of the variability in responses between groups
+-   it compares the mean of each group to the overall mean across all groups
+-   it compares the observations within each group to the mean of that group
+-   it is used as the numerator in an F-statistic
+-   it is used as the denominator in an F-statistic
+-   it is found by dividing the sum of squares between groups by the number of groups minus 1 ($k$ - 1)
+-   it is found by dividing the sum of squares between groups by the sample size minus the number of groups ($n - k$)
 
-2. Which of the following are true about the mean square errors?
+2.  Which of the following are true about the mean square errors?
 
-- it is a standardized measure of the variability in responses within each 
-group
-- it compares the mean of each group to the overall mean across all groups
-- it compares the observations within each group to the mean of that group
-- it is used as the numerator in an F-statistic
-- it is used as the denominator in an F-statistic
-- it is found by dividing the sum of square errors by the number of groups
-minus 1 ($k$ - 1)
-- it is found by dividing the sum of square errors by the sample size minus 
-the number of groups ($n - k$)
+-   it is a standardized measure of the variability in responses within each group
+-   it compares the mean of each group to the overall mean across all groups
+-   it compares the observations within each group to the mean of that group
+-   it is used as the numerator in an F-statistic
+-   it is used as the denominator in an F-statistic
+-   it is found by dividing the sum of square errors by the number of groups minus 1 ($k$ - 1)
+-   it is found by dividing the sum of square errors by the sample size minus the number of groups ($n - k$)
 
-3. An F-statistic uses which formula? 
+3.  An F-statistic uses which formula?
 
-- $\frac{MSG}{MSE}$
+-   $\frac{MSG}{MSE}$
 
-- $\frac{SSG}{SSE}$
+-   $\frac{SSG}{SSE}$
 
-- $\frac{MSE}{MSG}$
+-   $\frac{MSE}{MSG}$
 
-- $\frac{SSE}{SSG}$
+-   $\frac{SSE}{SSG}$
 
-4. Ideally, in an ANOVA we'd like to see... (select all that apply)
+4.  Ideally, in an ANOVA we'd like to see... (select all that apply)
 
-- large variability in the means of the groups 
-- small variability in the means of the groups 
-- large variability in the observations within each group
-- small variability in the observations within each group
+-   large variability in the means of the groups
+-   small variability in the means of the groups
+-   large variability in the observations within each group
+-   small variability in the observations within each group
 
-5. If the null hypothesis that the means of four groups are all the same is
-rejected using ANOVA at a 5% significance level, then... (select all that apply)
+5.  If the null hypothesis that the means of four groups are all the same is rejected using ANOVA at a 5% significance level, then... (select all that apply)
 
-- we can then conclude that all the means are different from one another.
+-   we can then conclude that all the means are different from one another.
 
-- the variability between groups is higher than the variability within groups.
+-   the variability between groups is higher than the variability within groups.
 
-- the pairwise analysis will identify at least one pair of means that are
-significantly different.
+-   the pairwise analysis will identify at least one pair of means that are significantly different.
 
-- an appropriate $\alpha$ to be used in pairwise comparisons is
-$\frac{0.05}{4} = 0.0125$ since there are four groups.
- 
----
+-   an appropriate $\alpha$ to be used in pairwise comparisons is $\frac{0.05}{4} = 0.0125$ since there are four groups.
 
-## Chapter Review 
+------------------------------------------------------------------------
+
+## Chapter Review
 
 ### `r emo::ji("check")` Check-in: ANOVA Conditions
 
-**These are all true or false questions, so you will be given _one_ attempt for 
-this quiz**
+**These are all true or false questions, so you will be given *one* attempt for this quiz**
 
-1. As the total sample size increases, the degrees of freedom for the residuals
-increases.
+1.  As the total sample size increases, the degrees of freedom for the residuals increases.
 
-2. The constant variance condition can be somewhat relaxed when the sample sizes
-are large.
+2.  The constant variance condition can be somewhat relaxed when the sample sizes are large.
 
-3. The independence assumption can be relaxed when the total sample size is
-large.
+3.  The independence assumption can be relaxed when the total sample size is large.
 
-4. The normality condition is very important when the sample sizes of each 
-group are small. 
+4.  The normality condition is very important when the sample sizes of each group are small.
 
 ## R Tutorial -- Due Thursday by noon
 

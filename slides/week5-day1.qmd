@@ -2,7 +2,8 @@
 title: "Introduction to Multiple Linear Regression"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 
@@ -95,7 +96,7 @@ get_regression_table(smoke_lm) %>%
 :::
 
 ::: {.column width="20%"}
-The * means the variables are interacting!
+The \* means the variables are interacting!
 :::
 :::
 
@@ -178,9 +179,11 @@ How do you interpret the value of 0.02?
 ##  {background-color="#B6CADA"}
 
 <center>
+
 ::: {style="font-size: 2.5em; color: #000000;"}
 But how do we decide if the interaction model is "best" without a p-value??????
 :::
+
 </center>
 
 ##  {background-color="#D4D4D4"}
@@ -207,8 +210,7 @@ If the slopes look different, you're done!
 If the slopes look similar, then fit the "additive" / parallel slopes model.
 :::
 
-
-##  
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Different Enough?
@@ -234,7 +236,6 @@ ggplot(data = MA_schools,
 Behind the Plot
 :::
 
-
 ```{r}
 #| eval: false
 #| echo: true
@@ -254,7 +255,7 @@ ggplot(data = MA_schools,
 
 `geom_smooth()` allows for *both* the intercepts and the slopes to differ
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 What about now?
@@ -280,7 +281,6 @@ Who is baseline?
 
 ![](images/baseline.jpg)
 
-
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
@@ -290,8 +290,6 @@ Deciphering groups -- Small schools
 ![](images/small_coefficients.jpg)
 
 . . .
-
-
 
 $$\widehat{SAT}_{small} = 594 - 2.93 \times \text{percent disadvan}$$
 
@@ -311,8 +309,7 @@ $$\widehat{SAT}_{medium} = (594 - 17.8) + (- 2.93 + 0.146) \times \text{percent 
 
 $$\widehat{SAT}_{medium} = 576.2 - 2.784 \times \text{percent disadvan}$$
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Deciphering groups -- Large schools
@@ -334,10 +331,8 @@ $$\widehat{SAT}_{medium} = 580.7 - 2.741 \times \text{percent disadvan}$$
 What if they're not very different?
 :::
 
-
 ::: columns
 ::: {.column width="45%"}
-
 ```{r}
 MA_schools %>% 
   ggplot(mapping = aes(y = average_sat_math, 
@@ -349,7 +344,6 @@ MA_schools %>%
        y = "Average SAT Math", 
        color = "Size of School")
 ```
-
 :::
 
 ::: {.column width="5%"}
@@ -368,7 +362,7 @@ MA_schools %>%
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Parallel Slopes
@@ -390,7 +384,6 @@ lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>%
   select(term:std_error)
 ```
 
-
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
@@ -406,7 +399,6 @@ lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>%
 . . .
 
 $$\widehat{SAT}_{small} = 588 - 2.78 \times \text{percent disadvantaged}$$
-
 
 ##  {background-color="#B6CADA"}
 
@@ -435,5 +427,3 @@ $$\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}$$
 . . .
 
 $$\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}$$
-
-

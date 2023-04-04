@@ -10,8 +10,8 @@ format:
     section-divs: true
     code-block-bg: '#76b5c5'
     highlight-style: monochrome
-embed-resources: true
-standalone: true
+    embed-resources: true
+    standalone: true
 editor: visual
 execute:
   echo: true
@@ -106,7 +106,7 @@ knitr::include_graphics(here::here("images",
 
 [Download the Word Document](reading-guide/week2-reading2.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -206,7 +206,7 @@ nycflights %>%
 
 `r emo::ji("computer")` [**Required Tutorial:** Summarizing with Statistics](https://openintro.shinyapps.io/ims-02-explore-03/)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!

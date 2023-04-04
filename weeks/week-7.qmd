@@ -10,8 +10,8 @@ format:
     section-divs: true
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
-embed-resources: true
-standalone: true
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: true
@@ -29,7 +29,7 @@ execute:
 
 [Download the Word Document](reading-guide/week7-reading1.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -43,7 +43,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 [Download the Word Document](reading-guide/week7-reading2.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -72,67 +72,65 @@ fishing with a spear
 
 **2. To create a 95% confidence interval using the percentile method, what percentiles of the bootstrap distribution do you need to calculate?**
 
-- 0th
-- 2.5th
-- 5th
-- 90th
-- 95th
-- 97.5th
+-   0th
+-   2.5th
+-   5th
+-   90th
+-   95th
+-   97.5th
 
 **3. To create a 95% confidence interval using the standard error method, what standard error do you use?**
 
-- the sample standard deviation
-- the bootstrap distribution standard deviation
-- a resample standard deviation
-- 1.96
+-   the sample standard deviation
+-   the bootstrap distribution standard deviation
+-   a resample standard deviation
+-   1.96
 
 **4. We almost never know if our confidence interval captured the true population parameter.**
 
-- True
-- False
+-   True
+-   False
 
 **5. What percentage of 99% confidence intervals do you expect to capture the true population parameter?**
 
-**6. The word “confident” in a confidence interval interpretation corresponds to what aspect of the interval?**
+**6. The word "confident" in a confidence interval interpretation corresponds to what aspect of the interval?**
 
-- the accuracy of the original sample
-- the reliability of the procedure for constructing confidence intervals
-- the precision of the bootstrap samples
+-   the accuracy of the original sample
+-   the reliability of the procedure for constructing confidence intervals
+-   the precision of the bootstrap samples
 
-**7. Which of the following are true?** 
+**7. Which of the following are true?**
 
-- Smaller sample sizes tend to produce narrower confidence intervals.
-- Smaller sample sizes tend to produce wider confidence intervals.
-- Lower confidence levels tend to produce wider confidence intervals.
-- Lower confidence levels tend to produce narrower confidence intervals.
+-   Smaller sample sizes tend to produce narrower confidence intervals.
+-   Smaller sample sizes tend to produce wider confidence intervals.
+-   Lower confidence levels tend to produce wider confidence intervals.
+-   Lower confidence levels tend to produce narrower confidence intervals.
 
-**8. In a regression table, what does the “std_error” value associated with the slope represent?**
+**8. In a regression table, what does the "std_error" value associated with the slope represent?**
 
-- the standard deviation of the sample
-- the standard deviation of the bootstrap distribution
-- the estimated standard deviation of the sampling distribution
-- the standard error of the sample
+-   the standard deviation of the sample
+-   the standard deviation of the bootstrap distribution
+-   the estimated standard deviation of the sampling distribution
+-   the standard error of the sample
 
 **9. In a regression table, how is the "std_error" value calculated?**
 
-- a mathematical formula
-- the standard deviation of the sample
-- the standard deviation of the bootstrap distribution
-
+-   a mathematical formula
+-   the standard deviation of the sample
+-   the standard deviation of the bootstrap distribution
 
 **10. What percentage confidence interval is output in a regression table?**
 
-- 99%
-- 95%
-- 90%
+-   99%
+-   95%
+-   90%
 
 ## R Tutorial -- Due Thursday by noon
 
 [**Required Tutorial:** Practice the infer Workflow](tutorial/infer-CI-tutorial.html)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
 :::
-

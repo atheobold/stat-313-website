@@ -4,6 +4,7 @@ format:
   revealjs:
     embed-resources: true
     standalone: true
+editor: visual
 ---
 
 ```{r packages}

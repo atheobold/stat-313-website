@@ -2,7 +2,8 @@
 title: "Two-Way ANOVA Models"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

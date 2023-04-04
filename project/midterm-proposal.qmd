@@ -1,5 +1,5 @@
 ---
-title: "Week Four: Introduction to Linear Regression (Basic Regression)"
+title: "Midterm Project Proposal"
 subtitle: "Due January 29, 2023 by midnight"
 format: 
   html:
@@ -11,17 +11,13 @@ format:
 editor: visual
 ---
 
-This week you will get started on your midterm project by 
-selecting what dataset you wish to analyze and writing an
-introduction about the dataset you chose.
+This week you will get started on your midterm project by selecting what dataset you wish to analyze and writing an introduction about the dataset you chose.
 
 # Step 1: Picking a Dataset
 
 ## Option 1 -- Use your own data
 
-If you have a dataset from another course or your own research which you
-believe can be appropriately modeled with a *linear regression*, you can
-propose to use these data. 
+If you have a dataset from another course or your own research which you believe can be appropriately modeled with a *linear regression*, you can propose to use these data.
 
 ### Deliverable
 
@@ -29,57 +25,55 @@ For the **Midterm Project Proposal** assignment on Canvas, you are required to s
 
 ## Option 2 -- Use a public dataset
 
-I've compiled a list of datasets from a variety of contexts, 
-all which are relatively tidy and ready for analysis.
+I've compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis.
 
 From the **lterdatasampler** package:
 
-- [`and_vertebrates`](https://lter.github.io/lterdatasampler/articles/and_vertebrates_vignette.html): Size data for Cutthroat trout and salamanders in different sections of forest (from Lab 3). 
-- [`ntl_icecover`](https://lter.github.io/lterdatasampler/articles/ntl_icecover_vignette.html): Data on duration of ice cover of lakes in the Madison, WI area (from Lab 4). 
-- [`hbr_maples`](https://lter.github.io/lterdatasampler/articles/hbr_maples_vignette.html): Data on the growth of Sugar Maple (Acer saccharum) seedlings in response to calcium addition. 
-- [`pie_crab`](https://lter.github.io/lterdatasampler/articles/pie_crab_vignette.html): Data on Fiddler crab body size in salt marshes from Florida to Massachusetts.
+-   [`and_vertebrates`](https://lter.github.io/lterdatasampler/articles/and_vertebrates_vignette.html): Size data for Cutthroat trout and salamanders in different sections of forest (from Lab 3).
+-   [`ntl_icecover`](https://lter.github.io/lterdatasampler/articles/ntl_icecover_vignette.html): Data on duration of ice cover of lakes in the Madison, WI area (from Lab 4).
+-   [`hbr_maples`](https://lter.github.io/lterdatasampler/articles/hbr_maples_vignette.html): Data on the growth of Sugar Maple (Acer saccharum) seedlings in response to calcium addition.
+-   [`pie_crab`](https://lter.github.io/lterdatasampler/articles/pie_crab_vignette.html): Data on Fiddler crab body size in salt marshes from Florida to Massachusetts.
 
 From the **openintro** package:
 
-- [`ncbirths`](https://www.openintro.org/data/index.php?data=ncbirths): Data from North Carolina births in 2004 (from Week 4).
-- [`possum`](https://www.openintro.org/data/index.php?data=possum): Data representing possums in Australia and New Guinea.
+-   [`ncbirths`](https://www.openintro.org/data/index.php?data=ncbirths): Data from North Carolina births in 2004 (from Week 4).
+-   [`possum`](https://www.openintro.org/data/index.php?data=possum): Data representing possums in Australia and New Guinea.
 
 From the **moderndive** package:
 
-- [`evals`](https://moderndive.github.io/moderndive/reference/evals.html): Data from end of semester student evaluations from
-University of Texas at Austin (discussed in ModernDive textbook).
+-   [`evals`](https://moderndive.github.io/moderndive/reference/evals.html): Data from end of semester student evaluations from University of Texas at Austin (discussed in ModernDive textbook).
 
 From the **gapminder** package:
 
-- [`gapminder`](https://cran.r-project.org/web/packages/gapminder/readme/README.html): Data on life expectancy, GDP per capita, and population by country (discussed in ModernDive textbook).
+-   [`gapminder`](https://cran.r-project.org/web/packages/gapminder/readme/README.html): Data on life expectancy, GDP per capita, and population by country (discussed in ModernDive textbook).
 
 ### Deliverable
 
-For the **Midterm Project Proposal** assignment on Canvas, you are required to state *at the beginning* of the document, the name of the dataset you have chosen to use. 
+For the **Midterm Project Proposal** assignment on Canvas, you are required to state *at the beginning* of the document, the name of the dataset you have chosen to use.
 
 # Step 2: Writing an Introduction
 
 ## If you chose to use your own data
 
-**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from? 
+**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from?
 
 I don't know **anything** about your data, so I expect for this description to be *extensive*. If the data you are using are from a class, you are responsible for obtaining the context of the data--you cannot simply say "These were data used in BIO 253."
 
 **Step 2:** Choose your variables
 
-Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables. 
+Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables.
 
 ## If you chose a dataset from the list above
 
-**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from? 
+**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from?
 
-::: {.callout-tip}
-To obtain information on the dataset, click on the link provided in its name! 
+::: callout-tip
+To obtain information on the dataset, click on the link provided in its name!
 :::
 
 **Step 2:** Choose your variables
 
-Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables. 
+Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables.
 
 # Step 3: Submitting on Canvas
 
@@ -87,6 +81,6 @@ For the **Midterm Project Proposal** assignment on Canvas, your proposal is requ
 
 You are allowed to use any text editing software to make your critique (e.g., Word, Pages, Google Docs), but your submission **must be a PDF**. If you are unsure how to save your file as a PDF, I recommend using Google!
 
-::: {.callout-caution}
+::: callout-caution
 Remember, if you chose to use your own dataset, you are required to submit your data as an Excel file (.csv or .xlsx).
 :::

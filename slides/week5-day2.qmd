@@ -2,7 +2,8 @@
 title: "Work Day: Coding a Multiple Linear Regression"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

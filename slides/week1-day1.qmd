@@ -7,37 +7,21 @@ title-slide-attributes:
 format: 
   revealjs:
     theme: night
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   echo: false
   message: false
   warning: false
-embed-resources: true
-standalone: true
 ---
-
-```{r setup}
-#| include: false
-library(tidyverse)
-library(emo)
-library(openintro)
-library(kableExtra)
-library(lubridate)
-library(vembedr)
-library(htmltools)
-
-fish <- read_csv(here::here("slides", 
-                            "data", 
-                            "BlackfootFish.csv")
-                 )
-nba <- read_csv(here::here("slides", 
-                           "data", 
-                           "NBA_player_of_the_week.csv")
-                )
-```
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 Warm-up
+:::
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+(90 seconds)
 :::
 
 . . .
@@ -124,16 +108,6 @@ Coding is a **huge** part of how doing statistics in the wild looks.
 -   You will be given coding resources each week
 -   Use your peers to support your learning
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-A Bit About Subversive Grading
-:::
-
-. . .
-
-![The four pillars of alternative grading -- David Clark](images/four_pillars.png)
-
 ## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
@@ -178,6 +152,20 @@ Course Components
 
 -   Final Project
 :::
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
+Specifications Based Grading
+:::
+
+![](images/four_pillars.png)
+
+. . .
+
+::: {style="color: #000000;"}
+Everyone is capable of earning an A!
 :::
 
 ##  {background-color="#B6CADA"}

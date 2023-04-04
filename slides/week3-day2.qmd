@@ -3,7 +3,8 @@ title: "Categorical Variables for Whom?"
 subtitle: "STAT 313"
 format: 
   revealjs:
-    self-contained: true
+    embed-resources: true
+    standalone: true
 editor: visual
 ---
 

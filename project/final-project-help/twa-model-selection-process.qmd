@@ -1,8 +1,9 @@
 ---
 title: "Two-Way ANOVA Model Selection Process"
 format: 
-  docx: 
-    self-contained: true
+  html: 
+    embed-resources: true
+    standalone: true
 editor: visual
 execute: 
   warning: false
@@ -30,11 +31,11 @@ movies <- movies_sample %>%
   filter(era %in% c("1970s", "1980s", "1990s", "2000s"))
 ```
 
-We will be using a "backward" selection process for deciding on the "best" ANOVA model. Meaning, we will start with a more complicated model and decide if it is "worth it." 
+We will be using a "backward" selection process for deciding on the "best" ANOVA model. Meaning, we will start with a more complicated model and decide if it is "worth it."
 
 # Step 1 -- Fit an Interaction Two-Way ANOVA
 
-## Plot the model 
+## Plot the model
 
 ```{r twa-plot}
 #| echo: false
@@ -54,9 +55,9 @@ movies %>%
 
 **What are we looking for?**
 
-We are looking to see if relationship between the mean of $y$ and explanatory variable 1 changes over the values of explanatory variable 2. This is akin to looking for evidence of different slopes in a multiple linear regression. 
+We are looking to see if relationship between the mean of $y$ and explanatory variable 1 changes over the values of explanatory variable 2. This is akin to looking for evidence of different slopes in a multiple linear regression.
 
-For these data we are looking to see if the relationship between the mean movie rating and the genre of the movie changes over the different eras. 
+For these data we are looking to see if the relationship between the mean movie rating and the genre of the movie changes over the different eras.
 
 ## Fit the model
 
@@ -67,7 +68,7 @@ aov(rating ~ era * genre, data = movies) %>%
   tidy()
 ```
 
-## Perform a Hypothesis Test 
+## Perform a Hypothesis Test
 
 The `era:genre` line of the ANOVA table is testing if the mean movie rating and the genre of the movie changes over the different eras. It has the following hypotheses:
 
@@ -75,15 +76,15 @@ $H_0$: The relationship between the mean movie rating and the genre of the movie
 
 $H_A$: The relationship between the mean movie rating and the genre of the movie is different for at least one era
 
-With a p-value of 0.7 (from an F-statistic of 0.477 with 3 and 48 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating and the genre of the movie is different for at least one era. 
+With a p-value of 0.7 (from an F-statistic of 0.477 with 3 and 48 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating and the genre of the movie is different for at least one era.
 
-So, my next step is to fit an **additive** two-way ANOVA. 
+So, my next step is to fit an **additive** two-way ANOVA.
 
 # Step 2: Fit an Additive Two-Way ANOVA
 
-We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$. 
+We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$.
 
-For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating.  
+For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating.
 
 ## Fit the Model
 
@@ -94,9 +95,9 @@ aov(rating ~ era + genre, data = movies) %>%
   tidy()
 ```
 
-## Perform a Hypothesis Test 
+## Perform a Hypothesis Test
 
-For an additive two-way ANOVA, we have **two** hypothesis tests, one test per explanatory variable. 
+For an additive two-way ANOVA, we have **two** hypothesis tests, one test per explanatory variable.
 
 ### Hypothesis Test for `genre`
 
@@ -104,11 +105,11 @@ The `genre` line of the ANOVA table is testing if the mean movie rating is the s
 
 $H_0$: The mean movie rating is the same for every genre, given the era of the movie
 
-$H_A$: The mean movie rating is different for at least one genre, given the era of the movie 
+$H_A$: The mean movie rating is different for at least one genre, given the era of the movie
 
 *Notice the hypotheses are similar to a multiple linear regression with two explanatory variables, where the test for each variable is conditional on the other variable(s) included in the model.*
 
-With a p-value of 0.178 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating, given the era of the movie. 
+With a p-value of 0.178 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating, given the era of the movie.
 
 ### Hypothesis Test for `era`
 
@@ -118,11 +119,11 @@ $H_0$: The mean movie rating is the same for every era, given the genre of the m
 
 $H_A$: The mean movie rating is different for at least one era, given the genre of the movie
 
-With a p-value of 0.568 (from an F-statistic of 0.68 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one era has a different mean movie rating, given the genre of the movie. 
+With a p-value of 0.568 (from an F-statistic of 0.68 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one era has a different mean movie rating, given the genre of the movie.
 
 # Step 3: Fit a One-Way ANOVA
 
-Technically, both variables had large p-values, but the p-value is conditional on the other variables in the model. So, the next step is to remove the variable with the **largest** p-value and fit a one-way ANOVA. 
+Technically, both variables had large p-values, but the p-value is conditional on the other variables in the model. So, the next step is to remove the variable with the **largest** p-value and fit a one-way ANOVA.
 
 ## Fit the Model
 
@@ -131,7 +132,7 @@ aov(rating ~ genre, data = movies) %>%
   tidy()
 ```
 
-## Perform a Hypothesis Test 
+## Perform a Hypothesis Test
 
 The `genre` line of the ANOVA table is testing if the mean movie rating is the same for all genres. It has the following hypotheses:
 
@@ -141,11 +142,11 @@ $H_A$: The mean movie rating is different for at least one genre
 
 *Notice the hypotheses don't include era this time, since that variable has been removed from the model!*
 
-With a p-value of 0.15 (from an F-statistic of 2.13 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating. 
+With a p-value of 0.15 (from an F-statistic of 2.13 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating.
 
 # Step 4: Fit a Mean-Only Model
 
-Once we've failed to reject the null in a one-way ANOVA, the "best" model is a model with **one** mean for **all** observations. 
+Once we've failed to reject the null in a one-way ANOVA, the "best" model is a model with **one** mean for **all** observations.
 
 ```{r}
 summarize(movies,

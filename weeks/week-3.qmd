@@ -9,9 +9,9 @@ format:
     number-depth: 2
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
+    embed-resources: true
+    standalone: true
 editor: visual
-embed-resources: true
-standalone: true
 ---
 
 ```{r packages}
@@ -54,7 +54,7 @@ knitr::include_graphics(here::here("images",
 
 [Download the Word Document](reading-guide/week3-reading.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -77,7 +77,7 @@ knitr::include_graphics(here::here("images",
 
 [Download the Word Document](reading-guide/week2-reading2.docx)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit your completed reading guide to the Canvas assignment portal!
@@ -162,7 +162,7 @@ Third Step
 
 [**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
 
-::: {.callout-note}
+::: callout-note
 # Submission
 
 Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
