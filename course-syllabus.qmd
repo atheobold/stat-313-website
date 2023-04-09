@@ -357,7 +357,7 @@ Assignments are expected to be submitted on time. However, every student will be
 
 You are allowed to use technology in the classroom! In fact, we will often do so as part of in-class activities. However, our class is held in a computer laboratory, so bringing a laptop is not required. You are permitted to use the lab computers, but if you would like to take notes on your computer / surface you are welcome to bring it to class.
 
-# Exceptations, Respect, and Integrity
+# Expectations, Respect, and Integrity
 
 ## How can I expect to be treated in this course?
 
@@ -369,39 +369,27 @@ In summary: Be good to each other.
 
 Your team will be rotating group roles each week, so that one person does not act as the "team manager" for more than one week. Instead the following roles will circulate each week, so that each member of the group is able to complete each role.
 
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+
-| **Facilitator**                                   | **Recorder / Reporter**                                                                   |
-|                                                   |                                                                                           |
-| **Manages team progress through the task**        | **Manages in-class report**                                                               |
-|                                                   |                                                                                           |
-| -   Leads discussion                              | -   Responsible for organizing and recording answers to the assignment during discussions |
-|                                                   |                                                                                           |
-| -   Makes sure everyone understands the task      | -   Compiles a summary of the solutions discussed                                         |
-|                                                   |                                                                                           |
-| -   Checks in with group members                  | -   Sends summary to report editor                                                        |
-|                                                   |                                                                                           |
-| -   Keeps the group moving forward                |                                                                                           |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+
-| **Report Editor**                                 | **Team Captain**                                                                          |
-|                                                   |                                                                                           |
-| **Manages out-of-class report**                   | **Manages team participation**                                                            |
-|                                                   |                                                                                           |
-| -   Asks professor [*team*]{.underline} questions | -   Encourages participation                                                              |
-|                                                   |                                                                                           |
-| -   Reviews draft summary provided by reporter    | -   Enforces norms                                                                        |
-|                                                   |                                                                                           |
-| -   Solicits feedback from the team               | -   Brings conversation back if it deviates                                               |
-|                                                   |                                                                                           |
-| -   Shares summary with the team                  | -   Substitutes for absent roles                                                          |
-|                                                   |                                                                                           |
-| -   Submits final assignment                      |                                                                                           |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+
++------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------+
+| **Facilitator**                                            | **Recorder / Reporter**                                                                   | **Team Captain**                            |
+|                                                            |                                                                                           |                                             |
+| Manages team progress through the task                     | Manages in-class report                                                                   | Manages team participation                  |
+|                                                            |                                                                                           |                                             |
+| -   Leads discussion                                       | -   Responsible for organizing and recording answers to the assignment during discussions | -   Encourages participation                |
+|                                                            |                                                                                           |                                             |
+| -   Makes sure everyone understands the task               | -   Compiles a summary of the solutions discussed                                         | -   Finds compromises                       |
+|                                                            |                                                                                           |                                             |
+| -   Keeps the group moving forward                         | -   Solicits feedback on summaries from other group members                               | -   Enforces norms                          |
+|                                                            |                                                                                           |                                             |
+| -   Checks in with group members                           | -   Responsible for submitting final version of assignment                                | -   Brings conversation back if it deviates |
+|                                                            |                                                                                           |                                             |
+| -   Calls professor / TA over for **group questions only** |                                                                                           | -   Substitutes for absent roles            |
++------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ### Peer evaluations
 
 There will be confidential peer evaluations completed every four weeks. I will use these to check-in on each group's dynamics and ensure that everyone feels their voice is being heard.
 
-## What consititutes plagiarism in a statistics class?
+## What constitutes plagiarism in a statistics class?
 
 Paraphrasing or quoting another's work without citing the source is a form of academic misconduct. This included the `R` code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.
 

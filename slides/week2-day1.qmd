@@ -24,13 +24,13 @@ library(ggridges)
 library(gridExtra)
 ```
 
-## 
+## Warm-up+
 
 ```{r aesthetics}
 #| echo: false
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = species, fill = sex)) + 
-  geom_boxplot(alpha = 0.5, scale = 1) + 
+  geom_boxplot(alpha = 0.5) + 
   labs(x = "Bill Length (mm)", 
        y = "Penguin Species", 
        fill = "Penguin Sex")
@@ -51,7 +51,7 @@ Univariate (One Variable) Visualizations -- For Numerical Data
 
 ::: incremental
 ::: {style="color:#000000;"}
--   Histogram
+-   Histogram (or Dotplot)
 -   Boxplot
 -   Density Plot
 :::
@@ -64,24 +64,14 @@ Univariate (One Variable) Visualizations -- For Numerical Data
 #| fig-width: 5
 #| fig-align: center
 #| echo: true
-#| code-line-numbers: "|20"
+#| code-line-numbers: "|2"
 
 ggplot(data = penguins, mapping = aes(x = bill_length_mm)) + 
   geom_histogram() +
   labs(x = "Bill Length (mm)")
 ```
 
-. . .
-
-<center>
-
-::: {style="color:#ba9645;"}
-Is this aesthetic *global* or *local*?
-:::
-
-</center>
-
-------------------------------------------------------------------------
+## 
 
 ::: columns
 ::: {.column width="50"}
@@ -220,6 +210,7 @@ There are two main methods for adding a third (or fourth) variable into a data v
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: "|4,9"
+#| output-location: slide
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -238,6 +229,7 @@ ggplot(data = penguins,
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: "|4,9"
+#| output-location: slide
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -256,6 +248,7 @@ ggplot(data = penguins,
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: "|5"
+#| output-location: slide
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -267,12 +260,13 @@ ggplot(data = penguins,
   
 ```
 
-## Facets in Scatterplots -- Numerical Variable
+## Facets in Scatterplots -- Numerical Variable 🫤
 
 ```{r scatterplot-facets-num}
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: "|5"
+#| output-location: slide
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -290,7 +284,7 @@ ggplot(data = penguins,
 
 <center>
 
-::: {style="font-size: 1.25em;"}
+::: {style="font-size: 2em;"}
 Measures of Center
 :::
 
@@ -298,7 +292,7 @@ Measures of Center
 
 ::: columns
 ::: {.column width="55%"}
-::: {style="color:#ba9645;"}
+::: {style="color:#e28743;"}
 **Not Resistant**
 :::
 
@@ -309,7 +303,7 @@ Mean
 :::
 
 ::: {.column width="40%"}
-::: {style="color:#ba9645;"}
+::: {style="color:#e28743;"}
 **Resistant**
 :::
 
@@ -320,10 +314,19 @@ Median
 . . .
 
 </br>
+</br>
+
+::: {.callout-tip}
+# 60-second question
+
+What does it mean for a statistic to be "resistant"?
+:::
+
+##
 
 <center>
 
-::: {style="font-size: 1.25em;"}
+::: {style="font-size: 2em;"}
 Measures of Spread
 :::
 
@@ -331,7 +334,7 @@ Measures of Spread
 
 ::: columns
 ::: {.column width="55%"}
-::: {style="color:#ba9645;"}
+::: {style="color:#e28743;"}
 **Not Resistant**
 :::
 
@@ -344,13 +347,24 @@ Range
 :::
 
 ::: {.column width="40%"}
-::: {style="color:#ba9645;"}
+::: {style="color:#e28743;"}
 **Resistant**
 :::
 
 Inner Quartile Range (IQR)
 :::
 :::
+
+</br>
+</br>
+
+::: {.callout-tip}
+# 60-second question
+
+Why are the variance and range not resistant? 
+:::
+
+
 
 ##  {background-color="#D4D4D4"}
 
@@ -362,7 +376,7 @@ Given this distribution...
 #| echo: false
 penguins %>% 
   ggplot(aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 200) + 
+  geom_histogram(binwidth = 500) + 
   labs(x = "Body Mass (grams)")
 ```
 
@@ -370,7 +384,7 @@ penguins %>%
 
 <center>
 
-::: {style="color:#ba9645;"}
+::: {style="color: #0F4C81;"}
 What measure of center would you use? Why?
 :::
 
@@ -383,7 +397,7 @@ m <- median(penguins$body_mass_g, na.rm = TRUE)
 
 penguins %>% 
   ggplot(aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 200) + 
+  geom_histogram(binwidth = 500) + 
   geom_vline(xintercept = x_bar, color = "red", lwd = 1) +
   geom_vline(xintercept = m, color = "blue", lwd = 1) +
   geom_text(x = 3800, y = 20, label = "Median", color = "blue", size = 5) + 
@@ -424,6 +438,33 @@ penguins %>%
 
 . . .
 
-::: {style="color:#ba9645;"}
+::: {style="color:#e28743;"}
 Estimates based on larger samples tend to be more accurate than those based on smaller samples.
 :::
+
+## Before Thursday...
+
+Complete the **two** R tutorials 
+
+* Visualizing Numerical Variables
+
+* Summarizing Numerical Variables 
+
+Linked in the Week 2 coursework!
+
+## Meeting your team!
+
+1. Go to the STAT 313 Canvas page
+
+2. Go to the "People" tab
+
+3. Click on the Weeks 2 - 4 groups
+
+4. Find your group number
+
+::: {style="color:#e28743;"}
+These are the individuals you will be working with for the next three weeks! Exchange contact information!
+:::
+
+
+
