@@ -15,27 +15,57 @@ library(tidyverse)
 library(kableExtra)
 ```
 
-.larger\[Suppose...\]
+##  {background-color="#2b6a6c"}
 
-.large\["Overall this instructor was educationally effective."\]
+::: {style="font-size: 2em; color: #000000;"}
+Suppose...
+:::
 
-.pull-left\[
+> "Overall this instructor was educationally effective."
 
-{r, echo = FALSE} evals \<- tibble( year = c(rep(2020, 2), rep(2021, 5) ), quarter = c(rep("Fall", 2), rep("Winter", 2), rep("Spring", 3) ), average = c(4.53, 4.36, 4.18, 4.24, 4.83, 4.41, 4) )
+. . .
 
-kable(evals) %\>% kable_styling(stripe_color = "light blue")
+```{r table-of-eval-scores}
+#| echo: false
 
-\]
+evals <- tibble( 
+  year = c(rep(2021, 2), rep(2022, 5) ), 
+  quarter = c(rep("Fall", 2), 
+              rep("Winter", 2), 
+              rep("Spring", 3) 
+              ),
+  average = c(4.53, 4.36, 4.18, 4.24, 4.83, 4.41, 4) 
+  )
 
---
+kable(evals) %>% 
+  kable_styling(stripe_color = "light blue")
+```
 
-.pull-right\[ </br>
+##  {background-color="#404040"}
 
-.large\[What do these averages mean?\] \]
+<center>
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+How were these averages calculated?
+:::
+</center>
 
-.huge\[The Problem\]
+##  {background-color="#404040"}
 
-.large\[It's incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.\]
+<center>
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+What do these averages mean?
+:::
+</center>
+
+##
+
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+The Problem
+:::
+
+::: {style="font-size: 2em; color: #FFFFFF;"}
+It's incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.
+:::
 
 <!-- Beyond “checking” higher level assumptions in a stale and automatic fashion.  -->
 
@@ -45,56 +75,93 @@ kable(evals) %\>% kable_styling(stripe_color = "light blue")
 
 <!-- represent and whether that was really what the scientist was after.  -->
 
-.larger\[Why so much resistance?\]
+##
 
-</br> </br>
+::: {style="font-size: 2.5em; color: #FFFFFF;"}
+Why so much resistance?
+:::
 
-Departments hold specific expectations of statistics courses.
-
-These expectations are conditional on the assumption that means represent the magic quantity of interest
-
-I'm then expected to educate you to "play the game" in the scientific culture of averages
-
-class: center, middle, inverse
-
-class: center, middle, inverse
-
-.larger\[Averagarianism\]
-
-The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight.
-
-The End of Average Todd Rose
-
-class: center, middle, inverse
-
-.larger\[What else then?\]
-
-If you could not use averages to evaluate, model, and select individuals, well then...what could you use?
-
-This practical retort underscores the reason that averagarianism has endured for so long and become so deeply ingrained throughout society.
-
-.larger\["We've always done it this way"\]
-
-</br> </br>
-
-Methods based on averages are available, easy, convenient, and take little creativity --- and they are expected in our scientific culture.
-
-Justification for using averages is simply not demanded --- though justification for use of anything but averages is incredibly difficult to sell.
-
-class: center, inverse
-
-.larger\[Some Rules to Play By\]
+::: {style="font-size: 0.75em; color: #FFFFFF;"}
+Departments hold specific expectations of statistics courses
 
 </br>
 
---
+These expectations are conditional on the assumption that means represent the magic quantity of interest
 
-.large\[Look at and understand your raw data before aggregating\]
+</br>
 
---
+I'm then expected to educate you to "play the game" in the scientific culture of averages
+:::
 
-.large\[Boxplots (and such) don't count as visualizing the raw data.\]
+##
 
---
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+Averagarianism
+:::
 
-.large\[We should only average things we are convinced are measuring the same thing.\]
+::: {style="font-size: 0.75em; color: #FFFFFF;"}
+> "The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight."
+>
+> The End of Average by Todd Rose
+
+:::
+
+##
+
+::: {style="font-size: 3.5em; color: #FFFFFF;"}
+What else then?
+:::
+
+::: {.callout-tip}
+# 60-second exercise
+If you could not use averages to evaluate, model, and select individuals, well then...what could you use?
+:::
+
+. . .
+
+</br> 
+
+The difficulty in responding to this question underscores how averagarianism has endured for so long and become so deeply ingrained throughout society.
+
+##
+
+::: {style="font-size: 2.5em; color: #FFFFFF;"}
+"We've always done it this way"
+:::
+
+Methods based on averages are available, easy, convenient, and take little creativity --- and they are expected in our scientific culture.
+
+</br>
+
+Justification for using averages is simply not demanded --- though justification for use of anything but averages is incredibly difficult to sell.
+
+##  {background-color="#f48153"}
+
+::: {style="font-size: 3.5em; color: #000000;"}
+Some Rules to Play By
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size: 0.75em; color: #000000;"}
+Look at and understand your raw data before aggregating
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size:0.75em; color: #000000;"}
+Boxplots (and such) don't count as visualizing the raw data
+:::
+
+. . .
+
+</br>
+
+::: {style="font-size: 0.75em; color: #000000;"}
+We should only average things we are convinced are measuring the same thing
+:::
+
