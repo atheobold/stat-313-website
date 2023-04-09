@@ -67,6 +67,12 @@ knitr::include_graphics(here::here("images",
 
 [Download the Word Document](reading-guide/week2-reading2.docx)
 
+::: callout-note
+# Submission
+
+Submit your completed reading guide to the Canvas assignment portal!
+:::
+
 ## Concept Quiz
 
 1.  Suppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?
@@ -79,15 +85,17 @@ knitr::include_graphics(here::here("images",
 
 *Hint:* Think about how you would "typically" expect flight delays to behave.
 
-2.  To better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the *distribution* of departure delays.
-
-What type of visualizations could we make? (select all that apply)
+2.  To better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the *distribution* of departure delays. What type of visualizations could we make? Select all that apply!
 
 -   boxplot
 -   histogram
 -   barplot
 -   density plot
 -   scatterplot
+
+::: callout-note
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas. 
+:::
 
 ## Textbook Reading -- Part 2
 
@@ -116,7 +124,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 1.  What aesthetics are being used in the following plot?
 
-Hint: Think about what goes inside of the `aes()` function and what does not.
+*Hint: Think about what goes inside of the `aes()` function and what does not.*
 
 ```{r}
 #| echo: false
@@ -166,7 +174,7 @@ un_votes %>%
 
 2.  What geometric objects are being used in the displayed visualization?
 
-Hint: Think about what `geom`s you would use to make this plot!
+*Hint: Think about what `geom`s you would use to make this plot!*
 
 -   points
 -   lines / smoothers
@@ -199,6 +207,11 @@ nycflights %>%
 -   median
 -   outliers
 -   mode
+
+::: callout-note
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas. 
+:::
+
 
 # R Tutorial -- Due Thursday by noon
 
