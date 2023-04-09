@@ -1,0 +1,112 @@
+---
+title: "Team Creation"
+---
+
+```{r packages}
+library(tidyverse)
+library(googlesheets4)
+```
+
+# Reading in Survey Data
+
+```{r google-sheets}
+## Smaller form with sections
+survey1 <- read_sheet("https://docs.google.com/spreadsheets/d/1-sW8UYoR0wjSvbXZVVCYuNF9eOqHDzY2D4kYP8gDf0w/edit?resourcekey#gid=1971034339") %>% 
+  select(-1) %>% 
+  rename(section = `What section of STAT 313 are you in?`, 
+         last = `Your last name (as seen in Canvas)`, 
+         first = `Your preferred first name`, 
+         group_preference = `What do you look for in group members? (select all that apply)`, 
+         group_preference_other = `If you selected \"Other\" above, please elaborate on your selection!`, 
+         gender = `How would you describe your gender identity? (select all that apply)`, 
+         gender_other = `If you selected \"Prefer to self describe\" above, please elaborate on your selection!...8`, 
+         hispanic = `Do you identify as Hispanic or Latina?`, 
+         race = `Which of the following racial groups do you identify with? (select all that apply)`, 
+         race_other = `If you selected \"Prefer to self describe\" above, please elaborate on your selection!...11`, 
+         other_considerations = `Do you have any additional considerations you would like for me to know while I am forming teams?`) %>% 
+  distinct(last, .keep_all = TRUE)
+
+## Larger form without sections
+survey2 <- read_sheet("https://docs.google.com/spreadsheets/d/1fGzz6yMcuJI-GpbUTO0Iz-CScg3Xv55lqGpgqzailDc/edit?resourcekey#gid=757833999") %>% 
+  select(-1) %>% 
+  rename(last = `Your last name (as seen in Canvas)`, 
+         first = `Your preferred first name`, 
+         pronouns = `What pronouns would you like me to use in referring to you? Select all that apply!`, 
+         gender = `How would you describe your gender identity? Select all that apply!`,
+         gender_other = `If you selected \"Prefer to self describe\" above, please elaborate on your selection!...6`, 
+         race = `Which of the following racial groups do you identify with? Select all that apply!`, 
+         race_other = `If you selected \"Prefer to self describe\" above, please elaborate on your selection!...8`, 
+         hispanic = `Do you identify as Hispanic or Latinx?`, 
+         group_preference = `What do you look for in group members? Select all that apply!`, 
+         group_preference_other = `If you selected \"Other\" above, please elaborate on your selection!`, 
+         other_considerations = `Do you have any additional considerations you would like for me to know when I am forming teams?`
+         ) %>% 
+  distinct(last, .keep_all = TRUE)
+         
+```
+
+# Joining Surveys
+
+Should hopefully not need to do this next time...
+
+```{r merge-surveys}
+matching_cols <- intersect(colnames(survey1), 
+                           colnames(survey2)
+                           )
+
+all_surveys <- survey2 %>% 
+  select(all_of(matching_cols)) %>% 
+  full_join(survey1,
+            by = c(matching_cols)
+            )
+```
+
+# Surveys Completed
+
+```{r survey-completed}
+survey1 %>% 
+  select(last) %>% 
+  arrange(last)
+
+survey2 %>% 
+  select(last) %>% 
+  arrange(last)
+
+```
+
+# Remove Waitlist
+
+```{r waitlist}
+waitlist <- tibble(last = c("Lin", 
+                            "Betwos", 
+                            "Koo", 
+                            "Chmelka", 
+                            "Nayak", 
+                            "Caffo", 
+                            "Colby", 
+                            "Franco")
+                   ) %>% 
+  mutate(last = tolower(last)
+         )
+
+no_waitlist <- all_surveys %>% 
+  mutate(last = tolower(last)) %>% 
+  anti_join(waitlist, by = "last")
+```
+
+# Form Groups
+
+```{r}
+non_white_women <- no_waitlist %>% 
+  filter(race != "White", 
+         gender != "Man / Male / Masculine") %>% 
+  arrange(last)
+
+non_white_women <- no_waitlist %>% 
+  filter(race != "White", 
+         gender != "Man / Male / Masculine") %>% 
+  arrange(last)
+
+
+```
+
