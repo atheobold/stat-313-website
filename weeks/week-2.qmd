@@ -1,6 +1,6 @@
 ---
 title: "Week Two: Summarizing & Visualizing Numerical Data"
-subtitle: Winter 2023
+subtitle: Spring 2023
 format:
   html:
     theme: minty
@@ -65,7 +65,7 @@ knitr::include_graphics(here::here("images",
 
 ### Reading Guide -- Due Tuesday by noon
 
-[Download the Word Document](reading-guide/week2-reading1.docx)
+[Download the Word Document](reading-guide/week2-reading2.docx)
 
 ## Concept Quiz
 
@@ -104,7 +104,7 @@ knitr::include_graphics(here::here("images",
 
 ### Reading Guide -- Due Tuesday by noon
 
-[Download the Word Document](reading-guide/week2-reading2.docx)
+[Download the Word Document](reading-guide/week2-reading1.docx)
 
 ::: callout-note
 # Submission
