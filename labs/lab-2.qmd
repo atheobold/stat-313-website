@@ -1,7 +1,7 @@
 ---
 title: "Visualizing and Summarizing Numerical Data"
 author: "Your group's names here!"
-date: "April 14, 2023"
+date: "April 13, 2023"
 format: html
 embed-resources: true
 standalone: true
@@ -47,6 +47,7 @@ The **codebook** (description of the variables) can be accessed by pulling up th
 
 ```{r help}
 #| eval: false
+
 ?nycflights
 ```
 
@@ -58,11 +59,17 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 **(b) Are there numerical variables in the dataset? If so, what are their names?**
 
+```{r data-inspect}
+# You code for question 1 goes here! 
+
+
+```
+
 ### Departure Delays
 
 Let's start by examining the distribution of departure delays (`dep_delay`) of all flights with a histogram.
 
-**Question 2** -- Create a histogram of the `dep_delay` variable from the `nycflights` data
+**Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data**
 
 ```{r histogram}
 # Your code for question 2 goes here! 
@@ -73,7 +80,9 @@ Histograms are generally a very good way to see the shape of a single distributi
 
 You can easily define the binwidth you want to use, by specifying the `binwidth` argument inside of `geom_histogram()`, like so: `geom_histogram(binwidth = 15)`
 
-**Question 3** **(a) Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.**
+**Question 3**
+
+**(a) Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.**
 
 ```{r binwidth}
 #| layout-nrow: 1
@@ -88,7 +97,7 @@ You can easily define the binwidth you want to use, by specifying the `binwidth`
 
 One of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a `dest` of `"LAX"`, flights into San Francisco have a `dest` of `"SFO"`, and flights into Chicago (O'Hare) have a `dest` of `"ORD"`.
 
-If you want to visualize only on delays of flights headed to Los Angeles, you need to first `filter()` the data for flights with that destination (`filter(dest == "LAX")`) and then make a histogram of the departure delays of only those flights.
+If you want to visualize only on delays of flights headed to Los Angeles, you need to first `filter()` the data for flights with that destination (e.g., `filter(dest == "LAX")`) and then make a histogram of the departure delays of only those flights.
 
 **Logical operators:** Filtering for certain observations (e.g. flights from a particular airport) is often of interest in data frames where we might want to examine observations with certain characteristics separately from the rest of the data. To do so, you can use the `filter()` function and a series of **logical operators**. The most commonly used logical operators for data analysis are as follows:
 
@@ -97,7 +106,7 @@ If you want to visualize only on delays of flights headed to Los Angeles, you ne
 -   `>` or `<` means "greater than" or "less than"
 -   `>=` or `<=` means "greater than or equal to" or "less than or equal to"
 
-**Question 4** -- Fill in the code to create a new dataframe named `sfo_flights` that is the result of `filter()`ing only the observations whose destination was San Francisco.
+**Question 4 -- Fill in the code to create a new dataframe named `sfo_flights` that is the result of `filter()`ing only the observations whose destination was San Francisco.**
 
 ```{r sfo}
 # Your code for question 4 goes here! 
@@ -108,17 +117,19 @@ sfo_flights <- filter(nycflights,
 
 ### Multiple Data Filters
 
-You can also filter based on multiple criteria. You can separate these criteria using commas in the `filter()` function. Suppose you are interested in flights leaving from LaGuardia (LGA) in February:
+You can filter based on multiple criteria! Within the `filter()` function, each criteria is separated using commas. For example, suppose you are interested in flights leaving from LaGuardia (LGA) in February:
 
 ```{r lga-feb}
 filter(nycflights, 
        origin == "LGA", 
        month == 2)
+
+## Remember months are coded as numbers!
 ```
 
 Note that you can separate the conditions using commas if you want flights that are both leaving from LGA **and** flights in February. If you are interested in either flights leaving from LGA **or** flights that happened in February, you can use the `|` instead of the comma.
 
-**Question 5** -- Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?
+**Question 5 -- Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result of this code tell you?**
 
 ```{r}
 ## Code for exercise 5 here! 
@@ -140,9 +151,9 @@ summarise(sfo_flights,
           n         = n())
 ```
 
-Note that in the `summarise()` function I've created a list of three different numerical summaries that we're interested in.
+Note that in the `summarise()` function I've created a list of three different numerical summaries that I'm interested in.
 
-The names of these elements are user defined, like `mean_dd`, `median_dd`, `n`, and you can customize these names as you like (just don't use spaces in your names).
+The names of these elements are user defined, like `mean_dd`, `median_dd`, `n`, and you can customize these names as you like (just don't use spaces in your names!).
 
 Calculating these summary statistics also requires that you know the summary functions you would like to use.
 
@@ -157,15 +168,20 @@ Calculating these summary statistics also requires that you know the summary fun
 -   `max()`: finds the maximum
 -   `n()`: reports the sample size
 
-Note that each of these functions takes a single variable as an argument and returns a single value.
+Note that each of these functions takes a single variable as an input and returns a single value as an output.
 
 ## Summaries vs. Visualizations
 
-*Which month would you expect to have the highest average delay departing from an NYC airport?*
+*If I'm flying from New York to San Francisco, should I expect that my flights will typically arrive on time?*
 
 Let's think about how you could answer this question. One option is to summarize the data and inspect the output. Another option is to plot the delays and inspect the plots. Let's try both!
 
-**Question 6** -- Calculate the following statistics for the arrival delays in the `sfo_flights` dataset: - mean - median - max - min
+**Question 6 -- Calculate the following statistics for the arrival delays in the `sfo_flights` dataset:**
+
+-   mean
+-   median
+-   max
+-   min
 
 ```{r arr-delay-stats}
 ## Code for exercise 6 goes here! 
@@ -173,7 +189,13 @@ Let's think about how you could answer this question. One option is to summarize
 
 ```
 
-**Question 7** -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. Be sure to give your visualization nice axis labels!
+**Question 7 -- Using the above summary statistics, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
+
+**Question 8 -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset.**
+
+*Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays.*
+
+*Don't forget to give your visualization informative axis labels!*
 
 ```{r arr-delay-plot}
 ## Code for exercise 7 goes here! 
@@ -181,4 +203,6 @@ Let's think about how you could answer this question. One option is to summarize
 
 ```
 
-**Question 8** -- What information can you obtain from the visualization that you could not from the data summaries?
+**Question 9 -- Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
+
+**Question 10 -- How did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not "see" with the summary statistics?**
