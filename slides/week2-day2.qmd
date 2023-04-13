@@ -10,12 +10,12 @@ execute:
   echo: false
 ---
 
+##  {background-color="#2b6a6c"}
+
 ```{r packages}
 library(tidyverse)
 library(kableExtra)
 ```
-
-##  {background-color="#2b6a6c"}
 
 ::: {style="font-size: 2em; color: #000000;"}
 Suppose...
@@ -44,20 +44,24 @@ kable(evals) %>%
 ##  {background-color="#404040"}
 
 <center>
+
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 How were these averages calculated?
 :::
+
 </center>
 
 ##  {background-color="#404040"}
 
 <center>
+
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 What do these averages mean?
 :::
+
 </center>
 
-##
+## 
 
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 The Problem
@@ -75,7 +79,7 @@ It's incredibly rare for scientists, including statisticians, to explicitly thin
 
 <!-- represent and whether that was really what the scientist was after.  -->
 
-##
+## 
 
 ::: {style="font-size: 2.5em; color: #FFFFFF;"}
 Why so much resistance?
@@ -93,7 +97,7 @@ These expectations are conditional on the assumption that means represent the ma
 I'm then expected to educate you to "play the game" in the scientific culture of averages
 :::
 
-##
+## 
 
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 Averagarianism
@@ -103,27 +107,27 @@ Averagarianism
 > "The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight."
 >
 > The End of Average by Todd Rose
-
 :::
 
-##
+## 
 
 ::: {style="font-size: 3.5em; color: #FFFFFF;"}
 What else then?
 :::
 
-::: {.callout-tip}
+::: callout-tip
 # 60-second exercise
+
 If you could not use averages to evaluate, model, and select individuals, well then...what could you use?
 :::
 
 . . .
 
-</br> 
+</br>
 
 The difficulty in responding to this question underscores how averagarianism has endured for so long and become so deeply ingrained throughout society.
 
-##
+## 
 
 ::: {style="font-size: 2.5em; color: #FFFFFF;"}
 "We've always done it this way"
@@ -146,22 +150,17 @@ Some Rules to Play By
 </br>
 
 ::: {style="font-size: 0.75em; color: #000000;"}
-Look at and understand your raw data before aggregating
+- Look at and understand your raw data before aggregating
 :::
 
 . . .
-
-</br>
 
 ::: {style="font-size:0.75em; color: #000000;"}
-Boxplots (and such) don't count as visualizing the raw data
+- Boxplots (and such) don't count as visualizing the raw data
 :::
 
 . . .
 
-</br>
-
 ::: {style="font-size: 0.75em; color: #000000;"}
-We should only average things we are convinced are measuring the same thing
+- We should only average things we are convinced are measuring the same thing
 :::
-
