@@ -60,7 +60,7 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 **(b) Are there numerical variables in the dataset? If so, what are their names?**
 
 ```{r data-inspect}
-# You code for question 1 goes here! 
+# You code for exercise 1 goes here! 
 
 
 ```
@@ -72,7 +72,7 @@ Let's start by examining the distribution of departure delays (`dep_delay`) of a
 **Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data**
 
 ```{r histogram}
-# Your code for question 2 goes here! 
+# Your code for exercise 2 goes here! 
 
 ```
 
@@ -86,7 +86,7 @@ You can easily define the binwidth you want to use, by specifying the `binwidth`
 
 ```{r binwidth}
 #| layout-nrow: 1
-# Your code for question 3 goes here! 
+# Your code for exercise 3 goes here! 
 
 
 ```
@@ -109,7 +109,7 @@ If you want to visualize only on delays of flights headed to Los Angeles, you ne
 **Question 4 -- Fill in the code to create a new dataframe named `sfo_flights` that is the result of `filter()`ing only the observations whose destination was San Francisco.**
 
 ```{r sfo}
-# Your code for question 4 goes here! 
+# Fill in the code for exercise 4 here! 
 
 sfo_flights <- filter(nycflights, 
                       dest == )
@@ -120,11 +120,10 @@ sfo_flights <- filter(nycflights,
 You can filter based on multiple criteria! Within the `filter()` function, each criteria is separated using commas. For example, suppose you are interested in flights leaving from LaGuardia (LGA) in February:
 
 ```{r lga-feb}
+## Remember months are coded as numbers!
 filter(nycflights, 
        origin == "LGA", 
        month == 2)
-
-## Remember months are coded as numbers!
 ```
 
 Note that you can separate the conditions using commas if you want flights that are both leaving from LGA **and** flights in February. If you are interested in either flights leaving from LGA **or** flights that happened in February, you can use the `|` instead of the comma.
@@ -132,7 +131,7 @@ Note that you can separate the conditions using commas if you want flights that 
 **Question 5 -- Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result of this code tell you?**
 
 ```{r}
-## Code for exercise 5 here! 
+## Fill in the code for exercise 5 here! 
 
 filter(sfo_flights, 
        month == __, 
@@ -198,7 +197,7 @@ Let's think about how you could answer this question. One option is to summarize
 *Don't forget to give your visualization informative axis labels!*
 
 ```{r arr-delay-plot}
-## Code for exercise 7 goes here! 
+## Code for exercise 8 goes here! 
 
 
 ```
