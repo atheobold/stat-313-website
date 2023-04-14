@@ -36,6 +36,16 @@ By the end of this coursework you should be able to:
 
 # Prepare
 
+## Reading Guide -- One Reading Guide for Both Readings!
+
+[Download the Word Document](reading-guide/week3-reading.docx)
+
+::: callout-caution
+# Answers
+
+**Please include your answers as a different color!** You can pick whatever color you like, but please use a color other than black. 
+:::
+
 ## Textbook Reading -- Part 1
 
 ::: column-margin
@@ -50,16 +60,6 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Incorporating Categorical Variables into Visualizations](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
 
-### Reading Guide -- Due Tuesday by noon
-
-[Download the Word Document](reading-guide/week3-reading.docx)
-
-::: callout-note
-# Submission
-
-Submit your completed reading guide to the Canvas assignment portal!
-:::
-
 ## Textbook Reading -- Part 2
 
 ::: column-margin
@@ -73,15 +73,6 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
 
-### Reading Guide -- Due Tuesday by noon
-
-[Download the Word Document](reading-guide/week2-reading2.docx)
-
-::: callout-note
-# Submission
-
-Submit your completed reading guide to the Canvas assignment portal!
-:::
 
 ## Concept Quiz -- Due Tuesday by noon
 
@@ -123,7 +114,7 @@ This does not go inside the aes() function!
 -   character
 -   factor
 
-**5. In Lab 2, you worked with the `nycflights` dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use?**
+**5. In Lab 2, you worked with the `nycflights` dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.**
 
 ::: columns
 ::: {.column width="40%"}

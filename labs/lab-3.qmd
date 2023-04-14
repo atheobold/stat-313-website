@@ -32,7 +32,7 @@ library(ggridges)
 
 ## The data
 
-In this lab we will work with data eluded to in Tuesday's lecture, data from the H.J. Andrews Experimental Forest. The following is a description of the data:
+In this lab we will work with data from the H.J. Andrews Experimental Forest. The following is a description of the data:
 
 > Populations of West Slope cutthroat trout (Onchorhyncus clarki clarki) in two standard reaches of Mack Creek in the H.J. Andrews Experimental Forest have been monitored since 1987. Monitoring of Pacific Giant Salamanders, Dicamptodon tenebrosus began in 1993. The two standard reaches are in a section of clearcut forest (ca. 1963) and an upstream 500 year old coniferous forest. Sub-reaches are sampled with 2-pass electrofishing, and all captured vertebrates are measured and weighed. Additionally, a set of channel measurements are taken with each sampling. This study constitutes one of the longest continuous records of salmonid populations on record.
 
@@ -52,23 +52,23 @@ The **codebook** (description of the variables) can be accessed by pulling up th
 ?and_vertebrates
 ```
 
-**Question 1** -- How large is the `and_vertebrates` dataset? (i.e. How many rows and columns does it have?)
+**Question 1 -- How large is the `and_vertebrates` dataset? (i.e. How many rows and columns does it have?)**
 
 ```{r data-dimensions}
-# Your code to answer question 1 goes here! 
+## Your code for question 1 (and 2) goes here!
 
 ```
 
-**Question 2** -- Are there categorical variables in the dataset? If so, what are their names?
+**Question 2 -- Are there categorical variables in the dataset? If so, what are their names?**
 
 ## Accessing the Levels of a Variable
 
-The `species` variable refers to the species of the animal which was captured. You can use the `distinct()` function to access the distinct values of a categorical variable (e.g., `distinct(nycflights, carrier)`).
+The `species` variable refers to the species of the animal which was captured. You can use the `distinct()` function to access the distinct values of a categorical variable (e.g., `distinct(nycflights, carrier)`). Notice the first input is the name of the dataset and the second input is the name of the categorical variable!
 
-**Question 3** -- Use the `distinct()` function to discover the levels / values of the `species` variable.
+**Question 3 -- Use the `distinct()` function to discover the levels / values of the `species` variable.**
 
 ```{r distinct-species}
-# Your code to answer question 3 goes here! 
+## Your code for question 3 goes here!
 
 ```
 
@@ -76,7 +76,8 @@ The `species` variable refers to the species of the animal which was captured. Y
 
 Alright, you should have found that there is more than one species included in these data. For our analysis, we are only interested in Cutthroat trout.
 
-**Question 4** -- Use the `filter()` function to include *only* observations on Cutthroat trout.
+**Question 4 -- Use the `filter()` function to include _only_ observations on Cutthroat trout.**
+
 
 **The only part you need to remove is the ...! Keep the `trout <-`!**
 
@@ -86,9 +87,9 @@ trout <- ...
 
 [Electrofishing](https://en.wikipedia.org/wiki/Electrofishing) fishing technique that uses direct current electricity flowing between a submerged cathode and anode, to insert an electric current into the water. This current stuns fish in a (hopefully) non-lethal manner, in order to capture them for marking and measuring. Technically, smaller fish are less affected by the current, so there presumably is a size of fish that is "uncatchable".
 
-**Question 5** -- Use the `filter()` function again to include *only* trout whose `length_1_mm` is greater than 4 inches (or 101 mm).
+**Question 5 -- Use the `filter()` function again to include _only_ trout whose `length_1_mm` is greater than 4 inches (or 101 mm).**
 
-**The only part you need to remove is the ...! Keep the `trout <-`!**
+*The only part you need to remove is the ...! Keep the `trout <-`!*
 
 ```{r removing-uncatchable-fish}
 trout <- ...
@@ -98,13 +99,17 @@ trout <- ...
 
 Alright, now that we've gotten our data ready for analysis, let's start with some visualizations
 
-**Question 6** -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).
+**Question 6 -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).**
+
+*Keep in mind your plot should only extend to 101mm if you completed #5 correctly*
 
 ```{r}
+## Your code for question 6 goes here!
+
 
 ```
 
-**Question 7** -- Name three possible sources of variation for the length of a Cutthroat trout.
+**Question 7 -- Name three possible sources of variation for the length of a Cutthroat trout.**
 
 ## Adding Categorical Variables
 
@@ -114,45 +119,43 @@ As introduced in *Introduction to Modern Statistics*, a ridge plot essentially h
 
 In R, we use the `geom_density_ridges()` function from the **ggridges** package to create a ridge plot. Yes, this is new, but don't worry! The function has the same layout as things you've seen before.
 
-**Question 8** -- Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (`unittype`). Use the `trout` dataset you `filter`ed above!
+**Question 8 -- Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (`unittype`). Use the `trout` dataset you `filter`ed above!**
 
 *Be sure to add nice axis labels to your plot, which describe the variables being plotted (and their units)!*
 
 ```{r density-ridge}
-#| message: false
+## Your code for question 8 goes here!
 
 ggplot(data = fish, 
-       mapping = aes(x = <NUM-VAR>, y = <CAT-VAR>)) +
+       mapping = aes(x = <NUMERICAL VARIABLE>, 
+                     y = <CATEGORICAL VARIABLE>)
+       ) +
   geom_density_ridges() 
 
 ```
 
-**Question 9** -- Incorporate the `section` of the forest into your plot using either the `fill` aesthetic or facets.
+**Question 9 -- Modify your plot from #8 to incorporate the `section` of the forest into your plot using either color or facets.**
 
-```{r channel-section}
-#| message: false
+*Hint: The `fill` aesthetic will __fill__ the ridge plots with color.*
 
-
-```
-
-**Question 10** -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?
+**Question 10 -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?**
 
 # Data Summaries
 
 Paired with visualizations, summary statistics can provide a clearer picture for the comparisons we are interested in. To obtain summary statistics for different groups of a categorical variable, we need to use our friend the `group_by()` function.
 
-**Question 11** -- Find the average length of Cutthroat trout from the different channel types (`unittype`). Use the `trout` dataset from Question 5!
+**Question 11 -- Find the average length of Cutthroat trout from the different channel types (`unittype`). Use the `trout` dataset from Question 5!**
 
 ```{r channel-avg}
-
+## Your code for question 11 goes here!
 
 ```
 
-**Question 12** -- Find the average length of Cutthroat trout from the different channel types (`unittype`) **and** forest `section`. Use the `trout` dataset from Question 5!
+**Question 12 -- Find the average length of Cutthroat trout from the different channel types (`unittype`) _and_ forest `section`. Use the `trout` dataset from Question 5!**
 
 ```{r channel-section-avg}
-
+## Your code for question 12 goes here!
 
 ```
 
-**Question 13** -- How do the differences in these averages compare with what you saw in your visualization in Question 9?
+**Question 13 -- How do the differences in these averages compare with what you saw in your visualization in Question 9?**

@@ -52,6 +52,10 @@ website:
         contents:
           - href: computing-access.qmd
             text: Access
+      - section: "R Resources"
+        contents:
+          - href: course_resources.qmd
+            text: R Resources
       - section: "Projects"
         contents:
           - href: project/midterm-project-directions.qmd

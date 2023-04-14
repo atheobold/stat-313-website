@@ -1,0 +1,240 @@
+---
+title: "Incorporating Categorical Variables"
+format: 
+  revealjs:
+    logo: images/dplyr.png
+    theme: night
+    embed-resources: true
+    standalone: true
+editor: visual
+execute: 
+  echo: false
+---
+
+```{r set-up}
+#| include: false
+
+library(lterdatasampler)
+library(tidyverse)
+
+vertebrates_full_code <- and_vertebrates %>% 
+  mutate(section = if_else(section == "CC", 
+                           "clear cut forest",
+                           "upstream old growth coniferous forest"
+                           )
+         ) 
+
+trout <- vertebrates_full_code %>% 
+  filter(species == "Cutthroat trout")
+
+salamander <- vertebrates_full_code %>% 
+  filter(species != "Cutthroat trout")
+```
+
+
+## In `R`...
+
+categorical variables can have either `character` *or* `factor` data types
+
+</br>
+
+. . .
+
+`factor` -- structured & fixed number of levels / options
+
+-   can be ordered or unordered
+
+</br>
+
+. . .
+
+`character` -- unstructured & variable number of levels
+
+-   is inherently unordered
+
+## Incorporating Categorical Variables into Data Visualizations
+
+::: incremental
+-   As a variable on the `x`- or `y`-axis
+
+-   As a `color` / `fill`
+
+-   As a facet
+:::
+
+## Salamander Size
+
+::: columns
+::: {.column width="55%"}
+```{r}
+#| echo: true
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+#| code-line-numbers: false
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_2_mm)) + 
+  geom_histogram(binwidth = 14) + 
+  labs(x = "Snout to Tail Length (mm)")
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: {style="font-size: 0.9em;"}
+</br>
+
+How would this histogram look if there was no variation in salamander length?
+
+</br>
+
+What are possible causes for the variation in salamander length?
+:::
+:::
+:::
+
+## Faceted Histograms
+
+```{r facet-hist}
+#| echo: true
+#| code-line-numbers: false
+#| out-width: 95%
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_1_mm)) + 
+  geom_histogram(binwidth = 14) + 
+  facet_wrap(~ section, scales = "free") +
+  labs(x = "Snout to Tail Length (mm)")
+```
+
+What do you think `scales = "free"` does?
+
+## Side-by-Side Boxplots
+
+::: columns
+::: {.column width="50"}
+```{r horizontal-boxplot}
+#| fig-width: 6
+#| fig-height: 3.5
+#| fig-align: center
+#| echo: true
+#| code-line-numbers: false
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_1_mm, 
+                     y = species)
+         ) + 
+  geom_boxplot() + 
+  labs(x = "Snout to Tail Length (mm)", 
+       y = "Salamander Species") 
+```
+:::
+
+::: {.column width="50"}
+```{r vertical-boxplot}
+#| fig-width: 6
+#| fig-height: 4
+#| fig-align: center
+#| echo: true
+#| code-line-numbers: false
+
+ggplot(data = salamander, 
+       mapping = aes(y = length_1_mm, 
+                     x = species)
+         ) + 
+  geom_boxplot() + 
+  labs(y = "Snout to Tail Length (mm)", 
+       x = "Salamander Species")
+
+```
+:::
+:::
+
+Which orientation do you prefer? Vertical or horizontal?
+
+## Colors in Boxplots
+
+```{r boxplot-color}
+#| fig-align: center
+#| echo: true
+#| code-line-numbers: false
+#| out-width: 80%
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_1_mm, 
+                       y = species, 
+                       color = unittype)
+         ) + 
+  geom_boxplot() + 
+  labs(x = "Snout to Tail Length (mm)", 
+       y = "Salamander Species", 
+       color = "Channel Type")
+```
+
+::: {style="font-size: 0.5em;"}
+Why are there only two boxplots for the Olympic torrent salamander?
+:::
+
+## Facets & Colors in Boxplots
+
+```{r boxplot-facets}
+#| fig-align: center
+#| echo: true
+#| code-line-numbers: false
+#| output-location: slide
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_1_mm, 
+                       y = species, 
+                       color = section)
+         ) + 
+  geom_boxplot() + 
+  facet_wrap(~ unittype) + 
+  labs(x = "Snout to Tail Length (mm)", 
+       y = "Salamander Species", 
+       color = "Section in Mack Creek")
+```
+
+## Facets & Color in Scatterplots
+
+```{r scatterplot-facets}
+#| fig-align: center
+#| echo: true
+#| code-line-numbers: false
+#| output-location: slide
+
+ggplot(data = salamander, 
+       mapping = aes(x = length_1_mm, 
+                       y = weight_g, 
+                       color = section)
+         ) + 
+  geom_point() + 
+  facet_wrap(~species, scales = "free") +
+  labs(y = "Snout to Tail Length (mm)", 
+       x = "Year", 
+       color = "Salamander Species")
+
+```
+
+## Your Turn
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+trout %>%
+  filter(unittype %in% c("R", "I", "S")) %>% 
+  ggplot(aes(x = length_1_mm, y = weight_g, color = unittype)) + 
+  geom_jitter(alpha = 0.5) + 
+  labs(x = "Length (mm)", 
+       y = "Weight (g)", 
+       color = "Channel \nClassification") + 
+  theme_light()
+```
+
+What are the aesthetics included in this plot?
+
+

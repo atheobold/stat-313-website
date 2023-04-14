@@ -1,0 +1,330 @@
+---
+title: "Categorical Variables Recap and Some Ethics..."
+subtitle: "STAT 313"
+format: 
+  revealjs:
+    embed-resources: true
+    standalone: true
+editor: visual
+---
+
+```{r set-up}
+#| include: false
+
+library(lterdatasampler)
+library(tidyverse)
+library(palmerpenguins)
+
+vertebrates_full_code <- and_vertebrates %>% 
+  mutate(section = if_else(section == "CC", 
+                           "clear cut forest",
+                           "upstream old growth coniferous forest"
+                           )
+         ) 
+
+trout <- vertebrates_full_code %>% 
+  filter(species == "Cutthroat trout")
+
+salamander <- vertebrates_full_code %>% 
+  filter(species != "Cutthroat trout")
+```
+
+##  {background-color="#D4D4D4"}
+
+<center>
+
+::: {style="margin-top: 100px; font-size: 3em; color: #000000;"}
+What are the two data types R stores categorical variables as?
+:::
+
+</center>
+
+## `dplyr` -- a tool bag for data wrangling
+
+::: columns
+::: {.column width="40%"}
+![](images/dplyr.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+`filter()`
+
+`select()`
+
+`mutate()`
+
+`summarize()`
+
+`arrange()`
+
+`group_by()`
+:::
+:::
+
+## 
+
+::: columns
+::: {.column width="55"}
+::: {style="font-size: 1.5em;"}
+The Pipe `%>%`
+:::
+:::
+
+::: {.column width="15%"}
+:::
+
+::: {.column width="15%"}
+```{r}
+knitr::include_graphics("images/pipe.png")
+```
+:::
+
+::: {.column width="15%"}
+```{r}
+knitr::include_graphics("images/not_a_pipe.jpg")
+```
+:::
+:::
+
+<center>![](images/pipe_process.png)</center>
+
+## 
+
+::: {style="margin-top: 100px; font-size: 2em;"}
+If you wanted means for each level of a categorical variable, what would you do?
+:::
+
+## Trout Size
+
+::: {style="font-size: 0.75em;"}
+The HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.
+:::
+
+</br>
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: false
+trout %>% 
+  group_by(section) %>% 
+  summarize(mean_length = mean(length_1_mm, na.rm = TRUE)
+            )
+```
+
+. . .
+
+</br>
+
+<center>
+
+::: {style="font-size: 0.75em;"}
+**Why `na.rm = TRUE`?**
+:::
+
+</center>
+
+## Classifying Channel Types
+
+::: {style="font-size: 0.75em;"}
+The channels of the Mack Creek which were sampled were classified into the following groups:
+:::
+
+::: columns
+::: {.column width="15%"}
+`"C"`
+
+`"I"`
+
+`"IP"`
+
+`"P"`
+
+`"R"`
+
+`"S"`
+
+`"SC"`
+
+`NA`
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="80%"}
+cascade
+
+riffle
+
+isolated pool
+
+pool
+
+rapid
+
+step (small falls)
+
+side channel
+
+not sampled by unit
+:::
+:::
+
+## `filter()`-ing Specific Channel Types
+
+::: {style="font-size: 0.9em;"}
+The majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the `unittype` variable.
+:::
+
+. . .
+
+</br>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+trout %>% 
+  filter(unittype %in% c("C", "P", "SC"))
+```
+
+. . .
+
+</br>
+
+::: {.callout-tip}
+# `%in%`
+
+If you filter includes *more than one value* you must use `%in%` **not** `==`!
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em;"}
+Categorical Variables for Whom?
+:::
+
+##
+
+::: {style="font-size: 1.25em;"}
+Suppose Cal Poly is interested in summarizing the demographics of their undergraduate students. They have designed the following question asking about student's gender identity:
+:::
+
+</br> 
+
+> What is your gender identity?
+>
+> Male, Female, Other
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.5em; color: #0F4C81"}
+Who benefits from these options?
+
+Who suffers from these options?
+:::
+
+##  {background-color="D4D4D4"}
+
+::: {style="font-size: 3em; color: #063970"}
+Data Feminism
+:::
+
+::: columns
+::: {.column width="55%"}
+![](images/feminist.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: {style="font-size: 1.15em;"}
+-   Data science by whom?
+
+-   Data science for whom?
+
+-   Data sets about whom?
+
+-   Data science with whose values?
+:::
+:::
+:::
+
+## 
+
+::: columns
+::: {.column width="60%"}
+![](images/principles_data_feminism.PNG)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+![](images/data_feminism_book.jpg)
+:::
+:::
+
+## 
+
+::: {style="font-size: 3em;"}
+Rethink binaries
+:::
+
+. . .
+
+</br>
+</br>
+
+<center>
+
+::: {style="font-size: 1.25em; color: #0F4C81"}
+How would you redesign the survey question about student's gender identity?
+:::
+
+## 
+
+::: {style="font-size: 3em;"}
+Challenge power
+:::
+
+```{r}
+#| echo: false
+#| out-width: 60%
+#| out-height: 30%
+knitr::include_graphics("images/data_file.PNG")
+```
+
+## 
+
+::: {style="font-size: 2.5em;"}
+An aura objectivity
+:::
+
+```{r}
+#| echo: false
+#| out-width: 40%
+#| out-height: 20%
+knitr::include_graphics("images/active_shooters.PNG")
+```
+
+::: {style="font-size: 0.75em;"}
+> "We focus on four conventions which imbue visualizations with a sense of objectivity, transparency and facticity. These include: (a) two-dimensional viewpoints, (b) clean layouts, (c) geometric shapes and lines, (d) the inclusion of data sources."
+>
+> *The work that visualization communications do*
+:::
+
+## 
+
+::: {style="font-size: 3em;"}
+Elevate emotion
+:::
+
+<https://guns.periscopic.com/>
