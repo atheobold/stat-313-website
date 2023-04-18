@@ -17,7 +17,9 @@ Q4\
 Q5\
 Q6\
 Q7\
-Q8
+Q8  
+Q9  
+Q10 
 
 ## 1 (a)
 
@@ -36,9 +38,9 @@ Q8
 
 *Feedback for no code:* For Question 1(a), you needed to write code to explore the size of the data and the types of variables.
 
-*Feedback for not using `glimpse()`:* For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which gives a preview of a dataset?
+*Feedback for not using `glimpse()`:* For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which give a preview of a dataset?
 
-*Feedback for no / incorrect dimensions:* For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?
+*Feedback for no / incorrect dimensions:* For Question 1(a), look again at the output of the `glimpse()` function, how many rows and columns are included in the nycflights dataset?
 
 ## 1 (b)
 
@@ -48,7 +50,7 @@ Q8
 
 -   Lists **all** variables with an `int` or `dbl` data type:
     -   year
-    -   month
+    -   month (many may miss)
     -   day
     -   dep_time
     -   dep_delay
@@ -174,6 +176,11 @@ They should state that 45 flights arrived to SFO early in July.
 
 *Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?
 
+- If they only say that the 45 goes with flights
+
+<!-- fix this! -->
+*FeedbacK:
+
 -   If they don't interpret the conditions of the filter (arrived early in July)
 
 *Feedback:* For Question 5, what were the conditions of these 45 flights?
@@ -235,6 +242,11 @@ summarise(sfo_flights,
 
 *Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
 
+- Only discuss the statistics but don't address the question
+
+*Feedback:* You point out the statistics and what they mean in terms of an arrival delay, but how do these statistics connect with my question about what I should expect?
+
+
 ## 8
 
 **Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays. Be sure to give your visualization nice axis labels!**
@@ -266,7 +278,7 @@ ggplot(data = nycflights,
 
 -   Doesn't change x-axis label
 
-*Feedback:* For Question 8, you were asked to give your visualization nice axis labels.
+*Feedback:* For Question 8, you were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
 
 -   Doesn't include units (minutes) in axis label
 
@@ -303,3 +315,7 @@ ggplot(data = nycflights,
 -   Response **does not** discuss what could be seen in the visualizations that could not be seen in the statistics
 
 *Feedback:* For Question 10, you should address what you were able to SEE in the visualization that you could not "see" in the summary statistics.
+
+- Response doesn't discuss if / how the answer to the question changed 
+
+*Feedback:* Great job discussing how the shape of the distribution informs you choice of statistic! You did not, however, discuss if / how your answer to my question changed between looking at the plot versus looking at the statistics. 
