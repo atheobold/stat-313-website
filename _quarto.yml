@@ -25,9 +25,9 @@ website:
       - icon: github
         href: https://github.com/atheobold/stat-313-website
         text: "GitHub organization"
-      - icon: code-square
-        href: https://posit.cloud/
-        text: "Posit Cloud"
+      - icon: cloud-fill
+        href: https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo
+        aria-label: RStudio Cloud
       - icon: person-fill
         href: https://canvas.calpoly.edu
         text: "Cal Poly Canvas"

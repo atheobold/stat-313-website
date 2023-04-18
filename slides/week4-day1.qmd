@@ -8,15 +8,8 @@ editor: visual
 ---
 
 ```{r packages}
-library(emo)
 library(tidyverse)
 library(openintro)
-library(ggridges)
-library(flair)
-library(flair)
-library(broom)
-library(kableExtra)
-library(png)
 library(moderndive)
 
 ```
@@ -32,45 +25,74 @@ my_theme <- theme_bw() +
         )
 ```
 
-class: middle, inverse, center
+```{r post-26-births-table}
+births_post26 <- ncbirths %>% 
+  drop_na(weight, weeks) %>% 
+  filter(weeks > 26)
 
-.larger\[Data for Today\]
+weeks_lm <- lm(weight ~ weeks, data = births_post26)
 
-The .honey\[ncbirths\] dataset is a random sample of 1,000 cases taken from a larger dataset collected in North Carolina in 2004.
+births_table <- get_regression_table(weeks_lm)
+```
 
-Each case describes the birth of a single child born in North Carolina, along with various characteristics of the child (e.g. birth weight, length of gestation, etc.), the child's mother (e.g. age, weight gained during pregnancy, smoking habits, etc.) and the child's father (e.g. age).
+::: {style="font-size: 2em; color: #000000;"}
+Data for Today
+:::
 
-</br>
+The [ncbirths]{style="color: #e28743;"} dataset is a random sample of 1,000 cases taken from a larger dataset collected in North Carolina in 2004.
 
---
+::: {style="font-size: 0.75em;"}
+> Each case describes the birth of a single child born in North Carolina, along with various characteristics of the child (e.g. birth weight, length of gestation, etc.), the child's mother (e.g. age, weight gained during pregnancy, smoking habits, etc.) and the child's father (e.g. age).
+:::
 
-.large\[.honey\[What do you expect the dataset to look like?\]\]
+. . .
 
-------------------------------------------------------------------------
+[Draw a picture of how would you expect this dataset to look.]{style="color: #e28743; font-size: 1.5em;"}
 
-.rhubarb\[.larger\[Relationships Between Variables\]\]
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+Relationships Between Variables
+:::
+
+. . .
 
 -   In a statistical model, we generally have one variable that is the output and one or more variables that are the inputs.
 
-.pull-left\[ - Response variable \* a.k.a. $y$, dependent \* The quantity you want to understand \* In this class -- always numerical\]
+. . .
 
---
+<!-- TODO make fragmented columns! -->
+::: columns
+::: {.column width="40%"}
+- Response variable 
+  * a.k.a. $y$, dependent 
+  * The quantity you want to understand 
+  * In this class -- always numerical
+:::
 
-.pull-right\[ - Explanatory variable \* a.k.a. $x$, independent, explanatory, predictor \* Something you think might be related to the response \* Either numerical or categorical\]
+::: {.column width="5%"}
+:::
 
-------------------------------------------------------------------------
+::: {.column width="55%"}
+- Explanatory variable
+  * a.k.a. $x$, independent, explanatory, predictor 
+  * Something you think might be related to the response
+  * Either numerical or categorical
+:::
+:::
 
-.mango\[.larger\[Visualizing Linear Regression\]\]
+##
 
-.pull-left\[ - The scatterplot has been called the most "generally useful invention in the history of statistical graphics."
-
--   It is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation. \]
-
-.pull-right\[
+::: {style="font-size: 2em; color: #000000;"}
+Visualizing Linear Regression
+:::
 
 ```{r viz}
 #| echo: false
+#| eval: true
+#| fig-align: center
 #| out-width: 100%
+#| code-line-numbers: false
 
 ggplot(data = bdims, aes(y = wgt, x = hgt)) + 
   geom_point() +
@@ -79,28 +101,49 @@ ggplot(data = bdims, aes(y = wgt, x = hgt)) +
   my_theme
 ```
 
-\]
+. . .
 
-------------------------------------------------------------------------
+</br>
 
-class: center, middle, inverse
+::: columns
+::: {.column width="40%"}
+- The scatterplot has been called the most "generally useful invention in the history of statistical graphics."
+:::
 
-.larger\[Characterizing Relationships\]
+::: {.column width="5%"}
+:::
 
-Form (e.g. linear, quadratic, non-linear)
+::: {.column width="55%"}
+-   It is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation.
+:::
+:::
 
-Direction (e.g. positive, negative)
+##
 
-Strength (how much scatter/noise?)
+::: {style="font-size: 2em; color: #000000;"}
+Characterizing Relationships
+:::
 
-Unusual observations (do points not fit the overall pattern?)
+</br>
 
-------------------------------------------------------------------------
+::: incremental
+- Form (e.g. linear, quadratic, non-linear)
 
-.hand\[.larger\[Your Turn\]\]
+- Direction (e.g. positive, negative)
 
-.pull-left\[
+- Strength (how much scatter/noise?)
 
+- Unusual observations (do points not fit the overall pattern?)
+:::
+
+##
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+Your Turn!
+:::
+
+::: columns
+::: {.column width="65%"}
 ```{r}
 #| echo: false
 #| out-width: 100%
@@ -112,27 +155,33 @@ ggplot(aes(x = weeks, y = weight)) +
        y = "Birth weight of baby (in lbs)") +
   my_theme
 ```
+:::
 
-\]
+::: {.column width="5%"}
+:::
 
-.pull-right\[ How would your characterize this relationship?
+::: {.column width="30%"}
+How would your characterize this relationship?
 
 -   shape
 -   direction
 -   strength
--   outliers \]
+-   outliers 
+:::
+:::
 
-------------------------------------------------------------------------
+##
 
-.hand\[.bitlarger\[What if you added another variable?\]\]
+::: {style="font-size: 2em; color: #000000;"}
+What if you added another variable?
+:::
 
---
-
-.pull-left\[
+. . .
 
 ```{r}
 #| echo: false
-#| out-width: 90%
+#| out-width: 50%
+#| fig-align: center
 
 ncbirths %>% 
 ggplot(aes(x = weeks, y = weight)) +
@@ -142,13 +191,12 @@ ggplot(aes(x = weeks, y = weight)) +
   my_theme
 ```
 
-\]
-
-.pull-right\[
+. . .
 
 ```{r}
 #| echo: false
-#| out-width: 90%
+#| out-width: 50%
+#| fig-align: center
 
 ncbirths %>% 
 ggplot(aes(x = weeks, y = weight, color = premie)) +
@@ -160,42 +208,64 @@ ggplot(aes(x = weeks, y = weight, color = premie)) +
         legend.title = element_text(size = 20))
 ```
 
-\]
+##
 
-------------------------------------------------------------------------
+::: {style="font-size: 2em; color: #000000;"}
+Summarizing a Linear Relationship
+:::
 
-.bayberry\[.larger\[Summarizing a Linear Relationship\]\]
+::: columns
+::: {.column width="20%"}
+</br>
+Correlation: 
+:::
+::: {.column width="80%"}
+> strength and direction of a *linear* relationship between two *quantitative* variables
 
-.pull-left\[ - Correlation: **strength and direction of a *linear* relationship between two *quantitative* variables**
+:::
+:::
 
+. . .
+
+<!-- TODO use fragments -->
+::: columns
+::: {.column width="45%"}
+::: {style="font-size: 0.75em;"}
 -   Correlation coefficient between -1 and 1
 -   Sign of the correlations shows direction
--   Magnitude of the correlation shows strength \]
+-   Magnitude of the correlation shows strength
+:::
+:::
 
---
+::: {.column width="5%"}
+:::
 
-.pull-right\[
-
+::: {.column width="45%"}
 ```{r}
+#| echo: true
+#| code-line-numbers: false
+
 births_post26 <- ncbirths %>% 
   drop_na(weight, weeks) %>% 
   filter(weeks > 26)
 
 
-births_post26 %>% 
-  get_correlation(weeks ~ weight)
+get_correlation(births_post26, 
+                weeks ~ weight)
 ```
 
-\]
+:::
+:::
 
-------------------------------------------------------------------------
 
-class: middle, inverse
+##
 
-.larger\[Anscombe Correlations\]
+::: {style="font-size: 2em; color: #000000;"}
+Anscombe Correlations
+:::
 
-.pull-left\[
-
+::: columns
+::: {.column width="75%"}
 ```{r}
 #| echo: false
 #| out-width: 100%
@@ -210,153 +280,188 @@ ggplot(data = anscombe, aes(x = x, y = y)) +
   geom_point() +
   facet_wrap(~set)
 ```
+:::
 
-\]
+::: {.column width="5%"}
+:::
 
-.pull-right\[
-
+::: {.column width="20%"}
+::: {style="font-size: 0.75em;"}
 Four datasets, very different graphical presentations
 
 -   same mean and standard deviation in both $x$ and $y$
 -   same correlation
--   same regression line \]
+-   same regression line 
+:::
+:::
+:::
 
---
+. . .
 
-.center\[ .large\[.honey\[For which of these relationships is correlation a reasonable summary measure?\]\]\]
+<center>
 
-------------------------------------------------------------------------
+[For which of these relationships is correlation a reasonable summary measure?]{style="font-size: 1.25em; color: #e28743;"}
 
-class: middle
+##
 
-.larger\[The Importance of Language\]
+::: {style="font-size: 2em; color: #000000;"}
+The Importance of Language
+:::
 
-</br>
+::: incremental
 
 -   The word "correlation" has both a precise mathematical definition and a more general definition for typical usage in English.
-
---
 
 -   These uses are obviously related and generally in sync.
 
 -   There are times when these two uses can be conflated and/or misconstrued.
+:::
 
-------------------------------------------------------------------------
+##
 
-.gray\[.larger\[Linear Regression\]\]
+::: {style="font-size: 2em; color: #000000;"}
+Linear Regression
+:::
 
--   Models are ubiquitous in statistics.
+::: incremental 
 
-    -   We often assume that the value of our response variable is some function of our explanatory variable, plus some random noise.
+-   Models are ubiquitous in Statistics!
 
---
-
--   In this case, we assume the relationship between $x$ and $y$ takes the form of a **linear function**.
+-   We often assume that the value of our response variable is some function of our explanatory variable, plus some random noise.
 
 </br>
 
-.center\[ $$
-  response = intercept + slope \cdot explanatory + noise
-$$\]
+-   In this case, we assume the relationship between $x$ and $y$ takes the form of a **linear function**.
+    * $response = intercept + slope \cdot explanatory + noise$
+:::
 
-------------------------------------------------------------------------
 
-class: inverse, middle
+##
 
-.larger\[.honey\[Estimated / Fitted Regression Model\]\]
+::: {style="font-size: 2em; color: #000000;"}
+Estimated / Fitted Regression Model
+:::
+
 
 $$
-  \hat{y} = b_0 + b_1 \cdot x
+  \widehat{y} = b_0 + b_1 \cdot x
 $$
 
---
+. . .
 
-.center\[ .large\[.honey\[Why does this equation have a hat on y?\]\]\]
+<center>
 
-------------------------------------------------------------------------
+[Why does this equation have a hat on y?]{style="color: #e28743; font-size: 1.5em"}
 
-class: middle
+##
 
-.larger\[Coefficient Estimates\]
+::: {style="font-size: 2em; color: #000000;"}
+Coefficient Estimates
+:::
 
 ```{r}
-  
+#| echo: true
+#| code-line-numbers: false
 weeks_lm <- lm(weight ~ weeks, data = births_post26)
   
 get_regression_table(weeks_lm)
 ```
 
-------------------------------------------------------------------------
+##
 
-class: middle, inverse
+::: {style="font-size: 2em; color: #000000;"}
+Our focus (for now...)
+:::
 
-.larger\[Our focus (for now...)\]
-
+<!-- Change to only focus on estimates! -->
 ![](images/coefficients.jpg)
 
-------------------------------------------------------------------------
+##
 
-class: center, inverse
+::: {style="font-size: 2em; color: #000000;"}
+Estimated regression equation
+:::
 
-.larger\[Estimated regression equation\]
 
-$$\hat{y} = b_0 + b_1 \cdot x$$
+$$\widehat{y} = b_0 + b_1 \cdot x$$
 
---
+. . .
 
 ```{r}
+#| code-line-numbers: false
 get_regression_table(weeks_lm)
 ```
 
-.large\[.honey\[Write out the estimated regression equation!\]\]
+. . .
 
-------------------------------------------------------------------------
+</br>
 
-class: center, middle
+<center>
 
-.large\[.hand\[How do you interpret the intercept value of -5.34?\]\]
+[Write out the estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
 
---
+##  {background-color="#0F4C81"}
 
-.large\[.hand\[How do you interpret the slope value of 0.325?\]\]
+::: {style="font-size: 2.65em; color: #000000;"}
+How do you interpret the intercept value of `r filter(births_table, term == "intercept")$estimate`?
+:::
 
-------------------------------------------------------------------------
+. . .
 
-class: center, middle
+</br>
 
-.larger\[Obtaining Residuals\]
+::: {style="font-size: 2.65em; color: #000000;"}
+How do you interpret the slope value of `r filter(births_table, term == "weeks")$estimate`?
+:::
 
---
+##
 
-$\widehat{weight} = -5.34 + 0.325 \cdot weeks$
+::: {style="font-size: 2em; color: #000000;"}
+Obtaining Residuals
+:::
 
-.rhubarb\[What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?\]
+. . .
 
-------------------------------------------------------------------------
+$\widehat{weight} = `r filter(births_table, term == "intercept")$estimate` +  `r filter(births_table, term == "weeks")$estimate` \cdot weeks$
 
-class: center, middle
+</br>
 
-.larger\[A different explanatory variable\]
+. . .
+
+[What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?]{style="color: #e28743; font-size: 1.5em;"}
+
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+A different explanatory variable
+:::
 
 ```{r}
+#| code-line-numbers: false
+#| echo: true
+
 weight_gain_lm <- lm(weight ~ gained, data = births_post26)
   
 get_regression_table(weight_gain_lm)
 ```
 
+. . .
+
 </br>
 
-.large\[.rhubarb\[Write out this estimated regression equation!\]\]
+[Write out this estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
 
-------------------------------------------------------------------------
+##
 
-class: center, inverse, middle
+::: {style="font-size: 3em; color: #000000;"}
+How would you choose which model is better?!
+:::
 
-.larger\[.hand\[How would you choose which model was better?\]\]
-
---
+. . .
 
 ```{r}
+#| echo: true
+#| code-line-numbers: false
 births_post26 %>% 
   drop_na(weight, gained, weeks) %>% 
   summarize(cor_weeks = cor(weight, weeks), 
@@ -365,51 +470,86 @@ births_post26 %>%
             R_sq_gained = cor_gained^2)
 ```
 
-------------------------------------------------------------------------
+##
 
-class: inverse, center
+::: {style="font-size: 3em; color: #000000;"}
+Categorical Explanatory Variables
+:::
 
-.larger\[Categorical Explanatory Variables\]
+. . .
+
+::: {style="font-size: 1.5em;"}
+Finding `distinct` levels:
+:::
 
 ```{r}
-births_post26 %>% 
-  distinct(habit)
+#| code-line-numbers: false
+#| echo: true
+
+distinct(births_post26, habit)
 ```
 
-------------------------------------------------------------------------
 
-.larger\[Indicator Variables\]
+##
 
+::: {style="font-size: 2em; color: #000000;"}
+Indicator Variables
+:::
+
+<center>
 $$
   \hat{y} = b_0 + b_1 \cdot x
 $$
+</center>
 
---
+. . .
 
-.pull-left\[ $x$ is a categorical variable - `"nonsmoker"` - `"smoker"`\]
+::: columns
+::: {.column width="40%"}
+$x$ is a categorical variable with levels: 
 
---
+- `"nonsmoker"` 
+- `"smoker"`
+:::
 
-.pull-right\[ Need: - "baseline" mean - "offsets" \]
+::: {.column width="5%"}
+:::
 
---
+::: {.column width="55%"}
+Need: 
+
+- "baseline" mean 
+- "offsets"
+:::
+:::
+
+
+. . .
 
 </br>
 
-.center\[ $1_{smoker}(x) = 1$ if the mother was a `"smoker"`, 0 otherwise\]
+<center>
 
-------------------------------------------------------------------------
+$1_{smoker}(x) = 1$ if the mother was a `"smoker"`
 
-class: center, inverse, middle
+$1_{smoker}(x) = 0$ if the mother was a `"nonsmoker"`
 
-.larger\[A different equation\]
+##
+
+::: {style="font-size: 2em; color: #000000;"}
+A different equation
+:::
 
 ```{r}
+#| code-line-numbers: false
+#| echo: true
 habit_lm <- lm(weight ~ habit, data = births_post26)
   
 get_regression_table(habit_lm)
 ```
 
---
+. . .
 
-.large\[.honey\[What is the estimated mean birth weight for nonsmoking mothers?\]\]
+</br>
+
+[What is the estimated mean birth weight for nonsmoking mothers?]{style="color: #e28743; font-size: 1.5em;"}

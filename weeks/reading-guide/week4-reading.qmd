@@ -12,7 +12,7 @@ In Statistics we like to call our $y$ variable the "response" variable. What are
 
 </br> </br>
 
-In Statistics we like to call our $x$ variable the "explanatory" variable. What are some other names $x$ can be called?
+In Statistics we like to call our $x$ variable the "explanatory" variable. What are some other names for $x$? 
 
 </br> </br>
 
@@ -24,7 +24,7 @@ In "basic" / simple linear regression, how many explanatory variables are includ
 
 </br> </br>
 
-In linear regression, what type of variable must our response **always** be?
+In linear regression, what type of variable must we **always** have as our response?
 
 </br> </br>
 
@@ -112,19 +112,19 @@ The slope ($b_1$) is the expected change in $\hat{y}$ when $x$ is increased by:
 
 </br>
 
-What function do we use to "fit" a linear regression?
+What function do we use (in R) to "fit" a linear regression?
 
 </br>
 
-What function do we use to get the table of regression estimates?
+What function do we use (in R) to get the table of regression estimates?
 
 </br>
 
-How do you find the value of the intercept from the regression table?
+Where can you find the value of the intercept on the regression table?
 
 </br>
 
-How do you find the value of the slope from the regression table?
+Where can you find the value of the slope on the regression table?
 
 </br>
 
@@ -142,7 +142,7 @@ How do you calculate the *residual* of an observation?
 
 </br>
 
-What function can you use to obtain **every** residual for a regression model?
+What function (in R) can you use to obtain **every** residual for a regression model?
 
 </br>
 
@@ -168,7 +168,7 @@ What is an *offset*?
 
 </br> </br>
 
-How does `R` choose what group is the "baseline"?
+How does R choose what group is the "baseline"?
 
 </br>
 
@@ -184,7 +184,7 @@ The estimated regression equation for the life expectancy with `continent` as an
 
 $$\widehat{\text{life exp}} = 54.8 + 18.8 \cdot 1_{\text{Amer}}(x) + 15.9 \cdot 1_{\text{Asia}}(x) + 22.8 \cdot 1_{\text{Euro}}(x) + 25.9 \cdot 1_{\text{Ocean}}(x)$$
 
-When finding the mean life expectancy for Europe, what value do $1_{\text{Amer}}(x)$, $1_{\text{Asia}}(x)$, and $1_{\text{Ocean}}(x)$ take on?
+When finding the mean life expectancy for Europe, what value would you plug in for $1_{\text{Amer}}(x)$, $1_{\text{Asia}}(x)$, and $1_{\text{Ocean}}(x)$?
 
 </br>
 
@@ -209,7 +209,3 @@ Most people have heard the saying "correlation does not imply causation," but *s
 When this (what you stated above) is not present in a study, you have to worry about *confounding* / *lurking* variables. What is a *confounding* variable?
 
 </br> </br>
-
-### 5.3.1 -- Best-fitting line
-
-<!-- include sum of squares visual -->

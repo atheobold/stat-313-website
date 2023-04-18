@@ -8,76 +8,71 @@ execute:
   eval: false
 ---
 
-Q1 (a)   
-Q1 (b)   
-Q2   
-Q3 (a)   
-Q3 (b)   
-Q4   
-Q5   
-Q6  
-Q7    
-Q8  
-
+Q1 (a)\
+Q1 (b)\
+Q2\
+Q3 (a)\
+Q3 (b)\
+Q4\
+Q5\
+Q6\
+Q7\
+Q8
 
 ## 1 (a)
-__How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)__
-<!-- Your response goes below this line! -->
+
+**How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)** <!-- Your response goes below this line! -->
 
 **Success**:
 
-- Must have code that gives size of dataset, with a preference for `glimpse()`
-- Size of 32,735 rows and 16 columns
-
-::: {.callout-tip}
-Note most may put the `glimpse(nycflights)` code in the code chunk before
-Question 1, which will not produce output. 
-:::
+-   Uses `glimpse()` to obtain the size of the dataset
+-   Size of 32,735 rows and 16 columns
 
 **Growing**:
 
-- If no code is present
-- If they flip the rows and columns
-- If they do not provide size of data
+-   If no code is present
+-   If they flip the rows and columns
+-   If they do not provide size of data
 
-*Feedback for no code:* For Question 1(a), you needed to write code to explore the size of the data and the types of variables. 
+*Feedback for no code:* For Question 1(a), you needed to write code to explore the size of the data and the types of variables.
+
+*Feedback for not using `glimpse()`:* For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which gives a preview of a dataset?
 
 *Feedback for no / incorrect dimensions:* For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?
 
-
 ## 1 (b)
-__Are there numerical variables in the dataset? If so, what are their names?__  
-<!-- Your response goes below this line! -->
 
-**Success**: 
+**Are there numerical variables in the dataset? If so, what are their names?** <!-- Your response goes below this line! -->
 
-- Lists all variables with an `int` or `dbl` data type: 
-  * year
-  * month
-  * day
-  * dep_time
-  * dep_delay
-  * arr_time
-  * arr_delay
-  * flight (many may miss)
-  * air_time
-  * distance
-  * hour
-  * minute
-- Permitted to miss 1-2 variables
-  
+**Success**:
+
+-   Lists **all** variables with an `int` or `dbl` data type:
+    -   year
+    -   month
+    -   day
+    -   dep_time
+    -   dep_delay
+    -   arr_time
+    -   arr_delay
+    -   flight (many may miss)
+    -   air_time
+    -   distance
+    -   hour
+    -   minute
+-   Permitted to miss 1 variable
+
 **Growing**:
 
-- If misses 3 or more variables
-- If includes categorical variables (labeled `chr`)
+-   If misses 2 or more variables
+-   If includes categorical variables (labeled `chr`)
 
-*Feedback:* For Question 1(b), you need to be careful to include ALL of the variables that R believes are numerical, that includes variables which may behave more like a categorical variable. 
+*Feedback:* For Question 1(b), you need to be careful to include ALL of the variables that R believes are numerical, that includes variables which may behave more like a categorical variable.
 
-## 2 
+## 2
 
-__Create a histogram of the `dep_delay` variable from the `nycflights` data__ 
+**Create a histogram of the `dep_delay` variable from the `nycflights` data**
 
-**Success**: Code should look like 
+**Success**: Code should look like
 
 ```{r histogram}
 ggplot(data = nycflights, mapping = aes(x = dep_delay)) + 
@@ -85,19 +80,21 @@ ggplot(data = nycflights, mapping = aes(x = dep_delay)) +
 
 ```
 
-::: {.callout-note}
-Note: Axis labels are not required! 
+::: callout-note
+Note: Axis labels are not required!
+
+Note: May choose their own binwidth, but that is not required!
 :::
 
 **Growing**: If maps `dep_delay` to y-axis instead of x-axis
 
-*Feedback:* For Question 2, our histograms are always made with our quantitative variable on the x-axis! 
+*Feedback:* For Question 2, our histograms are always made with our quantitative variable on the x-axis!
 
 ## 3 (a)
 
-__Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.__
+**Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.**
 
-**Success**: Code should look like: 
+**Success**: Code should look like:
 
 ```{r binwidth}
 ggplot(data = nycflights, 
@@ -112,30 +109,26 @@ ggplot(data = nycflights,
 
 **Growing**: If code does not use correct `binwidth`s
 
-*Feedback:* For Question 3(a), pay attention to what binwidth you need to use 
-*within* your geom_histogram()
-
+*Feedback:* For Question 3(a), pay attention to what binwidth you need to use *within* your `geom_histogram()`!
 
 ## 3 (b)
 
-__How do these three histograms compare? Are features revealed in one that are obscured in another?__
-<!-- Your answer goes below this line -- do not remove this!  -->
+**How do these three histograms compare? Are features revealed in one that are obscured in another?** <!-- Your answer goes below this line -- do not remove this!  -->
 
-**Success**: 
+**Success**:
 
-- Discusses how wider bins make it hard to see where there are small
-differences and / or how smaller bins make it easier to see differences
+-   Discusses how wider bins make it hard to see where there are small differences and / or how smaller bins make it easier to see differences
 
 **Growing**:
 
-- If description only references how the bins are larger or smaller, but doesn't talk about shape the distribution 
-- Only talks about how the y-axis scale changes
+-   If description only references how the bins are larger or smaller, but doesn't talk about shape the distribution
+-   Only talks about how the y-axis scale changes
 
-*Feedback:* For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution or what you are able to see.  
+*Feedback:* For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution and what you are able to see.
 
-## 4 
+## 4
 
-__Fill in the code to create a new dataframe named sfo_flights that is the result of `filter()`ing only the observations whose destination was San Francisco.__ 
+**Fill in the code to create a new dataframe named sfo_flights that is the result of `filter()`ing only the observations whose destination was San Francisco.**
 
 **Success**: Code should look like:
 
@@ -146,13 +139,13 @@ sfo_flights <- filter(nycflights,
 
 ```
 
-**Growing**: If they use the wrong destination in their `filter()` 
+**Growing**: If they use the wrong destination in their `filter()`
 
-*Feedback:* For Question 4, you need to look at the description for how the airport names were coded! 
+*Feedback:* For Question 4, you need to look at the description for how the airport names were coded!
 
-## 5 
+## 5
 
-__Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?__ 
+**Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?**
 
 **Success**: Code should look like:
 
@@ -165,39 +158,38 @@ filter(sfo_flights,
 
 **AND**
 
-They should state that 45 flights arrived early in July out of the 1345 flights
-to SFO.
+They should state that 45 flights arrived to SFO early in July.
 
 **Growing**:
 
-- If they don't interpret the output
+-   If they don't interpret the output
 
 *Feedback:* For Question 5, you were asked to interpret the output of the code.
 
-- If they don't interpret 45 as the number of flights
+-   If they don't interpret 45 as the number of flights
 
-*Feedback:* For Question 5, what does the 45 refer to? 
+*Feedback:* For Question 5, what does the 45 refer to?
 
-- If they interpret 45 and 16 as flight numbers
+-   If they interpret 45 and 16 as flight numbers
 
-*Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset? 
+*Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?
 
-- If they don't say how many SFO flights there were to begin with (1345)
+-   If they don't interpret the conditions of the filter (arrived early in July)
 
-*Feedback:* For Question 5, how many SFO flight were there to begin with?
+*Feedback:* For Question 5, what were the conditions of these 45 flights?
 
-- If they don't interpret the conditions of the filter (arrived early in July)
+-   If they don't state the destination of these flights (SFO)
 
-*Feedback:* For Question 5, what were the conditions of these 45 flights? 
+*Feedback:* For Question 5, what flights did you filter? All NYC flights or a smaller dataset?
 
-## 6 
+## 6
 
-__Calculate the following statistics for the arrival delays in the sfo_flights dataset:__ 
+**Calculate the following statistics for the arrival delays in the sfo_flights dataset:**
 
-- mean
-- median
-- max
-- min
+-   mean
+-   median
+-   max
+-   min
 
 **Success**: Code should look like:
 
@@ -210,78 +202,104 @@ summarise(sfo_flights,
           )
 ```
 
-::: {.callout-note}
-- I'd give full credit for using either the `nycflights` dataset or the 
-`sfo_flights` dataset
-:::
-
-- If they don't name their summary statistics
+-   If they don't name their summary statistics
 
 *Feedback:* For Question 6, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
 
-- I'd write a comment if they used `_dd` in their names, since it should be `_ad` for the arrival delays. 
+-   I'd write a comment if they used `_dd` in their names, since it should be `_ad` for the arrival delays.
 
-*Feedback:* For Question 6, it would be more clear to use _ad at the end of your names, since you are summarizing the arrival delays (not the departure delays). 
+*Feedback:* For Question 6, it would be more clear to use `_ad` at the end of your names, since you are summarizing the arrival delays (not the departure delays).
 
-**Growing**: 
+**Growing**:
 
-*Feedback:* For Question 6, you were asked to provide four (4) statistics! 
+-   If they miss some of the statistics
 
-## 7 
+*Feedback:* For Question 6, you were asked to provide four (4) statistics!
 
-__Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays. Be sure to give your visualization nice axis labels!__
+-   If they use the wrong dataset (nycflights instead of sfo_flights)
 
-You choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. 
+*Feedback:* For Question 6, what dataset should you be using to calculate your summary statistics?
+
+## 7
+
+**Using the above summary statistics, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
+
+**Success**
+
+-   Makes a statement about what I should expect (flight to be early / late)
+-   Justifies statement based on summary statistics
+
+**Growing**
+
+-   Does not justify their statement
+
+*Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
+
+## 8
+
+**Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays. Be sure to give your visualization nice axis labels!**
+
+You choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays.
 
 **Success**: Code should look like:
 
 ```{r}
 ggplot(data = nycflights, 
        mapping = aes(x = arr_delay)) + 
-  geom_histogram()
+  geom_histogram() + 
+  labs(x = "Arrival Delays (min)")
 ```
 
-- I'd give full credit for using either the `sfo_flights` dataset or accidentally
-using the `nycflights` dataset
+-   Acceptable `geom`s:
 
-- Acceptable `geom`s:
-  * `geom_histogram()`
-  * `geom_dotplot()` (though not great)
-  * `geom_density()`
-  
-- It's okay for them not to change the `binwidth`
+    -   `geom_histogram()`
+    -   `geom_dotplot()` (though not great)
+    -   `geom_density()`
 
-**Growing**: 
+-   It's okay for them not to change the `binwidth`
 
-- Uses `geom_boxplot()`
+**Growing**:
 
-*Feedback:* For Question 7, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
+-   Uses `geom_boxplot()`
 
-- Doesn't change x-axis label
+*Feedback:* For Question 8, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
 
-*Feedback:* For Question 7, you were asked to give your visualization nice axis labels. 
+-   Doesn't change x-axis label
 
-- Doesn't include units (minutes) in axis label
+*Feedback:* For Question 8, you were asked to give your visualization nice axis labels.
 
-*Feedback:* For Question 7, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
+-   Doesn't include units (minutes) in axis label
 
-## 8 
+*Feedback:* For Question 8, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
 
-__What information can you obtain from the visualization that you could not from the data summaries?__
+## 9
 
-**Success**: Answer should address *all* of the following
+**Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
 
-- visualization allows for you to see skew
-- visualization allows for you to see mode / peak
+**Success**
 
-**Growing**: 
+-   Makes a statement about what I should expect (flight to be early / late)
+-   Justifies statement based on the plot
 
-- Response addresses either skew or modes, but not both
+**Growing**
 
-*Feedback:* For Question 8, you should address the shape of the distribution, which includes the skew and the mode(s).
+-   Does not justify their statement
 
-- Response doesn't make much sense
+*Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
 
-*Feedback:* For Question 8, what can you *see* in the visualization that was not apparent from the data summaries?
+## 10
 
+**How did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not "see" with the summary statistics?**
 
+**Success**:
+
+-   States if / how their answer did / did not change
+-   Discusses what could be see in the visualizations that could not be seen in the statistics
+    -   skew
+    -   mode / peak
+
+**Growing**:
+
+-   Response **does not** discuss what could be seen in the visualizations that could not be seen in the statistics
+
+*Feedback:* For Question 10, you should address what you were able to SEE in the visualization that you could not "see" in the summary statistics.

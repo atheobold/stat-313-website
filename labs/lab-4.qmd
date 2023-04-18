@@ -8,6 +8,7 @@ format:
     standalone: true
 editor: visual
 execute: 
+  eval: false
   echo: true
   warning: false
   message: false
@@ -20,7 +21,7 @@ library(tidyverse)
 library(lterdatasampler)
 ```
 
-## New Packages
+## New Packages!
 
 ```{r}
 library(moderndive)
@@ -28,7 +29,7 @@ library(moderndive)
 
 ## Data for Today
 
-Today we'll be working with data on lake ice duration for two lakes in Madison, Wisconsin. The dataset contains information on the number of days of ice on each lake for years between 1851 and 2019. These data are stored in the `ntl_icecover` dataset, which lives in the **lterdatsampler** package.
+Today we'll be working with data on lake ice duration for two lakes surrounding Madison, Wisconsin. This dataset contains information on the number of days of ice (ice duration) on each lake for years between 1851 and 2019. These data are stored in the `ntl_icecover` dataset, which lives in the **lterdatsampler** package.
 
 According to the EPA, lake ice duration can be an indicator of climate change. This is because lake ice is dependent on several environmental factors, so changes in these factors will influence the formation of ice on top of lakes. As a result, the study and analysis of lake ice formation can inform scientists about how quickly the climate is changing, and are critical to minimizing disruptions to lake ecosystems.
 
@@ -40,7 +41,7 @@ According to the EPA, lake ice duration can be an indicator of climate change. T
 
 ```
 
-**Question 1** -- How large is the `ntl_icecover` dataset? (i.e. How many rows and columns does it have?)
+**Question 1 -- How large is the `ntl_icecover` dataset? (i.e. How many rows and columns does it have?)**
 
 ## Visualize a Simple Linear Regression
 
@@ -55,21 +56,25 @@ We will be investigating the relationship between the `ice_duration` of each lak
 
 ### Step 1
 
-**Question 2** -- Make a scatterplot of the relationship between the `ice_duration` (response) and the `year` (explanatory). Be sure to make the axis labels look nice, including any necessary units!
+**Question 2 -- Make a scatterplot of the relationship between the `ice_duration` (response) and the `year` (explanatory).** 
+
+*Be sure to make the axis labels look nice, including any necessary units!*
 
 ```{r scatterplot}
-# Code to create a scatterplot goes here!
+# Code to answer question 2 goes here!
 
 
 ```
 
-**Question 3** -- Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.
+**Question 3 -- Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.**
 
 ### Step 2
 
 To add a regression line on top of a scatterplot, you add (`+`) a `geom_smooth()` layer to your plot. However, if you add a "plain" `geom_smooth()` to the plot, it uses a wiggly line. You need to tell `geom_smooth()` what type of smoother line you want for it to use! We can get a straight line by including `method = "lm"` **inside** of `geom_smooth()`.
 
-**Question 4** -- Add a linear regression line to the scatterplot you made above.
+**Question 4 -- Add a linear regression line to the scatterplot you made in Question 3.**
+
+*No code goes here, you need to modify your scatterplot from Question 3!*
 
 ## Fit a Simple Linear Regression Model
 
@@ -83,10 +88,10 @@ Next, we are going to summarize the relationship between `ice_duration` and `yea
 
 ### Step 1
 
-**Question 5** -- Calculate the correlation between these variables, using the `get_correlation()` function.
+**Question 5 -- Calculate the correlation between these variables, using the `get_correlation()` function.**
 
 ```{r correlation}
-# Code to find correlation goes here!
+# Code to answer question 5 goes here!
 
 
 ```
@@ -95,10 +100,12 @@ Next, we are going to summarize the relationship between `ice_duration` and `yea
 
 Next, we will "fit" a linear regression with the `lm()` function. Remember, the "formula" for `lm()` is `response_variable ~ explanatory_variable`. Also recall that you need to tell `lm()` where the data live using `data =`!
 
-**Question 6** -- Fit a linear regression modeling the relationship between between `ice_duration` and `year`. Save your linear regression into an object (i.e., use the assignment arrow `<-`) so you can use it later.
+**Question 6 -- Fit a linear regression modeling the relationship between between `ice_duration` and `year`. Save your linear regression into an object named `ice_lm` so you can use it later.**
+
+*To create an object, you need to use the assignment arrow (`<-`)!*
 
 ```{r lm}
-# Code to fit a linear regression between ice_duration and year
+# Code to answer question 6 goes here!
 
 
 ```
@@ -107,26 +114,31 @@ Next, we will "fit" a linear regression with the `lm()` function. Remember, the 
 
 Finally, to get the regression equation, we need grab the coefficients out of the linear model object you made in Step 2. The `get_regression_table()` function is a handy tool to do just that!
 
-**Question 7** -- Use the `get_regression_table()` function to obtain the coefficient estimates for the regression you fit in Question 6.
+**Question 7 -- Use the `get_regression_table()` function to obtain the coefficient estimates for the `ice_lm` regression you fit in Question 6.**
 
 ```{r coefficients}
-# Code to get the regression table goes here! 
+# Code to answer question 7 goes here!
 
 
 ```
 
-**Question 8** -- Using the coefficient estimates above, write out the estimated regression equation.
+**Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.**
+*Your equation needs to be in the context of the variables, not in generic $x$ and $y$ statements!*
 
-**Question 9** -- Interpret the value of the slope coefficient. Namely, what do you expect to happen to the duration of ice if the number of years is increased by 100?
+
+**Question 9 -- Interpret the value of the slope coefficient.**
+*Your interpretation needs to be in the context of the variables, not in generic $x$ and $y$ statements!*
+
+
+**Question 10 -- What do you expect to happen to the duration of ice if the number of years is increased by 100?**
 
 ## A preview of what's to come
 
 In our analysis above, we only looked at the relationship between ice duration and year, not accounting for which lake the durations were for. That is another explanatory variable we could include in our regression model!
 
-**Question 10** -- Using the code you wrote for Question 2 (and 4), add a `color` for the name of the lake (`lakeid`).
+**Question 11 -- Using the code you wrote for Question 2 (with the regression line added), add a `color` for the name of the lake (`lakeid`).**
 
 ```{r adding-color}
-# Copy and paste your code from Question 2 and add a color for lakeid
-
+# Code to answer question 11 goes here!
 
 ```

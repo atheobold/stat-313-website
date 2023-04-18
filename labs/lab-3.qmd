@@ -52,7 +52,7 @@ The **codebook** (description of the variables) can be accessed by pulling up th
 ?and_vertebrates
 ```
 
-**Question 1 -- How large is the `and_vertebrates` dataset? (i.e. How many rows and columns does it have?)**
+**Question 1 -- How large is the `and_vertebrates` dataset? (i.e. How many rows and columns does the dataset have?)**
 
 ```{r data-dimensions}
 ## Your code for question 1 (and 2) goes here!
@@ -76,8 +76,7 @@ The `species` variable refers to the species of the animal which was captured. Y
 
 Alright, you should have found that there is more than one species included in these data. For our analysis, we are only interested in Cutthroat trout.
 
-**Question 4 -- Use the `filter()` function to include _only_ observations on Cutthroat trout.**
-
+**Question 4 -- Use the `filter()` function to include *only* observations on Cutthroat trout.**
 
 **The only part you need to remove is the ...! Keep the `trout <-`!**
 
@@ -87,7 +86,7 @@ trout <- ...
 
 [Electrofishing](https://en.wikipedia.org/wiki/Electrofishing) fishing technique that uses direct current electricity flowing between a submerged cathode and anode, to insert an electric current into the water. This current stuns fish in a (hopefully) non-lethal manner, in order to capture them for marking and measuring. Technically, smaller fish are less affected by the current, so there presumably is a size of fish that is "uncatchable".
 
-**Question 5 -- Use the `filter()` function again to include _only_ trout whose `length_1_mm` is greater than 4 inches (or 101 mm).**
+**Question 5 -- Use the `filter()` function again to include *only* trout whose `length_1_mm` is greater than 4 inches (or 101 mm).**
 
 *The only part you need to remove is the ...! Keep the `trout <-`!*
 
@@ -136,7 +135,7 @@ ggplot(data = fish,
 
 **Question 9 -- Modify your plot from #8 to incorporate the `section` of the forest into your plot using either color or facets.**
 
-*Hint: The `fill` aesthetic will __fill__ the ridge plots with color.*
+*Hint: The `fill` aesthetic will **fill** the ridge plots with color.*
 
 **Question 10 -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?**
 
@@ -151,7 +150,7 @@ Paired with visualizations, summary statistics can provide a clearer picture for
 
 ```
 
-**Question 12 -- Find the average length of Cutthroat trout from the different channel types (`unittype`) _and_ forest `section`. Use the `trout` dataset from Question 5!**
+**Question 12 -- Find the average length of Cutthroat trout from the different channel types (`unittype`) *and* forest `section`. Use the `trout` dataset from Question 5!**
 
 ```{r channel-section-avg}
 ## Your code for question 12 goes here!
