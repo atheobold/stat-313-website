@@ -196,7 +196,7 @@ trout %>%
 
 </br>
 
-::: {.callout-tip}
+::: callout-tip
 # `%in%`
 
 If you filter includes *more than one value* you must use `%in%` **not** `==`!
@@ -208,21 +208,19 @@ If you filter includes *more than one value* you must use `%in%` **not** `==`!
 Categorical Variables for Whom?
 :::
 
-##
+## 
 
 ::: {style="font-size: 1.25em;"}
 Suppose Cal Poly is interested in summarizing the demographics of their undergraduate students. They have designed the following question asking about student's gender identity:
 :::
 
-</br> 
+</br>
 
 > What is your gender identity?
 >
 > Male, Female, Other
 
 . . .
-
-</br>
 
 ::: {style="font-size: 1.5em; color: #0F4C81"}
 Who benefits from these options?
@@ -280,8 +278,7 @@ Rethink binaries
 
 . . .
 
-</br>
-</br>
+</br> </br>
 
 <center>
 
