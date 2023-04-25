@@ -64,20 +64,24 @@ Relationships Between Variables
 <!-- TODO make fragmented columns! -->
 ::: columns
 ::: {.column width="40%"}
+::: {style="font-size: 0.85em;"}
 - Response variable 
   * a.k.a. $y$, dependent 
   * The quantity you want to understand 
   * In this class -- always numerical
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="55%"}
+::: {style="font-size: 0.85em;"}
 - Explanatory variable
   * a.k.a. $x$, independent, explanatory, predictor 
   * Something you think might be related to the response
   * Either numerical or categorical
+:::
 :::
 :::
 
@@ -91,14 +95,15 @@ Visualizing Linear Regression
 #| echo: false
 #| eval: true
 #| fig-align: center
-#| out-width: 100%
-#| code-line-numbers: false
 
 ggplot(data = bdims, aes(y = wgt, x = hgt)) + 
   geom_point() +
   scale_x_continuous("Explanatory Variable", labels = NULL) + 
   scale_y_continuous("Response Variable", labels = NULL) + 
-  my_theme
+  theme_bw() + 
+  theme(axis.title.x = element_text(size = 36),
+        axis.title.y = element_text(size = 36)
+        )
 ```
 
 . . .
@@ -178,9 +183,10 @@ What if you added another variable?
 
 . . .
 
+::: columns
+::: {.column width="50%"}
 ```{r}
 #| echo: false
-#| out-width: 50%
 #| fig-align: center
 
 ncbirths %>% 
@@ -190,12 +196,11 @@ ggplot(aes(x = weeks, y = weight)) +
        y = "Birth weight of baby (in lbs)") + 
   my_theme
 ```
+:::
 
-. . .
-
+::: {.column width="50%"}
 ```{r}
 #| echo: false
-#| out-width: 50%
 #| fig-align: center
 
 ncbirths %>% 
@@ -207,6 +212,9 @@ ggplot(aes(x = weeks, y = weight, color = premie)) +
   theme(legend.text = element_text(size = 16), 
         legend.title = element_text(size = 20))
 ```
+:::
+:::
+
 
 ##
 
@@ -286,7 +294,7 @@ ggplot(data = anscombe, aes(x = x, y = y)) +
 :::
 
 ::: {.column width="20%"}
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 0.5em;"}
 Four datasets, very different graphical presentations
 
 -   same mean and standard deviation in both $x$ and $y$
@@ -402,7 +410,7 @@ get_regression_table(weeks_lm)
 
 ##  {background-color="#0F4C81"}
 
-::: {style="font-size: 2.65em; color: #000000;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 How do you interpret the intercept value of `r filter(births_table, term == "intercept")$estimate`?
 :::
 
@@ -410,7 +418,7 @@ How do you interpret the intercept value of `r filter(births_table, term == "int
 
 </br>
 
-::: {style="font-size: 2.65em; color: #000000;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 How do you interpret the slope value of `r filter(births_table, term == "weeks")$estimate`?
 :::
 
@@ -453,7 +461,7 @@ get_regression_table(weight_gain_lm)
 
 ##
 
-::: {style="font-size: 3em; color: #000000;"}
+::: {style="font-size: 2em; color: #000000;"}
 How would you choose which model is better?!
 :::
 
@@ -472,7 +480,7 @@ births_post26 %>%
 
 ##
 
-::: {style="font-size: 3em; color: #000000;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 Categorical Explanatory Variables
 :::
 
@@ -525,8 +533,6 @@ Need:
 
 
 . . .
-
-</br>
 
 <center>
 
