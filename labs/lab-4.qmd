@@ -1,7 +1,7 @@
 ---
 title: "Lab 4: Simple Linear Regression"
 author: "Your group's names here!"
-date: "April 28, 2023"
+date: "April 27, 2023"
 format: 
   html:
     embed-resources: true
@@ -21,7 +21,7 @@ library(tidyverse)
 library(lterdatasampler)
 ```
 
-## New Packages!
+## New Package!
 
 ```{r}
 library(moderndive)
@@ -35,13 +35,13 @@ According to the EPA, lake ice duration can be an indicator of climate change. T
 
 ## Inspecting the Data
 
+**Question 1 -- How large is the `ntl_icecover` dataset? (i.e. How many rows and columns does it have?)**
+
 ```{r dataset-info}
 # Code to answer question 1 goes here!
 
 
 ```
-
-**Question 1 -- How large is the `ntl_icecover` dataset? (i.e. How many rows and columns does it have?)**
 
 ## Visualize a Simple Linear Regression
 
@@ -56,7 +56,7 @@ We will be investigating the relationship between the `ice_duration` of each lak
 
 ### Step 1
 
-**Question 2 -- Make a scatterplot of the relationship between the `ice_duration` (response) and the `year` (explanatory).** 
+**Question 2 -- Make a scatterplot of the relationship between the `ice_duration` (response) and the `year` (explanatory).**
 
 *Be sure to make the axis labels look nice, including any necessary units!*
 
@@ -67,6 +67,8 @@ We will be investigating the relationship between the `ice_duration` of each lak
 ```
 
 **Question 3 -- Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.**
+
+*Hint: You need to explicitly state __where__ the unusual observations are!*
 
 ### Step 2
 
@@ -100,9 +102,9 @@ Next, we are going to summarize the relationship between `ice_duration` and `yea
 
 Next, we will "fit" a linear regression with the `lm()` function. Remember, the "formula" for `lm()` is `response_variable ~ explanatory_variable`. Also recall that you need to tell `lm()` where the data live using `data =`!
 
-**Question 6 -- Fit a linear regression modeling the relationship between between `ice_duration` and `year`. Save your linear regression into an object named `ice_lm` so you can use it later.**
+**Question 6 -- Fit a linear regression modeling the relationship between between `ice_duration` and `year`. Save your linear regression into an object named `ice_lm` (using the `<-` assignment arrow) so you can use it later.**
 
-*To create an object, you need to use the assignment arrow (`<-`)!*
+*Remember what order you need to put the response and explanatory variables!*
 
 ```{r lm}
 # Code to answer question 6 goes here!
@@ -122,19 +124,19 @@ Finally, to get the regression equation, we need grab the coefficients out of th
 
 ```
 
-**Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.**
-*Your equation needs to be in the context of the variables, not in generic $x$ and $y$ statements!*
+**Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.** 
 
+*Your equation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
 
-**Question 9 -- Interpret the value of the slope coefficient.**
-*Your interpretation needs to be in the context of the variables, not in generic $x$ and $y$ statements!*
+**Question 9 -- Interpret the value of the slope coefficient.** 
 
+*Your interpretation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
 
 **Question 10 -- What do you expect to happen to the duration of ice if the number of years is increased by 100?**
 
 ## A preview of what's to come
 
-In our analysis above, we only looked at the relationship between ice duration and year, not accounting for which lake the durations were for. That is another explanatory variable we could include in our regression model!
+In our analysis above, we only looked at the relationship between ice duration and year, not accounting for which lake the duration was for. That is another explanatory variable we could include in our regression model!
 
 **Question 11 -- Using the code you wrote for Question 2 (with the regression line added), add a `color` for the name of the lake (`lakeid`).**
 
