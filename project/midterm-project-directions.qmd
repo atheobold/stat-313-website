@@ -42,7 +42,7 @@ Every visualization should have nicely formatted axis labels!
 -   Outline the appropriate statistical model you will use to answer the question(s) of interest that you stated previously. Be specific about ***why*** the method being used are appropriate for the investigation at hand making direct reference to the visualizations.
 
 ::: callout-tip
-The statistical model you fit in the next section depends on what you see in your visualization. [Click here](model_selection_process/model_seletion.html) for a flowchart of how you should select the statistical model that is best for your situation.
+The statistical model you fit in the next section depends on what you see in your visualization. [Click here](midterm-project-help/model-selection.qmd) for a flowchart of how you should select the statistical model that is best for your situation.
 :::
 
 # Findings
