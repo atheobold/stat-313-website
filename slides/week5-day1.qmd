@@ -14,6 +14,16 @@ library(tidyverse)
 library(moderndive)
 library(openintro)
 
+my_theme <- theme_bw() + 
+  theme(axis.title.x = element_text(size = 20),
+        axis.title.y = element_text(size = 20), 
+        axis.text.x = element_text(size = 14), 
+        axis.text.y = element_text(size = 14), 
+        legend.text = element_text(size = 14),
+        legend.title = element_text(size = 20),
+        panel.border = element_blank(), 
+        panel.grid.minor = element_blank()
+        )
 ```
 
 ##  {background-color="#D4D4D4"}
@@ -29,7 +39,8 @@ ncbirths %>%
   geom_jitter() + 
   geom_smooth(method = "lm") +
   labs(x = "Weeks of Gestation", 
-       y = "Weight of Baby (lbs)")
+       y = "Weight of Baby (lbs)") +
+  my_theme
 
 ```
 
@@ -44,11 +55,12 @@ Now...
 
 ncbirths %>% 
   ggplot(mapping = aes(x = weeks, y = weight, color = habit)) + 
-  geom_jitter() + 
+  geom_jitter(alpha = 0.8) + 
   geom_smooth(method = "lm") +
   labs(x = "Weeks of Gestation", 
        y = "Weight of Baby (lbs)", 
-       color = "Mother Smoking Status")
+       color = "Mother Smoking Status") + 
+  my_theme
 
 ```
 
@@ -133,7 +145,8 @@ ncbirths %>%
   geom_smooth(method = "lm") +
   labs(x = "Weeks of Gestation", 
        y = "Weight of Baby (lbs)", 
-       color = "Mother's Age")
+       color = "Mother's Age") +
+  my_theme
 
 ```
 
@@ -227,7 +240,8 @@ ggplot(data = MA_schools,
   geom_smooth(method = "lm") + 
   labs(x = "Percent Economically Disadvantaged", 
        y = "Average SAT Math", 
-       color = "Size of School")
+       color = "Size of School") +
+  my_theme
 ```
 
 ## 
@@ -327,13 +341,15 @@ $$\widehat{SAT}_{large} = 580.7 - 2.741 \times \text{percent disadvan}$$
 
 ##  {background-color="#B6CADA"}
 
-::: {style="font-size: 2em; color: #000000;"}
+::: {style="font-size: 1.5em; color: #000000;"}
 What if they're not very different?
 :::
 
-::: columns
-::: {.column width="45%"}
 ```{r}
+#| out-height: 50%
+#| out-width: 50%
+#| fig-align: center
+
 MA_schools %>% 
   ggplot(mapping = aes(y = average_sat_math, 
                        x = perc_disadvan, 
@@ -342,25 +358,25 @@ MA_schools %>%
   geom_parallel_slopes() + 
   labs(x = "Percent Economically Disadvantaged", 
        y = "Average SAT Math", 
-       color = "Size of School")
+       color = "Size of School") +
+  my_theme
 ```
-:::
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
 ```{r}
+#| out-height: 50%
+#| out-width: 50%
+#| fig-align: center
+
 MA_schools %>% 
   ggplot(mapping = aes(y = average_sat_math, x = perc_disadvan, color = size)) + 
   geom_point() +
   geom_smooth(method = "lm") + 
   labs(y = "Average SAT Math Score", 
        x = "Percent of Students Economically Disadvantaged", 
-       color = "Size of School")
+       color = "Size of School") +
+  my_theme
 ```
-:::
-:::
+
 
 ## 
 
