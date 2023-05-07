@@ -10,8 +10,6 @@ format:
 editor: visual
 ---
 
-This week's course content is a compilation of different sections from a variety of textbooks. Your reading is housed here!
-
 ```{r}
 #| include: false
 source("_common.R")
@@ -19,7 +17,15 @@ source("_common.R")
 set.seed(1234)
 ```
 
-# Model Selection
+## Reading Guide -- Due Tuesday by noon
+
+[Download the Word Document](reading-guide/week6-reading.docx)
+
+# Textbook Reading 
+
+This week's course content is a compilation of different sections from a variety of textbooks. Your reading is housed here!
+
+## Model Selection
 
 The best model is not always the most complicated. Sometimes including variables that are not evidently important can actually reduce the accuracy of predictions. This week, we will learn about model selection strategies -- strategies which can help us eliminate variables from the model that are found to be less important. It's common (and hip, at least in the statistical world) to refer to models that have undergone such variable pruning as **parsimonious**.
 
@@ -99,7 +105,7 @@ get_regression_table(sat_parallel_slopes) |>
 
 In this reading, we'll mimic the model selection we just performed using the qualitative "eyeball test," but this time using a numerical and quantitative approach. Specifically, we'll use the $R^2$ summary statistic (pronounced "R-squared"), also called the "coefficient of determination." But first, we must introduce one new concept: the *variance* of a numerical variable.
 
-# R-squared ($R^2$)
+## R-squared ($R^2$)
 
 We've previously studied two summary statistics of the *spread* (or *variation*) of a numerical variable: the standard deviation and the interquartile range (IQR). We now introduce a third summary statistic of spread: *the variance*. The variance is merely the standard deviation squared and it can be computed in `R` using the `var()` summary function within `summarize()`[^1].
 
@@ -180,7 +186,7 @@ Thus, $R^2$ can be interpreted as follows:
 
 In practice however, $R^2$ values of 1 almost never occur. Think about it in the context of Massachusetts high schools. There are an infinite number of factors that influence why certain high schools perform well on SAT's on average while others don't perform well. The idea that a human-designed statistical model can capture all the heterogeneity of all high school students in Massachusetts is bordering on hubris. However, even if such models are not perfect, they may still prove useful in determining educational policy. A general principle of modeling we should keep in mind is a famous quote by eminent statistician George Box: ["All models are wrong, but some are useful."](https://jamesclear.com/all-models-are-wrong)
 
-## Model selection using R-squared
+### Model selection using R-squared
 
 When we learned about simple / basic regression, we discussed how, given a set of basic regressions, you could choose the "best" basic regression as the one where the explanatory variable has the strongest relationship with the response. We discussed this in terms of *correlation*, but for simple linear regression, $R^2$ is the square of the correlation.
 
@@ -259,7 +265,7 @@ From @tbl-slr-comparison, we can see that `weeks` has by far the strongest relat
 
 Both methods produce an $R^2$ of `r 0.670^2`. This value tells us that the simple linear regression with `weeks` as the explanatory variable is able to explain 44.9% of the variability in the birth `weight` of a baby.
 
-## Adding more variables
+### Adding more variables
 
 You might say, well why not add more than one variable into the model. That makes sense, given what we've learned about multiple linear regression. However, when we have a regression with more than one explanatory variable, $R^2$ is no longer a good summary measure of how much variability in the response we've explained with our model. The problem lies in the formula for $R^2$!
 
@@ -315,7 +321,7 @@ get_regression_points(noise_lm) |>
 
 From the table above, we can see that the $R^2$ value has increased. Not by much, but still! We went from an $R^2$ of 0.449 when `weeks` was the only explanatory variable, to an $R^2$ of 0.45 when `noise` was added as an explanatory variable. This may seem like a small change, but it may not necessarily always be small! Thus, this behavior was concerning to Statisticians, and they invented an alternative.
 
-# Adjusted $R^2$
+## Adjusted $R^2$
 
 To get a better estimate, we use the adjusted $R^2$!
 
@@ -355,7 +361,7 @@ get_regression_summaries(noise_lm) |>
 
 Notice, @tbl-noise-summaries shows that adjusted $R^2$ is lower than unadjusted $R^2$. This is exactly what we want! We want our $R^2$ to increase **only** if the extra variable we added was "worth it." Here, the adjusted $R^2$ suggests that adding a second explanatory variable (`noise`) is not worth the additional model complexity.
 
-## Model selection using adjusted $R^2$
+### Model selection using adjusted $R^2$
 
 Alright, let's apply the concept of adjusted $R^2$ to a multiple linear regression we are actually interested in. At the beginning of this reading, you were asked to recall the "eyeball" selection method we used to determine that the interaction model and parallel slopes model were unnecessarily more complicated than the simple linear regression model.
 
@@ -391,7 +397,7 @@ interaction_r_sq |>
 
 Observe how the adjusted $R^2$ values for the interaction model and parallel slopes model are nearly identical to the unadjusted $R^2$ value from the simple linear regression model. These summaries suggest, there is no justification for added model complexity. The simple linear regression model with percent of students economically disadvantaged is able to explain the same amount of variance in the SAT math scores as the more complex models which include the size of the school.
 
-### Extending to `evals` data
+#### Extending to `evals` data
 
 Now let's repeat this $R^2$ comparison between interaction and parallel slopes model for our models of $y$ = teaching score for UT Austin professors. In the *ModernDive* textbook, you visually compared using parallel slopes or different slopes to model the relationship between `age` and teaching `score` for male and female professors.
 
@@ -422,7 +428,7 @@ interaction_var |>
 
 Observe how the adjusted $R^2$ values in @tbl-evals-model-compare are now very different! The adjusted $R^2$ for the interaction model is 0.045 (or 4.5%) and the adjusted $R^2$ for the parallel slopes model is 0.035 (or 3.5%). This may seem like a small change (of 1%), but if we calculate the *percent change* ($\frac{0.045 - 0.035}{0.035}$), we see that by allowing the slopes to be different, we improved our adjusted $R^2$ by almost 30%! Thus, it could be argued that the additional complexity is warranted.
 
-# Step-wise Selection
+## Step-wise Selection
 
 Another method for model selection is called "stepwise selection." This method considers **every** possible explanatory variable in the dataset and decides if each variable should be included in the model, using a stepwise approach.
 
@@ -482,7 +488,7 @@ loans_var_def %>%
   column_spec(2, width = "30em")
 ```
 
-## Stepwise selection
+### Stepwise selection
 
 Two common strategies for adding or removing variables in a multiple regression model are called backward elimination and forward selection. These techniques are often referred to as **stepwise selection** strategies, because they add or delete one variable at a time as they "step" through the candidate predictors.
 
@@ -492,7 +498,7 @@ Two common strategies for adding or removing variables in a multiple regression 
 
 An important consideration in implementing either of these stepwise selection strategies is the criterion used to decide whether to eliminate or add a variable. One commonly used decision criterion is adjusted $R^2$. When using adjusted $R^2$ as the decision criterion, we seek to eliminate or add variables depending on whether they lead to the largest improvement in adjusted $R^2$ and we stop when adding or elimination of another variable does not lead to further improvement in adjusted $R^2$.
 
-### Backward Selection
+#### Backward Selection
 
 Let's consider two models, which are shown in @tbl-loans-full-for-model-selection and @tbl-loans-full-except-issue-month below. The first table summarizes the full model since it includes **all** predictors, while the second does not include the `issue_month` variable.
 
@@ -602,7 +608,7 @@ None of these models lead to an improvement in adjusted $R^2$, so we do not elim
 
 <!-- 0.15 \times \texttt{term} + 0.23 \times \texttt{credit_check}$$ -->
 
-### Forward Selection
+#### Forward Selection
 
 Next, let's use forward selection to construct a model for predicting `interest_rate` from the `loans` data.
 
@@ -653,8 +659,30 @@ Additionally, backward elimination and forward selection sometimes arrive at dif
 
 There is no "one size fits all" model selection strategy, which is why there are so many different model selection methods. We hope you walk away from this exploration understanding how stepwise selection is carried out and the considerations that should be made when using stepwise selection with regression models.
 
-# Other model selection strategies
+## Other model selection strategies
 
 Stepwise selection using adjusted $R^2$ as the decision criteria is one of many commonly used model selection strategies. Stepwise selection can also be carried out with decision criteria other than adjusted $R^2$, such as p-values, which you'll learn about in later weeks, or AIC (Akaike information criterion) or BIC (Bayesian information criterion), which you might learn about in more advanced statistics courses or your disciplinary courses.
 
 Alternatively, one could choose to include or exclude variables from a model based on expert opinion or due to research focus. In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
+
+# Concept Quiz -- Due Tuesday by noon
+
+**Question 1** -- $R^2$ is the [correlation / percent] of variation in the [explanatory / response] variable that is explained by the [response variables / explanatory variables] and the [decided model / best model / linear model]. 
+
+**Question 2** -- Adjusted $R^2$ should be used for [simple / multiple] linear regression and unadjusted $R^2$ should be used for [simple / multiple] linear regression. 
+
+**Question 3** -- In the adjusted $R^2$ formula $n$ represents the [number of explanatory variables / sample size / response variable] and $k$ represents the [number of explanatory variables / sample size / number of coefficients needed to be calculated]. 
+
+**Question 4** -- When choosing a model based on adjusted $R^2$, the model with the [lowest / highest] value should be chosen. 
+
+**Question 5** -- Backward selection starts with the model with [no / every] explanatory variable included. 
+
+**Question 6** -- Backward selection [adds / removes] variables from the model. If the [R-squared / correlation / adjusted R-squared] when the variable is [added / removed] is [smaller / larger], the variable will be [added / removed] from the final model. 
+
+**Question 7** -- Forward selection starts with the model with [no / every] explanatory variable included. 
+
+**Question 8** -- Forward selection [adds / removes] variables from the model. If the [R-squared / correlation / adjusted R-squared] when the variable is [added / removed] is [smaller / larger], the variable will be [added / removed] from the final model. 
+
+# R Tutorial -- Due Thursday by noon
+
+[Assessing Model Fit](https://openintro.shinyapps.io/ims-03-model-05/#section-assessing-model-fit)

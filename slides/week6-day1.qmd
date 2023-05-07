@@ -14,7 +14,7 @@ library(moderndive)
 library(palmerpenguins)
 ```
 
-::: {style="font-size: 2.5em; color: #B6CADA;"}
+::: {style="font-size: 2.5em; color: #76b5c5;"}
 **What is model selection?**
 :::
 
@@ -22,7 +22,7 @@ library(palmerpenguins)
 
 </br> </br>
 
-::: {style="font-size: 2.5em; color: #B6CADA;"}
+::: {style="font-size: 2.5em; color: #e28743;"}
 **Why use model selection?**
 :::
 
@@ -56,7 +56,7 @@ slice_sample(evals, n = 3) |>
 
 ## 
 
-::: {style="font-size: 2em; color: #B6CADA;"}
+::: {style="font-size: 2em; color: #76b5c5;"}
 How do you use model selection?
 :::
 
@@ -81,13 +81,15 @@ How do you use model selection?
 
 . . .
 
-::: {style="font-size: 0.9em; color: #0F4C81;"}
+</br>
+
+::: {style="font-size: 0.9em; color: #e28743;"}
 **With any of these methods, you get to choose *how* you decide if one model is better than another model.**
 :::
 
 ## 
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 2em; color: #76b5c5;"}
 $R^2$ -- Coefficient of Determination
 :::
 
@@ -126,19 +128,23 @@ $R^2 = 1 - \frac{\text{var}(\text{residuals})}{\text{var}(y)}$
 
 . . .
 
-::: {style="font-size: 1.5em; color: #0F4C81;"}
-**Suppose we have a simple linear regression with an** $R^2$ of 0.85. How would you interpret this quantity?
+::: {style="font-size: 1.5em; color: #e28743;"}
+Suppose we have a simple linear regression with an $R^2$ of 0.85. How would you interpret this quantity?
 :::
 
 ## 
 
-::: {style="font-size: 2em;"}
+::: {style="font-size: 1.5em;"}
 But! $R^2$ **always** increases as you increase the number of explanatory variables.
 :::
 
 . . .
 
 </br>
+
+::: {style="color: #e28743;"}
+The variance of the residuals will **always** decrease when you include additional explanatory variables.
+:::
 
 ::: columns
 ::: {.column width="45%"}
@@ -159,7 +165,7 @@ $0.86 = 1 - \frac{0.7}{5}$
 
 ## 
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 2em; color: #76b5c5;"}
 Adjusted $R^2$
 :::
 
@@ -182,23 +188,25 @@ Adjusted $R^2$
 
 ## 
 
-::: {style="font-size: 1.5em"}
+::: {style="font-size: 1.25em"}
 $R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1)}{(n - k - 1)}$
 :::
 
 -   $n$ is the sample size
 
--   $k$ is the number of predictor variables in the model
+-   $k$ is the number of coefficients needed to be calculated
 
 . . .
 
-::: {style="font-size: 1.25em; color: #0F4C81;"}
-**Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. What value will you use for** $k$ in the calculation of $n - k - 1$?
+::: {style="font-size: 1.25em; color: #e28743;"}
+Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels. 
+
+> What value will you use for $k$ in the calculation of $n - k - 1$?
 :::
 
 ## 
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 2em; color: #76b5c5;"}
 p-values
 :::
 
@@ -221,7 +229,7 @@ p-values
 
 ## 
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 2em; color: #76b5c5;"}
 AIC -- An Information Criterion
 :::
 
@@ -244,14 +252,15 @@ AIC -- An Information Criterion
 
 ## 
 
-::: {style="font-size: 1.5em; color: #B6CADA;"}
-Well, how do you use AIC to choose a "best" model?
+::: {style="font-size: 1.5em; color: #76b5c5;"}
+How do you use AIC to choose a "best" model?
 :::
 
 . . .
 
 </br>
 
+::: {style="font-size: 0.75em;"}
 ```{r}
 #| echo: false
 
@@ -284,10 +293,13 @@ aic_table %>%
   kableExtra::kable_styling()
 
 ```
+:::
 
 . . .
 
-::: {style="font-size: 0.75em; color: #B6CADA;"}
+</br> 
+
+::: {style="font-size: 1.1em; color: #e28743;"}
 If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that is mathematically close to $p > 0.05$.
 :::
 
