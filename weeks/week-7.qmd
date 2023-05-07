@@ -19,35 +19,21 @@ execute:
   message: false
 ---
 
-# Prepare
-
-## Textbook Reading -- Part 1
+# Textbook Reading -- Part 1
 
 [**Required Reading:** Exploring Sampling Variability](chapters/week7-reading1.html)
 
-### Reading Guide -- Due Tuesday by noon
+## Reading Guide -- Due Tuesday by noon
 
 [Download the Word Document](reading-guide/week7-reading1.docx)
 
-::: callout-note
-# Submission
+# Textbook Reading -- Part 2
 
-Submit your completed reading guide to the Canvas assignment portal!
-:::
+[**Required Reading:** Confidence Intervals for the Slope](chapters/week7-reading2.html)
 
-## Textbook Reading -- Part 2
-
-[**Required Reading:** Confidence Intervals for the Slope](https://moderndive.com/3-wrangling.html)
-
-### Reading Guide -- Due Thursday by noon (note the new time!)
+## Reading Guide -- Due Thursday by noon (note the new time!)
 
 [Download the Word Document](reading-guide/week7-reading2.docx)
-
-::: callout-note
-# Submission
-
-Submit your completed reading guide to the Canvas assignment portal!
-:::
 
 ## Concept Quiz -- Due Thursday by noon (note the new time!)
 
@@ -128,9 +114,3 @@ fishing with a spear
 ## R Tutorial -- Due Thursday by noon
 
 [**Required Tutorial:** Practice the infer Workflow](tutorial/infer-CI-tutorial.html)
-
-::: callout-note
-# Submission
-
-Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
-:::
