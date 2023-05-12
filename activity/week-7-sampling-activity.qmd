@@ -99,7 +99,7 @@ evals_small  %>%
   count(gender, rank) %>% 
   mutate(perc = paste(n / 50 * 100, "%", sep = "")) %>% 
   select(-n) %>% 
-  pander::pander() 
+  gt::gt() 
 ```
 :::
 
