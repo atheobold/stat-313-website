@@ -14,18 +14,6 @@ library(moderndive)
 library(infer)
 ```
 
-## Data
-
-We will consider data from many different studies, but the main one will be the `evals` dataset from course evaluations at UT Austin.
-
-```{r evals-smalls}
-#| echo: false
-evals_small <- evals %>% 
-  select(prof_ID, score, age, gender, rank) 
-
-glimpse(evals_small)
-```
-
 ## Deciding a Study Population
 
 Often when reading a statistical study, you will not know who the researchers thought of as their target population, and are left to imagine who the study population may have been.
@@ -46,19 +34,15 @@ Often when reading a statistical study, you will not know who the researchers th
 
 </br></br>
 
-4.  Comment on the "random-ness" of the following studies:
+4.  Comment on the **"random-ness"** (not representative-ness) of the following study:
 
--   A Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of five randomly chosen graduates, contact them, and obtain their answers.
-
-</br></br>
-
--   You want to know the prevalence of illegal downloading of TV shows among students at a local college. You get the emails of 100 randomly chosen students and ask them, "How many times did you download a pirated TV show last week?".
+-   A Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers.
 
 </br></br>
 
 ## Sampling Randomly
 
-5.  Suppose we have a database of every professor at UT Austin, and are interested in studying the relationship between evaluations and age.
+5.  Suppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor's teaching evaluations and their age.
 
 -   How would we go about randomly sampling observations from the database?
 
@@ -68,7 +52,7 @@ Often when reading a statistical study, you will not know who the researchers th
 
 </br></br>
 
--   Would we expect that our sample look like the population at UT Austin?
+-   Would we expect that our sample look like the population of professors at UT Austin?
 
 </br></br>
 
@@ -84,17 +68,22 @@ Often when reading a statistical study, you will not know who the researchers th
 
 </br></br>
 
--   You want to know the average number of people in each household in your city. You randomly pick out 500 phone numbers from the phone book and conduct a phone survey.
+-   You want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house. 
 
 </br></br>
 
 ## Sampling Representatively
 
+8.  Suppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different tenure statuses. How would we go about collecting a representative sample that accounts for these demographic characteristics?
+
 ::: columns
 ::: {.column width="45%"}
+**Sample Demographics**
+
 ```{r}
 #| echo: false
-evals_small  %>% 
+evals  %>% 
+  select(prof_ID, gender, ethnicity, rank) %>% 
   slice_sample(n = 50) %>% 
   count(gender, rank) %>% 
   mutate(perc = paste(n / 50 * 100, "%", sep = "")) %>% 
@@ -107,24 +96,33 @@ evals_small  %>%
 :::
 
 ::: {.column width="40%"}
+
+**Population Demographics**
+
 -   Female teaching = 28%\
 -   Female tenure track = 15%\
 -   Female tenured = 12%
 :::
 :::
 
-8.  Suppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different tenure statuses. How would we go about collecting a representative sample that accounts for these demographic characteristics?
+
 
 \newpage
 
 ## Sampling Issues
 
-In the `evals` data, the courses included in the dataset were only taught by 94 unique professors.
+In the `evals` data, the courses included in the dataset were only taught by 94 unique professors. If we were interested in making inferences about the relationship between eval scores and age for professors at UT Austin, a simpler approach would be to have **one** observation per professor! 
 
 ::: columns
 ::: {.column width="40%"}
 ```{r}
-count(evals, prof_ID)
+#| echo: false
+
+count(evals, prof_ID, sort = TRUE) %>% 
+  rename(`Number of Times Sampled` = n, 
+         `Professor ID` = prof_ID) %>% 
+  slice_head(n = 10) %>% 
+  gt::gt()
 ```
 :::
 
