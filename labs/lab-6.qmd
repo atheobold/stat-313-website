@@ -1,7 +1,7 @@
 ---
 title: "Predicting Professor Evaluation Scores"
 author: "Your group's names here!"
-date: "May 12, 2023"
+date: "May 11, 2023"
 format: 
   html:
     embed-resources: true
@@ -67,7 +67,7 @@ Based on this output, we are starting with a **really** low adjusted $R^2$. So, 
 
 ### Step 1
 
-**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01)
+**Rules: You can only add a variable to the model if it improves the adjusted $R^2$ by at least 1% (0.01).**
 
 Alright, so now we get cooking. The next step is to fit **every** model with **one** explanatory variable. I've provided a list of every explanatory variable you are allowed to consider!
 
@@ -84,11 +84,11 @@ Alright, so now we get cooking. The next step is to fit **every** model with **o
 -   `eval_completion` -- proportion of students who completed the evaluation
 -   `cls_level` -- class level
 
-Woof, that's 12 different variables. That means, for this first round, you will need to compare the adjusted $R^2$ for 12 different models to decide what variable should be added.
+Woof, that's 12 different variables. That means, for this first round, you will need to compare the adjusted $R^2$ for **12** different models to decide what variable should be added.
 
 Every model you fit will have the *same* format:
 
-```         
+```
 name_of_model <- lm(score ~ <variable>, data = evals_train)
 ```
 
@@ -123,19 +123,19 @@ get_regression_summaries(one_language)
 
 ```
 
-**1. What model was your top model? Specifically, what variable was selected to be included in your top model?**
+**1. What model was your top model? Specifically, which variable was selected to be included?**
 
 ### Step 2
 
 Alright, you've added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: **every model you fit needs to contain the variable you decided to add**. So, if you decided to add the `bty_avg` variable, every model you fit would look like this:
 
-```         
+```
 name_of_model <- lm(score ~ bty_avg + <variable>, data = evals_train)
 ```
 
 Again, the name of the model will need to change. This round, you are on your own -- I've provided you with no code. Here are my recommendations:
 
--   name each model `two_` followed by the names of both variables (e.g., `two_bty_id`)
+-   name each model `two_` followed by the names of both variables included in the model (e.g., `two_bty_id`)
 -   go through each variable step-by-step just like you did before
 
 ```{r adding-a-second-variable}
@@ -147,7 +147,7 @@ Again, the name of the model will need to change. This round, you are on your ow
 
 Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 101models is the "top" model.
 
-**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01) from the model you chose in Question 1.
+**Rules: You can only add a variable to the model if it improves adjusted $R^2$ by at least 1% (0.01) from the model you chose in Question 1.**
 
 ```{r two-variable-model-summaries}
 ## Code to compare all 11 models you fit goes here!
@@ -156,7 +156,7 @@ Alright, now you should have 11 more models to compare! Like before, you need to
 
 ```
 
-**2. What model was your top model? Specifically, what variables are included in your top model?**
+**2. What model was your top model? You must state which variables are included in the model you chose!**
 
 ### Step 3
 
@@ -164,7 +164,7 @@ As you might have expected, in this step we add a *third* variable to our top mo
 
 This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how what the code looks:
 
-```         
+```
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
@@ -199,7 +199,7 @@ evals_train %>%
 
 The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
 
-**3. What model was your top model? Specifically, what variables are included in your top model?**
+**3. What model was your top model? You must state which variables are included in the model you chose!**
 
 ### Step 4
 
@@ -223,7 +223,7 @@ evals_train %>%
 
 The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
 
-**4. What model was your top model? Specifically, what variables are included in your top model?**
+**4. What model was your top model? You must state which variables are included in the model you chose!**
 
 ### Step 5
 
@@ -247,7 +247,7 @@ evals_train %>%
 
 The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
 
-**5. What model was your top model? Specifically, what variables are included in your top model?**
+**5. What model was your top model? You must state which variables are included in the model you chose!**
 
 ### Step 6
 
@@ -271,9 +271,13 @@ evals_train %>%
 
 The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 5 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
 
-**6. What model was your top model? Specifically, what variables are included in your top model?**
+**6. What model was your top model? You must state which variables are included in the model you chose!**
 
 ## Testing Your Top Model
+
+
+**If you choose to test the data on a different model than what you said in #6, you must justify why you are using a different model!**
+
 
 ```{r prediction-error}
 
