@@ -159,7 +159,7 @@ Approximates the true sampling distribution!
 boot1 <- penguins %>%
   specify(response = bill_length_mm, 
           explanatory = body_mass_g) %>% 
-  generate(reps = 5000, type = "bootstrap") %>% 
+  generate(reps = 500, type = "bootstrap") %>% 
   calculate(stat = "slope") 
 
 boot1_CI <- get_confidence_interval(boot1, 
@@ -290,7 +290,7 @@ Generate your resamples!
 penguins %>% 
   specify(response = bill_length_mm, 
           explanatory = body_mass_g) %>% 
-  generate(reps = 1, type = "bootstrap")
+  generate(reps = 500, type = "bootstrap")
 ```
 
 </br>
@@ -330,7 +330,7 @@ Calculate your statistics!
 penguins %>% 
   specify(response = bill_length_mm, 
           explanatory = body_mass_g) %>% 
-  generate(reps = 1, 
+  generate(reps = 500, 
            type = "bootstrap") %>% 
   calculate(stat = "slope")
 ```
@@ -352,7 +352,7 @@ The final product
 #| echo: true
 
 visualize(boot1) + 
-  labs(title = "Bootstrap Distribution of 5,000 reps", 
+  labs(title = "Bootstrap Distribution of 500 reps", 
        x = "Slope Statistic")
 ```
 
@@ -373,7 +373,7 @@ A plausible range of values for: $\beta_1$
 visualise(boot1) +
   shade_confidence_interval(endpoints = boot1_CI, 
                             color = "red", fill = "pink") +  
-  labs(title = "Bootstrap Distribution of 5,000 reps", 
+  labs(title = "Bootstrap Distribution of 500 reps", 
        x = "Slope Statistic")
 ```
 

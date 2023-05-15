@@ -41,14 +41,11 @@ coaches_resample <- coaches %>%
   calculate(stat = "median")
 ```
 
-## Data 
+## Data
 
-Per the California Privacy Rights Act (CPRA), the salaries of employees of
-the state of California are required to be public. We will revisit the 2019 
-salaries of head coaches from CSU and UC universities introduced this week. 
+Per the California Privacy Rights Act (CPRA), the salaries of employees of the state of California are required to be public. We will revisit the 2019 salaries of head coaches from CSU and UC universities introduced this week.
 
-First, let's load the `coaches` data set into your workspace and take a look at
-what the data look like.
+First, let's load the `coaches` data set into your workspace and take a look at what the data look like.
 
 ```{r load-data, exercise = TRUE}
 
@@ -56,26 +53,17 @@ glimpse(coaches)
 
 ```
 
-## Section 1 
+## Section 1
 
 ### Starting with one sample
 
-For our investigation, we are interested in estimating the median salary for 
-all CSU and UC coaches. In class we talked about creating the sampling 
-distribution of the median salary, since I had the salaries of **every** CSU and 
-UC head coach. 
+For our investigation, we are interested in estimating the median salary for all CSU and UC coaches. In class we talked about creating the sampling distribution of the median salary, since I had the salaries of **every** CSU and UC head coach.
 
-Today, I've given you a simple random sample of 50 coaches from the master 
-dataset of all CSU and UC coaches. This context should feel more familiar --- you 
-are interested in estimating the value of the true median salary of all CSU and 
-UC head coaches, given a sample of 50 coaches. 
+Today, I've given you a simple random sample of 50 coaches from the master dataset of all CSU and UC coaches. This context should feel more familiar --- you are interested in estimating the value of the true median salary of all CSU and UC head coaches, given a sample of 50 coaches.
 
-The population median salary of all CSU and UC coaches is: 
-`r median(coaches_master$'Total Pay & Benefits') %>% scales::dollar()`. Let's see how close our
-sample median is to this population median! 
+The population median salary of all CSU and UC coaches is: `r median(coaches_master$'Total Pay & Benefits') %>% scales::dollar()`. Let's see how close our sample median is to this population median!
 
-Use the `summarize()` function to calculate the median ``Total Pay & Benefits``
-for your sample of 50 coaches. 
+Use the `summarize()` function to calculate the median `Total Pay & Benefits` for your sample of 50 coaches.
 
 ```{r sample-median, exercise = TRUE}
 
@@ -91,11 +79,9 @@ summarize(coaches,
           median = median(`Total Pay & Benefits`))
 ```
 
-Plotting the data is possibly more important than calculating the sample
-statistic, since it gives us an idea of the distribution of these 50 salaries. 
+Plotting the data is possibly more important than calculating the sample statistic, since it gives us an idea of the distribution of these 50 salaries.
 
-Create a histogram of the salaries from the sample of 50 coaches. I've given you
-some code to start with, but you'll need to add to it! 
+Create a histogram of the salaries from the sample of 50 coaches. I've given you some code to start with, but you'll need to add to it!
 
 ```{r first-plot, exercise = TRUE}
 ggplot(data = coaches, 
@@ -124,19 +110,13 @@ ggplot(data = coaches,
 
 ## Section 2
 
-Now, let's take our single sample of 50 and see what we might have gotten from 
-other random samples! 
+Now, let's take our single sample of 50 and see what we might have gotten from other random samples!
 
-### One Resample 
+### One Resample
 
-We'll start with getting one bootstrap resample. To do this we take our original 
-sample (stored in the `coaches` dataset) and resample with replacement 50 times. 
-The `rep_sample_n()` function from the **infer** package helps us obtain 
-one of these resamples. All we need to do is specify the `size` and `replace`
-arguments. 
+We'll start with getting one bootstrap resample. To do this we take our original sample (stored in the `coaches` dataset) and resample with replacement 50 times. The `rep_sample_n()` function from the **infer** package helps us obtain one of these resamples. All we need to do is specify the `size` and `replace` arguments.
 
-*Keep in mind: how large your resample should be and whether you should sample 
-with or without replacement*
+*Keep in mind: how large your resample should be and whether you should sample with or without replacement*
 
 ```{r one-resample, exercise = TRUE}
 one_resample <- rep_sample_n(coaches, 
@@ -156,28 +136,23 @@ one_resample <- rep_sample_n(coaches,
                              replace = TRUE)
 ```
 
-Let's compare our resample with our original sample. Your original sample had 
-a median of `r median(coaches_master$'Total Pay & Benefits') %>% scales::dollar()`. Use the `summarize()`
-function to find the median of this resample. 
+Let's compare our resample with our original sample. Your original sample had a median of `r median(coaches_master$'Total Pay & Benefits') %>% scales::dollar()`. Use the `summarize()` function to find the median of this resample.
 
 ```{r one-resample-median, exercise = TRUE}
 
 ```
 
-<div id="one-resample-median-hint">
+::: {#one-resample-median-hint}
 **Hint:** Remember to use the `one_resample` dataset!
-</div>
+:::
 
-### Multiple Resamples 
+### Multiple Resamples
 
-Now, let's take what we learned about creating and summarizing one bootstrap
-resample and scale it up! 
+Now, let's take what we learned about creating and summarizing one bootstrap resample and scale it up!
 
-First, we're going to create 500 different bootstrap resamples, each of size 50.
-We're still using the `rep_sample_n()` function to do this, but now we specify 
-the number of resamples we want with the `reps` argument. 
+First, we're going to create 500 different bootstrap resamples, each of size 50. We're still using the `rep_sample_n()` function to do this, but now we specify the number of resamples we want with the `reps` argument.
 
-Modify your previous code to create 500 bootstrap resamples. 
+Modify your previous code to create 500 bootstrap resamples.
 
 ```{r multiple-resamples, exercise = TRUE}
 multiple_resamples <- rep_sample_n(coaches, 
@@ -202,13 +177,9 @@ multiple_resamples <- rep_sample_n(coaches,
                                    reps = 500)
 ```
 
-Now that we have 500 resamples we need to summarize each sample with a single 
-statistic. In our investigation we are interested in the sample median, so
-that's the statistic we will use. 
+Now that we have 500 resamples we need to summarize each sample with a single statistic. In our investigation we are interested in the sample median, so that's the statistic we will use.
 
-Calculate the median ``Total Pay & Benefits`` for each resample. The `multiple_resamples` dataset contains 25000 numbers --- 50 observations for 500
-samples. So, to get each resample's median we need to `group_by()` the sample ID
-column (`replicate`) **before** we calculate the median. 
+Calculate the median `Total Pay & Benefits` for each resample. The `multiple_resamples` dataset contains 25000 numbers --- 50 observations for 500 samples. So, to get each resample's median we need to `group_by()` the sample ID column (`replicate`) **before** we calculate the median.
 
 ```{r multiple-resample-median, exercise = TRUE}
 multiple_resamples %>% 
@@ -227,20 +198,14 @@ multiple_resamples %>%
   group_by(replicate) %>% 
   summarize(median = median(`Total Pay & Benefits`))
 ```
- 
+
 ## Section 3
 
-For confidence intervals, we'd like to have a method that is a bit more 
-dynamic than what we've been doing with `rep_sample_n()`, `group_by()`, and 
-`summarize()`. The **infer** package includes tools that help us create
-bootstrap resamples, visualize the distribution of our bootstrap statistics, 
-and find confidence intervals.
+For confidence intervals, we'd like to have a method that is a bit more dynamic than what we've been doing with `rep_sample_n()`, `group_by()`, and `summarize()`. The **infer** package includes tools that help us create bootstrap resamples, visualize the distribution of our bootstrap statistics, and find confidence intervals.
 
 ### The infer pipeline
 
-Generating bootstrap statistics has a similar process to what we used
-previously, but it has a very different feel. The process looks something like 
-this:
+Generating bootstrap statistics has a similar process to what we used previously, but it has a very different feel. The process looks something like this:
 
 ```{r, eval = FALSE}
 coaches %>% 
@@ -251,38 +216,27 @@ coaches %>%
 
 Let's walk through each of the components of the infer "pipeline."
 
-__Step 1:__ `specify()` your response (and explanatory) variable(s)
+**Step 1:** `specify()` your response (and explanatory) variable(s)
 
-This step declares to R what variable(s) you are interested in. For this
-tutorial we are only interested in one variable: `Total Pay & Benefits`. In 
-the future, we will include an `explanatory` variable to help explain the
-variability in the response variable. 
+This step declares to R what variable(s) you are interested in. For this tutorial we are only interested in one variable: `Total Pay & Benefits`. In the future, we will include an `explanatory` variable to help explain the variability in the response variable.
 
 ![](images/specify.png)
 
-__Step 2:__ `generate()` resamples
+**Step 2:** `generate()` resamples
 
-The `generate()` step takes your original data and generates bootstrap
-resamples. It knows how many resamples to generate from the quantity specified 
-in the `reps` argument. Additionally, it knows to sample **with replacement** 
-when the `type` argument is set to `"bootstrap"`.  
+The `generate()` step takes your original data and generates bootstrap resamples. It knows how many resamples to generate from the quantity specified in the `reps` argument. Additionally, it knows to sample **with replacement** when the `type` argument is set to `"bootstrap"`.
 
 ![](images/generate.png)
 
-__Step 3:__ `calculate()` bootstrap statistics 
+**Step 3:** `calculate()` bootstrap statistics
 
-Now that you've generated lots of bootstrap resamples, you need to summarize
-them with a single statistic. That statistic is what you tell the `calculate()` 
-function to find! There are lots of different statistics we will explore, but 
-for this investigation our `stat` will be a `"median"`. 
+Now that you've generated lots of bootstrap resamples, you need to summarize them with a single statistic. That statistic is what you tell the `calculate()` function to find! There are lots of different statistics we will explore, but for this investigation our `stat` will be a `"median"`.
 
 ![](images/calculate.png)
 
 ### Your turn!
 
-Take what you've learned about the infer pipeline and create a new dataset, 
-named `coaches_resample` that contains median salaries calculated from 1000 
-bootstrap resamples. 
+Take what you've learned about the infer pipeline and create a new dataset, named `coaches_resample` that contains median salaries calculated from 1000 bootstrap resamples.
 
 ```{r infer-exercise, exercise = TRUE}
 coaches_resample <- coaches %>% 
@@ -317,13 +271,9 @@ coaches_resample <- coaches %>%
 
 ## Section 4
 
-Alright, our final step is to use our bootstrap statistics to calculate a 
-confidence interval for the true median salary of all CSU and UC head coaches. 
+Alright, our final step is to use our bootstrap statistics to calculate a confidence interval for the true median salary of all CSU and UC head coaches.
 
-A nice first step is to visualize how the distribution of bootstrap statistics
-looks. The `coaches_resample` object contains 1000 medians calculated from
-1000 different bootstrap resamples. Let's use the built-in `visualize()` 
-function to make a quick histogram of these bootstrap medians. 
+A nice first step is to visualize how the distribution of bootstrap statistics looks. The `coaches_resample` object contains 1000 medians calculated from 1000 different bootstrap resamples. Let's use the built-in `visualize()` function to make a quick histogram of these bootstrap medians.
 
 ```{r, echo = TRUE}
 visualise(coaches_resample)
@@ -345,33 +295,31 @@ ci_lower <- summarize(coaches_resample,
 names(ci_lower) <- NULL
 ```
 
-It looks like the majority of medians fall between `r ci_lower %>% scales::dollar()` and `r ci_upper %>% scales::dollar()`, but let's quantify this range with a confidence interval. 
+It looks like the majority of medians fall between `r ci_lower %>% scales::dollar()` and `r ci_upper %>% scales::dollar()`, but let's quantify this range with a confidence interval.
 
-The `get_confidence_interval()` function is what we use to find a confidence 
-interval from a set of bootstrap statistics. This function takes three
-arguments:
+The `get_confidence_interval()` function is what we use to find a confidence interval from a set of bootstrap statistics. This function takes three arguments:
 
-1. a dataset containing bootstrap statistics
-2. the level of confidence that should be used
-3. the type of method to use when making the interval
+1.  a dataset containing bootstrap statistics
+2.  the level of confidence that should be used
+3.  the type of method to use when making the interval
 
-This looks something like: 
+This looks something like:
 
 <center>
+
 ```{r, eval = FALSE}
 get_confidence_interval(bootstrap_stats, 
                         level = 0.95, 
                         type = "percentile")
 ```
+
 </center>
 
 </br>
 
-Using these tools, calculate a 99% confidence interval for the population median
-using the 1000 bootstrap statistics you found previously. Use the percentile
-method to calculate your confidence interval. 
+Using these tools, calculate a 99% confidence interval for the population median using the 1000 bootstrap statistics you found previously. Use the percentile method to calculate your confidence interval.
 
-When you are done, preview what your confidence interval looks like! 
+When you are done, preview what your confidence interval looks like!
 
 ```{r get-CI, exercise = TRUE}
 coaches_CI <- coaches_resample %>% 
@@ -390,5 +338,4 @@ coaches_CI <- coaches_resample %>%
   get_confidence_interval(level = 0.99, type = "percentile")
 ```
 
-
-__How would you interpret the interval you got?__
+**How would you interpret the interval you got?**
