@@ -18,7 +18,7 @@ website:
 
   sidebar:
     background: "#D9E3E4"
-    logo: "images/313_hex.png"
+    logo: "images/cp-stat-hex.png"
     pinned: true
     align: center
     tools:
