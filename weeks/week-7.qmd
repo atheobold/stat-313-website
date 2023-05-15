@@ -23,7 +23,7 @@ execute:
 
 [**Required Reading:** Exploring Sampling Variability](chapters/week7-reading1.html)
 
-::: {.callout-note}
+::: callout-note
 ## Reading Guide -- Due Tuesday by noon
 
 [Download the Word Document](reading-guide/week7-reading1.docx)
@@ -33,7 +33,7 @@ execute:
 
 [**Required Reading:** Confidence Intervals for the Slope](chapters/week7-reading2.html)
 
-::: {.callout-note}
+::: callout-note
 ## Reading Guide -- Due Thursday by noon (note the new time!)
 
 [Download the Word Document](reading-guide/week7-reading2.docx)
@@ -117,4 +117,4 @@ fishing with a spear
 
 # R Tutorial -- Due Thursday by noon
 
-[**Required Tutorial:** Practice the infer Workflow](tutorial/infer-CI-tutorial.html)
+[**Required Tutorial:** Practice the infer Workflow](https://rstudio.csm.calpoly.edu/infer_CI_tutorial/)

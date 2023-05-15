@@ -23,7 +23,11 @@ options(scipen = 999)
 ```
 
 ```{r data, echo = FALSE}
-coaches_master <- read_csv("data/cu_csu_coaches.csv") %>% 
+coaches_master <- read_csv(here::here("weeks", 
+                                      "tutorial", 
+                                      "data", 
+                                      "cu_csu_coaches.csv")
+                           ) %>% 
   filter('Base Pay' > 0)
 
 coaches <- coaches_master %>% 
