@@ -18,6 +18,8 @@ Q5 -
 
 Q6 - 
 
+Prediction - 
+
 ::: {.callout-note}
 # Model Selection Order
 
@@ -107,6 +109,10 @@ OR
 
 > When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....". 
 
+*If they state they added both variables that were tied:*
+
+> You need to choose **one** of the variables provided!
+
 ## Question 5
 
 **To earn a Success:**
@@ -129,5 +135,12 @@ OR
 - includes **all** variables from top model in regression
 
 *If the model fit here differs from their top model, they __must__ state why they fit a different model.*
+
+## Prediction 
+
+**To earn a Success:** 
+
+- make predictions using the top model from #6 (or #5)
+- if a different model is chosen then justification is provided for why
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Lab 7: Confidence Intervals for Water Temperature and Latitude"
 author: "The names of your group members here!"
-date: "May 19, 2023"
+date: "May 18, 2023"
 format: 
   html:
     embed-resources: true
@@ -22,6 +22,8 @@ library(moderndive)
 library(infer)
 library(lterdatasampler)
 
+# This is so you will get the SAME bootstrap distribution every time you run your code
+# So your confidence interval won't change. :) 
 set.seed(1234)
 ```
 
@@ -37,7 +39,7 @@ The moral of the story is that water temperature and latitude are high correlate
 
 ### Our Investigation
 
-The focus of this lab is on quantifying the relationship between water temperature (response) and latitude (explanatory).
+The focus of this lab is on quantifying the relationship between water temperature (response) and latitude (explanatory) for marshes (sites) along the Atlantic coast.
 
 ## Cleaning the Data
 
@@ -52,11 +54,11 @@ pie_crab_clean <- pie_crab %>%
   ungroup()
 ```
 
-**From this point forward, you should use the `pie_crab_clean` dataset for EVERY problem.**
+**From this point forward, you should use the `pie_crab_clean` dataset for EVERY problem.** Keep in mind that you are no longer analyzing data on crabs! The dataset you have is on marshes along the Atlantic coast!
 
 ## Visualizing Relationships
 
-**2. Create a scatterplot modeling the relationship between latitude (explanatory) and water temperature (response).**
+**2. Create a scatterplot modeling the relationship between latitude (explanatory) and water temperature (response) for these 13 marshes.**
 
 *Don't forget to add descriptive axis labels!*
 
@@ -93,7 +95,7 @@ obs_slope <- pie_crab_clean %>%
 
 ## Bootstrap Distribution
 
-Now that we have the observed slope statistic, let's see what variability we might get in the slope statistic for other samples (marshes) we might have gotten from the population (the eastern coast of the US).
+Now that we have the observed slope statistic, let's see what variability we might get in the slope statistic for other samples (marshes) we might have gotten from the population (the Atlantic coast of the US).
 
 As a refresher, when we use resampling to obtain our bootstrap distribution, our steps look like the following:
 
@@ -108,9 +110,8 @@ Let's give this a try!
 **6. Fill in the code to generate 500 bootstrap slope statistics (from 500 bootstrap resamples).**
 
 ```{r boot-dist}
-# The cache: true option stores your distribution so you don't get a new one every time you run the code! 
 
-bootstrap_dist <- pie_crab_clean %>% 
+bootstrap <- pie_crab_clean %>% 
   specify(response = ____, 
           explanatory = ____) %>% 
   generate(reps = ____, 
@@ -143,11 +144,13 @@ This seems like a study where we care a bit less about our interval capturing th
 
 ```
 
-**9. Interpret the confidence interval you obtained in #8. Make sure to include the context of the data!**
+**9. Interpret the confidence interval you obtained in #8. Make sure to include the context of the data and the population of interest!**
 
 Just for fun, let's compare the confidence we obtained using a percentile method with an interval found using the SE method.
 
-**10. Use the `get_confidence_interval()` function to find the 85% confidence interval from your bootstrap distribution, using the SE method!** *Remember -- with the SE method, you need to specify the point estimate!*
+**10. Use the `get_confidence_interval()` function to find the 85% confidence interval from your bootstrap distribution, using the SE method!**
+
+*Remember -- with the SE method, you need to specify the point estimate!*
 
 ```{r ci-se}
 # Code to obtain a 85% SE based confidence interval
@@ -155,10 +158,12 @@ Just for fun, let's compare the confidence we obtained using a percentile method
 
 ```
 
-**11. How do your confidence intervals compare? Why do you believe they are similar or different?**
+**11. How do your confidence intervals compare? Based on the shape of the bootstrap distribution, would you expect for these methods to yield similar results?**
+
+*Hint: Think about the conditions for using the SE method to obtain a confidence interval!*
 
 ## Bootstrap Assumptions
 
 A bootstrap distribution aims to simulate the variability we'd get from other samples from our population. However, the accuracy of these samples relies on the quality of our original sample.
 
-**12. Based on the information given, how do you feel about the assumption a bootstrap distribution makes about the original sample? What issues do you believe might prevent this assumption being appropriate?)**
+**12. Based on the information given, how do you feel about the assumption a bootstrap distribution makes about the original sample? What issues do you believe might prevent this assumption being appropriate?**
