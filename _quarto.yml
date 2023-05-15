@@ -89,9 +89,7 @@ website:
 
 format:
   html:
-    theme:
-        - cosmo
-        - theme.scss
+    theme: cosmo
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap
