@@ -19,7 +19,11 @@ library(openintro)
 Salaries of football coaches
 :::
 
-![](images/football.PNG)
+```{r football-image}
+knitr::include_graphics(here::here("slides", 
+                                   "images", 
+                                   "football.png"))
+```
 
 ```{r data}
 
