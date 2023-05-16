@@ -102,7 +102,7 @@ What types of samples could we collect? Are some methods "better" than other met
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-In your team...
+At your table...
 :::
 
 ::: columns
@@ -111,7 +111,7 @@ In your team...
 **First**
 :::
 
--   sample 10 salaries
+-   each person samples 10 salaries
 -   calculate the median
 :::
 
@@ -123,15 +123,14 @@ In your team...
 **Then**
 :::
 
--   sample 25 salaries
--   calculate the median
+-   calculate the median of all 25 salaries
 :::
 :::
 
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
-You have a sample of 25 UC & CSU coach salaries.
+Each table has a sample of 25 UC & CSU coach salaries.
 :::
 
 . . .
@@ -139,8 +138,6 @@ You have a sample of 25 UC & CSU coach salaries.
 </br>
 
 Would you feel comfortable inferring that the median salary of your sample is close to the median salary of *all* UC & CSU coaches?
-
-. . .
 
 </br>
 
@@ -190,13 +187,13 @@ Sampling Framework
 Statistical Inference
 :::
 
-There were `r nrow(coaches)` "Head Coaches" at University of California and California State Universities in 2019
+There were `r nrow(coaches)` "Head Coaches" at University of California and California State Universities in 2019 (that satisfied my search criteria)
 
 </br>
 
 ::: columns
 ::: {.column width="45%"}
-**Median salary for all coaches**
+**Median salary for all `r nrow(coaches)` coaches**
 
 `r median(coaches$'Total Pay & Benefits') %>% scales::dollar()`
 :::
@@ -215,10 +212,12 @@ Inferring information from your sample onto the population is called **statistic
 Statistical Inference Reasoning
 :::
 
+::: incremental
 -   If the sampling is done at random
 -   the sample is representative of the population
 -   any result based on the sample can generalize to the population
 -   the point estimate is a "good guess" of the unknown population parameter
+:::
 
 ##  {background-color="#B6CADA"}
 
@@ -309,8 +308,7 @@ master_samples %>%
  filter(samps == "50") %>% 
   ggplot(mapping = aes(x = median)) + 
   geom_histogram(binwidth = 6500, color = "white") + 
-  scale_x_continuous(labels = label_comma()
-                     ) + 
+  scale_x_continuous(labels = scales::dollar_format()) +
   labs(x = "Median Salary")
 
 ```
@@ -348,7 +346,7 @@ master_samples %>%
   ggplot(mapping = aes(x = median)) + 
   geom_histogram(binwidth = 6500, color = "white") + 
   facet_wrap(~samps) + 
-  scale_x_continuous(labels = comma) + 
+  scale_x_continuous(labels = scales::dollar_format()) +
   labs(x = "Median Salary") +
   theme(axis.text.x = element_text(hjust = 1, 
                                    vjust = 1, 
@@ -419,7 +417,7 @@ master_samples %>%
              color = "red", 
              linewidth = 1.5) +
   facet_wrap(~samps, ) + 
-  scale_x_continuous(labels = comma) + 
+  scale_x_continuous(labels = scales::dollar_format()) +
   labs(x = "Median Salary")
 
 ```
