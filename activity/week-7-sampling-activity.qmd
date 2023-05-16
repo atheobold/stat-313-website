@@ -1,9 +1,9 @@
 ---
 title: "Exploring Sampling Concepts"
-format: 
-  html: 
-    embed-resources: true
-    standalone: true
+format: docx
+    # html: 
+  #   embed-resources: true
+  #   standalone: true
 editor: visual
 ---
 
@@ -68,7 +68,7 @@ Often when reading a statistical study, you will not know who the researchers th
 
 </br></br>
 
--   You want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house. 
+-   You want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house.
 
 </br></br>
 
@@ -96,7 +96,6 @@ evals  %>%
 :::
 
 ::: {.column width="40%"}
-
 **Population Demographics**
 
 -   Female teaching = 28%\
@@ -105,13 +104,11 @@ evals  %>%
 :::
 :::
 
-
-
 \newpage
 
 ## Sampling Issues
 
-In the `evals` data, the courses included in the dataset were only taught by 94 unique professors. If we were interested in making inferences about the relationship between eval scores and age for professors at UT Austin, a simpler approach would be to have **one** observation per professor! 
+In the `evals` data, the courses included in the dataset were only taught by 94 unique professors. If we were interested in making inferences about the relationship between eval scores and age for professors at UT Austin, a simpler approach would be to have **one** observation per professor!
 
 ::: columns
 ::: {.column width="40%"}
