@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  lib-dir: site_libs
 
 website:
   page-navigation: true
