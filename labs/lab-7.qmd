@@ -86,7 +86,8 @@ Let's calculate both!
 
 **5. Fill in the code below to calculate the observed slope for the relationship between the water temperature (response) and latitude (explanatory).**
 
-*Note: Nothing will be output when you run this code!* 
+*Note: Nothing will be output when you run this code!*
+
 ```{r calculate-slope}
 obs_slope <- pie_crab_clean %>% 
   specify(response = ____, 
