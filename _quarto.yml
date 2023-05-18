@@ -1,7 +1,8 @@
 project:
   type: website
-  output-dir: docs
-  lib-dir: site_libs
+  #output-dir: docs
+  resources:
+    - "*.docx"
 
 website:
   page-navigation: true
@@ -91,7 +92,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - theme.scss
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap
