@@ -27,7 +27,7 @@ Q12:
 
 *If uses another variable:*
 
-> What variable(s) uniquely define each marsh?
+> What variable(s) uniquely defines the location of each marsh?
 
 ## Question 2
 
@@ -45,7 +45,7 @@ They are not required to include a regression line, but if they do, great!
 
 *If they don't have axis labels with the units*:
 
-> It is important to include an axis label stating what the units of each variable are! 
+> It is important to include an axis label stating what the units of each variable are!
 
 ## Question 3
 
@@ -60,7 +60,7 @@ Description includes **all** of the following:
 
 *If they forget one of these*:
 
-> Careful! You were asked to describe the form, direction, strength, and unusual points for the plot.
+> Careful! You were asked to describe the form, direction, strength, and unusual points for the plot. Remember, it is important to explicitly state where you believe the outliers are, so the reader knows where to look!
 
 *If they don't state [where]{.underline} the outlier is*:
 
@@ -134,6 +134,10 @@ Their axis label **must** describe what is being plotted (e.g., slope statistics
 
 > It is important to include an axis label stating what is being plotted! What is being plotted on this bootstrap distribution?
 
+**If their axis label is not about the slope statistic:**
+
+> What is being plotted in this distribution? What is it a distribution of? What statistics did you calculate in the previous step that are being plotted here?
+
 ## Question 8
 
 **To earn a Success:**
@@ -161,7 +165,7 @@ The interpretation must state:
 -   **confidence**: they are 85% confident
 -   **statistic**: the slope between water temperature and latitude
 -   **population**: for all marshes along the eastern US
--   **interval**: is between [lower bound] and [upper bound]
+-   **interval**: is between \[lower bound\] and \[upper bound\]
 
 ::: callout-note
 Note that every group will get a different interval, due to the randomness of bootstrapping!
@@ -177,7 +181,7 @@ Note that every group will get a different interval, due to the randomness of bo
 
 *If they have state an incorrect population*:
 
-> What population were these 13 marshes drawn from? What population does your confidence interval apply to?
+> Careful! Are you analyzing data on crabs or on marshes? What population were these 13 marshes drawn from? Where were these marshes located? What population of marshes does your confidence interval apply to?
 
 ## Question 10
 
@@ -197,13 +201,12 @@ get_confidence_interval(bootstrap_dist,
 
 *If they don't have `type = "se"`*:
 
-> What method do you want the function to use when calculating your confidence interval? Percentile intervals are the default! 
+> What method do you want the function to use when calculating your confidence interval? Percentile intervals are the default!
 
-::: {.callout-note}
+::: callout-note
 If they type in the actual number for the estimated slope rather than using the `obs_slope` object, you can give them this reminder:
 
-> It is better practice not to "hard-code" numbers in our code, but to reference values stored in objects. This makes our code more resistant to changes in the dataset. 
-
+> It is better practice not to "hard-code" numbers in our code, but to reference values stored in objects. This makes our code more resistant to changes in the dataset.
 :::
 
 ## Question 11
@@ -232,12 +235,14 @@ If they type in the actual number for the estimated slope rather than using the 
 I'm willing to be pretty flexible here, but the key aspect is that they need to **justify** their reasoning.
 :::
 
+*If their justification is about crabs*:
+
+> Careful! Are you analyzing data on crabs or on marshes? The population of marshes you define in #9 is what you should use to assess if the assumption of bootstrapping is reasonable. 
+
 *If their justification is not reasonable*:
 
-> Where were these 13 marshes located geographically? Do you believe that these 13 marshes are representative of the broader population they were sampled from? 
+> Where were these 13 marshes located geographically? Do you believe that these 13 marshes are representative of the broader population they were sampled from?
 
 *If their justification is about the shape of the bootstrap distribution*:
 
 > You are on the right track, we need for the sample to be representative of the population from which it was sampled. However, we cannot assess the representativeness of a sample using a bootstrap distribution. This can only be assessed by inspecting how the data were collected.
-
-
