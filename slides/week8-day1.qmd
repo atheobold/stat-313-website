@@ -1,5 +1,5 @@
 ---
-title: "`r emo::ji('scientist')` P-values & Hypothesis Tests"
+title: "🧑🏽‍🔬 P-values & Hypothesis Tests"
 format: 
   revealjs:
     theme: dark
@@ -28,27 +28,32 @@ Weeks 8, 9, & 10
 
 ::: columns
 ::: {.column width="30%"}
+::: fragment
 **Week 8**
 
 -   Learn about hypothesis testing for slope
 -   Critique use of p-values for statistical arguments
 :::
+:::
 
 ::: {.column width="30%"}
+::: fragment
 **Week 9**
 
 -   Learn about one-way ANOVA
 -   Get started on first portion of Final Project
 :::
+:::
 
 ::: {.column width="30%"}
+::: fragment
 **Week 10**
 
 -   Learn about two-way ANOVA
 -   Finish Final Project
 :::
 :::
-
+:::
 ## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
@@ -71,7 +76,7 @@ What if I want to know if the population parameter differs from a specific value
 
 <center>
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 3em; color: #0F4C81;"}
 Hypothesis test!
 :::
 
@@ -126,7 +131,7 @@ Again, knowing a statistic's behavior helps us make better / more informed decis
 . . .
 
 ::: {style="font-size: 0.75em; color: #FFFFFF;"}
-This helps us know what statistics are more or less likely to occur if the null hypothesis is true.
+This helps us know what statistics are more or less likely to occur [if the null hypothesis is true]{style="color: #e28743"}.
 :::
 
 ##  {background-color="#B6CADA"}
@@ -159,7 +164,7 @@ Create new ordered pairs by randomly pairing $x$ values with $y$ values (permuti
 
 <center>
 
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #76b5c5;"}
 **This is your *permuted resample*!**
 :::
 
@@ -181,7 +186,7 @@ Calculate a numerical summary (e.g., mean, median) for each permuted resample.
 
 <center>
 
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #76b5c5;"}
 **These are your *permuted statistics*!**
 :::
 
@@ -195,7 +200,7 @@ Permutation Distribution
 
 . . .
 
-> [*definition*: a distribution of the]{style="color: #000000;"} [*permuted statistics*]{style="color: #0F4C81;"} [from every]{style="color: #000000;"} [*permuted resample*]{style="color: #0F4C81;"}
+> [*definition*: a distribution of the]{style="color: #000000;"} [*permuted statistics*]{style="color: #e28743;"} [from every]{style="color: #000000;"} [*permuted resample*]{style="color: #e28743;"}
 
 . . .
 
@@ -203,7 +208,7 @@ Displays the variability in the statistic that could have happened with repeated
 
 . . .
 
-::: {style="color: #0F4C81;"}
+::: {style="color: #e28743;"}
 Approximates the true sampling distribution under the null!
 :::
 
@@ -215,16 +220,17 @@ How do I get my p-value?
 
 . . .
 
-::: {style="font-size: 1.25em; color: #0F4C81;"}
+::: {style="font-size: 1.25em; color: #e28743;"}
 We compare the observed statistic with the statistics produced assuming the null hypothesis was true.
 :::
+
 
 . . .
 
 </br>
 
 ::: {style="font-size: 1.25em;"}
-A p-value summarizes the [**probability**]{style="color: #0F4C81;"} of obtaining a sample statistic [as or more extreme than what we observed]{.underline}, [**if the null hypothesis was true**]{style="color: #0F4C81;"}.
+A p-value summarizes the [**probability**]{style="color: #76b5c5;"} of obtaining a sample statistic [as or more extreme than what we observed]{.underline}, [**if the null hypothesis was true**]{style="color: #76b5c5;"}.
 :::
 
 ## 
@@ -239,7 +245,7 @@ Your turn!
 
 ::: columns
 ::: {.column width="45%"}
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #76b5c5;"}
 a permutation distribution
 :::
 :::
@@ -248,7 +254,7 @@ a permutation distribution
 :::
 
 ::: {.column width="45%"}
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #e28743;"}
 a bootstrap distribution
 :::
 :::
@@ -304,7 +310,7 @@ ggplot(data = hbr_maples,
 
 . . .
 
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #76b5c5;"}
 **What condition do we need to be worried about?**
 :::
 
@@ -469,10 +475,12 @@ hbr_maples %>%
 
 </br>
 
-    Error: Permuting should be done only when doing independence hypothesis test. See `hypothesize()`.
-    In addition: Warning message:
-    You have given `type = "permute"`, but `type` is expected to be `"bootstrap"`.
-    This workflow is untested and the results may not mean what you think they mean. 
+```         
+Error: Permuting should be done only when doing independence hypothesis test. See `hypothesize()`.
+In addition: Warning message:
+You have given `type = "permute"`, but `type` is expected to be `"bootstrap"`.
+This workflow is untested and the results may not mean what you think they mean. 
+```
 
 ## 
 
@@ -561,7 +569,7 @@ visualise(null_dist) +
 
 . . .
 
-::: {style="font-size: 1em; color: #0F4C81;"}
+::: {style="font-size: 1em; color: #e28743;"}
 **Is our observed statistic unlikely to have happened if the null hypothesis was true?**
 :::
 
@@ -584,7 +592,7 @@ get_p_value(null_dist,
 
 </br>
 
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #ed8402;"}
 Why did we get a warning?
 :::
 
@@ -596,7 +604,14 @@ How do we interpret a p-value?
 
 . . .
 
-> ["The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple's stem length and stem dry mass.]{style="color: #0F4C81;"}
+Need: 
+
+- probability of what we saw in the data
+- assuming the null hypothesis is true
+
+. . .
+
+> ["The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple's stem length and stem dry mass.]{style="color: #D4D4D4;"}
 
 ## 
 
@@ -621,11 +636,11 @@ Exit ticket
 :::
 
 ::: {style="font-size: 2em; color: #000000;"}
-Suppose we obtained a p-value of 0.6.
+Suppose we had obtained a p-value of 0.6 for the relationship between stem length and stem dry mass.
 :::
 
 </br>
 
 ::: {style="font-size: 2em; color: #0F4C81;"}
-How would we interpret this value?
+How would you interpret this value?
 :::
