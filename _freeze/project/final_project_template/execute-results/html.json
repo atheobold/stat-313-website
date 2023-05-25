@@ -1,0 +1,14 @@
+{
+  "hash": "4207e6e1f0ce7c3d2c662d848530f887",
+  "result": {
+    "markdown": "---\ntitle: \"Your Title Goes Here! Make it fun!\"\nauthor: \"Your Name Here!\"\nformat: \n  html:\n    code-tools: true\n    self-contained: true\neditor: visual\nexecute: \n  echo: false\n  message: false\n  warning: false\n---\n\n::: {.cell}\n\n:::\n\n\n# Introduction\n\n## Data Description\n\n## Research Question(s)\n\n# Methods\n\n## Variables\n\n## Data Visualizations\n\n\n::: {.cell layout-nrow=\"2\" layout-align=\"center\"}\n\n:::\n\n\n## Model Conditions\n\n# Findings\n\n## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## Additive Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## Interaction Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## Model Conclusions\n\n# Scope of Inference\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
