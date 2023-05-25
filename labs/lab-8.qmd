@@ -1,11 +1,10 @@
 ---
 title: "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests"
 author: "Your group's names here!"
-date: "May 26, 2023"
+date: "May 25, 2023"
 format: 
   html:
     embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: true
@@ -70,9 +69,9 @@ lterdatasampler::hbr_maples %>%
 
 Similarly, you can a log-transformation of the x-variable would be helpful by adding a `scale_x_log10()` layer to your plot.
 
-**2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear.**
+**2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be _one_ plot for this problem!**
 
-*Remember to include nice axis labels (with units!).*
+*Remember to include nice axis labels (with any transformed units!).*
 
 ```{r log-transformed-plot}
 
@@ -80,12 +79,12 @@ Similarly, you can a log-transformation of the x-variable would be helpful by ad
 
 # Statistical Model
 
-**3. Use `lm()` to fit the regression model you chose in #2.**
+**3. Fill in the code to fit the regression model you chose in #2.**
 
 *To include a variable with a log transformation in your model, you input the `variable` as `log(variable)` inside the `lm()` function (e.g., `lm(log(stem_dry_mass) ~ stem_length, data = hbr_maples)`.*
 
 ```{r chosen-slr}
-
+gapminder_lm <- lm(____ ~ ____, data = gapminder)
 ```
 
 ## Assessing Model Conditions
@@ -97,6 +96,10 @@ The next step is to check the conditions of our statistical model, we do this by
 Each row of the `gapminder` dataset is an observation for one country for one year (from 1952 to 2007).
 
 **4. Do you believe is it reasonable to assume these observations are independent of one another?**
+
+*Hint: This condition says the _rows_ of the dataset are independent of each other. Look at the rows of the dataset, is there any reason to believe there are relationships between the rows?*
+
+
 
 ### Normality of Residuals
 
@@ -158,7 +161,6 @@ After you have calculated your observed statistic, you need to create a permutat
 **9. Generate 500 permuted statistics for the permutation distribution and save these statistics in an object named `null_dist`.**
 
 ```{r null-dist}
-# Code for question 7 goes here! 
 
 null_dist <- 
 
@@ -172,7 +174,7 @@ visualise(null_dist)
 
 **10. Use the `shade_p_value()` function to add (`+`) a vertical red line to the plot above, demonstrating where the observed slope statistic (`obs_slope`) falls on the distribution.**
 
-<!-- Add your code to the plot above! -->
+*Add your code to the plot above!*
 
 Now that you have calculated the observed statistic and generated a permutation distribution, you can calculate the p-value for your hypothesis test using the function `get_p_value()` from the infer package.
 
@@ -190,7 +192,7 @@ get_p_value(null_dist,
 
 As we saw in the reading this week, the output from the `get_regression_table()` function provides us with theory-based estimates of our standard error, $t$-statistic, and p-value.
 
-**Use the `get_regression_table()` function to obtain the theory-based p-value for your hypothesis test.**
+**13. Use the `get_regression_table()` function to obtain the theory-based p-value for your hypothesis test.**
 
 *Hint: You'll want to use the model you fit in #3.*
 
@@ -198,10 +200,10 @@ As we saw in the reading this week, the output from the `get_regression_table()`
 
 ```
 
-**13. How does this p-value compare to what you obtained in #11?**
+**14. How does this p-value compare to what you obtained in #11?**
 
-**14. Why do you believe these p-values were similar or different?**
+**15. Why do you believe these p-values were similar or different?**
 
-**15. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?**
+**16. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?**
 
 *Note: If you believe neither are reliable, say so and state why.*
