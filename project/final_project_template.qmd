@@ -18,7 +18,7 @@ library(broom)
 library(ggridges)
 
 # This is where you will load in your data! 
-# Reference the R package you data live inside, since you will need to load that package in!
+# Reference the R package you data live in, since you will need to load that package in!
 
 
 ```
@@ -45,6 +45,8 @@ library(ggridges)
 
 
 ```
+
+## Description of Relationships
 
 ## Model Conditions
 
