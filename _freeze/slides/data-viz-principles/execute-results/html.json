@@ -1,0 +1,20 @@
+{
+  "hash": "3fa756561627875d44d9d19419136ed0",
+  "result": {
+    "markdown": "---\ntitle: \"Data Visualization Principles\"\nformat: \n  revealjs:\n    self-contained: true\n---\n\n::: {.cell}\n\n:::\n\n\n::: columns\n::: {.column width=\"45%\"}\n[Edward Tufte](https://thedoublethink.com/tuftes-principles-for-visualizing-quantitative-information/) ![](images/tufte.gif)\n\n*Minimalism*\n:::\n\n::: {.column width=\"5%\"}\n:::\n\n::: {.column width=\"50%\"}\n::: {style=\"font-size: 0.75em; color: #FFFFFF;\"}\n> One of Tufte's ideas is data-to-ink ratio, generally stating that when creating a visualization, you should try to maximize the amount of \"ink\" (physical or digital) used to represent the data, and minimize the amount used to represent everything else not important to understanding.\n:::\n:::\n:::\n\n## \n\n::: {style=\"font-size: 2em; color: #FFFFFF;\"}\n`theme_classic()` in `ggplot()`\n:::\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](data-viz-principles_files/figure-revealjs/minimal-1.png){fig-align='center' width=960}\n:::\n:::\n\n\n## \n\n::: {style=\"font-size: 2em; color: #FFFFFF;\"}\nGestalt Principles\n:::\n\n::: columns\n::: {.column width=\"40%\"}\n[Gestalt psychology](https://en.wikipedia.org/wiki/Gestalt_psychology) is a theory of perception that believes humans are inclined to understand objects as an entire structure rather than the sum of its parts.\n:::\n\n::: {.column width=\"5%\"}\n:::\n\n::: {.column width=\"55%\"}\n[Gestalt Principles for Data Visualization](https://medium.com/nightingale/how-to-apply-gestalt-psychology-principles-in-data-visualization-6242f4f1a3de)\n\n::: {style=\"font-size: 0.75em; color: #FFFFFF;\"}\n> The Figure and Ground Principle describes the capacity to perceive the relationship between form and surrounding space to create meaning. A sense of wholeness or unity depends on how you perceive the relationship between an object and the area in which it is contained. The 'figure' is the focus element, while the 'ground' is the figure's background.\n:::\n:::\n:::\n\n## \n\n::: {style=\"font-size: 2em; color: #FFFFFF;\"}\n`theme_bw()` in `ggplot()`\n:::\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](data-viz-principles_files/figure-revealjs/classic-1.png){fig-align='center' width=960}\n:::\n:::\n\n\n<center>[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)</center>\n\n",
+    "supporting": [
+      "data-viz-principles_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

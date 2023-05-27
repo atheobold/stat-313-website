@@ -30,104 +30,6 @@ evals_small <- moderndive::evals %>%
   distinct(prof_ID, .keep_all = TRUE) 
 ```
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Data Visualization Principles
-:::
-
-. . .
-
-::: columns
-::: {.column width="45%"}
-[Edward Tufte](https://thedoublethink.com/tuftes-principles-for-visualizing-quantitative-information/) ![](images/tufte.gif)
-
-*Minimalism*
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="50%"}
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-> One of Tufte's ideas is data-to-ink ratio, generally stating that when creating a visualization, you should try to maximize the amount of "ink" (physical or digital) used to represent the data, and minimize the amount used to represent everything else not important to understanding.
-:::
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-`theme_classic()` in `ggplot()`
-:::
-
-```{r minimal}
-#| echo: false
-#| fig-align: center
-
-ggplot(data = penguins, 
-       mapping = aes(x = bill_length_mm, 
-                     y = bill_depth_mm, 
-                     color = species)) + 
-  geom_point() +
-  labs(y = "Bill Depth (mm)", 
-       x = "Bill Length (mm)", 
-       color = "Penguin Species") +
-  theme_classic()
-```
-
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Gestalt Principles
-:::
-
-::: columns
-::: {.column width="40%"}
-[Gestalt psychology](https://en.wikipedia.org/wiki/Gestalt_psychology) is a theory of perception that believes humans are inclined to understand objects as an entire structure rather than the sum of its parts.
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-[Gestalt Principles for Data Visualization](https://medium.com/nightingale/how-to-apply-gestalt-psychology-principles-in-data-visualization-6242f4f1a3de)
-
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-> The Figure and Ground Principle describes the capacity to perceive the relationship between form and surrounding space to create meaning. A sense of wholeness or unity depends on how you perceive the relationship between an object and the area in which it is contained. The 'figure' is the focus element, while the 'ground' is the figure's background.
-:::
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-`theme_bw()` in `ggplot()`
-:::
-
-```{r classic}
-#| echo: false
-#| fig-align: center
-
-ggplot(data = penguins, 
-       mapping = aes(x = bill_length_mm, 
-                     y = bill_depth_mm, 
-                     color = species)) + 
-  geom_point() +
-  labs(y = "Bill Depth (mm)", 
-       x = "Bill Length (mm)", 
-       color = "Penguin Species") +
-  theme_bw()
-```
-
-<center>[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)</center>
-
-## 
-
-::: {style="font-size: 4em; color: #B6CADA;"}
-Moving into ANOVA
-:::
-
-## 
-
 ::: {style="font-size: 4em; color: #FFFFFF;"}
 Before...
 :::
@@ -137,7 +39,7 @@ Before...
 
 ggplot(data = evals_small, 
        mapping = aes(x = age, y = min_eval)) + 
-  geom_point() + 
+  geom_jitter() + 
   labs(x = "Professor's Age", 
        y = "Minimum Evaluation Score") +
   theme(axis.title = element_text(size = 18), 
@@ -444,16 +346,14 @@ Another Permutation Distribution
 :::
 
 ```{r}
-#| out-width: 70%
+#| out-width: 50%
 #| out-height: 50%
 visualise(null_dist)
 ```
 
 . . .
 
-</br>
-
-::: {style="font-size: 1.5em; color: #B6CADA;"}
+::: {style="font-size: 1.25em; color: #B6CADA;"}
 Why doesn't the distribution have negative numbers?
 :::
 
@@ -473,7 +373,7 @@ visualise(null_dist) +
 
 ```{r}
 #| out-height: 50%
-#| out-width: 70%
+#| out-width: 50%
 
 p_val <- get_p_value(null_dist, obs_stat = obs_F, direction = "greater") %>% 
   pull()
@@ -486,7 +386,7 @@ null_dist %>%
 
 . . .
 
-::: {style="font-size: 1em; color: #B6CADA;"}
+::: {style="color: #B6CADA;"}
 What would you conclude regarding the mean minimum evaluation score and different age groups of professors?
 :::
 
@@ -538,14 +438,14 @@ What would you conclude regarding the mean minimum evaluation score and differen
 
 ##  {background-color="#B6CADA"}
 
-::: {style="font-size: 4em; color: #0F4C81;"}
+::: {style="font-size: 3em; color: #0F4C81;"}
 Did the two methods yield different results?
 :::
 
 ## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
-Next...
+Next week...
 :::
 
 ```{r age-two-cat}
