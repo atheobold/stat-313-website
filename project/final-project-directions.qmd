@@ -22,11 +22,21 @@ You will need Dr. Theobold's help to perform this task. Dr. Theobold will work w
 
 ## Data Description
 
-In 4-5 sentences describe: \* how the data were collected \* the context of the data (e.g., are the data from from a published study?) \* the background of the research problem (e.g., why were the data collected?)
+In 4-6 sentences describe: 
+
+* how the data were collected 
+* the context of the data (e.g., are the data from from a published study?) 
+* the background of the research problem (e.g., why were the data collected?)
 
 ## Questions of Interest
 
 State the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should start with, "What is the relationship between..." and should be as specific as possible. Your *Findings* section should directly address the question(s) you pose here.
+
+::: {.callout-tip}
+# Multiple research questions
+
+This week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10! 
+:::
 
 # Methods
 
@@ -43,7 +53,7 @@ This section should lay out the steps, decisions, and logic leading to the stati
 ::: callout-caution
 # Visualizations with categorical variables
 
-In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. **For your project you are required to use density ridge plots.**
+In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. **For your project you are required to use density ridge plots.** If you are unsure how to accomplish this task, look back over Lab 3 and the [Week 3 R resources](/resources/week3.docx).
 
 Every visualization should have nicely formatted axis labels!
 :::
@@ -55,74 +65,74 @@ Every visualization should have nicely formatted axis labels!
 ::: callout-note
 # Not visually selecting a model
 
-Unlike the Midterm Project, you **will not** be choosing what statistical model to fit based on the visualizations. Everyone will be using a two-way ANOVA interaction model to analyze their data, so in this section you are to describe the statistical model you will use and why.
+Unlike the Midterm Project, you **will not** be choosing what statistical model to fit based on the visualizations. Everyone will be starting with **two** one-way ANOVA models to analyze their data!
 :::
 
 -   Evaluate the conditions of the statistical model you propose to use
 
-::: callout-note
+::: callout-caution
 # Condition violations
 
-If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations.
+If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, **email Dr. Theobold**!
 :::
 
 # Findings
 
-In this section you will write up your findings for your question of interest.
-
-## Two-Way ANOVA Interaction Model
-
--   Fit a two-way ANOVA interaction model
--   Obtain the ANOVA table for the model
-
-::: callout-tip
-Use the `tidy()` function from the **broom** package to provide nicely formatted ANOVA table
-:::
-
--   Based on the ANOVA table, state what decision was reached regarding the hypothesis for the two-way ANOVA interaction model.
--   Based on the decision you made, state what you can conclude regarding the relationship between the variables in your model.
+In this section you will write up your findings for your question of interest. I've created an example of how this section could look [in this document](final-project-help/owa-to-twa-model-selection-process.qmd).
 
 ::: callout-caution
 You must state what $\alpha$ threshold was used when reaching your hypothesis test decisions.
 :::
 
-## Two-Way ANOVA Additive Model
-
-::: callout-caution
-# Fitting an additive model
-
-**If you failed to reject** $H_0$ for your interaction model, your next step is to fit an additive two-way ANOVA model.
-:::
-
--   Fit a two-way ANOVA additive model
--   Obtain the ANOVA table for the model
--   Based on the ANOVA table, state what decision was reached **for each hypothesis** in the two-way ANOVA additive model.
--   Based on the decision you made, state what you can conclude regarding the relationship between your variables.
 
 ## One-Way ANOVA Model
 
-::: callout-caution
-# Fitting a one-way ANOVA model
-
-**If you failed to reject** $H_0$ for either of your explanatory variables, your next step is to fit a one-way ANOVA model.
-
-Specifically, you should remove the explanatory variable with the **largest** p-value, even if *both* variables have p-values larger than your chosen $\alpha$ level.
-:::
+Everyone starts here! In this section, you need to do the following: 
 
 -   Fit a one-way ANOVA model
 -   Obtain the ANOVA table for the model
 -   Based on the ANOVA table, state what decision was reached for the hypothesis in the one-way ANOVA model
--   Based on the decision you made, state what you can conclude regarding the relationship between your variables.
+-   Based on the decision you made, state what you can conclude regarding the relationship between your variables
 
-## Mean Only Model
 
-**If you failed to reject** $H_0$ for your one-way ANOVA model, your next step is to fit a mean only model (one mean for *every* observation).
+<!-- ## Two-Way ANOVA Additive Model -->
+
+<!-- ::: callout-caution -->
+<!-- # Fitting a two-way ANOVA additive model -->
+
+<!-- **If you rejected** $H_0$ for either of your explanatory variables, your next step is to fit a two-way ANOVA additive model. -->
+<!-- ::: -->
+
+<!-- -   Fit a two-way ANOVA additive model -->
+<!-- -   Obtain the ANOVA table for the model -->
+<!-- -   Based on the ANOVA table, state what decision was reached **for each hypothesis** in the two-way ANOVA additive model. -->
+<!-- -   Based on the decision you made, state what you can conclude regarding the relationship between your variables. -->
+
+<!-- ## Two-Way ANOVA Interaction Model -->
+
+<!-- ::: callout-caution -->
+<!-- # Fitting a two-way ANOVA interaction model -->
+
+<!-- **If you rejected** $H_0$ for either of your explanatory variables in your additive model, your next step is to fit a two-way ANOVA interaction model. -->
+<!-- ::: -->
+
+
+<!-- -   Fit a two-way ANOVA interaction model -->
+<!-- -   Obtain the ANOVA table for the model -->
+
+<!-- ::: callout-tip -->
+<!-- Use the `tidy()` function from the **broom** package to provide nicely formatted ANOVA table -->
+<!-- ::: -->
+
+<!-- -   Based on the ANOVA table, state what decision was reached regarding the hypothesis for the two-way ANOVA interaction model. -->
+<!-- -   Based on the decision you made, state what you can conclude regarding the relationship between the variables in your model. -->
+
 
 ## Conclusions
 
-Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made. 
+Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made.
 
-In this section you should also describe whether you believe the tests you performed are "reliable". Meaning, did you violate any of the conditions required of a two-way or one-way ANOVA model?
+In this section you should also describe whether you believe the tests you performed are "reliable". Meaning, did you violate any of the conditions required of a one-way ANOVA model?
 
 # Scope of Inference
 

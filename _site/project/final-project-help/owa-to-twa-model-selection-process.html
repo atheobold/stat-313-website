@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 - Spring 2023 - Two-Way ANOVA Model Selection Process</title>
+<title>STAT 313 - Spring 2023 - One-Way ANOVA to Two-Way ANOVA Model Selection Process</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Two-Way ANOVA Model Selection Process</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">One-Way ANOVA to Two-Way ANOVA Model Selection Process</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -303,27 +303,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-1-fit-an-interaction-two-way-anova" id="toc-step-1-fit-an-interaction-two-way-anova" class="nav-link active" data-scroll-target="#step-1-fit-an-interaction-two-way-anova">Step 1 – Fit an Interaction Two-Way ANOVA</a>
+  <li><a href="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable" id="toc-step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="nav-link active" data-scroll-target="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable">Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</a>
   <ul class="collapse">
   <li><a href="#plot-the-model" id="toc-plot-the-model" class="nav-link" data-scroll-target="#plot-the-model">Plot the model</a></li>
-  <li><a href="#fit-the-model" id="toc-fit-the-model" class="nav-link" data-scroll-target="#fit-the-model">Fit the model</a></li>
+  <li><a href="#fit-the-models" id="toc-fit-the-models" class="nav-link" data-scroll-target="#fit-the-models">Fit the model(s)</a></li>
   <li><a href="#perform-a-hypothesis-test" id="toc-perform-a-hypothesis-test" class="nav-link" data-scroll-target="#perform-a-hypothesis-test">Perform a Hypothesis Test</a></li>
   </ul></li>
-  <li><a href="#step-2-fit-an-additive-two-way-anova" id="toc-step-2-fit-an-additive-two-way-anova" class="nav-link" data-scroll-target="#step-2-fit-an-additive-two-way-anova">Step 2: Fit an Additive Two-Way ANOVA</a>
-  <ul class="collapse">
-  <li><a href="#fit-the-model-1" id="toc-fit-the-model-1" class="nav-link" data-scroll-target="#fit-the-model-1">Fit the Model</a></li>
-  <li><a href="#perform-a-hypothesis-test-1" id="toc-perform-a-hypothesis-test-1" class="nav-link" data-scroll-target="#perform-a-hypothesis-test-1">Perform a Hypothesis Test</a>
-  <ul class="collapse">
-  <li><a href="#hypothesis-test-for-genre" id="toc-hypothesis-test-for-genre" class="nav-link" data-scroll-target="#hypothesis-test-for-genre">Hypothesis Test for <code>genre</code></a></li>
-  <li><a href="#hypothesis-test-for-era" id="toc-hypothesis-test-for-era" class="nav-link" data-scroll-target="#hypothesis-test-for-era">Hypothesis Test for <code>era</code></a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#step-3-fit-a-one-way-anova" id="toc-step-3-fit-a-one-way-anova" class="nav-link" data-scroll-target="#step-3-fit-a-one-way-anova">Step 3: Fit a One-Way ANOVA</a>
-  <ul class="collapse">
-  <li><a href="#fit-the-model-2" id="toc-fit-the-model-2" class="nav-link" data-scroll-target="#fit-the-model-2">Fit the Model</a></li>
-  <li><a href="#perform-a-hypothesis-test-2" id="toc-perform-a-hypothesis-test-2" class="nav-link" data-scroll-target="#perform-a-hypothesis-test-2">Perform a Hypothesis Test</a></li>
-  </ul></li>
-  <li><a href="#step-4-fit-a-mean-only-model" id="toc-step-4-fit-a-mean-only-model" class="nav-link" data-scroll-target="#step-4-fit-a-mean-only-model">Step 4: Fit a Mean-Only Model</a></li>
+  <li><a href="#step-2-decide-how-to-proceed" id="toc-step-2-decide-how-to-proceed" class="nav-link" data-scroll-target="#step-2-decide-how-to-proceed">Step 2: Decide How to Proceed</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -332,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Two-Way ANOVA Model Selection Process</h1>
+<h1 class="title">One-Way ANOVA to Two-Way ANOVA Model Selection Process</h1>
 </div>
 
 
@@ -347,98 +333,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>We will be using a “backward” selection process for deciding on the “best” ANOVA model. Meaning, we will start with a more complicated model and decide if it is “worth it.”</p>
-<section id="step-1-fit-an-interaction-two-way-anova" class="level1">
-<h1>Step 1 – Fit an Interaction Two-Way ANOVA</h1>
+<p>We will be using a “forward” selection process for deciding on the “best” ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn’t “worth it.”</p>
+<section id="step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="level1">
+<h1>Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</h1>
 <section id="plot-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="plot-the-model">Plot the model</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="twa-model-selection-process_files/figure-html/twa-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="owa-to-twa-model-selection-process_files/figure-html/twa-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="owa-to-twa-model-selection-process_files/figure-html/twa-plot-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
 <p><strong>What are we looking for?</strong></p>
-<p>We are looking to see if relationship between the mean of <span class="math inline">\(y\)</span> and explanatory variable 1 changes over the values of explanatory variable 2. This is akin to looking for evidence of different slopes in a multiple linear regression.</p>
-<p>For these data we are looking to see if the relationship between the mean movie rating and the genre of the movie changes over the different eras.</p>
+<p>We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!</p>
+<p>For these data we are looking to see if at least one of the genres has a different mean IMDB rating <strong>or</strong> if at least one of the eras has a different mean movie rating.</p>
 </section>
-<section id="fit-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-model">Fit the model</h2>
-<p><em>Notice I’m using a <code>*</code> for an interaction model!</em></p>
+<section id="fit-the-models" class="level2">
+<h2 class="anchored" data-anchor-id="fit-the-models">Fit the model(s)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">*</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 6
+<pre><code># A tibble: 2 × 6
   term         df  sumsq meansq statistic p.value
   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 era           3   4.59   1.53     0.659   0.581
-2 genre         1   4.19   4.19     1.81    0.185
-3 era:genre     3   3.32   1.11     0.477   0.700
-4 Residuals    48 111.     2.32    NA      NA    </code></pre>
+1 era           3   4.59   1.53     0.669   0.575
+2 Residuals    52 119.     2.28    NA      NA    </code></pre>
 </div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test">Perform a Hypothesis Test</h2>
-<p>The <code>era:genre</code> line of the ANOVA table is testing if the mean movie rating and the genre of the movie changes over the different eras. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The relationship between the mean movie rating and the genre of the movie does not change over the eras</p>
-<p><span class="math inline">\(H_A\)</span>: The relationship between the mean movie rating and the genre of the movie is different for at least one era</p>
-<p>With a p-value of 0.7 (from an F-statistic of 0.477 with 3 and 48 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating and the genre of the movie is different for at least one era.</p>
-<p>So, my next step is to fit an <strong>additive</strong> two-way ANOVA.</p>
-</section>
-</section>
-<section id="step-2-fit-an-additive-two-way-anova" class="level1">
-<h1>Step 2: Fit an Additive Two-Way ANOVA</h1>
-<p>We are looking to see if the mean of <span class="math inline">\(y\)</span> differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of <span class="math inline">\(y\)</span> for each group and the slope is the estimated relationship between the explanatory variable and the mean of <span class="math inline">\(y\)</span>.</p>
-<p>For these data we are looking to see if the genres have differences in the mean movie ratings <strong>and</strong> if the eras have differences in the mean movie rating.</p>
-<section id="fit-the-model-1" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-model-1">Fit the Model</h2>
-<p><em>Notice I’m using a <code>+</code> for an interaction model!</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 era           3   4.59   1.53     0.680   0.568
-2 genre         1   4.19   4.19     1.86    0.178
-3 Residuals    51 115.     2.25    NA      NA    </code></pre>
-</div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test-1" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test-1">Perform a Hypothesis Test</h2>
-<p>For an additive two-way ANOVA, we have <strong>two</strong> hypothesis tests, one test per explanatory variable.</p>
-<section id="hypothesis-test-for-genre" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-test-for-genre">Hypothesis Test for <code>genre</code></h3>
-<p>The <code>genre</code> line of the ANOVA table is testing if the mean movie rating is the same for all genres. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for every genre, given the era of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for at least one genre, given the era of the movie</p>
-<p><em>Notice the hypotheses are similar to a multiple linear regression with two explanatory variables, where the test for each variable is conditional on the other variable(s) included in the model.</em></p>
-<p>With a p-value of 0.178 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating, given the era of the movie.</p>
-</section>
-<section id="hypothesis-test-for-era" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-test-for-era">Hypothesis Test for <code>era</code></h3>
-<p>The <code>era</code> line of the ANOVA table is testing if the mean movie rating is the same for all eras. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for every era, given the genre of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for at least one era, given the genre of the movie</p>
-<p>With a p-value of 0.568 (from an F-statistic of 0.68 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one era has a different mean movie rating, given the genre of the movie.</p>
-</section>
-</section>
-</section>
-<section id="step-3-fit-a-one-way-anova" class="level1">
-<h1>Step 3: Fit a One-Way ANOVA</h1>
-<p>Technically, both variables had large p-values, but the p-value is conditional on the other variables in the model. So, the next step is to remove the variable with the <strong>largest</strong> p-value and fit a one-way ANOVA.</p>
-<section id="fit-the-model-2" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-model-2">Fit the Model</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 6
   term         df  sumsq meansq statistic p.value
@@ -448,29 +383,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="perform-a-hypothesis-test-2" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test-2">Perform a Hypothesis Test</h2>
-<p>The <code>genre</code> line of the ANOVA table is testing if the mean movie rating is the same for all genres. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for every genre</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for at least one genre</p>
-<p><em>Notice the hypotheses don’t include era this time, since that variable has been removed from the model!</em></p>
-<p>With a p-value of 0.15 (from an F-statistic of 2.13 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating.</p>
-</section>
-</section>
-<section id="step-4-fit-a-mean-only-model" class="level1">
-<h1>Step 4: Fit a Mean-Only Model</h1>
-<p>Once we’ve failed to reject the null in a one-way ANOVA, the “best” model is a model with <strong>one</strong> mean for <strong>all</strong> observations.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(movies,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_rating =</span> <span class="fu">mean</span>(rating)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  mean_rating
-        &lt;dbl&gt;
-1        5.64</code></pre>
+<section id="perform-a-hypothesis-test" class="level2">
+<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test">Perform a Hypothesis Test</h2>
+<p>The <code>era</code> line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:</p>
+<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era</p>
+<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era</p>
+<p>With a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.</p>
+<p>The <code>genre</code> line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:</p>
+<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> genre</p>
+<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> genre</p>
+<p>With a p-value of 0.015(from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Categorical variables with two levels
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This <strong>is not</strong> the case if your variable has more than two levels!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="step-2-decide-how-to-proceed" class="level1">
+<h1>Step 2: Decide How to Proceed</h1>
+<p>You will decide what model to fit next depending on the results of your one-way ANOVA models.</p>
+<ul>
+<li>If you failed to reject the null hypothesis for <strong>both</strong> one-way ANOVA models (like I did above)…
+<ul>
+<li>You <strong>do not</strong> fit any additional models.</li>
+</ul></li>
+<li>If you rejected the null hypothesis for <strong>at least one</strong> of the one-way ANOVA models…
+<ul>
+<li>your next step is to fit an additive two-way ANOVA model</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Additive two-way ANOVA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Week 10 we will learn about additive and interaction two-way ANOVA models, so you will have the tools to fit these additional models then!</p>
+</div>
+</div>
+<!-- # Step 2: Fit an Additive Two-Way ANOVA -->
+<!-- We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$. -->
+<!-- For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating. -->
+<!-- ## Plot the model -->
+<!-- ```{r twa-plot} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
+<!-- movies %>%  -->
+<!--   ggplot(aes(y = era, x = rating, fill = genre)) +  -->
+<!--   geom_density_ridges(alpha = 0.5, scale = 1) + -->
+<!--   labs(y = "Era",  -->
+<!--        x = "IMDB Rating",  -->
+<!--        fill = "Genre") +  -->
+<!--   theme(axis.title = element_text(size = 18),  -->
+<!--         axis.text = element_text(size = 16),  -->
+<!--         legend.text = element_text(size = 16), -->
+<!--         legend.title = element_text(size = 18)) -->
+<!-- ``` -->
+<!-- ## Fit the Model -->
+<!-- *Notice I'm using a `+` for an interaction model!* -->
+<!-- ```{r} -->
+<!-- aov(rating ~ era + genre, data = movies) %>%  -->
+<!--   tidy() -->
+<!-- ``` -->
+<!-- ## Perform a Hypothesis Test -->
+<!-- For an additive two-way ANOVA, we have **two** hypothesis tests, one test per explanatory variable. -->
+<!-- ### Hypothesis Test for `genre` -->
+
+<!-- The `genre` line of the ANOVA table is testing if the mean movie rating is the same for all genres. It has the following hypotheses: -->
+<!-- $H_0$: The mean movie rating is the same for every genre, given the era of the movie -->
+<!-- $H_A$: The mean movie rating is different for at least one genre, given the era of the movie -->
+<!-- *Notice the hypotheses are similar to a multiple linear regression with two explanatory variables, where the test for each variable is conditional on the other variable(s) included in the model.* -->
+<!-- With a p-value of 0.178 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating, given the era of the movie. -->
+<!-- ### Hypothesis Test for `era` -->
+
+<!-- The `era` line of the ANOVA table is testing if the mean movie rating is the same for all eras. It has the following hypotheses: -->
+<!-- $H_0$: The mean movie rating is the same for every era, given the genre of the movie -->
+<!-- $H_A$: The mean movie rating is different for at least one era, given the genre of the movie -->
+<!-- With a p-value of 0.568 (from an F-statistic of 0.68 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one era has a different mean movie rating, given the genre of the movie. -->
 
 
 </section>
