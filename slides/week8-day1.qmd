@@ -54,6 +54,7 @@ Weeks 8, 9, & 10
 :::
 :::
 :::
+
 ## 
 
 ::: {style="font-size: 4em; color: #FFFFFF;"}
@@ -223,7 +224,6 @@ How do I get my p-value?
 ::: {style="font-size: 1.25em; color: #e28743;"}
 We compare the observed statistic with the statistics produced assuming the null hypothesis was true.
 :::
-
 
 . . .
 
@@ -604,10 +604,10 @@ How do we interpret a p-value?
 
 . . .
 
-Need: 
+Need:
 
-- probability of what we saw in the data
-- assuming the null hypothesis is true
+-   probability of what we saw in the data
+-   assuming the null hypothesis is true
 
 . . .
 
@@ -635,12 +635,12 @@ Classic interpretation mistakes
 Exit ticket
 :::
 
-::: {style="font-size: 2em; color: #000000;"}
+::: {style="font-size: 1.5em; color: #000000;"}
 Suppose we had obtained a p-value of 0.6 for the relationship between stem length and stem dry mass.
 :::
 
 </br>
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 1.5em; color: #0F4C81;"}
 How would you interpret this value?
 :::

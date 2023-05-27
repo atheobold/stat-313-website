@@ -1,0 +1,93 @@
+---
+title: "Your Title Goes Here! Make it fun!"
+author: "Your Name Here!"
+format: 
+  html:
+    code-tools: true
+    self-contained: true
+editor: visual
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r data}
+library(tidyverse)
+library(broom)
+library(ggridges)
+
+# This is where you will load in your data! 
+# Reference the R package you data live in, since you will need to load that package in!
+
+
+```
+
+# Introduction
+
+## Data Description
+
+## Research Question(s)
+
+# Methods
+
+## Variables
+
+## Data Visualizations
+
+```{r density-plots}
+#| fig-align: center
+#| layout-nrow: 2
+
+## Code to make your density ridge plots goes here! 
+## You should have three total plots!
+## Don't forget to choose nice axis labels!
+
+
+```
+
+## Description of Relationships
+
+## Model Conditions
+
+# Findings
+
+## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>
+
+```{r one-way-anova-var1}
+## Code to fit your one-way ANOVA model for variable 1
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>
+
+```{r one-way-anova-var2}
+## Code to fit your one-way ANOVA model for variable 2
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## Additive Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>
+
+```{r two-way-anova-additive}
+## Code to fit your two-way ANOVA additive model
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## Interaction Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>
+
+```{r two-way-anova-interaction}
+## Code to fit your two-way ANOVA interaction model
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## Model Conclusions
+
+# Scope of Inference

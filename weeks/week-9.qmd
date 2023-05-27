@@ -87,12 +87,6 @@ knitr::include_graphics(here::here("images",
 
 [Download the Word Document](reading-guide/week9-reading.docx)
 
-::: callout-note
-# Submission
-
-Submit your completed reading guide to the Canvas assignment portal!
-:::
-
 ## Concept Quiz -- Due Tuesday by noon
 
 1.  Which of the following are true about the mean squares between groups?
@@ -142,28 +136,14 @@ Submit your completed reading guide to the Canvas assignment portal!
 
 -   an appropriate $\alpha$ to be used in pairwise comparisons is $\frac{0.05}{4} = 0.0125$ since there are four groups.
 
-------------------------------------------------------------------------
+6.  As the total sample size increases, the degrees of freedom for the residuals increases.
 
-## Chapter Review
+7.  The constant variance condition can be somewhat relaxed when the sample sizes are large.
 
-### `r emo::ji("check")` Check-in: ANOVA Conditions
+8.  The independence assumption can be relaxed when the total sample size is large.
 
-**These are all true or false questions, so you will be given *one* attempt for this quiz**
-
-1.  As the total sample size increases, the degrees of freedom for the residuals increases.
-
-2.  The constant variance condition can be somewhat relaxed when the sample sizes are large.
-
-3.  The independence assumption can be relaxed when the total sample size is large.
-
-4.  The normality condition is very important when the sample sizes of each group are small.
+9.  The normality condition is very important when the sample sizes of each group are small.
 
 ## R Tutorial -- Due Thursday by noon
 
-[**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
-
-::: callout-note
-# Submission
-
-Submit a screenshot of the completion page for each tutorial to the Canvas assignment portal!
-:::
+[**Required Tutorial:** Comparing many means with ANOVA](https://openintro.shinyapps.io/ims-05-infer-08/)
