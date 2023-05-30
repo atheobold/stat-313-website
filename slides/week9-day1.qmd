@@ -3,12 +3,13 @@ title: "**AN**alysis **O**f **VA**riance"
 format: 
   revealjs:
     embed-resources: true
-    standalone: true
     theme: dark
-editor: visual
+editor: source
 ---
 
 ```{r set-up}
+#| include: false
+
 library(tidyverse)
 library(palmerpenguins)
 library(broom)

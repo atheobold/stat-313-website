@@ -1915,7 +1915,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, April 2\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, April 4\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 6\nIntroduction to Data\n\n🖥\n\n💻\n\n\n\n\n\nSun, April 9\nLab 1 Due\n\n\n\n💻  🗝\n\n\n\n\n2\nTue, April 11\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 13\nThe Flaws of Averages\n\n🖥\n\n💻\n\n\n\n\n\nSun, April 16\nLab 2 Due\n\n\n\n💻  🗝\n\n\n\n\n3\nTue, April 18 class held asynchronously\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 20\nEthics & Categorical Variables\n\n🖥\n\n💻\n✍\n\n\n\n\nSun, April 23\nStatistical Critique 1 &  Lab 3 Due\n\n\n\n💻  🗝\n✍  🗝\n\n\n\n4\nTue, April 25\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 27\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, April 30\nMidterm Project Proposal Due\n\n\n\n\n\n📁  🗝\n\n\n5\nTue, May 2\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, May 4\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n📁  ✅\n\n\n\nSun, May 7\nMidterm Project First Draft Due\n\n\n\n\n\n📁  🗝\n\n\n6\nTue, May 9\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, May 11\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, May 14\nMidterm Project Final Draft Due\n\n\n\n\n\n📁  🗝\n\n\n7\nTue, May 16\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, May 18\nConfidence Intervals\n\n🖥\n📋\n💻\n\n\n\n\n\nSun, May 21\nLab 7 Due\n\n\n\n💻  🗝\n\n\n\n\n8\nTue, May 23\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, May 25\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻\n✍\n\n\n\n\nSun, May 28\nStatistical Critique 2 &  Lab 8 Due\n\n\n\n💻  🗝\n✍  🗝\n\n\n\n9\nTue, May 30 class held asynchronously\nOne-Way Analysis of Variance\n📖\nA series of recorded videos will be posted!\n🖥\n📋\n\n\n📁  Sections of the Final Project will be due throughout the week\n\n\n\nWed, May 31\n\n\n\n\n\n\nIntroduction Due\n\n\n\nThu, June 1 class held asynchronously\n\n\nA series of recorded videos will be posted!\n\n\n\n\n\n\n\nFri, June 2\n\n\n\n\n\n\nMethods Due\n\n\n\nSun, June 4\nFinal Project First Draft Due\n\n\n\n\n\nComplete First Draft Due\n📁  🗝\n\n\n10\nTue, June 6\nTwo-Way ANOVA Models\n📖\n🖥\n\n\n\n\n\n\n\nThu, June 8\nLast Day of STAT 313\n\n🖥\n📋  📋  📋\n\n\n📁  ✅\n\n\n\nSun, June 11\nFinal Project Final Draft Due\n\n\n\n\n\n📁  🗝\n\n\nFinals Week\nThu, June 15\nFinal Presentations\n\n\n\n\n\n📁"
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, April 2\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, April 4\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 6\nIntroduction to Data\n\n🖥\n\n💻\n\n\n\n\n\nSun, April 9\nLab 1 Due\n\n\n\n💻  🗝\n\n\n\n\n2\nTue, April 11\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 13\nThe Flaws of Averages\n\n🖥\n\n💻\n\n\n\n\n\nSun, April 16\nLab 2 Due\n\n\n\n💻  🗝\n\n\n\n\n3\nTue, April 18 class held asynchronously\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 20\nEthics & Categorical Variables\n\n🖥\n\n💻\n✍\n\n\n\n\nSun, April 23\nStatistical Critique 1 &  Lab 3 Due\n\n\n\n💻  🗝\n✍  🗝\n\n\n\n4\nTue, April 25\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, April 27\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, April 30\nMidterm Project Proposal Due\n\n\n\n\n\n📁  🗝\n\n\n5\nTue, May 2\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, May 4\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n📁  ✅\n\n\n\nSun, May 7\nMidterm Project First Draft Due\n\n\n\n\n\n📁  🗝\n\n\n6\nTue, May 9\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, May 11\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, May 14\nMidterm Project Final Draft Due\n\n\n\n\n\n📁  🗝\n\n\n7\nTue, May 16\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, May 18\nConfidence Intervals\n\n🖥\n📋\n💻\n\n\n\n\n\nSun, May 21\nLab 7 Due\n\n\n\n💻  🗝\n\n\n\n\n8\nTue, May 23\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, May 25\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻\n✍\n\n\n\n\nSun, May 28\nStatistical Critique 2 &  Lab 8 Due\n\n\n\n💻  🗝\n✍  🗝\n\n\n\n9\nThis week all classes are held asynchronously\nOne-Way Analysis of Variance\n📖\n🖥\nUse these slides as an additional resource!\n📋\nStep-by-step guide for selecting a model for the Final Project\n\n\n\n📁  Sections of the Final Project will be due throughout the week\n\n\n\nWed, May 31\n\n\n\n\n\n\nIntroduction Due\n\n\n\nFri, June 2\n\n\n\n\n\n\nMethods Due\n\n\n\nSun, June 4\nFinal Project First Draft Due\n\n\n\n\n\nComplete First Draft Due\n📁  🗝\n\n\n10\nTue, June 6\nTwo-Way ANOVA Models\n📖\n🖥\n\n\n\n\n\n\n\nThu, June 8\nLast Day of STAT 313\n\n🖥\n📋  📋  📋\n\n\n📁  ✅\n\n\n\nSun, June 11\nFinal Project Final Draft Due\n\n\n\n\n\n📁  🗝\n\n\nFinals Week\nThu, June 15\nFinal Presentations\n\n\n\n\n\n📁"
   },
   {
     "objectID": "course-team.html",
@@ -2741,7 +2741,7 @@
     "href": "slides/week9-day1.html#section-18",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 1: Calculating the Observed F-statistic\n\n\nobs_F &lt;- evals_small %&gt;% \n  specify(response = min_eval, \n          explanatory = age_cat) %&gt;% \n  calculate(stat = \"F\")\n\n\n\nResponse: min_eval (numeric)\nExplanatory: age_cat (factor)\n# A tibble: 1 × 1\n   stat\n  &lt;dbl&gt;\n1  1.41"
+    "text": "Step 1: Calculating the Observed F-statistic\n\n\nobs_F <- evals_small %>% \n  specify(response = min_eval, \n          explanatory = age_cat) %>% \n  calculate(stat = \"F\")\n\n\n\nResponse: min_eval (numeric)\nExplanatory: age_cat (factor)\n# A tibble: 1 × 1\n   stat\n  <dbl>\n1  1.41"
   },
   {
     "objectID": "slides/week9-day1.html#section-19",
@@ -2755,7 +2755,7 @@
     "href": "slides/week9-day1.html#section-20",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Another Permutation Distribution\n\n\nnull_dist &lt;- evals_small %&gt;% \n  specify(response = min_eval, \n          explanatory = age_cat) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 2000, type = \"permute\") %&gt;% \n  calculate(stat = \"F\")"
+    "text": "Another Permutation Distribution\n\n\nnull_dist <- evals_small %>% \n  specify(response = min_eval, \n          explanatory = age_cat) %>% \n  hypothesize(null = \"independence\") %>% \n  generate(reps = 2000, type = \"permute\") %>% \n  calculate(stat = \"F\")"
   },
   {
     "objectID": "slides/week9-day1.html#section-21",
@@ -2783,7 +2783,7 @@
     "href": "slides/week9-day1.html#section-24",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Using aov()\n\naov(min_eval ~ age_cat, \n    data = evals_small)  %&gt;% \n  tidy()\n\n\n\n# A tibble: 2 × 6\n  term         df sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 age_cat       3  1.24  0.414      1.41   0.244\n2 Residuals    90 26.4   0.293     NA     NA    \n\n\n\n\n\nHow was the statistic calculated?\n\n\n\n\nWhat distribution was used to calculate the p.value?\n\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score and different age groups of professors?"
+    "text": "Using aov()\n\naov(min_eval ~ age_cat, \n    data = evals_small)  %>% \n  tidy()\n\n\n\n# A tibble: 2 × 6\n  term         df sumsq meansq statistic p.value\n  <chr>     <dbl> <dbl>  <dbl>     <dbl>   <dbl>\n1 age_cat       3  1.24  0.414      1.41   0.244\n2 Residuals    90 26.4   0.293     NA     NA    \n\n\n\n\n\nHow was the statistic calculated?\n\n\n\n\nWhat distribution was used to calculate the p.value?\n\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score and different age groups of professors?"
   },
   {
     "objectID": "slides/week9-day1.html#section-25",
@@ -4386,7 +4386,7 @@
     "href": "project/final-project-help/twa-model-selection-process.html#fit-the-model",
     "title": "Two-Way ANOVA Model Selection Process",
     "section": "Fit the model",
-    "text": "Fit the model\nNotice I’m using a * for an interaction model!\n\naov(rating ~ era * genre, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 4 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 era           3   4.59   1.53     0.659   0.581\n2 genre         1   4.19   4.19     1.81    0.185\n3 era:genre     3   3.32   1.11     0.477   0.700\n4 Residuals    48 111.     2.32    NA      NA"
+    "text": "Fit the model\nNotice I’m using a * for an interaction model!\n\naov(rating ~ era * genre, data = movies) %>% \n  tidy()\n\n# A tibble: 4 × 6\n  term         df  sumsq meansq statistic p.value\n  <chr>     <dbl>  <dbl>  <dbl>     <dbl>   <dbl>\n1 era           3   4.59   1.53     0.659   0.581\n2 genre         1   4.19   4.19     1.81    0.185\n3 era:genre     3   3.32   1.11     0.477   0.700\n4 Residuals    48 111.     2.32    NA      NA"
   },
   {
     "objectID": "project/final-project-help/twa-model-selection-process.html#perform-a-hypothesis-test",
@@ -4400,7 +4400,7 @@
     "href": "project/final-project-help/twa-model-selection-process.html#fit-the-model-1",
     "title": "Two-Way ANOVA Model Selection Process",
     "section": "Fit the Model",
-    "text": "Fit the Model\nNotice I’m using a + for an interaction model!\n\naov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 3 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 era           3   4.59   1.53     0.680   0.568\n2 genre         1   4.19   4.19     1.86    0.178\n3 Residuals    51 115.     2.25    NA      NA"
+    "text": "Fit the Model\nNotice I’m using a + for an interaction model!\n\naov(rating ~ era + genre, data = movies) %>% \n  tidy()\n\n# A tibble: 3 × 6\n  term         df  sumsq meansq statistic p.value\n  <chr>     <dbl>  <dbl>  <dbl>     <dbl>   <dbl>\n1 era           3   4.59   1.53     0.680   0.568\n2 genre         1   4.19   4.19     1.86    0.178\n3 Residuals    51 115.     2.25    NA      NA"
   },
   {
     "objectID": "project/final-project-help/twa-model-selection-process.html#perform-a-hypothesis-test-1",
@@ -4414,7 +4414,7 @@
     "href": "project/final-project-help/twa-model-selection-process.html#fit-the-model-2",
     "title": "Two-Way ANOVA Model Selection Process",
     "section": "Fit the Model",
-    "text": "Fit the Model\n\naov(rating ~ genre, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 genre         1   4.68   4.68      2.13   0.150\n2 Residuals    54 119.     2.20     NA     NA"
+    "text": "Fit the Model\n\naov(rating ~ genre, data = movies) %>% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  <chr>     <dbl>  <dbl>  <dbl>     <dbl>   <dbl>\n1 genre         1   4.68   4.68      2.13   0.150\n2 Residuals    54 119.     2.20     NA     NA"
   },
   {
     "objectID": "project/final-project-help/twa-model-selection-process.html#perform-a-hypothesis-test-2",
@@ -4946,7 +4946,7 @@
     "href": "slides/data-viz-principles.html#section-2",
     "title": "Data Visualization Principles",
     "section": "",
-    "text": "theme_bw() in ggplot()\n\n\n\nList of all ggplot() themes"
+    "text": "theme_bw() in ggplot()\n\n\n\n\n\n\n\n\n\n\n\nList of all ggplot() themes"
   },
   {
     "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html",
@@ -4967,7 +4967,7 @@
     "href": "project/final-project-help/owa-to-twa-model-selection-process.html#fit-the-models",
     "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
     "section": "Fit the model(s)",
-    "text": "Fit the model(s)\n\naov(rating ~ era, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 era           3   4.59   1.53     0.669   0.575\n2 Residuals    52 119.     2.28    NA      NA    \n\naov(rating ~ genre, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 genre         1   4.68   4.68      2.13   0.150\n2 Residuals    54 119.     2.20     NA     NA"
+    "text": "Fit the model(s)\n\naov(rating ~ era, data = movies) %>% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  <chr>     <dbl>  <dbl>  <dbl>     <dbl>   <dbl>\n1 era           3   4.59   1.53     0.669   0.575\n2 Residuals    52 119.     2.28    NA      NA    \n\naov(rating ~ genre, data = movies) %>% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  <chr>     <dbl>  <dbl>  <dbl>     <dbl>   <dbl>\n1 genre         1   4.68   4.68      2.13   0.150\n2 Residuals    54 119.     2.20     NA     NA"
   },
   {
     "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html#perform-a-hypothesis-test",
@@ -4975,5 +4975,12 @@
     "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
     "section": "Perform a Hypothesis Test",
     "text": "Perform a Hypothesis Test\nThe era line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every era\n\\(H_A\\): The mean movie rating is different for at least one era\nWith a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.\nThe genre line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every genre\n\\(H_A\\): The mean movie rating is different for at least one genre\nWith a p-value of 0.015(from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.\n\n\n\n\n\n\nCategorical variables with two levels\n\n\n\nTechnically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This is not the case if your variable has more than two levels!"
+  },
+  {
+    "objectID": "slides/week9-day1.html",
+    "href": "slides/week9-day1.html",
+    "title": "ANalysis Of VAriance",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\nlibrary(broom)\nlibrary(ggridges)\nlibrary(infer)\n\nevals_small <- moderndive::evals %>% \n  group_by(prof_ID) %>% \n  mutate(min_eval = min(score), \n         age_cat = case_when(age < 37 ~ \"young faculty\",\n                             age >= 37 & age < 45 ~ \"middle age\", \n                             age >= 45 & age < 60 ~ \"older faculty\", \n                             age >= 60 ~ \"nearly retired\"),\n         age_cat = factor(age_cat, \n                          levels = c(\"young faculty\", \"middle age\",\n                                     \"older faculty\", \"nearly retired\")\n                          )\n         ) %>% \n  distinct(prof_ID, .keep_all = TRUE)"
   }
 ]
