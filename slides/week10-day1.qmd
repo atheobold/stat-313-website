@@ -3,7 +3,6 @@ title: "Two-Way ANOVA Models"
 format: 
   revealjs:
     embed-resources: true
-    standalone: true
 editor: visual
 ---
 
@@ -223,3 +222,13 @@ summarize(movies,
           mean_rating = mean(rating)
           )
 ```
+
+## 
+
+Brainstorm 
+
+where the relationship between a (categorical) explanatory variable and a (quantitative) response variable differs based on the levels of another explanatory variable. 
+
+## 
+
+Writing research questions for one-way and two-way ANOVA models!

@@ -11,7 +11,6 @@ format:
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
     embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: true
@@ -34,7 +33,7 @@ This week we explore one final area of ANOVA, a situation where we have multiple
 
 ## Textbook Reading
 
-As two-way ANOVA is an extension of one-way ANOVA, this week's reading is rather short. I've written a guided tutorial to walk you through the components of a two-way ANOVA. The tutoral also has some coding exercises embedded in it, so it also counts as your R tutorial for the week.
+As two-way ANOVA is an extension of one-way ANOVA, this week's reading is rather short. I've written a guided tutorial to walk you through the components of a two-way ANOVA. The tutorial also has some coding exercises embedded in it, so it also counts as your R tutorial for the week.
 
 [Click here to access the textbook reading and R tutorial](https://rstudio.csm.calpoly.edu/two-way-anova/#section-two-way-anova)
 
@@ -48,60 +47,109 @@ Submit a screenshot of the completion page at the end of the reading.
 
 ## Concept Quiz -- Due Tuesday by noon
 
-1.  Which of the following are true about the mean squares between groups?
+**1.  Match each two-way ANOVA model to its correct description.**
 
--   it is a standardized measure of the variability in responses between groups
--   it compares the mean of each group to the overall mean across all groups
--   it compares the observations within each group to the mean of that group
--   it is used as the numerator in an F-statistic
--   it is used as the denominator in an F-statistic
--   it is found by dividing the sum of squares between groups by the number of groups minus 1 ($k$ - 1)
--   it is found by dividing the sum of squares between groups by the sample size minus the number of groups ($n - k$)
+::: columns
+::: {.column width="40%"}
 
-2.  Which of the following are true about the mean square errors?
+</br>
 
--   it is a standardized measure of the variability in responses within each group
--   it compares the mean of each group to the overall mean across all groups
--   it compares the observations within each group to the mean of that group
--   it is used as the numerator in an F-statistic
--   it is used as the denominator in an F-statistic
--   it is found by dividing the sum of square errors by the number of groups minus 1 ($k$ - 1)
--   it is found by dividing the sum of square errors by the sample size minus the number of groups ($n - k$)
+**additive model**
 
-3.  An F-statistic uses which formula?
+</br>
+</br>
+</br>
 
--   $\frac{MSG}{MSE}$
+**interaction model**
+:::
 
--   $\frac{SSG}{SSE}$
+::: {.column width="60%"}
+The relationship between one factor and the response changes depending on the level of another factor.
 
--   $\frac{MSE}{MSG}$
+</br>
 
--   $\frac{SSE}{SSG}$
+The relationship between one factor and the response remains the same across all levels of another factor.
 
-4.  Ideally, in an ANOVA we'd like to see... (select all that apply)
+</br>
 
--   large variability in the means of the groups
--   small variability in the means of the groups
--   large variability in the observations within each group
--   small variability in the observations within each group
+There is a significant relationship between each factor and the response.
+:::
+:::
 
-5.  If the null hypothesis that the means of four groups are all the same is rejected using ANOVA at a 5% significance level, then... (select all that apply)
+</br>
 
--   we can then conclude that all the means are different from one another.
+**2.  Match each two-way ANOVA model to its multiple linear regression counterpart.**
 
--   the variability between groups is higher than the variability within groups.
+::: columns
+::: {.column width="45%"}
+**additive model**
 
--   the pairwise analysis will identify at least one pair of means that are significantly different.
+**interaction model**
+:::
 
--   an appropriate $\alpha$ to be used in pairwise comparisons is $\frac{0.05}{4} = 0.0125$ since there are four groups.
+::: {.column width="10%"}
+:::
 
-1.  As the total sample size increases, the degrees of freedom for the residuals increases.
+:::{.column width="45%"} 
+different slopes
 
-2.  The constant variance condition can be somewhat relaxed when the sample sizes are large.
+parallel slopes
+:::
+:::
 
-3.  The independence assumption can be relaxed when the total sample size is large.
+</br>
 
-4.  The normality condition is very important when the sample sizes of each group are small.
+**3.  If there is evidence of an interaction when visualizing a two-way ANOVA model we will see...**
+
+- differences in the centers of the distributions
+- differences in the spreads of the distributions
+- similar profiles of the distributions across the facets 
+- differences in the profiles of the distributions across the facets
+
+</br>
+
+**4.  Which of the following are conditions of a two-way ANOVA model?**
+
+-   independence of observations between the groups
+-   independence of observations within each group
+-   independence of variables
+-   normally distributed responses within each group
+-   normally distributed residuals
+-   linear relationship between the explanatory and response variables
+-   equal variance of residuals
+-   equal variance of responses within each group
+
+</br>
+
+**5.  Which of the following is important to consider when assessing independence?**
+
+-   If the same observational unit (e.g., person, penguin, tree) could be sampled multiple times
+
+-   If observations could be biologically related (e.g., parents, siblings, etc.)
+
+-   If observations could be spatially related (e.g., countries that border each other)
+
+-   If there is a relationship between the observations and the response variable
+
+</br>
+
+**6.  An \[additive / interaction\] model is fit using a `*` symbol between the explanatory variables.**
+
+</br>
+
+**7.  When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is \[conditional / independent\] on the other explanatory variable(s) in the model.**
+
+</br>
+
+**8.  If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?**
+
+-   separate one-way ANOVA models
+-   a one-way ANOVA model containing the variable with the smallest p-value (from the additive two-way ANOVA)
+-   a mean only model
+-   an interaction two-way ANOVA model
+-   a simple linear regression
+
+</br>
 
 ## R Tutorial -- Due Thursday by noon
 

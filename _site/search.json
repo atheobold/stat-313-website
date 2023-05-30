@@ -1698,14 +1698,14 @@
     "href": "weeks/week-10.html#textbook-reading",
     "title": "Week 10: Two-Way ANOVA",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\nAs two-way ANOVA is an extension of one-way ANOVA, this week’s reading is rather short. I’ve written a guided tutorial to walk you through the components of a two-way ANOVA. The tutoral also has some coding exercises embedded in it, so it also counts as your R tutorial for the week.\nClick here to access the textbook reading and R tutorial\n\nReading Guide – Due Tuesday by noon\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page at the end of the reading."
+    "text": "1.1 Textbook Reading\nAs two-way ANOVA is an extension of one-way ANOVA, this week’s reading is rather short. I’ve written a guided tutorial to walk you through the components of a two-way ANOVA. The tutorial also has some coding exercises embedded in it, so it also counts as your R tutorial for the week.\nClick here to access the textbook reading and R tutorial\n\nReading Guide – Due Tuesday by noon\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page at the end of the reading."
   },
   {
     "objectID": "weeks/week-10.html#concept-quiz-due-tuesday-by-noon",
     "href": "weeks/week-10.html#concept-quiz-due-tuesday-by-noon",
     "title": "Week 10: Two-Way ANOVA",
     "section": "1.2 Concept Quiz – Due Tuesday by noon",
-    "text": "1.2 Concept Quiz – Due Tuesday by noon\n\nWhich of the following are true about the mean squares between groups?\n\n\nit is a standardized measure of the variability in responses between groups\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of squares between groups by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of squares between groups by the sample size minus the number of groups (\\(n - k\\))\n\n\nWhich of the following are true about the mean square errors?\n\n\nit is a standardized measure of the variability in responses within each group\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of square errors by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of square errors by the sample size minus the number of groups (\\(n - k\\))\n\n\nAn F-statistic uses which formula?\n\n\n\\(\\frac{MSG}{MSE}\\)\n\\(\\frac{SSG}{SSE}\\)\n\\(\\frac{MSE}{MSG}\\)\n\\(\\frac{SSE}{SSG}\\)\n\n\nIdeally, in an ANOVA we’d like to see… (select all that apply)\n\n\nlarge variability in the means of the groups\nsmall variability in the means of the groups\nlarge variability in the observations within each group\nsmall variability in the observations within each group\n\n\nIf the null hypothesis that the means of four groups are all the same is rejected using ANOVA at a 5% significance level, then… (select all that apply)\n\n\nwe can then conclude that all the means are different from one another.\nthe variability between groups is higher than the variability within groups.\nthe pairwise analysis will identify at least one pair of means that are significantly different.\nan appropriate \\(\\alpha\\) to be used in pairwise comparisons is \\(\\frac{0.05}{4} = 0.0125\\) since there are four groups.\n\n\nAs the total sample size increases, the degrees of freedom for the residuals increases.\nThe constant variance condition can be somewhat relaxed when the sample sizes are large.\nThe independence assumption can be relaxed when the total sample size is large.\nThe normality condition is very important when the sample sizes of each group are small."
+    "text": "1.2 Concept Quiz – Due Tuesday by noon\n1. Match each two-way ANOVA model to its correct description.\n\n\n\nadditive model\n  \ninteraction model\n\nThe relationship between one factor and the response changes depending on the level of another factor.\n\nThe relationship between one factor and the response remains the same across all levels of another factor.\n\nThere is a significant relationship between each factor and the response.\n\n\n\n2. Match each two-way ANOVA model to its multiple linear regression counterpart.\n\n\nadditive model\ninteraction model\n\n\n\ndifferent slopes\nparallel slopes\n\n\n\n3. If there is evidence of an interaction when visualizing a two-way ANOVA model we will see…\n\ndifferences in the centers of the distributions\ndifferences in the spreads of the distributions\nsimilar profiles of the distributions across the facets\ndifferences in the profiles of the distributions across the facets\n\n\n4. Which of the following are conditions of a two-way ANOVA model?\n\nindependence of observations between the groups\nindependence of observations within each group\nindependence of variables\nnormally distributed responses within each group\nnormally distributed residuals\nlinear relationship between the explanatory and response variables\nequal variance of residuals\nequal variance of responses within each group\n\n\n5. Which of the following is important to consider when assessing independence?\n\nIf the same observational unit (e.g., person, penguin, tree) could be sampled multiple times\nIf observations could be biologically related (e.g., parents, siblings, etc.)\nIf observations could be spatially related (e.g., countries that border each other)\nIf there is a relationship between the observations and the response variable\n\n\n6. An [additive / interaction] model is fit using a * symbol between the explanatory variables.\n\n7. When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is [conditional / independent] on the other explanatory variable(s) in the model.\n\n8. If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?\n\nseparate one-way ANOVA models\na one-way ANOVA model containing the variable with the smallest p-value (from the additive two-way ANOVA)\na mean only model\nan interaction two-way ANOVA model\na simple linear regression"
   },
   {
     "objectID": "weeks/week-10.html#r-tutorial-due-thursday-by-noon",
@@ -2944,7 +2944,7 @@
     "href": "slides/week10-day1.html#section-1",
     "title": "Two-Way ANOVA Models",
     "section": "",
-    "text": "aov(rating ~ era * genre, data = movies) %&gt;% \n  tidy()\n\n\nWhy did I use a * when fitting the model?\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nera\n3\n4.585917\n1.528639\n0.6592709\n0.5811488\n\n\ngenre\n1\n4.190670\n4.190670\n1.8073510\n0.1851456\n\n\nera:genre\n3\n3.317977\n1.105992\n0.4769920\n0.6997818\n\n\nResiduals\n48\n111.296687\n2.318681\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat would you decide?"
+    "text": "aov(rating ~ era * genre, data = movies) %>% \n  tidy()\n\n\nWhy did I use a * when fitting the model?\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6592709\n0.5811488\n    genre\n1\n4.190670\n4.190670\n1.8073510\n0.1851456\n    era:genre\n3\n3.317977\n1.105992\n0.4769920\n0.6997818\n    Residuals\n48\n111.296687\n2.318681\nNA\nNA\n  \n  \n  \n\n\n\n\n\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-2",
@@ -2958,21 +2958,21 @@
     "href": "slides/week10-day1.html#section-3",
     "title": "Two-Way ANOVA Models",
     "section": "",
-    "text": "aov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nera\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n\n\ngenre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n\n\nResiduals\n51\n114.614663\n2.247346\nNA\nNA\n\n\n\n\n\n\n\n\nWhat would you decide?"
+    "text": "aov(rating ~ era + genre, data = movies) %>% \n  tidy()\n\n\n\naov(rating ~ era + genre, data = movies) %>% \n  tidy() %>% \n  gt() \n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n    genre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n    Residuals\n51\n114.614663\n2.247346\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-4",
     "href": "slides/week10-day1.html#section-4",
     "title": "Two-Way ANOVA Models",
     "section": "",
-    "text": "Step 5: Remove the variable with the largest p-value\n\n\naov(rating ~ genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\ngenre\n1\n4.677942\n4.677942\n2.12789\n0.1504322\n\n\nResiduals\n54\n118.713308\n2.198395\nNA\nNA\n\n\n\n\n\n\n\n\nWhat would you decide?"
+    "text": "Step 5: Remove the variable with the largest p-value\n\n\naov(rating ~ genre, data = movies) %>% \n  tidy()\n\n\n\naov(rating ~ genre, data = movies) %>% \n  tidy() %>% \n  gt() \n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    genre\n1\n4.677942\n4.677942\n2.12789\n0.1504322\n    Residuals\n54\n118.713308\n2.198395\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-5",
     "href": "slides/week10-day1.html#section-5",
     "title": "Two-Way ANOVA Models",
     "section": "",
-    "text": "Step 6: Fit a mean-only model\n\n\nsummarize(movies,\n          mean_rating = mean(rating)\n          )\n\n# A tibble: 1 × 1\n  mean_rating\n        &lt;dbl&gt;\n1        5.64"
+    "text": "Step 6: Fit a mean-only model\n\n\nsummarize(movies,\n          mean_rating = mean(rating)\n          )\n\n# A tibble: 1 × 1\n  mean_rating\n        <dbl>\n1        5.64"
   },
   {
     "objectID": "slides/week7-day2-why-bootstrap.html#section",
@@ -3238,7 +3238,7 @@
     "href": "slides/week4-day1.html#section-5",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Summarizing a Linear Relationship\n\n\n\n Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength\n\n\n\n\n\n\nbirths_post26 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 26)\n\n\nget_correlation(births_post26, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.578"
+    "text": "Summarizing a Linear Relationship\n\n\n\n Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength\n\n\n\n\n\n\nbirths_post26 <- ncbirths %>% \n  drop_na(weight, weeks) %>% \n  filter(weeks > 26)\n\n\nget_correlation(births_post26, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  <dbl>\n1 0.578"
   },
   {
     "objectID": "slides/week4-day1.html#section-6",
@@ -3273,7 +3273,7 @@
     "href": "slides/week4-day1.html#section-10",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Coefficient Estimates\n\n\nweeks_lm &lt;- lm(weight ~ weeks, data = births_post26)\n  \nget_regression_table(weeks_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354"
+    "text": "Coefficient Estimates\n\n\nweeks_lm <- lm(weight ~ weeks, data = births_post26)\n  \nget_regression_table(weeks_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  <chr>        <dbl>     <dbl>     <dbl>   <dbl>    <dbl>    <dbl>\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354"
   },
   {
     "objectID": "slides/week4-day1.html#section-11",
@@ -3287,7 +3287,7 @@
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  <chr>        <dbl>     <dbl>     <dbl>   <dbl>    <dbl>    <dbl>\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
@@ -3301,28 +3301,28 @@
     "href": "slides/week4-day1.html#section-14",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.341 + 0.325 \\cdot weeks\\)\n\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
+    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.341+0.325 \\cdot weeks\\)\n\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
   },
   {
     "objectID": "slides/week4-day1.html#section-15",
     "href": "slides/week4-day1.html#section-15",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "A different explanatory variable\n\n\nweight_gain_lm &lt;- lm(weight ~ gained, data = births_post26)\n  \nget_regression_table(weight_gain_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    6.74      0.102     65.8        0    6.54     6.94 \n2 gained       0.015     0.003      4.79       0    0.009    0.021\n\n\n\n\nWrite out this estimated regression equation!"
+    "text": "A different explanatory variable\n\n\nweight_gain_lm <- lm(weight ~ gained, data = births_post26)\n  \nget_regression_table(weight_gain_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  <chr>        <dbl>     <dbl>     <dbl>   <dbl>    <dbl>    <dbl>\n1 intercept    6.74      0.102     65.8        0    6.54     6.94 \n2 gained       0.015     0.003      4.79       0    0.009    0.021\n\n\n\n\nWrite out this estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-16",
     "href": "slides/week4-day1.html#section-16",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "How would you choose which model is better?!\n\n\n\nbirths_post26 %&gt;% \n  drop_na(weight, gained, weeks) %&gt;% \n  summarize(cor_weeks = cor(weight, weeks), \n            R_sq_weeks = cor_weeks^2, \n            cor_gained = cor(weight, gained),\n            R_sq_gained = cor_gained^2)\n\n# A tibble: 1 × 4\n  cor_weeks R_sq_weeks cor_gained R_sq_gained\n      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;\n1     0.572      0.327      0.153      0.0234"
+    "text": "How would you choose which model is better?!\n\n\n\nbirths_post26 %>% \n  drop_na(weight, gained, weeks) %>% \n  summarize(cor_weeks = cor(weight, weeks), \n            R_sq_weeks = cor_weeks^2, \n            cor_gained = cor(weight, gained),\n            R_sq_gained = cor_gained^2)\n\n# A tibble: 1 × 4\n  cor_weeks R_sq_weeks cor_gained R_sq_gained\n      <dbl>      <dbl>      <dbl>       <dbl>\n1     0.572      0.327      0.153      0.0234"
   },
   {
     "objectID": "slides/week4-day1.html#section-17",
     "href": "slides/week4-day1.html#section-17",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Categorical Explanatory Variables\n\n\n\nFinding distinct levels:\n\n\ndistinct(births_post26, habit)\n\n# A tibble: 2 × 1\n  habit    \n  &lt;fct&gt;    \n1 nonsmoker\n2 smoker"
+    "text": "Categorical Explanatory Variables\n\n\n\nFinding distinct levels:\n\n\ndistinct(births_post26, habit)\n\n# A tibble: 2 × 1\n  habit    \n  <fct>    \n1 nonsmoker\n2 smoker"
   },
   {
     "objectID": "slides/week4-day1.html#section-18",
@@ -3336,7 +3336,7 @@
     "href": "slides/week4-day1.html#section-19",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "A different equation\n\n\nhabit_lm &lt;- lm(weight ~ habit, data = births_post26)\n  \nget_regression_table(habit_lm)\n\n# A tibble: 2 × 7\n  term          estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept         7.23     0.047    155.     0        7.14     7.32 \n2 habit: smoker    -0.4      0.13      -3.07   0.002   -0.656   -0.145\n\n\n\n\nWhat is the estimated mean birth weight for nonsmoking mothers?"
+    "text": "A different equation\n\n\nhabit_lm <- lm(weight ~ habit, data = births_post26)\n  \nget_regression_table(habit_lm)\n\n# A tibble: 2 × 7\n  term          estimate std_error statistic p_value lower_ci upper_ci\n  <chr>            <dbl>     <dbl>     <dbl>   <dbl>    <dbl>    <dbl>\n1 intercept         7.23     0.047    155.     0        7.14     7.32 \n2 habit: smoker    -0.4      0.13      -3.07   0.002   -0.656   -0.145\n\n\n\n\nWhat is the estimated mean birth weight for nonsmoking mothers?"
   },
   {
     "objectID": "slides/week4-day2.html#section",
@@ -3504,28 +3504,28 @@
     "href": "slides/week1-day2.html#section",
     "title": "Working with Data",
     "section": "",
-    "text": "There’s Data\n\n\nGender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n141\nmale\n6\nsmart\nadults\n1.00\n1.00\n\n\n55\nfemale\n6\nsmart\nadults\n0.75\n0.75\n\n\n112\nmale\n7\nsmart\nchildren\n1.00\n1.00\n\n\n111\nmale\n7\nnice\nchildren\n0.75\n0.75\n\n\n15\nfemale\n5\nnice\nadults\n0.75\n0.50\n\n\n92\nfemale\n5\nnice\nchildren\n0.25\n0.50"
+    "text": "There’s Data\n\n\nGender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n \n  \n    subject \n    sex \n    age \n    trait \n    target \n    stereotype \n    high_achieve_caution \n  \n \n\n  \n    130 \n    female \n    6 \n    smart \n    adults \n    1.00 \n    0.75 \n  \n  \n    9 \n    male \n    5 \n    smart \n    children \n    0.75 \n    0.50 \n  \n  \n    34 \n    male \n    5 \n    nice \n    adults \n    1.00 \n    1.00 \n  \n  \n    37 \n    female \n    7 \n    smart \n    adults \n    0.50 \n    1.00 \n  \n  \n    33 \n    male \n    5 \n    smart \n    adults \n    0.75 \n    0.75 \n  \n  \n    47 \n    female \n    7 \n    nice \n    adults \n    1.00 \n    0.50"
   },
   {
     "objectID": "slides/week1-day2.html#section-1",
     "href": "slides/week1-day2.html#section-1",
     "title": "Working with Data",
     "section": "",
-    "text": "Lots of Data\n\nBody girth measurements and skeletal diameter measurements for 247 men and 260 women.\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n32\n72.0\n177.8\n1\n113.0\n80.0\n85.0\n95.0\n\n\n20\n58.4\n157.2\n1\n111.3\n80.6\n78.0\n91.3\n\n\n29\n63.0\n168.9\n0\n95.1\n67.4\n77.7\n95.1\n\n\n30\n54.5\n174.0\n0\n95.1\n63.0\n76.5\n90.0\n\n\n25\n47.3\n152.4\n0\n94.8\n60.4\n79.2\n87.0\n\n\n20\n50.0\n159.8\n0\n89.5\n64.9\n74.5\n88.4"
+    "text": "Lots of Data\n\nBody girth measurements and skeletal diameter measurements for 247 men and 260 women.\n\n\n\n\n\n \n  \n    age \n    wgt \n    hgt \n    sex \n    sho_gi \n    wai_gi \n    nav_gi \n    hip_gi \n  \n \n\n  \n    34 \n    57.3 \n    169.5 \n    0 \n    96.1 \n    66.9 \n    82.4 \n    91.6 \n  \n  \n    22 \n    70.0 \n    171.5 \n    1 \n    120.0 \n    73.6 \n    74.9 \n    90.1 \n  \n  \n    25 \n    54.8 \n    161.2 \n    0 \n    97.3 \n    65.7 \n    77.7 \n    90.5 \n  \n  \n    32 \n    65.9 \n    167.6 \n    0 \n    104.1 \n    75.5 \n    98.9 \n    100.2 \n  \n  \n    20 \n    55.2 \n    161.2 \n    0 \n    100.2 \n    64.2 \n    76.8 \n    88.4 \n  \n  \n    43 \n    77.7 \n    177.8 \n    1 \n    113.2 \n    92.4 \n    92.4 \n    97.0"
   },
   {
     "objectID": "slides/week1-day2.html#section-2",
     "href": "slides/week1-day2.html#section-2",
     "title": "Working with Data",
     "section": "",
-    "text": "In Every Context\n\n\nNBA player of the week from 1985 to 2016\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n22\nDec 30, 2007\n2005\n6-0\nChris Paul\nPG\n\n\n31\nJan 2, 2018\n2005\n185cm\nLou Williams\nG\n\n\n33\nDec 20, 2010\n1998\n6-7\nPaul Pierce\nSF\n\n\n27\nDec 19, 2016\n2009\n201cm\nDeMar DeRozan\nGF\n\n\n24\nMar 25, 1990\n1987\n7-1\nDavid Robinson\nC\n\n\n23\nFeb 28, 2000\n1998\n6-6\nVince Carter\nSF"
+    "text": "In Every Context\n\n\nNBA player of the week from 1985 to 2016\n\n\n\n\n\n\n\n \n  \n    Age \n    Date \n    Draft Year \n    Height \n    Player \n    Position \n  \n \n\n  \n    20 \n    Feb 6, 2006 \n    2005 \n    6-0 \n    Chris Paul \n    PG \n  \n  \n    33 \n    Nov 24, 1996 \n    1985 \n    6-9 \n    Karl Malone \n    PF \n  \n  \n    23 \n    Dec 5, 2004 \n    2001 \n    6-3 \n    Gilbert Arenas \n    G \n  \n  \n    31 \n    Nov 16, 2009 \n    1998 \n    7-0 \n    Dirk Nowitzki \n    PF \n  \n  \n    34 \n    Feb 15, 1998 \n    1985 \n    6-9 \n    Karl Malone \n    PF \n  \n  \n    27 \n    Apr 8, 2013 \n    2008 \n    6-11 \n    Nikola Pekovic \n    PF"
   },
   {
     "objectID": "slides/week1-day2.html#section-3",
     "href": "slides/week1-day2.html#section-3",
     "title": "Working with Data",
     "section": "",
-    "text": "You Can Imagine\n\n\nFish Sampled on Blackfoot River\n\n\n\n\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n2\n0\n385\n550\n2004\nJohnsrud\nRBT\n\n\n2\n0\n197\n80\n1990\nJohnsrud\nRBT\n\n\n2\n0\n189\n60\n1990\nScottyBrown\nBrown\n\n\n1\n0\n306\n235\n1989\nJohnsrud\nRBT\n\n\n2\n0\n187\n60\n1991\nJohnsrud\nRBT\n\n\n2\n0\n485\n1020\n2006\nScottyBrown\nBrown"
+    "text": "You Can Imagine\n\n\nFish Sampled on Blackfoot River\n\n\n\n\n\n\n\n \n  \n    trip \n    mark \n    length \n    weight \n    year \n    section \n    species \n  \n \n\n  \n    2 \n    0 \n    282 \n    170 \n    1991 \n    Johnsrud \n    RBT \n  \n  \n    1 \n    0 \n    282 \n    220 \n    1993 \n    Johnsrud \n    RBT \n  \n  \n    2 \n    0 \n    228 \n    125 \n    1991 \n    Johnsrud \n    RBT \n  \n  \n    1 \n    0 \n    462 \n    930 \n    1998 \n    Johnsrud \n    Brown \n  \n  \n    1 \n    0 \n    350 \n    460 \n    2004 \n    Johnsrud \n    RBT \n  \n  \n    2 \n    1 \n    190 \n    NA \n    1998 \n    ScottyBrown \n    WCT"
   },
   {
     "objectID": "slides/week1-day2.html#section-4",
@@ -3539,7 +3539,7 @@
     "href": "slides/week1-day2.html#section-5",
     "title": "Working with Data",
     "section": "",
-    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
+    "text": "Types of Variables\n\n\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day2.html#section-6",
@@ -3588,7 +3588,7 @@
     "href": "slides/week1-day2.html#section-12",
     "title": "Working with Data",
     "section": "",
-    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+    "text": "Data Types in R\n\n\n\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           <int> 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           <dbl> 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          <dbl> 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         <chr> \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         <dbl> 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         <dbl> 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight <chr> \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            <fct> male, female, female, male, female, female, female, mal…\n$ habit          <chr> \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       <chr> \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
   },
   {
     "objectID": "slides/week1-day1.html#section",
@@ -4218,14 +4218,14 @@
     "href": "slides/week7-day1.html#section-9",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Virtual Sampling\n\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = TRUE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nBeau Baldwin\nAsc Head Coach Crd 4\n708408\n\n\nStein Metzger\nIntercol Ath Head Coach Ex\n191728\n\n\nJordan Wolfrum\nIntercol Ath Head Coach Ex\n76597\n\n\nDavid Bradley Kreutzkamp\nHead Coach 5\n105683\n\n\nDaniel Dykes\nHead Coach 5\n540000\n\n\nDaniel Conners\nHead Coach 5\n156181\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = TRUE)\n\n\n\n\n\n\n\n \n  \n    Employee Name \n    Job Title \n    Total Pay & Benefits \n  \n \n\n  \n    David Bradley Kreutzkamp \n    Head Coach 5 \n    105683.0 \n  \n  \n    Daniel Dykes \n    Head Coach 5 \n    540000.0 \n  \n  \n    Daniel Conners \n    Head Coach 5 \n    156181.0 \n  \n  \n    Lauren Beth Nadler \n    Head Coach 5 \n    44714.0 \n  \n  \n    Richard A Gallien \n    HEAD COACH - 12 MONTH \n    103189.9 \n  \n  \n    Gregory L Kamansky \n    HEAD COACH - 12 MONTH \n    198151.7 \n  \n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#section-10",
     "href": "slides/week7-day1.html#section-10",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Distribution of 1000 medians from samples of 25 coaches"
+    "text": "Distribution of 1000 medians from samples of 25 coaches\n\n\nvirtual_samples25 <- coaches %>% \n  rep_sample_n(size = 25, reps = 1000)\n\nvirtual_med25 <- virtual_samples25 %>% \n  group_by(replicate) %>% \n  summarize(median = median(`Total Pay & Benefits`)) %>% \n  mutate(samps = \"25\")\n\nvirtual_samples50 <- coaches %>% \n  rep_sample_n(size = 50, reps = 1000)\n\nvirtual_med50 <- virtual_samples50 %>% \n  group_by(replicate) %>% \n  summarize(median = median(`Total Pay & Benefits`)) %>% \n  mutate(samps = \"50\")\n\nvirtual_samples100 <- coaches %>% \n  rep_sample_n(size = 100, reps = 1000)\n\nvirtual_med100 <- virtual_samples100 %>% \n  group_by(replicate) %>% \n  summarize(median = median(`Total Pay & Benefits`)) %>% \n  mutate(samps = \"100\")\n\nmaster_samples <- bind_rows(virtual_med25, \n                            virtual_med50, \n                            virtual_med100) \n\n\nmaster_samples %>% \n filter(samps == \"50\") %>% \n  ggplot(mapping = aes(x = median)) + \n  geom_histogram(binwidth = 6500, color = \"white\") + \n  scale_x_continuous(labels = scales::dollar_format()) +\n  labs(x = \"Median Salary\")"
   },
   {
     "objectID": "slides/week7-day1.html#section-11",
@@ -4239,21 +4239,21 @@
     "href": "slides/week7-day1.html#section-12",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Distributions of 1000 medians from different sample sizes\n\n\n\nWhat differences do you see?"
+    "text": "Distributions of 1000 medians from different sample sizes\n\n\nmaster_samples %>% \n  mutate(samps = factor(samps, \n                        levels = c(\"25\", \"50\", \"100\")\n                        )\n         ) %>% \n  ggplot(mapping = aes(x = median)) + \n  geom_histogram(binwidth = 6500, color = \"white\") + \n  facet_wrap(~samps) + \n  scale_x_continuous(labels = scales::dollar_format()) +\n  labs(x = \"Median Salary\") +\n  theme(axis.text.x = element_text(hjust = 1, \n                                   vjust = 1, \n                                   angle = 45))\n\n\n\n\n\n\n\n\n\nWhat differences do you see?"
   },
   {
     "objectID": "slides/week7-day1.html#section-13",
     "href": "slides/week7-day1.html#section-13",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19343.969\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\nCareful! There are important differences between standard errors and standard deviations."
+    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n \n  \n    Sample Size \n    Standard Error of Median \n  \n \n\n  \n    25 \n    19342.081 \n  \n  \n    50 \n    12459.358 \n  \n  \n    100 \n    8279.311 \n  \n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\nCareful! There are important differences between standard errors and standard deviations."
   },
   {
     "objectID": "slides/week7-day1.html#section-14",
     "href": "slides/week7-day1.html#section-14",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "A good guess?"
+    "text": "A good guess?\n\n\nmaster_samples %>% \n  mutate(samps = factor(samps, \n                        levels = c(\"25\", \"50\", \"100\")\n                           )\n         ) %>% \n  ggplot(mapping = aes(x = median)) + \n  geom_histogram(binwidth = 6500, color = \"white\") + \n  geom_vline(xintercept = median(coaches$`Total Pay & Benefits`), \n             color = \"red\", \n             linewidth = 1.5) +\n  facet_wrap(~samps, ) + \n  scale_x_continuous(labels = scales::dollar_format()) +\n  labs(x = \"Median Salary\")"
   },
   {
     "objectID": "slides/week7-day1.html#section-15",
@@ -4982,5 +4982,33 @@
     "title": "ANalysis Of VAriance",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\nlibrary(broom)\nlibrary(ggridges)\nlibrary(infer)\n\nevals_small <- moderndive::evals %>% \n  group_by(prof_ID) %>% \n  mutate(min_eval = min(score), \n         age_cat = case_when(age < 37 ~ \"young faculty\",\n                             age >= 37 & age < 45 ~ \"middle age\", \n                             age >= 45 & age < 60 ~ \"older faculty\", \n                             age >= 60 ~ \"nearly retired\"),\n         age_cat = factor(age_cat, \n                          levels = c(\"young faculty\", \"middle age\",\n                                     \"older faculty\", \"nearly retired\")\n                          )\n         ) %>% \n  distinct(prof_ID, .keep_all = TRUE)"
+  },
+  {
+    "objectID": "slides/week10-day1.html",
+    "href": "slides/week10-day1.html",
+    "title": "Two-Way ANOVA Models",
+    "section": "",
+    "text": "Two-way ANOVA\nAssess if the relationship between one categorical explanatory variable and the response differs based on the values of another categorical variable"
+  },
+  {
+    "objectID": "slides/week10-day1.html#section-6",
+    "href": "slides/week10-day1.html#section-6",
+    "title": "Two-Way ANOVA Models",
+    "section": "",
+    "text": "Brainstorm\nwhere the relationship between a (categorical) explanatory variable and a (quantitative) response variable differs based on the levels of another explanatory variable."
+  },
+  {
+    "objectID": "slides/week10-day1.html#section-7",
+    "href": "slides/week10-day1.html#section-7",
+    "title": "Two-Way ANOVA Models",
+    "section": "",
+    "text": "Writing research questions for one-way and two-way ANOVA models!"
+  },
+  {
+    "objectID": "slides/week7-day1.html",
+    "href": "slides/week7-day1.html",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\nlibrary(infer)\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(stringr)\nlibrary(openintro)\n\nLoading required package: airports\nLoading required package: cherryblossom\nLoading required package: usdata"
   }
 ]
