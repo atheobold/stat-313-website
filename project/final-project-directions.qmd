@@ -22,20 +22,20 @@ You will need Dr. Theobold's help to perform this task. Dr. Theobold will work w
 
 ## Data Description
 
-In 4-6 sentences describe: 
+In 4-6 sentences describe:
 
-* how the data were collected 
-* the context of the data (e.g., are the data from from a published study?) 
-* the background of the research problem (e.g., why were the data collected?)
+-   how the data were collected
+-   the context of the data (e.g., are the data from from a published study?)
+-   the background of the research problem (e.g., why were the data collected?)
 
 ## Questions of Interest
 
 State the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should start with, "What is the relationship between..." and should be as specific as possible. Your *Findings* section should directly address the question(s) you pose here.
 
-::: {.callout-tip}
+::: callout-tip
 # Multiple research questions
 
-This week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10! 
+This week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10!
 :::
 
 # Methods
@@ -84,49 +84,30 @@ In this section you will write up your findings for your question of interest. I
 You must state what $\alpha$ threshold was used when reaching your hypothesis test decisions.
 :::
 
-
 ## One-Way ANOVA Model
 
-Everyone starts here! In this section, you need to do the following: 
+Everyone starts here! In this section, you need to do the following:
 
--   Fit a one-way ANOVA model
+-   Fit **two** one-way ANOVA models -- one model for each categorical explanatory variable
 -   Obtain the ANOVA table for the model
 -   Based on the ANOVA table, state what decision was reached for the hypothesis in the one-way ANOVA model
 -   Based on the decision you made, state what you can conclude regarding the relationship between your variables
 
 
-<!-- ## Two-Way ANOVA Additive Model -->
+## Two-Way ANOVA Additive Model
 
-<!-- ::: callout-caution -->
-<!-- # Fitting a two-way ANOVA additive model -->
+::: callout-caution
+# When to proceed
+If you rejected the null hypothesis for **both** one-way ANOVA models, you can proceed to fitting a two-way ANOVA model
+:::
 
-<!-- **If you rejected** $H_0$ for either of your explanatory variables, your next step is to fit a two-way ANOVA additive model. -->
-<!-- ::: -->
+-   Fit a two-way ANOVA additive model
 
-<!-- -   Fit a two-way ANOVA additive model -->
-<!-- -   Obtain the ANOVA table for the model -->
-<!-- -   Based on the ANOVA table, state what decision was reached **for each hypothesis** in the two-way ANOVA additive model. -->
-<!-- -   Based on the decision you made, state what you can conclude regarding the relationship between your variables. -->
+-   Obtain the tidy ANOVA table for the model
 
-<!-- ## Two-Way ANOVA Interaction Model -->
+-   Based on the ANOVA table, state what decision was reached **for each hypothesis** in the two-way ANOVA additive model.
 
-<!-- ::: callout-caution -->
-<!-- # Fitting a two-way ANOVA interaction model -->
-
-<!-- **If you rejected** $H_0$ for either of your explanatory variables in your additive model, your next step is to fit a two-way ANOVA interaction model. -->
-<!-- ::: -->
-
-
-<!-- -   Fit a two-way ANOVA interaction model -->
-<!-- -   Obtain the ANOVA table for the model -->
-
-<!-- ::: callout-tip -->
-<!-- Use the `tidy()` function from the **broom** package to provide nicely formatted ANOVA table -->
-<!-- ::: -->
-
-<!-- -   Based on the ANOVA table, state what decision was reached regarding the hypothesis for the two-way ANOVA interaction model. -->
-<!-- -   Based on the decision you made, state what you can conclude regarding the relationship between the variables in your model. -->
-
+-   Based on the decision you made, state what you can conclude regarding the relationship between your variables.
 
 ## Conclusions
 
@@ -136,7 +117,7 @@ In this section you should also describe whether you believe the tests you perfo
 
 # Scope of Inference
 
-Write a 4-5 sentence statement on what can be inferred from the design of the study and the results of your statistical analysis. Specifically, answer these two questions and comment on their implications:
+Write a 6-8 sentence statement on what can be inferred from the design of the study and the results of your statistical analysis. Specifically, answer these two questions and comment on their implications:
 
 -   Based on the sampling method used, what larger population can you infer the results or your analysis onto?
 
