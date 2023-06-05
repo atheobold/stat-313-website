@@ -2914,58 +2914,58 @@
   {
     "objectID": "slides/week10-day1.html#section",
     "href": "slides/week10-day1.html#section",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Hypothesis Test Steps\n\n\n\n\nStep 1: Fit an interaction model\n\n\n\n\n\nStep 2: Decide if the interaction is necessary\n\n\nIf yes, then this is your model!\nIf no, go to step 3."
+    "text": "Two-way ANOVA\n\n\n\nGoal:\n\nAssess if multiple categorical variables have a relationship with the response."
   },
   {
     "objectID": "slides/week10-day1.html#section-1",
     "href": "slides/week10-day1.html#section-1",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "aov(rating ~ era * genre, data = movies) %&gt;% \n  tidy()\n\n\nWhy did I use a * when fitting the model?\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6592709\n0.5811488\n    genre\n1\n4.190670\n4.190670\n1.8073510\n0.1851456\n    era:genre\n3\n3.317977\n1.105992\n0.4769920\n0.6997818\n    Residuals\n48\n111.296687\n2.318681\nNA\nNA\n  \n  \n  \n\n\n\n\n\n\nWhat would you decide?"
+    "text": "Modeling Options\n\n\n\n\nAdditive Model\n\n\nAssess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.\n\n\n\nInteraction Model\n\n\nAssess if the relationship between one categorical explanatory variable and the response differs based on the values of another categorical variable."
   },
   {
     "objectID": "slides/week10-day1.html#section-2",
     "href": "slides/week10-day1.html#section-2",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Step 3: Fit an additive model\n\n\n\n\n\nStep 4: Decide if each explanatory variable is necessary"
+    "text": "What are we looking for?"
   },
   {
     "objectID": "slides/week10-day1.html#section-3",
     "href": "slides/week10-day1.html#section-3",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "aov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n    genre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n    Residuals\n51\n114.614663\n2.247346\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
+    "text": "What are we looking for?"
   },
   {
     "objectID": "slides/week10-day1.html#section-4",
     "href": "slides/week10-day1.html#section-4",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Step 5: Remove the variable with the largest p-value\n\n\naov(rating ~ genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    genre\n1\n4.677942\n4.677942\n2.12789\n0.1504322\n    Residuals\n54\n118.713308\n2.198395\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
+    "text": "aov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n    genre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n    Residuals\n51\n114.614663\n2.247346\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-5",
     "href": "slides/week10-day1.html#section-5",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Step 6: Fit a mean-only model\n\n\nsummarize(movies,\n          mean_rating = mean(rating)\n          )\n\n# A tibble: 1 × 1\n  mean_rating\n        &lt;dbl&gt;\n1        5.64"
+    "text": "Step 5: Remove the variable with the largest p-value\n\n\naov(rating ~ genre, data = movies) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    genre\n1\n4.677942\n4.677942\n2.12789\n0.1504322\n    Residuals\n54\n118.713308\n2.198395\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-6",
     "href": "slides/week10-day1.html#section-6",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Brainstorm\nwhere the relationship between a (categorical) explanatory variable and a (quantitative) response variable differs based on the levels of another explanatory variable."
+    "text": "Step 6: Fit a mean-only model\n\n\nsummarize(movies,\n          mean_rating = mean(rating)\n          )\n\n# A tibble: 1 × 1\n  mean_rating\n        &lt;dbl&gt;\n1        5.64"
   },
   {
     "objectID": "slides/week10-day1.html#section-7",
     "href": "slides/week10-day1.html#section-7",
-    "title": "Two-Way ANOVA Models",
+    "title": "One-Way ANOVA Review",
     "section": "",
-    "text": "Writing research questions for one-way and two-way ANOVA models!"
+    "text": "Brainstorm\nwhere the relationship between a (categorical) explanatory variable and a (quantitative) response variable differs based on the levels of another explanatory variable."
   },
   {
     "objectID": "slides/week7-day2-why-bootstrap.html#section",
@@ -4940,5 +4940,89 @@
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nSee Section 6.0.2 for information on what you can expect when you email me.↩︎\nA “Satisfactory” lab or critique occurs when every problem has been marked Satisfactory.↩︎"
+  },
+  {
+    "objectID": "slides/week10-day1.html#how-to-test-if-at-least-one-chanel-type-has-a-different-mean-weight",
+    "href": "slides/week10-day1.html#how-to-test-if-at-least-one-chanel-type-has-a-different-mean-weight",
+    "title": "One-Way ANOVA Review",
+    "section": "How to test if at least one chanel type has a different mean weight?",
+    "text": "How to test if at least one chanel type has a different mean weight?\n\n\n# A tibble: 2 × 6\n  term         df    sumsq meansq statistic    p.value\n  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 unittype      6   58579. 9763.       109.  5.65e-134\n2 Residuals 11977 1075510.   89.8       NA  NA        \n\n\n\nWhat would you decide?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight",
+    "href": "slides/week10-day1.html#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight",
+    "title": "One-Way ANOVA Review",
+    "section": "One-Way ANOVA – Testing if at least one chanel type has a different mean weight",
+    "text": "One-Way ANOVA – Testing if at least one chanel type has a different mean weight\n\naov(weight_g ~ unittype, data = trout) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df    sumsq meansq statistic    p.value\n  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 unittype      6   58579. 9763.       109.  5.65e-134\n2 Residuals 11977 1075510.   89.8       NA  NA        \n\n\n\n \n\nWhat would you decide?\n\nCan you say exactly which channel types are different?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#section-8",
+    "href": "slides/week10-day1.html#section-8",
+    "title": "One-Way ANOVA Review",
+    "section": "",
+    "text": "Writing research questions for one-way and two-way ANOVA models!"
+  },
+  {
+    "objectID": "slides/week10-day1.html#section-9",
+    "href": "slides/week10-day1.html#section-9",
+    "title": "One-Way ANOVA Review",
+    "section": "",
+    "text": "Writing research questions for one-way and two-way ANOVA models!"
+  },
+  {
+    "objectID": "slides/week10-day1.html#another-way-to-think-about-it",
+    "href": "slides/week10-day1.html#another-way-to-think-about-it",
+    "title": "One-Way ANOVA Review",
+    "section": "Another way to think about it…",
+    "text": "Another way to think about it…"
+  },
+  {
+    "objectID": "slides/week10-day1.html#section-10",
+    "href": "slides/week10-day1.html#section-10",
+    "title": "One-Way ANOVA Review",
+    "section": "",
+    "text": "Writing research questions for one-way and two-way ANOVA models!"
+  },
+  {
+    "objectID": "slides/week10-day1.html#hypothesis-test-steps",
+    "href": "slides/week10-day1.html#hypothesis-test-steps",
+    "title": "One-Way ANOVA Review",
+    "section": "Hypothesis Test Steps",
+    "text": "Hypothesis Test Steps\n\n\n\nStep 1: Fit a one-way ANOVA model for each categorical variable\n\n\n\n\n\n\nStep 2: Decide if each explanatory variable has a meaningful relationship with the response variable\n\n\n\n\nIf yes, then go to step 3!\nIf no, then report which variable (if any) has the strongest relationship with the response."
+  },
+  {
+    "objectID": "slides/week10-day1.html#additive-two-way-anova",
+    "href": "slides/week10-day1.html#additive-two-way-anova",
+    "title": "One-Way ANOVA Review",
+    "section": "Additive Two-Way ANOVA",
+    "text": "Additive Two-Way ANOVA\n\n\naov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\nWhy did I use a + when fitting the model?\n\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      df\n      sumsq\n      meansq\n      statistic\n      p.value\n    \n  \n  \n    era\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n    genre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n    Residuals\n51\n114.614663\n2.247346\nNA\nNA\n  \n  \n  \n\n\n\n\n\nWhat is the era line testing?\n\nWhat would you decide?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#one-way-anova-research-question",
+    "href": "slides/week10-day1.html#one-way-anova-research-question",
+    "title": "One-Way ANOVA Review",
+    "section": "One-way ANOVA Research Question",
+    "text": "One-way ANOVA Research Question\n90-seconds\n \nHow would you phrase a research question for the one-way ANOVA model we’ve been investigating?\nExplanatory Variable: genre\nResponse Variable: rating"
+  },
+  {
+    "objectID": "slides/week10-day1.html#two-way-anova-research-question",
+    "href": "slides/week10-day1.html#two-way-anova-research-question",
+    "title": "One-Way ANOVA Review",
+    "section": "Two-way ANOVA Research Question",
+    "text": "Two-way ANOVA Research Question\n90-seconds\n \nHow would you phrase a research question for the two-way ANOVA model we’ve been investigating?\nExplanatory Variables: genre and era\nResponse Variable: rating"
+  },
+  {
+    "objectID": "slides/week10-day1.html#what-about-two-way-anova-interaction-models",
+    "href": "slides/week10-day1.html#what-about-two-way-anova-interaction-models",
+    "title": "One-Way ANOVA Review",
+    "section": "What about two-way ANOVA interaction models?",
+    "text": "What about two-way ANOVA interaction models?\n\n\nAn interaction model is similar to a different slopes multiple linear regression\nIt assesses if the relationship between two variables differs when a third variable is considered\nDue to time, we we are not fitting interaction models for the Final Project"
+  },
+  {
+    "objectID": "slides/week10-day1.html#youve-seen-a-one-way-anova-model-before",
+    "href": "slides/week10-day1.html#youve-seen-a-one-way-anova-model-before",
+    "title": "One-Way ANOVA Review",
+    "section": "You’ve seen a one-way ANOVA model before!",
+    "text": "You’ve seen a one-way ANOVA model before!\n\ntrout_lm &lt;- lm(weight_g ~ unittype, data = trout)\n\nget_regression_table(trout_lm)\n\n# A tibble: 7 × 7\n  term         estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept       8.07      0.113    71.6     0         7.85    8.29 \n2 unittype: I     1.74      1.98      0.878   0.38     -2.14    5.62 \n3 unittype: IP   -6.68      1        -6.68    0        -8.64   -4.72 \n4 unittype: P     3.79      0.208    18.2     0         3.38    4.20 \n5 unittype: R    -0.991     0.537    -1.85    0.065    -2.04    0.061\n6 unittype: S    -3.73      3.58     -1.04    0.298   -10.8     3.29 \n7 unittype: SC   -3.06      0.266   -11.5     0        -3.58   -2.54 \n\n\n\n\n\nWhat do the estimates from each of these lines (e.g., unittype:IP) represent?"
   }
 ]
