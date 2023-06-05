@@ -3,8 +3,6 @@ title: "The Flaws of Averages"
 format: 
   revealjs:
     theme: night
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: false
@@ -150,17 +148,17 @@ Some Rules to Play By
 </br>
 
 ::: {style="font-size: 0.75em; color: #000000;"}
-- Look at and understand your raw data before aggregating
+-   Look at and understand your raw data before aggregating
 :::
 
 . . .
 
 ::: {style="font-size:0.75em; color: #000000;"}
-- Boxplots (and such) don't count as visualizing the raw data
+-   Boxplots (and such) don't count as visualizing the raw data
 :::
 
 . . .
 
 ::: {style="font-size: 0.75em; color: #000000;"}
-- We should only average things we are convinced are measuring the same thing
+-   We should only average things we are convinced are measuring the same thing
 :::

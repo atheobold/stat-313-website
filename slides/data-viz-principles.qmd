@@ -1,8 +1,6 @@
 ---
 title: "Data Visualization Principles"
-format: 
-  revealjs:
-    self-contained: true
+format: revealjs
 ---
 
 ```{r set-up}
@@ -93,4 +91,3 @@ ggplot(data = penguins,
 ```
 
 <center>[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)</center>
-

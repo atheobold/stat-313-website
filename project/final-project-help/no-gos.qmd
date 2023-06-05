@@ -1,8 +1,6 @@
 ---
 title: "Things that cannot go in your project!"
-format: 
-  docx: 
-    self-contained: true
+format: docx
 editor: visual
 ---
 

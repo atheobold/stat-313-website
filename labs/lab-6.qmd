@@ -2,10 +2,7 @@
 title: "Predicting Professor Evaluation Scores"
 author: "Your group's names here!"
 date: "May 11, 2023"
-format: 
-  html:
-    embed-resources: true
-    standalone: true
+format: html
 editor: visual
 execute: 
   eval: false
@@ -67,7 +64,7 @@ Based on this output, we are starting with a **really** low adjusted $R^2$. So, 
 
 ### Step 1
 
-**Rules: You can only add a variable to the model if it improves the adjusted $R^2$ by at least 1% (0.01).**
+**Rules: You can only add a variable to the model if it improves the adjusted** $R^2$ by at least 1% (0.01).
 
 Alright, so now we get cooking. The next step is to fit **every** model with **one** explanatory variable. I've provided a list of every explanatory variable you are allowed to consider!
 
@@ -88,7 +85,7 @@ Woof, that's 12 different variables. That means, for this first round, you will 
 
 Every model you fit will have the *same* format:
 
-```
+```         
 name_of_model <- lm(score ~ <variable>, data = evals_train)
 ```
 
@@ -129,7 +126,7 @@ get_regression_summaries(one_language)
 
 Alright, you've added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: **every model you fit needs to contain the variable you decided to add**. So, if you decided to add the `bty_avg` variable, every model you fit would look like this:
 
-```
+```         
 name_of_model <- lm(score ~ bty_avg + <variable>, data = evals_train)
 ```
 
@@ -147,7 +144,7 @@ Again, the name of the model will need to change. This round, you are on your ow
 
 Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 101models is the "top" model.
 
-**Rules: You can only add a variable to the model if it improves adjusted $R^2$ by at least 1% (0.01) from the model you chose in Question 1.**
+**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01) from the model you chose in Question 1.
 
 ```{r two-variable-model-summaries}
 ## Code to compare all 11 models you fit goes here!
@@ -164,7 +161,7 @@ As you might have expected, in this step we add a *third* variable to our top mo
 
 This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how what the code looks:
 
-```
+```         
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
@@ -275,9 +272,7 @@ The output of this code is the variable that has the highest adjusted $R^2$. Com
 
 ## Testing Your Top Model
 
-
 **If you choose to test the data on a different model than what you said in #6, you must justify why you are using a different model!**
-
 
 ```{r prediction-error}
 

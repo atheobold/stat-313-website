@@ -1,8 +1,6 @@
 ---
 title: "One-Way ANOVA to Two-Way ANOVA Model Selection Process"
-format: 
-  html: 
-    standalone: true
+format: html
 editor: visual
 execute: 
   warning: false

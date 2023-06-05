@@ -1,10 +1,15 @@
 ---
 title: "Week Five: Diving Deeper into Regression (Multiple Linear Regression)"
 format: 
-  html:
-    embed-resources: true
-    standalone: true
+  html: 
+    number-sections: true
+    number-depth: 2
+    section-divs: true
 editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -154,7 +159,7 @@ get_regression_table(bty_lm)
 
 </br>
 
-**Question 9** -- The intercept represents the [course evaluation score / mean course evaluation score] for professors whose age is \_\_ and who have a average beauty score of \_\_\_.
+**Question 9** -- The intercept represents the \[course evaluation score / mean course evaluation score\] for professors whose age is \_\_ and who have a average beauty score of \_\_\_.
 
 </br>
 

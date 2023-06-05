@@ -3,7 +3,6 @@ title: "Statistical Critique 1"
 subtitle: "Due April 23, 2023 by midnight"
 format: 
   html:
-    self-contained: true
     table-of-contents: true
     toc-depth: 2
     number-sections: true

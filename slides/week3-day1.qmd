@@ -4,8 +4,6 @@ format:
   revealjs:
     logo: images/dplyr.png
     theme: night
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: false

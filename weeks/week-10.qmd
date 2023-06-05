@@ -2,15 +2,9 @@
 title: "Week 10: Two-Way ANOVA"
 format: 
   html: 
-    theme: minty
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
     section-divs: true
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
-    embed-resources: true
 editor: visual
 execute: 
   echo: true
@@ -47,18 +41,15 @@ Submit a screenshot of the completion page at the end of the reading.
 
 ## Concept Quiz -- Due Tuesday by noon
 
-**1.  Match each two-way ANOVA model to its correct description.**
+**1. Match each two-way ANOVA model to its correct description.**
 
 ::: columns
 ::: {.column width="40%"}
-
 </br>
 
 **additive model**
 
-</br>
-</br>
-</br>
+</br> </br> </br>
 
 **interaction model**
 :::
@@ -78,7 +69,7 @@ There is a significant relationship between each factor and the response.
 
 </br>
 
-**2.  Match each two-way ANOVA model to its multiple linear regression counterpart.**
+**2. Match each two-way ANOVA model to its multiple linear regression counterpart.**
 
 ::: columns
 ::: {.column width="45%"}
@@ -90,7 +81,7 @@ There is a significant relationship between each factor and the response.
 ::: {.column width="10%"}
 :::
 
-:::{.column width="45%"} 
+::: {.column width="45%"}
 different slopes
 
 parallel slopes
@@ -99,16 +90,16 @@ parallel slopes
 
 </br>
 
-**3.  If there is evidence of an interaction when visualizing a two-way ANOVA model we will see...**
+**3. If there is evidence of an interaction when visualizing a two-way ANOVA model we will see...**
 
-- differences in the centers of the distributions
-- differences in the spreads of the distributions
-- similar profiles of the distributions across the facets 
-- differences in the profiles of the distributions across the facets
+-   differences in the centers of the distributions
+-   differences in the spreads of the distributions
+-   similar profiles of the distributions across the facets
+-   differences in the profiles of the distributions across the facets
 
 </br>
 
-**4.  Which of the following are conditions of a two-way ANOVA model?**
+**4. Which of the following are conditions of a two-way ANOVA model?**
 
 -   independence of observations between the groups
 -   independence of observations within each group
@@ -121,7 +112,7 @@ parallel slopes
 
 </br>
 
-**5.  Which of the following is important to consider when assessing independence?**
+**5. Which of the following is important to consider when assessing independence?**
 
 -   If the same observational unit (e.g., person, penguin, tree) could be sampled multiple times
 
@@ -133,15 +124,15 @@ parallel slopes
 
 </br>
 
-**6.  An \[additive / interaction\] model is fit using a `*` symbol between the explanatory variables.**
+**6. An \[additive / interaction\] model is fit using a `*` symbol between the explanatory variables.**
 
 </br>
 
-**7.  When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is \[conditional / independent\] on the other explanatory variable(s) in the model.**
+**7. When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is \[conditional / independent\] on the other explanatory variable(s) in the model.**
 
 </br>
 
-**8.  If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?**
+**8. If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?**
 
 -   separate one-way ANOVA models
 -   a one-way ANOVA model containing the variable with the smallest p-value (from the additive two-way ANOVA)

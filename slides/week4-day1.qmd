@@ -1,8 +1,6 @@
 ---
 title: "Introduction to Linear Regression"
-format: 
-  revealjs:
-    embed-resources: true
+format: revealjs
 editor: visual
 ---
 

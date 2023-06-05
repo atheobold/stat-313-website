@@ -2,7 +2,6 @@
 title: "Final Project Guidelines"
 format: 
   html:
-    self-contained: true
     number-sections: true
     number-depth: 2
 editor: visual
@@ -93,11 +92,11 @@ Everyone starts here! In this section, you need to do the following:
 -   Based on the ANOVA table, state what decision was reached for the hypothesis in the one-way ANOVA model
 -   Based on the decision you made, state what you can conclude regarding the relationship between your variables
 
-
 ## Two-Way ANOVA Additive Model
 
 ::: callout-caution
 # When to proceed
+
 If you rejected the null hypothesis for **both** one-way ANOVA models, you can proceed to fitting a two-way ANOVA model
 :::
 

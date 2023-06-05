@@ -1,13 +1,15 @@
 ---
 title: "Model Selection"
 format: 
-  html:
-    toc: true
-    toc-depth: 2
+  html: 
     number-sections: true
-    embed-resources: true
-    standalone: true
+    number-depth: 2
+    section-divs: true
 editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -21,7 +23,7 @@ set.seed(1234)
 
 [Download the Word Document](reading-guide/week6-reading.docx)
 
-# Textbook Reading 
+# Textbook Reading
 
 This week's course content is a compilation of different sections from a variety of textbooks. Your reading is housed here!
 
@@ -667,21 +669,21 @@ Alternatively, one could choose to include or exclude variables from a model bas
 
 # Concept Quiz -- Due Tuesday by noon
 
-**Question 1** -- $R^2$ is the [correlation / percent] of variation in the [explanatory / response] variable that is explained by the [response variables / explanatory variables] and the [decided model / best model / linear model]. 
+**Question 1** -- $R^2$ is the \[correlation / percent\] of variation in the \[explanatory / response\] variable that is explained by the \[response variables / explanatory variables\] and the \[decided model / best model / linear model\].
 
-**Question 2** -- Adjusted $R^2$ should be used for [simple / multiple] linear regression and unadjusted $R^2$ should be used for [simple / multiple] linear regression. 
+**Question 2** -- Adjusted $R^2$ should be used for \[simple / multiple\] linear regression and unadjusted $R^2$ should be used for \[simple / multiple\] linear regression.
 
-**Question 3** -- In the adjusted $R^2$ formula $n$ represents the [number of explanatory variables / sample size / response variable] and $k$ represents the [number of explanatory variables / sample size / number of coefficients needed to be calculated]. 
+**Question 3** -- In the adjusted $R^2$ formula $n$ represents the \[number of explanatory variables / sample size / response variable\] and $k$ represents the \[number of explanatory variables / sample size / number of coefficients needed to be calculated\].
 
-**Question 4** -- When choosing a model based on adjusted $R^2$, the model with the [lowest / highest] value should be chosen. 
+**Question 4** -- When choosing a model based on adjusted $R^2$, the model with the \[lowest / highest\] value should be chosen.
 
-**Question 5** -- Backward selection starts with the model with [no / every] explanatory variable included. 
+**Question 5** -- Backward selection starts with the model with \[no / every\] explanatory variable included.
 
-**Question 6** -- Backward selection [adds / removes] variables from the model. If the [R-squared / correlation / adjusted R-squared] when the variable is [added / removed] is [smaller / larger], the variable will be [added / removed] from the final model. 
+**Question 6** -- Backward selection \[adds / removes\] variables from the model. If the \[R-squared / correlation / adjusted R-squared\] when the variable is \[added / removed\] is \[smaller / larger\], the variable will be \[added / removed\] from the final model.
 
-**Question 7** -- Forward selection starts with the model with [no / every] explanatory variable included. 
+**Question 7** -- Forward selection starts with the model with \[no / every\] explanatory variable included.
 
-**Question 8** -- Forward selection [adds / removes] variables from the model. If the [R-squared / correlation / adjusted R-squared] when the variable is [added / removed] is [smaller / larger], the variable will be [added / removed] from the final model. 
+**Question 8** -- Forward selection \[adds / removes\] variables from the model. If the \[R-squared / correlation / adjusted R-squared\] when the variable is \[added / removed\] is \[smaller / larger\], the variable will be \[added / removed\] from the final model.
 
 # R Tutorial -- Due Thursday by noon
 

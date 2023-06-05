@@ -1,19 +1,13 @@
 ---
 title: "Week Two: Summarizing & Visualizing Numerical Data"
 subtitle: Spring 2023
-format:
-  html:
-    theme: minty
-    fontsize: 1em
-    mainfont: "sans-serif"
+format: 
+  html: 
     number-sections: true
+    number-depth: 2
     section-divs: true
-    code-block-bg: '#76b5c5'
-    highlight-style: monochrome
-    embed-resources: true
-    standalone: true
 editor: visual
-execute:
+execute: 
   echo: true
   warning: false
   message: false
@@ -24,7 +18,6 @@ execute:
 
 library(tidyverse)
 library(gapminder)
-library(flair)
 library(emo)
 library(openintro)
 library(unvotes)
@@ -94,7 +87,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 -   scatterplot
 
 ::: callout-note
-The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas. 
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
 :::
 
 ## Textbook Reading -- Part 2
@@ -209,9 +202,8 @@ nycflights %>%
 -   mode
 
 ::: callout-note
-The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas. 
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
 :::
-
 
 # R Tutorial -- Due Thursday by noon
 

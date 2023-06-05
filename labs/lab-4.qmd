@@ -2,10 +2,7 @@
 title: "Lab 4: Simple Linear Regression"
 author: "Your group's names here!"
 date: "April 27, 2023"
-format: 
-  html:
-    embed-resources: true
-    standalone: true
+format: html
 editor: visual
 execute: 
   eval: false
@@ -68,7 +65,7 @@ We will be investigating the relationship between the `ice_duration` of each lak
 
 **Question 3 -- Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.**
 
-*Hint: You need to explicitly state __where__ the unusual observations are!*
+*Hint: You need to explicitly state **where** the unusual observations are!*
 
 ### Step 2
 
@@ -124,11 +121,11 @@ Finally, to get the regression equation, we need grab the coefficients out of th
 
 ```
 
-**Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.** 
+**Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.**
 
 *Your equation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
 
-**Question 9 -- Interpret the value of the slope coefficient.** 
+**Question 9 -- Interpret the value of the slope coefficient.**
 
 *Your interpretation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
 

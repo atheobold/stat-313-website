@@ -3,8 +3,6 @@ title: "Statistical Critique 2: Statistical Argumentation"
 subtitle: "Due May 28, 2023 by midnight"
 format: 
   html:
-    embed-resources: true
-    standalone: true
     table-of-contents: true
     toc-depth: 2
     number-sections: true

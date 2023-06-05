@@ -2,22 +2,19 @@
 title: "Week Three: Incorporating Categorical Variables"
 format: 
   html: 
-    theme: minty
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
-    embed-resources: true
-    standalone: true
+    section-divs: true
 editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
 ---
 
 ```{r packages}
 #| include: false
 library(tidyverse)
-library(flair)
 library(emo)
 ```
 
@@ -43,7 +40,7 @@ By the end of this coursework you should be able to:
 ::: callout-caution
 # Answers
 
-**Please include your answers as a different color!** You can pick whatever color you like, but please use a color other than black. 
+**Please include your answers as a different color!** You can pick whatever color you like, but please use a color other than black.
 :::
 
 ## Textbook Reading -- Part 1
@@ -72,7 +69,6 @@ knitr::include_graphics(here::here("images",
 :::
 
 [**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
-
 
 ## Concept Quiz -- Due Tuesday by noon
 

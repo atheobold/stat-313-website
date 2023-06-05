@@ -3,8 +3,6 @@ title: "🧑🏽‍🔬 P-values & Hypothesis Tests"
 format: 
   revealjs:
     theme: dark
-    embed-resources: true
-    standalone: true
 editor: visual
 ---
 
@@ -285,7 +283,6 @@ Exploring the `hbr_maples` dataset!
 
 ```{r seedlings-slr}
 #| echo: false
-#| output-location: slide
 
 library(lterdatasampler)
 

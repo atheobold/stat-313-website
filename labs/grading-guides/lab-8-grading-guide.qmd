@@ -1,8 +1,6 @@
 ---
 title: "Lab 8 Grading Guide"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 ---
 
@@ -26,15 +24,15 @@ Q15:
 
 **To earn a Success**: Creates a scatterplot with the following qualities:
 
-- life expectancy on y-axis
-- GDP per capita on the x-axis
-- axis labels for both axes, including units
+-   life expectancy on y-axis
+-   GDP per capita on the x-axis
+-   axis labels for both axes, including units
 
-*If they swap $x$ and $y$*:
+*If they swap* $x$ and $y$:
 
-> Careful! What variable should be the response variable (located on the y-axis)? 
+> Careful! What variable should be the response variable (located on the y-axis)?
 
-::: {.callout-tip}
+::: callout-tip
 # No axis labels if forgiveable
 :::
 
@@ -42,8 +40,8 @@ Q15:
 
 **To earn a Success**:
 
-- takes log of GDP (using `scale_x_log10()`)
-- renames x-axis label to indicate log GDP (or log $) is what is being plotted
+-   takes log of GDP (using `scale_x_log10()`)
+-   renames x-axis label to indicate log GDP (or log \$) is what is being plotted
 
 *If they log transform life expectancy (y)*:
 
@@ -75,16 +73,17 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 **To earn a Success**:
 
-- Says "no", it is not reasonable to assume the observations are independent
-- Describes how observations are not independent citing **at least one** of the following:
+-   Says "no", it is not reasonable to assume the observations are independent
 
-  * each country has repeated observations
-  * observations for each country are related in time
-  * countries of close geographical proximity may share information
+-   Describes how observations are not independent citing **at least one** of the following:
+
+    -   each country has repeated observations
+    -   observations for each country are related in time
+    -   countries of close geographical proximity may share information
 
 *If their justification doesn't talk about the context of the data (e.g., temporal relationships between observations)*:
 
-> Your justification needs to make direct reference to the context of the data. 
+> Your justification needs to make direct reference to the context of the data.
 
 *If their reasoning doesn't include any of the above justifications*:
 
@@ -96,31 +95,29 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 ::: columns
 ::: {.column width="45%"}
-- Says the condition is violated
-- Justifies with the left skew of the distribution
+-   Says the condition is violated
+-   Justifies with the left skew of the distribution
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-- Says the condition is not violated
-- Justifies with characteristics of the distribution
+-   Says the condition is not violated
+-   Justifies with characteristics of the distribution
 :::
 :::
 
 *If their justification is insufficient*:
 
-> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. 
-
+> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.
 
 ## Question 6
 
 **To earn a Success**:
 
-- Says the condition is violated
-- Justifies with the decreased variability in larger values of log(GDP)
-
+-   Says the condition is violated
+-   Justifies with the decreased variability in larger values of log(GDP)
 
 *If they say the condition is not violated*:
 
@@ -132,21 +129,20 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 *If they say the condition is violated but have insufficient justification as to why*:
 
-> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. 
-
+> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.
 
 ## Question 7
 
 **To earn a Success**:
 
-- $H_0$ there is no linear relationship between log GDP per capita and life expectancy
-- $H_A$ there is a linear relationship between log GDP per capita and life expectancy
+-   $H_0$ there is no linear relationship between log GDP per capita and life expectancy
+-   $H_A$ there is a linear relationship between log GDP per capita and life expectancy
 
 *If they say GDP instead of log GDP*:
 
-> Careful! How did you transform your variable(s) in #2? What variables are you looking at the linear relationship between? 
+> Careful! How did you transform your variable(s) in #2? What variables are you looking at the linear relationship between?
 
-*If they say there is a __positive__ relationship in their alternative*:
+*If they say there is a **positive** relationship in their alternative*:
 
 > The standard hypothesis test for the slope uses a two-sided alternative hypothesis, unless we knew 100% going in that the relationship between $x$ and $y$ was positive. Did you know that the relationship was positive BEFORE you made your visualizations?
 
@@ -180,7 +176,7 @@ null_dist <- gapminder %>%
   calculate(stat = "slope")
 ```
 
-::: {.callout-note}
+::: callout-note
 There shouldn't be any wrong answers here, since their code would output a warning message if they did have something wrong. :)
 :::
 
@@ -196,9 +192,9 @@ visualise(null_dist)  +
                 direction = "two-sided")
 ```
 
-*If they don't use `"two-sided"` for their alternative*: 
+*If they don't use `"two-sided"` for their alternative*:
 
-> How many tails are there in the hypotheses stated in #7? 
+> How many tails are there in the hypotheses stated in #7?
 
 ## Question 11
 
@@ -212,9 +208,9 @@ get_p_value(null_dist,
             direction = "two-sided")
 ```
 
-*If they don't use `"two-sided"` for their alternative*: 
+*If they don't use `"two-sided"` for their alternative*:
 
-> How many tails are there in the hypotheses stated in #7? 
+> How many tails are there in the hypotheses stated in #7?
 
 ## Question 12
 
@@ -236,8 +232,8 @@ get_p_value(null_dist,
 
 **To earn a Success**:
 
-- states that the permutation distribution is approximately Normal
-- states that a t-distribution is a reasonable approximation
+-   states that the permutation distribution is approximately Normal
+-   states that a t-distribution is a reasonable approximation
 
 *If they don't reference the permutation distribution*:
 
@@ -270,5 +266,3 @@ If they said neither equal variance or normality were violated, they must say th
 *If they choose the wrong method*:
 
 > Look back at the conditions required for each of these methods. Which conditions did you say were violated? What does that imply for the method(s) which give you the most reliable p-value?
-
-

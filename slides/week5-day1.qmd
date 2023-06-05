@@ -1,9 +1,6 @@
 ---
 title: "Introduction to Multiple Linear Regression"
-format: 
-  revealjs:
-    embed-resources: true
-    standalone: true
+format: revealjs
 editor: visual
 ---
 
@@ -376,7 +373,6 @@ MA_schools %>%
        color = "Size of School") +
   my_theme
 ```
-
 
 ## 
 

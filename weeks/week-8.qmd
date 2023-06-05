@@ -2,16 +2,9 @@
 title: "Week 8 -- Hypothesis Tests for Slope Coefficients & Conditions for Inference"
 format: 
   html: 
-    theme: minty
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
     section-divs: true
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: true
@@ -31,43 +24,42 @@ execute:
 
 # Concept Quiz -- Due Tuesday by noon
 
-**1. Which of the following are _always_ true for hypothesis statements?**
+**1. Which of the following are *always* true for hypothesis statements?**
 
-- They are about sample statistics.
-- They are about relationships between variables.
-- They are about population parameters.
-- They are about differences in groups.
+-   They are about sample statistics.
+-   They are about relationships between variables.
+-   They are about population parameters.
+-   They are about differences in groups.
 
 **2. Which of the following are true about a null distribution?** (select all that apply)
 
-- It is a distribution of statistics.
-- The values on the distribution represent what might have happened if the null hypothesis was true.
-- The values on the distribution represent what might have happened if the alternative hypothesis was true.
-- It is a distribution of samples.
+-   It is a distribution of statistics.
+-   The values on the distribution represent what might have happened if the null hypothesis was true.
+-   The values on the distribution represent what might have happened if the alternative hypothesis was true.
+-   It is a distribution of samples.
 
 **3. Which of the following are true about a p-value?** (select all that apply)
 
-- It is calculated assuming the null hypothesis is true.
-- It is the probability the null hypothesis is true.
-- It quantifies how "surprising" our data are.
-- It compares the observed statistic to a distribution of values that could have happened if the null was true.
-- It is calculated assuming the alternative hypothesis is true.
-- It is a probability.
-
+-   It is calculated assuming the null hypothesis is true.
+-   It is the probability the null hypothesis is true.
+-   It quantifies how "surprising" our data are.
+-   It compares the observed statistic to a distribution of values that could have happened if the null was true.
+-   It is calculated assuming the alternative hypothesis is true.
+-   It is a probability.
 
 **4. Which of the following is true about a small p-value?**
 
-- The sample statistic is unlikely to have happened by chance.
-- The sample size was large.
-- The sample statistic is unlikely to have happened if the null hypothesis was true.
-- The sample statistic was large.
+-   The sample statistic is unlikely to have happened by chance.
+-   The sample size was large.
+-   The sample statistic is unlikely to have happened if the null hypothesis was true.
+-   The sample statistic was large.
 
 **5. If you obtain a large p-value, what can you conclude about your hypotheses?**
 
-- We cannot say the alternative hypothesis is false.
-- We cannot say the null hypothesis is false.
-- The null hypothesis is true.
-- The alternative hypothesis is true.
+-   We cannot say the alternative hypothesis is false.
+-   We cannot say the null hypothesis is false.
+-   The null hypothesis is true.
+-   The alternative hypothesis is true.
 
 **6. Match each procedure to the question it addresses.**
 
@@ -82,61 +74,58 @@ hypothesis tests
 :::
 
 ::: {.column width="55%"}
-- What are plausible values for the population parameter?
-- What are plausible values for the sample statistic?
-- Is the population parameter different from 0?
-- Is the value of the parameter different from a specified quantity?
+-   What are plausible values for the population parameter?
+-   What are plausible values for the sample statistic?
+-   Is the population parameter different from 0?
+-   Is the value of the parameter different from a specified quantity?
 :::
 :::
 
+**7. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?**
 
-**7. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?** 
+-   The probability of a Type II error goes down.
+-   The probability of a Type II error stays the same.
+-   The probability of a Type II error goes up.
 
-- The probability of a Type II error goes down.
-- The probability of a Type II error stays the same.
-- The probability of a Type II error goes up.
+**8. If you obtained a small p-value (e.g., 0.02), what could you say about your confidence interval?**
 
+-   It would contain the null hypothesized value.
+-   It would not contain the null hypothesized value.
+-   It would contain the sample statistic.
+-   It would contain the true population parameter.
 
-**8. If you obtained a small p-value (e.g., 0.02), what could you say about your confidence interval?** 
+**9. In a regression table, what is the "statistic" value associated with the slope?**
 
-- It would contain the null hypothesized value.
-- It would not contain the null hypothesized value.
-- It would contain the sample statistic.
-- It would contain the true population parameter.
+-   a bootstrap statistic
+-   a z-statistic
+-   the sample slope statistic
+-   a t-statistic
 
-**9. In a regression table, what is the "statistic" value associated with the slope?** 
+**10. In a regression table, how is the p-value calculated?**
 
-- a bootstrap statistic
-- a z-statistic
-- the sample slope statistic
-- a t-statistic
-
-**10. In a regression table, how is the p-value calculated?** 
-
-- Using a permutation distribution with 1000 resamples
-- Using a bootstrap distribution with 1000 samples
-- Using a Normal distribution
-- Using a t-distribution
+-   Using a permutation distribution with 1000 resamples
+-   Using a bootstrap distribution with 1000 samples
+-   Using a Normal distribution
+-   Using a t-distribution
 
 **11. What are the required conditions for linear regression?** (select all that apply)
 
-- a random sample was taken
-- equal variance of residuals
-- a large sample was collected
-- linear relationship between x and y
-- independence of observations
-- independence of variables
-- normality of residuals
-- normality of observations
+-   a random sample was taken
+-   equal variance of residuals
+-   a large sample was collected
+-   linear relationship between x and y
+-   independence of observations
+-   independence of variables
+-   normality of residuals
+-   normality of observations
 
 **12. Which of the following would violate the condition of independence?** (select all that apply)
 
-- collecting a non-random sample
-- observations related geographically (spatially)
-- observations that are related in time (temporally)
-- repeated observations on the same person
-- observations related biologically
-
+-   collecting a non-random sample
+-   observations related geographically (spatially)
+-   observations that are related in time (temporally)
+-   repeated observations on the same person
+-   observations related biologically
 
 # R Tutorial -- Due Thursday by noon
 

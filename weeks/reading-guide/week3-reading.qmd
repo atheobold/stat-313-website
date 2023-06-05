@@ -1,8 +1,6 @@
 ---
 title: "Week 3 Reading Guide: Adding in Categorical Variables"
-format: docx 
-embed-resources: true
-standalone: true
+format: docx
 editor: visual
 ---
 
@@ -38,16 +36,20 @@ What is a **ridge plot**?
 
 How would you write the following pipe operation in **one** line?
 
-    x %>% 
-      f() %>% 
-      g() %>% 
-      h()
+```         
+x %>% 
+  f() %>% 
+  g() %>% 
+  h()
+```
 
 ::: callout-tip
 Think about how
 
-    x %>% 
-      f() 
+```         
+x %>% 
+  f() 
+```
 
 can be written as f(x).
 :::
@@ -60,14 +62,18 @@ What does the `filter()` function do?
 
 How would you describe the following `filter()` statement **in words**?
 
-    filter(origin == "JFK" | dest == "SEA", 
-           month >= 10)
+```         
+filter(origin == "JFK" | dest == "SEA", 
+       month >= 10)
+```
 
 </br>
 
 What does the `%in%` do in the following code?
 
-    filter(dest %in% c("SEA", "SFO", "PDX", "BTV", "BDL")
+```         
+filter(dest %in% c("SEA", "SFO", "PDX", "BTV", "BDL")
+```
 
 </br>
 
@@ -79,8 +85,10 @@ What does the `summarize()` function do?
 
 You will write lines of code that look like:
 
-      summarize(mean = mean(temp, na.rm = TRUE), 
-                std_dev = sd(temp, na.rm = TRUE))
+```         
+  summarize(mean = mean(temp, na.rm = TRUE), 
+            std_dev = sd(temp, na.rm = TRUE))
+```
 
 What does the name (e.g., `mean`, `std_dev`) on the right hand side of the `=` sign correspond to?
 

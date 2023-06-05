@@ -1,16 +1,14 @@
 ---
 title: "Answers to Questions on Week 1 Reading Guide"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 ---
 
 <!-- Changing text color {style="color: #b19cd9;"} -->
 
-## Chapter 1 Notes 
+## Chapter 1 Notes
 
-In a data frame, rows correspond to: **observations** 
+In a data frame, rows correspond to: **observations**
 
 In a data frame, columns correspond to: **variables**
 
@@ -22,30 +20,21 @@ True or False: A pair of variables can be both associated AND independent.
 
 </br>
 
-True or False: Given a pair of variables, one will always be the explanatory 
-variable and one the response variable.
+True or False: Given a pair of variables, one will always be the explanatory variable and one the response variable.
 
-
-**Technically, this is false. For a variable to be the "explanatory variable" it
-needs to _explain_ the changes in the "response variable". You could have two
-variables that are not related at all.**
+**Technically, this is false. For a variable to be the "explanatory variable" it needs to *explain* the changes in the "response variable". You could have two variables that are not related at all.**
 
 </br>
 
 True or False: If a study does have an explanatory and a response variable, that means changes in the explanatory variable must **cause** changes in the response variable.
 
-**False! For an explanatory variable to _cause_ changes in a response variable, 
-we need to have an experiment where the explanatory variable is randomly
-assigned.**
+**False! For an explanatory variable to *cause* changes in a response variable, we need to have an experiment where the explanatory variable is randomly assigned.**
 
 </br>
 
-True or False: Observational studies can show a naturally occurring association
-between variables.
+True or False: Observational studies can show a naturally occurring association between variables.
 
-**True! Observational studies can show _associations_ between variables, but 
-they cannot show that one variable _causes_ changes in another. This is because
-observational studies do not have random assignment.**
+**True! Observational studies can show *associations* between variables, but they cannot show that one variable *causes* changes in another. This is because observational studies do not have random assignment.**
 
 </br>
 
@@ -53,49 +42,34 @@ observational studies do not have random assignment.**
 
 True or False: Convenience sampling tends to result in non-response bias.
 
-**False! Convenience sampling makes it so our sample is not representative of 
-the population, or we have a biased sample. Non-response bias requires the 
-people sampled to choose not to respond.**
+**False! Convenience sampling makes it so our sample is not representative of the population, or we have a biased sample. Non-response bias requires the people sampled to choose not to respond.**
 
 </br>
 
 True or False: Volunteer sampling tends to result in response bias.
 
-**True! If our sample is made up of volunteers, it is more likely to have 
-people with strong views. This makes it so our 
-</br>
+\*\*True! If our sample is made up of volunteers, it is more likely to have people with strong views. This makes it so our </br>
 
 True or False: Random sampling helps to resolve selection bias, but has no impact on non-response or response bias.
 
 </br>
 
-True or False: Observational studies can show an association between two
-variables, but cannot determine a causal relationship.
+True or False: Observational studies can show an association between two variables, but cannot determine a causal relationship.
 
-**True! We need random assignment of our explanatory variable to determine if a 
-relationship is causal.**
+**True! We need random assignment of our explanatory variable to determine if a relationship is causal.**
 
 </br>
 
 True or False: In order for an experiment to be valid, a placebo must be used.
 
-**True! An experiment needs to have a "baseline" treatment to compare with.**
-</br>
+**True! An experiment needs to have a "baseline" treatment to compare with.** </br>
 
-True or False: If random sampling of the target population is used, and no other
-types of bias is suspected, results from the sample can be generalized to the
-entire target population.
+True or False: If random sampling of the target population is used, and no other types of bias is suspected, results from the sample can be generalized to the entire target population.
 
-**True! Mathematically, we know that random sampling should make our sample 
-look similar to the population, so we are not systematically including / 
-excluding certain individuals more / less.**
+**True! Mathematically, we know that random sampling should make our sample look similar to the population, so we are not systematically including / excluding certain individuals more / less.**
 
 </br>
 
-True or False: If random sampling of the target population is used, and no other
-types of bias are suspected, results from the sample can be inferred as a causal
-relationship between the explanatory and response variables.
+True or False: If random sampling of the target population is used, and no other types of bias are suspected, results from the sample can be inferred as a causal relationship between the explanatory and response variables.
 
-**False! Random sampling allows us to infer that our sample is representative 
-of the population, it does not allow us to say anything about the relationship
-between the explanatory and response variables.**
+**False! Random sampling allows us to infer that our sample is representative of the population, it does not allow us to say anything about the relationship between the explanatory and response variables.**

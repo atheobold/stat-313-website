@@ -2,9 +2,7 @@
 title: "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests"
 author: "Your group's names here!"
 date: "May 25, 2023"
-format: 
-  html:
-    embed-resources: true
+format: html
 editor: visual
 execute: 
   echo: true
@@ -69,7 +67,7 @@ lterdatasampler::hbr_maples %>%
 
 Similarly, you can a log-transformation of the x-variable would be helpful by adding a `scale_x_log10()` layer to your plot.
 
-**2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be _one_ plot for this problem!**
+**2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be *one* plot for this problem!**
 
 *Remember to include nice axis labels (with any transformed units!).*
 
@@ -97,9 +95,7 @@ Each row of the `gapminder` dataset is an observation for one country for one ye
 
 **4. Do you believe is it reasonable to assume these observations are independent of one another?**
 
-*Hint: This condition says the _rows_ of the dataset are independent of each other. Look at the rows of the dataset, is there any reason to believe there are relationships between the rows?*
-
-
+*Hint: This condition says the rows* of the dataset are independent of each other. Look at the rows of the dataset, is there any reason to believe there are relationships between the rows?
 
 ### Normality of Residuals
 

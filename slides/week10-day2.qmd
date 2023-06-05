@@ -4,10 +4,7 @@ title-slide-attributes:
     data-background-image: images/sad_cat.jpeg
     data-background-size: contain
     data-background-opacity: "0.5"
-format: 
-  revealjs: 
-    embed-resources: true
-    standalone: true
+format: revealjs
 editor: visual
 ---
 
