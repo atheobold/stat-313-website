@@ -2,13 +2,13 @@
 title: "STAT 313 Last Day"
 title-slide-attributes:
     data-background-image: images/sad_cat.jpeg
-    data-background-size: contain
+    data-background-size: cover
     data-background-opacity: "0.5"
 format: revealjs
 editor: visual
 ---
 
-##  {background-color="#0F4C81"}
+##  {background-color="#abdbe3"}
 
 ::: {style="font-size: 4em; color: #000000;"}
 Some Closing Thoughts...
@@ -79,20 +79,6 @@ The Discipline of Statistics
 ::: {style="font-size: 0.75em;"}
 > "I advocate a simple solution: Replace the s-word with words describing what you actually mean by it."
 :::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**Moving to a World Beyond 0.05**
-:::
-
--   Accept & Acknowledge Uncertainty
-
--   Be Thoughtful
-
--   Be Open
-
--   Be Modest
 
 ## 
 
