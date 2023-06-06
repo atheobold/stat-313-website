@@ -81,17 +81,81 @@ aov(weight_g ~ unittype, data = trout) %>%
 . . .
 
 </br>
-</br>
 
 :::{style="text-align: center;"}
 
 What would you decide?
 
 ::: fragment
-Can you say exactly which channel types are different?
+What conditions need to be checked to know if this p-value is reliable?
+:::
+:::
+
+## Checking Conditions
+
+```{r channel-}
+#| echo: false
+#| fig-align: center
+
+trout %>% 
+  ggplot(aes(y = unittype, x = weight_g)) + 
+  geom_density_ridges(alpha = 0.5, scale = 1) +
+  labs(y = "Channel Type", 
+       x = "Weight (g)") + 
+  theme(axis.title = element_text(size = 18), 
+        axis.text = element_text(size = 16), 
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18))
+```
+
+How do you feel about the normality condition?
+
+. . .
+
+How do you feel about the equal variance condition?
+
+## Comparing Variances
+
+::: {.columns}
+::: {.column width="50%"}
+**Un-transformed Variances**
+
+```{r variance-table}
+#| echo: false
+
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(weight_g)) %>% 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+**Log Transformed Variances**
+```{r variance-table-log}
+#| echo: false
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(log(weight_g))) %>% 
+  gt()
+```
 :::
 
 :::
+:::
+
+. . .
+
+</br>
+<center>
+
+What do you think?
+
+</center>
 
 # Two-Way ANOVA Models
 
