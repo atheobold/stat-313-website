@@ -18,7 +18,8 @@ Q11:\
 Q12:\
 Q13:\
 Q14:\
-Q15:
+Q15:\
+Q16:
 
 ## Question 1
 
@@ -31,10 +32,6 @@ Q15:
 *If they swap* $x$ and $y$:
 
 > Careful! What variable should be the response variable (located on the y-axis)?
-
-::: callout-tip
-# No axis labels if forgiveable
-:::
 
 ## Question 2
 
@@ -125,7 +122,7 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 *If they say the condition is violated but reference the spread around the line*:
 
-> Equal variance is not about the spread of points above / below the line. The condition requires the variability of the residuals (vertical distance) to say the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+> Equal variance is not about having equal spread of points above and below the line -- it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
 *If they say the condition is violated but have insufficient justification as to why*:
 
@@ -162,6 +159,10 @@ obs_slope <-  gapminder %>%
 
 > Careful! What variable is your response variable?
 
+*If they use `GDP` instead of `log(GDP)` for their explanatory:*
+
+> Careful! You need to be consistent with the transformation you decided in #2.
+
 ## Question 9
 
 **To earn a Success**: Code should look like the following:
@@ -176,9 +177,10 @@ null_dist <- gapminder %>%
   calculate(stat = "slope")
 ```
 
-::: callout-note
-There shouldn't be any wrong answers here, since their code would output a warning message if they did have something wrong. :)
-:::
+*If they also don't use the log in this step:*
+
+> Update your code to use the same variable transformation that you use in #8. 
+
 
 ## Question 10
 
@@ -226,9 +228,19 @@ get_p_value(null_dist,
 
 ## Question 13
 
-**To earn a Success**: States that the p-value is essentially the same
+**To earn a Success**: Code should look like the following:
+
+```{r}
+#| eval: false
+#| echo: true
+get_regression_table(gapminder_lm, conf.level = 0.95)
+```
 
 ## Question 14
+
+**To earn a Success**: States that the p-value is essentially the same
+
+## Question 15
 
 **To earn a Success**:
 
@@ -237,15 +249,16 @@ get_p_value(null_dist,
 
 *If they don't reference the permutation distribution*:
 
-> What is the requirement for using a theory-based method to obtain your p-value? When is the t-distribution a good approximation of the true sampling distribution?
+> Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?
 
-## Question 15
+
+## Question 16
 
 **To earn a Success**: Answer must agree with what they said in #4-6
 
 ::: columns
 ::: {.column width="30%"}
-If they said equal variance was violated, they must say that **neither** p-value is reliable.
+If they said equal variance and / or independence was violated, they must say that **neither** p-value is reliable.
 :::
 
 ::: {.column width="2%"}

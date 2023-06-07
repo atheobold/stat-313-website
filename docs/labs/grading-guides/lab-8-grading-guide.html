@@ -337,6 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
   <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
   <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
+  <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16">Question 16</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -374,7 +375,8 @@ Q11:<br>
 Q12:<br>
 Q13:<br>
 Q14:<br>
-Q15:</p>
+Q15:<br>
+Q16:</p>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p><strong>To earn a Success</strong>: Creates a scatterplot with the following qualities:</p>
@@ -387,19 +389,6 @@ Q15:</p>
 <blockquote class="blockquote">
 <p>Careful! What variable should be the response variable (located on the y-axis)?</p>
 </blockquote>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-No axis labels if forgiveable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
@@ -489,7 +478,7 @@ No axis labels if forgiveable
 </blockquote>
 <p><em>If they say the condition is violated but reference the spread around the line</em>:</p>
 <blockquote class="blockquote">
-<p>Equal variance is not about the spread of points above / below the line. The condition requires the variability of the residuals (vertical distance) to say the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
+<p>Equal variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
 <p><em>If they say the condition is violated but have insufficient justification as to why</em>:</p>
 <blockquote class="blockquote">
@@ -524,6 +513,10 @@ No axis labels if forgiveable
 <blockquote class="blockquote">
 <p>Careful! What variable is your response variable?</p>
 </blockquote>
+<p><em>If they use <code>GDP</code> instead of <code>log(GDP)</code> for their explanatory:</em></p>
+<blockquote class="blockquote">
+<p>Careful! You need to be consistent with the transformation you decided in #2.</p>
+</blockquote>
 </section>
 <section id="question-9" class="level2">
 <h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
@@ -535,19 +528,10 @@ No axis labels if forgiveable
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There shouldn’t be any wrong answers here, since their code would output a warning message if they did have something wrong. :)</p>
-</div>
-</div>
+<p><em>If they also don’t use the log in this step:</em></p>
+<blockquote class="blockquote">
+<p>Update your code to use the same variable transformation that you use in #8.</p>
+</blockquote>
 </section>
 <section id="question-10" class="level2">
 <h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
@@ -589,10 +573,17 @@ Note
 </section>
 <section id="question-13" class="level2">
 <h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
-<p><strong>To earn a Success</strong>: States that the p-value is essentially the same</p>
+<p><strong>To earn a Success</strong>: Code should look like the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(gapminder_lm, <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="question-14" class="level2">
 <h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+<p><strong>To earn a Success</strong>: States that the p-value is essentially the same</p>
+</section>
+<section id="question-15" class="level2">
+<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
 <p><strong>To earn a Success</strong>:</p>
 <ul>
 <li>states that the permutation distribution is approximately Normal</li>
@@ -600,15 +591,15 @@ Note
 </ul>
 <p><em>If they don’t reference the permutation distribution</em>:</p>
 <blockquote class="blockquote">
-<p>What is the requirement for using a theory-based method to obtain your p-value? When is the t-distribution a good approximation of the true sampling distribution?</p>
+<p>Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?</p>
 </blockquote>
 </section>
-<section id="question-15" class="level2">
-<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
+<section id="question-16" class="level2">
+<h2 class="anchored" data-anchor-id="question-16">Question 16</h2>
 <p><strong>To earn a Success</strong>: Answer must agree with what they said in #4-6</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>If they said equal variance was violated, they must say that <strong>neither</strong> p-value is reliable.</p>
+<p>If they said equal variance and / or independence was violated, they must say that <strong>neither</strong> p-value is reliable.</p>
 </div><div class="column" style="width:2%;">
 
 </div><div class="column" style="width:30%;">
