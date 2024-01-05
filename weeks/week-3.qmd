@@ -2,15 +2,14 @@
 title: "Week Three: Incorporating Categorical Variables"
 format: 
   html: 
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
-    embed-resources: true
-    standalone: true
+    section-divs: true
 editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
 ---
 
 ```{r packages}

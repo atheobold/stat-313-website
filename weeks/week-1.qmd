@@ -1,18 +1,13 @@
 ---
 title: 'Week One: Foundations of Statistics'
 subtitle: Winter 2023
-format:
-  html:
-    fontsize: 1em
-    mainfont: "sans-serif"
+format: 
+  html: 
     number-sections: true
+    number-depth: 2
     section-divs: true
-    code-block-bg: '#76b5c5'
-    highlight-style: monochrome
-    embed-resources: true
-    standalone: true
 editor: visual
-execute:
+execute: 
   echo: true
   warning: false
   message: false

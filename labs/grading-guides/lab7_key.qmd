@@ -1,0 +1,184 @@
+---
+title: "Lab 7: Confidence Intervals for Water Temperature and Latitude"
+author: "Key by Dr. Theobold"
+format: html
+editor: visual
+execute: 
+  echo: true
+  eval: true
+  message: false
+  warning: false
+---
+
+```{r setup, include = FALSE}
+#| include: false
+
+library(tidyverse)
+library(moderndive)
+library(infer)
+library(lterdatasampler)
+
+# This is so you will get the SAME bootstrap distribution every time you run your code
+# So your confidence interval won't change. :) 
+set.seed(1234)
+```
+
+## Data
+
+Today we will explore the `pie_crab` dataset contained in the **lterdatasampler** R package. The data is from a study by Johnson et al. at the Plum Island Ecosystem Long Term Ecological Research site, studying the relationship between the size (carapace width) of a Fiddler Crab and the geographical location of its habitat. These data can be used to investigate if Bergmann's Rule applies to Fidder Crabs, or specifically that the size of a crab increases as the distance from the equator increases.
+
+### Motivation
+
+The students who investigated this relationship for their midterm project found that when *both* latitude *and* water temperature are included as explanatory variables in the multiple regression model, the coefficient associated with water temperature doesn't make sense. Namely, the model suggests warmer water temperatures are associated with larger crab sizes. However, we know that the water is warmer near the equator, which is where the crab sizes should be **smaller**. Rather perplexing!
+
+The moral of the story is that water temperature and latitude are high correlated with each other, so including them both as explanatory variables leads to *multicollinearity* -- something we **do not** want in our multiple linear regression.
+
+### Our Investigation
+
+The focus of this lab is on quantifying the relationship between water temperature (response) and latitude (explanatory).
+
+## Cleaning the Data
+
+The data contains information on at total of 392 Fiddler Crabs caught at 13 marshes on the Atlantic coast of the United States in summer 2016. However, at each marsh, there is only **one** recorded water temperature. Meaning, we need to collapse our dataset to have only **one** observation per latitude (marsh).
+
+**1. Fill in the code below to create a new dataset called `pie_crab_clean` which has 13 observations -- one per latitude / marsh.**
+
+```{r removing-duplicates}
+pie_crab_clean <- pie_crab %>% 
+  group_by(site) %>% 
+  slice_sample(n = 1) %>% 
+  ungroup()
+```
+
+**From this point forward, you should use the `pie_crab_clean` dataset for EVERY problem.**
+
+## Visualizing Relationships
+
+**2. Create a scatterplot modeling the relationship between latitude (explanatory) and water temperature (response)for these 13 marshes.**
+
+*Don't forget to add descriptive axis labels!*
+
+```{r scatterplot}
+ggplot(data = pie_crab_clean, 
+       mapping = aes(x = latitude, y = water_temp)) + 
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Latitude (degrees)", 
+       y = "Water Temperature (Celcius)")
+  
+```
+
+**3. Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points!** Keep in mind that you are no longer analyzing data on crabs! The dataset you have is on marshes along the Atlantic coast!
+
+### Summarizing the Relationships
+
+Now that you've visualized the relationship, let's summarize this relationship with some statistics. As we discussed in Week 4, there are two statistics you can use to summarize a linear relationship:
+
+1.  the correlation
+2.  the slope
+
+Let's calculate both!
+
+**4. Use the `get_correlation()` function to calculate the correlation between the water temperature and latitude for these 13 marshes.**
+
+```{r calculate-correlation}
+get_correlation(data = pie_crab_clean, 
+                formula = latitude ~ water_temp)
+```
+
+**5. Fill in the code below to calculate the observed slope for the relationship between the water temperature (response) and latitude (explanatory) for these 13 marshes.**
+
+*Note: Nothing will be output when you run this code!*
+
+```{r calculate-slope}
+obs_slope <- pie_crab_clean %>% 
+  specify(response = water_temp, 
+          explanatory = latitude) %>% 
+  calculate(stat = "slope")
+```
+
+## Bootstrap Distribution
+
+Now that we have the observed slope statistic, let's see what variability we might get in the slope statistic for other samples (marshes) we might have gotten from the population (the eastern coast of the US).
+
+As a refresher, when we use resampling to obtain our bootstrap distribution, our steps look like the following:
+
+Step 1: `specify()` the response and explanatory variables
+
+Step 2: `generate()` lots of bootstrap resamples
+
+Step 3: `calculate()` for each of the `generated()` samples, calculate the statistic you are interested in
+
+Let's give this a try!
+
+**6. Fill in the code to generate 500 bootstrap slope statistics (from 500 bootstrap resamples).**
+
+```{r boot-dist}
+bootstrap <- pie_crab_clean %>% 
+  specify(response = water_temp, 
+          explanatory = latitude) %>% 
+  generate(reps = 500, 
+           type = "bootstrap") %>% 
+  calculate(stat = "slope")
+```
+
+Alright, now that we have the bootstrap slope statistics, let's see what it looks like! Let's use the `visualize()` function (not `ggplot()`!) to make a quick visualization of the statistics you calculated above.
+
+**7. Use the `visualize()` function to create a simple histogram of your 500 bootstrap statistics.**
+
+*It would be nice to change the x-axis label to describe what statistic is being plotted!*
+
+```{r visualize-boot-dist}
+# Code to visualize bootstrap statistics
+visualise(bootstrap) + 
+  labs(x = "Slope Statistic for Relationship Between Water Temperature and Latitude")
+```
+
+## Confidence Interval
+
+The next step to obtain our confidence interval! First we need to determine what percentage of statistics we want to keep in the confidence interval. 90%? 95%? 99%? 80%?
+
+This seems like a study where we care a bit less about our interval capturing the true value, at least compared to something like a medical study. So, I think this could be a great instance to use an 85% confidence interval.
+
+**8. Use the `get_confidence_interval()` function to find the 85% confidence interval from your bootstrap distribution, using the percentile method!**
+
+```{r ci-percentile}
+# Code to obtain a 85% PERCENTILE based confidence interval
+
+get_confidence_interval(bootstrap, 
+                        level = 0.85, 
+                        type = "percentile")
+
+```
+
+**9. Interpret the confidence interval you obtained in #8. Make sure to include the context of the data!**
+
+*We are 95% confident that the slope of the relationship between water temperature and latitude for **all** marshes along the eastern coast of the US is between -0.864 and -0.669.*
+
+Just for fun, let's compare the confidence we obtained using a percentile method with an interval found using the SE method.
+
+**10. Use the `get_confidence_interval()` function to find the 85% confidence interval from your bootstrap distribution, using the SE method!** *Remember -- with the SE method, you need to specify the point estimate!*
+
+```{r ci-se}
+# Code to obtain a 85% SE based confidence interval
+
+get_confidence_interval(bootstrap, 
+                        level = 0.85, 
+                        type = "se",
+                        point_estimate = obs_slope)
+
+```
+
+**11. How do your confidence intervals compare? Based on the shape of the bootstrap distribution, would you expect for these methods to yield similar results?**
+
+*Hint: Think about the conditions for using the SE method to obtain a confidence interval!*
+
+*They are nearly identical! This is because the bootstrap distribution is approximately normal, so an SE method yields similar results to the percentile method.*
+
+## Bootstrap Assumptions
+
+A bootstrap distribution aims to simulate the variability we'd get from other samples from our population. However, the accuracy of these samples relies on the quality of our original sample.
+
+**12. Based on the information given, how do you feel about the assumption a bootstrap distribution makes about the original sample? What issues do you believe might prevent this assumption being appropriate?)**
+
+*The assumption is that the sample is random / representative of the population. I don't honestly know enough about the representative-ness of the 13 marshes selected for this study, but I imagine there is a great deal of variability.*

@@ -1,8 +1,6 @@
 ---
 title: "Lab 4: Grading Guide"
-format: 
-  html: 
-    self-contained: true
+format: html
 editor: visual
 execute: 
   eval: false
@@ -97,7 +95,7 @@ They don't need to turn the standard errors off (`se = FALSE`), but great if the
 
 -   If they do not use `method = "lm"` to get straight line
 
-*Feedback:* For Question 4, you need to have a **straight** line, not a wiggly line! Take a look at the R resources to see how you specify a straight line! 
+*Feedback:* For Question 4, you need to have a **straight** line, not a wiggly line! Take a look at the R resources to see how you specify a straight line!
 
 # Question 5 -- Find correlation
 
@@ -173,24 +171,23 @@ If they use x and y in the equation but then define what variables they are asso
     -   1 year increase
     -   mean / predicted / estimated ice duration
     -   decreases by 0.203 days
-    
 -   Incorrect interpretation of the slope
 
 *Feedback:* For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable.
 
-- Doesn't interpret the value of -0.203
+-   Doesn't interpret the value of -0.203
 
-*Feedback:* Careful! You did not interpret what the value of -0.203 means in the context of the regression line! 
+*Feedback:* Careful! You did not interpret what the value of -0.203 means in the context of the regression line!
 
-- States the duration of ice increases
+-   States the duration of ice increases
 
 *Feedback:* Look at the sign associated with the slope coefficient! What does the sign tell you about whether ice duration should increase or decrease?
 
-- Doesn't indicate the response is mean / estimate / predicted ice duration
+-   Doesn't indicate the response is mean / estimate / predicted ice duration
 
 *Feedback:* Careful! Your interpretation sounds like it is guaranteed that every 1 year increase in time will result in **exactly** a 0.203 day decrease in ice duration. Will there always be exactly this decrease? How do we indicate that our slope estimate is not exact?
-    
-# Question 10 -- 100 Year Increase 
+
+# Question 10 -- 100 Year Increase
 
 -   Correct interpretation of slope for 100 year increase
     -   100 year increase
@@ -199,13 +196,13 @@ If they use x and y in the equation but then define what variables they are asso
 
 **Growing**:
 
-- Uses y-intercept when increasing 100 years
+-   Uses y-intercept when increasing 100 years
 
-*Feedback:* When we increase 100 years, technically the only aspect of the equation that changes is the amount of time our slope is multiplied by. The y-intercept does not change! With that in mind, how does a 100 year increase in time affect what you would expect for the duration of the ice on these lakes? 
+*Feedback:* When we increase 100 years, technically the only aspect of the equation that changes is the amount of time our slope is multiplied by. The y-intercept does not change! With that in mind, how does a 100 year increase in time affect what you would expect for the duration of the ice on these lakes?
 
-- Don't provide an estimate of the change 
+-   Don't provide an estimate of the change
 
-*Feedback:* You need to use your estimated regression equation to state what the expected change in the ice duration would be if the number of years was increased by 100. 
+*Feedback:* You need to use your estimated regression equation to state what the expected change in the ice duration would be if the number of years was increased by 100.
 
 # Question 11 -- Multivariate plot
 
@@ -220,7 +217,7 @@ ggplot(data = ntl_icecover,
 ```
 
 ::: callout-tip
-If they got a Growing for Question 4 from using a wiggly line, they don't need to get a Growing here! 
+If they got a Growing for Question 4 from using a wiggly line, they don't need to get a Growing here!
 :::
 
 **Growing**:

@@ -2,10 +2,7 @@
 title: "Lab 3: Incorporating Categorical Variables"
 author: "Your group's names here!"
 date: "April 21, 2023"
-format: 
-  html:
-    embed-resources: true
-    standalone: true
+format: html
 editor: visual
 execute: 
   echo: true

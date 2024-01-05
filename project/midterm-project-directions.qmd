@@ -1,8 +1,6 @@
 ---
 title: "Midterm Project Guidelines"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 resources: 
 - model_selection_process/model_seletion.html

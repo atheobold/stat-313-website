@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
   resources:
     - "*.docx"
 
@@ -10,8 +11,6 @@ website:
   site-url: "https://atheobold.github.io/stat-313-website"
   repo-url: https://github.com/atheobold/stat-313-website
   repo-actions: [issue]
-
-  #open-graph: true
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -82,12 +81,12 @@ website:
             text: "Week 6"
           - href: weeks/week-7.qmd
             text: "Week 7"
-          # - href: weeks/week-8.qmd
-          #   text: "Week 8"
-          # - href: weeks/week-9.Rmd
-          #   text: "Week 9"
-          # - href: weeks/week-10.qmd
-          #   text: "Week 10"
+          - href: weeks/week-8.qmd
+            text: "Week 8"
+          - href: weeks/week-9.Rmd
+            text: "Week 9"
+          - href: weeks/week-10.qmd
+            text: "Week 10"
 
 format:
   html:

@@ -1,9 +1,6 @@
 ---
 title: "Introduction to Linear Regression"
-format: 
-  revealjs:
-    embed-resources: true
-    standalone: true
+format: revealjs
 editor: visual
 ---
 
@@ -49,7 +46,7 @@ The [ncbirths]{style="color: #e28743;"} dataset is a random sample of 1,000 case
 
 [Draw a picture of how would you expect this dataset to look.]{style="color: #e28743; font-size: 1.5em;"}
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Relationships Between Variables
@@ -62,13 +59,14 @@ Relationships Between Variables
 . . .
 
 <!-- TODO make fragmented columns! -->
+
 ::: columns
 ::: {.column width="40%"}
 ::: {style="font-size: 0.85em;"}
-- Response variable 
-  * a.k.a. $y$, dependent 
-  * The quantity you want to understand 
-  * In this class -- always numerical
+-   Response variable
+    -   a.k.a. $y$, dependent
+    -   The quantity you want to understand
+    -   In this class -- always numerical
 :::
 :::
 
@@ -77,15 +75,15 @@ Relationships Between Variables
 
 ::: {.column width="55%"}
 ::: {style="font-size: 0.85em;"}
-- Explanatory variable
-  * a.k.a. $x$, independent, explanatory, predictor 
-  * Something you think might be related to the response
-  * Either numerical or categorical
+-   Explanatory variable
+    -   a.k.a. $x$, independent, explanatory, predictor
+    -   Something you think might be related to the response
+    -   Either numerical or categorical
 :::
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Visualizing Linear Regression
@@ -112,7 +110,7 @@ ggplot(data = bdims, aes(y = wgt, x = hgt)) +
 
 ::: columns
 ::: {.column width="40%"}
-- The scatterplot has been called the most "generally useful invention in the history of statistical graphics."
+-   The scatterplot has been called the most "generally useful invention in the history of statistical graphics."
 :::
 
 ::: {.column width="5%"}
@@ -123,7 +121,7 @@ ggplot(data = bdims, aes(y = wgt, x = hgt)) +
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Characterizing Relationships
@@ -132,16 +130,16 @@ Characterizing Relationships
 </br>
 
 ::: incremental
-- Form (e.g. linear, quadratic, non-linear)
+-   Form (e.g. linear, quadratic, non-linear)
 
-- Direction (e.g. positive, negative)
+-   Direction (e.g. positive, negative)
 
-- Strength (how much scatter/noise?)
+-   Strength (how much scatter/noise?)
 
-- Unusual observations (do points not fit the overall pattern?)
+-   Unusual observations (do points not fit the overall pattern?)
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #0F4C81;"}
 Your Turn!
@@ -171,11 +169,11 @@ How would your characterize this relationship?
 -   shape
 -   direction
 -   strength
--   outliers 
+-   outliers
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 What if you added another variable?
@@ -215,8 +213,7 @@ ggplot(aes(x = weeks, y = weight, color = premie)) +
 :::
 :::
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Summarizing a Linear Relationship
@@ -224,18 +221,18 @@ Summarizing a Linear Relationship
 
 ::: columns
 ::: {.column width="20%"}
-</br>
-Correlation: 
+</br> Correlation:
 :::
+
 ::: {.column width="80%"}
 > strength and direction of a *linear* relationship between two *quantitative* variables
-
 :::
 :::
 
 . . .
 
 <!-- TODO use fragments -->
+
 ::: columns
 ::: {.column width="45%"}
 ::: {style="font-size: 0.75em;"}
@@ -261,12 +258,10 @@ births_post26 <- ncbirths %>%
 get_correlation(births_post26, 
                 weeks ~ weight)
 ```
-
 :::
 :::
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Anscombe Correlations
@@ -299,7 +294,7 @@ Four datasets, very different graphical presentations
 
 -   same mean and standard deviation in both $x$ and $y$
 -   same correlation
--   same regression line 
+-   same regression line
 :::
 :::
 :::
@@ -310,14 +305,13 @@ Four datasets, very different graphical presentations
 
 [For which of these relationships is correlation a reasonable summary measure?]{style="font-size: 1.25em; color: #e28743;"}
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 The Importance of Language
 :::
 
 ::: incremental
-
 -   The word "correlation" has both a precise mathematical definition and a more general definition for typical usage in English.
 
 -   These uses are obviously related and generally in sync.
@@ -325,14 +319,13 @@ The Importance of Language
 -   There are times when these two uses can be conflated and/or misconstrued.
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Linear Regression
 :::
 
-::: incremental 
-
+::: incremental
 -   Models are ubiquitous in Statistics!
 
 -   We often assume that the value of our response variable is some function of our explanatory variable, plus some random noise.
@@ -340,16 +333,14 @@ Linear Regression
 </br>
 
 -   In this case, we assume the relationship between $x$ and $y$ takes the form of a **linear function**.
-    * $response = intercept + slope \cdot explanatory + noise$
+    -   $response = intercept + slope \cdot explanatory + noise$
 :::
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Estimated / Fitted Regression Model
 :::
-
 
 $$
   \widehat{y} = b_0 + b_1 \cdot x
@@ -361,7 +352,7 @@ $$
 
 [Why does this equation have a hat on y?]{style="color: #e28743; font-size: 1.5em"}
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Coefficient Estimates
@@ -375,21 +366,21 @@ weeks_lm <- lm(weight ~ weeks, data = births_post26)
 get_regression_table(weeks_lm)
 ```
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Our focus (for now...)
 :::
 
 <!-- Change to only focus on estimates! -->
+
 ![](images/coefficients.jpg)
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Estimated regression equation
 :::
-
 
 $$\widehat{y} = b_0 + b_1 \cdot x$$
 
@@ -422,7 +413,7 @@ How do you interpret the intercept value of `r filter(births_table, term == "int
 How do you interpret the slope value of `r filter(births_table, term == "weeks")$estimate`?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Obtaining Residuals
@@ -430,7 +421,7 @@ Obtaining Residuals
 
 . . .
 
-$\widehat{weight} = `r filter(births_table, term == "intercept")$estimate` +  `r filter(births_table, term == "weeks")$estimate` \cdot weeks$
+$\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r filter(births_table, term == "weeks")$estimate` \cdot weeks$
 
 </br>
 
@@ -438,7 +429,7 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate` +  `r
 
 [What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?]{style="color: #e28743; font-size: 1.5em;"}
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 A different explanatory variable
@@ -459,7 +450,7 @@ get_regression_table(weight_gain_lm)
 
 [Write out this estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 How would you choose which model is better?!
@@ -478,7 +469,7 @@ births_post26 %>%
             R_sq_gained = cor_gained^2)
 ```
 
-##
+## 
 
 ::: {style="font-size: 2.5em; color: #000000;"}
 Categorical Explanatory Variables
@@ -497,40 +488,36 @@ Finding `distinct` levels:
 distinct(births_post26, habit)
 ```
 
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Indicator Variables
 :::
 
-<center>
-$$
+<center>$$
   \hat{y} = b_0 + b_1 \cdot x
-$$
-</center>
+$$</center>
 
 . . .
 
 ::: columns
 ::: {.column width="40%"}
-$x$ is a categorical variable with levels: 
+$x$ is a categorical variable with levels:
 
-- `"nonsmoker"` 
-- `"smoker"`
+-   `"nonsmoker"`
+-   `"smoker"`
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="55%"}
-Need: 
+Need:
 
-- "baseline" mean 
-- "offsets"
+-   "baseline" mean
+-   "offsets"
 :::
 :::
-
 
 . . .
 
@@ -540,7 +527,7 @@ $1_{smoker}(x) = 1$ if the mother was a `"smoker"`
 
 $1_{smoker}(x) = 0$ if the mother was a `"nonsmoker"`
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 A different equation

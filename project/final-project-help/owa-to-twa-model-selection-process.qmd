@@ -1,8 +1,6 @@
 ---
 title: "One-Way ANOVA to Two-Way ANOVA Model Selection Process"
-format: 
-  html: 
-    standalone: true
+format: html
 editor: visual
 execute: 
   warning: false
@@ -30,14 +28,13 @@ movies <- movies_sample %>%
   filter(era %in% c("1970s", "1980s", "1990s", "2000s"))
 ```
 
-We will be using a "forward" selection process for deciding on the "best" ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn't "worth it." 
-
+We will be using a "forward" selection process for deciding on the "best" ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn't "worth it."
 
 # Step 1 -- Fit an One-Way ANOVA Model for Each Categorical Variable
 
 ## Plot the model
 
-```{r twa-plot}
+```{r owa-plot}
 #| echo: false
 #| fig-align: center
 #| layout-nrow: 1
@@ -65,13 +62,13 @@ movies %>%
 
 **What are we looking for?**
 
-We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0! 
+We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!
 
-For these data we are looking to see if at least one of the genres has a different mean IMDB rating **or** if at least one of the eras has a different mean movie rating. 
+For these data we are looking to see if at least one of the genres has a different mean IMDB rating **or** if at least one of the eras has a different mean movie rating.
 
 ## Fit the model(s)
 
-```{r}
+```{r owa-model}
 aov(rating ~ era, data = movies) %>% 
   tidy()
 
@@ -95,86 +92,82 @@ $H_0$: The mean movie rating is the same for **every** genre
 
 $H_A$: The mean movie rating is different for **at least one** genre
 
-With a p-value of 0.015(from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.
+With a p-value of 0.015 (from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.
 
-::: {.callout-tip}
+::: callout-tip
 # Categorical variables with two levels
-Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This **is not** the case if your variable has more than two levels! 
+
+Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This **is not** the case if your variable has more than two levels!
 :::
 
-# Step 2: Decide How to Proceed 
+# Step 3: Decide How to Proceed
 
 You will decide what model to fit next depending on the results of your one-way ANOVA models.
 
-- If you failed to reject the null hypothesis for **both** one-way ANOVA models (like I did above)...   
-  * You **do not** fit any additional models. 
-  
-- If you rejected the null hypothesis for **at least one** of the one-way ANOVA models...
-  * your next step is to fit an additive two-way ANOVA model 
+-   If you failed to reject the null hypothesis for **either** one-way ANOVA models...
+    -   You **do not** fit any additional models.
+-   If you rejected the null hypothesis for **both** one-way ANOVA models...
+    -   your next step is to fit an additive two-way ANOVA model
 
-::: {.callout-caution}  
+::: callout-caution
 # Additive two-way ANOVA
+
 In Week 10 we will learn about additive and interaction two-way ANOVA models, so you will have the tools to fit these additional models then!
 :::
 
-<!-- # Step 2: Fit an Additive Two-Way ANOVA -->
+# Step 2: Fit an Additive Two-Way ANOVA
 
-<!-- We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$. -->
+We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$.
 
-<!-- For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating. -->
+For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating.
 
-<!-- ## Plot the model -->
+## Plot the model
 
-<!-- ```{r twa-plot} -->
-<!-- #| echo: false -->
-<!-- #| fig-align: center -->
+```{r twa-plot}
+#| echo: false
+#| fig-align: center
 
-<!-- movies %>%  -->
-<!--   ggplot(aes(y = era, x = rating, fill = genre)) +  -->
-<!--   geom_density_ridges(alpha = 0.5, scale = 1) + -->
-<!--   labs(y = "Era",  -->
-<!--        x = "IMDB Rating",  -->
-<!--        fill = "Genre") +  -->
-<!--   theme(axis.title = element_text(size = 18),  -->
-<!--         axis.text = element_text(size = 16),  -->
-<!--         legend.text = element_text(size = 16), -->
-<!--         legend.title = element_text(size = 18)) -->
-<!-- ``` -->
+movies %>%
+  ggplot(aes(y = era, x = rating, fill = genre)) +
+  geom_density_ridges(alpha = 0.5, scale = 1) +
+  labs(y = "Era",
+       x = "IMDB Rating",
+       fill = "Genre") +
+  theme(axis.title = element_text(size = 18),
+        axis.text = element_text(size = 16),
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18))
 
+```
 
-<!-- ## Fit the Model -->
+## Fit the Model
 
-<!-- *Notice I'm using a `+` for an interaction model!* -->
+::: callout-tip
+Notice I'm using a `+` for an interaction model!
+:::
 
-<!-- ```{r} -->
-<!-- aov(rating ~ era + genre, data = movies) %>%  -->
-<!--   tidy() -->
-<!-- ``` -->
+```{r twa-model}
+aov(rating ~ era + genre, data = movies) %>%
+  tidy()
 
-<!-- ## Perform a Hypothesis Test -->
+```
 
-<!-- For an additive two-way ANOVA, we have **two** hypothesis tests, one test per explanatory variable. -->
+## Perform a Hypothesis Test
 
-<!-- ### Hypothesis Test for `genre` -->
+The `era` and `genre` lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including **both** variables in the **same** model, each of these tests are now conditional on the other variable(s) in the model.
 
-<!-- The `genre` line of the ANOVA table is testing if the mean movie rating is the same for all genres. It has the following hypotheses: -->
+The `era` line is testing if the mean movie rating is different for at least one era, conditional on the `genre` of the movie. It has the following hypotheses:
 
-<!-- $H_0$: The mean movie rating is the same for every genre, given the era of the movie -->
+$H_0$: The mean movie rating is the same for **every** era, given the `genre` of the movie
 
-<!-- $H_A$: The mean movie rating is different for at least one genre, given the era of the movie -->
+$H_A$: The mean movie rating is different for **at least one** era, given the `genre` of the movie
 
-<!-- *Notice the hypotheses are similar to a multiple linear regression with two explanatory variables, where the test for each variable is conditional on the other variable(s) included in the model.* -->
+With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.
 
-<!-- With a p-value of 0.178 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one genre has a different mean movie rating, given the era of the movie. -->
+The `genre` line is testing if the mean movie rating is different for at least one era, conditional on the `era` of the movie. It has the following hypotheses:
 
-<!-- ### Hypothesis Test for `era` -->
+$H_0$: The mean movie rating is the same for **every** genre, given the `era` of the movie
 
-<!-- The `era` line of the ANOVA table is testing if the mean movie rating is the same for all eras. It has the following hypotheses: -->
+$H_A$: The mean movie rating is different for **at least one** genre, given the `era` of the movie
 
-<!-- $H_0$: The mean movie rating is the same for every era, given the genre of the movie -->
-
-<!-- $H_A$: The mean movie rating is different for at least one era, given the genre of the movie -->
-
-<!-- With a p-value of 0.568 (from an F-statistic of 0.68 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that at least one era has a different mean movie rating, given the genre of the movie. -->
-
-
+With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.

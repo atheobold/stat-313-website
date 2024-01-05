@@ -1,15 +1,13 @@
 ---
-title: "Two-Way ANOVA Models"
-format: 
-  revealjs:
-    embed-resources: true
-    standalone: true
+title: "One-Way ANOVA Review"
+format: revealjs
 editor: visual
 ---
 
 ```{r set-up}
 #| include: false
 library(tidyverse)
+library(lterdatasampler)
 library(openintro)
 library(moderndive)
 library(infer)
@@ -30,7 +28,139 @@ movies <- movies_sample %>%
                          year >= 1990 & year < 2000 ~ "1990s", 
                          year >= 2000 ~ "2000s")) %>% 
   filter(era %in% c("1970s", "1980s", "1990s", "2000s"))
+
+trout <- filter(and_vertebrates, 
+                species == "Cutthroat trout")
 ```
+
+::: {style="font-size: 2em; color: #000000;"}
+Plan for Revisions
+:::
+
+::: incremental
+- Statistical Critique 2 has been graded
+- Lab 8 will be graded by Friday
+- You are permitted to submit **one** "free" revision this week
+- Additional revisions can be purchased with any tokens you have remaining
+- Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project
+- Revisions will be accepted until Thursday, June 15
+:::
+
+## You've seen a one-way ANOVA model before! 
+
+```{r trout-chanel}
+#| echo: true
+#| code-line-numbers: false
+
+trout_lm <- lm(weight_g ~ unittype, data = trout)
+
+get_regression_table(trout_lm)
+```
+
+</br>
+
+::: fragment
+<center>
+
+What do the `estimate`s from each of these lines (e.g., `unittype:IP`) represent?
+
+</center>
+
+:::
+
+## One-Way ANOVA -- Testing if at least one chanel type has a different mean weight
+
+```{r chanel-anova}
+#| echo: true
+#| code-line-numbers: false
+
+aov(weight_g ~ unittype, data = trout) %>% 
+  tidy()
+```
+
+. . .
+
+</br>
+
+:::{style="text-align: center;"}
+
+What would you decide?
+
+::: fragment
+What conditions need to be checked to know if this p-value is reliable?
+:::
+:::
+
+## Checking Conditions
+
+```{r channel-}
+#| echo: false
+#| fig-align: center
+
+trout %>% 
+  ggplot(aes(y = unittype, x = weight_g)) + 
+  geom_density_ridges(alpha = 0.5, scale = 1) +
+  labs(y = "Channel Type", 
+       x = "Weight (g)") + 
+  theme(axis.title = element_text(size = 18), 
+        axis.text = element_text(size = 16), 
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18))
+```
+
+How do you feel about the normality condition?
+
+. . .
+
+How do you feel about the equal variance condition?
+
+## Comparing Variances
+
+::: {.columns}
+::: {.column width="50%"}
+**Un-transformed Variances**
+
+```{r variance-table}
+#| echo: false
+
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(weight_g)) %>% 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+**Log Transformed Variances**
+```{r variance-table-log}
+#| echo: false
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(log(weight_g))) %>% 
+  gt()
+```
+:::
+
+:::
+:::
+
+. . .
+
+</br>
+<center>
+
+What do you think?
+
+</center>
+
+# Two-Way ANOVA Models
+
+
+##
 
 ::: {style="font-size: 3em; color: #000000;"}
 Two-way ANOVA
@@ -42,32 +172,40 @@ Two-way ANOVA
 Goal:
 :::
 
-Assess if the relationship between one categorical explanatory variable and the response [differs]{style="color: #0F4C81"} based on the values of another categorical variable
+Assess if [multiple]{style="color: #0F4C81"} categorical variables have a relationship with the response. 
 
-------------------------------------------------------------------------
+
+##
 
 ::: {style="font-size: 3em; color: #000000;"}
 Modeling Options
 :::
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="50%"}
 ::: {style="font-size: 2em; color: #ed8402;"}
 Additive Model
 :::
+
+:::{.fragment}
+Assess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model. 
 :::
 
-::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 ::: {style="font-size: 2em; color: #0F4C81;"}
 Interaction Model
 :::
+
+:::{.fragment}
+Assess if the relationship between one categorical explanatory variable and the response **differs** based on the values of another categorical variable. 
+:::
+
 :::
 :::
 
-------------------------------------------------------------------------
+##
 
 ::: {style="font-size: 2em; color: #000000;"}
 **What are we looking for?**
@@ -89,137 +227,122 @@ movies %>%
         legend.title = element_text(size = 18))
 ```
 
-## 
+## Another way to think about it...
 
-::: {style="font-size: 3em; color: #000000;"}
-Hypothesis Test Steps
-:::
+```{r twa-plot-2}
+#| echo: false
+#| fig-align: center
+
+movies %>% 
+  ggplot(aes(y = era, x = rating)) + 
+  geom_density_ridges(alpha = 0.5, scale = 1) +
+  labs(y = "Era", 
+       x = "IMDB Rating") + 
+  facet_wrap(~genre) +
+  theme(axis.title = element_text(size = 18), 
+        axis.text = element_text(size = 16), 
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18))
+```
+
+
+## Hypothesis Test Steps
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="35%"}
 ::: {style="font-size: 1.5em; color: #0F4C81;"}
-Step 1: Fit an interaction model
+Step 1: Fit a one-way ANOVA model for each categorical variable
 :::
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+::: {.column width="60%"}
+::: fragment
 ::: {style="font-size: 1.5em; color: #687244;"}
-Step 2: Decide if the interaction is necessary
-:::
-
--   If yes, then this is your model!
--   If no, go to step 3.
+Step 2: Decide if each explanatory variable has a meaningful relationship with the response variable
 :::
 :::
 
-## 
+::: fragment
+-   If yes, then go to step 3!
+-   If no, then report which variable (if any) has the strongest relationship with the response. 
+:::
+:::
+:::
+
+## Additive Two-Way ANOVA
+
+</br>
 
 ```{r}
 #| echo: true
 #| eval: false
-aov(rating ~ era * genre, data = movies) %>% 
+aov(rating ~ era + genre, data = movies) %>% 
   tidy()
 ```
 
-::: {style="font-size: 1.5em; color: #000000;"}
-Why did I use a `*` when fitting the model?
-:::
+
+Why did I use a `+` when fitting the model?
 
 . . .
+
+</br>
 
 ```{r}
 #| echo: false
-aov(rating ~ era*genre, data = movies) %>% 
-  tidy() %>% 
-  gt() 
-```
-
-<center>
-
-::: {style="font-size: 1.5em; color: #0F4C81;"}
-**What would you decide?**
-:::
-
-</center>
-
-## 
-
-::: columns
-::: {.column width="40%"}
-::: {style="font-size: 2em; color: #ed8402;"}
-Step 3: Fit an additive model
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-::: {style="font-size: 2em; color: #687244;"}
-Step 4: Decide if each explanatory variable is necessary
-:::
-:::
-:::
-
-## 
-
-```{r}
-#| echo: true
-#| eval: false
-aov(rating ~ era + genre, data = movies) %>% 
-  tidy()
-```
-
-. . .
-
-```{r}
 aov(rating ~ era + genre, data = movies) %>% 
   tidy() %>% 
   gt() 
 ```
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+:::{style="text-align: center;"}
+
+**What is the `era` line testing?**
+
+::: fragment
 **What would you decide?**
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #c54405;"}
-Step 5: Remove the variable with the largest p-value
 :::
 
-```{r}
-#| echo: true
-#| eval: false
-aov(rating ~ genre, data = movies) %>% 
-  tidy()
-```
+# Connecting to research questions
 
-. . .
+## One-way ANOVA Research Question
 
-```{r}
-aov(rating ~ genre, data = movies) %>% 
-  tidy() %>% 
-  gt() 
-```
+### 90-seconds
 
-::: {style="font-size: 2em; color: #0F4C81;"}
-**What would you decide?**
+</br>
+</br>
+
+How would you phrase a research question for the one-way ANOVA model we've been investigating? 
+
+**Explanatory Variable:** `genre`
+
+**Response Variable:** `rating`
+
+## Two-way ANOVA Research Question
+
+### 90-seconds
+
+</br>
+</br>
+
+How would you phrase a research question for the two-way ANOVA model we've been investigating? 
+
+**Explanatory Variables:** `genre` and `era`
+
+**Response Variable:** `rating`
+
+## What about two-way ANOVA interaction models?
+
+::: incremental
+- An interaction model is similar to a different slopes multiple linear regression
+
+- It assesses if the relationship between two variables differs when a third variable is considered
+
+- Due to time, we we **are not** fitting interaction models for the Final Project 
 :::
 
-## 
 
-::: {style="font-size: 2em; color: #9a8e8d;"}
-Step 6: Fit a mean-only model
-:::
-
-```{r}
-#| echo: true
-
-summarize(movies,
-          mean_rating = mean(rating)
-          )
-```

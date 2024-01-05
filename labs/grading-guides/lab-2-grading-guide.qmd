@@ -1,8 +1,6 @@
 ---
 title: "Lab 2 - Grading Guide"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 execute: 
   eval: false
@@ -17,9 +15,9 @@ Q4\
 Q5\
 Q6\
 Q7\
-Q8  
-Q9  
-Q10 
+Q8\
+Q9\
+Q10
 
 ## 1 (a)
 
@@ -176,10 +174,11 @@ They should state that 45 flights arrived to SFO early in July.
 
 *Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?
 
-- If they only say that the 45 goes with flights
+-   If they only say that the 45 goes with flights
 
 <!-- fix this! -->
-*FeedbacK:
+
+\*FeedbacK:
 
 -   If they don't interpret the conditions of the filter (arrived early in July)
 
@@ -242,10 +241,9 @@ summarise(sfo_flights,
 
 *Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
 
-- Only discuss the statistics but don't address the question
+-   Only discuss the statistics but don't address the question
 
 *Feedback:* You point out the statistics and what they mean in terms of an arrival delay, but how do these statistics connect with my question about what I should expect?
-
 
 ## 8
 
@@ -316,6 +314,6 @@ ggplot(data = nycflights,
 
 *Feedback:* For Question 10, you should address what you were able to SEE in the visualization that you could not "see" in the summary statistics.
 
-- Response doesn't discuss if / how the answer to the question changed 
+-   Response doesn't discuss if / how the answer to the question changed
 
-*Feedback:* Great job discussing how the shape of the distribution informs you choice of statistic! You did not, however, discuss if / how your answer to my question changed between looking at the plot versus looking at the statistics. 
+*Feedback:* Great job discussing how the shape of the distribution informs you choice of statistic! You did not, however, discuss if / how your answer to my question changed between looking at the plot versus looking at the statistics.

@@ -1,9 +1,6 @@
 ---
 title: "Work Day: Coding a Multiple Linear Regression"
-format: 
-  revealjs:
-    embed-resources: true
-    standalone: true
+format: revealjs
 editor: visual
 ---
 
@@ -101,7 +98,9 @@ Step 4: Get the coefficients with `get_regression_table()`
 <!-- ##  {background-color="#B6CADA"} -->
 
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
 <!-- **Hermeneutics** hərmə'n(y)o͞odiks -->
+
 <!-- ::: -->
 
 <!-- > *the study of interpretation* -->
@@ -115,7 +114,9 @@ Step 4: Get the coefficients with `get_regression_table()`
 <!-- ##  {background-color="#D4D4D4"} -->
 
 <!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
+
 <!-- **Statistical Hermeneutics** -->
+
 <!-- ::: -->
 
 <!-- > "The study of the interpretation of results and conclusions based on statistical theory, methods, and reasoning." -->
@@ -129,7 +130,9 @@ Step 4: Get the coefficients with `get_regression_table()`
 <!-- ##  {background-color="#D4D4D4"} -->
 
 <!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
+
 <!-- Better for Science -->
+
 <!-- ::: -->
 
 <!-- > "Modern science despite all of the methodological and technological sophistication, has failed to account for the basic epistemic foundation on which it lies." -->

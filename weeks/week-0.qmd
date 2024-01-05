@@ -9,8 +9,6 @@ format:
     section-divs: true
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: true

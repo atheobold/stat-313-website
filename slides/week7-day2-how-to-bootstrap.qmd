@@ -1,9 +1,6 @@
 ---
 title: "How do you bootstrap???"
-format: 
-  revealjs:
-    standalone: true
-    embed-resources: true
+format: revealjs
 editor: visual
 ---
 
@@ -276,4 +273,3 @@ get_confidence_interval(bootstrap,
   kableExtra::kable_styling()
 
 ```
-

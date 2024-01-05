@@ -1,8 +1,6 @@
 ---
 title: "Lab 9 -- Grading Guide"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 execute: 
   eval: false
@@ -33,10 +31,10 @@ Q20:\
 
 **To earn a Success:**
 
-- fills in code
-- adds axis label
+-   fills in code
+-   adds axis label
 
-::: {.callout-warning}
+::: callout-warning
 Their axis label needs to indicate this is a score for Grade 8 Math
 :::
 
@@ -48,18 +46,17 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 **To earn a Success:**
 
-- compares centers of plots
-- compares spreads of plots
-
+-   compares centers of plots
+-   compares spreads of plots
 
 ## Question 3
 
 **To earn a Success:**
 
-- fills in code
-- adds axis label
+-   fills in code
+-   adds axis label
 
-::: {.callout-warning}
+::: callout-warning
 Their axis label needs to indicate this is a score for Grade 8 Math
 :::
 
@@ -67,12 +64,12 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 > What context are these math scores for? What exam? What grade?
 
-## Question 4 
+## Question 4
 
 **To earn a Success:**
 
-- compares centers of plots
-- compares spreads of plots
+-   compares centers of plots
+-   compares spreads of plots
 
 ## Question 5 -- Important!
 
@@ -92,7 +89,6 @@ ggplot(data = math_scores,
        y = "Year", 
        fill = "Continent")
 ```
-
 :::
 
 ::: {.column width="5%"}
@@ -110,15 +106,14 @@ ggplot(data = math_scores,
        y = "Year") + 
   facet_wrap(~continent)
 ```
-
 :::
 :::
 
-::: {.callout-warning}
+::: callout-warning
 Their axis label needs to indicate this is a score for Grade 8 Math
 :::
 
-*If they don't change the transparency of their plots:* 
+*If they don't change the transparency of their plots:*
 
 > Remember you can use alpha to change the transparency of the density ridges so you can see them all!
 
@@ -126,44 +121,44 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 > What context are these math scores for? What exam? What grade?
 
-## Question 6 -- Important! 
+## Question 6 -- Important!
 
-**To earn a Success:** compares if distributions of continents move over time or if they stay similar 
+**To earn a Success:** compares if distributions of continents move over time or if they stay similar
 
 ## Question 7 -- Important!
 
-**To earn a Success:** 
+**To earn a Success:**
 
-- compares observations within a continent
-- notices countries are recorded multiple times
-- states the condition is violated
+-   compares observations within a continent
+-   notices countries are recorded multiple times
+-   states the condition is violated
 
 *If they do not state the condition is violated:*
 
-> Look at the observations for Africa! How many observations for Ghana are there? Is it reasonable to assume those observations are independent? 
+> Look at the observations for Africa! How many observations for Ghana are there? Is it reasonable to assume those observations are independent?
 
 *If they say observations for continents are related in time:*
 
-> Do we have one observation per continent? If not, what are the observations of? Are these observations within a continent related? 
+> Do we have one observation per continent? If not, what are the observations of? Are these observations within a continent related?
 
 ## Question 8 -- Important!
 
 **To earn a Success:**
 
-- connects comparison with observations within a year or between continents
+-   connects comparison with observations within a year or between continents
 
 ::: columns
 ::: {.column width="40%"}
-- says countries / continents are not related 
-- justifies decision (no)
+-   says countries / continents are not related
+-   justifies decision (no)
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="55%"}
-- says countries / continents are related 
-- justifies decision (spatial relationship)
+-   says countries / continents are related
+-   justifies decision (spatial relationship)
 :::
 :::
 
@@ -175,9 +170,9 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 **To earn a Success:**
 
-- compares observations between continents
-- states that a country can only belong to one continent
-- says condition is not violated
+-   compares observations between continents
+-   states that a country can only belong to one continent
+-   says condition is not violated
 
 *If they don't discuss how many continents a county can belong to:*
 
@@ -191,9 +186,9 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 **To earn a Success:**
 
-- compares observations between years
-- states that observations are related in time
-- says condition is violated
+-   compares observations between years
+-   states that observations are related in time
+-   says condition is violated
 
 *If they do not state the condition is violated:*
 
@@ -207,15 +202,15 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 **To earn a Success:**
 
-- discusses the shape of the distributions 
-- says some distributions have more than one mode
-- says condition is violated
+-   discusses the shape of the distributions
+-   says some distributions have more than one mode
+-   says condition is violated
 
 *If they do not state the condition is violated:*
 
 > How many peaks does the Normal distribution have? How many peaks do you see in some of these distributions?
 
-*If they don't make a decision (violated / not):* 
+*If they don't make a decision (violated / not):*
 
 > A critical part of evaluation model conditions is to make a decision! Do you feel that this condition is or is not violated?
 
@@ -223,15 +218,15 @@ Their axis label needs to indicate this is a score for Grade 8 Math
 
 **To earn a Success:**
 
-- compares the log variances between continents / years
-- says there are large differences in the log variances
-- says condition is violated
+-   compares the log variances between continents / years
+-   says there are large differences in the log variances
+-   says condition is violated
 
 *If they do not state the condition is violated:*
 
-> How many times larger is the largest variance than the smallest variance? If it is less than 2, they could be similar values, but larger than 2 they start to seem pretty different. 
+> How many times larger is the largest variance than the smallest variance? If it is less than 2, they could be similar values, but larger than 2 they start to seem pretty different.
 
-## Question 13 
+## Question 13
 
 **To earn a Success:** Code should look like:
 
@@ -240,19 +235,18 @@ aov(grade_8_math_score ~ year, data = math_scores) %>%
   broom::tidy()
 ```
 
-*If they swap $y$ and $x$:*
+*If they swap* $y$ and $x$:
 
-> Careful! In the lm() function the response goes first! 
-
+> Careful! In the lm() function the response goes first!
 
 ## Question 14
 
 **To earn a Success:**
 
-- reject $H_0$
-- state that the p-value was less than 0.1
+-   reject $H_0$
+-   state that the p-value was less than 0.1
 
-::: {.callout-note}
+::: callout-note
 # Fine to not include p-value
 
 *If they don't state what the p-value was:*
@@ -260,11 +254,11 @@ aov(grade_8_math_score ~ year, data = math_scores) %>%
 > Remember it is important to be transparent with your decision, what p-value did you obtain for this test?
 :::
 
-*If they don't state their $\alpha$:*
+*If they don't state their* $\alpha$:
 
-> What alpha was used for your decision? 
+> What alpha was used for your decision?
 
-## Question 15 
+## Question 15
 
 **To earn a Success:** Conclude at least on year has a different mean grade 8 math score
 
@@ -272,7 +266,7 @@ aov(grade_8_math_score ~ year, data = math_scores) %>%
 
 > What is the alternative hypothesis for a one-way ANOVA? Is it that all of the years have different means?
 
-## Question 16 
+## Question 16
 
 **To earn a Success:** Code should look like:
 
@@ -284,7 +278,7 @@ null_dist <- math_scores %>%
   calculate(stat = "F")
 ```
 
-## Question 17 
+## Question 17
 
 **To earn a Success:** Code should look like:
 
@@ -315,10 +309,10 @@ get_p_value(null_dist,
 
 **To earn a Success:**
 
-- reject $H_0$
-- state that the p-value was less than 0.1
+-   reject $H_0$
+-   state that the p-value was less than 0.1
 
-::: {.callout-note}
+::: callout-note
 # Fine to not include p-value
 
 *If they don't state what the p-value was:*
@@ -326,9 +320,9 @@ get_p_value(null_dist,
 > Remember it is important to be transparent with your decision, what p-value did you obtain for this test?
 :::
 
-*If they don't state their $\alpha$:*
+*If they don't state their* $\alpha$:
 
-> What alpha was used for your decision? 
+> What alpha was used for your decision?
 
 ## Question 20
 
@@ -337,4 +331,3 @@ get_p_value(null_dist,
 *If they say all the continents have different means:*
 
 > What is the alternative hypothesis for a one-way ANOVA? Is it that all of the continents have different means?
-

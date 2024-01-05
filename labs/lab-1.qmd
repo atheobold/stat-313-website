@@ -2,10 +2,7 @@
 title: "Welcome to Posit Cloud!"
 author: "Your Name Here!"
 date: "April 7, 2023"
-format: 
-  html:
-    embed-resources: true
-    standalone: true
+format: html
 editor: visual
 execute: 
   echo: true

@@ -4,7 +4,6 @@ author: "Your Name Here!"
 format: 
   html:
     code-tools: true
-    self-contained: true
 editor: visual
 execute: 
   echo: false

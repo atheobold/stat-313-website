@@ -3,8 +3,6 @@ title: "Visualizing and Summarizing Numerical Data"
 author: "Your group's names here!"
 date: "April 13, 2023"
 format: html
-embed-resources: true
-standalone: true
 editor: visual
 execute: 
   echo: true
@@ -192,7 +190,7 @@ Let's think about how you could answer this question. One option is to summarize
 
 **Question 8 -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset.**
 
-*Choose the type of plot you believe is appropriate for visualizing the __distribution__ of departure delays.*
+*Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays.*
 
 *Don't forget to give your visualization informative axis labels!*
 

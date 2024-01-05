@@ -1,9 +1,6 @@
 ---
 title: "Confidence Intervals -- Real Life Sampling Distributions"
-format: 
-  revealjs:
-    standalone: true
-    embed-resources: true
+format: revealjs
 editor: visual
 ---
 

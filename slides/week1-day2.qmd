@@ -3,8 +3,6 @@ title: "Working with Data"
 format: 
   revealjs:
     theme: night
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: false
@@ -181,7 +179,7 @@ Examples
 Your Turn
 :::
 
-</br> 
+</br>
 
 Suppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.
 

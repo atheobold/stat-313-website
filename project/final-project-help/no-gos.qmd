@@ -1,8 +1,6 @@
 ---
 title: "Things that cannot go in your project!"
-format: 
-  docx: 
-    self-contained: true
+format: docx
 editor: visual
 ---
 
@@ -20,4 +18,4 @@ editor: visual
 
     -   Break into smaller 3-4 sentence paragraphs surrounding the same topic.
 
--   The same sentence / idea written in multiple sections. 🙃
+-   The same sentence written in multiple sections. 🙃

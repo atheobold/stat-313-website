@@ -1,8 +1,6 @@
 ---
 title: "Lab 7 Grading Guide"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 ---
 
@@ -237,7 +235,7 @@ I'm willing to be pretty flexible here, but the key aspect is that they need to 
 
 *If their justification is about crabs*:
 
-> Careful! Are you analyzing data on crabs or on marshes? The population of marshes you define in #9 is what you should use to assess if the assumption of bootstrapping is reasonable. 
+> Careful! Are you analyzing data on crabs or on marshes? The population of marshes you define in #9 is what you should use to assess if the assumption of bootstrapping is reasonable.
 
 *If their justification is not reasonable*:
 

@@ -5,8 +5,6 @@ format:
   revealjs:
     logo: images/ggplot2.png
     theme: night
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   warning: false
@@ -313,16 +311,15 @@ Median
 
 . . .
 
-</br>
-</br>
+</br> </br>
 
-::: {.callout-tip}
+::: callout-tip
 # 60-second question
 
 What does it mean for a statistic to be "resistant"?
 :::
 
-##
+## 
 
 <center>
 
@@ -355,16 +352,13 @@ Inner Quartile Range (IQR)
 :::
 :::
 
-</br>
-</br>
+</br> </br>
 
-::: {.callout-tip}
+::: callout-tip
 # 60-second question
 
-Why are the variance and range not resistant? 
+Why are the variance and range not resistant?
 :::
-
-
 
 ##  {background-color="#D4D4D4"}
 
@@ -444,27 +438,24 @@ Estimates based on larger samples tend to be more accurate than those based on s
 
 ## Before Thursday...
 
-Complete the **two** R tutorials 
+Complete the **two** R tutorials
 
-* Visualizing Numerical Variables
+-   Visualizing Numerical Variables
 
-* Summarizing Numerical Variables 
+-   Summarizing Numerical Variables
 
 Linked in the Week 2 coursework!
 
 ## Meeting your team!
 
-1. Go to the STAT 313 Canvas page
+1.  Go to the STAT 313 Canvas page
 
-2. Go to the "People" tab
+2.  Go to the "People" tab
 
-3. Click on the Weeks 2 - 4 groups
+3.  Click on the Weeks 2 - 4 groups
 
-4. Find your group number
+4.  Find your group number
 
 ::: {style="color:#e28743;"}
 These are the individuals you will be working with for the next three weeks! Exchange contact information!
 :::
-
-
-

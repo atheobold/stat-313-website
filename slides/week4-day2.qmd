@@ -1,9 +1,6 @@
 ---
 title: "The Ugly History of Linear Regression"
-format: 
-  revealjs:
-    embed-resources: true
-    standalone: true
+format: revealjs
 ---
 
 ```{r pakages}
@@ -26,7 +23,7 @@ options(show.signif.stars = FALSE)
 knitr::include_graphics("images/bumi-fire.jpg")
 ```
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Least Squares
@@ -34,12 +31,11 @@ Least Squares
 
 ::: columns
 ::: {.column width="55%"}
- Published in 1805 by Legendre
+Published in 1805 by Legendre
 
 ```{r, out.width = "50%", out.height = "40%"}
 knitr::include_graphics("images/legendre.jpg")
 ```
-
 :::
 
 ::: {.column width="5%"}
@@ -58,7 +54,7 @@ knitr::include_graphics("images/gauss.jpg")
 Used to determine, from astronomical observations, the orbits of bodies about the Sun.
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 "regression"
@@ -73,17 +69,17 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 :::
 
 ::: {.column width="55%"}
-- Coined by Francis Galton in the 19th century
+-   Coined by Francis Galton in the 19th century
 
 -   Described a biological phenomenon
-    -   Heights of children of tall parents tend to be tall, but shorter than their parents
 
+    -   Heights of children of tall parents tend to be tall, but shorter than their parents
 :::
 :::
 
 <!-- A phenomenon also known as regression toward the mean. -->
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 A "polymath"
@@ -98,17 +94,17 @@ A "polymath"
 :::
 
 ::: {.column width="55%"}
-- In Statistics, Galton (1822--1911) is a towering figure.
+-   In Statistics, Galton (1822--1911) is a towering figure.
 
 -   He invented standard deviation, correlation, linear regression, ANOVA
 
--   Galton's developments and discoveries were fueled in large part by his fascination with the science of heredity. 
+-   Galton's developments and discoveries were fueled in large part by his fascination with the science of heredity.
 :::
 :::
 
 <!-- Galton was wrestling with the unanswered question of how different traits stayed stable in a population over generations, building on the work of his cousin Charles Darwin, who had published On the Origin of Species in 1859. -->
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 The Invention of Eugenics
@@ -116,11 +112,11 @@ The Invention of Eugenics
 
 ::: columns
 ::: {.column width="50%"}
-- The science of heredity could help humanity better itself through breeding.
+-   The science of heredity could help humanity better itself through breeding.
 
 -   Based on Greek *eugenes*, meaning "well-born"
 
--   Galton served as founding president of the British Eugenics Society 
+-   Galton served as founding president of the British Eugenics Society
 :::
 
 ::: {.column width="5%"}
@@ -131,7 +127,7 @@ The Invention of Eugenics
 :::
 :::
 
-##
+## 
 
 <center>
 
@@ -139,7 +135,7 @@ The Invention of Eugenics
 knitr::include_graphics("images/bumi-patio.jpg")
 ```
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 Eugenics and the US
@@ -159,7 +155,7 @@ Eugenics and the US
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 And then it spread...
@@ -176,7 +172,7 @@ knitr::include_graphics("images/hitler.jpg")
 :::
 
 ::: {.column width="50%"}
-- *Mein Kampf* references American eugenics
+-   *Mein Kampf* references American eugenics
 
 -   Declared non-Aryan races inferior
 
@@ -184,7 +180,7 @@ knitr::include_graphics("images/hitler.jpg")
 :::
 :::
 
-##
+## 
 
 <center>
 
@@ -192,7 +188,7 @@ knitr::include_graphics("images/hitler.jpg")
 knitr::include_graphics("images/bumi-water.jpg")
 ```
 
-##
+## 
 
 ::: {style="font-size: 4em; color: #000000;"}
 Would you exist?
@@ -221,7 +217,7 @@ Are you LGBTQIQ+?
 :::
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 More Information

@@ -1,9 +1,6 @@
 ---
 title: "Model Justification"
-format: 
-  html:
-    embed-resources: true
-    standalone: true
+format: html
 editor: visual
 execute: 
   echo: false

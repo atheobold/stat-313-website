@@ -1,10 +1,15 @@
 ---
 title: "Week Four: Introduction to Linear Regression (Basic Regression)"
 format: 
-  html:
-    embed-resources: true
-    standalone: true
+  html: 
+    number-sections: true
+    number-depth: 2
+    section-divs: true
 editor: visual
+execute: 
+  echo: true
+  warning: false
+  message: false
 ---
 
 ```{r}

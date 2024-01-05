@@ -4,8 +4,6 @@ format:
   revealjs:
     logo: images/dplyr.png
     theme: night
-    embed-resources: true
-    standalone: true
 editor: visual
 execute: 
   echo: false
@@ -30,7 +28,6 @@ trout <- vertebrates_full_code %>%
 salamander <- vertebrates_full_code %>% 
   filter(species != "Cutthroat trout")
 ```
-
 
 ## In `R`...
 
@@ -236,5 +233,3 @@ trout %>%
 ```
 
 What are the aesthetics included in this plot?
-
-
