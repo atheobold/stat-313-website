@@ -1,10 +1,9 @@
 ---
-title: 'STAT 313: Applied Experimental Design and Regression Models'
-subtitle: "Winter 2023"
+title: 'STAT 313 / 513: Applied Experimental Design and Regression Models'
+subtitle: "Winter 2024"
 format: 
   html: 
     self-contained: true
-    theme: minty
     fontsize: 1em
     mainfont: sans-serif
     number-sections: true
@@ -13,7 +12,7 @@ format:
     section-divs: true
     code-block-bg: "#76b5c5"
     highlight-style: monochrome
-editor: visual
+editor: source
 execute: 
   echo: false
   warning: false
@@ -30,12 +29,13 @@ I value diversity, inclusion and equity in this (and every) class. I hold the fu
 
 ### Class meetings
 
-**Room:** Baker Science (Building 180), Room 260
+**Room:** Baker Science (Building 180), Room 262
 
 **Times:**
 
--   Section 01: 12:10-2:00pm
--   Section 02: 2:10-4:00pm
+-   Stat 513, Section 01: 9:10-11:00am
+-   Stat 313, Section 01: 12:10-2:00pm
+-   Stat 313, Section 02: 2:10-4:00pm
 
 ### How to contact me
 
@@ -47,20 +47,32 @@ I value diversity, inclusion and equity in this (and every) class. I hold the fu
 
 ### Student Hours
 
-These are hours reserved for you! Student hours can different each week, depending on the assignments we have. Some days it may be you and I having a one-on-one conversation, some days it may be talking in a group about questions you have regarding an assignment, and some days it may be you working with others while I circulate around the room to answer questions that arise.
+Student hours (more commonly referred to as office hours) are times I have set aside to meet with you outside of class. I like the name "student hours," as I feel it more clearly communicates the intention of this time -- talking with students. During student hours, you can ask questions about *any* course material you find challenging, are confused about, or would like to talk through with someone. You can also ask about the expectations for certain assignments or for expectations for the course. It is also possible for you to come to office hours with your peers, even if you don't have any questions of your own! Hearing other students’ questions may bring up questions you have and can help you practice applying your knowledge and skills by helping other students.
 
-This quarter I will be holding student hours on Tuesdays and Thursdays at the following times:
+Some general tips for coming to student hours:
 
-| Day       | Time                           |
-|-----------|--------------------------------|
-| Tuesdays  | 10:10am -- 11:00am (in-person) |
-| Thursdays | 10:10am -- 11:00am (in-person) |
+-   introduce yourself early in the term -- this helps me learn your name faster!
+-   don't be afraid that you are inconveniencing me -- I love talking to you!
+-   ask thoughtful questions -- it is easier for me to help you if you come with specific questions
+-   be aware of how much you are speaking -- when there are multiple students in my office I ask for everyone to take turns asking questions
+-   be honest with me -- if I explained something and it still doesn't make sense to you, tell me!
+
+Another use for student hours is to talk with me about your interests, your own research or opportunities for research, or asking for a letter of recommendation. I love getting to know my students better, and office hours are a great time for you just to drop by and say 👋 ! I am also happy to talk with you about tough things going on in your life. I care a lot about you and want to help you in any way I can. ❤️
+
+This quarter I will be holding student hours on Mondays and Wednesdays at the following times:
+
+| Day        | Time                         |
+|------------|------------------------------|
+| Mondays    | 2:10pm -- 4:00pm (in-person) |
+| Wednesdays | 2:10pm -- 3:00pm (in-person) |
+
+I will typically hold student hours in my office (25-105), but may choose to move to the outside vestibule between wings of the building (where all the whiteboards are) or the Statistics department conference room. If we're meeting somewhere other than my office, I will leave a sign on the door indicating where we're meeting!
 
 ### Personal Meetings
 
-If you would like to talk with me individually, I've reserved time on Wednesdays from 2:10pm to 3:00pm for individual appointments. You can make appointments through the following link: <https://calendly.com/allisontheobold>
+If you would like to talk with me one-on-one about anything (e.g., grades, research), I've reserved time on Wednesdays from 3:10pm to 4:00pm for individual appointments. You can make 10-minute appointments through the following link: <https://calendly.com/allisontheobold/office-hour-appointment>
 
-I do request that you make appointments at least 1-hour ahead of time, so I don't miss our meeting!
+I do request that you make appointments at least 1-hour ahead of time, so I don't accidentally miss our meeting!
 
 If you need to meet, but none of the student hours work for you please let me know! It is possible we can communicate asynchronously through Discord or email, but I am happy to schedule a meeting during another time if necessary.
 
@@ -89,15 +101,21 @@ For this course we will be using one main textbook, accompanied by additional re
 ## Required Technology
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="28%"}
 ![`R` is the statistical software we will be using in this course (<https://cran.r-project.org/>)](images/R.jpeg){width="50%"}
+:::
+
+::: {.column width="2%"}
 :::
 
 ::: {.column width="30%"}
 ![RStudio is the most popular way to interact with the `R` software. We will be interacting with RStudio through [Posit Cloud](https://posit.cloud/) (Posit is the company that owns RStudio). You will join the Stat 313 workspace, and then be able to access the course homework and lab assignments. We will be walking through this in the first week of lab!](images/rstudio.png){width="75%"}
 :::
 
-::: {.column width="30%"}
+::: {.column width="2%"}
+:::
+
+::: {.column width="28%"}
 ![For questions of general interest, such as course clarifications or conceptual questions, please use the Class Discord Server. Refer to the Day One Class Setup materials for more information on how to effectively use this server.](images/discord.jpeg){width="50%"}
 :::
 :::
@@ -220,7 +238,7 @@ For this course we will be using one main textbook, accompanied by additional re
 
 [^2]: A "Satisfactory" lab or critique occurs when **every** problem has been marked *Satisfactory.*
 
-I will set + / - grades based on how close you are to the next higher (or lower) letter grade. For example, if you meet all the criteria for an A but only completed 8 satisfactory labs and critiques, you would earn an A-. Similarly, if you meet all the criteria for an A, but received a Satisfactory on a project -- with more sections receiving an Excellent than Satisfactory -- you would earn an A-.
+I will set + / - grades based on how close you are to the next higher (or lower) letter grade. For example, if you meet all the criteria for an A but only completed 8 satisfactory labs and critiques, you would earn an A-. Similarly, if you meet all the criteria for an A, but received a Satisfactory on a project you would earn an A-.
 
 ## What assessments will there be?
 
@@ -232,11 +250,11 @@ Each one is described briefly here, grouped into categories by course goal. See 
 
 ### Readings and videos (every week)
 
-I favor a "flipped classroom," as it gives you more time to clarify and solidify statistical concepts through hands-on exercises. Each week, you will read the required chapter(s), completing a required reading guide to walk you through the central concepts for each week. You are required to submit your completed reading guides by Monday at midnight.
+I favor a "flipped classroom," as it gives you more time to clarify and solidify statistical concepts through hands-on exercises. Each week, you will read the required chapter(s), completing a required reading guide to walk you through the central concepts for each week. You are required to submit your completed reading guides by the start of class on Tuesday.
 
 ### Concept quizzes (every week)
 
-Each week there will be a short (\~10 questions) quiz over the reading and videos from the week. These quizzes are intended to ensure that you grasped the key concepts from the week's readings. The quizzes are not timed, so you can feel free to check your answers with the textbook and / or videos if you so wish. The quizzes are **marked on completion** as complete or incomplete. You are required to complete the concept quiz by Tuesday at noon.
+Each week there will be a short (\~10 questions) quiz over the reading and videos from the week. These quizzes are intended to ensure that you grasped the key concepts from the week's readings. The quizzes are not timed, so you can feel free to check your answers with the textbook and / or videos if you so wish. The quizzes are **marked on completion** as complete or incomplete. You are required to complete the concept quiz by the start of class on Tuesday.
 
 ### Tutorials (every week)
 
@@ -244,13 +262,13 @@ You can think of the tutorials as an "interactive" textbook, as they interweave 
 
 The tutorials are work at your own pace, so you can complete them all at once or slowly throughout the week. The lab assignments will require for you to put the skills you learned in the tutorials to work, so you are required to complete each week's tutorial **before** Thursday's lab.
 
-The tutorials are **marked on completion** as complete or incomplete. You will submit a screenshot of the completion page at the end of the tutorial to confirm that you completed the tutorial for the week. You are required to complete the tutorial by Thursdays at noon.
+The tutorials are **marked on completion** as complete or incomplete. You will submit a screenshot of the completion page at the end of the tutorial to confirm that you completed the tutorial for the week. You are required to complete the tutorial by the start of class on Thursday.
 
 ## Critically evaluate the use of Statistics
 
 ### Statistical critiques (every 4-weeks)
 
-These assignments are case studies in which you will evaluate a data visualization or statistical analysis, determining how well-performed and presented the analysis was and making recommendations for improving or using the analysis. Critiques are due roughly 1-week after they are assigned and should take **1-2 hours**. You will **receive feedback** and a mark of **Success** or **Growing** (elaborated more on later), and you will be able to revise based on that feedback. There will be **four** total critiques.
+These assignments are case studies in which you will evaluate a data visualization or statistical analysis, determining how well-performed and presented the analysis was and making recommendations for improving or using the analysis. Critiques are due roughly 1-week after they are assigned and should take **1-2 hours**. You will **receive feedback** and a mark of **Success** or **Growing** (elaborated more on later), and you will be able to revise based on that feedback. There will be **two** total critiques.
 
 ## Perform statistical analyses to answer research questions
 
@@ -258,25 +276,25 @@ These assignments are case studies in which you will evaluate a data visualizati
 
 Labs will be assigned on Thursday every week, providing the opportunity to explore the course concepts in the context of real data. Lab assignments will require for you to work through the tutorial for the week, thus the tutorials are due before the start of class on Thursday.
 
-You will complete the lab assignments in the same teams you collaborate with in class. You will access the lab assignment through Posit Cloud, which you will be walked through during the first lab. Your group will be expected to submit your completed lab on Canvas. You will need to submit **both** the HTML and Quarto documents. The individual assigned as the Report Manager (described below) will submit the team's completed Lab assignment by **Sunday at midnight.**
+You will complete the lab assignments in the same teams you collaborate with in class. You will access the lab assignment through Posit Cloud, which you will be walked through during the first lab. Your group will be expected to submit your completed lab on Canvas. You will need to submit **only** the HTML document (not the Quarto document). The individual assigned as the Report Manager (described below) will submit the team's completed Lab assignment by **Monday at 5pm.**
 
 #### Success / Growing Grading
 
 I expect that you will approach each lab assignment seriously, investing the necessary time and energy to prepare your responses. Different from what you may have experienced, lab assignments are graded for "proficiency" of specific learning targets, which describe what you should be able to do after taking this course. You'll receive a score for each problem on an assignment according to the **Success** / **Not Yet** rubric below, as well as feedback to help you improve.
 
-+------------+-------------------------------------------------------------------------------------------------------------------------+
-| Score      | Justification                                                                                                           |
-+============+=========================================================================================================================+
-| Successful | The solution to the problem is correct, legible, and easy to follow, with all reasoning provided. Any error is trivial. |
-+------------+-------------------------------------------------------------------------------------------------------------------------+
-| Growing    | The solution shows growth toward mastering the topic; however, it is incorrect and/or incomplete.                       |
-+------------+-------------------------------------------------------------------------------------------------------------------------+
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Score   | Justification                                                                                                                                                                      |
++=========+====================================================================================================================================================================================+
+| Success | The solution to the problem is correct, legible, and easy to follow, with all reasoning provided. Any error does not bring into question your understanding of the topic.          |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Growing | The solution shows growth toward mastering the topic; however, elements of the solution bring into question your understanding of the topic, and thus further attention is needed. |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Completing Revisions
 
-After the first submission of your lab or critique, you will have the option to retry any problems for which you scored a **Growing (G)**. A written reflection on how your understanding of the problem changed will accompany any revision. If you don't earn a **Success** by the second try, you can make an appointment with me to meet during my office hours (or another agreed-upon time) to create a reassessment strategy. You can schedule up to one meeting per week.
+Every week, your Lab assignment and / or Statistical Critique from the previous week will be graded and returned to you no later than Thursday at 9am. Meaning, Lab 2 (completed in Week 2) will be graded and returned to you by Thursday of Week 3. After the first submission of your Lab or Critique you will have the option to retry any problems for which you scored a **Growing (G)**. A written reflection on how your understanding of the problem changed will accompany any revision.
 
-You can submit **up to one** revised Lab Assignment or Statistical Critique per week, until Sunday, June 11 at 11:59 pm.
+Revisions for a Lab or Critique are **due on Thursdays at 5pm**, [one week]{.underline} from when they were returned. If you do not complete your revision within one week of when it was returned, you are no longer permitted to submit a revision. If you don't earn a **Success** by your second revision, you are expected to make an appointment with me to meet during my office hours (or another agreed-upon time) to create a reassessment strategy.
 
 #### Reflections on Your Learning
 
@@ -285,7 +303,7 @@ Revisions **must** include a reflection describing how you revised your thinking
 -   If your revision does not include reflections, I'll ask you to add them.
 -   See some examples of really good reflections [here](https://docs.google.com/document/d/1JNR3cVONeEPwe7umURI1gv0w9qbMz5fyC_S2_qXkHII/edit?usp=sharing) -- they're (mostly) from an introductory statistics class, but I think you'll get the idea.
 
-**Submit your revision to the same assignment box on Canvas as your original. This helps me keep track of any outstanding revisions each person has.**
+**Submit your revision to the same assignment box on Canvas as your original. This helps me keep track of who has outstanding revisions.**
 
 ## Synthesize statistical ideas
 
@@ -309,7 +327,7 @@ The module for each week will be released on Friday by 5pm, so you can look over
 
 -   Please tell me what course and section (by time or number) you are in!
 -   If you email me between 9am and 4pm on Monday through Friday, I'll try my best to reply to you on the *same* day.
--   If you email me outside of those hours, I will do my best to respond to you by the *next working* day. For my own mental health, I **do not** work on weekends. Thus, if you send an email after 4pm on Friday or during the weekend, you will not receive a response until Monday morning.
+-   If you email me outside of those hours, I will do my best to respond to you by the *next working* day. For my own mental health, I **do not** respond to email on the weekend. Thus, if you send an email after 4pm on Friday or during the weekend, you will not receive a response until Monday morning.
 -   If your question is much easier to discuss face-to-face, I may ask you to meet with me in my office or on Discord (at a time that works for both of us) rather than answering directly in an email.
 -   Include any relevant photos / screenshots / error messages / PDFs / links with your email.
 
@@ -351,13 +369,16 @@ If you miss a bunch of classes, please come talk to me. I'm working from the ass
 
 ## What if I need to turn something in late?
 
-Assignments are expected to be submitted on time. However, every student will be permitted to submit up to **three** individual assignments up to 4-days late, by completing the [deadline extension form](https://forms.gle/gUgfUov1EPagjACQ8). [Similar to the "real world," deadline extensions must be requested **before** an assignment is due.]{style="color: #FF0000;"}
+Assignments are expected to be submitted on time. However, every student will be permitted to submit up to **three** individual assignments up to 4-days late, by completing a deadline extension form. Similar to the "real world," deadline extensions must be requested **before** an assignment is due.
 
 When you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. **Your new deadline must be within 4-days of the original deadline.**
 
 **All** deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a disability related need.
 
 Any late work is required to have a deadline extension request, meaning if you do not complete a deadline extension request for an assignment you **are not** permitted to turn it in late.
+
+-   STAT 313 deadline extension form: <https://forms.gle/HTL2DrwZwR29EwVT9>
+-   STAT 513 deadline extension form: <https://forms.gle/2iw6mC2f2uvibUkb8>
 
 ## Do I need to bring a computer to class?
 
@@ -373,27 +394,33 @@ In summary: Be good to each other.
 
 ## Working in teams
 
-Your team will be rotating group roles each week, so that one person does not act as the "team manager" for more than one week. Instead the following roles will circulate each week, so that each member of the group is able to complete each role.
+When completing lab assignments, you will work in a team of three students. In 
+Week 2, you will be assigned to a group and you will work in this same group 
+for three total weeks (Weeks 2 - 4). Then, in Week 5 you will be assigned to 
+a new group of three students, which you will collaborate with for the next
+three weeks (Weeks 5 - 7). Finally, in Week 8, you will be assigned to one final
+group which you will collaborate with for the final three weeks of the quarter 
+(Weeks 8 - 10). 
 
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------+
-| **Facilitator**                                            | **Recorder / Reporter**                                                                   | **Team Captain**                            |
-|                                                            |                                                                                           |                                             |
-| Manages team progress through the task                     | Manages in-class report                                                                   | Manages team participation                  |
-|                                                            |                                                                                           |                                             |
-| -   Leads discussion                                       | -   Responsible for organizing and recording answers to the assignment during discussions | -   Encourages participation                |
-|                                                            |                                                                                           |                                             |
-| -   Makes sure everyone understands the task               | -   Compiles a summary of the solutions discussed                                         | -   Finds compromises                       |
-|                                                            |                                                                                           |                                             |
-| -   Keeps the group moving forward                         | -   Solicits feedback on summaries from other group members                               | -   Enforces norms                          |
-|                                                            |                                                                                           |                                             |
-| -   Checks in with group members                           | -   Responsible for submitting final version of assignment                                | -   Brings conversation back if it deviates |
-|                                                            |                                                                                           |                                             |
-| -   Calls professor / TA over for **group questions only** |                                                                                           | -   Substitutes for absent roles            |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------+
+<!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
+<!-- | **Resource Manager**                                                                                      | **Recorder / Reporter**                                                                   | **Team Captain**                                           | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- | Manages the resources the team needs to complete the task                                                 | Manages in-class report                                                                   | Manages team participation                                 | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- | -   Responsible for pulling up resources necessary for completing the lab (e.g., R Cheatsheets, textbook) | -   Responsible for organizing and recording answers to the assignment during discussions | -   Leads discussion                                       | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- | -   If                                                                                                    | -   Compiles a summary of the solutions discussed                                         | -   Encourages participation                               | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- | -   Finds compromises                                                                                     | -   Solicits feedback on summaries from other group members                               | -   Makes sure everyone understands the task               | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- | -                                                                                                         | -   Responsible for submitting final version of assignment                                |     Substitutes for absent roles                           | -->
+<!-- |                                                                                                           |                                                                                           |                                                            | -->
+<!-- |                                                                                                           |                                                                                           | -   Calls professor / TA over for **group questions only** | -->
+<!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
 
-### Peer evaluations
+### Researching Group Collaborations 
 
-There will be confidential peer evaluations completed every four weeks. I will use these to check-in on each group's dynamics and ensure that everyone feels their voice is being heard.
+
 
 ## What constitutes plagiarism in a statistics class?
 
@@ -440,8 +467,8 @@ This unit focuses on how we decide what variables should be included in our regr
 
 There are occasions where the conditions required for linear regression are violated. Rather than throwing up our hands and saying "Oh, well!", we can use variable transformations to lessen condition violations. This unit will explore the use of log transformations to remedy non-linear relationships and non-constant variance.
 
-## Unit 6: ANOVA a Categorical Case of Regression (Weeks 9 & 10)
+## Unit 6: ANOVA (Weeks 9 & 10)
 
 To wrap up the quarter, we will look at a special case of linear regression--ANOVA. In this special case, our regression will include **only** categorical variables as explanatory variables. We will first review how we compare the means of two groups and then connect with what we learned about categorical variables in multiple linear to conceptualize how we can compare the means of three or more groups.
 
-This unit will explore Chapter 22 in *IMS*
+This unit will explore Chapter 22 in *IMS*, with supplementary materials created by Dr. Theobold. 
