@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 - Spring 2023 - Week 7 – Exploring Sampling</title>
+<title>STAT 313 / 513 - Winter 2024 - Week 7 – Exploring Sampling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -97,7 +98,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -106,17 +113,44 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -126,12 +160,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7 – Exploring Sampling</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7 – Exploring Sampling</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -141,7 +175,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -337,7 +371,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -371,7 +405,7 @@ div.csl-indent {
   <li><a href="#sec-appendix-normal-curve" id="toc-sec-appendix-normal-curve" class="nav-link" data-scroll-target="#sec-appendix-normal-curve"><span class="header-section-number">5.1</span> Normal distribution</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -391,7 +425,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>This week, we begin our adventure into statistical inference by learning about <em>sampling</em>. The concepts behind sampling form the basis of confidence intervals and hypothesis testing, which we’ll cover in the second portion of this week’s reading and next week. We will see that the skills you learned during the first three weeks of class, in particular data visualization and data wrangling, will also play an important role in the development of your understanding of sampling.</p>
 <p>This week’s reading comes primarily from <a href="https://moderndive.com/7-sampling.html">Chater 7</a> from <em>ModernDive</em> <span class="citation" data-cites="kim2020">(<a href="#ref-kim2020" role="doc-biblioref">Kim et al. 2020</a>)</span>, with a smattering of my own ideas.</p>
@@ -405,47 +441,63 @@ div.csl-indent {
 <p>Let’s start with a hands-on activity.</p>
 <section id="what-proportion-of-this-bowls-balls-are-red" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="what-proportion-of-this-bowls-balls-are-red"><span class="header-section-number">1.1</span> What proportion of this bowl’s balls are red?</h3>
-<div id="fig-bowl" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/sampling_bowl_1.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: A bowl with red and white balls.</figcaption>
+<div id="fig-bowl" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bowl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sampling_bowl_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bowl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A bowl with red and white balls.
+</figcaption>
 </figure>
 </div>
-<p>Take a look at the bowl in <a href="#fig-bowl">Figure&nbsp;1</a>. It has a certain number of red and a certain number of white balls all of equal size. Furthermore, it appears the bowl has been mixed beforehand, as there does not seem to be any coherent pattern to the spatial distribution of the red and white balls.</p>
+<p>Take a look at the bowl in <a href="#fig-bowl" class="quarto-xref">Figure&nbsp;1</a>. It has a certain number of red and a certain number of white balls all of equal size. Furthermore, it appears the bowl has been mixed beforehand, as there does not seem to be any coherent pattern to the spatial distribution of the red and white balls.</p>
 <p>Let’s now ask ourselves, what proportion of this bowl’s balls are red?</p>
 <p>One way to answer this question would be to perform an exhaustive count: remove each ball individually, count the number of red balls and the number of white balls, and divide the number of red balls by the total number of balls. However, this would be a long and tedious process.</p>
 </section>
 <section id="using-the-shovel-once" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="using-the-shovel-once"><span class="header-section-number">1.2</span> Using the shovel once</h3>
-<div id="fig-shovel-in-bowl" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/sampling_bowl_2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Inserting a shovel into the bowl.</figcaption>
+<div id="fig-shovel-in-bowl" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shovel-in-bowl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sampling_bowl_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shovel-in-bowl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Inserting a shovel into the bowl.
+</figcaption>
 </figure>
 </div>
-<div id="fig-shovel" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/sampling_bowl_3_cropped.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Removing 50 balls from the bowl.</figcaption>
+<div id="fig-shovel" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shovel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sampling_bowl_3_cropped.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shovel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Removing 50 balls from the bowl.
+</figcaption>
 </figure>
 </div>
-<p>Instead of performing an exhaustive count, let’s insert a shovel into the bowl as seen in <a href="#fig-shovel-in-bowl">Figure&nbsp;2</a>. Using the shovel, let’s remove <span class="math inline">\(5 \times 10 = 50\)</span> balls, as seen in <a href="#fig-shovel">Figure&nbsp;3</a>.</p>
+<p>Instead of performing an exhaustive count, let’s insert a shovel into the bowl as seen in <a href="#fig-shovel-in-bowl" class="quarto-xref">Figure&nbsp;2</a>. Using the shovel, let’s remove <span class="math inline">\(5 \times 10 = 50\)</span> balls, as seen in <a href="#fig-shovel" class="quarto-xref">Figure&nbsp;3</a>.</p>
 <p>Observe that 17 of the balls are red and thus 0.34 = 34% of the shovel’s balls are red. We can view the proportion of balls that are red in this shovel as a guess of the proportion of balls that are red in the entire bowl. While not as exact as doing an exhaustive count of all the balls in the bowl, our guess of 34% took much less time and energy to make.</p>
 <p>However, say, we started this activity over from the beginning. In other words, we replace the 50 balls back into the bowl and start over. Would we remove exactly 17 red balls again? In other words, would our guess at the proportion of the bowl’s balls that are red be exactly 34% again? Maybe?</p>
 <div id="fig-sampling-process" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sampling-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;display: flex;">
 <p><img src="images/tactile_2_a.jpg" class="img-fluid figure-img"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
 <p><img src="images/tactile_2_b.jpg" class="img-fluid figure-img"> <img src="images/tactile_2_c.jpg" class="img-fluid figure-img"></p>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Repeating sampling activity 33 times.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Repeating sampling activity 33 times.
+</figcaption>
 </figure>
 </div>
-<p>What if we repeated this activity several times following the process, as shown in <a href="#fig-sampling-process">Figure&nbsp;4</a>? Would we obtain exactly 17 red balls each time? In other words, would our guess at the proportion of the bowl’s balls that are red be exactly 34% every time? Surely not. Let’s repeat this exercise several times with the help of 33 groups of friends to understand how the value differs with repetition.</p>
+<p>What if we repeated this activity several times following the process, as shown in <a href="#fig-sampling-process" class="quarto-xref">Figure&nbsp;4</a>? Would we obtain exactly 17 red balls each time? In other words, would our guess at the proportion of the bowl’s balls that are red be exactly 34% every time? Surely not. Let’s repeat this exercise several times with the help of 33 groups of friends to understand how the value differs with repetition.</p>
 </section>
 <section id="using-the-shovel-33-times" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="using-the-shovel-33-times"><span class="header-section-number">1.3</span> Using the shovel 33 times</h3>
@@ -456,21 +508,29 @@ div.csl-indent {
 <li>Return the balls into the bowl.</li>
 <li>Mix the contents of the bowl a little to not let a previous group’s results influence the next group’s.</li>
 </ul>
-<p>Each of our 33 groups of friends make note of their proportion of red balls from their sample collected. Each group then marks their proportion of their 50 balls that were red in the appropriate bin in a hand-drawn histogram as seen in <a href="#fig-draw-hist">Figure&nbsp;5</a>.</p>
-<div id="fig-draw-hist" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/tactile_3_a.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Constructing a histogram of proportions.</figcaption>
+<p>Each of our 33 groups of friends make note of their proportion of red balls from their sample collected. Each group then marks their proportion of their 50 balls that were red in the appropriate bin in a hand-drawn histogram as seen in <a href="#fig-draw-hist" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-draw-hist" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-draw-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tactile_3_a.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-draw-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Constructing a histogram of proportions.
+</figcaption>
 </figure>
 </div>
-<p>Recall from Week 2 that histograms allow us to visualize the <em>distribution</em> of a numerical variable. In particular, where the center of the values falls and how the values vary. A partially completed histogram of the first 10 out of 33 groups of friends’ results can be seen in <a href="#fig-draw-hist">Figure&nbsp;5</a>.</p>
-<div id="fig-full-hist" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/tactile_3_c.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: Hand-drawn histogram of first 10 out of 33 proportions.</figcaption>
+<p>Recall from Week 2 that histograms allow us to visualize the <em>distribution</em> of a numerical variable. In particular, where the center of the values falls and how the values vary. A partially completed histogram of the first 10 out of 33 groups of friends’ results can be seen in <a href="#fig-draw-hist" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-full-hist" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-full-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tactile_3_c.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Hand-drawn histogram of first 10 out of 33 proportions.
+</figcaption>
 </figure>
 </div>
-<p>Observe the following in the histogram in <a href="#fig-full-hist">Figure&nbsp;6</a>:</p>
+<p>Observe the following in the histogram in <a href="#fig-full-hist" class="quarto-xref">Figure&nbsp;6</a>:</p>
 <ul>
 <li>At the low end, one group removed 50 balls from the bowl with proportion red between 0.20 and 0.25.</li>
 <li>At the high end, another group removed 50 balls from the bowl with proportion between 0.45 and 0.5 red.</li>
@@ -498,17 +558,21 @@ div.csl-indent {
 </div>
 </div>
 <p>Observe for each <code>group</code> that we have their names, the number of <code>red_balls</code> they obtained, and the corresponding proportion out of 50 balls that were red named <code>prop_red</code>. We also have a <code>replicate</code> variable enumerating each of the 33 groups. We chose this name because each row can be viewed as one instance of a replicated (in other words repeated) activity: using the shovel to remove 50 balls and computing the proportion of those balls that are red.</p>
-<p>Let’s visualize the distribution of these 33 proportions using <code>geom_histogram()</code> with <code>binwidth = 0.05</code> in <a href="#fig-student-proportions">Figure&nbsp;7</a>. This is a computerized and complete version of the partially completed hand-drawn histogram you saw in <a href="#fig-full-hist">Figure&nbsp;6</a>. Note that setting <code>boundary = 0.4</code> indicates that we want a binning scheme such that one of the bins’ boundary is at 0.4. This helps us to more closely align this histogram with the hand-drawn histogram in <a href="#fig-full-hist">Figure&nbsp;6</a>.</p>
+<p>Let’s visualize the distribution of these 33 proportions using <code>geom_histogram()</code> with <code>binwidth = 0.05</code> in <a href="#fig-student-proportions" class="quarto-xref">Figure&nbsp;7</a>. This is a computerized and complete version of the partially completed hand-drawn histogram you saw in <a href="#fig-full-hist" class="quarto-xref">Figure&nbsp;6</a>. Note that setting <code>boundary = 0.4</code> indicates that we want a binning scheme such that one of the bins’ boundary is at 0.4. This helps us to more closely align this histogram with the hand-drawn histogram in <a href="#fig-full-hist" class="quarto-xref">Figure&nbsp;6</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tactile_prop_red, <span class="fu">aes</span>(<span class="at">x =</span> prop_red)) <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Proportion of 50 balls that were red"</span>, </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribution of 33 proportions red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-student-proportions" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-student-proportions-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: Distribution of 33 proportions based on 33 samples of size 50.</figcaption>
+<div id="fig-student-proportions" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-student-proportions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-student-proportions-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-student-proportions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Distribution of 33 proportions based on 33 samples of size 50.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -517,7 +581,7 @@ div.csl-indent {
 <section id="what-did-we-just-do" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="what-did-we-just-do"><span class="header-section-number">1.4</span> What did we just do?</h3>
 <p>What we just demonstrated in this activity is the statistical concept of <em>sampling</em>. We would like to know the proportion of the bowl’s balls that are red. Because the bowl has a large number of balls, performing an exhaustive count of the red and white balls would be time-consuming. We thus extracted a <em>sample</em> of 50 balls using the shovel to make an <em>estimate</em>. Using this sample of 50 balls, we estimated the proportion of the <em>bowl’s</em> balls that are red to be 34%.</p>
-<p>Moreover, because we mixed the balls before each use of the shovel, the samples were randomly drawn. Because each sample was drawn at random, the samples were different from each other. Because the samples were different from each other, we obtained the different proportions red observed in <a href="#fig-student-proportions">Figure&nbsp;7</a>. This is known as the concept of <em>sampling variation</em>.</p>
+<p>Moreover, because we mixed the balls before each use of the shovel, the samples were randomly drawn. Because each sample was drawn at random, the samples were different from each other. Because the samples were different from each other, we obtained the different proportions red observed in <a href="#fig-student-proportions" class="quarto-xref">Figure&nbsp;7</a>. This is known as the concept of <em>sampling variation</em>.</p>
 <p>The purpose of this sampling activity was to develop an understanding of two key concepts relating to sampling:</p>
 <ol type="1">
 <li>Understanding the effect of sampling variation.</li>
@@ -533,7 +597,7 @@ div.csl-indent {
 <p>In the previous section, we performed a <em>tactile</em> sampling activity by hand. In other words, we used a physical bowl of balls and a physical shovel. We performed this sampling activity by hand first so that we could develop a firm understanding of the root ideas behind sampling. In this section, we’ll mimic this tactile sampling activity with a <em>virtual</em> sampling activity using a computer. In other words, we’ll use a virtual analog to the bowl of balls and a virtual analog to the shovel.</p>
 <section id="using-the-virtual-shovel-once" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="using-the-virtual-shovel-once"><span class="header-section-number">2.1</span> Using the virtual shovel once</h3>
-<p>Let’s start by performing the virtual analog of the tactile sampling exercise we performed before. We first need a virtual analog of the bowl seen in Figure <a href="#fig-bowl">Figure&nbsp;1</a>. To this end, we included a data frame named <code>bowl</code> in the <strong>moderndive</strong> package. The rows of <code>bowl</code> correspond exactly with the contents of the actual bowl.</p>
+<p>Let’s start by performing the virtual analog of the tactile sampling exercise we performed before. We first need a virtual analog of the bowl seen in Figure <a href="#fig-bowl" class="quarto-xref">Figure&nbsp;1</a>. To this end, we included a data frame named <code>bowl</code> in the <strong>moderndive</strong> package. The rows of <code>bowl</code> correspond exactly with the contents of the actual bowl.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bowl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -553,8 +617,8 @@ div.csl-indent {
 # ℹ 2,390 more rows</code></pre>
 </div>
 </div>
-<p>Observe that <code>bowl</code> has 2400 rows, telling us that the bowl contains 2400 equally sized balls. The first variable <code>ball_ID</code> is used as an <em>identification variable</em> – none of the balls in the actual bowl are marked with numbers. The second variable <code>color</code> indicates whether a particular virtual ball is red or white. You can view the contents of the bowl in RStudio’s data viewer, scrolling through the contents to convince yourself that <code>bowl</code> is indeed a virtual analog of the actual bowl in <a href="#fig-bowl">Figure&nbsp;1</a>.</p>
-<p>Now that we have a virtual analog of our bowl, we next need a virtual analog to the shovel seen in <a href="#fig-shovel">Figure&nbsp;3</a> to generate virtual samples of 50 balls. We’re going to use the <code>rep_sample_n()</code> function included in the <strong>infer</strong> package. This function allows us to take <code>rep</code>eated, or <code>rep</code>licated, <code>samples</code> of size <code>n</code> from a given dataset.</p>
+<p>Observe that <code>bowl</code> has 2400 rows, telling us that the bowl contains 2400 equally sized balls. The first variable <code>ball_ID</code> is used as an <em>identification variable</em> – none of the balls in the actual bowl are marked with numbers. The second variable <code>color</code> indicates whether a particular virtual ball is red or white. You can view the contents of the bowl in RStudio’s data viewer, scrolling through the contents to convince yourself that <code>bowl</code> is indeed a virtual analog of the actual bowl in <a href="#fig-bowl" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>Now that we have a virtual analog of our bowl, we next need a virtual analog to the shovel seen in <a href="#fig-shovel" class="quarto-xref">Figure&nbsp;3</a> to generate virtual samples of 50 balls. We’re going to use the <code>rep_sample_n()</code> function included in the <strong>infer</strong> package. This function allows us to take <code>rep</code>eated, or <code>rep</code>licated, <code>samples</code> of size <code>n</code> from a given dataset.</p>
 <p>Looking at the code below you should notice:</p>
 <ul>
 <li>The dataset (<code>bowl</code>) is the first argument</li>
@@ -640,7 +704,7 @@ div.csl-indent {
 1         1    0.34</code></pre>
 </div>
 </div>
-<p>Great! 34% of <code>virtual_shovel</code>’s 50 balls were red! So based on this particular sample of 50 balls, our guess at the proportion of the <code>bowl</code>’s balls that are red is 34%. But remember from our earlier tactile sampling activity that if we repeat this sampling, we will not necessarily obtain the same value of 34% again. There will likely be some variation. In fact, our 33 groups of friends computed 33 such proportions whose distribution we visualized in <a href="#fig-full-hist">Figure&nbsp;6</a>. We saw that these estimates <em>varied</em>. Let’s now perform the virtual analog of having 33 groups of students use the sampling shovel!</p>
+<p>Great! 34% of <code>virtual_shovel</code>’s 50 balls were red! So based on this particular sample of 50 balls, our guess at the proportion of the <code>bowl</code>’s balls that are red is 34%. But remember from our earlier tactile sampling activity that if we repeat this sampling, we will not necessarily obtain the same value of 34% again. There will likely be some variation. In fact, our 33 groups of friends computed 33 such proportions whose distribution we visualized in <a href="#fig-full-hist" class="quarto-xref">Figure&nbsp;6</a>. We saw that these estimates <em>varied</em>. Let’s now perform the virtual analog of having 33 groups of students use the sampling shovel!</p>
 </section>
 <section id="using-the-virtual-shovel-33-times" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="using-the-virtual-shovel-33-times"><span class="header-section-number">2.2</span> Using the virtual shovel 33 times</h3>
@@ -685,29 +749,37 @@ div.csl-indent {
 # ℹ 23 more rows</code></pre>
 </div>
 </div>
-<p>As with our 33 groups of friends’ tactile samples, there is variation in the resulting 33 virtual proportions red. Let’s visualize this variation in a histogram! In <a href="#fig-samplingdistribution-virtual">Figure&nbsp;8</a> we’ve added <code>binwidth = 0.05</code> and <code>boundary = 0.4</code> arguments as well. Recall that setting <code>boundary = 0.4</code> ensures a binning scheme with one of the bins’ boundaries at 0.4. Since the <code>binwidth = 0.05</code> is also set, this will create bins with boundaries at 0.30, 0.35, 0.45, 0.5, etc. as well.</p>
+<p>As with our 33 groups of friends’ tactile samples, there is variation in the resulting 33 virtual proportions red. Let’s visualize this variation in a histogram! In <a href="#fig-samplingdistribution-virtual" class="quarto-xref">Figure&nbsp;8</a> we’ve added <code>binwidth = 0.05</code> and <code>boundary = 0.4</code> arguments as well. Recall that setting <code>boundary = 0.4</code> ensures a binning scheme with one of the bins’ boundaries at 0.4. Since the <code>binwidth = 0.05</code> is also set, this will create bins with boundaries at 0.30, 0.35, 0.45, 0.5, etc. as well.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> virtual_prop_red, </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> prop_red)) <span class="sc">+</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Proportion of 50 balls that were red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-samplingdistribution-virtual" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-samplingdistribution-virtual-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: Distribution of 33 proportions based on 33 samples of size 50.</figcaption>
+<div id="fig-samplingdistribution-virtual" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-samplingdistribution-virtual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-samplingdistribution-virtual-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-samplingdistribution-virtual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Distribution of 33 proportions based on 33 samples of size 50.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Observe that we occasionally obtained proportions red that are less than 30%. On the other hand, we occasionally obtained proportions that are greater than 45%. However, the most frequently occurring proportions were between 35% and 40% (for 11 out of 33 samples). Why do we have these differences in proportions red? Because of <em>sampling variation</em>.</p>
-<p>Let’s now compare our virtual results with our tactile results from the previous section in <a href="#fig-tactile-vs-virtual">Figure&nbsp;9</a>. Observe that both histograms are somewhat similar in their center and variation, although not identical. These slight differences are again due to random sampling variation. Furthermore, observe that both distributions are somewhat bell-shaped.</p>
+<p>Let’s now compare our virtual results with our tactile results from the previous section in <a href="#fig-tactile-vs-virtual" class="quarto-xref">Figure&nbsp;9</a>. Observe that both histograms are somewhat similar in their center and variation, although not identical. These slight differences are again due to random sampling variation. Furthermore, observe that both distributions are somewhat bell-shaped.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tactile-vs-virtual" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-tactile-vs-virtual-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Comparing 33 virtual and 33 tactile proportions red.</figcaption>
+<div id="fig-tactile-vs-virtual" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tactile-vs-virtual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-tactile-vs-virtual-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tactile-vs-virtual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Comparing 33 virtual and 33 tactile proportions red.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -769,57 +841,65 @@ div.csl-indent {
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
-<p>Observe that we now have 1000 replicates of <code>prop_red</code>, the proportion of 50 balls that are red. Using the same code as earlier, let’s now visualize the distribution of these 1000 replicates of <code>prop_red</code> in a histogram in <a href="#fig-samplingdistribution-virtual-1000">Figure&nbsp;10</a>.</p>
+<p>Observe that we now have 1000 replicates of <code>prop_red</code>, the proportion of 50 balls that are red. Using the same code as earlier, let’s now visualize the distribution of these 1000 replicates of <code>prop_red</code> in a histogram in <a href="#fig-samplingdistribution-virtual-1000" class="quarto-xref">Figure&nbsp;10</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(virtual_prop_red, <span class="fu">aes</span>(<span class="at">x =</span> prop_red)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Proportion of 50 balls that were red"</span>, </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribution of 1000 proportions red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-samplingdistribution-virtual-1000" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-samplingdistribution-virtual-1000-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: Distribution of 1000 proportions based on 1000 samples of size 50.</figcaption>
+<div id="fig-samplingdistribution-virtual-1000" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-samplingdistribution-virtual-1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-samplingdistribution-virtual-1000-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-samplingdistribution-virtual-1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Distribution of 1000 proportions based on 1000 samples of size 50.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Once again, the most frequently occurring proportions of red balls occur between 35% and 40%. Every now and then, we obtain proportions as low as between 20% and 25%, and others as high as between 55% and 60%. These are rare, however. Furthermore, observe that we now have a much more symmetric and smoother bell-shaped distribution. This distribution is, in fact, approximated well by a normal distribution. At this point we recommend you read the “Normal distribution” section (Appendix <a href="#sec-appendix">Section&nbsp;5</a>) for a brief discussion on the properties of the normal distribution.</p>
+<p>Once again, the most frequently occurring proportions of red balls occur between 35% and 40%. Every now and then, we obtain proportions as low as between 20% and 25%, and others as high as between 55% and 60%. These are rare, however. Furthermore, observe that we now have a much more symmetric and smoother bell-shaped distribution. This distribution is, in fact, approximated well by a normal distribution. At this point we recommend you read the “Normal distribution” section (Appendix <a href="#sec-appendix" class="quarto-xref">Section&nbsp;5</a>) for a brief discussion on the properties of the normal distribution.</p>
 </section>
 <section id="using-different-shovels" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="using-different-shovels"><span class="header-section-number">2.4</span> Using different shovels</h3>
 <p>Now say instead of just one shovel, you have three choices of shovels to extract a sample of balls with: shovels of size 25, 50, and 100.</p>
 <div id="fig-shovel-sizes" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shovel-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/shovel_025.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A shovel with 25 slots</figcaption>
+<figcaption>A shovel with 25 slots</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/shovel_050.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A shovel with 50 slots</figcaption>
+<figcaption>A shovel with 50 slots</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/shovel_100.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">A shovel with 100 slots</figcaption>
+<figcaption>A shovel with 100 slots</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11: Three shovels to extract three different sample sizes.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shovel-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Three shovels to extract three different sample sizes.
+</figcaption>
 </figure>
 </div>
 <p>If your goal is still to estimate the proportion of the bowl’s balls that are red, which shovel would you choose? In our experience, most people would choose the largest shovel with 100 slots because it would yield the “best” guess of the proportion of the bowl’s balls that are red. Let’s define some criteria for “best” in this subsection.</p>
@@ -830,7 +910,7 @@ div.csl-indent {
 <li>Visualize the distribution of these 1000 proportions red using a histogram.</li>
 </ol>
 <p>Run each of the following code segments individually and then compare the three resulting histograms.</p>
-<div>
+<div class="cell" data-layout-nrow="1">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Segment 1: sample size = 25 ------------------------------</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.a) Virtually use shovel 1000 times</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>virtual_samples_25 <span class="ot">&lt;-</span> <span class="fu">rep_sample_n</span>(bowl, </span>
@@ -883,41 +963,57 @@ div.csl-indent {
 <span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> prop_red)) <span class="sc">+</span></span>
 <span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Proportion of 100 balls that were red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-comparing-sampling-distributions" class="cell quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-comparing-sampling-distributions-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-1.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672"></p>
-<figcaption class="figure-caption">(a) n = 25</figcaption>
+<div id="fig-comparing-sampling-distributions" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comparing-sampling-distributions" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div id="fig-comparing-sampling-distributions-1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-1.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-comparing-sampling-distributions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) n = 25
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-comparing-sampling-distributions-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-2.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672"></p>
-<figcaption class="figure-caption">(b) n = 50</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comparing-sampling-distributions" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div id="fig-comparing-sampling-distributions-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-2.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-comparing-sampling-distributions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) n = 50
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-comparing-sampling-distributions-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-3.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672"></p>
-<figcaption class="figure-caption">(c) n = 100</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comparing-sampling-distributions" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div id="fig-comparing-sampling-distributions-3" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-3.png" class="img-fluid figure-img" data-ref-parent="fig-comparing-sampling-distributions" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-comparing-sampling-distributions-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) n = 100
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;12: Comparing the distributions of proportion red for different sample sizes.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparing-sampling-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Comparing the distributions of proportion red for different sample sizes.
+</figcaption>
 </figure>
 </div>
 </div>
-<p>For easy comparison, we present the three resulting histograms in a single row with matching x and y axes in Figure <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a>.</p>
-<p>Observe that as the sample size increases, the variation of the 1000 replicates of the proportion of red decreases. In other words, as the sample size increases, there are fewer differences due to sampling variation and the distribution centers more tightly around the same value. Eyeballing <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a>, all three histograms appear to center around roughly 40%.</p>
-<p>We can be numerically explicit about the amount of variation in our three sets of 1000 values of <code>prop_red</code> using the <em>standard deviation</em>. A standard deviation is a summary statistic that measures the amount of variation within a numerical variable (see Appendix <a href="#sec-appendix">Section&nbsp;5</a>) for a brief discussion on the properties of the standard deviation. For all three sample sizes, let’s compute the standard deviation of the 1000 proportions red by running the following data wrangling code that uses the <code>sd()</code> summary function.</p>
+<p>For easy comparison, we present the three resulting histograms in a single row with matching x and y axes in Figure <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a>.</p>
+<p>Observe that as the sample size increases, the variation of the 1000 replicates of the proportion of red decreases. In other words, as the sample size increases, there are fewer differences due to sampling variation and the distribution centers more tightly around the same value. Eyeballing <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a>, all three histograms appear to center around roughly 40%.</p>
+<p>We can be numerically explicit about the amount of variation in our three sets of 1000 values of <code>prop_red</code> using the <em>standard deviation</em>. A standard deviation is a summary statistic that measures the amount of variation within a numerical variable (see Appendix <a href="#sec-appendix" class="quarto-xref">Section&nbsp;5</a>) for a brief discussion on the properties of the standard deviation. For all three sample sizes, let’s compute the standard deviation of the 1000 proportions red by running the following data wrangling code that uses the <code>sd()</code> summary function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># n = 25</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>virtual_prop_red_25 <span class="sc">%&gt;%</span> </span>
@@ -947,12 +1043,16 @@ div.csl-indent {
 1 0.0482</code></pre>
 </div>
 </div>
-<p>Let’s compare these three measures of distributional variation in <a href="#tbl-comparing-n">Table&nbsp;1</a>.</p>
+<p>Let’s compare these three measures of distributional variation in <a href="#tbl-comparing-n" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="cell">
+<div id="tbl-comparing-n" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparing-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Comparing standard deviations of proportions red for three different shovels.
+</figcaption>
+<div aria-describedby="tbl-comparing-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-comparing-n" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: Comparing standard deviations of proportions red for three different shovels.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Number of slots in shovel</th>
@@ -974,16 +1074,18 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 </section>
 </section>
 <section id="sampling-framework" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="sampling-framework"><span class="header-section-number">3</span> Sampling framework</h2>
-<p>In both our tactile and our virtual sampling activities, we used sampling for the purpose of estimation. We extracted samples in order to <em>estimate</em> the proportion of the bowl’s balls that are red. We used sampling as a less time-consuming approach than performing an exhaustive count of all the balls. Our virtual sampling activity built up to the results shown in <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a> and <a href="#tbl-comparing-n">Table&nbsp;1</a> – comparing 1000 proportions red based on samples of size 25, 50, and 100. This was our first attempt at understanding two key concepts relating to sampling for estimation:</p>
+<p>In both our tactile and our virtual sampling activities, we used sampling for the purpose of estimation. We extracted samples in order to <em>estimate</em> the proportion of the bowl’s balls that are red. We used sampling as a less time-consuming approach than performing an exhaustive count of all the balls. Our virtual sampling activity built up to the results shown in <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a> and <a href="#tbl-comparing-n" class="quarto-xref">Table&nbsp;1</a> – comparing 1000 proportions red based on samples of size 25, 50, and 100. This was our first attempt at understanding two key concepts relating to sampling for estimation:</p>
 <ol type="1">
 <li>The effect of <em>sampling variation</em> on our estimates.</li>
 <li>The effect of sample size on <em>sampling variation</em>.</li>
@@ -998,7 +1100,7 @@ div.csl-indent {
 <li><p>A <strong>population parameter</strong> is some numerical summary about the population that is unknown but you wish you knew. For example, when this quantity is a mean like the average height of all Canadians, the population parameter of interest is the <em>population mean</em>.</p></li>
 <li><p>A <strong>census</strong> is an exhaustive enumeration or counting of all <span class="math inline">\(N\)</span> individuals in the population. We do this in order to compute the population parameter’s value <em>exactly</em>. Of note is that as the number <span class="math inline">\(N\)</span> of individuals in our population increases, conducting a census gets more expensive (in terms of time, energy, and money).</p></li>
 </ol>
-<p>So in our sampling activities, the <strong>population</strong> is the collection of <span class="math inline">\(N\)</span> = 2400 identically sized red and white balls in the bowl shown in <a href="#fig-bowl">Figure&nbsp;1</a>. Recall that we also represented the bowl “virtually” in the data frame <code>bowl</code>:</p>
+<p>So in our sampling activities, the <strong>population</strong> is the collection of <span class="math inline">\(N\)</span> = 2400 identically sized red and white balls in the bowl shown in <a href="#fig-bowl" class="quarto-xref">Figure&nbsp;1</a>. Recall that we also represented the bowl “virtually” in the data frame <code>bowl</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>bowl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1115,37 +1217,40 @@ div.csl-indent {
 </section>
 <section id="statistical-definitions" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="statistical-definitions"><span class="header-section-number">3.2</span> Statistical definitions</h3>
-<p>To further attach words and labels to the various sampling concepts we’ve seen so far, we also introduce some important statistical definitions related to sampling. As a refresher of our 1000 repeated / replicated virtual samples of size <span class="math inline">\(n\)</span> = 25, <span class="math inline">\(n\)</span> = 50, and <span class="math inline">\(n\)</span> = 100 in <a href="#sec-sampling-simulation">Section&nbsp;2</a>, let’s display <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a> again.</p>
-<div class="cell quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<p>To further attach words and labels to the various sampling concepts we’ve seen so far, we also introduce some important statistical definitions related to sampling. As a refresher of our 1000 repeated / replicated virtual samples of size <span class="math inline">\(n\)</span> = 25, <span class="math inline">\(n\)</span> = 50, and <span class="math inline">\(n\)</span> = 100 in <a href="#sec-sampling-simulation" class="quarto-xref">Section&nbsp;2</a>, let’s display <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a> again.</p>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-nrow="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="week7-reading1_files/figure-html/hist-n-comparison-again-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">n = 25</figcaption>
+<figcaption>n = 25</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="week7-reading1_files/figure-html/hist-n-comparison-again-2.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">n = 50</figcaption>
+<figcaption>n = 50</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;display: flex;">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="week7-reading1_files/figure-html/hist-n-comparison-again-3.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">n = 100</figcaption>
+<figcaption>n = 100</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <p>These types of distributions have a special name: <strong>sampling distributions of point estimates</strong>. Their visualization displays the effect of sampling variation on the distribution of any point estimate, in this case, the sample proportion <span class="math inline">\(\widehat{p}\)</span>. Using these sampling distributions, for a given sample size <span class="math inline">\(n\)</span>, we can make statements about what values we can typically expect. Unfortunately, the term <em>sampling distribution</em> is often confused with a <em>sample’s distribution</em> which is merely the distribution of the values in a single sample.</p>
-<p>For example, observe the centers of all three sampling distributions: they are all roughly centered around 0.4 = 40%. Furthermore, observe that while we are somewhat likely to observe sample proportions of red balls of 0.2 = 20% when using the shovel with 25 slots, we will almost never observe a proportion of 20% when using the shovel with 100 slots. Observe also the effect of sample size on the sampling variation. As the sample size <span class="math inline">\(n\)</span> increases from 25 to 50 to 100, the variation of the sampling distribution decreases and thus the values cluster more and more tightly around the same center of around 40%. We quantified this variation using the standard deviation of our sample proportions in <a href="#tbl-comparing-n">Table&nbsp;1</a>, which we display again below:</p>
+<p>For example, observe the centers of all three sampling distributions: they are all roughly centered around 0.4 = 40%. Furthermore, observe that while we are somewhat likely to observe sample proportions of red balls of 0.2 = 20% when using the shovel with 25 slots, we will almost never observe a proportion of 20% when using the shovel with 100 slots. Observe also the effect of sample size on the sampling variation. As the sample size <span class="math inline">\(n\)</span> increases from 25 to 50 to 100, the variation of the sampling distribution decreases and thus the values cluster more and more tightly around the same center of around 40%. We quantified this variation using the standard deviation of our sample proportions in <a href="#tbl-comparing-n" class="quarto-xref">Table&nbsp;1</a>, which we display again below:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1177,23 +1282,31 @@ div.csl-indent {
 </div>
 <p>So as the sample size increases, the standard deviation of the proportion of red balls decreases. This type of standard deviation has another special name: <strong>standard error of a point estimate</strong>. Standard errors quantify the effect of sampling variation induced on our estimates. In other words, they quantify how much we can expect different proportions of a shovel’s balls that are red <em>to vary</em> from one sample to another sample to another sample, and so on. As a general rule, as sample size increases, the standard error decreases.</p>
 <p>Similarly to confusion between <em>sampling distributions</em> with <em>a sample’s distribution</em>, people often confuse the <em>standard error</em> with the <em>standard deviation</em>. This is especially the case since a standard error is itself a kind of standard deviation. The best advice we can give is that a standard error is merely a <em>kind</em> of standard deviation: the standard deviation of any point estimate from sampling. In other words, all standard errors are standard deviations, but not every standard deviation is necessarily a standard error.</p>
-<p>To help reinforce these concepts, let’s re-display <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a> but using our new terminology, notation, and definitions relating to sampling in <a href="#fig-comparing-sampling-distributions-2">Figure&nbsp;13</a>.</p>
+<p>To help reinforce these concepts, let’s re-display <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a> but using our new terminology, notation, and definitions relating to sampling in <a href="#fig-comparing-sampling-distributions-2" class="quarto-xref">Figure&nbsp;13</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-comparing-sampling-distributions-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: Three sampling distributions of the sample proportion <span class="math inline">\(\widehat{p}\)</span>.</figcaption>
+<div id="fig-comparing-sampling-distributions-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparing-sampling-distributions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Three sampling distributions of the sample proportion <span class="math inline">\(\widehat{p}\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Furthermore, let’s re-display <a href="#tbl-comparing-n">Table&nbsp;1</a> but using our new terminology, notation, and definitions relating to sampling in <a href="#tbl-comparing-n-2">Table&nbsp;2</a>.</p>
+<p>Furthermore, let’s re-display <a href="#tbl-comparing-n" class="quarto-xref">Table&nbsp;1</a> but using our new terminology, notation, and definitions relating to sampling in <a href="#tbl-comparing-n-2" class="quarto-xref">Table&nbsp;2</a>.</p>
 <div class="cell">
+<div id="tbl-comparing-n-2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparing-n-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Standard errors of the sample proportion based on sample sizes of 25, 50, and 100
+</figcaption>
+<div aria-describedby="tbl-comparing-n-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-comparing-n-2" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: Standard errors of the sample proportion based on sample sizes of 25, 50, and 100</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Sample size (n)</th>
@@ -1215,9 +1328,11 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Remember the key message of this last table: that as the sample size <span class="math inline">\(n\)</span> goes up, the “typical” error of your point estimate will go down, as quantified by the <em>standard error</em>.</p>
@@ -1227,23 +1342,31 @@ div.csl-indent {
 <p>Let’s recap this section so far. We’ve seen that if a sample is generated at random, then the resulting point estimate is a “good guess” of the true unknown population parameter. In our sampling activities, since we made sure to mix the balls first before extracting a sample with the shovel, the resulting sample proportion <span class="math inline">\(\widehat{p}\)</span> of the shovel’s balls that were red was a “good guess” of the population proportion <span class="math inline">\(p\)</span> of the bowl’s balls that were red.</p>
 <p>However, what do we mean by our point estimate being a “good guess”? Sometimes, we’ll get an estimate that is less than the true value of the population parameter, while at other times we’ll get an estimate that is greater. This is due to sampling variation. However, despite this sampling variation, our estimates will “on average” be correct and thus will be centered at the true value. This is because our sampling was done at random and thus in an unbiased fashion.</p>
 <p>In our sampling activities, sometimes our sample proportion <span class="math inline">\(\widehat{p}\)</span> was less than the true population proportion <span class="math inline">\(p\)</span>, while at other times it was greater. This was due to the sampling variability. However, despite this sampling variation, our sample proportions <span class="math inline">\(\widehat{p}\)</span> were “on average” correct and thus were centered at the true value of the population proportion <span class="math inline">\(p\)</span>. This is because we mixed our bowl before taking samples and thus the sampling was done at random and thus in an unbiased fashion. This is also known as having an <em>accurate</em> estimate.</p>
-<p>Recall from earlier that the value of the population proportion <span class="math inline">\(p\)</span> of the <span class="math inline">\(N\)</span> = 2400 balls in the bowl was 900/2400 = 0.375 = <code>prop_red * 100</code>%. We computed this value by performing a virtual census of <code>bowl</code>. Let’s re-display our sampling distributions from <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a> and <a href="#fig-comparing-sampling-distributions-2">Figure&nbsp;13</a>, but now with a vertical red line marking the <strong>true</strong> population proportion <span class="math inline">\(p\)</span> of balls that are red = 37.5% in <a href="#fig-comparing-sampling-distributions-3">Figure&nbsp;14</a>. We see that while there is a certain amount of error in the sample proportions <span class="math inline">\(\widehat{p}\)</span> for all three sampling distributions, on average the <span class="math inline">\(\widehat{p}\)</span> are centered at the true population proportion red <span class="math inline">\(p\)</span>.</p>
+<p>Recall from earlier that the value of the population proportion <span class="math inline">\(p\)</span> of the <span class="math inline">\(N\)</span> = 2400 balls in the bowl was 900/2400 = 0.375 = <code>prop_red * 100</code>%. We computed this value by performing a virtual census of <code>bowl</code>. Let’s re-display our sampling distributions from <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a> and <a href="#fig-comparing-sampling-distributions-2" class="quarto-xref">Figure&nbsp;13</a>, but now with a vertical red line marking the <strong>true</strong> population proportion <span class="math inline">\(p\)</span> of balls that are red = 37.5% in <a href="#fig-comparing-sampling-distributions-3" class="quarto-xref">Figure&nbsp;14</a>. We see that while there is a certain amount of error in the sample proportions <span class="math inline">\(\widehat{p}\)</span> for all three sampling distributions, on average the <span class="math inline">\(\widehat{p}\)</span> are centered at the true population proportion red <span class="math inline">\(p\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-comparing-sampling-distributions-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;14: Three sampling distributions with population proportion <span class="math inline">\(p\)</span> marked by vertical line.</figcaption>
+<div id="fig-comparing-sampling-distributions-3" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparing-sampling-distributions-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-comparing-sampling-distributions-3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparing-sampling-distributions-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Three sampling distributions with population proportion <span class="math inline">\(p\)</span> marked by vertical line.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>We also saw in this section that as your sample size <span class="math inline">\(n\)</span> increases, your point estimates will vary less and less and be more and more concentrated around the true population parameter. This variation is quantified by the decreasing <em>standard error</em>. In other words, the typical error of your point estimates will decrease. In our sampling exercise, as the sample size increased, the variation of our sample proportions <span class="math inline">\(\widehat{p}\)</span> decreased. You can observe this behavior in <a href="#fig-comparing-sampling-distributions-3">Figure&nbsp;14</a>. This is also known as having a <em>precise</em> estimate.</p>
-<p>So random sampling ensures our point estimates are <em>accurate</em>, while on the other hand having a large sample size ensures our point estimates are <em>precise</em>. While the terms “accuracy” and “precision” may sound like they mean the same thing, there is a subtle difference. Accuracy describes how “on target” our estimates are, whereas precision describes how “consistent” our estimates are. <a href="#fig-accuracy-vs-precision">Figure&nbsp;15</a> illustrates the difference.</p>
-<div id="fig-accuracy-vs-precision" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/accuracy_vs_precision.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;15: “Comparing accuracy and precision.”</figcaption>
+<p>We also saw in this section that as your sample size <span class="math inline">\(n\)</span> increases, your point estimates will vary less and less and be more and more concentrated around the true population parameter. This variation is quantified by the decreasing <em>standard error</em>. In other words, the typical error of your point estimates will decrease. In our sampling exercise, as the sample size increased, the variation of our sample proportions <span class="math inline">\(\widehat{p}\)</span> decreased. You can observe this behavior in <a href="#fig-comparing-sampling-distributions-3" class="quarto-xref">Figure&nbsp;14</a>. This is also known as having a <em>precise</em> estimate.</p>
+<p>So random sampling ensures our point estimates are <em>accurate</em>, while on the other hand having a large sample size ensures our point estimates are <em>precise</em>. While the terms “accuracy” and “precision” may sound like they mean the same thing, there is a subtle difference. Accuracy describes how “on target” our estimates are, whereas precision describes how “consistent” our estimates are. <a href="#fig-accuracy-vs-precision" class="quarto-xref">Figure&nbsp;15</a> illustrates the difference.</p>
+<div id="fig-accuracy-vs-precision" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-accuracy-vs-precision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/accuracy_vs_precision.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-accuracy-vs-precision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: “Comparing accuracy and precision.”
+</figcaption>
 </figure>
 </div>
 <p>At this point, you might be asking yourself: “Why did we take 1000 repeated samples of size n = 25, 50, and 100? Shouldn’t we be taking only <em>one</em> sample that’s as large as possible?”. If you did ask yourself these questions, your suspicion is correct! Recall from earlier when we asked ourselves “If we had a way of knowing that the proportion of the balls that are red is 37.5%, then why did we do any sampling?” Similarly, we took 1000 repeated samples as a simulation of how sampling is done in real-life! We used these simulations to study:</p>
@@ -1257,11 +1380,20 @@ div.csl-indent {
 <section id="central-limit-theorem" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="central-limit-theorem"><span class="header-section-number">4</span> Central Limit Theorem</h2>
 <p>This chapter began with (virtual) access to a large bowl of balls (our population) and a desire to figure out the proportion of red balls. Despite having access to this population, in reality, you almost <strong>never</strong> will have <strong>access to the population,</strong> either because the population is too large, ever changing, or too expensive to take a census of. Accepting this reality means accepting that we need to use <em>statistical inference.</em></p>
-<p>In <a href="#sec-terminology-and-notation">Section&nbsp;3.1</a>, we stated that “statistical inference is the act of making a guess about a population using a sample.” But how do we <em>do</em> this inference? In the previous section, we defined the <em>sampling framework</em> only to state that in reality we take one large sample, instead of many samples as done in the sampling framework (which we modeled physically by taking many samples from the bowl).</p>
-<p>In reality, we take <em>only one</em> sample and use that <em>one</em> sample to make statements about the population parameter. This ability of making statements about the population is allowable by a famous theorem, or mathematically proven truth, called the <em>Central Limit Theorem</em>. What you visualized in <a href="#fig-comparing-sampling-distributions">Figure&nbsp;12</a> and <a href="#fig-comparing-sampling-distributions-2">Figure&nbsp;13</a> and summarized in <a href="#tbl-comparing-n">Table&nbsp;1</a> and <a href="#tbl-comparing-n-2">Table&nbsp;2</a> was a demonstration of this theorem. It loosely states that when sample means are based on larger and larger sample sizes, the sampling distribution of these sample means becomes both more and more normally shaped and more and more narrow.</p>
-<p>In other words, as our sample size gets larger (1) the sampling distribution of a point estimate (like a sample proportion) increasingly follows a <em>normal distribution</em> and (2) the variation of these sampling distributions gets smaller, as quantified by their standard errors. We discuss the properties of the normal distribution in Appendix <a href="#sec-appendix-normal-curve">Section&nbsp;5.1</a>.</p>
+<p>In <a href="#sec-terminology-and-notation" class="quarto-xref">Section&nbsp;3.1</a>, we stated that “statistical inference is the act of making a guess about a population using a sample.” But how do we <em>do</em> this inference? In the previous section, we defined the <em>sampling framework</em> only to state that in reality we take one large sample, instead of many samples as done in the sampling framework (which we modeled physically by taking many samples from the bowl).</p>
+<p>In reality, we take <em>only one</em> sample and use that <em>one</em> sample to make statements about the population parameter. This ability of making statements about the population is allowable by a famous theorem, or mathematically proven truth, called the <em>Central Limit Theorem</em>. What you visualized in <a href="#fig-comparing-sampling-distributions" class="quarto-xref">Figure&nbsp;12</a> and <a href="#fig-comparing-sampling-distributions-2" class="quarto-xref">Figure&nbsp;13</a> and summarized in <a href="#tbl-comparing-n" class="quarto-xref">Table&nbsp;1</a> and <a href="#tbl-comparing-n-2" class="quarto-xref">Table&nbsp;2</a> was a demonstration of this theorem. It loosely states that when sample means are based on larger and larger sample sizes, the sampling distribution of these sample means becomes both more and more normally shaped and more and more narrow.</p>
+<p>In other words, as our sample size gets larger (1) the sampling distribution of a point estimate (like a sample proportion) increasingly follows a <em>normal distribution</em> and (2) the variation of these sampling distributions gets smaller, as quantified by their standard errors. We discuss the properties of the normal distribution in Appendix <a href="#sec-appendix-normal-curve" class="quarto-xref">Section&nbsp;5.1</a>.</p>
 <p>Shuyi Chiou, Casey Dunn, and Pathikrit Bhattacharyya created a 3-minute and 38-second video at <a href="https://youtu.be/jvoxEYmQHNM" class="uri">https://youtu.be/jvoxEYmQHNM</a> explaining this crucial statistical theorem using the average weight of wild bunny rabbits and the average wingspan of dragons as examples. It’s very clever!</p>
-<p><img src="images/bunnies.png" id="fig-CLT-video-preview" class="img-fluid"></p>
+<div id="fig-CLT-video-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CLT-video-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/bunnies.png" id="fig-CLT-video-preview" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-CLT-video-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16
+</figcaption>
+</figure>
+</div>
 <p>Here’s what is so surprising about the Central Limit Theorem: regardless of the shape of the underlying population distribution, the sampling distribution of means (such as the sample mean of bunny weights or the sample mean of the length of dragon wings) and proportions (such as the sample proportion red in our shovels) will be <strong>normal.</strong> Normal distributions are defined by where they are centered and how wide they are, and the Central Limit Theorem gives us both:</p>
 <ol type="1">
 <li><p>The sampling distribution of the point estimate is centered at the true population parameter</p></li>
@@ -1273,7 +1405,7 @@ div.csl-indent {
 <h2 data-number="5" class="anchored" data-anchor-id="sec-appendix"><span class="header-section-number">5</span> Appendix</h2>
 <section id="sec-appendix-normal-curve" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="sec-appendix-normal-curve"><span class="header-section-number">5.1</span> Normal distribution</h3>
-<p>Let’s review one specific distribution: the <em>Normal Distribution</em>. Bell shaped distributions like the Normal Distribution are defined by two values: (1) the <em>mean</em> <span class="math inline">\(\mu\)</span> (“mu”) which locates the center of the distribution and (2) the <em>standard deviation</em> <span class="math inline">\(\sigma\)</span> (“sigma”) which determines the variation of the distribution. In <a href="#fig-normal-curves">Figure&nbsp;16</a>, we plot three normal distributions where:</p>
+<p>Let’s review one specific distribution: the <em>Normal Distribution</em>. Bell shaped distributions like the Normal Distribution are defined by two values: (1) the <em>mean</em> <span class="math inline">\(\mu\)</span> (“mu”) which locates the center of the distribution and (2) the <em>standard deviation</em> <span class="math inline">\(\sigma\)</span> (“sigma”) which determines the variation of the distribution. In <a href="#fig-normal-curves" class="quarto-xref">Figure&nbsp;17</a>, we plot three normal distributions where:</p>
 <ol type="1">
 <li>The solid normal curve has mean <span class="math inline">\(\mu = 5\)</span> &amp; standard deviation <span class="math inline">\(\sigma = 2\)</span>.</li>
 <li>The dotted normal curve has mean <span class="math inline">\(\mu = 5\)</span> &amp; standard deviation <span class="math inline">\(\sigma = 5\)</span>.</li>
@@ -1281,10 +1413,14 @@ div.csl-indent {
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-normal-curves" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-normal-curves-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;16: Three normal distributions.</figcaption>
+<div id="fig-normal-curves" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-curves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-normal-curves-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-curves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Three normal distributions.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1297,7 +1433,7 @@ div.csl-indent {
 <li>95% of values will lie within <span class="math inline">\(\pm\)</span> 1.96 <span class="math inline">\(\approx\)</span> 2 standard deviations of the mean.</li>
 <li>99.7% of values will lie within <span class="math inline">\(\pm\)</span> 3 standard deviations of the mean.</li>
 </ol>
-<p>Let’s illustrate this on a standard normal curve in <a href="#fig-normal-rule-of-thumb">Figure&nbsp;17</a>. The dashed lines are at -3, -1.96, -1, 0, 1, 1.96, and 3. These 7 lines cut up the x-axis into 8 segments. The areas under the normal curve for each of the 8 segments are marked and add up to 100%. For example:</p>
+<p>Let’s illustrate this on a standard normal curve in <a href="#fig-normal-rule-of-thumb" class="quarto-xref">Figure&nbsp;18</a>. The dashed lines are at -3, -1.96, -1, 0, 1, 1.96, and 3. These 7 lines cut up the x-axis into 8 segments. The areas under the normal curve for each of the 8 segments are marked and add up to 100%. For example:</p>
 <ol type="1">
 <li><p>The middle two segments represent the interval -1 to 1. The shaded area above this interval represents 34% + 34% = 68% of the area under the curve. In other words, 68% of values.</p></li>
 <li><p>The middle four segments represent the interval -1.96 to 1.96. The shaded area above this interval represents 13.5% + 34% + 34% + 13.5% = 95% of the area under the curve. In other words, 95% of values.</p></li>
@@ -1305,10 +1441,14 @@ div.csl-indent {
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-normal-rule-of-thumb" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading1_files/figure-html/fig-normal-rule-of-thumb-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;17: Rules of thumb about areas under normal curves.</figcaption>
+<div id="fig-normal-rule-of-thumb" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-rule-of-thumb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading1_files/figure-html/fig-normal-rule-of-thumb-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-rule-of-thumb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Rules of thumb about areas under normal curves.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1319,7 +1459,7 @@ div.csl-indent {
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-kim2020" class="csl-entry" role="listitem">
 Kim, Albert Y., Chester Ismay, Starry Zhou, Marium Tapal, Dorothy Bishop, WatanabeSmith, Tobias Rockel, et al. 2020. <em>Moderndive/ModernDive<span>_</span>book: Cleaned Bookdown Code, Typo Fixes, New Tips &amp; Tricks Page</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.3932023">https://doi.org/10.5281/ZENODO.3932023</a>.
 </div>
@@ -1403,10 +1543,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1416,8 +1555,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1430,6 +1578,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1473,6 +1735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1498,6 +1761,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1560,13 +1849,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2023, Allison Theobold</div>   
+    <div class="nav-footer-left">
+<p>© Copyright 2023, Allison Theobold</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

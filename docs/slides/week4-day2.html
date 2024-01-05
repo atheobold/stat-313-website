@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.361">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 - Spring 2023 - The Ugly History of Linear Regression</title>
+  <title>STAT 313 / 513 - Winter 2024 - The Ugly History of Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -155,7 +155,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -335,7 +336,11 @@
 <center>
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/bumi-fire.jpg" style="width:60.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </center></section>
@@ -349,7 +354,11 @@
 <p>Published in 1805 by Legendre</p>
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/legendre.jpg" style="width:50.0%;height:40.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -358,7 +367,11 @@
 <p>and Gauss in 1809</p>
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/gauss.jpg" style="width:50.0%;height:20.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -407,7 +420,6 @@
 </ul>
 </div>
 </div>
-
 <!-- Galton was wrestling with the unanswered question of how different traits stayed stable in a population over generations, building on the work of his cousin Charles Darwin, who had published On the Origin of Species in 1859. -->
 </section>
 <section id="section-3" class="slide level2">
@@ -436,7 +448,11 @@
 <center>
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/bumi-patio.jpg" style="width:60.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </center></section>
@@ -466,7 +482,11 @@
 <div class="column" style="width:45%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/hitler.jpg" style="height:50.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -485,7 +505,11 @@
 <center>
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="images/bumi-water.jpg" style="width:60.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </center></section>
@@ -527,11 +551,13 @@
 </ul></li>
 </ul>
 
+
+</section>
+    <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</section>
-    </div>
+</div></div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -557,7 +583,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -856,10 +881,9 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -869,8 +893,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

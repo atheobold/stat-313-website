@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 - Spring 2023 - Week 7 – Confidence Intervals for the Slope</title>
+<title>STAT 313 / 513 - Winter 2024 - Week 7 – Confidence Intervals for the Slope</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -97,7 +98,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -106,17 +113,44 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -126,12 +160,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7 – Confidence Intervals for the Slope</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7 – Confidence Intervals for the Slope</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -141,7 +175,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -337,7 +371,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -373,7 +407,7 @@ div.csl-indent {
   <li><a href="#ci-width" id="toc-ci-width" class="nav-link" data-scroll-target="#ci-width"><span class="header-section-number">5.5</span> Width of confidence intervals</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -393,7 +427,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>This week’s reading is a compilation of <a href="https://moderndive.com/8-confidence-intervals.html">Chapter 8</a> from <em>ModernDive</em> <span class="citation" data-cites="kim2020">(<a href="#ref-kim2020" role="doc-biblioref">Kim et al. 2020</a>)</span>, <a href="openintro-ims.netlify.app/inf-model-slr.html">Chapter 24</a> from <em>Introduction to Modern Statistics</em> <span class="citation" data-cites="ims">(<a href="#ref-ims" role="doc-biblioref">Çetinkaya-Rundel and Hardin 2023</a>)</span>, with a smattering of my own ideas.</p>
 <section id="sampling-review" class="level3" data-number="0.1">
@@ -412,7 +448,7 @@ div.csl-indent {
 <p>Every year, the US releases to the public a large data set containing information on births recorded in the country. The <a href="http://openintrostat.github.io/openintro/reference/births14.html"><code>births14</code></a> dataset is a random sample of 1,000 cases from one such dataset released in 2014.</p>
 <section id="observed-data" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="observed-data"><span class="header-section-number">1.1</span> Observed data</h3>
-<p><a href="#fig-births-slr">Figure&nbsp;1</a> visualizes the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
+<p><a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a> visualizes the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> births14, </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mage, <span class="at">y =</span> weight)) <span class="sc">+</span> </span>
@@ -421,25 +457,33 @@ div.csl-indent {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mother's Age"</span>, </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Birth Weight of Baby (lbs)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-births-slr" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-births-slr-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Weight of baby at birth (in lbs) as explained by mother’s age.</figcaption>
+<div id="fig-births-slr" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-births-slr-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Weight of baby at birth (in lbs) as explained by mother’s age.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#tbl-births-slr">Table&nbsp;1</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
+<p><a href="#tbl-births-slr" class="quarto-xref">Table&nbsp;1</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>births_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> mage, <span class="at">data =</span> births14)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(births_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-births-slr" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age.
+</figcaption>
+<div aria-describedby="tbl-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-births-slr" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -472,9 +516,11 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Based on these coefficients, the estimated regression equation is:</p>
@@ -515,44 +561,64 @@ Caution
 </section>
 <section id="resampling-once" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="resampling-once"><span class="header-section-number">1.3</span> Resampling once</h3>
-<div id="fig-baby-post-it" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/baby-postit.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Step 1: Write out mother’s ages and baby’s birth weights on 1,000 slips of paper representing one of the 1,000 births included in the original sample.</figcaption>
+<div id="fig-baby-post-it" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-baby-post-it-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/baby-postit.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-baby-post-it-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Step 1: Write out mother’s ages and baby’s birth weights on 1,000 slips of paper representing one of the 1,000 births included in the original sample.
+</figcaption>
 </figure>
 </div>
-<p><strong>Step 1</strong>: Print out 1,000 identically sized slips of paper (or post-it notes) representing the sample of 1,000 babies in our sample. On each piece of paper, write the mother’s age and the birth weight of the baby. <a href="#fig-baby-post-it">Figure&nbsp;2</a> displays six of these such papers.</p>
-<p><strong>Step 2</strong>: Put the 1,000 slips of paper into a hat as seen in <a href="#fig-hat">Figure&nbsp;3</a>.</p>
-<div id="fig-hat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/hat.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Step 2: Putting 1,000 slips of paper (post-its) in a hat.</figcaption>
+<p><strong>Step 1</strong>: Print out 1,000 identically sized slips of paper (or post-it notes) representing the sample of 1,000 babies in our sample. On each piece of paper, write the mother’s age and the birth weight of the baby. <a href="#fig-baby-post-it" class="quarto-xref">Figure&nbsp;2</a> displays six of these such papers.</p>
+<p><strong>Step 2</strong>: Put the 1,000 slips of paper into a hat as seen in <a href="#fig-hat" class="quarto-xref">Figure&nbsp;3</a>.</p>
+<div id="fig-hat" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/hat.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Step 2: Putting 1,000 slips of paper (post-its) in a hat.
+</figcaption>
 </figure>
 </div>
-<p><strong>Step 3</strong>: Mix the hat’s contents and draw one slip of paper at random, as seen in <a href="#fig-draw-out">Figure&nbsp;4</a>. Record the mother’s age and baby’s birth weight, as printed on the paper.</p>
-<div id="fig-draw-out" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/draw-out2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Step 3: Drawing one slip of paper at random.</figcaption>
+<p><strong>Step 3</strong>: Mix the hat’s contents and draw one slip of paper at random, as seen in <a href="#fig-draw-out" class="quarto-xref">Figure&nbsp;4</a>. Record the mother’s age and baby’s birth weight, as printed on the paper.</p>
+<div id="fig-draw-out" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-draw-out-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/draw-out2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-draw-out-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Step 3: Drawing one slip of paper at random.
+</figcaption>
 </figure>
 </div>
-<p><strong>Step 4</strong>: Put the slip of paper back in the hat! In other words, replace it as seen in <a href="#fig-put-back">Figure&nbsp;5</a>.</p>
-<div id="fig-put-back" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/put-back.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Step 4: Replacing slip of paper.</figcaption>
+<p><strong>Step 4</strong>: Put the slip of paper back in the hat! In other words, replace it as seen in <a href="#fig-put-back" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-put-back" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-put-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/put-back.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-put-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Step 4: Replacing slip of paper.
+</figcaption>
 </figure>
 </div>
 <p><strong>Step 5</strong>: Repeat Steps 3 and 4 a total of 999 more times, resulting in 1,000 recorded mother’s ages and baby birth weights.</p>
 <p>What we just performed was a <em>resampling</em> of the original sample of 1,000 birth records. We <strong>are not</strong> sampling 1,000 birth records from the population of all 2014 US births as we did for our original sample. Instead, we are mimicking this process by resampling 1,000 birth records from our original sample.</p>
 <p>Now ask yourselves, why did we replace our resampled slip of paper back into the hat in Step 4? Because if we left the slip of paper out of the hat each time we performed Step 4, we would end up with the <strong>same</strong> 1,000 birth records! In other words, replacing the slips of paper induces <em>sampling variation</em>.</p>
 <p>Being more precise with our terminology, we just performed a <em>resampling with replacement</em> from the original sample of 1,000 birth records. Had we left the slip of paper out of the hat each time we performed Step 4, this would be <em>resampling without replacement</em>.</p>
-<p>Let’s study our sample of 1,000 resampled birth records. First, I’ve made a table of the number of times each observation (birth record) was resampled. <a href="#tbl-resample-id">Table&nbsp;2</a> displays the birth records that were resampled the most often. Based on the table, it appears that record IDs 71 and 534 were resampled six times.</p>
+<p>Let’s study our sample of 1,000 resampled birth records. First, I’ve made a table of the number of times each observation (birth record) was resampled. <a href="#tbl-resample-id" class="quarto-xref">Table&nbsp;2</a> displays the birth records that were resampled the most often. Based on the table, it appears that record IDs 71 and 534 were resampled six times.</p>
 <div class="cell">
+<div id="tbl-resample-id" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-resample-id-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Frequencies of how often a given birth record (ID) was resampled.
+</figcaption>
+<div aria-describedby="tbl-resample-id-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-resample-id" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: Frequencies of how often a given birth record (ID) was resampled.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">71</th>
@@ -602,9 +668,11 @@ Caution
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -620,8 +688,8 @@ Remember
 <p>When sampling with replacement, not every observation is guaranteed to be sampled. So, some observations from the original sample may never appear in the resample, whereas others may appear multiple times.</p>
 </div>
 </div>
-<p><a href="#fig-compare-dist">Figure&nbsp;6</a> compares the relationship between mother’s age and baby’s birth weight from our resample with the relationship in our original sample.</p>
-<div>
+<p><a href="#fig-compare-dist" class="quarto-xref">Figure&nbsp;6</a> compares the relationship between mother’s age and baby’s birth weight from our resample with the relationship in our original sample.</p>
+<div class="cell" data-layout-nrow="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> births14, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mage, <span class="at">y =</span> weight)) <span class="sc">+</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
@@ -635,43 +703,59 @@ Remember
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mother's Age"</span>, </span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Birth Weight (lbs)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-compare-dist" class="cell quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-compare-dist-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-compare-dist-1.png" class="img-fluid figure-img" data-ref-parent="fig-compare-dist" width="672"></p>
-<figcaption class="figure-caption">(a) Original Sample of 1,000 Birth Records</figcaption>
+<div id="fig-compare-dist" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compare-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-compare-dist" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div id="fig-compare-dist-1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-compare-dist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-compare-dist-1.png" class="img-fluid figure-img" data-ref-parent="fig-compare-dist" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-compare-dist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Original Sample of 1,000 Birth Records
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-compare-dist-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-compare-dist-2.png" class="img-fluid figure-img" data-ref-parent="fig-compare-dist" width="672"></p>
-<figcaption class="figure-caption">(b) Resample of 1,000 Birth Records</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-compare-dist" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div id="fig-compare-dist-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-compare-dist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-compare-dist-2.png" class="img-fluid figure-img" data-ref-parent="fig-compare-dist" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-compare-dist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Resample of 1,000 Birth Records
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Comparing relationship between <code>mage</code> and <code>weight</code> in the resampled birth records compared to the relationship seen in the original sample of birth records.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compare-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Comparing relationship between <code>mage</code> and <code>weight</code> in the resampled birth records compared to the relationship seen in the original sample of birth records.
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Observed in <a href="#fig-compare-dist">Figure&nbsp;6</a> that while the general shape of both relationships are similar, they are not identical.</p>
+<p>Observed in <a href="#fig-compare-dist" class="quarto-xref">Figure&nbsp;6</a> that while the general shape of both relationships are similar, they are not identical.</p>
 <p>Recall, from the previous section that the sample slope (<span class="math inline">\(b_1\)</span>) from the original sample was . What about for our resample? Based on the scatterplot, what would your guess be? Larger than before? Smaller than before?</p>
-<p>Let’s look at the coefficient estimates for the resampled dataset. <a href="#tbl-births-resample">Table&nbsp;3</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for the resample of 1,000 birth records.</p>
+<p>Let’s look at the coefficient estimates for the resampled dataset. <a href="#tbl-births-resample" class="quarto-xref">Table&nbsp;3</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for the resample of 1,000 birth records.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resample_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> mage, <span class="at">data =</span> resample1)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(resample_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-births-resample" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-births-resample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age, for the <em>resample</em> of 1,000 birth records.
+</figcaption>
+<div aria-describedby="tbl-births-resample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-births-resample" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age, for the <em>resample</em> of 1,000 birth records.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -704,9 +788,11 @@ Remember
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>For the resampled dataset, the relationship between mother’s age and baby birth weight is much weaker than in the original sample, with an estimated slope of <span class="math inline">\(b_1 =\)</span> 0.005.</p>
@@ -758,10 +844,14 @@ Remember
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(virtual_resample_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-virtual-resample-lm" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-virtual-resample-lm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age, for the virtual resample of 1,000 birth records.
+</figcaption>
+<div aria-describedby="tbl-virtual-resample-lm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-virtual-resample-lm" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;4: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age, for the virtual resample of 1,000 birth records.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -794,12 +884,14 @@ Remember
 </tr>
 </tbody>
 </table>
-</div>
 
 
 </div>
 </div>
-<p>As we saw when we did our tactile resampling exercise, <a href="#tbl-virtual-resample-lm">Table&nbsp;4</a> shows that the estimated slope is different from the slope of our original sample of 0.005.</p>
+</figure>
+</div>
+</div>
+<p>As we saw when we did our tactile resampling exercise, <a href="#tbl-virtual-resample-lm" class="quarto-xref">Table&nbsp;4</a> shows that the estimated slope is different from the slope of our original sample of 0.005.</p>
 </section>
 <section id="infer-package-workflow" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="infer-package-workflow"><span class="header-section-number">2.2</span> <strong>infer</strong> package workflow</h3>
@@ -819,19 +911,23 @@ Remember
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You might be asking yourself: “Isn’t the <strong>infer</strong> code longer? Why would I use that code?”. While not immediately apparent, you’ll see that there are three chief benefits to the <strong>infer</strong> workflow as opposed to the <code>lm()</code> function workflow we had previously.</p>
-<p>First, the <strong>infer</strong> verb names better align with the overall resampling framework you need to understand to construct confidence intervals and to conduct hypothesis tests. We’ll see flowchart diagrams of this framework in the upcoming <a href="#fig-infer-workflow-ci">Figure&nbsp;12</a>.</p>
+<p>First, the <strong>infer</strong> verb names better align with the overall resampling framework you need to understand to construct confidence intervals and to conduct hypothesis tests. We’ll see flowchart diagrams of this framework in the upcoming <a href="#fig-infer-workflow-ci" class="quarto-xref">Figure&nbsp;12</a>.</p>
 <p>Second, you can jump back and forth seamlessly between confidence intervals and hypothesis testing with minimal changes to your code. This will become apparent next week, when we also use <strong>infer</strong> to conduct hypothesis tests for the slope statistic.</p>
 <p>Third, the <strong>infer</strong> workflow is much simpler for conducting inference when you have <em>more than one variable</em>, meaning we can extend what we’ve learned for simple linear regression to multiple linear regression models.</p>
 <p>Let’s now illustrate the sequence of verbs necessary to construct a confidence interval for <span class="math inline">\(\b_1\)</span>, the slope of the relationship between mother’s age and baby’s birth weight for all US births in 2014.</p>
 <section id="sec-specify" class="level4">
 <h4 class="anchored" data-anchor-id="sec-specify">1. <code>specify()</code> variables</h4>
-<div id="fig-infer-specify" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/specify.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: “Diagram of <code>specify()</code>ing variables.”</figcaption>
+<div id="fig-infer-specify" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-specify-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/specify.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-specify-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: “Diagram of <code>specify()</code>ing variables.”
+</figcaption>
 </figure>
 </div>
-<p>As shown in <a href="#fig-infer-specify">Figure&nbsp;7</a>, the <code>specify()</code> function is used to choose which variables in a data frame will be the focus of our statistical inference. We do this by <code>specify</code>ing the <code>response</code> argument. For example, in our <code>births14</code> data frame, the response variable of interest is <code>weight</code> and the explanatory variable is <code>mage</code>:</p>
+<p>As shown in <a href="#fig-infer-specify" class="quarto-xref">Figure&nbsp;7</a>, the <code>specify()</code> function is used to choose which variables in a data frame will be the focus of our statistical inference. We do this by <code>specify</code>ing the <code>response</code> argument. For example, in our <code>births14</code> data frame, the response variable of interest is <code>weight</code> and the explanatory variable is <code>mage</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>births14 <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> weight, </span>
@@ -872,13 +968,17 @@ Note
 </section>
 <section id="sec-generate" class="level4">
 <h4 class="anchored" data-anchor-id="sec-generate">2. <code>generate()</code> replicates</h4>
-<div id="fig-infer-generate" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/generate.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: “Diagram of <code>generate()</code> replicates.”</figcaption>
+<div id="fig-infer-generate" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-generate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/generate.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-generate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: “Diagram of <code>generate()</code> replicates.”
+</figcaption>
 </figure>
 </div>
-<p>After we <code>specify()</code> the variables of interest, we pipe the results into the <code>generate()</code> function to generate replicates. <a href="#fig-infer-generate">Figure&nbsp;8</a> shows how this is combined with <code>specify()</code> to start the pipeline. In other words, repeat the resampling process a large number of times, similar to how we collected 35 different samples of balls from the bowl.</p>
+<p>After we <code>specify()</code> the variables of interest, we pipe the results into the <code>generate()</code> function to generate replicates. <a href="#fig-infer-generate" class="quarto-xref">Figure&nbsp;8</a> shows how this is combined with <code>specify()</code> to start the pipeline. In other words, repeat the resampling process a large number of times, similar to how we collected 35 different samples of balls from the bowl.</p>
 <p>The <code>generate()</code> function’s first argument is <code>reps</code>, which sets the number of replicates we would like to generate. Suppose we were interested in obtaining 50 different resamples (each of 1,000 birth records). Then, we would we set <code>reps = 50</code>, telling <strong>infer</strong> that we are interested in obtaining 50 different resamples, each with 1,000 observations.</p>
 <p>The second argument <code>type</code> determines the type of computer simulation we’d like to perform. We set this to <code>type = "bootstrap"</code> indicating that we want to perform bootstrap resampling, meaning the resampling should be done <em>with replacement</em>. You’ll see different options for <code>type</code> when we learn about hypothesis testing next week.</p>
 <div class="cell">
@@ -935,13 +1035,17 @@ Explanatory: mage (numeric)
 </section>
 <section id="sec-calculate" class="level4">
 <h4 class="anchored" data-anchor-id="sec-calculate">3. <code>calculate()</code> summary statistics</h4>
-<div id="fig-calculate" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/calculate.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Diagram of calculate()d summary statistics.</figcaption>
+<div id="fig-calculate" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-calculate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/calculate.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calculate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Diagram of calculate()d summary statistics.
+</figcaption>
 </figure>
 </div>
-<p>After we <code>generate()</code> many replicates of bootstrap resampling with replacement, we next want to summarize each of the 50 resamples of size 1000 to a single sample statistic value. As seen in <a href="#fig-calculate">Figure&nbsp;9</a>, the <code>calculate()</code> function does this.</p>
+<p>After we <code>generate()</code> many replicates of bootstrap resampling with replacement, we next want to summarize each of the 50 resamples of size 1000 to a single sample statistic value. As seen in <a href="#fig-calculate" class="quarto-xref">Figure&nbsp;9</a>, the <code>calculate()</code> function does this.</p>
 <p>In our case, we want to calculate the slope between mother’s age and baby’s birth weight for each bootstrap resample of size 1000. To do so, we set the <code>stat</code> argument to <code>"slope"</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -988,22 +1092,30 @@ Explanatory: mage (numeric)
 </section>
 <section id="visualize-the-results" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="visualize-the-results">4. <code>visualize()</code> the results</h4>
-<div id="fig-visualize" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/visualize.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: Diagram of closing the entire process by visualize()ing the results.</figcaption>
+<div id="fig-visualize" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-visualize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/visualize.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-visualize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Diagram of closing the entire process by visualize()ing the results.
+</figcaption>
 </figure>
 </div>
-<p>The <code>visualize()</code>verb provides a quick way to visualize the bootstrap distribution as a histogram of the numerical <code>stat</code> variable’s values. The pipeline of the main <strong>infer</strong> verbs used for exploring bootstrap distribution results is shown in <a href="#fig-infer-visualize">Figure&nbsp;11</a>.</p>
+<p>The <code>visualize()</code>verb provides a quick way to visualize the bootstrap distribution as a histogram of the numerical <code>stat</code> variable’s values. The pipeline of the main <strong>infer</strong> verbs used for exploring bootstrap distribution results is shown in <a href="#fig-infer-visualize" class="quarto-xref">Figure&nbsp;11</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(bootstrap_distribution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-infer-visualize" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-infer-visualize-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;11: Bootstrap distribution of slope statistics from 50 bootstrap resamples.</figcaption>
+<div id="fig-infer-visualize" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-visualize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-infer-visualize-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-visualize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Bootstrap distribution of slope statistics from 50 bootstrap resamples.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1052,11 +1164,15 @@ Caution
 <p>Careful! It might sound tempting to ditch the <code>ggplot()</code> code altogether now that you know of a simpler approach. The <code>visualize()</code> function only works for a specific case – a data frame containing a distribution of <code>calculate()</code>d statistics.</p>
 </div>
 </div>
-<p>Let’s recap the steps of the <strong>infer</strong> workflow for constructing a bootstrap distribution and then visualizing it in <a href="#fig-infer-workflow-ci">Figure&nbsp;12</a>.</p>
-<div id="fig-infer-workflow-ci" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/ci_diagram.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;12: infer package workflow for resampling</figcaption>
+<p>Let’s recap the steps of the <strong>infer</strong> workflow for constructing a bootstrap distribution and then visualizing it in <a href="#fig-infer-workflow-ci" class="quarto-xref">Figure&nbsp;12</a>.</p>
+<div id="fig-infer-workflow-ci" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-workflow-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ci_diagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-workflow-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: infer package workflow for resampling
+</figcaption>
 </figure>
 </div>
 </section>
@@ -1076,10 +1192,14 @@ Caution
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bootstrap Slope Statistic"</span>, </span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Bootstrap Distribution of 1,000 Resamples"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-infer-1000" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-infer-1000-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: Bootstrap distribution with 1,000 replicates.</figcaption>
+<div id="fig-infer-1000" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-infer-1000-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Bootstrap distribution with 1,000 replicates.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1101,7 +1221,7 @@ Changing axis labels
 </section>
 <section id="connection-to-sampling-distributions" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="connection-to-sampling-distributions"><span class="header-section-number">2.4</span> Connection to sampling distributions</h3>
-<p>The histogram of sample slopes in <a href="#fig-infer-1000">Figure&nbsp;13</a> is called the <strong>bootstrap distribution</strong>. The bootstrap distribution is an <em>approximation</em> to the sampling distribution of sample slopes.</p>
+<p>The histogram of sample slopes in <a href="#fig-infer-1000" class="quarto-xref">Figure&nbsp;13</a> is called the <strong>bootstrap distribution</strong>. The bootstrap distribution is an <em>approximation</em> to the sampling distribution of sample slopes.</p>
 <p>If you recall back to the last chapter, a sampling distribution was a distribution of statistics from repeatedly <em>sampling</em> from the <strong>population</strong>. However, a bootstrap distribution is a distribution of statistics from repeatedly <em>resampling</em> from the <strong>sample</strong>. This may seem rather strange, how can a distribution based entirely on the sample approximate a distribution based on the population? That’s a great question!</p>
 <p>The bootstrapping process hinges on the belief that the sample is representative of the population. Meaning, there are not systematic differences between the sample and the population. For example, if there were no young mothers in the sample of 1,000 birth records in the <code>births14</code> dataset. If we have a random sample, however, then on average our sample should look very similar to our population. Meaning, the individuals in the sample can “stand in” for individuals in the population with similar characteristics. So, we can think of repeatedly <em>resampling</em> from our sample as a similar process as sampling from the population.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -1127,29 +1247,37 @@ No guaranteed representation
 <h2 data-number="3" class="anchored" data-anchor-id="sec-understanding"><span class="header-section-number">3</span> Understanding confidence intervals</h2>
 <p>Let’s start this section with an analogy involving fishing. Say you are trying to catch a fish. On the one hand, you could use a spear, while on the other you could use a net. Using the net will probably allow you to catch more fish!</p>
 <p>In the <code>births14</code> investigation, we are trying to estimate the population slope for the relationship between mother’s age and baby’s birth weight (<span class="math inline">\(\beta_1\)</span>) for <strong>all</strong> babies born in the US in 2014. Think of the value of <span class="math inline">\(\beta_1\)</span> as a fish.</p>
-<p>On the one hand, we could use the appropriate <em>point estimate/sample statistic</em> to estimate <span class="math inline">\(\beta_1\)</span>, which we saw in <a href="#tbl-births-slr">Table&nbsp;1</a> is the sample slope <span class="math inline">\(b_1\)</span>. Based on our sample of 1000 birth records, the sample slope was 0.014. Think of using this value as “fishing with a spear.”</p>
-<p>What would “fishing with a net” correspond to? Look at the bootstrap distribution in <a href="#fig-infer-1000">Figure&nbsp;13</a> once more. Between which values would you say that “most” sample slopes lie? While this question is somewhat subjective, saying that most sample slopes lie between 0 and 0.03 would not be unreasonable. Think of this interval as the “net.”</p>
+<p>On the one hand, we could use the appropriate <em>point estimate/sample statistic</em> to estimate <span class="math inline">\(\beta_1\)</span>, which we saw in <a href="#tbl-births-slr" class="quarto-xref">Table&nbsp;1</a> is the sample slope <span class="math inline">\(b_1\)</span>. Based on our sample of 1000 birth records, the sample slope was 0.014. Think of using this value as “fishing with a spear.”</p>
+<p>What would “fishing with a net” correspond to? Look at the bootstrap distribution in <a href="#fig-infer-1000" class="quarto-xref">Figure&nbsp;13</a> once more. Between which values would you say that “most” sample slopes lie? While this question is somewhat subjective, saying that most sample slopes lie between 0 and 0.03 would not be unreasonable. Think of this interval as the “net.”</p>
 <p>What we’ve just illustrated is the concept of a <em>confidence interval</em>, which I’ll abbreviate with “CI” throughout this chapter. As opposed to a point estimate / sample statistic that estimates the value of an unknown population parameter with a single value, a <em>confidence interval</em> gives what can be interpreted as a range of plausible values. Going back to our analogy, point estimates / sample statistics can be thought of as spears, whereas confidence intervals can be thought of as nets.</p>
-<div id="fig-spear-net" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/point_estimate_vs_conf_int.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;14: Analogy of difference between point estimates and confidence intervals.</figcaption>
+<div id="fig-spear-net" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spear-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/point_estimate_vs_conf_int.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spear-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Analogy of difference between point estimates and confidence intervals.
+</figcaption>
 </figure>
 </div>
 <p>Our proposed interval of 0 to 0.03 was constructed by eye and was thus somewhat subjective. We now introduce two methods for constructing such intervals in a more exact fashion: the <em>percentile method</em> and the <em>standard error method</em>.</p>
-<p>Both methods for confidence interval construction share some commonalities. First, they are both constructed from a bootstrap distribution, as you constructed in the previous section and visualized in <a href="#fig-infer-1000">Figure&nbsp;13</a>.</p>
+<p>Both methods for confidence interval construction share some commonalities. First, they are both constructed from a bootstrap distribution, as you constructed in the previous section and visualized in <a href="#fig-infer-1000" class="quarto-xref">Figure&nbsp;13</a>.</p>
 <p>Second, they both require you to specify the <em>confidence level</em>. Commonly used confidence levels include 90%, 95%, and 99%. All other things being equal, higher confidence levels correspond to wider confidence intervals, and lower confidence levels correspond to narrower confidence intervals.</p>
 <section id="sec-percentile-method" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="sec-percentile-method"><span class="header-section-number">3.1</span> Percentile method</h3>
 <p>One method to construct a 95% confidence interval is to use the middle 95% of values of the bootstrap distribution. We can do this by computing the 2.5th and 97.5th percentiles, which are 0.0002 and 0.0281, respectively. This is known as the <em>percentile method</em> for constructing confidence intervals.</p>
 <p>For now, let’s focus only on the concepts behind a percentile method constructed confidence interval; we’ll show you the code that computes these values in the next section.</p>
-<p>Let’s mark these percentiles on the bootstrap distribution with vertical lines in <a href="#fig-percentile-method">Figure&nbsp;15</a>. About 95% of the <code>slope</code> variable values in <code>bootstrap_1000</code> fall between 0.0002 and 0.0281, with 2.5% to the left of the leftmost line and 2.5% to the right of the rightmost line.</p>
+<p>Let’s mark these percentiles on the bootstrap distribution with vertical lines in <a href="#fig-percentile-method" class="quarto-xref">Figure&nbsp;15</a>. About 95% of the <code>slope</code> variable values in <code>bootstrap_1000</code> fall between 0.0002 and 0.0281, with 2.5% to the left of the leftmost line and 2.5% to the right of the rightmost line.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-percentile-method" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-percentile-method-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;15: Percentile method 95% confidence interval. Interval endpoints marked by vertical lines.</figcaption>
+<div id="fig-percentile-method" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-percentile-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-percentile-method-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-percentile-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Percentile method 95% confidence interval. Interval endpoints marked by vertical lines.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1157,7 +1285,7 @@ No guaranteed representation
 </section>
 <section id="sec-se-method" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="sec-se-method"><span class="header-section-number">3.2</span> Standard error method</h3>
-<p>Recall in the last chapter we saw that if a numerical variable follows a normal distribution, or, in other words, the histogram of this variable is bell-shaped, then roughly 95% of values fall between <span class="math inline">\(\pm\)</span> 1.96 standard deviations of the mean. Given that our bootstrap distribution based on 1000 resamples with replacement in <a href="#fig-infer-1000">Figure&nbsp;13</a> is normally shaped, let’s use this fact about normal distributions to construct a confidence interval in a different way.</p>
+<p>Recall in the last chapter we saw that if a numerical variable follows a normal distribution, or, in other words, the histogram of this variable is bell-shaped, then roughly 95% of values fall between <span class="math inline">\(\pm\)</span> 1.96 standard deviations of the mean. Given that our bootstrap distribution based on 1000 resamples with replacement in <a href="#fig-infer-1000" class="quarto-xref">Figure&nbsp;13</a> is normally shaped, let’s use this fact about normal distributions to construct a confidence interval in a different way.</p>
 <p>First, recall the bootstrap distribution has a mean equal to 0.014. This value almost coincides exactly with the value of the sample slope <span class="math inline">\(b_1\)</span> of our original 1000 birth records 0.014. Second, let’s compute the standard deviation of the bootstrap distribution using the bootstrap slope statistics stored in the <code>stat</code> column of the <code>bootstrap_1000</code> data frame:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bootstrap_1000 <span class="sc">%&gt;%</span> </span>
@@ -1193,13 +1321,17 @@ Note
 <p>To use the bootstrap standard error in this formula the bootstrap distribution <strong>must</strong> be bell shaped and symmetric. This is often the case with bootstrap distributions, especially those in which the original distribution of the sample is not highly skewed, however it is not always the case. Next week, we’ll go deeper into the explorations of model conditions.</p>
 </div>
 </div>
-<p>Let’s now add the SE method confidence interval with dashed lines in <a href="#fig-percentile-and-se-method">Figure&nbsp;16</a>.</p>
+<p>Let’s now add the SE method confidence interval with dashed lines in <a href="#fig-percentile-and-se-method" class="quarto-xref">Figure&nbsp;16</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-percentile-and-se-method" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-percentile-and-se-method-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;16: Comparing two 95% confidence interval methods.</figcaption>
+<div id="fig-percentile-and-se-method" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-percentile-and-se-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-percentile-and-se-method-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-percentile-and-se-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Comparing two 95% confidence interval methods.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1213,7 +1345,7 @@ Note
 <p>Now that we’ve covered two methods for obtaining confidence intervals, let’s now check out the <strong>infer</strong> package code that explicitly constructs these. There are also some additional neat functions to visualize the resulting confidence intervals built-in to the <strong>infer</strong> package!</p>
 <section id="sec-percentile-infer" class="level4">
 <h4 class="anchored" data-anchor-id="sec-percentile-infer">Percentile method with <strong>infer</strong></h4>
-<p>Recall the percentile method for constructing 95% confidence intervals we introduced in <a href="#sec-percentile-method">Section&nbsp;3.1</a>. This method sets the lower endpoint of the confidence interval at the 2.5th percentile of the bootstrap distribution and similarly sets the upper endpoint at the 97.5th percentile. The resulting interval captures the middle 95% of the values of the sample mean in the bootstrap distribution.</p>
+<p>Recall the percentile method for constructing 95% confidence intervals we introduced in <a href="#sec-percentile-method" class="quarto-xref">Section&nbsp;3.1</a>. This method sets the lower endpoint of the confidence interval at the 2.5th percentile of the bootstrap distribution and similarly sets the upper endpoint at the 97.5th percentile. The resulting interval captures the middle 95% of the values of the sample mean in the bootstrap distribution.</p>
 <p>We can compute the 95% confidence interval using the <code>get_confidence_interval()</code> function function from the <code>infer</code> package. This function takes three arguments (inputs):</p>
 <ul>
 <li>a data frame containing <code>calculate()</code>d statistics (e.g., slope statistics)</li>
@@ -1239,15 +1371,19 @@ Note
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-percentile-ci-viz" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-percentile-ci-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;17: Percentile method 95% confidence interval shaded corresponding to potential values.</figcaption>
+<div id="fig-percentile-ci-viz" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-percentile-ci-viz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-percentile-ci-viz-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-percentile-ci-viz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Percentile method 95% confidence interval shaded corresponding to potential values.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Observe in <a href="#fig-percentile-ci-viz">Figure&nbsp;17</a> that 95% of the sample slopes stored in the <code>stat</code> variable in <code>bootstrap_1000</code> fall between the two endpoints marked with the darker lines, with 2.5% of the sample means to the left of the shaded area and 2.5% of the sample means to the right.</p>
+<p>Observe in <a href="#fig-percentile-ci-viz" class="quarto-xref">Figure&nbsp;17</a> that 95% of the sample slopes stored in the <code>stat</code> variable in <code>bootstrap_1000</code> fall between the two endpoints marked with the darker lines, with 2.5% of the sample means to the left of the shaded area and 2.5% of the sample means to the right.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1268,7 +1404,7 @@ Tip
 </section>
 <section id="sec-se-infer" class="level4">
 <h4 class="anchored" data-anchor-id="sec-se-infer">Standard error method with <code>infer</code></h4>
-<p>Recall the standard error method for constructing 95% confidence intervals we introduced in <a href="#sec-se-method">Section&nbsp;3.2</a>. From properties of the Normal Distribution, we know that for any distribution that is bell shaped and symmetric, roughly 95% of the values lie within two standard deviations of the mean. Recall that in the case of the sampling distribution, the standard deviation has a special name: the <em>standard error</em>. Moreover, remember that the bootstrap distribution provides us with a robust estimate of the standard error of the sampling distribution.</p>
+<p>Recall the standard error method for constructing 95% confidence intervals we introduced in <a href="#sec-se-method" class="quarto-xref">Section&nbsp;3.2</a>. From properties of the Normal Distribution, we know that for any distribution that is bell shaped and symmetric, roughly 95% of the values lie within two standard deviations of the mean. Recall that in the case of the sampling distribution, the standard deviation has a special name: the <em>standard error</em>. Moreover, remember that the bootstrap distribution provides us with a robust estimate of the standard error of the sampling distribution.</p>
 <p>So in our case, 95% of values of the bootstrap distribution will lie within <span class="math inline">\(\pm 1.96\)</span> standard errors of <span class="math inline">\(b_1\)</span>. Thus, a 95% confidence interval is</p>
 <p><span class="math display">\[
 b_a \pm 1.96 \times SE = (b_1 - 1.96 \times SE, b_1 + 1.96 \times SE)
@@ -1278,7 +1414,7 @@ b_a \pm 1.96 \times SE = (b_1 - 1.96 \times SE, b_1 + 1.96 \times SE)
 <li>we need to set the <code>type</code> argument to be <code>"se"</code></li>
 <li>we need to specify where the confidence interval should be centered – the <code>point_estimate</code></li>
 </ul>
-<p>To calculate the point estimate, we need one additional step <strong>before</strong> calculating our confidence interval. Rather than using the output from the <code>lm()</code> function like we did in <a href="#tbl-births-slr">Table&nbsp;1</a>, let’s obtain our observed slope statistic using the infer pipeline! This process should look familiar, in fact the only part that has changed is we no longer have a <code>generate()</code> step. We are not generating any resamples, so that step is no longer needed. All we need to do is <code>specify()</code> our variables and <code>calculate()</code> the <code>"slope"</code> statistic.</p>
+<p>To calculate the point estimate, we need one additional step <strong>before</strong> calculating our confidence interval. Rather than using the output from the <code>lm()</code> function like we did in <a href="#tbl-births-slr" class="quarto-xref">Table&nbsp;1</a>, let’s obtain our observed slope statistic using the infer pipeline! This process should look familiar, in fact the only part that has changed is we no longer have a <code>generate()</code> step. We are not generating any resamples, so that step is no longer needed. All we need to do is <code>specify()</code> our variables and <code>calculate()</code> the <code>"slope"</code> statistic.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>obs_slope <span class="ot">&lt;-</span> births14 <span class="sc">|&gt;</span> </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> weight, </span>
@@ -1297,27 +1433,35 @@ b_a \pm 1.96 \times SE = (b_1 - 1.96 \times SE, b_1 + 1.96 \times SE)
 1 0.0000947   0.0284</code></pre>
 </div>
 </div>
-<p>If we would like to visualize this interval, we can once again add a <code>shade_confidence_interval()</code> layer to our plot. However, when visualizing an interval constructed using the SE method, we need to declare the <code>endpoints</code> of the interval, as seen in <a href="#fig-se-ci-viz">Figure&nbsp;18</a>.</p>
+<p>If we would like to visualize this interval, we can once again add a <code>shade_confidence_interval()</code> layer to our plot. However, when visualizing an interval constructed using the SE method, we need to declare the <code>endpoints</code> of the interval, as seen in <a href="#fig-se-ci-viz" class="quarto-xref">Figure&nbsp;18</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(bootstrap_1000) <span class="sc">+</span> </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_confidence_interval</span>(<span class="at">endpoints =</span> standard_error_ci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-se-ci-viz" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-se-ci-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;18: Standard-error-method 95% confidence interval.</figcaption>
+<div id="fig-se-ci-viz" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-se-ci-viz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-se-ci-viz-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-se-ci-viz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Standard-error-method 95% confidence interval.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>As noted in <a href="#sec-se-method">Section&nbsp;3.2</a>, both methods produce similar confidence intervals:</p>
+<p>As noted in <a href="#sec-se-method" class="quarto-xref">Section&nbsp;3.2</a>, both methods produce similar confidence intervals:</p>
 <div class="cell">
+<div id="tbl-comparison-of-intervals" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparison-of-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Comparison of 95% confidence intervals between percentile and SE methods.
+</figcaption>
+<div aria-describedby="tbl-comparison-of-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-comparison-of-intervals" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;5: Comparison of 95% confidence intervals between percentile and SE methods.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">type</th>
@@ -1338,16 +1482,18 @@ b_a \pm 1.96 \times SE = (b_1 - 1.96 \times SE, b_1 + 1.96 \times SE)
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 </section>
 </section>
 <section id="interpreting-confidence-intervals" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="interpreting-confidence-intervals"><span class="header-section-number">5</span> Interpreting confidence intervals</h2>
-<p>Now that we’ve shown you how to construct confidence intervals using a sample drawn from a population, let’s now focus on how to interpret their effectiveness. The effectiveness of a confidence interval is judged by whether or not it contains the true value of the population parameter. Going back to our fishing analogy in <a href="#sec-understanding">Section&nbsp;3</a>, this is like asking, “Did our net capture the fish?”.</p>
+<p>Now that we’ve shown you how to construct confidence intervals using a sample drawn from a population, let’s now focus on how to interpret their effectiveness. The effectiveness of a confidence interval is judged by whether or not it contains the true value of the population parameter. Going back to our fishing analogy in <a href="#sec-understanding" class="quarto-xref">Section&nbsp;3</a>, this is like asking, “Did our net capture the fish?”.</p>
 <p>So, for example, does our percentile-based confidence interval of (-0.0018, 0.0285) “capture” the slope of the relationship between mother’s age and baby’s birth weight (<span class="math inline">\(\beta_1\)</span>) for <em>all</em> babies born in the US in 2014? Alas, we’ll never know, because we don’t know what the true value of <span class="math inline">\(\beta_1\)</span> is. After all, we’re sampling to estimate it!</p>
 <p>In order to interpret a confidence interval’s effectiveness, we need to <em>know</em> what the value of the population parameter is. That way we can say whether or not a confidence interval “captured” this value. In the case of <code>births14</code> dataset, we have the ability to go find the original dataset, housing the birth records of every baby born in the US in 2014. I did so, and found that the slope for the relationship between mother’s age and baby’s birth weight (<span class="math inline">\(\beta_1\)</span>) for <em>all</em> babies born in the US in 2014 was <span class="math inline">\(\beta_1 = 0.0007\)</span>.</p>
 <section id="did-our-intervals-capture-beta_1" class="level3" data-number="5.1">
@@ -1408,7 +1554,7 @@ Choice of method
 1 -0.000133   0.0285</code></pre>
 </div>
 </div>
-<p>Again, our interval contains <span class="math inline">\(\beta_1\)</span>. Let’s scale this up and look at 50 different intervals constructed using this method. <a href="#fig-50-intervals">Figure&nbsp;19</a> visualizes these 50 intervals, where:</p>
+<p>Again, our interval contains <span class="math inline">\(\beta_1\)</span>. Let’s scale this up and look at 50 different intervals constructed using this method. <a href="#fig-50-intervals" class="quarto-xref">Figure&nbsp;19</a> visualizes these 50 intervals, where:</p>
 <ul>
 <li>the true value of <span class="math inline">\(\beta_1 = 0.0007\)</span> is marked with a red, vertical line</li>
 <li>each of the intervals is marked with a horizontal line</li>
@@ -1416,10 +1562,14 @@ Choice of method
 <p>If the interval contained <span class="math inline">\(\beta_1 = 0.0007\)</span>, the line is colored grey. If the interval <strong>did not</strong> contain <span class="math inline">\(\beta_1 = 0.0007\)</span>, the line is colored black.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-50-intervals" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-50-intervals-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;19: 50 percentile-based 95% confidence intervals for the true slope for the relationship between mother’s age and baby’s birth weight, for all babies born in the US in 2014.</figcaption>
+<div id="fig-50-intervals" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-50-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-50-intervals-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-50-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: 50 percentile-based 95% confidence intervals for the true slope for the relationship between mother’s age and baby’s birth weight, for all babies born in the US in 2014.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1430,13 +1580,17 @@ Choice of method
 <section id="connection-to-the-empiracle-rule" class="level3" data-number="5.3">
 <h3 data-number="5.3" class="anchored" data-anchor-id="connection-to-the-empiracle-rule"><span class="header-section-number">5.3</span> Connection to the empiracle rule</h3>
 <p>You might wonder, why do only 5% of the 95% confidence intervals miss the parameter they are estimating. This reasoning goes back to what you read on the empiracle rule for bell-shaped and symmetric curves. Namely, the rule of thumb that 95% of values will lie within approximately 2 standard deviations of the center of the distribution. The center of a sampling distribution is the value of the parameter. For our example, this value is <span class="math inline">\(\beta_1 = 0.0007\)</span>, the value of the slope for the relationship between mother’s age and baby’s birth weight for all babies born in the US in 2014.</p>
-<p><a href="#fig-normal-rule-of-thumb">Figure&nbsp;20</a> displays the sampling distribution of <span class="math inline">\(b_1\)</span>, centered at <span class="math inline">\(\beta_1 = 0.0007\)</span>. Because our sampling distribution is bell-shaped and symmetric, we know that 95% of the slope statistics should fall within 2 standard errors of the center, as noted by the two dashed lines. That means, only 5% of the slope statistics should fall <em>outside</em> this interval. Our sample slope statistic (<span class="math inline">\(b_1\)</span>) is <strong>always</strong> the center of our confidence interval. So, if our sample slope statistic is greater than 2 standard deviations from the center of the sampling distribution, its confidence interval <strong>will not</strong> contain <span class="math inline">\(\beta_1\)</span>.</p>
+<p><a href="#fig-normal-rule-of-thumb" class="quarto-xref">Figure&nbsp;20</a> displays the sampling distribution of <span class="math inline">\(b_1\)</span>, centered at <span class="math inline">\(\beta_1 = 0.0007\)</span>. Because our sampling distribution is bell-shaped and symmetric, we know that 95% of the slope statistics should fall within 2 standard errors of the center, as noted by the two dashed lines. That means, only 5% of the slope statistics should fall <em>outside</em> this interval. Our sample slope statistic (<span class="math inline">\(b_1\)</span>) is <strong>always</strong> the center of our confidence interval. So, if our sample slope statistic is greater than 2 standard deviations from the center of the sampling distribution, its confidence interval <strong>will not</strong> contain <span class="math inline">\(\beta_1\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-normal-rule-of-thumb" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week7-reading2_files/figure-html/fig-normal-rule-of-thumb-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;20: Rules of thumb about areas under normal curves.</figcaption>
+<div id="fig-normal-rule-of-thumb" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-rule-of-thumb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week7-reading2_files/figure-html/fig-normal-rule-of-thumb-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-rule-of-thumb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20: Rules of thumb about areas under normal curves.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1448,8 +1602,8 @@ Choice of method
 <blockquote class="blockquote">
 <p>Precise interpretation: If we repeated our sampling procedure a large number of times, we expect about 95% of the resulting confidence intervals to capture the value of the population parameter.</p>
 </blockquote>
-<p>This is what we observed in <a href="#fig-50-intervals">Figure&nbsp;19</a>. Our confidence interval construction procedure is 95% <em>reliable</em>. That is to say, we can expect our confidence intervals to include the true population parameter about 95% of the time.</p>
-<p>A common but incorrect interpretation is: “There is a 95% probability that the confidence interval contains <span class="math inline">\(\beta_1\)</span>.” Looking at <a href="#fig-50-intervals">Figure&nbsp;19</a>, each of the confidence intervals either does or doesn’t contain <span class="math inline">\(\beta_1\)</span>. In other words, the probability is either 100% or 0%.</p>
+<p>This is what we observed in <a href="#fig-50-intervals" class="quarto-xref">Figure&nbsp;19</a>. Our confidence interval construction procedure is 95% <em>reliable</em>. That is to say, we can expect our confidence intervals to include the true population parameter about 95% of the time.</p>
+<p>A common but incorrect interpretation is: “There is a 95% probability that the confidence interval contains <span class="math inline">\(\beta_1\)</span>.” Looking at <a href="#fig-50-intervals" class="quarto-xref">Figure&nbsp;19</a>, each of the confidence intervals either does or doesn’t contain <span class="math inline">\(\beta_1\)</span>. In other words, the probability is either 100% or 0%.</p>
 <p>So if the 95% confidence level only relates to the reliability of the confidence interval construction procedure and not to a given confidence interval itself, what insight can be derived from a given confidence interval? Loosely speaking, we can think of these intervals as our “best guess” of a plausible range of values for the slope of the relationship between mother’s age and baby’s birth weight <span class="math inline">\(\beta_1\)</span> of <em>all</em> babies born in the US in 2014. It is typical to use the following shorthand summary of the precise interpretation:</p>
 <blockquote class="blockquote">
 <p>We are 95% “confident” that a 95% confidence interval captures the value of the population parameter. We use quotation marks around “confident” to emphasize that while 95% relates to the reliability of our confidence interval construction procedure, ultimately a constructed confidence interval is our best guess of an interval that contains the population parameter. In other words, it’s our best net.</p>
@@ -1472,7 +1626,7 @@ Choice of method
 <section id="impact-of-sample-size" class="level4">
 <h4 class="anchored" data-anchor-id="impact-of-sample-size">Impact of sample size</h4>
 <p>Pulling from what we learned about the <em>Central Limit Theorem</em> at the end of the last reading, we know that variability decreases when sample size increases. We quantified the sampling variation of these sampling distributions using their standard deviation, which has that special name: the standard error. So as the sample size increases, the standard error decreases.</p>
-<p>Connecting to what you learned in this reading, if we have a large sample size, the spread of the bootstrap distribution will be smaller, which in turn leads to smaller estimated standard errors, and narrower confidence intervals. In <a href="#sec-se-method">Section&nbsp;3.2</a> you saw directly how the standard error is used when calculating a confidence interval.</p>
+<p>Connecting to what you learned in this reading, if we have a large sample size, the spread of the bootstrap distribution will be smaller, which in turn leads to smaller estimated standard errors, and narrower confidence intervals. In <a href="#sec-se-method" class="quarto-xref">Section&nbsp;3.2</a> you saw directly how the standard error is used when calculating a confidence interval.</p>
 
 
 
@@ -1480,7 +1634,7 @@ Choice of method
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ims" class="csl-entry" role="listitem">
 Çetinkaya-Rundel, Mine, and Jo Hardin. 2023. <em>Introduction to Modern Statistics</em>. OpenIntro. <a href="https://openintro-ims.netlify.app/">https://openintro-ims.netlify.app/</a>.
 </div>
@@ -1567,10 +1721,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1580,8 +1733,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1594,6 +1756,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1637,6 +1913,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1662,6 +1939,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1724,13 +2027,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2023, Allison Theobold</div>   
+    <div class="nav-footer-left">
+<p>© Copyright 2023, Allison Theobold</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

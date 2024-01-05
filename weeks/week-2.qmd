@@ -17,10 +17,7 @@ execute:
 #| include: false
 
 library(tidyverse)
-<<<<<<< HEAD
-=======
 library(gapminder)
->>>>>>> 480a4b3c6f7f14f0c08a28ce007e781ac293a1c0
 library(emo)
 library(openintro)
 library(unvotes)

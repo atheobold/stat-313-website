@@ -2,11 +2,6 @@
 title: "Week 10: Two-Way ANOVA"
 format: 
   html: 
-<<<<<<< HEAD
-    fontsize: 1em
-    mainfont: sans-serif
-=======
->>>>>>> 480a4b3c6f7f14f0c08a28ce007e781ac293a1c0
     number-sections: true
     number-depth: 2
     section-divs: true

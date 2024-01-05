@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.361">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 - Spring 2023 - 🔬 Simulation-Based Methods versus Theory-Based Methods</title>
+  <title>STAT 313 / 513 - Winter 2024 - 🔬 Simulation-Based Methods versus Theory-Based Methods</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,7 +220,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -455,7 +456,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week8-day2_files/figure-revealjs/evals-slr-1.png" width="960"></p>
+<p><img data-src="week8-day2_files/figure-revealjs/evals-slr-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -472,12 +473,12 @@
 <p>By creating a permutation distribution!</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>null_dist <span class="ot">&lt;-</span> evals <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">specify</span>(<span class="at">response =</span> score, </span>
-<span id="cb1-3"><a href="#cb1-3"></a>          <span class="at">explanatory =</span> bty_avg) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">hypothesise</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>null_dist <span class="ot">&lt;-</span> evals <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> score, </span>
+<span id="cb1-3"><a></a>          <span class="at">explanatory =</span> bty_avg) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a></a>  <span class="fu">hypothesise</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br></p>
@@ -495,7 +496,11 @@
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="week8-day2_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -515,9 +520,9 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">get_p_value</span>(null_dist, </span>
-<span id="cb2-2"><a href="#cb2-2"></a>            <span class="at">obs_stat =</span> obs_slope, </span>
-<span id="cb2-3"><a href="#cb2-3"></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">get_p_value</span>(null_dist, </span>
+<span id="cb2-2"><a></a>            <span class="at">obs_stat =</span> obs_slope, </span>
+<span id="cb2-3"><a></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   p_value
@@ -553,7 +558,11 @@
 </div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="week8-day2_files/figure-revealjs/t-distribution-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -569,10 +578,10 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>obs_slope <span class="ot">&lt;-</span> evals <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">specify</span>(<span class="at">response =</span> score, </span>
-<span id="cb4-3"><a href="#cb4-3"></a>          <span class="at">explanatory =</span> bty_avg) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>obs_slope <span class="ot">&lt;-</span> evals <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> score, </span>
+<span id="cb4-3"><a></a>          <span class="at">explanatory =</span> bty_avg) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -587,10 +596,10 @@ Explanatory: bty_avg (numeric)
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>evals_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg,</span>
-<span id="cb6-2"><a href="#cb6-2"></a>               <span class="at">data =</span> evals)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">get_regression_table</span>(evals_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>evals_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg,</span>
+<span id="cb6-2"><a></a>               <span class="at">data =</span> evals)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="fu">get_regression_table</span>(evals_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
   term      estimate std_error statistic p_value lower_ci upper_ci
@@ -666,7 +675,7 @@ Explanatory: bty_avg (numeric)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week8-day2_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:50.0%"></p>
+<p><img data-src="week8-day2_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -728,7 +737,7 @@ Explanatory: bty_avg (numeric)
 <p><strong>L</strong>inear relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p>
 </div>
 
-<img data-src="week8-day2_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"><div class="fragment">
+<img data-src="week8-day2_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <p><strong>What should we do?</strong></p>
 </div>
 </section>
@@ -738,7 +747,7 @@ Explanatory: bty_avg (numeric)
 <p>Variable transformation!</p>
 </div>
 
-<img data-src="week8-day2_files/figure-revealjs/transform-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week8-day2_files/figure-revealjs/transform-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-17" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #FFFFFF;">
@@ -780,7 +789,7 @@ Explanatory: bty_avg (numeric)
 <p><strong>E</strong>qual variance of residuals</p>
 </div>
 
-<img data-src="week8-day2_files/figure-revealjs/non-constant-variance-1.png" width="960" class="r-stretch quarto-figure-center"><div class="fragment">
+<img data-src="week8-day2_files/figure-revealjs/non-constant-variance-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <p><strong>What should we do?</strong></p>
 </div>
 </section>
@@ -843,12 +852,14 @@ Explanatory: bty_avg (numeric)
 <div class="fragment">
 <p>In general, when the conditions associated with these methods are violated, the permutation and <span class="math inline">\(t\)</span>-distributions will underestimate the true standard error of the sampling distribution.</p>
 
+
+</div>
+</section>
+    <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section>
-    </div>
+</div></div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -874,7 +885,6 @@ Explanatory: bty_avg (numeric)
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1173,10 +1183,9 @@ Explanatory: bty_avg (numeric)
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1186,8 +1195,17 @@ Explanatory: bty_avg (numeric)
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

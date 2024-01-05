@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.361">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 - Spring 2023 - One-Way ANOVA Review</title>
+  <title>STAT 313 / 513 - Winter 2024 - One-Way ANOVA Review</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,7 +220,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -414,9 +415,9 @@
 <section id="youve-seen-a-one-way-anova-model-before" class="slide level2">
 <h2>You’ve seen a one-way ANOVA model before!</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>trout_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(trout_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>trout_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout)</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(trout_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 7
   term         estimate std_error statistic p_value lower_ci upper_ci
@@ -440,8 +441,8 @@
 <section id="one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight" class="slide level2">
 <h2>One-Way ANOVA – Testing if at least one chanel type has a different mean weight</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 6
   term         df    sumsq meansq statistic    p.value
@@ -463,7 +464,7 @@
 <section id="checking-conditions" class="slide level2">
 <h2>Checking Conditions</h2>
 
-<img data-src="week10-day1_files/figure-revealjs/channel--1.png" width="960" class="r-stretch quarto-figure-center"><p>How do you feel about the normality condition?</p>
+<img data-src="week10-day1_files/figure-revealjs/channel--1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>How do you feel about the normality condition?</p>
 <div class="fragment">
 <p>How do you feel about the equal variance condition?</p>
 </div>
@@ -475,7 +476,6 @@
 <p><strong>Un-transformed Variances</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-
 <div id="ymyofzmcya" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ymyofzmcya table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -916,35 +916,50 @@
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="unittype">unittype</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var">var</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="unittype" class="gt_row gt_left">C</td>
-<td headers="var" class="gt_row gt_right">84.826493</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">I</td>
-<td headers="var" class="gt_row gt_right">80.783024</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">IP</td>
-<td headers="var" class="gt_row gt_right">5.729663</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">P</td>
-<td headers="var" class="gt_row gt_right">129.138547</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">R</td>
-<td headers="var" class="gt_row gt_right">59.096925</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">S</td>
-<td headers="var" class="gt_row gt_right">49.280157</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">SC</td>
-<td headers="var" class="gt_row gt_right">49.923399</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">NA</td>
-<td headers="var" class="gt_row gt_right">112.284569</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
+<th id="var" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">var</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">C</td>
+<td class="gt_row gt_right" headers="var">84.826493</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">I</td>
+<td class="gt_row gt_right" headers="var">80.783024</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">IP</td>
+<td class="gt_row gt_right" headers="var">5.729663</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">P</td>
+<td class="gt_row gt_right" headers="var">129.138547</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">R</td>
+<td class="gt_row gt_right" headers="var">59.096925</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">S</td>
+<td class="gt_row gt_right" headers="var">49.280157</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">SC</td>
+<td class="gt_row gt_right" headers="var">49.923399</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">NA</td>
+<td class="gt_row gt_right" headers="var">112.284569</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -953,7 +968,6 @@
 <p><strong>Log Transformed Variances</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-
 <div id="csztglytkj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#csztglytkj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1394,35 +1408,50 @@
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="unittype">unittype</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var">var</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="unittype" class="gt_row gt_left">C</td>
-<td headers="var" class="gt_row gt_right">1.6978424</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">I</td>
-<td headers="var" class="gt_row gt_right">0.8788463</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">IP</td>
-<td headers="var" class="gt_row gt_right">0.8990321</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">P</td>
-<td headers="var" class="gt_row gt_right">1.5659500</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">R</td>
-<td headers="var" class="gt_row gt_right">1.3621461</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">S</td>
-<td headers="var" class="gt_row gt_right">2.1770549</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">SC</td>
-<td headers="var" class="gt_row gt_right">1.6514917</td></tr>
-    <tr><td headers="unittype" class="gt_row gt_left">NA</td>
-<td headers="var" class="gt_row gt_right">0.7591942</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
+<th id="var" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">var</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">C</td>
+<td class="gt_row gt_right" headers="var">1.6978424</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">I</td>
+<td class="gt_row gt_right" headers="var">0.8788463</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">IP</td>
+<td class="gt_row gt_right" headers="var">0.8990321</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">P</td>
+<td class="gt_row gt_right" headers="var">1.5659500</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">R</td>
+<td class="gt_row gt_right" headers="var">1.3621461</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">S</td>
+<td class="gt_row gt_right" headers="var">2.1770549</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="unittype">SC</td>
+<td class="gt_row gt_right" headers="var">1.6514917</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="unittype">NA</td>
+<td class="gt_row gt_right" headers="var">0.7591942</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1481,11 +1510,11 @@
 <p><strong>What are we looking for?</strong></p>
 </div>
 
-<img data-src="week10-day1_files/figure-revealjs/twa-plot-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week10-day1_files/figure-revealjs/twa-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="another-way-to-think-about-it" class="slide level2">
 <h2>Another way to think about it…</h2>
 
-<img data-src="week10-day1_files/figure-revealjs/twa-plot-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week10-day1_files/figure-revealjs/twa-plot-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="hypothesis-test-steps" class="slide level2">
 <h2>Hypothesis Test Steps</h2>
 <div class="columns">
@@ -1514,15 +1543,14 @@
 <h2>Additive Two-Way ANOVA</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Why did I use a <code>+</code> when fitting the model?</p>
 <div class="fragment">
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-
 <div id="cslmtukwti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#cslmtukwti table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1963,41 +1991,46 @@
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="term">term</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="df">df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="sumsq">sumsq</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="meansq">meansq</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="statistic">statistic</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="p.value">p.value</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="term" class="gt_row gt_left">era</td>
-<td headers="df" class="gt_row gt_right">3</td>
-<td headers="sumsq" class="gt_row gt_right">4.585917</td>
-<td headers="meansq" class="gt_row gt_right">1.528639</td>
-<td headers="statistic" class="gt_row gt_right">0.6801973</td>
-<td headers="p.value" class="gt_row gt_right">0.5682209</td></tr>
-    <tr><td headers="term" class="gt_row gt_left">genre</td>
-<td headers="df" class="gt_row gt_right">1</td>
-<td headers="sumsq" class="gt_row gt_right">4.190670</td>
-<td headers="meansq" class="gt_row gt_right">4.190670</td>
-<td headers="statistic" class="gt_row gt_right">1.8647194</td>
-<td headers="p.value" class="gt_row gt_right">0.1780739</td></tr>
-    <tr><td headers="term" class="gt_row gt_left">Residuals</td>
-<td headers="df" class="gt_row gt_right">51</td>
-<td headers="sumsq" class="gt_row gt_right">114.614663</td>
-<td headers="meansq" class="gt_row gt_right">2.247346</td>
-<td headers="statistic" class="gt_row gt_right">NA</td>
-<td headers="p.value" class="gt_row gt_right">NA</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
+<th id="df" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">df</th>
+<th id="sumsq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">sumsq</th>
+<th id="meansq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">meansq</th>
+<th id="statistic" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">statistic</th>
+<th id="p.value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">p.value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">era</td>
+<td class="gt_row gt_right" headers="df">3</td>
+<td class="gt_row gt_right" headers="sumsq">4.585917</td>
+<td class="gt_row gt_right" headers="meansq">1.528639</td>
+<td class="gt_row gt_right" headers="statistic">0.6801973</td>
+<td class="gt_row gt_right" headers="p.value">0.5682209</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">genre</td>
+<td class="gt_row gt_right" headers="df">1</td>
+<td class="gt_row gt_right" headers="sumsq">4.190670</td>
+<td class="gt_row gt_right" headers="meansq">4.190670</td>
+<td class="gt_row gt_right" headers="statistic">1.8647194</td>
+<td class="gt_row gt_right" headers="p.value">0.1780739</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">Residuals</td>
+<td class="gt_row gt_right" headers="df">51</td>
+<td class="gt_row gt_right" headers="sumsq">114.614663</td>
+<td class="gt_row gt_right" headers="meansq">2.247346</td>
+<td class="gt_row gt_right" headers="statistic">NA</td>
+<td class="gt_row gt_right" headers="p.value">NA</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2040,10 +2073,12 @@
 </ul>
 </div>
 
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</div></section>
     </div>
   </div>
 
@@ -2070,7 +2105,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2369,10 +2403,9 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2382,8 +2415,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

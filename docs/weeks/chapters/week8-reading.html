@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 - Spring 2023 - Week 8 – Hypothesis Test for Slope &amp; Inference Conditions</title>
+<title>STAT 313 / 513 - Winter 2024 - Week 8 – Hypothesis Test for Slope &amp; Inference Conditions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -97,7 +98,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -106,12 +113,12 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="../../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="../../site_libs/datatables-binding-0.27/datatables.js"></script>
@@ -127,6 +134,33 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar docked slimcontent">
@@ -135,12 +169,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 8 – Hypothesis Test for Slope &amp; Inference Conditions</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 8 – Hypothesis Test for Slope &amp; Inference Conditions</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -150,7 +184,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -346,7 +380,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -407,7 +441,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -427,7 +461,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>In this week’s coursework we are <strong>finally</strong> talking about p-values! What we learned last week should have helped make the connection between a sampling distribution and a bootstrap (resampling) distribution. Hopefully, you understand that we create confidence intervals based the statistics we saw in other samples.</p>
 <p>This week we are going to connect these ideas to the framework of hypothesis testing. Hypothesis testing requires an additional component we didn’t see last week—the null hypothesis. We will learn how we integrate the null hypothesis in our resampling procedure to create a sampling distribution that could have happened if the null hypothesis was true. We will use this distribution to compare what we saw in our data and evaluate the plausibility of competing hypotheses.</p>
@@ -456,14 +492,13 @@ Note
 <p>Last week we considered the question of assessing the relationship between a baby’s birth weight and the age of the mother. To explore this relationship, we used the <a href="http://openintrostat.github.io/openintro/reference/births14.html"><code>births14</code></a> dataset–a random sample of 1,000 cases from a large public dataset of all US birth records released in 2014.</p>
 <div class="cell">
 <div class="cell-output-display">
-
 <div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6166d559454ecd730d7d" style="width:100%;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-6166d559454ecd730d7d">{"x":{"filter":"none","vertical":false,"caption":"<caption>A sample of 10 rows from the births14 dataset.<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10"],[284,848,918,101,623,905,645,934,400,900],[27,32,20,27,34,31,24,27,34,37],[7.25,8.56,8.62,8.73,6.94,6.75,8.46,4.28,7.69,7.87],[26,32,21,29,37,25,21,34,36,null],["younger mom","younger mom","younger mom","younger mom","younger mom","younger mom","younger mom","younger mom","younger mom","mature mom"],[41,39,40,41,42,40,39,33,38,41],["full term","full term","full term","full term","full term","full term","full term","premie","full term","full term"],[16,12,17,10,9,3,9,5,10,12],[40,39,25,17,40,30,58,15,28,51],["not low","not low","not low","not low","not low","not low","not low","low","not low","not low"],["female","male","male","male","female","female","male","male","female","male"],["nonsmoker","nonsmoker","nonsmoker","nonsmoker","nonsmoker","nonsmoker","nonsmoker","smoker","nonsmoker","nonsmoker"],["married","married","not married","not married","married","married","not married","not married","married","not married"],["white","white","white","white","white","white","white","white","white","white"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ID<\/th>\n      <th>mage<\/th>\n      <th>weight<\/th>\n      <th>fage<\/th>\n      <th>mature<\/th>\n      <th>weeks<\/th>\n      <th>premie<\/th>\n      <th>visits<\/th>\n      <th>gained<\/th>\n      <th>lowbirthweight<\/th>\n      <th>sex<\/th>\n      <th>habit<\/th>\n      <th>marital<\/th>\n      <th>whitemom<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,6,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="observed-data" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="observed-data"><span class="header-section-number">1.1</span> Observed data</h2>
-<p><a href="#fig-births-slr">Figure&nbsp;1</a> visualizes the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
+<p><a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a> visualizes the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> births14, </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mage, <span class="at">y =</span> weight)) <span class="sc">+</span> </span>
@@ -473,25 +508,33 @@ Note
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Birth Weight of Baby (lbs)"</span>) <span class="sc">+</span> </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  my_theme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-births-slr" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-births-slr-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Weight of baby at birth (in lbs) as explained by mother’s age.</figcaption>
+<div id="fig-births-slr" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-births-slr-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Weight of baby at birth (in lbs) as explained by mother’s age.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#tbl-births-slr">Table&nbsp;1</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
+<p><a href="#tbl-births-slr" class="quarto-xref">Table&nbsp;1</a> displays the estimated regression coefficients for modeling the relationship between <code>mage</code> and <code>weight</code> for this sample of 1,000 birth records.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>births_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> mage, <span class="at">data =</span> births14)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(births_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-births-slr" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age.
+</figcaption>
+<div aria-describedby="tbl-births-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-births-slr" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: The least squares estimates of the intercept and slope for modeling the relationship between baby’s birth weight and mother’s age.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -509,9 +552,11 @@ Note
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Based on these coefficients, the estimated regression equation is:</p>
@@ -526,12 +571,16 @@ Note
 <h2 data-number="1.3" class="anchored" data-anchor-id="sec-ht-activity"><span class="header-section-number">1.3</span> Simulating data</h2>
 <p>First, try to imagine a hypothetical universe where there is no relationship between the birth weight of a baby and a mother’s age. In such a hypothetical universe, the birth weight of a baby would be entirely determined from other variables (e.g., genetics, mother’s habits, etc.)</p>
 <p>Bringing things back to the <code>births14</code> data frame, the <code>mage</code> variable would thus be an irrelevant label, as is has no relationship with the birth weight of the baby. Since is has no bearing on the birth weight, we could randomly reassign these ages by “shuffling” them!</p>
-<p>To illustrate this idea, let’s narrow our focus to six arbitrarily chosen birth records (of the 1,000) <a href="#tbl-shuffled-mage">Table&nbsp;2</a>. The <code>weight</code> column displays the birth weight of the baby. The <code>mage</code> column displays the age of the mother. However, in our hypothesized universe there is no relationship between a baby’s birth weight and a mother’s age, so it would be of no consequence to randomly “shuffle” the values of <code>mage</code>. The <code>shuffled_mage</code> column shows one such possible random shuffling.</p>
+<p>To illustrate this idea, let’s narrow our focus to six arbitrarily chosen birth records (of the 1,000) <a href="#tbl-shuffled-mage" class="quarto-xref">Table&nbsp;2</a>. The <code>weight</code> column displays the birth weight of the baby. The <code>mage</code> column displays the age of the mother. However, in our hypothesized universe there is no relationship between a baby’s birth weight and a mother’s age, so it would be of no consequence to randomly “shuffle” the values of <code>mage</code>. The <code>shuffled_mage</code> column shows one such possible random shuffling.</p>
 <div class="cell">
+<div id="tbl-shuffled-mage" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-shuffled-mage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: One example of shuffling mage variable.
+</figcaption>
+<div aria-describedby="tbl-shuffled-mage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-shuffled-mage" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: One example of shuffling mage variable.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">ID</th>
@@ -579,36 +628,52 @@ Note
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Again, such random shuffling of the <code>mage</code> label only makes sense in our hypothesized universe where there is no relationship between the birth weight of a baby and a mother’s age. How could we extend this shuffling of the <code>mage</code> variable to all 1,000 birth records by hand?</p>
 <p>One way would be writing the 1,000 <code>weight</code>s and <code>mage</code>s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 <code>weight</code> cards in one hat and 1,000 <code>mage</code> cards in a <em>different</em> hat. You could then draw one card out of the <code>weight</code> hat and one card out of the <code>mage</code> hat and staple them together to make a new (<code>weight</code>, <code>mage</code>) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until</p>
-<p>I’ve done one such reshuffling and plotted the original dataset and the shuffled dataset side-by-side in <a href="#fig-original-shuffle-comparison">Figure&nbsp;2</a>. It appears that the slope of the regression line for the shuffled data is much less steep (closer to horizontal) than in the original data.</p>
-<div id="fig-original-shuffle-comparison" class="cell quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-original-shuffle-comparison-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-original-shuffle-comparison-1.png" class="img-fluid figure-img" data-ref-parent="fig-original-shuffle-comparison" width="672"></p>
-<figcaption class="figure-caption">(a) Original values of mother’s age</figcaption>
+<p>I’ve done one such reshuffling and plotted the original dataset and the shuffled dataset side-by-side in <a href="#fig-original-shuffle-comparison" class="quarto-xref">Figure&nbsp;2</a>. It appears that the slope of the regression line for the shuffled data is much less steep (closer to horizontal) than in the original data.</p>
+<div class="cell" data-layout-nrow="1">
+<div id="fig-original-shuffle-comparison" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-original-shuffle-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-original-shuffle-comparison" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div id="fig-original-shuffle-comparison-1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-original-shuffle-comparison-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-original-shuffle-comparison-1.png" class="img-fluid figure-img" data-ref-parent="fig-original-shuffle-comparison" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-original-shuffle-comparison-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Original values of mother’s age
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-original-shuffle-comparison-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-original-shuffle-comparison-2.png" class="img-fluid figure-img" data-ref-parent="fig-original-shuffle-comparison" width="672"></p>
-<figcaption class="figure-caption">(b) Shuffled values of mother’s age</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-original-shuffle-comparison" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
+<div id="fig-original-shuffle-comparison-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-original-shuffle-comparison-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-original-shuffle-comparison-2.png" class="img-fluid figure-img" data-ref-parent="fig-original-shuffle-comparison" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-original-shuffle-comparison-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Shuffled values of mother’s age
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Scatterplots of relationship between baby’s birth weight and mother’s age.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-original-shuffle-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Scatterplots of relationship between baby’s birth weight and mother’s age.
+</figcaption>
 </figure>
+</div>
 </div>
 <p>Let’s compare these slope estimates between the two datasets:</p>
 <div class="cell">
@@ -629,12 +694,16 @@ Explanatory: mage (numeric)
 </section>
 <section id="shuffling-10-times" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="shuffling-10-times"><span class="header-section-number">1.4</span> Shuffling 10 times</h2>
-<p>Alright, I’ve carried out the process of shuffling the dataset 9 more times. <a href="#tbl-ten-shuffled-mage">Table&nbsp;3</a> displays the results of these shufflings.</p>
+<p>Alright, I’ve carried out the process of shuffling the dataset 9 more times. <a href="#tbl-ten-shuffled-mage" class="quarto-xref">Table&nbsp;3</a> displays the results of these shufflings.</p>
 <div class="cell">
+<div id="tbl-ten-shuffled-mage" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ten-shuffled-mage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: One example of shuffling mage variable.
+</figcaption>
+<div aria-describedby="tbl-ten-shuffled-mage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-ten-shuffled-mage" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3: One example of shuffling mage variable.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">ID</th>
@@ -745,26 +814,32 @@ Explanatory: mage (numeric)
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <!-- lineup plot -->
-<p>For each of these 10 shuffles, I computed the slope statistic, and in <a href="#fig-ten-shuffles">Figure&nbsp;3</a> I display their distribution in a histogram. I’ve also marked the observed slope statistic with a dark red line.</p>
+<p>For each of these 10 shuffles, I computed the slope statistic, and in <a href="#fig-ten-shuffles" class="quarto-xref">Figure&nbsp;3</a> I display their distribution in a histogram. I’ve also marked the observed slope statistic with a dark red line.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-ten-shuffles" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-ten-shuffles-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Distribution of shuffled slope statistics.</figcaption>
+<div id="fig-ten-shuffles" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ten-shuffles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-ten-shuffles-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ten-shuffles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Distribution of shuffled slope statistics.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Before we discuss the distribution of the histogram, we need to remember one key detail: this histogram represents relationship between a baby’s birth weight and mother’s age that one would observe in our hypothesized universe where there is no relationship between these variables.</p>
 <p>Observe first that the histogram is roughly centered at 0, which makes sense. A slope of 0 means there is no relationship between a baby’s birth weight and mother’s age, which is exactly what our hypothetical universe assumes!</p>
-<p>However, while the values are centered at 0, there is variation about 0. This is because even in a hypothesized universe of no relationship between a baby’s birth weight and mother’s age, you will still likely observe a slight relationship because of chance sampling variation. Looking at the histogram in <a href="#fig-ten-shuffles">Figure&nbsp;3</a>, such differences could even be as extreme as 0.02.</p>
+<p>However, while the values are centered at 0, there is variation about 0. This is because even in a hypothesized universe of no relationship between a baby’s birth weight and mother’s age, you will still likely observe a slight relationship because of chance sampling variation. Looking at the histogram in <a href="#fig-ten-shuffles" class="quarto-xref">Figure&nbsp;3</a>, such differences could even be as extreme as 0.02.</p>
 <p>Turning our attention to what we observed in the <code>births14</code> dataset: the observed slope of 0.014 is is marked with a vertical dark line. Ask yourself: in a hypothesized world of no relationship between a baby’s birth weight and mother’s age, how likely would it be that we observe this slope statistic? That’s hard to say! It looks like there is only one statistic larger than the observed statistic out of ten, but that means we would expect to see a statistic bigger than what we saw 10% of the time in this hypothetical universe. To me, something happening 10% of the time doesn’t seem like a rare event.</p>
 </section>
 <section id="what-just-happened" class="level2" data-number="1.5">
@@ -795,19 +870,23 @@ Explanatory: mage (numeric)
 <p>Observe how the alternative hypothesis <span class="math inline">\(H_A\)</span> is two-sided with <span class="math inline">\(\beta_1 \neq 0\)</span>. Had we opted for a one-sided alternative, we would have set <span class="math inline">\(\beta_1 &gt; 0\)</span> or <span class="math inline">\(\beta_1 &gt; 0\)</span>. To keep things simple for now, we’ll stick with the simpler two-sided alternative. We will discuss why I believe it is better for science to do two-sided tests later this week in your Statistical Critique.</p>
 <p>Third, a <strong>test statistic</strong> is a <em>point estimate / sample statistic</em> formula used for hypothesis testing. Note that a sample statistic is merely a summary statistic based on a sample of observations. Fourth, the <strong>observed test statistic</strong> is the value of the test statistic that we observed in real life. In our case, we computed this value using the data saved in the <code>births14</code> data frame. It was the observed slope for the relationship between baby birth weights and mother’s age <span class="math inline">\(b_1 =\)</span> 0.014.</p>
 <p>Fifth, the <strong>null distribution</strong> is the sampling distribution of the test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true. Ooof! That’s a long one! Let’s unpack it slowly. The key to understanding the null distribution is that the null hypothesis <span class="math inline">\(H_0\)</span> is <em>assumed</em> to be true. We’re not saying that <span class="math inline">\(H_0\)</span> is true at this point, we’re only assuming it to be true for hypothesis testing purposes. In our case, this corresponds to our hypothesized universe of no relationship between baby birth weights and mother’s age. Assuming the null hypothesis <span class="math inline">\(H_0\)</span>, also stated as “Under <span class="math inline">\(H_0\)</span>,” how does the test statistic vary due to sampling variation? In our case, how will the slope statistics <span class="math inline">\(b_1\)</span> vary due to sampling under <span class="math inline">\(H_0\)</span>? Recall from last week that distributions displaying how point estimates vary due to sampling variation are called <em>sampling distributions</em>. The only additional thing to keep in mind about null distributions is that they are sampling distributions <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true.</p>
-<p>In our case, we previously visualized a null distribution in <a href="#fig-ten-shuffles">Figure&nbsp;3</a>, which we re-display in <a href="#fig-ten-shuffles-revised">Figure&nbsp;4</a> using our new notation and terminology. It is the distribution of the 10 sample slopes computed <em>assuming</em> a hypothetical universe of no relationship between baby birth weights and mother’s age. I’ve marked the value of the observed test statistic of 0.014 with a vertical line.</p>
+<p>In our case, we previously visualized a null distribution in <a href="#fig-ten-shuffles" class="quarto-xref">Figure&nbsp;3</a>, which we re-display in <a href="#fig-ten-shuffles-revised" class="quarto-xref">Figure&nbsp;4</a> using our new notation and terminology. It is the distribution of the 10 sample slopes computed <em>assuming</em> a hypothetical universe of no relationship between baby birth weights and mother’s age. I’ve marked the value of the observed test statistic of 0.014 with a vertical line.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-ten-shuffles-revised" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-ten-shuffles-revised-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Null distribution and observed test statistic.</figcaption>
+<div id="fig-ten-shuffles-revised" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ten-shuffles-revised-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-ten-shuffles-revised-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ten-shuffles-revised-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Null distribution and observed test statistic.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Sixth, the <span class="math inline">\(p\)</span>-value is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true. Double ooof! Let’s unpack this slowly as well. You can think of the <span class="math inline">\(p\)</span>-value as a quantification of “surprise”: assuming <span class="math inline">\(H_0\)</span> is true, how surprised are we with what we observed? Or in our case, in our hypothesized universe of no relationship between baby birth weights and mother’s age, how surprised are we that we observed a slope statistic 0.014 from our collected samples assuming <span class="math inline">\(H_0\)</span> is true? Very surprised? Somewhat surprised? Not surprised?</p>
-<p>The <span class="math inline">\(p\)</span>-value quantifies this probability, or in the case of our 10 slope statistics in <a href="#fig-ten-shuffles-revised">Figure&nbsp;4</a>, what proportion had a more “extreme” result? Here, extreme is defined in terms of the alternative hypothesis <span class="math inline">\(H_A\)</span> that there is a relationship between baby birth weights and mother’s age, which does not state a direction. So, we need to look for statistics in <strong>both tails</strong>, for positive relationships and negative relationships.</p>
+<p>The <span class="math inline">\(p\)</span>-value quantifies this probability, or in the case of our 10 slope statistics in <a href="#fig-ten-shuffles-revised" class="quarto-xref">Figure&nbsp;4</a>, what proportion had a more “extreme” result? Here, extreme is defined in terms of the alternative hypothesis <span class="math inline">\(H_A\)</span> that there is a relationship between baby birth weights and mother’s age, which does not state a direction. So, we need to look for statistics in <strong>both tails</strong>, for positive relationships and negative relationships.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -825,31 +904,39 @@ Accepting the null
 </div>
 </div></div><p>In this case, 1 times out of 10, we obtained a difference in proportion greater than or equal to the observed slope of 0.014. As I suggested before, this event doesn’t seem that rare as it could occur 10% of the time. As our observed slope is not vastly different from what we would expect to occur if the null was true, we should <em>fail to reject</em> the hypothesized universe.</p>
 <p>Seventh and lastly, in many hypothesis testing procedures, it is commonly recommended to set the <strong>significance level</strong> of the test beforehand. It is denoted by the Greek letter <span class="math inline">\(\alpha\)</span> (pronounced “alpha”). This value acts as a cutoff on the <span class="math inline">\(p\)</span>-value, where if the <span class="math inline">\(p\)</span>-value falls below <span class="math inline">\(\alpha\)</span>, we would “reject the null hypothesis <span class="math inline">\(H_0\)</span>.” Alternatively, if the <span class="math inline">\(p\)</span>-value does not fall below <span class="math inline">\(\alpha\)</span>, we would “fail to reject <span class="math inline">\(H_0\)</span>.”</p>
-<p>While different fields tend to use different values of <span class="math inline">\(\alpha\)</span>, some commonly used values for <span class="math inline">\(\alpha\)</span> are 0.1, 0.01, and 0.05; with 0.05 being the choice people often make without putting much thought into it. We’ll talk more about <span class="math inline">\(\alpha\)</span> significance levels in <a href="#sec-ht-interpretation">Section&nbsp;4</a>, but first let’s fully conduct the hypothesis test corresponding to our <code>births14</code> example using the <code>infer</code> package.</p>
+<p>While different fields tend to use different values of <span class="math inline">\(\alpha\)</span>, some commonly used values for <span class="math inline">\(\alpha\)</span> are 0.1, 0.01, and 0.05; with 0.05 being the choice people often make without putting much thought into it. We’ll talk more about <span class="math inline">\(\alpha\)</span> significance levels in <a href="#sec-ht-interpretation" class="quarto-xref">Section&nbsp;4</a>, but first let’s fully conduct the hypothesis test corresponding to our <code>births14</code> example using the <code>infer</code> package.</p>
 </section>
 <section id="infer-workflow-ht" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Conducting a hypothesis test using <strong>infer</strong></h1>
-<p>Last week, you learned how to to construct confidence intervals using the <strong>infer</strong> R package. The infer package contains a workflow for constructing confidence intervals which emphasizes each of the steps in the underlying process. In <a href="#fig-infer-ci">Figure&nbsp;5</a>, we see that this workflow is comprised of functions whose names describe what they do:</p>
+<p>Last week, you learned how to to construct confidence intervals using the <strong>infer</strong> R package. The infer package contains a workflow for constructing confidence intervals which emphasizes each of the steps in the underlying process. In <a href="#fig-infer-ci" class="quarto-xref">Figure&nbsp;5</a>, we see that this workflow is comprised of functions whose names describe what they do:</p>
 <ol type="1">
 <li><code>specify()</code> the variables of interest in your data frame.</li>
 <li><code>generate()</code> replicates of bootstrap resamples with replacement.</li>
 <li><code>calculate()</code> the summary statistic of interest.</li>
 <li><code>visualize()</code> the resulting bootstrap distribution and confidence interval.</li>
 </ol>
-<div id="fig-infer-ci" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/whole_process_ci.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Process for constructing <strong>confidence intervals</strong> with the infer package.</figcaption>
+<div id="fig-infer-ci" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/whole_process_ci.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Process for constructing <strong>confidence intervals</strong> with the infer package.
+</figcaption>
 </figure>
 </div>
-<p>This week, we’ll see how we can modify this process to instead conduct hypothesis tests. You’ll notice that the basic outline of the workflow is almost identical, except for an additional <code>hypothesize()</code> step between the <code>specify()</code> and <code>generate()</code> steps, as can be seen in <a href="#fig-infer-ht">Figure&nbsp;6</a>.</p>
-<div id="fig-infer-ht" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/whole_process_ht.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: Process for conducting <strong>hypothesis tests</strong> with the infer package.</figcaption>
+<p>This week, we’ll see how we can modify this process to instead conduct hypothesis tests. You’ll notice that the basic outline of the workflow is almost identical, except for an additional <code>hypothesize()</code> step between the <code>specify()</code> and <code>generate()</code> steps, as can be seen in <a href="#fig-infer-ht" class="quarto-xref">Figure&nbsp;6</a>.</p>
+<div id="fig-infer-ht" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-infer-ht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/whole_process_ht.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-infer-ht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Process for conducting <strong>hypothesis tests</strong> with the infer package.
+</figcaption>
 </figure>
 </div>
-<p>Throughout this section, we’ll use a pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05 for our hypothesis tests. I’ll leave the discussion on the choice of this <span class="math inline">\(\alpha\)</span> value until later on in <a href="#sec-choosing-alpha">Section&nbsp;4.3</a>.</p>
+<p>Throughout this section, we’ll use a pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05 for our hypothesis tests. I’ll leave the discussion on the choice of this <span class="math inline">\(\alpha\)</span> value until later on in <a href="#sec-choosing-alpha" class="quarto-xref">Section&nbsp;4.3</a>.</p>
 <section id="specify-variables" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="specify-variables"><span class="header-section-number">3.1</span> <code>specify()</code> variables</h2>
 <p>Recall that we use the <code>specify()</code> verb to specify the response variable and, if needed, any explanatory variables for our study. In this case, since we are interested in the linear relationship between a baby’s birth weight and a mother’s age, we set <code>weight</code> as the response variable and <code>mage</code> as the explanatory variable.</p>
@@ -879,7 +966,7 @@ Explanatory: mage (numeric)
 </section>
 <section id="hypothesize-the-null" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="hypothesize-the-null"><span class="header-section-number">3.2</span> <code>hypothesize()</code> the null</h2>
-<p>In order to conduct hypothesis tests using the <code>infer</code> workflow, we need a new step not present for confidence intervals: <code>hypothesize()</code>. Recall from <a href="#sec-understanding-ht">Section&nbsp;2</a> that our hypothesis test was</p>
+<p>In order to conduct hypothesis tests using the <code>infer</code> workflow, we need a new step not present for confidence intervals: <code>hypothesize()</code>. Recall from <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a> that our hypothesis test was</p>
 <center>
 <p><span class="math inline">\(H_0: \beta_1 = 0\)</span></p>
 <p><span class="math inline">\(H_A: \beta_1 \neq 0\)</span></p>
@@ -913,7 +1000,7 @@ Null Hypothesis: independence
 </section>
 <section id="generate-replicates" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="generate-replicates"><span class="header-section-number">3.3</span> <code>generate()</code> replicates</h2>
-<p>After we <code>hypothesize()</code> the null hypothesis, we <code>generate()</code> replicates of “shuffled” datasets assuming the null hypothesis is true. We do this by repeating the shuffling exercise you performed in <a href="#sec-ht-activity">Section&nbsp;1.3</a> several times. Instead of merely doing it 10 times, let’s use the computer to repeat this 1000 times by setting <code>reps = 1000</code> in the <code>generate()</code> function. However, unlike for confidence intervals where we generated replicates using <code>type = "bootstrap"</code> resampling with replacement, we’ll now perform shuffles/permutations by setting <code>type = "permute"</code>. Recall that shuffles / permutations are a kind of resampling, but unlike the bootstrap method, they involve resampling <em>without</em> replacement.</p>
+<p>After we <code>hypothesize()</code> the null hypothesis, we <code>generate()</code> replicates of “shuffled” datasets assuming the null hypothesis is true. We do this by repeating the shuffling exercise you performed in <a href="#sec-ht-activity" class="quarto-xref">Section&nbsp;1.3</a> several times. Instead of merely doing it 10 times, let’s use the computer to repeat this 1000 times by setting <code>reps = 1000</code> in the <code>generate()</code> function. However, unlike for confidence intervals where we generated replicates using <code>type = "bootstrap"</code> resampling with replacement, we’ll now perform shuffles/permutations by setting <code>type = "permute"</code>. Recall that shuffles / permutations are a kind of resampling, but unlike the bootstrap method, they involve resampling <em>without</em> replacement.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>births_generate <span class="ot">&lt;-</span> births14 <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> weight, <span class="at">explanatory =</span> mage) <span class="sc">%&gt;%</span> </span>
@@ -946,7 +1033,7 @@ Null Hypothesis: independence
 </section>
 <section id="calculate-summary-statistics" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">3.4</span> <code>calculate()</code> summary statistics</h2>
-<p>Now that we have generated 1000 replicates of “shuffles” assuming the null hypothesis is true, let’s <code>calculate()</code> the appropriate summary statistic for each of our 1000 shuffles. From <a href="#sec-understanding-ht">Section&nbsp;2</a>, point estimates related to hypothesis testing have a specific name: <em>test statistics</em>. Since the unknown population parameter of interest is the relationship between baby birth weights and mother’s ages for all births in the US in 2014, <span class="math inline">\(\beta_1\)</span>, the test statistic here is the sample slope, <span class="math inline">\(b_1\)</span>. For each of our 1000 shuffles, we can calculate this test statistic by setting <code>stat = "slope"</code>.</p>
+<p>Now that we have generated 1000 replicates of “shuffles” assuming the null hypothesis is true, let’s <code>calculate()</code> the appropriate summary statistic for each of our 1000 shuffles. From <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>, point estimates related to hypothesis testing have a specific name: <em>test statistics</em>. Since the unknown population parameter of interest is the relationship between baby birth weights and mother’s ages for all births in the US in 2014, <span class="math inline">\(\beta_1\)</span>, the test statistic here is the sample slope, <span class="math inline">\(b_1\)</span>. For each of our 1000 shuffles, we can calculate this test statistic by setting <code>stat = "slope"</code>.</p>
 <p>Let’s save the result in a data frame called <code>null_distribution</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="ot">&lt;-</span> births14 <span class="sc">%&gt;%</span> </span>
@@ -976,7 +1063,7 @@ Null Hypothesis: independence
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
-<p>Observe that we have 1000 values of <code>stat</code>, each representing one instance of <span class="math inline">\(b_1\)</span> in a hypothesized world of no relationship between these variables. Observe as well that we chose the name of this data frame carefully: <code>null_distribution</code>. Recall once again from <a href="#sec-understanding-ht">Section&nbsp;2</a> that sampling distributions when the null hypothesis <span class="math inline">\(H_0\)</span> is assumed to be true have a special name: the <em>null distribution</em>.</p>
+<p>Observe that we have 1000 values of <code>stat</code>, each representing one instance of <span class="math inline">\(b_1\)</span> in a hypothesized world of no relationship between these variables. Observe as well that we chose the name of this data frame carefully: <code>null_distribution</code>. Recall once again from <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a> that sampling distributions when the null hypothesis <span class="math inline">\(H_0\)</span> is assumed to be true have a special name: the <em>null distribution</em>.</p>
 <p>What was the <em>observed</em> relationship between a baby’s birth weight and a mother’s age in the <code>births14</code> dataset? In other words, what was the <em>observed test statistic</em> <span class="math inline">\(b_1\)</span>? We could calculate this statistic two ways:</p>
 <ol type="1">
 <li>fitting a <code>lm()</code> and grabbing the coefficients using <code>get_regression_table()</code></li>
@@ -998,37 +1085,45 @@ Null Hypothesis: independence
 <section id="visualize-the-p-value" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="visualize-the-p-value"><span class="header-section-number">3.5</span> <code>visualize()</code> the p-value</h2>
 <p>The final step is to measure how surprised we are by a slope of 0.014 in a hypothesized universe where there is no relationship between a baby’s birth weight and a mother’s age. If the observed slope of 0.014 is highly unlikely, then we would be inclined to reject the validity of our hypothesized universe.</p>
-<p>We start by visualizing the <em>null distribution</em> of our 1000 values of <span class="math inline">\(b_1\)</span> using <code>visualize()</code> in <a href="#fig-null-distribution-infer">Figure&nbsp;7</a>. Recall that these are values of the sample slope assuming <span class="math inline">\(H_0\)</span> is true.</p>
+<p>We start by visualizing the <em>null distribution</em> of our 1000 values of <span class="math inline">\(b_1\)</span> using <code>visualize()</code> in <a href="#fig-null-distribution-infer" class="quarto-xref">Figure&nbsp;7</a>. Recall that these are values of the sample slope assuming <span class="math inline">\(H_0\)</span> is true.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-null-distribution-infer" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-null-distribution-infer-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: Null distribution of slope statistic.</figcaption>
+<div id="fig-null-distribution-infer" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-null-distribution-infer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-null-distribution-infer-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-null-distribution-infer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Null distribution of slope statistic.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Let’s now add what happened in real life to <a href="#fig-null-distribution-infer">Figure&nbsp;7</a>, the observed slope for the relationship between baby birth weights and mother’s ages of 0.014. Instead of merely adding a vertical line using <code>geom_vline()</code>, let’s use the <code>shade_p_value()</code> function with <code>obs_stat</code> set to the observed test statistic (observed slope statistic) value we saved in <code>obs_slope</code>.</p>
-<p>Furthermore, we’ll set the <code>direction = "two-sided"</code> reflecting our alternative hypothesis <span class="math inline">\(H_A: \beta_1 \neq 0\)</span>, stating that there is a relationship between a baby’s birth weight and a mother’s age. As stated in <a href="#sec-understanding-ht">Section&nbsp;2</a>, a two-sided hypothesis test does not make any assumptions about the direction of the relationship, meaning <span class="math inline">\(\beta_1 &lt; 0\)</span> and <span class="math inline">\(\beta_1 &gt; 0\)</span> are equally plausible. So, when calculating statistics that are “more extreme” than what we observed, we need to look in <em>both</em> tails.</p>
+<p>Let’s now add what happened in real life to <a href="#fig-null-distribution-infer" class="quarto-xref">Figure&nbsp;7</a>, the observed slope for the relationship between baby birth weights and mother’s ages of 0.014. Instead of merely adding a vertical line using <code>geom_vline()</code>, let’s use the <code>shade_p_value()</code> function with <code>obs_stat</code> set to the observed test statistic (observed slope statistic) value we saved in <code>obs_slope</code>.</p>
+<p>Furthermore, we’ll set the <code>direction = "two-sided"</code> reflecting our alternative hypothesis <span class="math inline">\(H_A: \beta_1 \neq 0\)</span>, stating that there is a relationship between a baby’s birth weight and a mother’s age. As stated in <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>, a two-sided hypothesis test does not make any assumptions about the direction of the relationship, meaning <span class="math inline">\(\beta_1 &lt; 0\)</span> and <span class="math inline">\(\beta_1 &gt; 0\)</span> are equally plausible. So, when calculating statistics that are “more extreme” than what we observed, we need to look in <em>both</em> tails.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(null_distribution, <span class="at">bins =</span> <span class="dv">10</span>) <span class="sc">+</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Permuted (Shuffled) Slope Statistic"</span>) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_slope, <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-null-distribution-infer-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-null-distribution-infer-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: Shaded histogram to show <span class="math inline">\(p\)</span>-value.</figcaption>
+<div id="fig-null-distribution-infer-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-null-distribution-infer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-null-distribution-infer-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-null-distribution-infer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Shaded histogram to show <span class="math inline">\(p\)</span>-value.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In the resulting <a href="#fig-null-distribution-infer-2">Figure&nbsp;8</a>, the solid dark line marks 0.014. However, what does the shaded-region correspond to? This is the <span class="math inline">\(p\)</span>-value. Recall the definition of the <span class="math inline">\(p\)</span>-value from <a href="#sec-understanding-ht">Section&nbsp;2</a>:</p>
+<p>In the resulting <a href="#fig-null-distribution-infer-2" class="quarto-xref">Figure&nbsp;8</a>, the solid dark line marks 0.014. However, what does the shaded-region correspond to? This is the <span class="math inline">\(p\)</span>-value. Recall the definition of the <span class="math inline">\(p\)</span>-value from <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>:</p>
 <blockquote class="blockquote">
 <p>A <span class="math inline">\(p\)</span>-value is the probability of obtaining a test statistic just as or more extreme than the observed test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true.</p>
 </blockquote>
-<p>So judging by the shaded region in <a href="#fig-null-distribution-infer-2">Figure&nbsp;8</a>, it seems we would somewhat rarely observe a slope statistic of 0.014 or more extreme in a hypothesized universe where there is no relationship between a baby’s birth weight and a mother’s age. In other words, the <span class="math inline">\(p\)</span>-value is somewhat small. Hence, we might be inclined to reject this hypothesized universe, or using statistical language we would “reject <span class="math inline">\(H_0\)</span>.”</p>
+<p>So judging by the shaded region in <a href="#fig-null-distribution-infer-2" class="quarto-xref">Figure&nbsp;8</a>, it seems we would somewhat rarely observe a slope statistic of 0.014 or more extreme in a hypothesized universe where there is no relationship between a baby’s birth weight and a mother’s age. In other words, the <span class="math inline">\(p\)</span>-value is somewhat small. Hence, we might be inclined to reject this hypothesized universe, or using statistical language we would “reject <span class="math inline">\(H_0\)</span>.”</p>
 <p>What fraction of the null distribution is shaded? In other words, what is the exact value of the <span class="math inline">\(p\)</span>-value? We can compute it using the <code>get_p_value()</code> function with the same arguments as the previous <code>shade_p_value()</code> code:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1038,8 +1133,8 @@ Null Hypothesis: independence
 1   0.054</code></pre>
 </div>
 </div>
-<p>Keeping the definition of a <span class="math inline">\(p\)</span>-value in mind, the probability of observing a slope statistic as large as 0.014 or something more extreme due to sampling variation alone in the null distribution is 0.054 = 5.4%. Since this <span class="math inline">\(p\)</span>-value is larger than our pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05, we fail to reject the null hypothesis <span class="math inline">\(H_0: \beta_1 = 0\)</span>. In other words, this <span class="math inline">\(p\)</span>-value <strong>is not</strong> small enough to reject our hypothesized universe where there is no relationship between a baby’s birth weight and a mother’s age. Notice how our interpretation of this p-value does not state that we <em>accept</em> the null hypothesis. Rather, we have insufficient evidence to reject it. I will discuss these differences more in <a href="#sec-trial">Section&nbsp;4.1</a>.</p>
-<p>Observe that whether we reject the null hypothesis <span class="math inline">\(H_0\)</span> or not depends in large part on our choice of significance level <span class="math inline">\(\alpha\)</span>, as if we had chosen an <span class="math inline">\(\alpha\)</span> of 0.1, we would have had sufficient evidence to reject the null hypothesis. We’ll discuss this more in <a href="#sec-errors">Section&nbsp;4.2</a>.</p>
+<p>Keeping the definition of a <span class="math inline">\(p\)</span>-value in mind, the probability of observing a slope statistic as large as 0.014 or something more extreme due to sampling variation alone in the null distribution is 0.054 = 5.4%. Since this <span class="math inline">\(p\)</span>-value is larger than our pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05, we fail to reject the null hypothesis <span class="math inline">\(H_0: \beta_1 = 0\)</span>. In other words, this <span class="math inline">\(p\)</span>-value <strong>is not</strong> small enough to reject our hypothesized universe where there is no relationship between a baby’s birth weight and a mother’s age. Notice how our interpretation of this p-value does not state that we <em>accept</em> the null hypothesis. Rather, we have insufficient evidence to reject it. I will discuss these differences more in <a href="#sec-trial" class="quarto-xref">Section&nbsp;4.1</a>.</p>
+<p>Observe that whether we reject the null hypothesis <span class="math inline">\(H_0\)</span> or not depends in large part on our choice of significance level <span class="math inline">\(\alpha\)</span>, as if we had chosen an <span class="math inline">\(\alpha\)</span> of 0.1, we would have had sufficient evidence to reject the null hypothesis. We’ll discuss this more in <a href="#sec-errors" class="quarto-xref">Section&nbsp;4.2</a>.</p>
 </section>
 </section>
 <section id="sec-ht-interpretation" class="level1" data-number="4">
@@ -1047,7 +1142,7 @@ Null Hypothesis: independence
 <p>Interpreting the results of hypothesis tests is one of the more challenging aspects of this method for statistical inference. In this section, we focus on ways to help with deciphering the process and address some common misconceptions.</p>
 <section id="sec-trial" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="sec-trial"><span class="header-section-number">4.1</span> Two possible outcomes</h2>
-<p>In <a href="#sec-understanding-ht">Section&nbsp;2</a>, we mentioned that given a pre-specified significance level <span class="math inline">\(\alpha\)</span> there are two possible outcomes of a hypothesis test:</p>
+<p>In <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>, we mentioned that given a pre-specified significance level <span class="math inline">\(\alpha\)</span> there are two possible outcomes of a hypothesis test:</p>
 <ul>
 <li>If the <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(\alpha\)</span>, then we <em>reject</em> the null hypothesis <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_A\)</span>.</li>
 <li>If the <span class="math inline">\(p\)</span>-value is greater than or equal to <span class="math inline">\(\alpha\)</span>, we <em>fail to reject</em> the null hypothesis <span class="math inline">\(H_0\)</span>.</li>
@@ -1076,18 +1171,26 @@ Null Hypothesis: independence
 <p>The same holds for hypothesis tests. We can make incorrect decisions about a population parameter because we only have a sample of data from the population and thus sampling variation can lead us to incorrect conclusions.</p>
 <p>There are two possible erroneous conclusions in a criminal trial: either (1) a truly innocent person is found guilty or (2) a truly guilty person is found not guilty. Similarly, there are two possible errors in a hypothesis test: either (1) rejecting <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is true, called a <strong>Type I error</strong> or (2) failing to reject <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is false, called a <strong>Type II error</strong>. Another term used for “Type I error” is “false positive,” while another term for “Type II error” is “false negative.”</p>
 <p>This risk of error is the price researchers pay for basing inference on a sample instead of performing a census on the entire population. But as we’ve seen in our numerous examples and activities so far, censuses are often very expensive and other times impossible, and thus researchers have no choice but to use a sample. Thus in any hypothesis test based on a sample, we have no choice but to tolerate some chance that a Type I error will be made and some chance that a Type II error will occur.</p>
-<p>To help understand the concepts of Type I error and Type II errors, we apply these terms to our criminal justice analogy in <a href="#fig-trial-errors-table">Figure&nbsp;9</a>.</p>
-<div id="fig-trial-errors-table" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/gt_error_table.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Type I and Type II errors in criminal trials.</figcaption>
+<p>To help understand the concepts of Type I error and Type II errors, we apply these terms to our criminal justice analogy in <a href="#fig-trial-errors-table" class="quarto-xref">Figure&nbsp;9</a>.</p>
+<div id="fig-trial-errors-table" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trial-errors-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/gt_error_table.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trial-errors-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Type I and Type II errors in criminal trials.
+</figcaption>
 </figure>
 </div>
-<p>Thus a Type I error corresponds to incorrectly putting a truly innocent person in jail, whereas a Type II error corresponds to letting a truly guilty person go free. Let’s show the corresponding table in <a href="#fig-trial-errors-table-ht">Figure&nbsp;10</a> for hypothesis tests.</p>
-<div id="fig-trial-errors-table-ht" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/gt_error_table_ht.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: Type I and Type II errors in hypothesis tests.</figcaption>
+<p>Thus a Type I error corresponds to incorrectly putting a truly innocent person in jail, whereas a Type II error corresponds to letting a truly guilty person go free. Let’s show the corresponding table in <a href="#fig-trial-errors-table-ht" class="quarto-xref">Figure&nbsp;10</a> for hypothesis tests.</p>
+<div id="fig-trial-errors-table-ht" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trial-errors-table-ht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/gt_error_table_ht.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trial-errors-table-ht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Type I and Type II errors in hypothesis tests.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -1095,7 +1198,7 @@ Null Hypothesis: independence
 <h2 data-number="4.3" class="anchored" data-anchor-id="sec-choosing-alpha"><span class="header-section-number">4.3</span> How do we choose alpha?</h2>
 <p>If we are using a sample to make inferences about a population, we run the risk of making errors. For confidence intervals, a corresponding “error” would be constructing a confidence interval that does not contain the true value of the population parameter. For hypothesis tests, this would be making either a Type I or Type II error. Obviously, we want to minimize the probability of either error; we want a small probability of making an incorrect conclusion:</p>
 <ul>
-<li>The probability of a Type I Error occurring is denoted by <span class="math inline">\(\alpha\)</span>. The value of <span class="math inline">\(\alpha\)</span> is called the <em>significance level</em> of the hypothesis test, which we defined in <a href="#sec-understanding-ht">Section&nbsp;2</a>.</li>
+<li>The probability of a Type I Error occurring is denoted by <span class="math inline">\(\alpha\)</span>. The value of <span class="math inline">\(\alpha\)</span> is called the <em>significance level</em> of the hypothesis test, which we defined in <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>.</li>
 <li>The probability of a Type II Error is denoted by <span class="math inline">\(\beta\)</span>. The value of <span class="math inline">\(1-\beta\)</span> is known as the <em>power</em> of the hypothesis test.</li>
 </ul>
 <p>In other words, <span class="math inline">\(\alpha\)</span> corresponds to the probability of incorrectly rejecting <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is true. On the other hand, <span class="math inline">\(\beta\)</span> corresponds to the probability of incorrectly failing to reject <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is false.</p>
@@ -1128,13 +1231,17 @@ Null Hypothesis: independence
 1 0.000174   0.0284</code></pre>
 </div>
 </div>
-<p>Using our shorthand interpretation for 95% confidence intervals we learned last week, we are 95% “confident” that the relationship between baby birth weights and mother’s ages for all babies born in the US in 2014 is between (0.0002, 0.0284). Let’s visualize <code>bootstrap_distribution</code> and this percentile-based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-percentile">Figure&nbsp;11</a>.</p>
+<p>Using our shorthand interpretation for 95% confidence intervals we learned last week, we are 95% “confident” that the relationship between baby birth weights and mother’s ages for all babies born in the US in 2014 is between (0.0002, 0.0284). Let’s visualize <code>bootstrap_distribution</code> and this percentile-based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-percentile" class="quarto-xref">Figure&nbsp;11</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-bootstrap-distribution-percentile" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-bootstrap-distribution-percentile-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;11: Percentile-based 95% confidence interval.</figcaption>
+<div id="fig-bootstrap-distribution-percentile" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bootstrap-distribution-percentile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-bootstrap-distribution-percentile-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootstrap-distribution-percentile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Percentile-based 95% confidence interval.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1164,13 +1271,17 @@ Tip
 1 -0.000150   0.0281</code></pre>
 </div>
 </div>
-<p>Let’s visualize <code>bootstrap_distribution</code> again, but now the standard error based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-se">Figure&nbsp;12</a>. Again, notice how the value 0 is not included in our confidence interval, again suggesting that there is a relationship between a baby’s birth weight and a mother’s age!</p>
+<p>Let’s visualize <code>bootstrap_distribution</code> again, but now the standard error based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-se" class="quarto-xref">Figure&nbsp;12</a>. Again, notice how the value 0 is not included in our confidence interval, again suggesting that there is a relationship between a baby’s birth weight and a mother’s age!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-bootstrap-distribution-se" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-bootstrap-distribution-se-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;12: Standard error-based 95% confidence interval.</figcaption>
+<div id="fig-bootstrap-distribution-se" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bootstrap-distribution-se-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-bootstrap-distribution-se-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootstrap-distribution-se-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Standard error-based 95% confidence interval.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1189,12 +1300,16 @@ Tip
 <p>These traditional theory-based methods have been used for decades mostly because researchers didn’t have access to computers that could run thousands of calculations quickly and efficiently. Now that computing power is much cheaper and more accessible, simulation-based methods are much more feasible. However, researchers in many fields continue to use theory-based methods. Hence, I make it a point to include an example here. As we’ll see in this section, any theory-based method is ultimately an approximation to the simulation-based method.</p>
 <section id="regression-interp" class="level2 page-columns page-full" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="regression-interp"><span class="header-section-number">6.1</span> Interpreting regression tables</h2>
-<p>Previously, when we interpreted a regression table, like the one shown in <a href="#tbl-regression">Table&nbsp;4</a>, we focused entirely on the <code>term</code> and <code>estimate</code> columns. Let’s now shift our attention to the remaining columns: <code>std_error</code>, <code>statistic</code>, <code>p_value</code>, <code>lower_ci</code> and <code>upper_ci</code>.</p>
+<p>Previously, when we interpreted a regression table, like the one shown in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, we focused entirely on the <code>term</code> and <code>estimate</code> columns. Let’s now shift our attention to the remaining columns: <code>std_error</code>, <code>statistic</code>, <code>p_value</code>, <code>lower_ci</code> and <code>upper_ci</code>.</p>
 <div class="cell">
+<div id="tbl-regression" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Regression table for estimated coefficients from regression on birth weight and mother’s age.
+</figcaption>
+<div aria-describedby="tbl-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-regression" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;4: Regression table for estimated coefficients from regression on birth weight and mother’s age.</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -1227,15 +1342,17 @@ Tip
 </tr>
 </tbody>
 </table>
+
+
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>R, the programming language has been around since roughly 1997, a period when computers were not able to run the simulations we can today. Thus, the calculations R provides in the <code>std_error</code>, <code>statistic</code>, <code>p_value</code>, <code>lower_ci</code> and <code>upper_ci</code> columns <strong>are not</strong> found using simulation-based methods. Rather, R uses a theory-based approach using mathematical formulas. These formulas were derived in a time when computers didn’t exist, so it would’ve been incredibly labor intensive to run extensive simulations.</p>
 <section id="regression-se" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="regression-se"><span class="header-section-number">6.1.1</span> Standard error</h3>
-<p>The third column of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>, <code>std_error</code>, corresponds to the <em>standard error</em> of our estimates. Recall the definition of <strong>standard error</strong> we saw last week:</p>
+<p>The third column of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, <code>std_error</code>, corresponds to the <em>standard error</em> of our estimates. Recall the definition of <strong>standard error</strong> we saw last week:</p>
 <blockquote class="blockquote">
 <p>The <em>standard error</em> is the standard deviation of any point estimate computed from a sample.</p>
 </blockquote>
@@ -1250,7 +1367,7 @@ Tip
 </section>
 <section id="regression-test-statistic" class="level3 page-columns page-full" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="regression-test-statistic"><span class="header-section-number">6.1.2</span> Test statistic</h3>
-<p>The fourth column of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>, <code>statistic</code>, corresponds to a <em>test statistic</em> relating to the following <em>hypothesis test</em>:</p>
+<p>The fourth column of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, <code>statistic</code>, corresponds to a <em>test statistic</em> relating to the following <em>hypothesis test</em>:</p>
 <center>
 <p><span class="math inline">\(H_0: \beta_1 = 0\)</span></p>
 <p><span class="math inline">\(H_A: \beta_1 \neq 0\)</span></p>
@@ -1272,7 +1389,7 @@ Caution
 <p>By convention, all hypothesis testing for regression assumes two-sided alternatives.</p>
 </div>
 </div>
-</div></div><p>The <code>statistic</code> column in the regression table is a tricky one, however. It corresponds to a standardized <em>t-test statistic</em>. The <em>null distribution</em> can be mathematically proven to be a <span class="math inline">\(t\)</span>-distribution, under specific conditions (described in <a href="#sec-conditions">Section&nbsp;7</a>). R uses the following <span class="math inline">\(t\)</span>-statistic as the test statistic for hypothesis testing:</p>
+</div></div><p>The <code>statistic</code> column in the regression table is a tricky one, however. It corresponds to a standardized <em>t-test statistic</em>. The <em>null distribution</em> can be mathematically proven to be a <span class="math inline">\(t\)</span>-distribution, under specific conditions (described in <a href="#sec-conditions" class="quarto-xref">Section&nbsp;7</a>). R uses the following <span class="math inline">\(t\)</span>-statistic as the test statistic for hypothesis testing:</p>
 <p><span class="math display">\[
 t = \dfrac{ b_1 - \beta_1}{ \text{SE}_{b_1}}
 \]</span></p>
@@ -1280,12 +1397,12 @@ t = \dfrac{ b_1 - \beta_1}{ \text{SE}_{b_1}}
 <p><span class="math display">\[
 t = \dfrac{ b_1 - 0}{ \text{SE}_{b_1}} = \dfrac{ b_1 }{ \text{SE}_{b_1}}
 \]</span></p>
-<p>What are the values of <span class="math inline">\(b_1\)</span> and <span class="math inline">\(\text{SE}_{b_1}\)</span>? They are in the <code>estimate</code> and <code>std_error</code> column of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>. Thus the value of 1.987 in the table is computed as 0.014 / 0.007 = 2. Note there is a difference due to some rounding error here.</p>
+<p>What are the values of <span class="math inline">\(b_1\)</span> and <span class="math inline">\(\text{SE}_{b_1}\)</span>? They are in the <code>estimate</code> and <code>std_error</code> column of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>. Thus the value of 1.987 in the table is computed as 0.014 / 0.007 = 2. Note there is a difference due to some rounding error here.</p>
 </section>
 <section id="p-value" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.1.3</span> p-value</h3>
-<p>The fifth column of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>, <code>p_value</code>, corresponds to the <em>p-value</em> of the hypothesis test <span class="math inline">\(H_0: \beta_1 = 0\)</span> versus <span class="math inline">\(H_A: \beta_1 \neq 0\)</span>.</p>
-<p>Again recalling our terminology, notation, and definitions related to hypothesis tests we introduced in <a href="#sec-understanding-ht">Section&nbsp;2</a>, let’s focus on the definition of the <span class="math inline">\(p\)</span>-value:</p>
+<p>The fifth column of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, <code>p_value</code>, corresponds to the <em>p-value</em> of the hypothesis test <span class="math inline">\(H_0: \beta_1 = 0\)</span> versus <span class="math inline">\(H_A: \beta_1 \neq 0\)</span>.</p>
+<p>Again recalling our terminology, notation, and definitions related to hypothesis tests we introduced in <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>, let’s focus on the definition of the <span class="math inline">\(p\)</span>-value:</p>
 <blockquote class="blockquote">
 <p>A <em>p-value</em> is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true.</p>
 </blockquote>
@@ -1303,24 +1420,24 @@ Tip
 <p>If you’re a bit rusty on the <span class="math inline">\(t\)</span>-distribution, <a href="https://www.jmp.com/en_us/statistics-knowledge-portal/t-test/t-distribution.html#:~:text=The%20shape%20of%20the%20t,more%20like%20a%20z%2Ddistribution">here</a> is an article describing how degrees of freedom relate to the shape of the <span class="math inline">\(t\)</span>-distribution.</p>
 </div>
 </div>
-<p>More precisely, however, the <span class="math inline">\(p\)</span>-value corresponds to how extreme the observed test statistic of 0.014 is when compared to the appropriate <em>null distribution</em>. Recall from <a href="#sec-understanding-ht">Section&nbsp;2</a>, that a null distribution is the sampling distribution of the test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true. It can be mathematically proven that a <span class="math inline">\(t\)</span>-distribution with degrees of freedom equal to <span class="math inline">\(df = n - 2 = 1000 - 2 = 998\)</span> is a reasonable approximation to the null distribution, if certain conditions for inference are not violated. We will discuss these conditions shortly in <a href="#sec-conditions">Section&nbsp;7</a>.</p>
+<p>More precisely, however, the <span class="math inline">\(p\)</span>-value corresponds to how extreme the observed test statistic of 0.014 is when compared to the appropriate <em>null distribution</em>. Recall from <a href="#sec-understanding-ht" class="quarto-xref">Section&nbsp;2</a>, that a null distribution is the sampling distribution of the test statistic <em>assuming the null hypothesis</em> <span class="math inline">\(H_0\)</span> is true. It can be mathematically proven that a <span class="math inline">\(t\)</span>-distribution with degrees of freedom equal to <span class="math inline">\(df = n - 2 = 1000 - 2 = 998\)</span> is a reasonable approximation to the null distribution, if certain conditions for inference are not violated. We will discuss these conditions shortly in <a href="#sec-conditions" class="quarto-xref">Section&nbsp;7</a>.</p>
 </section>
 <section id="confidence-interval" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="confidence-interval"><span class="header-section-number">6.1.4</span> Confidence interval</h3>
-<p>The two rightmost columns of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>, <code>lower_ci</code> and <code>upper_ci</code>, correspond to the endpoints of the 95% <em>confidence interval</em> for the population slope <span class="math inline">\(\beta_1\)</span>. What are the calculations that went into computing the two endpoints of the 95% confidence interval for <span class="math inline">\(\beta_1\)</span>?</p>
+<p>The two rightmost columns of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, <code>lower_ci</code> and <code>upper_ci</code>, correspond to the endpoints of the 95% <em>confidence interval</em> for the population slope <span class="math inline">\(\beta_1\)</span>. What are the calculations that went into computing the two endpoints of the 95% confidence interval for <span class="math inline">\(\beta_1\)</span>?</p>
 <p>Recall from the SE method for constructing confidence intervals, for any distribution that resemble a Normal Distribution<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, we could use the empiracle rule to create a 95% confidence interval:</p>
 <center>
 <span class="math inline">\(b_1 \pm SE_{b_1} \times\)</span> 1.96
 </center>
 <p><br></p>
-<p>What is the value of the standard error <span class="math inline">\(SE_{b_1}\)</span>? It is in fact in the third column of the regression table in <a href="#tbl-regression">Table&nbsp;4</a>: 0.007. Plugging in the respective values, we have:</p>
+<p>What is the value of the standard error <span class="math inline">\(SE_{b_1}\)</span>? It is in fact in the third column of the regression table in <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>: 0.007. Plugging in the respective values, we have:</p>
 <center>
 <p>0.014 <span class="math inline">\(\pm\)</span> 0.007 <span class="math inline">\(\times\)</span> 1.96</p>
 <p>0.014 <span class="math inline">\(\pm\)</span> 0.01372</p>
 <p>(0.00028, 0.02772)</p>
 </center>
 <p><br></p>
-<p>This closely matches the <span class="math inline">\((0,0.028)\)</span> confidence interval in the last two columns of <a href="#tbl-regression">Table&nbsp;4</a>, with slight differences due to rounding.</p>
+<p>This closely matches the <span class="math inline">\((0,0.028)\)</span> confidence interval in the last two columns of <a href="#tbl-regression" class="quarto-xref">Table&nbsp;4</a>, with slight differences due to rounding.</p>
 <p>Much like p-values, the results of this confidence interval also are only valid if the conditions for inference are not violated.</p>
 </section>
 </section>
@@ -1330,14 +1447,18 @@ Tip
 </section>
 <section id="everything-is-one-test" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="everything-is-one-test"><span class="header-section-number">6.3</span> Everything is one test</h2>
-<p>While this is a lot to digest, especially the first time you encounter hypothesis testing, the nice thing is that once you understand this general framework, then you can understand <em>any</em> hypothesis test. In a famous blog post, computer scientist Allen Downey called this the <a href="http://allendowney.blogspot.com/2016/06/there-is-still-only-one-test.html">“There is only one test”</a> framework, for which he created the flowchart displayed in <a href="#fig-htdowney">Figure&nbsp;13</a>.</p>
-<div id="fig-htdowney" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/there_is_only_one_test.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: Allen Downey’s hypothesis testing framework.</figcaption>
+<p>While this is a lot to digest, especially the first time you encounter hypothesis testing, the nice thing is that once you understand this general framework, then you can understand <em>any</em> hypothesis test. In a famous blog post, computer scientist Allen Downey called this the <a href="http://allendowney.blogspot.com/2016/06/there-is-still-only-one-test.html">“There is only one test”</a> framework, for which he created the flowchart displayed in <a href="#fig-htdowney" class="quarto-xref">Figure&nbsp;13</a>.</p>
+<div id="fig-htdowney" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-htdowney-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/there_is_only_one_test.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-htdowney-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Allen Downey’s hypothesis testing framework.
+</figcaption>
 </figure>
 </div>
-<p>Notice its similarity with the “hypothesis testing with <code>infer</code>” diagram you saw in <a href="#fig-infer-ht">Figure&nbsp;6</a>. That’s because the <code>infer</code> package was explicitly designed to match the “There is only one test” framework. So if you can understand the framework, you can easily generalize these ideas for all hypothesis testing scenarios.</p>
+<p>Notice its similarity with the “hypothesis testing with <code>infer</code>” diagram you saw in <a href="#fig-infer-ht" class="quarto-xref">Figure&nbsp;6</a>. That’s because the <code>infer</code> package was explicitly designed to match the “There is only one test” framework. So if you can understand the framework, you can easily generalize these ideas for all hypothesis testing scenarios.</p>
 </section>
 </section>
 <section id="sec-conditions" class="level1" data-number="7">
@@ -1371,13 +1492,17 @@ Caution
 <p>Conditions <strong>L</strong>, <strong>N</strong>, and <strong>E</strong> can be verified through what is known as a <em>residual analysis</em>. Condition <strong>I</strong> can only be verified through an understanding of how the data was collected.</p>
 <section id="residuals-refresher" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="residuals-refresher"><span class="header-section-number">7.1.1</span> Residuals refresher</h3>
-<p>Recall our definition of a residual: it is the <em>observed value</em> minus the <em>fitted value</em> denoted by <span class="math inline">\(y - \widehat{y}\)</span>. Recall that residuals can be thought of as the error or the “lack-of-fit” between the observed value <span class="math inline">\(y\)</span> and the fitted value <span class="math inline">\(\widehat{y}\)</span> on the regression line in <a href="#fig-births-slr">Figure&nbsp;1</a>. In <a href="#fig-residual-example">Figure&nbsp;14</a>, we illustrate one particular residual out of 1000 using an arrow, as well as its corresponding observed and fitted values using a circle and a square, respectively.</p>
+<p>Recall our definition of a residual: it is the <em>observed value</em> minus the <em>fitted value</em> denoted by <span class="math inline">\(y - \widehat{y}\)</span>. Recall that residuals can be thought of as the error or the “lack-of-fit” between the observed value <span class="math inline">\(y\)</span> and the fitted value <span class="math inline">\(\widehat{y}\)</span> on the regression line in <a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a>. In <a href="#fig-residual-example" class="quarto-xref">Figure&nbsp;14</a>, we illustrate one particular residual out of 1000 using an arrow, as well as its corresponding observed and fitted values using a circle and a square, respectively.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-residual-example" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-residual-example-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;14: Example of observed value, fitted value, and residual.</figcaption>
+<div id="fig-residual-example" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-residual-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-residual-example-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residual-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Example of observed value, fitted value, and residual.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1410,14 +1535,18 @@ Caution
 </section>
 <section id="linearity-of-relationship" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="linearity-of-relationship"><span class="header-section-number">7.1.2</span> Linearity of relationship</h3>
-<p>The first condition is that the relationship between the outcome variable <span class="math inline">\(y\)</span> and the explanatory variable <span class="math inline">\(x\)</span> must be <strong>L</strong>inear. Recall the scatterplot in <a href="#fig-births-slr">Figure&nbsp;1</a> where we had the explanatory variable <span class="math inline">\(x\)</span> as mother’s age and the outcome variable <span class="math inline">\(y\)</span> as baby’s birth weight. Would you say that the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is linear? It’s hard to say because of the scatter of the points about the line. In my opinion, this relationship is “linear enough.”</p>
-<p>Let’s present an example where the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is clearly not linear in <a href="#fig-non-linear">Figure&nbsp;15</a>. In this case, the points clearly follow a curved relationship, more closely resembling a <a href="https://www.rapidtables.com/math/algebra/logarithm/logarithm-graph.html">logarithmic scale</a>. In this case, any results from an inference for regression would not be valid.</p>
+<p>The first condition is that the relationship between the outcome variable <span class="math inline">\(y\)</span> and the explanatory variable <span class="math inline">\(x\)</span> must be <strong>L</strong>inear. Recall the scatterplot in <a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a> where we had the explanatory variable <span class="math inline">\(x\)</span> as mother’s age and the outcome variable <span class="math inline">\(y\)</span> as baby’s birth weight. Would you say that the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is linear? It’s hard to say because of the scatter of the points about the line. In my opinion, this relationship is “linear enough.”</p>
+<p>Let’s present an example where the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is clearly not linear in <a href="#fig-non-linear" class="quarto-xref">Figure&nbsp;15</a>. In this case, the points clearly follow a curved relationship, more closely resembling a <a href="https://www.rapidtables.com/math/algebra/logarithm/logarithm-graph.html">logarithmic scale</a>. In this case, any results from an inference for regression would not be valid.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-non-linear" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-non-linear-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;15: Example of a clearly non-linear relationship.</figcaption>
+<div id="fig-non-linear" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-non-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-non-linear-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-non-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Example of a clearly non-linear relationship.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1437,7 +1566,7 @@ Caution
 <section id="normality-of-residuals" class="level3" data-number="7.1.4">
 <h3 data-number="7.1.4" class="anchored" data-anchor-id="normality-of-residuals"><span class="header-section-number">7.1.4</span> Normality of residuals</h3>
 <p>The third condition is that the residuals should follow a <strong>N</strong>ormal distribution. Furthermore, the center of this distribution should be 0. In other words, sometimes the regression model will make positive errors: <span class="math inline">\(y - \widehat{y} &gt; 0\)</span>. Other times, the regression model will make equally negative errors: <span class="math inline">\(y - \widehat{y} &lt; 0\)</span>. However, <em>on average</em> the errors should equal 0 and their shape should be similar to that of a bell.</p>
-<p>The simplest way to check the normality of the residuals is to look at a histogram, which we visualize in <a href="#fig-model1residualshist">Figure&nbsp;16</a>.</p>
+<p>The simplest way to check the normality of the residuals is to look at a histogram, which we visualize in <a href="#fig-model1residualshist" class="quarto-xref">Figure&nbsp;16</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>regression_points <span class="ot">&lt;-</span> <span class="fu">get_regression_points</span>(births_lm)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1448,23 +1577,31 @@ Caution
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-model1residualshist" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-model1residualshist-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;16: Histogram of residuals from regression model for baby birth weight as predicted by mother’s age.</figcaption>
+<div id="fig-model1residualshist" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model1residualshist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-model1residualshist-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model1residualshist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Histogram of residuals from regression model for baby birth weight as predicted by mother’s age.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>This histogram shows that we have more negative residuals than negative. Since the residual <span class="math inline">\(y-\widehat{y}\)</span> is negative when <span class="math inline">\(y &lt; \widehat{y}\)</span>, it seems our regression model’s fitted baby birth weights (<span class="math inline">\(\widehat{y}\)</span>) tend to <em>overestimate</em> the birth weight <span class="math inline">\(y\)</span>. Furthermore, this histogram has a <em>left-skew</em> in that there is a longer tail on the left. This is another way to say the residuals exhibit a <em>negative skew</em>.</p>
 <p>Is this a problem? Again, there is a certain amount of subjectivity in the response. In my opinion, while there is a slight skew to the residuals, I don’t believe it is so bad that I would say this condition is violated. On the other hand, others might disagree with our assessment.</p>
-<p>Let’s present examples where the residuals clearly do and don’t follow a normal distribution in <a href="#fig-normal-residuals">Figure&nbsp;17</a>. In this case of the model yielding the clearly non-normal residuals on the right, any results from an inference for regression would not be valid.</p>
+<p>Let’s present examples where the residuals clearly do and don’t follow a normal distribution in <a href="#fig-normal-residuals" class="quarto-xref">Figure&nbsp;17</a>. In this case of the model yielding the clearly non-normal residuals on the right, any results from an inference for regression would not be valid.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-normal-residuals" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-normal-residuals-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;17: Example of clearly normal and clearly not normal residuals.</figcaption>
+<div id="fig-normal-residuals" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-normal-residuals-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Example of clearly normal and clearly not normal residuals.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1473,7 +1610,7 @@ Caution
 <section id="equality-of-variance" class="level3" data-number="7.1.5">
 <h3 data-number="7.1.5" class="anchored" data-anchor-id="equality-of-variance"><span class="header-section-number">7.1.5</span> Equality of variance</h3>
 <p>The fourth and final condition is that the residuals should exhibit <strong>E</strong>qual variance across all values of the explanatory variable <span class="math inline">\(x\)</span>. In other words, the value and spread of the residuals should not depend on the value of the explanatory variable <span class="math inline">\(x\)</span>.</p>
-<p>Recall the scatterplot in <a href="#fig-births-slr">Figure&nbsp;1</a>: we had the explanatory variable <span class="math inline">\(x\)</span> of mother’s age on the x-axis and the outcome variable <span class="math inline">\(y\)</span> of baby’s birth weight on the y-axis. Instead, let’s create a scatterplot that has the same values on the x-axis, but now with the residual <span class="math inline">\(y-\widehat{y}\)</span> on the y-axis as seen in <a href="#fig-equal-var">Figure&nbsp;18</a>.</p>
+<p>Recall the scatterplot in <a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a>: we had the explanatory variable <span class="math inline">\(x\)</span> of mother’s age on the x-axis and the outcome variable <span class="math inline">\(y\)</span> of baby’s birth weight on the y-axis. Instead, let’s create a scatterplot that has the same values on the x-axis, but now with the residual <span class="math inline">\(y-\widehat{y}\)</span> on the y-axis as seen in <a href="#fig-equal-var" class="quarto-xref">Figure&nbsp;18</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> regression_points, </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mage, <span class="at">y =</span> residual)) <span class="sc">+</span></span>
@@ -1483,22 +1620,30 @@ Caution
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-equal-var" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-equal-var-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;18: Plot of residuals over mother’s age.</figcaption>
+<div id="fig-equal-var" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-equal-var-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-equal-var-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-equal-var-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Plot of residuals over mother’s age.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>You can think of <a href="#fig-equal-var">Figure&nbsp;18</a> a modified version of the plot with the regression line in <a href="#fig-births-slr">Figure&nbsp;1</a>, but with the regression line flattened out to <span class="math inline">\(y=0\)</span>. Looking at this plot, would you say that the spread of the residuals around the line at <span class="math inline">\(y=0\)</span> is constant across all values of the explanatory variable <span class="math inline">\(x\)</span> of mother’s age? This question is rather qualitative and subjective in nature, thus different people may respond with different answers. For example, some people might say that there is slightly more variation in the residuals for ages between 20 and 40 than for ages below 20 and above 40. However, it can be argued that there isn’t a <em>drastic</em> non-constancy. Moreover, this could be an artifact of having smaller numbers of younger / older mothers in the sample.</p>
-<p>In <a href="#fig-non-equal-variance-residuals">Figure&nbsp;19</a> I present an example where the residuals clearly do not have equal variance across all values of the explanatory variable <span class="math inline">\(x\)</span>.</p>
+<p>You can think of <a href="#fig-equal-var" class="quarto-xref">Figure&nbsp;18</a> a modified version of the plot with the regression line in <a href="#fig-births-slr" class="quarto-xref">Figure&nbsp;1</a>, but with the regression line flattened out to <span class="math inline">\(y=0\)</span>. Looking at this plot, would you say that the spread of the residuals around the line at <span class="math inline">\(y=0\)</span> is constant across all values of the explanatory variable <span class="math inline">\(x\)</span> of mother’s age? This question is rather qualitative and subjective in nature, thus different people may respond with different answers. For example, some people might say that there is slightly more variation in the residuals for ages between 20 and 40 than for ages below 20 and above 40. However, it can be argued that there isn’t a <em>drastic</em> non-constancy. Moreover, this could be an artifact of having smaller numbers of younger / older mothers in the sample.</p>
+<p>In <a href="#fig-non-equal-variance-residuals" class="quarto-xref">Figure&nbsp;19</a> I present an example where the residuals clearly do not have equal variance across all values of the explanatory variable <span class="math inline">\(x\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-non-equal-variance-residuals" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="week8-reading_files/figure-html/fig-non-equal-variance-residuals-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;19: Example of clearly non-equal variance.</figcaption>
+<div id="fig-non-equal-variance-residuals" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-non-equal-variance-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week8-reading_files/figure-html/fig-non-equal-variance-residuals-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-non-equal-variance-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: Example of clearly non-equal variance.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1514,7 +1659,7 @@ Caution
 <li><strong>N</strong>ormality of residuals: Slight left-skew, but not too concerning</li>
 <li><strong>E</strong>quality of variance: No</li>
 </ol>
-<p>So what does this mean for the results of our confidence intervals and hypothesis tests in <a href="#sec-ht-interpretation">Section&nbsp;4</a>? Since none of the conditions were viola ted, we can have faith in the confidence intervals and <span class="math inline">\(p\)</span>-values calculated before. If, however, any of these conditions were violated, we would need to pause and reconsider our model.</p>
+<p>So what does this mean for the results of our confidence intervals and hypothesis tests in <a href="#sec-ht-interpretation" class="quarto-xref">Section&nbsp;4</a>? Since none of the conditions were viola ted, we can have faith in the confidence intervals and <span class="math inline">\(p\)</span>-values calculated before. If, however, any of these conditions were violated, we would need to pause and reconsider our model.</p>
 <p>When the <strong>I</strong>ndependence condition is violated, there exist dependencies between the observations in the dataset. To remedy this, you will need to use a statistical model which accounts for this dependency structure. One such technique is called hierarchical/multilevel modeling, which you may learn about in more advanced statistics courses.</p>
 <p>When conditions <strong>L</strong>, <strong>N</strong>, <strong>E</strong> are violated, it often means there is a shortcoming in our model. For example, it may be the case that using only a single explanatory variable is insufficient. We may need to incorporate more explanatory variables in a multiple regression model as we did in previously, or perhaps use a transformation of one or more of your variables, or use an entirely different modeling technique. To learn more about addressing such shortcomings, you’ll have to take a class on or read up on more advanced regression modeling methods.</p>
 <p>The conditions for inference in regression problems are a key part of regression analysis that are of vital importance to the processes of constructing confidence intervals and conducting hypothesis tests. However, it is often the case with regression analysis in the real world that some of these conditions may be violated. Furthermore, as you saw, there is a level of subjectivity in the residual analyses to verify the <strong>L</strong>, <strong>N</strong>, and <strong>E</strong> conditions. So what can you do? As a statistics educator, I advocate for transparency in communicating all results. This lets the stakeholders of any analysis know about a model’s shortcomings or whether the model is “good enough.” So while this checking of assumptions has lead to some fuzzy “it depends” results, we decided as authors to show you these scenarios to help prepare you for difficult statistical decisions you may need to make down the road.</p>
@@ -1529,7 +1674,7 @@ Caution
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">8 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">8 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ims" class="csl-entry" role="listitem">
 Çetinkaya-Rundel, Mine, and Jo Hardin. 2023. <em>Introduction to Modern Statistics</em>. OpenIntro. <a href="https://openintro-ims.netlify.app/">https://openintro-ims.netlify.app/</a>.
 </div>
@@ -1623,10 +1768,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1636,8 +1780,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1650,6 +1803,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1693,6 +1960,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1718,6 +1986,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1780,13 +2074,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2023, Allison Theobold</div>   
+    <div class="nav-footer-left">
+<p>© Copyright 2023, Allison Theobold</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 
