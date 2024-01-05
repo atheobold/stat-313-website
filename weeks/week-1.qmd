@@ -3,7 +3,6 @@ title: 'Week One: Foundations of Statistics'
 subtitle: Winter 2023
 format:
   html:
-    theme: minty
     fontsize: 1em
     mainfont: "sans-serif"
     number-sections: true
