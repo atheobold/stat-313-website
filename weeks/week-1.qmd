@@ -35,23 +35,15 @@ By the end of this coursework you should be able to:
 
 -   characterize the differences between observational studies and experiments
 
--   describe the difference between little "s" statistics and big "S" Statistics
-
--   outline what "dichotomous thinking" is
-
--   illustrate how dichotomous thinking is used in Statistics
-
--   explain issues with using the term "significant" in Statistics
-
 # Prepare
 
 Let's start off by reading a refresher on some of the foundational concepts for data!
 
 ## Textbook Reading
 
-`r emo::ji("book")` [**Required Reading:** *Introduction to Modern Statistics* -- Hello Data](https://openintro-ims.netlify.app/data-hello.html)
+📖 [**Required Reading:** *Introduction to Modern Statistics* -- Hello Data](https://openintro-ims.netlify.app/data-hello.html)
 
-`r emo::ji("book")` [**Required Reading:** *Introduction to Modern Statistics* -- Study Design](https://openintro-ims.netlify.app/data-design.html)
+📖 [**Required Reading:** *Introduction to Modern Statistics* -- Study Design](https://openintro-ims.netlify.app/data-design.html)
 
 ### Reading Guide -- Due Tuesday by noon
 
@@ -59,13 +51,13 @@ Let's start off by reading a refresher on some of the foundational concepts for 
 
 *Note:* There is **one** combined reading guide for both chapters.
 
-::: callout-note
-# Submission
+::: callout-caution
+# Submission (Due Tuesday, January 9 by the start of class)
 
 Submit your completed reading guide to the Canvas assignment portal!
 :::
 
-## Concept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Tuesday by the start of class
 
 **1. What are the different types of variables that can appear in a dataset? Select all that apply!**
 
@@ -113,11 +105,11 @@ Submit your completed reading guide to the Canvas assignment portal!
 :::
 :::
 
-# R Tutorial -- Due Thursday by noon
+# R Tutorial -- Due Thursday by the start of class
 
-`r emo::ji("computer")` [**Required Tutorial:** Language of Data](https://openintro.shinyapps.io/ims-01-data-01/#section-welcome)
+💻 [**Required Tutorial:** Language of Data](https://openintro.shinyapps.io/ims-01-data-01/#section-welcome)
 
-::: callout-note
+::: callout-caution
 # Submission
 
 Submit a screenshot of the completion page to the Canvas assignment portal!
@@ -135,10 +127,6 @@ The Library is a great resource for this! The [following website (https://csu-ca
 If you are having a hard time finding a peer reviewed journal article, here is a video of me talking through how I found one: <https://www.youtube.com/watch?v=ui8ibJ0Pkhs>
 :::
 
-## Statistical Critique Step 0 -- Due Friday by 5pm
+## Statistical Critique Step 0 -- Due Monday by 5pm
 
 Upload a PDF of your journal article to the Canvas assignment portal.
-
-::: {style="font-size: 0.875em;"}
-Back to [course schedule](/ "Course schedule") ⏎
-:::

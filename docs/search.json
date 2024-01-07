@@ -2116,7 +2116,7 @@
     "href": "weeks/week-1.html#learning-outcomes",
     "title": "Week One: Foundations of Statistics",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe observations, variables, and data matrices\nexplain the different types of variables a study can have\nillustrate the difference between explanatory and response variables\ndelineate the difference between a population and a sample\ncompare and contrast different sampling methods\noutline what is necessary to make an experiment an “experiment”\ncharacterize the differences between observational studies and experiments\ndescribe the difference between little “s” statistics and big “S” Statistics\noutline what “dichotomous thinking” is\nillustrate how dichotomous thinking is used in Statistics\nexplain issues with using the term “significant” in Statistics",
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe observations, variables, and data matrices\nexplain the different types of variables a study can have\nillustrate the difference between explanatory and response variables\ndelineate the difference between a population and a sample\ncompare and contrast different sampling methods\noutline what is necessary to make an experiment an “experiment”\ncharacterize the differences between observational studies and experiments",
     "crumbs": [
       "Weekly materials",
       "Week 1"
@@ -2127,7 +2127,7 @@
     "href": "weeks/week-1.html#textbook-reading",
     "title": "Week One: Foundations of Statistics",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\nr emo::ji(\"book\") Required Reading: Introduction to Modern Statistics – Hello Data\nr emo::ji(\"book\") Required Reading: Introduction to Modern Statistics – Study Design\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document\nNote: There is one combined reading guide for both chapters.\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!",
+    "text": "1.1 Textbook Reading\n📖 Required Reading: Introduction to Modern Statistics – Hello Data\n📖 Required Reading: Introduction to Modern Statistics – Study Design\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document\nNote: There is one combined reading guide for both chapters.\n\n\n\n\n\n\nSubmission (Due Tuesday, January 9 by the start of class)\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!",
     "crumbs": [
       "Weekly materials",
       "Week 1"
@@ -2149,7 +2149,7 @@
     "href": "weeks/week-1.html#statistical-critique-step-0-due-friday-by-5pm",
     "title": "Week One: Foundations of Statistics",
     "section": "3.1 Statistical Critique Step 0 – Due Friday by 5pm",
-    "text": "3.1 Statistical Critique Step 0 – Due Friday by 5pm\nUpload a PDF of your journal article to the Canvas assignment portal.\n\nBack to course schedule ⏎",
+    "text": "3.1 Statistical Critique Step 0 – Due Friday by 5pm\nUpload a PDF of your journal article to the Canvas assignment portal.",
     "crumbs": [
       "Weekly materials",
       "Week 1"
@@ -5367,5 +5367,27 @@
     "title": "Statistical Critique 2: Statistical Argumentation",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is my professional organization.↩︎"
+  },
+  {
+    "objectID": "weeks/week-1.html#concept-quiz-due-tuesday-by-the-start-of-class",
+    "href": "weeks/week-1.html#concept-quiz-due-tuesday-by-the-start-of-class",
+    "title": "Week One: Foundations of Statistics",
+    "section": "1.2 Concept Quiz – Due Tuesday by the start of class",
+    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n1. What are the different types of variables that can appear in a dataset? Select all that apply!\n\ndiscrete numerical\nordinal categorical\nnominal categorical\ncontinuous numerical\ndiscrete categorical\n\n2. Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? Select all that apply!\n\nzip code\nGPA\nheight\nyear in school\n\n3. Which of the following statements are true about observational studies and experiments? Select all that apply!\n\nExperiments randomly assign the explanatory variable\nObservational studies randomly assign the explanatory variable\nObservational studies can make causal statements about the relationship between the explanatory and response variables\nExperiments can make causal statements about the relationship between the explanatory and response variables\n\n4. What are different methods for sampling from a population? Select all that apply!\n\nsimple random sampling\nstratified random sampling\ncluster sampling\nmultistage sampling\nconvenience sampling\n\n5. Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.\n\n\nstratified sampling\ncluster sampling\n\ngroups of observations are created, groups are randomly selected, every observation in the selected group is sampled\ngroups of observations are created, observations within a group are randomly sampled",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1.html#statistical-critique-step-0-due-monday-by-5pm",
+    "href": "weeks/week-1.html#statistical-critique-step-0-due-monday-by-5pm",
+    "title": "Week One: Foundations of Statistics",
+    "section": "3.1 Statistical Critique Step 0 – Due Monday by 5pm",
+    "text": "3.1 Statistical Critique Step 0 – Due Monday by 5pm\nUpload a PDF of your journal article to the Canvas assignment portal.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   }
 ]
