@@ -182,8 +182,6 @@ For this course we will be using one main textbook, accompanied by additional re
 
 -   identify sources of variation and describe how to account for them
 
--   explain differences in sampling methods and contrast the inferences they permit
-
 -   argue what population a given sample is representative of
 
 **Fundamentals of Statistical Inference**
@@ -200,7 +198,7 @@ For this course we will be using one main textbook, accompanied by additional re
 
 -   distinguish between Type I and Type II errors
 
--   describe how sample size, significance level, and sampling variability effect Type I and Type II errors
+-   describe how sample size and significance level effect Type I and Type II errors
 
 -   outline the strengths and weaknesses of significance testing
 
@@ -369,11 +367,11 @@ If you miss a bunch of classes, please come talk to me. I'm working from the ass
 
 ## What if I need to turn something in late?
 
-Assignments are expected to be submitted on time. However, every student will be permitted to submit up to **three** individual assignments up to 4-days late, by completing a deadline extension form. Similar to the "real world," deadline extensions must be requested **before** an assignment is due.
+Assignments are expected to be submitted on time. However, every student will be permitted to submit up to **three** individual assignments up to 3-days late, by completing a deadline extension form. Similar to the "real world," deadline extensions must be requested **before** an assignment is due.
 
-When you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. **Your new deadline must be within 4-days of the original deadline.**
+When you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. **Your new deadline must be within 3-days of the original deadline.**
 
-**All** deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a disability related need.
+**All** deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations.
 
 Any late work is required to have a deadline extension request, meaning if you do not complete a deadline extension request for an assignment you **are not** permitted to turn it in late.
 
@@ -428,7 +426,7 @@ Paraphrasing or quoting another's work without citing the source is a form of ac
 
 Even inadvertent or unintentional misuse or appropriation of another's work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you are struggling with writing the `R` code for an assignment, please reach out to me. I would prefer that I get to help you rather than you spending hours Googling things and get nowhere!
 
-Any incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you a grade of **N** on the problem or assignment and will remove your ability to submit revisions for that assignment.
+Any incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you an "Incomplete" grade on the assignment and you **will not** be able to submit revisions for that assignment.
 
 If you have any questions about using and citing sources, you are expected to ask for clarification.
 
@@ -442,31 +440,32 @@ This class is organized into six units. The skills learned at the beginning of t
 
 This introductory unit has three big tasks, (1) review statistical and data oriented concepts you have (likely) seen before, (2) think critically about **why** statistics is used in science, and (3) think about **how** (historically) statistics has been used for inference.
 
-Reading: Chapters 1 and 2 in *Introduction to Modern Statistics* (*IMS*), with supplementary articles
+Reading: Chapters 1 and 2 in *Introduction to Modern Statistics* (*IMS*)
 
 ## Unit 2: Exploratory Data Analysis (Weeks 2 & 3)
 
-This unit focuses on building skills for working with and visualizing different types of data. First, we will focus on categorical data--creating summary tables and barcharts. Next, we will turn our attention to numerical data--calculating summary statistics, histograms, scatterplots, and linegraphs.
+This unit focuses on building skills for working with and visualizing different types of data. First, we will focus on numerical data--calculating summary statistics, histograms, scatterplots, and linegraphs. Next, we incorporate categorical variables into these summarizes (with groups) and visualizations (with colors and facets)!
 
 Reading: Chapters 4 & 5 in *IMS* and Chapter 2 in *Modern Dive*
 
 ## Unit 3: Regression Modeling (Weeks 4 & 5)
 
-In this unit we *finally* begin exploring statistical methods. You will put the tools you learned for wrangling and visualizing to work in the context of linear regression. We will start in a (likely) familiar context--linear regression. Once we've explored the concepts of "simple" / basic regression we will turn up the heat and add some additional explanatory variables with multiple linear regression.
+In this unit we begin exploring formal statistical methods. You will put the tools you learned for wrangling and visualizing to work in the context of linear regression. We will start in a familiar context---linear regression. Once we've explored the concepts of "simple" / basic regression we will turn up the heat and add some additional explanatory variables using multiple linear regression.
 
-Reading:
-
--   Chapter 5 in *Modern Dive*
--   Chapter 6 in *Modern Dive*
+Reading: Chapters 5 & 6 in *Modern Dive*
 
 ## Unit 4: Model Selection & Inference for Regression (Weeks 6 & 7)
 
 This unit focuses on how we decide what variables should be included in our regression models and what we can say about the final models we obtain. We will explore these ideas using concepts you have seen before: hypothesis tests and confidence intervals. We will visit the ideas of p-values and significance testing, with a emphasis on making (and justifying) sound scientific decisions with the intention of obtaining the *best* regression model we can.
 
+Reading: Supplementary resources written / compiled by Dr. Theobold
+
 ## Unit 5: Condition Violations (Week 8)
 
 There are occasions where the conditions required for linear regression are violated. Rather than throwing up our hands and saying "Oh, well!", we can use variable transformations to lessen condition violations. This unit will explore the use of log transformations to remedy non-linear relationships and non-constant variance.
 
+Reading: Supplementary resources written / compiled by Dr. Theobold
+ 
 ## Unit 6: ANOVA (Weeks 9 & 10)
 
 To wrap up the quarter, we will look at a special case of linear regression--ANOVA. In this special case, our regression will include **only** categorical variables as explanatory variables. We will first review how we compare the means of two groups and then connect with what we learned about categorical variables in multiple linear to conceptualize how we can compare the means of three or more groups.
