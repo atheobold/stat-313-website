@@ -392,33 +392,45 @@ In summary: Be good to each other.
 
 ## Working in teams
 
-When completing lab assignments, you will work in a team of three students. In 
-Week 2, you will be assigned to a group and you will work in this same group 
-for three total weeks (Weeks 2 - 4). Then, in Week 5 you will be assigned to 
-a new group of three students, which you will collaborate with for the next
-three weeks (Weeks 5 - 7). Finally, in Week 8, you will be assigned to one final
-group which you will collaborate with for the final three weeks of the quarter 
-(Weeks 8 - 10). 
+When completing lab assignments, you will work in a team of three students. In Week 2, you will be assigned to a group and you will work in this same group for three total weeks (Weeks 2 - 4). Then, in Week 5 you will be assigned to a new group of three students, which you will collaborate with for the next three weeks (Weeks 5 - 7). Finally, in Week 8, you will be assigned to one final group which you will collaborate with for the final three weeks of the quarter (Weeks 8 - 10).
 
 <!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
+
 <!-- | **Resource Manager**                                                                                      | **Recorder / Reporter**                                                                   | **Team Captain**                                           | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- | Manages the resources the team needs to complete the task                                                 | Manages in-class report                                                                   | Manages team participation                                 | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- | -   Responsible for pulling up resources necessary for completing the lab (e.g., R Cheatsheets, textbook) | -   Responsible for organizing and recording answers to the assignment during discussions | -   Leads discussion                                       | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- | -   If                                                                                                    | -   Compiles a summary of the solutions discussed                                         | -   Encourages participation                               | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- | -   Finds compromises                                                                                     | -   Solicits feedback on summaries from other group members                               | -   Makes sure everyone understands the task               | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- | -                                                                                                         | -   Responsible for submitting final version of assignment                                |     Substitutes for absent roles                           | -->
+
 <!-- |                                                                                                           |                                                                                           |                                                            | -->
+
 <!-- |                                                                                                           |                                                                                           | -   Calls professor / TA over for **group questions only** | -->
+
 <!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
 
-### Researching Group Collaborations 
+### Researching Group Collaborations
 
+For quite some time I have been interested in what we, as your professors, can do to make group collaborations better for *every* student. This is a substantial area of my research, and, as such, I will be collecting data on your experiences collaborating with your peers in STAT 313. Every week, I will request for your to complete a pre-lab and a post-lab survey, detailing your feelings about your upcoming collaboration and your perceptions for how the collaboration went. Results from this study will provide our research team with a better understanding of (1) the impact of collaborative experiences on student self-perception, and (2) how to facilitate collaborative experiences that are beneficial for every student
 
+During Week 1, you will be asked to complete a form consenting to participate in this study. Your participation in this research will not directly affect your course grade. If you agree to participate, you will complete a weekly surveys regarding your experiences before and after collaborating in your group. Based on the results of your surveys from Weeks 2-8, you may be invited to participate in a 30-minute interview with an undergraduate student researcher, discussing your experiences collaborating with your peers.
+
+If you have questions regarding this study or would like to be informed of the results when the study is completed, please contact me (Dr. Theobold) at atheobol@calpoly.edu. If you have concerns regarding the manner in which the study is conducted, you may contact Dr. Michael Black, Chair of the Cal Poly Institutional Review Board, at (805) 756-2894, mblack@calpoly.edu, or Trish Brock, Director of Research Compliance, at (805) 756-1450, pbrock@calpoly.edu.
 
 ## What constitutes plagiarism in a statistics class?
 
@@ -465,12 +477,12 @@ Reading: Supplementary resources written / compiled by Dr. Theobold
 There are occasions where the conditions required for linear regression are violated. Rather than throwing up our hands and saying "Oh, well!", we can use variable transformations to lessen condition violations. This unit will explore the use of log transformations to remedy non-linear relationships and non-constant variance.
 
 Reading: Supplementary resources written / compiled by Dr. Theobold
- 
+
 ## Unit 6: ANOVA (Weeks 9 & 10)
 
 To wrap up the quarter, we will look at a special case of linear regression--ANOVA. In this special case, our regression will include **only** categorical variables as explanatory variables. We will first review how we compare the means of two groups and then connect with what we learned about categorical variables in multiple linear to conceptualize how we can compare the means of three or more groups.
 
-This unit will explore Chapter 22 in *IMS*, with supplementary materials created by Dr. Theobold. 
+This unit will explore Chapter 22 in *IMS*, with supplementary materials created by Dr. Theobold.
 
 # California Faculty Association (CFA)
 
