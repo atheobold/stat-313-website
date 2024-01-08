@@ -6,7 +6,7 @@ title-slide-attributes:
     data-background-opacity: "0.75"
 format: 
   revealjs:
-    theme: night
+    theme: [night]
 editor: visual
 execute: 
   echo: false
@@ -36,15 +36,8 @@ About Me...
 
 ```{r pictures}
 #| layout-nrow: 1
-knitr::include_graphics(c("images/wedding.png", "images/skiing.JPG", "images/bumi.JPG"))
+knitr::include_graphics(c("images/running.jpg", "images/biking.JPG", "images/kitties.JPG"))
 ```
-
-::: {style="font-size: 0.75em;"}
-Ph.D. in Statistics from Montana State University
-
-B.S. in Mathematics & B.B.A. in Economics\
-from Colorado Mesa University
-:::
 
 ## 
 
@@ -160,6 +153,7 @@ Specifications Based Grading
 
 ![](images/four_pillars.png)
 
+
 . . .
 
 ::: {style="color: #000000;"}
@@ -174,7 +168,7 @@ How Smart are You?
 
 ::: columns
 ::: {.column width="30%"}
-(1 minute)
+(2 minutes)
 
 -   Write two *criteria* would you use to *rank* yourself compared to everyone else in this class
 :::
@@ -192,7 +186,7 @@ How Smart are You?
 :::
 
 ::: {.column width="30%"}
-(3 minutes)
+(5 minutes)
 
 -   Share out
 -   Person with most vowels in name should be prepared to share!
@@ -239,7 +233,7 @@ Group Norms
 ::: {.column width="45%"}
 -   Non-judgmental
 
--   Take space, make space -- Share the air (page)
+-   Take space, make space
 
 -   Embrace discomfort
 
@@ -284,76 +278,76 @@ How We Learn Together
 Break
 :::
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 3em; color: #FFFFFF;"}
-Warm-up
-:::
+<!-- ::: {style="font-size: 3em; color: #FFFFFF;"} -->
+<!-- Warm-up -->
+<!-- ::: -->
 
-::: {style="font-size: 1.5em; color: #e28743;"}
-Sketch out what you recall the scientific method / process looking like.
-:::
+<!-- ::: {style="font-size: 1.5em; color: #e28743;"} -->
+<!-- Sketch out what you recall the scientific method / process looking like. -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {style="font-size: 1.5em; color: #abdbe3;"}
-Where does statistics happen?
-:::
+<!-- ::: {style="font-size: 1.5em; color: #abdbe3;"} -->
+<!-- Where does statistics happen? -->
+<!-- ::: -->
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 8em; color: #FFFFFF;"}
-Why?
-:::
+<!-- ::: {style="font-size: 8em; color: #FFFFFF;"} -->
+<!-- Why? -->
+<!-- ::: -->
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 2em; color: #abdbe3;"}
-For a scientific study, what is the purpose of a statistical analysis?
-:::
+<!-- ::: {style="font-size: 2em; color: #abdbe3;"} -->
+<!-- For a scientific study, what is the purpose of a statistical analysis? -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-</br>
+<!-- </br> -->
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-*What does it mean for an analysis to be "objective"?*
-:::
+<!-- ::: {style="font-size: 2em; color: #FFFFFF;"} -->
+<!-- *What does it mean for an analysis to be "objective"?* -->
+<!-- ::: -->
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Dichotomous thinking
-:::
+<!-- ::: {style="font-size: 2em; color: #FFFFFF;"} -->
+<!-- Dichotomous thinking -->
+<!-- ::: -->
 
-</br>
+<!-- </br> -->
 
-(90 seconds)
+<!-- (90 seconds) -->
 
-What is an example of a dichotomous choice?
+<!-- What is an example of a dichotomous choice? -->
 
-. . .
+<!-- . . . -->
 
-</br> </br>
+<!-- </br> </br> -->
 
-(90 seconds)
+<!-- (90 seconds) -->
 
-How is dichotomous thinking used in Statistics?
+<!-- How is dichotomous thinking used in Statistics? -->
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 4em; color: #e28743;"}
-The S-word
-:::
+<!-- ::: {style="font-size: 4em; color: #e28743;"} -->
+<!-- The S-word -->
+<!-- ::: -->
 
-</br>
+<!-- </br> -->
 
-(60 seconds)
+<!-- (60 seconds) -->
 
-What are 2-3 synonyms of "significant" that come to your mind?
+<!-- What are 2-3 synonyms of "significant" that come to your mind? -->
 
-</br>
+<!-- </br> -->
 
-(90 seconds)
+<!-- (90 seconds) -->
 
-What is one issue you see with using the term "significant" to denote "small" p-values?
+<!-- What is one issue you see with using the term "significant" to denote "small" p-values? -->

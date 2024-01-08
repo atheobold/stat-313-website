@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.3.361">
 
   <title>STAT 313 / 513 - Winter 2024 - Working with Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,8 +220,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -384,6 +383,7 @@
       margin-right: 0; 
     }
   </style>
+  
   <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
   <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
@@ -431,57 +431,57 @@ Gender stereotypes in 5-7 year old children
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">76</td>
+<td style="text-align: right;">29</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: left;">smart</td>
-<td style="text-align: left;">adults</td>
+<td style="text-align: left;">children</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: right;">1.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">48</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">nice</td>
-<td style="text-align: left;">adults</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.75</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">36</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">smart</td>
-<td style="text-align: left;">adults</td>
-<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0.75</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">smart</td>
-<td style="text-align: left;">adults</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">80</td>
+<td style="text-align: right;">115</td>
 <td style="text-align: left;">male</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">smart</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">nice</td>
 <td style="text-align: left;">adults</td>
 <td style="text-align: right;">0.75</td>
 <td style="text-align: right;">1.00</td>
 </tr>
+<tr class="odd">
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">smart</td>
+<td style="text-align: left;">children</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+</tr>
 <tr class="even">
-<td style="text-align: right;">72</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">smart</td>
+<td style="text-align: left;">adults</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">smart</td>
+<td style="text-align: left;">adults</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">91</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">nice</td>
-<td style="text-align: left;">adults</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: left;">smart</td>
+<td style="text-align: left;">children</td>
+<td style="text-align: right;">1.00</td>
 <td style="text-align: right;">0.75</td>
 </tr>
 </tbody>
@@ -516,64 +516,64 @@ Gender stereotypes in 5-7 year old children
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">62.2</td>
-<td style="text-align: right;">167.1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">108.5</td>
-<td style="text-align: right;">70.0</td>
-<td style="text-align: right;">81.2</td>
-<td style="text-align: right;">96.8</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">64.1</td>
+<td style="text-align: right;">177.8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">104.8</td>
+<td style="text-align: right;">70.8</td>
+<td style="text-align: right;">84.9</td>
+<td style="text-align: right;">89.4</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">82.7</td>
-<td style="text-align: right;">167.6</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">124.3</td>
-<td style="text-align: right;">94.9</td>
-<td style="text-align: right;">94.7</td>
-<td style="text-align: right;">104.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">81.6</td>
-<td style="text-align: right;">184.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">119.5</td>
-<td style="text-align: right;">77.5</td>
-<td style="text-align: right;">81.5</td>
-<td style="text-align: right;">99.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">28</td>
-<td style="text-align: right;">81.8</td>
-<td style="text-align: right;">185.4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">116.1</td>
-<td style="text-align: right;">84.5</td>
-<td style="text-align: right;">92.6</td>
-<td style="text-align: right;">99.5</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">27</td>
-<td style="text-align: right;">78.4</td>
-<td style="text-align: right;">184.5</td>
+<td style="text-align: right;">60.2</td>
+<td style="text-align: right;">161.3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">107.3</td>
+<td style="text-align: right;">72.7</td>
+<td style="text-align: right;">76.7</td>
+<td style="text-align: right;">95.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">72.2</td>
+<td style="text-align: right;">174.0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">120.4</td>
-<td style="text-align: right;">76.8</td>
-<td style="text-align: right;">80.5</td>
-<td style="text-align: right;">98.0</td>
+<td style="text-align: right;">113.1</td>
+<td style="text-align: right;">82.9</td>
+<td style="text-align: right;">83.6</td>
+<td style="text-align: right;">95.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">45.0</td>
-<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">54.6</td>
+<td style="text-align: right;">156.0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">85.9</td>
-<td style="text-align: right;">61.0</td>
-<td style="text-align: right;">65.3</td>
-<td style="text-align: right;">84.5</td>
+<td style="text-align: right;">100.3</td>
+<td style="text-align: right;">66.0</td>
+<td style="text-align: right;">73.2</td>
+<td style="text-align: right;">90.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66.4</td>
+<td style="text-align: right;">174.0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">107.1</td>
+<td style="text-align: right;">72.2</td>
+<td style="text-align: right;">89.4</td>
+<td style="text-align: right;">98.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">91.8</td>
+<td style="text-align: right;">186.7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">123.0</td>
+<td style="text-align: right;">87.6</td>
+<td style="text-align: right;">89.4</td>
+<td style="text-align: right;">106.7</td>
 </tr>
 </tbody>
 </table>
@@ -608,52 +608,52 @@ NBA player of the week from 1985 to 2016
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">Nov 7, 2016</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">Jan 30, 2017</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: left;">211cm</td>
+<td style="text-align: left;">DeMarcus Cousins</td>
+<td style="text-align: left;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">Dec 12, 2016</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: left;">203cm</td>
+<td style="text-align: left;">LeBron James</td>
+<td style="text-align: left;">F</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">Apr 10, 2017</td>
 <td style="text-align: right;">2008</td>
 <td style="text-align: left;">191cm</td>
-<td style="text-align: left;">George Hill</td>
+<td style="text-align: left;">Russell Westbrook</td>
 <td style="text-align: left;">G</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">28</td>
-<td style="text-align: left;">Mar 24, 1996</td>
-<td style="text-align: right;">1991</td>
-<td style="text-align: left;">6-10</td>
-<td style="text-align: left;">Chris Gatling</td>
-<td style="text-align: left;">PF</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">Mar 20, 2017</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: left;">213cm</td>
+<td style="text-align: left;">Hassan Whiteside</td>
+<td style="text-align: left;">C</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">23</td>
-<td style="text-align: left;">Dec 10, 2012</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">6-10</td>
-<td style="text-align: left;">Blake Griffin</td>
-<td style="text-align: left;">PF</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">Mar 17, 2002</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: left;">6-8</td>
+<td style="text-align: left;">Tracy McGrady</td>
+<td style="text-align: left;">GF</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">29</td>
-<td style="text-align: left;">Jan 29, 1989</td>
-<td style="text-align: right;">1981</td>
-<td style="text-align: left;">6-10</td>
-<td style="text-align: left;">Tom Chambers</td>
-<td style="text-align: left;">PF</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">28</td>
-<td style="text-align: left;">Mar 23, 2003</td>
-<td style="text-align: right;">1996</td>
-<td style="text-align: left;">6-9</td>
-<td style="text-align: left;">Ben Wallace</td>
-<td style="text-align: left;">FC</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">29</td>
-<td style="text-align: left;">Apr 7, 2014</td>
-<td style="text-align: right;">2004</td>
-<td style="text-align: left;">6-10</td>
-<td style="text-align: left;">Al Jefferson</td>
-<td style="text-align: left;">FC</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">Mar 13, 1988</td>
+<td style="text-align: right;">1983</td>
+<td style="text-align: left;">6-7</td>
+<td style="text-align: left;">Clyde Drexler</td>
+<td style="text-align: left;">SG</td>
 </tr>
 </tbody>
 </table>
@@ -691,56 +691,56 @@ Fish Sampled on Blackfoot River
 <tr class="odd">
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">188</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">2000</td>
-<td style="text-align: left;">ScottyBrown</td>
-<td style="text-align: left;">WCT</td>
+<td style="text-align: right;">470</td>
+<td style="text-align: right;">790</td>
+<td style="text-align: right;">2002</td>
+<td style="text-align: left;">Johnsrud</td>
+<td style="text-align: left;">RBT</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">152</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">1989</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2004</td>
 <td style="text-align: left;">Johnsrud</td>
 <td style="text-align: left;">RBT</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">228</td>
-<td style="text-align: right;">130</td>
-<td style="text-align: right;">1993</td>
-<td style="text-align: left;">ScottyBrown</td>
-<td style="text-align: left;">RBT</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">343</td>
-<td style="text-align: right;">405</td>
-<td style="text-align: right;">1993</td>
-<td style="text-align: left;">ScottyBrown</td>
-<td style="text-align: left;">RBT</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">155</td>
-<td style="text-align: right;">2002</td>
-<td style="text-align: left;">ScottyBrown</td>
-<td style="text-align: left;">Brown</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">290</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: right;">186</td>
+<td style="text-align: right;">60</td>
 <td style="text-align: right;">1991</td>
 <td style="text-align: left;">ScottyBrown</td>
 <td style="text-align: left;">WCT</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">282</td>
+<td style="text-align: right;">290</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: left;">ScottyBrown</td>
+<td style="text-align: left;">WCT</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">182</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: left;">Johnsrud</td>
+<td style="text-align: left;">RBT</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">456</td>
+<td style="text-align: right;">940</td>
+<td style="text-align: right;">2004</td>
+<td style="text-align: left;">Johnsrud</td>
+<td style="text-align: left;">Brown</td>
 </tr>
 </tbody>
 </table>
@@ -868,7 +868,7 @@ Fish Sampled on Blackfoot River
 </div>
 <div style="font-size: 0.75em;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(births_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(births_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1,000
 Columns: 10
@@ -897,13 +897,11 @@ $ whitemom       &lt;chr&gt; "white", "white", "not white", "white", "white", "w
 </div>
 </div>
 
-
-</section>
-    <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -929,6 +927,7 @@ $ whitemom       &lt;chr&gt; "white", "white", "not white", "white", "white", "w
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1227,9 +1226,10 @@ $ whitemom       &lt;chr&gt; "white", "white", "not white", "white", "white", "w
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1239,17 +1239,8 @@ $ whitemom       &lt;chr&gt; "white", "white", "not white", "white", "white", "w
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

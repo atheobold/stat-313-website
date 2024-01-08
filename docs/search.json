@@ -1022,28 +1022,28 @@
     "href": "slides/week1-day2.html#section",
     "title": "Working with Data",
     "section": "",
-    "text": "There’s Data\n\n\nGender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n76\nfemale\n5\nsmart\nadults\n1.00\n1.00\n\n\n48\nfemale\n7\nnice\nadults\n0.75\n0.75\n\n\n36\nfemale\n7\nsmart\nadults\n0.75\n0.75\n\n\n7\nfemale\n6\nsmart\nadults\n0.00\n0.50\n\n\n80\nmale\n6\nsmart\nadults\n0.75\n1.00\n\n\n72\nfemale\n5\nnice\nadults\n0.25\n0.75"
+    "text": "There’s Data\n\n\nGender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n29\nfemale\n5\nsmart\nchildren\n1.00\n0.75\n\n\n115\nmale\n5\nnice\nadults\n0.75\n1.00\n\n\n38\nfemale\n7\nsmart\nchildren\n0.75\n0.75\n\n\n40\nfemale\n6\nsmart\nadults\n0.50\n0.75\n\n\n32\nfemale\n6\nsmart\nadults\n0.75\n0.75\n\n\n91\nfemale\n5\nsmart\nchildren\n1.00\n0.75"
   },
   {
     "objectID": "slides/week1-day2.html#section-1",
     "href": "slides/week1-day2.html#section-1",
     "title": "Working with Data",
     "section": "",
-    "text": "Lots of Data\n\nBody girth measurements and skeletal diameter measurements for 247 men and 260 women.\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n19\n62.2\n167.1\n0\n108.5\n70.0\n81.2\n96.8\n\n\n37\n82.7\n167.6\n1\n124.3\n94.9\n94.7\n104.3\n\n\n21\n81.6\n184.0\n1\n119.5\n77.5\n81.5\n99.8\n\n\n28\n81.8\n185.4\n1\n116.1\n84.5\n92.6\n99.5\n\n\n27\n78.4\n184.5\n1\n120.4\n76.8\n80.5\n98.0\n\n\n21\n45.0\n160.0\n0\n85.9\n61.0\n65.3\n84.5"
+    "text": "Lots of Data\n\nBody girth measurements and skeletal diameter measurements for 247 men and 260 women.\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n25\n64.1\n177.8\n1\n104.8\n70.8\n84.9\n89.4\n\n\n27\n60.2\n161.3\n0\n107.3\n72.7\n76.7\n95.9\n\n\n51\n72.2\n174.0\n1\n113.1\n82.9\n83.6\n95.8\n\n\n20\n54.6\n156.0\n0\n100.3\n66.0\n73.2\n90.2\n\n\n33\n66.4\n174.0\n0\n107.1\n72.2\n89.4\n98.6\n\n\n29\n91.8\n186.7\n1\n123.0\n87.6\n89.4\n106.7"
   },
   {
     "objectID": "slides/week1-day2.html#section-2",
     "href": "slides/week1-day2.html#section-2",
     "title": "Working with Data",
     "section": "",
-    "text": "In Every Context\n\n\nNBA player of the week from 1985 to 2016\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n30\nNov 7, 2016\n2008\n191cm\nGeorge Hill\nG\n\n\n28\nMar 24, 1996\n1991\n6-10\nChris Gatling\nPF\n\n\n23\nDec 10, 2012\n2009\n6-10\nBlake Griffin\nPF\n\n\n29\nJan 29, 1989\n1981\n6-10\nTom Chambers\nPF\n\n\n28\nMar 23, 2003\n1996\n6-9\nBen Wallace\nFC\n\n\n29\nApr 7, 2014\n2004\n6-10\nAl Jefferson\nFC"
+    "text": "In Every Context\n\n\nNBA player of the week from 1985 to 2016\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n26\nJan 30, 2017\n2010\n211cm\nDeMarcus Cousins\nC\n\n\n32\nDec 12, 2016\n2003\n203cm\nLeBron James\nF\n\n\n28\nApr 10, 2017\n2008\n191cm\nRussell Westbrook\nG\n\n\n27\nMar 20, 2017\n2010\n213cm\nHassan Whiteside\nC\n\n\n22\nMar 17, 2002\n1997\n6-8\nTracy McGrady\nGF\n\n\n25\nMar 13, 1988\n1983\n6-7\nClyde Drexler\nSG"
   },
   {
     "objectID": "slides/week1-day2.html#section-3",
     "href": "slides/week1-day2.html#section-3",
     "title": "Working with Data",
     "section": "",
-    "text": "You Can Imagine\n\n\nFish Sampled on Blackfoot River\n\n\n\n\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n2\n0\n188\n70\n2000\nScottyBrown\nWCT\n\n\n2\n0\n152\n30\n1989\nJohnsrud\nRBT\n\n\n2\n0\n228\n130\n1993\nScottyBrown\nRBT\n\n\n1\n0\n343\n405\n1993\nScottyBrown\nRBT\n\n\n2\n0\n255\n155\n2002\nScottyBrown\nBrown\n\n\n2\n1\n290\nNA\n1991\nScottyBrown\nWCT"
+    "text": "You Can Imagine\n\n\nFish Sampled on Blackfoot River\n\n\n\n\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n2\n0\n470\n790\n2002\nJohnsrud\nRBT\n\n\n2\n1\n210\nNA\n2004\nJohnsrud\nRBT\n\n\n2\n0\n186\n60\n1991\nScottyBrown\nWCT\n\n\n2\n0\n282\n290\n1998\nScottyBrown\nWCT\n\n\n1\n0\n182\n54\n1996\nJohnsrud\nRBT\n\n\n1\n0\n456\n940\n2004\nJohnsrud\nBrown"
   },
   {
     "objectID": "slides/week1-day2.html#section-4",
@@ -4861,7 +4861,7 @@
     "href": "slides/week1-day1.html#section",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "About Me…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPh.D. in Statistics from Montana State University\nB.S. in Mathematics & B.B.A. in Economics\nfrom Colorado Mesa University"
+    "text": "About Me…"
   },
   {
     "objectID": "slides/week1-day1.html#section-1",
@@ -4910,7 +4910,7 @@
     "href": "slides/week1-day1.html#section-7",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "How Smart are You?\n\n\n\n(1 minute)\n\nWrite two criteria would you use to rank yourself compared to everyone else in this class\n\n\n\n\n(3 minutes)\n\nTalk with the person on your right about the criteria you proposed\n\n\n\n\n(3 minutes)\n\nShare out\nPerson with most vowels in name should be prepared to share!"
+    "text": "How Smart are You?\n\n\n\n(2 minutes)\n\nWrite two criteria would you use to rank yourself compared to everyone else in this class\n\n\n\n\n(3 minutes)\n\nTalk with the person on your right about the criteria you proposed\n\n\n\n\n(5 minutes)\n\nShare out\nPerson with most vowels in name should be prepared to share!"
   },
   {
     "objectID": "slides/week1-day1.html#section-8",
@@ -4924,7 +4924,7 @@
     "href": "slides/week1-day1.html#section-9",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space – Share the air (page)\nEmbrace discomfort\nMake decisions by consensus"
+    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space\nEmbrace discomfort\nMake decisions by consensus"
   },
   {
     "objectID": "slides/week1-day1.html#section-10",
@@ -5389,5 +5389,229 @@
       "Weekly materials",
       "Week 1"
     ]
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section",
+    "href": "slides/week1-day1-alt.html#section",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "About Me…"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-1",
+    "href": "slides/week1-day1-alt.html#section-1",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "What is Statistics?\n\n\n\nScientists seek to answer questions using rigorous methods and careful observations. These observations – collected from the likes of field notes, surveys, and experiments – form the backbone of a statistical investigation and are called data.\n\n\nStatistics is the study of how best to collect, analyze, and draw conclusions from data.\n\n\nIntroduction to Modern Statistics"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-2",
+    "href": "slides/week1-day1-alt.html#section-2",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "What Statistics Is To Me\n\n \n\n\n\n\nThe data science cycle – Wickham & Grolemund"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-3",
+    "href": "slides/week1-day1-alt.html#section-3",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "What you can expect in STAT 313\n\nThis course will teach you the fundamentals of linear models—simple linear regression, multiple linear regression, and analysis of variance—and experimental design. You will extend the concepts covered in your Stat I course, to:\n\n\nwork with data in a reproducible way (using R)\nvisualize and summarize a variety of datasets (in R)\ncritically evaluate the use of Statistics\nperform statistical analyses to answer research questions (using R)"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-4",
+    "href": "slides/week1-day1-alt.html#section-4",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Coding 🙀\n\n\nCoding is a huge part of how doing statistics in the wild looks.\n\n\n\nEveryone is coming from a different background\nDifferent aspects of the course will be difficult to different people\nYou will be given coding resources each week\nUse your peers to support your learning"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-5",
+    "href": "slides/week1-day1-alt.html#section-5",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Course Components\n\n\n\n\nBefore Class\n\n\nReading Guides\nConcept Quizzes\nR Tutorials\n\n\n\n\n\nDuring Class\n\n\nGroup Discussion\nHands-on Activities\nLab Assignments\n\n\n\n\n\nOutside of Class\n\n\nStatistical Critiques\nMidterm Project\nFinal Project"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-6",
+    "href": "slides/week1-day1-alt.html#section-6",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Specifications Based Grading\n\n\n\n\nEveryone is capable of earning an A!"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-7",
+    "href": "slides/week1-day1-alt.html#section-7",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "How Smart are You?\n\n\n\n(2 minutes)\n\nWrite two criteria would you use to rank yourself compared to everyone else in this class\n\n\n\n\n(3 minutes)\n\nTalk with the person on your right about the criteria you proposed\n\n\n\n\n(5 minutes)\n\nShare out\nPerson with most vowels in name should be prepared to share!"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-8",
+    "href": "slides/week1-day1-alt.html#section-8",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Cooperative Learning\n\nis a structured form of small-group learning\n\n\n\n\nRoles relate to how the work should be done\n\nRoles are not about breaking up the work intellectually\n\nRoles allow each person to contribute to the group in significant ways\n\nEach person’s participation is necessary to complete the task"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-9",
+    "href": "slides/week1-day1-alt.html#section-9",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space\nEmbrace discomfort\nMake decisions by consensus"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-10",
+    "href": "slides/week1-day1-alt.html#section-10",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "How We Learn Together\n\n\n\n\n\nNo one is done until everyone is done\nYou have the right to ask anyone in your group for help\nYou have the duty to help anyone in your group who asks for help\n\n\n\n\n\n\n\nHelping someone means explaining your thinking not giving answers or doing the work for them\nProvide a justification when you make a statement\nThink and work together – don’t divide up the work"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-11",
+    "href": "slides/week1-day1-alt.html#section-11",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Break"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-12",
+    "href": "slides/week1-day1-alt.html#section-12",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Let’s talk about data…"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-13",
+    "href": "slides/week1-day1-alt.html#section-13",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Tidy Data\n\n\nExpected layout of “tidy” datasets"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-14",
+    "href": "slides/week1-day1-alt.html#section-14",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n6\nmale\n7\nsmart\nchildren\n0.75\n0.50\n\n\n62\nfemale\n6\nsmart\nchildren\n0.25\n1.00\n\n\n66\nfemale\n7\nsmart\nadults\n0.75\n0.75\n\n\n18\nmale\n5\nnice\nadults\n0.75\n0.25\n\n\n75\nfemale\n6\nnice\nchildren\n1.00\n1.00\n\n\n4\nfemale\n5\nnice\nchildren\n0.75\n1.00"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-15",
+    "href": "slides/week1-day1-alt.html#section-15",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n25\n74.9\n172.1\n1\n113.3\n79.7\n87.1\n98.4\n\n\n22\n79.6\n184.0\n1\n112.0\n82.0\n84.0\n97.0\n\n\n41\n75.0\n166.4\n1\n111.5\n90.9\n92.7\n100.2\n\n\n23\n59.0\n160.0\n0\n100.6\n70.4\n91.1\n96.7\n\n\n26\n44.8\n149.5\n0\n90.0\n58.5\n67.2\n84.3\n\n\n35\n73.6\n176.5\n1\n116.5\n84.2\n84.0\n93.2"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-16",
+    "href": "slides/week1-day1-alt.html#section-16",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n28\nApr 3, 2017\n2009\n191cm\nStephen Curry\nG\n\n\n26\nNov 26, 1995\n1989\n6-10\nShawn Kemp\nC\n\n\n21\nJan 4, 2010\n2008\n6-3\nDerrick Rose\nPG\n\n\n24\nJan 2, 2018\n2012\n196cm\nBradley Beal\nSG\n\n\n31\nJan 31, 1988\n1977\n6-7\nBernard King\nSF\n\n\n25\nFeb 24, 2014\n2008\n6-10\nKevin Love\nFC"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-17",
+    "href": "slides/week1-day1-alt.html#section-17",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-18",
+    "href": "slides/week1-day1-alt.html#section-18",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Military Spending\n\n\n\n\n\n\n\nCountry\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n\n\n\n\nAfrica\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nUSA\n4.922642\n4.840174\n4.477401\n4.046679\n3.695891\n3.477846\n3.418941\n3.313385\n3.316244\n3.413107\n\n\nAustralia\n1.856791\n1.757078\n1.670963\n1.639861\n1.772211\n1.950601\n2.081512\n1.997974\n1.894180\n1.879802\n\n\nNorway\n1.515698\n1.451436\n1.402134\n1.413997\n1.472039\n1.507280\n1.626681\n1.622270\n1.628300\n1.684120\n\n\nSweden\n1.188288\n1.104288\n1.133304\n1.116715\n1.129776\n1.069579\n1.052833\n1.024075\n1.031100\n1.120599\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-19",
+    "href": "slides/week1-day1-alt.html#section-19",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nDodge Challenger\n15.5\n8\n318.0\n150\n2.76\n3.52\n16.87\n0\n0\n3\n2\n\n\nDatsun 710\n22.8\n4\n108.0\n93\n3.85\n2.32\n18.61\n1\n1\n4\n1\n\n\nDuster 360\n14.3\n8\n360.0\n245\n3.21\n3.57\n15.84\n0\n0\n3\n4\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.44\n18.30\n1\n0\n4\n4\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-20",
+    "href": "slides/week1-day1-alt.html#section-20",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Artwork by @allison_horst"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-21",
+    "href": "slides/week1-day1-alt.html#section-21",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-22",
+    "href": "slides/week1-day1-alt.html#section-22",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Examples\n\n\nA person’s height (usually) would be a continuous, numerical variable\nThe number of classes someone takes would be a discrete, numerical variable\nA course letter grade would be a ordinal, categorical variable\nThe color of someone’s hair would be a regular, categorical variable"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-23",
+    "href": "slides/week1-day1-alt.html#section-23",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Your Turn\n\n\nSuppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.\n\n\n\nWhat type of variable would year be?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-24",
+    "href": "slides/week1-day1-alt.html#section-24",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-25",
+    "href": "slides/week1-day1-alt.html#section-25",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-26",
+    "href": "slides/week1-day1-alt.html#section-26",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-27",
+    "href": "slides/week1-day1-alt.html#section-27",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-28",
+    "href": "slides/week1-day1-alt.html#section-28",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-29",
+    "href": "slides/week1-day1-alt.html#section-29",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-30",
+    "href": "slides/week1-day1-alt.html#section-30",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#find-your-group",
+    "href": "slides/week1-day1-alt.html#find-your-group",
+    "title": "Welcome to Stat 313!",
+    "section": "Find Your Group!",
+    "text": "Find Your Group!"
   }
 ]
