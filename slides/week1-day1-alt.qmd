@@ -7,7 +7,7 @@ title-slide-attributes:
 format: 
   revealjs:
     theme: [night]
-editor: visual
+editor: source
 execute: 
   echo: false
   message: false
@@ -69,8 +69,9 @@ Why do you believe your discipline requires / expects you to take this course?
 About Me...
 :::
 
-```{r pictures}
+```{r}
 #| layout-nrow: 1
+#| label: pictures
 knitr::include_graphics(c("images/running.jpg", "images/biking.JPG", "images/kitties.JPG"))
 ```
 
@@ -189,7 +190,6 @@ Specifications Based Grading
 :::
 
 ![](images/four_pillars.png)
-
 
 . . .
 
@@ -315,7 +315,7 @@ How We Learn Together
 Break
 :::
 
-#  
+# 
 
 ::: {style="font-size: 4.5em;"}
 Let's talk about data...
@@ -411,7 +411,7 @@ A total of 13 variables were collected on every birth, including information abo
 How would you expect this dataframe to look?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em;"}
 Military Spending
@@ -446,10 +446,10 @@ military %>%
 </br>
 
 ::: {style="color: #b76352;"}
-Do these data satisfy the "tidy" principles? 
+Do these data satisfy the "tidy" principles?
 :::
 
-##
+## 
 
 ::: {style="font-size: 2em;"}
 Vehicle Efficiency
@@ -473,14 +473,14 @@ mtcars %>%
 </br>
 
 ::: {style="color: #b76352;"}
-Do these data satisfy the "tidy" principles? 
+Do these data satisfy the "tidy" principles?
 :::
 
 ##  {background-color="#B6CADA"}
 
-![Artwork by [@allison_horst](https://twitter.com/allison_horst)](images/tidy-data.jpg)
+![Artwork by [\@allison_horst](https://twitter.com/allison_horst)](images/tidy-data.jpg)
 
-##  
+## 
 
 ::: {style="font-size: 2em; color: #FFFFFF;"}
 Types of Variables
@@ -492,7 +492,9 @@ Types of Variables
 
 ##  {background-color="#B6CADA"}
 
+<center>
 ![](images/continuous-discrete.jpeg)
+</center>
 
 ##  {background-color="#B6CADA"}
 
@@ -508,18 +510,18 @@ Your Turn (90-seconds)
 
 Write down one example of:
 
-- a **continuous, numerical** variable
+-   a **continuous, numerical** variable
 
-- a **discrete, numerical** variable
+-   a **discrete, numerical** variable
 
-- an **ordinal, categorical** variable
+-   an **ordinal, categorical** variable
 
-- a **regular, categorical** variable
+-   a **regular, categorical** variable
 
 . . .
 
 ::: {style="font-size: 1.5em; color: #e28743;"}
-Share out! 
+Share out!
 :::
 
 #  {background-color="#B6CADA"}
@@ -628,5 +630,23 @@ What do you need to say that the explanatory variable [*causes*]{style="color: #
 
 # Plan for Thursday
 
-## Find Your Group!
+## Lab 1
+
+- Access Posit Cloud from link posted on Canvas
+  * Create an Account
+  * Join the STAT 313 / 513 workspace
+  * Access the Lab 1 Project
+  * Open the Project
+
+</br>
+
+- A video will be posted guiding you on how to work with Quarto
+  * Ask questions on Discord
+  * Email / text / chat with your group members
+
+## 
+
+::: {style="font-size: 4em; color: #FFFFFF;"}
+Find Your Group!
+:::
 
