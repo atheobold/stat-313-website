@@ -1204,21 +1204,21 @@
     "href": "slides/week1-day1-alt.html#section-14",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n120\nfemale\n7\nsmart\nchildren\n0.75\n1.00\n\n\n47\nfemale\n7\nnice\nchildren\n0.75\n0.50\n\n\n72\nfemale\n5\nnice\nadults\n0.25\n0.75\n\n\n44\nmale\n6\nsmart\nchildren\n1.00\n0.75\n\n\n47\nfemale\n7\nsmart\nadults\n0.50\n0.50\n\n\n22\nmale\n6\nsmart\nchildren\n0.50\n0.50"
+    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n140\nmale\n5\nnice\nchildren\n0.50\n0.25\n\n\n95\nfemale\n5\nsmart\nadults\n0.75\n1.00\n\n\n61\nfemale\n6\nnice\nadults\n1.00\n0.75\n\n\n144\nmale\n5\nsmart\nadults\n0.75\n0.50\n\n\n39\nfemale\n7\nsmart\nchildren\n0.50\n0.75\n\n\n124\nmale\n5\nnice\nadults\n0.50\n0.75"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-15",
     "href": "slides/week1-day1-alt.html#section-15",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n45\n58.6\n166.2\n0\n102.5\n69.5\n75.5\n95.3\n\n\n23\n76.6\n180.0\n1\n117.1\n81.9\n81.0\n98.4\n\n\n24\n76.4\n180.3\n1\n116.0\n73.5\n77.7\n97.0\n\n\n26\n55.9\n163.2\n0\n97.7\n64.9\n75.9\n92.2\n\n\n20\n58.2\n162.5\n0\n104.8\n68.8\n70.6\n94.8\n\n\n20\n46.5\n152.4\n0\n97.4\n61.7\n66.0\n80.7"
+    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n40\n85.5\n180.3\n1\n111.7\n88.8\n90.8\n101.3\n\n\n36\n54.5\n167.6\n0\n96.4\n73.6\n86.9\n94.7\n\n\n23\n86.2\n174.0\n1\n126.3\n81.6\n86.5\n100.9\n\n\n28\n59.2\n162.1\n0\n101.5\n70.5\n78.5\n91.9\n\n\n26\n74.6\n176.0\n1\n113.0\n85.6\n89.2\n98.0\n\n\n24\n59.4\n162.9\n0\n107.1\n71.2\n85.7\n97.5"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-16",
     "href": "slides/week1-day1-alt.html#section-16",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n24\nNov 24, 2014\n2010\n6-11\nDeMarcus Cousins\nC\n\n\n23\nNov 17, 1985\n1985\n7-0\nPatrick Ewing\nC\n\n\n24\nApr 24, 1988\n1985\n6-9\nKarl Malone\nPF\n\n\n30\nMar 23, 1986\n1976\n6-5\nAdrian Dantley\nSF\n\n\n28\nMar 8, 2010\n2003\n6-4\nDwyane Wade\nSG\n\n\n25\nJan 22, 1989\n1985\n6-7\nChris Mullin\nSF"
+    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n28\nMar 12, 2006\n1998\n6-7\nPaul Pierce\nSF\n\n\n25\nMar 24, 2002\n1997\n6-11\nTim Duncan\nFC\n\n\n28\nFeb 9, 2009\n2001\n7-0\nPau Gasol\nFC\n\n\n20\nFeb 6, 2006\n2005\n6-0\nChris Paul\nPG\n\n\n28\nMar 8, 2010\n2003\n6-4\nDwyane Wade\nSG\n\n\n25\nApr 25, 1999\n1993\n6-9\nChris Webber\nF-C"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-17",
@@ -1239,7 +1239,7 @@
     "href": "slides/week1-day1-alt.html#section-19",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.4\n0\n0\n3\n3\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.5\n0\n1\n5\n4\n\n\nLotus Europa\n30.4\n4\n95.1\n113\n3.77\n1.513\n16.9\n1\n1\n5\n2\n\n\nMerc 450SLC\n15.2\n8\n275.8\n180\n3.07\n3.780\n18.0\n0\n0\n3\n3\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nFiat X1-9\n27.3\n4\n79.0\n66\n4.08\n1.935\n18.90\n1\n1\n4\n1\n\n\nMerc 280C\n17.8\n6\n167.6\n123\n3.92\n3.440\n18.90\n1\n0\n4\n4\n\n\nToyota Corona\n21.5\n4\n120.1\n97\n3.70\n2.465\n20.01\n1\n0\n3\n1\n\n\nValiant\n18.1\n6\n225.0\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-20",
@@ -5535,5 +5535,33 @@
     "title": "Statistical Critique 2: Statistical Argumentation",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is my professional organization.↩︎"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-12",
+    "href": "slides/week1-day1-alt.html#section-12",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n28\nJan 7, 2013\n2003\n6-8\nCarmelo Anthony\nF\n\n\n23\nJan 13, 2008\n2003\n6-11\nChris Bosh\nPF\n\n\n27\nJan 25, 2004\n1995\n6-11\nKevin Garnett\nPF\n\n\n34\nJan 13, 1991\n1977\n6-7\nBernard King\nSF\n\n\n21\nMar 1, 1998\n1997\n6-11\nTim Duncan\nFC\n\n\n31\nFeb 18, 1996\n1987\n6-9\nArmen Gilliam\nPF"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-22",
+    "href": "slides/week1-day1-alt.html#section-22",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-23",
+    "href": "slides/week1-day1-alt.html#section-23",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-25",
+    "href": "slides/week1-day1-alt.html#section-25",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   }
 ]
