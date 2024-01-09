@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - One-Way ANOVA to Two-Way ANOVA Model Selection Process</title>
+<title>STAT 313 / 513 - Winter 2024 - Introduction to Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,58 +20,24 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,35 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -141,7 +78,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">One-Way ANOVA to Two-Way ANOVA Model Selection Process</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Quarto</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -155,8 +92,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -182,31 +119,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -223,7 +160,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
@@ -240,7 +177,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -257,13 +194,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Project Description</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final Project Description</span></a>
   </div>
 </li>
@@ -280,67 +217,67 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-0.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-6.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-7.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-8.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-10.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
@@ -356,19 +293,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable" id="toc-step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="nav-link active" data-scroll-target="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable">Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</a>
-  <ul class="collapse">
-  <li><a href="#plot-the-model" id="toc-plot-the-model" class="nav-link" data-scroll-target="#plot-the-model">Plot the model</a></li>
-  <li><a href="#fit-the-models" id="toc-fit-the-models" class="nav-link" data-scroll-target="#fit-the-models">Fit the model(s)</a></li>
-  <li><a href="#perform-a-hypothesis-test" id="toc-perform-a-hypothesis-test" class="nav-link" data-scroll-target="#perform-a-hypothesis-test">Perform a Hypothesis Test</a></li>
-  </ul></li>
-  <li><a href="#step-3-decide-how-to-proceed" id="toc-step-3-decide-how-to-proceed" class="nav-link" data-scroll-target="#step-3-decide-how-to-proceed">Step 3: Decide How to Proceed</a></li>
-  <li><a href="#step-2-fit-an-additive-two-way-anova" id="toc-step-2-fit-an-additive-two-way-anova" class="nav-link" data-scroll-target="#step-2-fit-an-additive-two-way-anova">Step 2: Fit an Additive Two-Way ANOVA</a>
-  <ul class="collapse">
-  <li><a href="#plot-the-model-1" id="toc-plot-the-model-1" class="nav-link" data-scroll-target="#plot-the-model-1">Plot the model</a></li>
-  <li><a href="#fit-the-model" id="toc-fit-the-model" class="nav-link" data-scroll-target="#fit-the-model">Fit the Model</a></li>
-  <li><a href="#perform-a-hypothesis-test-1" id="toc-perform-a-hypothesis-test-1" class="nav-link" data-scroll-target="#perform-a-hypothesis-test-1">Perform a Hypothesis Test</a></li>
-  </ul></li>
+  <li><a href="#video-guide-of-quarto" id="toc-video-guide-of-quarto" class="nav-link active" data-scroll-target="#video-guide-of-quarto">🎥 Video Guide of Quarto</a></li>
+  <li><a href="#textbook-guide-of-quarto" id="toc-textbook-guide-of-quarto" class="nav-link" data-scroll-target="#textbook-guide-of-quarto">📖 Textbook Guide of Quarto</a></li>
+  <li><a href="#tutorial-of-quarto" id="toc-tutorial-of-quarto" class="nav-link" data-scroll-target="#tutorial-of-quarto">💻 Tutorial of Quarto</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -377,7 +304,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">One-Way ANOVA to Two-Way ANOVA Model Selection Process</h1>
+<h1 class="title">Introduction to Quarto</h1>
 </div>
 
 
@@ -394,169 +321,59 @@ window.Quarto = {
 </header>
 
 
-<p>We will be using a “forward” selection process for deciding on the “best” ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn’t “worth it.”</p>
-<section id="step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="level1">
-<h1>Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</h1>
-<section id="plot-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="plot-the-model">Plot the model</h2>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-align="center">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;display: flex;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="owa-to-twa-model-selection-process_files/figure-html/owa-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;display: flex;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="owa-to-twa-model-selection-process_files/figure-html/owa-plot-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><strong>What are we looking for?</strong></p>
-<p>We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!</p>
-<p>For these data we are looking to see if at least one of the genres has a different mean IMDB rating <strong>or</strong> if at least one of the eras has a different mean movie rating.</p>
-</section>
-<section id="fit-the-models" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-models">Fit the model(s)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 era           3   4.59   1.53     0.669   0.575
-2 Residuals    52 119.     2.28    NA      NA    </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 genre         1   4.68   4.68      2.13   0.150
-2 Residuals    54 119.     2.20     NA     NA    </code></pre>
-</div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test">Perform a Hypothesis Test</h2>
-<p>The <code>era</code> line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era</p>
-<p>With a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.</p>
-<p>The <code>genre</code> line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> genre</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> genre</p>
-<p>With a p-value of 0.015 (from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Quarto is possibly my favorite thing that happened in 2023! It is an easy-to-use tool for creating reproducible data analyses. Our weekly lab assignments will be done in Quarto, so this week each of you is going to complete your own lab assignment, so you can get to know Quarto a bit on your own.</p>
+<section id="video-guide-of-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="video-guide-of-quarto">🎥 Video Guide of Quarto</h3>
+<p>Link to video: <a href="https://www.youtube.com/watch?v=_f3latmOhew" class="uri">https://www.youtube.com/watch?v=_f3latmOhew</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Categorical variables with two levels
+Watch the first 10-minutes!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This <strong>is not</strong> the case if your variable has more than two levels!</p>
+
 </div>
 </div>
 </section>
-</section>
-<section id="step-3-decide-how-to-proceed" class="level1">
-<h1>Step 3: Decide How to Proceed</h1>
-<p>You will decide what model to fit next depending on the results of your one-way ANOVA models.</p>
-<ul>
-<li>If you failed to reject the null hypothesis for <strong>either</strong> one-way ANOVA models…
-<ul>
-<li>You <strong>do not</strong> fit any additional models.</li>
-</ul></li>
-<li>If you rejected the null hypothesis for <strong>both</strong> one-way ANOVA models…
-<ul>
-<li>your next step is to fit an additive two-way ANOVA model</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
+<section id="textbook-guide-of-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="textbook-guide-of-quarto">📖 Textbook Guide of Quarto</h3>
+<p>Link to textbook chapter: <a href="https://r4ds.hadley.nz/quarto.html" class="uri">https://r4ds.hadley.nz/quarto.html</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Additive two-way ANOVA
+Read sectios 28.1 through 28.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Week 10 we will learn about additive and interaction two-way ANOVA models, so you will have the tools to fit these additional models then!</p>
+
 </div>
 </div>
 </section>
-<section id="step-2-fit-an-additive-two-way-anova" class="level1">
-<h1>Step 2: Fit an Additive Two-Way ANOVA</h1>
-<p>We are looking to see if the mean of <span class="math inline">\(y\)</span> differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of <span class="math inline">\(y\)</span> for each group and the slope is the estimated relationship between the explanatory variable and the mean of <span class="math inline">\(y\)</span>.</p>
-<p>For these data we are looking to see if the genres have differences in the mean movie ratings <strong>and</strong> if the eras have differences in the mean movie rating.</p>
-<section id="plot-the-model-1" class="level2">
-<h2 class="anchored" data-anchor-id="plot-the-model-1">Plot the model</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="owa-to-twa-model-selection-process_files/figure-html/twa-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="fit-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-model">Fit the Model</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="tutorial-of-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="tutorial-of-quarto">💻 Tutorial of Quarto</h3>
+<p>Link to tutorial: <a href="https://quarto.org/docs/get-started/hello/rstudio.html" class="uri">https://quarto.org/docs/get-started/hello/rstudio.html</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+I’d recommend also watching the video!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Notice I’m using a <code>+</code> for an interaction model!</p>
+
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 era           3   4.59   1.53     0.680   0.568
-2 genre         1   4.19   4.19     1.86    0.178
-3 Residuals    51 115.     2.25    NA      NA    </code></pre>
-</div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test-1" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test-1">Perform a Hypothesis Test</h2>
-<p>The <code>era</code> and <code>genre</code> lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including <strong>both</strong> variables in the <strong>same</strong> model, each of these tests are now conditional on the other variable(s) in the model.</p>
-<p>The <code>era</code> line is testing if the mean movie rating is different for at least one era, conditional on the <code>genre</code> of the movie. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era, given the <code>genre</code> of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era, given the <code>genre</code> of the movie</p>
-<p>With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.</p>
-<p>The <code>genre</code> line is testing if the mean movie rating is different for at least one era, conditional on the <code>era</code> of the movie. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> genre, given the <code>era</code> of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> genre, given the <code>era</code> of the movie</p>
-<p>With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

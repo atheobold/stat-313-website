@@ -1,0 +1,32 @@
+---
+title: "Introduction to Quarto"
+---
+
+Quarto is possibly my favorite thing that happened in 2023! It is an easy-to-use
+tool for creating reproducible data analyses. Our weekly lab assignments will be
+done in Quarto, so this week each of you is going to complete your own lab 
+assignment, so you can get to know Quarto a bit on your own. 
+
+### 🎥 Video Guide of Quarto
+
+Link to video: <https://www.youtube.com/watch?v=_f3latmOhew>
+
+:::{.callout-note}
+# Watch the first 10-minutes! 
+:::
+
+### 📖 Textbook Guide of Quarto
+
+Link to textbook chapter: <https://r4ds.hadley.nz/quarto.html>
+
+:::{.callout-note}
+# Read sectios 28.1 through 28.5
+:::
+
+### 💻 Tutorial of Quarto
+
+Link to tutorial: <https://quarto.org/docs/get-started/hello/rstudio.html>
+
+:::{.callout-note}
+# I'd recommend also watching the video! 
+:::

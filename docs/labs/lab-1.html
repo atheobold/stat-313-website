@@ -390,12 +390,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="r-code">R Code</h2>
 <p>You can differentiate the R code within a Quarto file from the body of the document, based on the gray boxes that start with an <code>{r}.</code></p>
 <p>Here is an example of an R code chunk:</p>
-<p>Notice that after the <code>{r}</code> there is a name (<code>packages</code>), that is the name of the code chunk. It is good practice to name your code chunks based on the action they perform. It makes it easier to navigate to them in the navigation pane.</p>
-<p>This code chunk has three things we want to pay attention to:</p>
+<p>Notice in the line after the <code>{r}</code> there are two lines that start with <code>#|</code> – this is the symbol that declares options for a code chunk. The <code>#| label:</code> allows us to specify a name for a code chunk, I typically choose a name that tells me what the code chunk does (e.g., load-packages, clean-data). The <code>#| include: false</code> option at the beginning of the code chunk controls how the code output looks in our final rendered document.</p>
+<p>This code chunk has two things we want to pay attention to:</p>
 <ol type="1">
-<li><p>The <code>#| include: false</code> option at the beginning of the code chunk. We use these options to control how the code output looks in our final rendered document.</p></li>
 <li><p>The <code>library(tidyverse)</code> code loads in an R package called the “tidyverse”. This is code you will have in <strong>every</strong> lab assignment for this class!</p></li>
-<li><p>Code comments which are denoted by a <code>##</code> symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.</p></li>
+<li><p>Code comments which are denoted by a <code>#</code> symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.</p></li>
 </ol>
 </section>
 <section id="rendering" class="level2">

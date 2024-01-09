@@ -34,24 +34,22 @@ Here is an example of an R code chunk:
 
 ```{r}
 #| include: false
-#| label: packages
+#| label: load-packages
 
 library(tidyverse)
-## Code to load in package we need
+# Code to load in package we need
 
-## a # INSIDE of a code chunk creates a code comment
-## R knows this IS NOT code because it has a # in front! 
+# a # INSIDE of a code chunk creates a code comment
+# R knows this IS NOT code because it has a # in front! 
 ```
 
-Notice that after the `{r}` there is a name (`packages`), that is the name of the code chunk. It is good practice to name your code chunks based on the action they perform. It makes it easier to navigate to them in the navigation pane.
+Notice in the line after the `{r}` there are two lines that start with `#|` – this is the symbol that declares options for a code chunk. The `#| label:` allows us to specify a name for a code chunk, I typically choose a name that tells me what the code chunk does (e.g., load-packages, clean-data). The `#| include: false` option at the beginning of the code chunk controls how the code output looks in our final rendered document.
 
-This code chunk has three things we want to pay attention to:
+This code chunk has two things we want to pay attention to:
 
-1.  The `#| include: false` option at the beginning of the code chunk. We use these options to control how the code output looks in our final rendered document.
+1.  The `library(tidyverse)` code loads in an R package called the "tidyverse". This is code you will have in **every** lab assignment for this class!
 
-2.  The `library(tidyverse)` code loads in an R package called the "tidyverse". This is code you will have in **every** lab assignment for this class!
-
-3.  Code comments which are denoted by a `##` symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.
+2.  Code comments which are denoted by a `#` symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.
 
 ## Rendering
 
@@ -65,6 +63,7 @@ You can include code output in your knitted document:
 
 ```{r}
 #| label: mpg-glimpse
+
 glimpse(mpg)
 ```
 
