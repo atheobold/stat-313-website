@@ -2,24 +2,73 @@
 title: "Introduction to Quarto"
 ---
 
-Quarto is possibly my favorite thing that happened in 2023! It is an easy-to-use
-tool for creating reproducible data analyses. Our weekly lab assignments will be
-done in Quarto, so this week each of you is going to complete your own lab 
-assignment, so you can get to know Quarto a bit on your own. 
+Quarto is possibly my favorite thing that happened in 2023! It is an easy-to-use tool for creating reproducible data analyses. Our weekly lab assignments will be done in Quarto, so this week each of you is going to complete your own lab assignment, so you can get to know Quarto a bit on your own.
+
+# Accessing Lab 1
+
+We will be using Posit Cloud to work with R, so there is no need
+for you to download any software. However, you will need to create
+an account for you to be able to access the weekly labs. 
+
+Here are the steps you need to complete for you to access this
+week's (and every week's) lab assignment:
+
+1. Click on the Posit Cloud link below the "Lab" assignment module
+on Canvas
+
+2. Create a log-in for Posit Cloud
+
+![What you will see when you first click on the link to join the Posit Cloud workspace for STAT 313 / 513](images/create-login.png)
+
+3. Click "Yes" to join the STAT 313 / 513 workspace
+
+![Prompt you should see after you make an account, asking if you want to join the workspace -- you should click "Yes"](images/request-to-join.png)
+
+4. If you successfully joined the workspace, you should see a 
+page that looks like this:
+
+![The "Welcome to Stat 313 / 513 Winter 2024" welcome message you should see if you successfully joined the workspace](images/joined-workspace.png)
+
+::: {.callout-caution}
+# Your welcome page should reflect the course you are registered for
+
+In the image above, the message says "Welcome to Stat 513 Winter 2024". If you are registered for Stat 313, your welcome message
+should say "Welcome to Stat 313 Winter 2024". 
+:::
+
+5. Once you are in the workspace, you need to access the Content 
+tab, which is where the lab assignments will be listed
+
+![What you should see if you click on the "Content" tab in the Stat 313 / 513 workspace](images/access-content.png)
+
+6. Click on the Lab 1 project to open this week's lab assignment
+
+![What you should see when you click on the Lab 1 project -- it may take a few moments to load the project (be patient)](images/open-project.png)
+7. Once you are in the Lab 1 project, the final step is to open 
+the Lab 1 Quarto document. To do this, you need to click on the 
+`lab-1.qmd` document, located in the lower right pane. 
+
+![Where you need to click to open the Lab 1 assignment (`lab-1.qmd`) and what you should see pop up once you open the document](images/open-lab.png)
+
+Now that you have Lab 1 open, you are ready to get started! Use
+the resources below to learn more about working in a Quarto
+document. 
+
+# Learning About Quarto
 
 ### 🎥 Video Guide of Quarto
 
 Link to video: <https://www.youtube.com/watch?v=_f3latmOhew>
 
-:::{.callout-note}
-# Watch the first 10-minutes! 
+::: callout-note
+# Watch the first 10-minutes!
 :::
 
 ### 📖 Textbook Guide of Quarto
 
 Link to textbook chapter: <https://r4ds.hadley.nz/quarto.html>
 
-:::{.callout-note}
+::: callout-note
 # Read sectios 28.1 through 28.5
 :::
 
@@ -27,6 +76,6 @@ Link to textbook chapter: <https://r4ds.hadley.nz/quarto.html>
 
 Link to tutorial: <https://quarto.org/docs/get-started/hello/rstudio.html>
 
-:::{.callout-note}
-# I'd recommend also watching the video! 
+::: callout-note
+# I'd recommend also watching the video!
 :::
