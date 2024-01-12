@@ -1,6 +1,6 @@
 ---
 title: "Week Two: Summarizing & Visualizing Numerical Data"
-subtitle: Spring 2023
+subtitle: Winter 2024
 format:
   html:
     number-sections: true
@@ -15,6 +15,7 @@ execute:
 
 ```{r}
 #| include: false
+#| label: packages
 
 library(tidyverse)
 library(gapminder)
@@ -47,7 +48,8 @@ By the end of this coursework you should be able to:
 ::: column-margin
 ```{r}
 #| echo: false
-#| out-width: 50%
+#| out-width: 40%
+#| label: picture-of-ims
 knitr::include_graphics(here::here("images", 
                                    "ims.jpeg")
                         )
@@ -56,7 +58,7 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Exploring Numerical Data](https://openintro-ims.netlify.app/explore-numerical.html)
 
-### Reading Guide -- Due Tuesday by noon
+### Reading Guide -- Due Thursday by the Beginning of Class
 
 [Download the Word Document](reading-guide/week2-reading2.docx)
 
@@ -67,6 +69,10 @@ Submit your completed reading guide to the Canvas assignment portal!
 :::
 
 ## Concept Quiz
+
+::: callout-note
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
+:::
 
 1.  Suppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?
 
@@ -86,24 +92,23 @@ Submit your completed reading guide to the Canvas assignment portal!
 -   density plot
 -   scatterplot
 
-::: callout-note
-The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
-:::
-
 ## Textbook Reading -- Part 2
+
+[**Required Reading:** Data Visualization](https://moderndive.com/2-viz.html)
 
 ::: column-margin
 ```{r}
 #| echo: false
+#| out-width: 60%
+#| label: picture-of-modern-dive
+
 knitr::include_graphics(here::here("images", 
                                    "modern_dive.png")
                         )
 ```
 :::
 
-[**Required Reading:** Data Visualization](https://moderndive.com/2-viz.html)
-
-### Reading Guide -- Due Tuesday by noon
+### Reading Guide -- Due Thursday by the Beginning of Class
 
 [Download the Word Document](reading-guide/week2-reading1.docx)
 
@@ -113,9 +118,13 @@ knitr::include_graphics(here::here("images",
 Submit your completed reading guide to the Canvas assignment portal!
 :::
 
-## Concept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Thursday by the Beginning of Class
 
-1.  What aesthetics are being used in the following plot?
+::: callout-note
+The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
+:::
+
+1.  What **aesthetics** are being used in the following plot?
 
 *Hint: Think about what goes inside of the `aes()` function and what does not.*
 
@@ -125,6 +134,7 @@ Submit your completed reading guide to the Canvas assignment portal!
 #| warning: false
 #| out-width: 70%
 #| fig-align: center
+#| label: un-votes-facets-colors
 
 
 un_votes %>%
@@ -145,6 +155,7 @@ un_votes %>%
     percent_yes = mean(vote == "yes")
     ) %>%
   filter(votes > 5) %>%  # only use records where there are more than 5 votes
+  mutate(percent_yes = percent_yes * 100) %>% 
   ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
     geom_point() +
     geom_smooth(method = "loess", se = FALSE) +
@@ -154,18 +165,19 @@ un_votes %>%
       y = "",
       x = "Year",
       color = "Country"
-    )
+    ) + 
+  scale_y_continuous(labels = scales::percent_format(scale = 1))
+
 ```
 
 -   `x` axis
 -   `y` axis
 -   `color`
 -   `facet`s
--   `fill`
 -   `point`s
 -   `line`s
 
-2.  What geometric objects are being used in the displayed visualization?
+2.  What **geometric objects** are being used in the displayed visualization?
 
 *Hint: Think about what `geom`s you would use to make this plot!*
 
@@ -201,11 +213,7 @@ nycflights %>%
 -   outliers
 -   mode
 
-::: callout-note
-The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
-:::
-
-# R Tutorial -- Due Thursday by noon
+# R Tutorial -- Due Thursday by the Beginning of Class
 
 `r emo::ji("computer")` [**Required Tutorial:** Exploring Numerical Data](https://openintro.shinyapps.io/ims-02-explore-02/)
 

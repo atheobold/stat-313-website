@@ -2230,28 +2230,28 @@
     "href": "weeks/week-2.html#textbook-reading-part-1",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.1 Textbook Reading – Part 1",
-    "text": "1.1 Textbook Reading – Part 1\n\n\n\n\n\n\n\nRequired Reading: Exploring Numerical Data\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
+    "text": "1.1 Textbook Reading – Part 1\n\n\n\n\n\n\n\nRequired Reading: Exploring Numerical Data\n\nReading Guide – Due Thursday by the Beginning of Class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
   },
   {
     "objectID": "weeks/week-2.html#concept-quiz",
     "href": "weeks/week-2.html#concept-quiz",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.2 Concept Quiz",
-    "text": "1.2 Concept Quiz\n\nSuppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?\n\n\nright skew\nleft skew\nbimodal\nmutimodal\nuniform\n\nHint: Think about how you would “typically” expect flight delays to behave.\n\nTo better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the distribution of departure delays. What type of visualizations could we make? Select all that apply!\n\n\nboxplot\nhistogram\nbarplot\ndensity plot\nscatterplot\n\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas."
+    "text": "1.2 Concept Quiz\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nSuppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?\n\n\nright skew\nleft skew\nbimodal\nmutimodal\nuniform\n\nHint: Think about how you would “typically” expect flight delays to behave.\n\nTo better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the distribution of departure delays. What type of visualizations could we make? Select all that apply!\n\n\nboxplot\nhistogram\nbarplot\ndensity plot\nscatterplot"
   },
   {
     "objectID": "weeks/week-2.html#textbook-reading-part-2",
     "href": "weeks/week-2.html#textbook-reading-part-2",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.3 Textbook Reading – Part 2",
-    "text": "1.3 Textbook Reading – Part 2\n\n\n\n\n\n\n\nRequired Reading: Data Visualization\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
+    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Data Visualization\n\n\n\n\n\n\n\n\nReading Guide – Due Thursday by the Beginning of Class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
   },
   {
     "objectID": "weeks/week-2.html#concept-quiz-due-tuesday-by-noon",
     "href": "weeks/week-2.html#concept-quiz-due-tuesday-by-noon",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.4 Concept Quiz – Due Tuesday by noon",
-    "text": "1.4 Concept Quiz – Due Tuesday by noon\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\nfill\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode\n\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas."
+    "text": "1.4 Concept Quiz – Due Tuesday by noon\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode\n\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas."
   },
   {
     "objectID": "weeks/week-1.html",
@@ -5487,5 +5487,12 @@
     "title": "Welcome to Stat 313!",
     "section": "",
     "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
+  },
+  {
+    "objectID": "weeks/week-2.html#concept-quiz-due-thursday-by-the-beginning-of-class",
+    "href": "weeks/week-2.html#concept-quiz-due-thursday-by-the-beginning-of-class",
+    "title": "Week Two: Summarizing & Visualizing Numerical Data",
+    "section": "1.4 Concept Quiz – Due Thursday by the Beginning of Class",
+    "text": "1.4 Concept Quiz – Due Thursday by the Beginning of Class\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode"
   }
 ]
