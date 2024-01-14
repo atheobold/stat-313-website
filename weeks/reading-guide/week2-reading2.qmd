@@ -22,10 +22,6 @@ Nonlinear Relationship:
 
 #### Notes:
 
-What are the four characteristics of a scatterplot?
-
-</br> </br>
-
 What are two variables that would have a horseshoe-shaped association in a scatterplot (∩ or ⌢)?
 
 </br> </br>
@@ -37,10 +33,6 @@ What are two variables that would have a horseshoe-shaped association in a scatt
 Define the following terms:
 
 Dot plot:
-
-</br> </br>
-
-Mean / Average:
 
 </br> </br>
 
@@ -82,7 +74,7 @@ How does a left skewed distribution look?
 
 </br> </br>
 
-How does a right symmetric distribution look?
+How does a symmetric distribution look?
 
 </br> </br>
 
@@ -90,7 +82,7 @@ How does a right symmetric distribution look?
 
 </br> </br>
 
-Can can you tell what the mode of a distribution is?
+Can can you tell where (what value) the mode of a distribution is?
 
 </br> </br>
 
@@ -116,7 +108,7 @@ What is variability?
 
 </br> </br>
 
-What does deviation mean?
+Statistically, what is the meaning of "deviation"?
 
 </br> </br>
 
@@ -124,7 +116,7 @@ What is the variance of a numerical variable? How is it calculated?
 
 </br> </br>
 
-What is the standard deviation of a numerical variable? How is it calculated?
+How is the standard deviation related to the variance? 
 
 </br> </br>
 
@@ -138,11 +130,7 @@ What does $\sigma$ represent?
 
 </br>
 
-Sketch what a boxplot looks like:
-
-</br> </br>
-
-What is a median?
+Sketch how a boxplot looks:
 
 </br> </br>
 
@@ -150,15 +138,15 @@ What is the inner quartile range (IQR)?
 
 </br> </br>
 
-What is the first quartile (Q1)?
+What is the first quartile (Q1)? How is this value calculated?
 
 </br> </br>
 
-What is the third quartile (Q3)?
+What is the third quartile (Q3)? How is this value calculated?
 
 </br> </br>
 
-What do the whiskers of a boxplot correspond with?
+What do the whiskers of a boxplot correspond to? (e.g., the median? the mean?)
 
 </br> </br>
 
@@ -182,17 +170,17 @@ What makes a statistic "robust"?
 
 </br> </br>
 
-What are some robust statistics?
+What are some examples of robust statistics?
 
 </br> </br>
 
 #### Notes:
 
-What are the two ways to measure the 'center' of a distribution? Which one is considered robust to skew/outliers?
+What are the two ways to measure the "center" of a distribution? Which one is considered robust to skew / outliers?
 
 </br> </br> </br>
 
-What are the three ways to measure the 'variability' of a distribution? Which one is considered robust to skew/outliers?
+What are the three ways to measure the "variability" of a distribution? Which one is considered robust to skew / outliers?
 
 </br> </br> </br>
 
@@ -216,15 +204,11 @@ Why would you decide to transform a variable?
 
 </br>
 
-What type of plot(s) are appropriate for displaying one quantitative variable?
+What type of plot(s) are appropriate for displaying **one quantitative** variable?
 
 </br> </br>
 
-What type of plot(s) are appropriate for displaying two quantitative variables?
-
-</br> </br>
-
-How are variance and standard deviation related?
+What type of plot(s) are appropriate for displaying **two quantitative** variables?
 
 </br> </br>
 
