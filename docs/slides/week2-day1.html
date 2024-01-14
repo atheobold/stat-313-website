@@ -7,8 +7,8 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.361">
 
   <meta name="author" content="STAT 313">
   <title>STAT 313 / 513 - Winter 2024 - Visualizing &amp; Summarizing Numerical Data</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -56,44 +56,44 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
+        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
     div.sourceCode
-      { color: #f8f8f2;  }
+      { color: #003b4f; background-color: #f1f3f5; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #f8f8f2; } /* Normal */
-    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
-    code span.an { color: #d4d0ab; } /* Annotation */
-    code span.at { color: #00e0e0; } /* Attribute */
-    code span.bn { color: #d4d0ab; } /* BaseN */
-    code span.bu { color: #abe338; } /* BuiltIn */
-    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #abe338; } /* Char */
-    code span.cn { color: #ffd700; } /* Constant */
-    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
-    code span.cv { color: #ffd700; } /* CommentVar */
-    code span.do { color: #f8f8f2; } /* Documentation */
-    code span.dt { color: #ffa07a; } /* DataType */
-    code span.dv { color: #d4d0ab; } /* DecVal */
-    code span.er { color: #f07178; text-decoration: underline; } /* Error */
-    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
-    code span.fl { color: #d4d0ab; } /* Float */
-    code span.fu { color: #ffa07a; } /* Function */
-    code span.im { color: #abe338; } /* Import */
-    code span.in { color: #d4d0ab; } /* Information */
-    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
-    code span.op { color: #ffa07a; } /* Operator */
-    code span.ot { color: #00e0e0; } /* Other */
-    code span.pp { color: #dcc6e0; } /* Preprocessor */
-    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
-    code span.sc { color: #abe338; } /* SpecialChar */
-    code span.ss { color: #abe338; } /* SpecialString */
-    code span.st { color: #abe338; } /* String */
-    code span.va { color: #00e0e0; } /* Variable */
-    code span.vs { color: #abe338; } /* VerbatimString */
-    code span.wa { color: #dcc6e0; } /* Warning */
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -221,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -386,7 +385,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -433,12 +432,12 @@ STAT 313
 <section id="histogram" class="slide level2">
 <h2>Histogram</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span> </span>
-<span id="cb1-2"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb1-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week2-day1_files/figure-revealjs/hist-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<img data-src="week2-day1_files/figure-revealjs/hist-1.png" width="480" class="r-stretch quarto-figure-center"></section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="columns">
@@ -464,16 +463,12 @@ STAT 313
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb2-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb2-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb2-2"><a href="#cb2-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="week2-day1_files/figure-revealjs/boxplot-1.png" width="480"></p>
-</figure>
-</div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -494,16 +489,12 @@ STAT 313
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb3-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="week2-day1_files/figure-revealjs/density-1.png" width="576"></p>
-</figure>
-</div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -533,17 +524,17 @@ STAT 313
 <section id="scatterplots" class="slide level2">
 <h2>Scatterplots</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb4-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm, <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
-<span id="cb4-5"><a></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb4-2"><a href="#cb4-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm, <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5"></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -576,15 +567,15 @@ STAT 313
 <section id="colors-in-scatterplots-categorical-variable" class="slide level2">
 <h2>Colors in Scatterplots – Categorical Variable</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|4,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb5-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
-<span id="cb5-3"><a></a>                     <span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb5-4"><a></a>                     <span class="at">color =</span> species)</span>
-<span id="cb5-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
-<span id="cb5-8"><a></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, </span>
-<span id="cb5-9"><a></a>       <span class="at">color =</span> <span class="st">"Penguin Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|4,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>                     <span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>                     <span class="at">color =</span> species)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>       ) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb5-8"><a href="#cb5-8"></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, </span>
+<span id="cb5-9"><a href="#cb5-9"></a>       <span class="at">color =</span> <span class="st">"Penguin Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -592,22 +583,22 @@ STAT 313
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-color-cat-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-color-cat-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="colors-in-scatterplots-numerical-variable" class="slide level2">
 <h2>Colors in Scatterplots – Numerical Variable</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="|4,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb6-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
-<span id="cb6-3"><a></a>                     <span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb6-4"><a></a>                     <span class="at">color =</span> body_mass_g)</span>
-<span id="cb6-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb6-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
-<span id="cb6-8"><a></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, </span>
-<span id="cb6-9"><a></a>       <span class="at">color =</span> <span class="st">"Body Mass (g)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="|4,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>                     <span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>                     <span class="at">color =</span> body_mass_g)</span>
+<span id="cb6-5"><a href="#cb6-5"></a>       ) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb6-8"><a href="#cb6-8"></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, </span>
+<span id="cb6-9"><a href="#cb6-9"></a>       <span class="at">color =</span> <span class="st">"Body Mass (g)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -615,20 +606,20 @@ STAT 313
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-color-num-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-color-num-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="facets-in-scatterplots-categorical-variable" class="slide level2">
 <h2>Facets in Scatterplots – Categorical Variable</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb7-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
-<span id="cb7-3"><a></a>                     <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb7-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species) <span class="sc">+</span> </span>
-<span id="cb7-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
-<span id="cb7-7"><a></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-2"><a href="#cb7-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
+<span id="cb7-3"><a href="#cb7-3"></a>                     <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species) <span class="sc">+</span> </span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb7-7"><a href="#cb7-7"></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -636,27 +627,27 @@ STAT 313
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-facets-cat-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-facets-cat-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="facets-in-scatterplots-numerical-variable" class="slide level2">
 <h2>Facets in Scatterplots – Numerical Variable 🫤</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb8-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
-<span id="cb8-3"><a></a>                     <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb8-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> body_mass_g) <span class="sc">+</span> </span>
-<span id="cb8-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
-<span id="cb8-7"><a></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> bill_length_mm,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>                     <span class="at">x =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> body_mass_g) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb8-7"><a href="#cb8-7"></a>       <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section><section id="facets-in-scatterplots-numerical-variable-output" class="slide level2 output-location-slide"><h2>Facets in Scatterplots – Numerical Variable 🫤</h2><div class="cell output-location-slide" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-facets-num-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week2-day1_files/figure-revealjs/scatterplot-facets-num-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -779,34 +770,17 @@ STAT 313
 </div>
 </div>
 </section>
-<section id="before-thursday" class="slide level2">
-<h2>Before Thursday…</h2>
-<p>Complete the <strong>two</strong> R tutorials</p>
-<ul>
-<li><p>Visualizing Numerical Variables</p></li>
-<li><p>Summarizing Numerical Variables</p></li>
-</ul>
-<p>Linked in the Week 2 coursework!</p>
+<section id="moving-into-lab-2" class="slide level2">
+<h2>Moving into Lab 2</h2>
 </section>
-<section id="meeting-your-team" class="slide level2">
-<h2>Meeting your team!</h2>
-<ol type="1">
-<li><p>Go to the STAT 313 Canvas page</p></li>
-<li><p>Go to the “People” tab</p></li>
-<li><p>Click on the Weeks 2 - 4 groups</p></li>
-<li><p>Find your group number</p></li>
-</ol>
-<div style="color:#e28743;">
-<p>These are the individuals you will be working with for the next three weeks! Exchange contact information!</p>
-</div>
+<section id="find-your-team" class="slide level2">
+<h2>Find Your Team</h2>
 
 
-</section><div class="quarto-auto-generated-content">
-<p><img src="images/ggplot2.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img src="images/ggplot2.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</div></section>
+</section></section>
     </div>
   </div>
 
@@ -833,6 +807,7 @@ STAT 313
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1131,9 +1106,10 @@ STAT 313
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1143,17 +1119,8 @@ STAT 313
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

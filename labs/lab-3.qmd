@@ -4,6 +4,7 @@ author: "Your group's names here!"
 date: "April 21, 2023"
 format: html
 editor: visual
+embed-resources: true
 execute: 
   echo: true
   eval: false
@@ -18,6 +19,10 @@ execute:
 In this lab, we will explore and visualize the data using packages housed in the **tidyverse** suite of packages.
 
 ```{r packages}
+#| label: packages
+#| message: false
+#| warning: false
+
 ## Package for ggplot and dplyr tools
 library(tidyverse)
 
@@ -36,8 +41,10 @@ In this lab we will work with data from the H.J. Andrews Experimental Forest. Th
 
 First, we'll view the `and_vertebrates` dataframe where these data are stored.
 
-```{r data-view}
+```{r}
 #| eval: false
+#| label: data-view
+
 View(and_vertebrates)
 ```
 
@@ -45,14 +52,17 @@ View(and_vertebrates)
 
 The **codebook** (description of the variables) can be accessed by pulling up the help file by typing a `?` before the name of the dataset:
 
-```{r help-file}
+```{r}
 #| eval: false
+#| label: help-file
+
 ?and_vertebrates
 ```
 
 **Question 1 -- How large is the `and_vertebrates` dataset? (i.e. How many rows and columns does the dataset have?)**
 
-```{r data-dimensions}
+```{r}
+#| label: data-dimensions
 ## Your code for question 1 (and 2) goes here!
 
 ```
@@ -65,7 +75,8 @@ The `species` variable refers to the species of the animal which was captured. Y
 
 **Question 3 -- Use the `distinct()` function to discover the levels / values of the `species` variable.**
 
-```{r distinct-species}
+```{r}
+#| label: distinct-species
 ## Your code for question 3 goes here!
 
 ```
@@ -76,9 +87,11 @@ Alright, you should have found that there is more than one species included in t
 
 **Question 4 -- Use the `filter()` function to include *only* observations on Cutthroat trout.**
 
-**The only part you need to remove is the ...! Keep the `trout <-`!**
+**The only part you need to remove is the `...`! Keep the `trout <-`!**
 
-```{r fish-filter}
+```{r}
+#| label: fish-filter
+
 trout <- ...
 ```
 
@@ -86,9 +99,11 @@ trout <- ...
 
 **Question 5 -- Use the `filter()` function again to include *only* trout whose `length_1_mm` is greater than 4 inches (or 101 mm).**
 
-*The only part you need to remove is the ...! Keep the `trout <-`!*
+**The only part you need to remove is the `...`! Keep the `trout <-`!**
 
-```{r removing-uncatchable-fish}
+```{r }
+#| label: removing-uncatchable-fish 
+
 trout <- ...
 ```
 
@@ -101,6 +116,7 @@ Alright, now that we've gotten our data ready for analysis, let's start with som
 *Keep in mind your plot should only extend to 101mm if you completed #5 correctly*
 
 ```{r}
+#| label: distribution-of-filtered-lengths
 ## Your code for question 6 goes here!
 
 
@@ -116,14 +132,15 @@ As introduced in *Introduction to Modern Statistics*, a ridge plot essentially h
 
 In R, we use the `geom_density_ridges()` function from the **ggridges** package to create a ridge plot. Yes, this is new, but don't worry! The function has the same layout as things you've seen before.
 
-**Question 8 -- Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (`unittype`). Use the `trout` dataset you `filter`ed above!**
+**Question 8 -- Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (`unittype`).**
 
 *Be sure to add nice axis labels to your plot, which describe the variables being plotted (and their units)!*
 
-```{r density-ridge}
+```{r}
+#| label: density-ridges
 ## Your code for question 8 goes here!
 
-ggplot(data = fish, 
+ggplot(data = trout, 
        mapping = aes(x = <NUMERICAL VARIABLE>, 
                      y = <CATEGORICAL VARIABLE>)
        ) +
@@ -141,18 +158,22 @@ ggplot(data = fish,
 
 Paired with visualizations, summary statistics can provide a clearer picture for the comparisons we are interested in. To obtain summary statistics for different groups of a categorical variable, we need to use our friend the `group_by()` function.
 
-**Question 11 -- Find the average length of Cutthroat trout from the different channel types (`unittype`). Use the `trout` dataset from Question 5!**
+**Question 11 -- Find the average length of Cutthroat trout from the different channel types (`unittype`). Be sure to use the `trout` dataset from Question 5!**
 
-```{r channel-avg}
+```{r}
+#| label: channel-avg
 ## Your code for question 11 goes here!
 
 ```
 
-**Question 12 -- Find the average length of Cutthroat trout from the different channel types (`unittype`) *and* forest `section`. Use the `trout` dataset from Question 5!**
+**Question 12 -- Find the average length of Cutthroat trout from the different channel types (`unittype`) *and* forest `section`. Be sure to use the `trout` dataset from Question 5!**
 
-```{r channel-section-avg}
+```{r}
+#| label: channel-section-avg
 ## Your code for question 12 goes here!
 
 ```
 
 **Question 13 -- How do the differences in these averages compare with what you saw in your visualization in Question 9?**
+
+*Hint: Your response should directly compare the statistics you got in in Question 12 with the density ridges you saw in Question 9.*

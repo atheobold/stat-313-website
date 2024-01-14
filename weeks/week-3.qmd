@@ -12,10 +12,28 @@ execute:
   message: false
 ---
 
-```{r packages}
+```{r}
 #| include: false
+#| label: packages-data
+
 library(tidyverse)
 library(emo)
+library(gapminder)
+
+countries <- tibble(Country = 
+                      c("Sweden", 
+                        "Norway", 
+                        "Australia", 
+                        "USA", 
+                        "Brazil", 
+                        "United Kingdom", 
+                        "Czech Republic")
+                    )
+
+gapminder_small <- gapminder %>% 
+  semi_join(countries, 
+            by = c("country" = "Country")
+            )
 ```
 
 Welcome!
@@ -33,7 +51,7 @@ By the end of this coursework you should be able to:
 
 # Prepare
 
-## Reading Guide -- One Reading Guide for Both Readings!
+## Reading Guide -- Due Tuesday by Midnight
 
 [Download the Word Document](reading-guide/week3-reading.docx)
 
@@ -70,18 +88,40 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
 
-## Concept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Tuesday by Midnight
 
 **1. Suppose you've run the following code to make side-by-side boxplots of life expectancy:**
 
-```         
-ggplot(data = health, mapping = aes(x = country, y = lifeExp)) + 
-    geom_boxplot()
+```{r}
+#| label: code-for-bad-plot
+#| eval: false
+
+ggplot(data = gapminder_small, 
+       mapping = aes(x = country, y = lifeExp)) +
+  geom_boxplot() +
+  labs(x = "", 
+       y = "", 
+       title = "Life Expectancy (in Years) by Country",
+       fill = "Country"
+       )
 ```
 
 **Your resulting plot looks like this:**
 
-![](images/boxplot_with_overlapping_axis_labels.webp)
+```{r}
+#| label: bad-boxplot
+#| echo: false
+
+ggplot(data = gapminder_small, 
+       mapping = aes(x = country, y = lifeExp)) +
+  geom_boxplot() +
+  labs(x = "", 
+       y = "", 
+       title = "Life Expectancy (in Years) by Country",
+       fill = "Country"
+       ) +
+  theme(legend.position = "none")
+```
 
 **What should you do?**
 
@@ -92,7 +132,7 @@ ggplot(data = health, mapping = aes(x = country, y = lifeExp)) +
 **2. If you didn't want to stack your boxplots side-by-side, how else could you separate the groups?**
 
 ::: callout-tip
-This does not go inside the aes() function!
+This does not go inside the `aes()` function!
 :::
 
 **3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?**
@@ -147,7 +187,7 @@ Third Step
 -   ascending (smallest to largest)
 -   descending (largest to smallest)
 
-## R Tutorial -- Due Thursday by noon
+## R Tutorial -- Due Thursday by Midnight
 
 [**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
 

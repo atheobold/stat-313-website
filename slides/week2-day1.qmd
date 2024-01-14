@@ -4,7 +4,7 @@ author: "STAT 313"
 format: 
   revealjs:
     logo: images/ggplot2.png
-    theme: night
+    theme: solarized
 editor: visual
 execute: 
   warning: false
@@ -436,26 +436,6 @@ penguins %>%
 Estimates based on larger samples tend to be more accurate than those based on smaller samples.
 :::
 
-## Before Thursday...
+## Moving into Lab 2
 
-Complete the **two** R tutorials
-
--   Visualizing Numerical Variables
-
--   Summarizing Numerical Variables
-
-Linked in the Week 2 coursework!
-
-## Meeting your team!
-
-1.  Go to the STAT 313 Canvas page
-
-2.  Go to the "People" tab
-
-3.  Click on the Weeks 2 - 4 groups
-
-4.  Find your group number
-
-::: {style="color:#e28743;"}
-These are the individuals you will be working with for the next three weeks! Exchange contact information!
-:::
+## Find Your Team
