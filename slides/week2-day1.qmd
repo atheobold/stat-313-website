@@ -11,27 +11,96 @@ execute:
   message: false
 ---
 
-# Data Visualizations with **ggplot2**
-
-```{r packages}
+```{r}
 #| echo: false
+#| label: packages
 
 library(palmerpenguins)
 library(tidyverse)
 library(ggridges)
 library(gridExtra)
+
+my_theme <- theme(axis.title.x = element_text(size = 14), 
+                  axis.title = element_text(size = 16), 
+                  axis.text.x = element_text(size = 12), 
+                  axis.text.y = element_text(size = 12), 
+                  legend.text = element_text(size = 14), 
+                  legend.title = element_text(size = 16)
+                  )
 ```
 
-## Warm-up+
+# Lab 1
 
-```{r aesthetics}
+## 
+
+::: {style="font-size: 3em; color: #ed8402;"}
+15-minutes
+:::
+
+::: {style="font-size: 1.5em;"}
+- Review Lab 1 comments
+- Ask questions
+- Start revisions 
+:::
+
+
+# Week 3
+
+## My Plan
+
+::: columns
+::: {.column width="30%"}
+::: {.fragment .fade-in-then-semi-out}
+What you can expect from me:
+
+- Post coursework by Friday
+- Post slides from last quarter
+- Extend Lab 2 revision deadline by 1-week
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+::: {.fragment .fade-in-then-semi-out}
+What I expect from you:
+
+- Complete coursework
+- Review / work through slides as if you were in class
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+::: {.fragment .fade-in-then-semi-out}
+What I expect from your group:
+
+- Complete the lab assignment [**as a group**]{.underline}
+:::
+:::
+:::
+
+
+# Visualizing Numerical Variables
+
+## Warm-up
+
+```{r}
 #| echo: false
+#| label: aesthetics
+#| fig-align: center
+
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = species, fill = sex)) + 
   geom_boxplot(alpha = 0.5) + 
   labs(x = "Bill Length (mm)", 
-       y = "Penguin Species", 
-       fill = "Penguin Sex")
+       title = "Comparison of Bill Lengths between Antartic Penguin Species", 
+       y = "",
+       fill = "Penguin Sex") + 
+  my_theme
 
 ```
 
@@ -40,6 +109,22 @@ penguins %>%
 What are the `aes`thetics in this plot?
 
 What `geom`etric object is being plotted?
+
+## Today's Layout
+
+1. Review visualizations for numerical variables
+2. Practice producing these visualizations
+3. Discuss the pros / cons of each visualization
+
+. . .
+
+</br>
+
+Open today's interactive document, so you can be ready to code along with me! 
+
+::: {style="font-size: 1.5em;"}
+<https://bit.ly/week-2-code-along>
+:::
 
 ##  {background-color="#D4D4D4"}
 
@@ -57,61 +142,113 @@ Univariate (One Variable) Visualizations -- For Numerical Data
 
 ## Histogram
 
-```{r hist}
-#| fig-height: 4
-#| fig-width: 5
-#| fig-align: center
-#| echo: true
-#| code-line-numbers: "|2"
+```{r}
+#| echo: false
+#| label: histogram
 
 ggplot(data = penguins, mapping = aes(x = bill_length_mm)) + 
-  geom_histogram() +
-  labs(x = "Bill Length (mm)")
+  geom_histogram(binwidth = 1.5) +
+  labs(x = "Bill Length (mm)") + 
+  my_theme
 ```
 
-## 
+
+::: {.incremental}
+- Is `count` a variable in the dataset?
+- How did `ggplot` decide how tall each bar should be? 
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em;"}
+Recreate my plot!
+:::
+
+::: {style="font-size: 1.5em;"}
+<https://bit.ly/week-2-code-along>
+:::
+
+##
 
 ::: columns
 ::: {.column width="50"}
 ### Pros
 
--   Easy to inspect
--   Higher bars represent where data are relatively more common
 -   Inspect shape of a distribution (skewed or symmetric)
--   Identify modes
+-   Identify modes (most common values)
 :::
 
 ::: {.column width="50"}
 ### Cons
 
 -   **Do not** plot raw data, plot summaries (counts) of the data!
--   Sensitive to `binwidth`
+-   Sensitive to the width of the bins (`binwidth`)
 :::
 :::
 
 ## Boxplot
 
-::: columns
-::: {.column width="70%"}
-```{r boxplot}
-#| fig-width: 5
-#| fig-height: 3.5
-#| echo: true
-#| code-line-numbers: "|3"
+```{r}
+#| echo: false
+#| label: boxplot
+#| layout-nrow: 1
+#| out-height: 100%
 
 ggplot(data = penguins,
        mapping = aes(x = bill_length_mm)) +
   geom_boxplot() + 
-  labs(x = "Bill Length (mm)")
+  labs(x = "Bill Length (mm)") +
+  my_theme +
+  theme(axis.text.y = element_blank(), 
+        axis.text.x = element_text(size = 20), 
+        axis.title.x = element_text(size = 24)
+        )
+
+ggplot(data = penguins,
+       mapping = aes(y = bill_length_mm)) +
+  geom_boxplot() + 
+  labs(y = "Bill Length (mm)") +
+  theme(axis.text.x = element_blank(), 
+        axis.text.y = element_text(size = 20), 
+        axis.title.y = element_text(size = 24)
+        )
 ```
+
+. . .
+
+What calculations are necessary for creating a boxplot?
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em;"}
+Recreate my plot!
 :::
 
-::: {.column width="30%"}
--   What calculations are necessary to create a boxplot?
+::: {style="font-size: 1.5em"}
+<https://bit.ly/week-2-code-along>
+:::
 
--   What are strengths of a boxplot?
+##
 
--   What are weaknesses of a boxplot?
+::: columns
+::: {.column width="50"}
+What are strengths of a boxplot?
+
+:::{.fragment}
+- Easy to flag unusual observations
+- Easy to see the median
+:::
+:::
+
+::: {.column width="50"}
+What are weaknesses of a boxplot?
+
+:::{.fragment}
+- Don't plot raw data
+- Only plot summary statistics
+- Hide multiple modes
+:::
+
 :::
 :::
 
@@ -121,23 +258,43 @@ ggplot(data = penguins,
 
 ## Density Plot
 
-::: columns
-::: {.column width="70%"}
-```{r density}
-#| fig-width: 6
-#| echo: true
-#| fig-height: 4
-#| code-line-numbers: "|3"
+```{r}
+#| echo: false
+#| label: density
+
 ggplot(data = penguins,
        mapping = aes(x = bill_length_mm)) +
   geom_density() +
-  labs(x = "Bill Length (mm)")
+  labs(x = "Bill Length (mm)") +
+  my_theme
 ```
-:::
 
-::: {.column width="30%"}
+. . .
+
 -   A smooth approximation to a variable's distribution
 -   Plots density (as a proportion) on the y-axis
+
+##
+
+::: columns
+::: {.column width="50"}
+What are strengths of a density plot?
+
+:::{.fragment}
+- Inspect shape of a distribution (skewed or symmetric)
+- Identify modes (most common values)
+- Less jagged than a histogram
+:::
+:::
+
+::: {.column width="50"}
+What are weaknesses of a density plot?
+
+:::{.fragment}
+- Do not plot raw data, plot summaries (proportions) of the data!
+- y-axis is difficult to interpret
+- Can over smooth and hide interesting shapes
+:::
 :::
 :::
 
@@ -151,35 +308,72 @@ Bivariate (Two Variables) Visualizations -- For Numerical Data
 ::: {style="color: #000000;"}
 -   Scatterplots
 
--   Faceted Histograms
+-   Faceted Histograms (Week 3)
 
--   Side-by-Side Boxplots
+-   Side-by-Side Boxplots (Week 3)
 
--   Stacked Density Plots (Ridge Plots)
+-   Stacked Density Plots (Week 3)
 :::
 :::
 
 ## Scatterplots
 
-```{r scatterplot}
-#| fig-width: 6
-#| fig-height: 5
-#| fig-align: center
-#| output-location: fragment
-#| echo: true
-#| code-line-numbers: "|3"
+```{r}
+#| echo: false
+#| label: scatterplot
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm, x = bill_depth_mm)) +
   geom_point() +
   labs(x = "Bill Depth (mm)", 
-       y = "Bill Length (mm)")
+       y = "Bill Length (mm)") +
+  my_theme
 ```
+
+. . .
+
+What are the `geom`etric objects being plotted in a scatterplot?
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 4em;"}
+Recreate my plot!
+:::
+
+::: {style="font-size: 1.5em;"}
+<https://bit.ly/week-2-code-along>
+:::
+
+##
+
+<!-- Quote about scatterplots being one of the most useful graphics invented -->
+
+</br>
+
+::: columns
+::: {.column width="50"}
+What are strengths of a scatterplot?
+
+:::{.fragment}
+- Plots the **raw** data! 
+- Inspect form and strength of a relationship
+- Identify unusual values
+:::
+:::
+
+::: {.column width="50"}
+What are weaknesses of a scatterplot?
+
+:::{.fragment}
+- Can get "busy" when there are lots of observations (points)
+:::
+:::
+:::
 
 ##  {background-color="#D4D4D4"}
 
 ::: {style="margin-top: 100px; font-size: 2em; color: #000000;"}
-Multivariate Plots
+Multivariate (3+ Variables) Plots
 :::
 
 ::: {style="color: #000000; font-size: 0.75em;"}
@@ -187,47 +381,32 @@ There are two main methods for adding a third (or fourth) variable into a data v
 
 ::: columns
 ::: {.column width="50%"}
+::: {.fragment}
 **Colors**
 
 -   creates colors for every level of a categorical variable
 -   creates a gradient for different values of a quantitative variable
 :::
+:::
 
 ::: {.column width="50%"}
+::: {.fragment}
 **Facets**
 
--   creates subplots for every level of a variable
+-   creates subplots for every level of a categorial variable
 -   labels each sub-plot with the value of the variable
 :::
 :::
 :::
+:::
 
-## Colors in Scatterplots -- Categorical Variable
-
-```{r scatterplot-color-cat}
-#| fig-align: center
-#| echo: true
-#| code-line-numbers: "|4,9"
-#| output-location: slide
-
-ggplot(data = penguins,
-       mapping = aes(y = bill_length_mm,
-                     x = bill_depth_mm,
-                     color = species)
-       ) +
-  geom_point() +
-  labs(x = "Bill Depth (mm)", 
-       y = "Bill Length (mm)", 
-       color = "Penguin Species")
-```
 
 ## Colors in Scatterplots -- Numerical Variable
 
-```{r scatterplot-color-num}
+```{r }
 #| fig-align: center
-#| echo: true
-#| code-line-numbers: "|4,9"
-#| output-location: slide
+#| label: scatterplot-color-num 
+#| echo: false
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -240,31 +419,39 @@ ggplot(data = penguins,
        color = "Body Mass (g)")
 ```
 
-## Facets in Scatterplots -- Categorical Variable
+##  {background-color="#B6CADA"}
 
-```{r scatterplot-facets-cat}
+::: {style="font-size: 4em;"}
+Recreate my plot!
+:::
+
+## Colors in Scatterplots -- Categorical Variable
+
+```{r}
 #| fig-align: center
-#| echo: true
-#| code-line-numbers: "|5"
-#| output-location: slide
+#| echo: false
+#| label: scatterplot-color-cat
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
-                     x = bill_depth_mm)) +
+                     x = bill_depth_mm,
+                     color = species)
+       ) +
   geom_point() +
-  facet_wrap(~ species) + 
   labs(x = "Bill Depth (mm)", 
-       y = "Bill Length (mm)")
-  
+       y = "Bill Length (mm)", 
+       color = "Penguin Species") +
+  my_theme
 ```
 
-## Facets in Scatterplots -- Numerical Variable 🫤
+
+## Why not use facets with a numerical variable??? 
+
+. . .
 
 ```{r scatterplot-facets-num}
 #| fig-align: center
-#| echo: true
-#| code-line-numbers: "|5"
-#| output-location: slide
+#| echo: false
 
 ggplot(data = penguins,
        mapping = aes(y = bill_length_mm,
@@ -276,166 +463,43 @@ ggplot(data = penguins,
   
 ```
 
-# Summarizing Numerical Data
+# 
 
-## 
+##  {background-color="#f48153"}
 
-<center>
-
-::: {style="font-size: 2em;"}
-Measures of Center
-:::
-
-</center>
-
-::: columns
-::: {.column width="55%"}
-::: {style="color:#e28743;"}
-**Not Resistant**
-:::
-
-Mean
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: {style="color:#e28743;"}
-**Resistant**
-:::
-
-Median
-:::
+::: {style="font-size: 3.5em; color: #000000;"}
+Some Rules to Play By
 :::
 
 . . .
-
-</br> </br>
-
-::: callout-tip
-# 60-second question
-
-What does it mean for a statistic to be "resistant"?
-:::
-
-## 
-
-<center>
-
-::: {style="font-size: 2em;"}
-Measures of Spread
-:::
-
-</center>
-
-::: columns
-::: {.column width="55%"}
-::: {style="color:#e28743;"}
-**Not Resistant**
-:::
-
-Variance
-
-Range
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: {style="color:#e28743;"}
-**Resistant**
-:::
-
-Inner Quartile Range (IQR)
-:::
-:::
-
-</br> </br>
-
-::: callout-tip
-# 60-second question
-
-Why are the variance and range not resistant?
-:::
-
-##  {background-color="#D4D4D4"}
-
-::: {style="margin-top: 100px; font-size: 2em; color: #000000;"}
-Given this distribution...
-:::
-
-```{r body-mass}
-#| echo: false
-penguins %>% 
-  ggplot(aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 500) + 
-  labs(x = "Body Mass (grams)")
-```
-
-. . .
-
-<center>
-
-::: {style="color: #0F4C81;"}
-What measure of center would you use? Why?
-:::
-
-## For right skewed data...
-
-```{r, echo = FALSE}
-
-x_bar <- mean(penguins$body_mass_g, na.rm = TRUE)
-m <- median(penguins$body_mass_g, na.rm = TRUE)
-
-penguins %>% 
-  ggplot(aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 500) + 
-  geom_vline(xintercept = x_bar, color = "red", lwd = 1) +
-  geom_vline(xintercept = m, color = "blue", lwd = 1) +
-  geom_text(x = 3800, y = 20, label = "Median", color = "blue", size = 5) + 
-  geom_text(x = 4400, y = 15, label = "Mean", color = "red", size = 5) + 
-  labs(x = "Body Mass (grams)")
-```
-
-## For symmetric (and bimodal) data...
-
-```{r, echo = FALSE}
-
-x_bar <- mean(penguins$bill_length_mm, na.rm = TRUE)
-m <- median(penguins$bill_length_mm, na.rm = TRUE)
-
-penguins %>% 
-  ggplot(aes(x = bill_length_mm)) + 
-  geom_histogram(binwidth = 2) + 
-  geom_vline(xintercept = x_bar, color = "red", lwd = 1) +
-  geom_vline(xintercept = m, color = "blue", lwd = 1) +
-  geom_text(x = 47, y = 20, label = "Median", color = "blue", size = 5) + 
-  geom_text(x = 42, y = 15, label = "Mean", color = "red", size = 5) + 
-  labs(x = "Bill Length (grams)")
-```
-
-## Point Estimates & Parameters
 
 </br>
 
-*Parameter*: True value of the statistic for the population of interest
-
-</br>
-
-. . .
-
-*Point Estimate*: provides our best guess for the value of the parameter
-
-</br>
-
-. . .
-
-::: {style="color:#e28743;"}
-Estimates based on larger samples tend to be more accurate than those based on smaller samples.
+::: {style="font-size: 0.75em; color: #000000;"}
+-   Look at and understand your raw data before aggregating
 :::
 
-## Moving into Lab 2
+. . .
 
-## Find Your Team
+::: {style="font-size:0.75em; color: #000000;"}
+-   Boxplots (and such) don't count as visualizing the raw data
+:::
+
+. . .
+
+::: {style="font-size: 0.75em; color: #000000;"}
+-   We should only average things we are convinced are measuring the same thing
+:::
+
+# Lab 2
+
+## Departure Delays
+
+- Inspect the `nycflights` dataset
+- Visualize departure delays
+- Play with `binwidth`
+- Filter data to include only certain flights
+- Calculate summary statistics
+- Compare summary statistics with a visualization
+
+

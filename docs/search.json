@@ -2100,7 +2100,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15\n\n\n\n\n2\nTue, January 16 (no class)\nVisualizing & Summarizing Numerical Variables\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22\n\n\n\n\n3\nTue, January 23\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n\nMon, January 29\nStatistical Critique 1 Due\n\n\n\n\n✍\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, February 4\nMidterm Project Proposal Due\n\n\n\n\n\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01"
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25 (class held asynchronously)\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n\nMon, January 29\nStatistical Critique 1 Due\n\n\n\n\n✍\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, February 4\nMidterm Project Proposal Due\n\n\n\n\n\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01"
   },
   {
     "objectID": "computing-access.html",
@@ -3017,21 +3017,21 @@
     "href": "labs/lab-2.html",
     "title": "Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nNote: This did not work last week, but should this week!\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! \n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data is split between the different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so: geom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nNote: This did not work last week, but should this week!\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\n\n# Your code for exercise 3 goes here! \n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#getting-started",
     "href": "labs/lab-2.html#getting-started",
     "title": "Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nNote: This did not work last week, but should this week!\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! \n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data is split between the different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so: geom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nNote: This did not work last week, but should this week!\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\n\n# Your code for exercise 3 goes here! \n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#sfo-dstinations",
     "href": "labs/lab-2.html#sfo-dstinations",
     "title": "Visualizing and Summarizing Numerical Data",
     "section": "SFO Dstinations",
-    "text": "SFO Dstinations\nOne of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a dest of \"LAX\", flights into San Francisco have a dest of \"SFO\", and flights into Chicago (O’Hare) have a dest of \"ORD\".\nIf you want to visualize only on delays of flights headed to Los Angeles, you need to first filter() the data for flights with that destination (e.g., filter(dest == \"LAX\")) and then make a histogram of the departure delays of only those flights.\nLogical operators: Filtering for certain observations (e.g. flights from a particular airport) is often of interest in data frames where we might want to examine observations with certain characteristics separately from the rest of the data. To do so, you can use the filter() function and a series of logical operators. The most commonly used logical operators for data analysis are as follows:\n\n== means “equal to”\n!= means “not equal to”\n&gt; or &lt; means “greater than” or “less than”\n&gt;= or &lt;= means “greater than or equal to” or “less than or equal to”\n\nQuestion 4 – Fill in the code to create a new dataframe named sfo_flights that is the result of filter()ing only the observations whose destination was San Francisco.\n\n# Fill in the code for exercise 4 here! \n\nsfo_flights &lt;- filter(nycflights, \n                      dest == )\n\n\nMultiple Data Filters\nYou can filter based on multiple criteria! Within the filter() function, each criteria is separated using commas. For example, suppose you are interested in flights leaving from LaGuardia (LGA) in February:\n\n## Remember months are coded as numbers!\nfilter(nycflights, \n       origin == \"LGA\", \n       month == 2)\n\nNote that you can separate the conditions using commas if you want flights that are both leaving from LGA and flights in February. If you are interested in either flights leaving from LGA or flights that happened in February, you can use the | instead of the comma.\nQuestion 5 – Fill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result of this code tell you?\n\n## Fill in the code for exercise 5 here! \n\nfilter(sfo_flights, \n       month == __, \n       arr_delay &gt; __) |&gt; \n  dim()"
+    "text": "SFO Dstinations\nOne of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a dest of \"LAX\", flights into San Francisco have a dest of \"SFO\", and flights into Chicago (O’Hare) have a dest of \"ORD\".\nIf you want to visualize only on delays of flights headed to Los Angeles, you need to first filter() the data for flights with that destination (e.g., filter(dest == \"LAX\")) and then make a histogram of the departure delays of only those flights.\nLogical operators: Filtering for certain observations (e.g. flights from a particular airport) is often of interest in data frames where we might want to examine observations with certain characteristics separately from the rest of the data. To do so, you can use the filter() function and a series of logical operators. The most commonly used logical operators for data analysis are as follows:\n\n== means “equal to”\n!= means “not equal to”\n&gt; or &lt; means “greater than” or “less than”\n&gt;= or &lt;= means “greater than or equal to” or “less than or equal to”\n\nQuestion 4 – Fill in the code to create a new dataframe named sfo_flights that is the result of filter()ing only the observations whose destination was San Francisco.\n\n# Fill in the code for exercise 4 here! \n\nsfo_flights &lt;- filter(nycflights, \n                      dest == )\n\n\nMultiple Data Filters\nYou can filter based on multiple criteria! Within the filter() function, each criteria is separated using commas. For example, suppose you are interested in flights leaving from LaGuardia (LGA) in February:\n\n## Remember months are coded as numbers!\nfilter(nycflights, \n       origin == \"LGA\", \n       month == 2)\n\nNote that you can separate the conditions using commas if you want flights that are both leaving from LGA and flights in February. If you are interested in either flights leaving from LGA or flights that happened in February, you can use the | instead of the comma.\nQuestion 5 – Fill in the code below to find the number of flights flying into SFO in July that arrived early.\n\n## Fill in the code for exercise 5 here! \n\nfilter(sfo_flights, \n       month == __, \n       arr_delay &gt; __) %&gt;% \n  dim()\n\nQuestion 6 – When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?"
   },
   {
     "objectID": "labs/lab-2.html#data-summaries",
@@ -3045,7 +3045,7 @@
     "href": "labs/lab-2.html#summaries-vs.-visualizations",
     "title": "Visualizing and Summarizing Numerical Data",
     "section": "Summaries vs. Visualizations",
-    "text": "Summaries vs. Visualizations\nIf I’m flying from New York to San Francisco, should I expect that my flights will typically arrive on time?\nLet’s think about how you could answer this question. One option is to summarize the data and inspect the output. Another option is to plot the delays and inspect the plots. Let’s try both!\nQuestion 6 – Calculate the following statistics for the arrival delays in the sfo_flights dataset:\n\nmean\nmedian\nmax\nmin\n\n\n## Code for exercise 6 goes here! \n\nQuestion 7 – Using the above summary statistics, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nQuestion 8 – Now, rather than calculating summary statistics, plot the distribution of arrival delays for the sfo_flights dataset.\nChoose the type of plot you believe is appropriate for visualizing the distribution of departure delays.\nDon’t forget to give your visualization informative axis labels!\n\n## Code for exercise 8 goes here! \n\nQuestion 9 – Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nQuestion 10 – How did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not “see” with the summary statistics?"
+    "text": "Summaries vs. Visualizations\nIf I’m flying from New York to San Francisco, should I expect that my flights will typically arrive on time?\nLet’s think about how you could answer this question. One option is to summarize the data and inspect the output. Another option is to plot the delays and inspect the plots. Let’s try both!\nQuestion 7 – Calculate the following statistics for the arrival delays in the sfo_flights dataset:\n\nmean\nmedian\nmax\nmin\n\n\n## Code for exercise 7 goes here! \n\nQuestion 8 – Using the above summary statistics, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nQuestion 9 – Now, rather than calculating summary statistics, plot the distribution of arrival delays for the sfo_flights dataset.\nChoose the type of plot you believe is appropriate for visualizing the distribution of departure delays. Don’t forget to give your visualization informative axis labels!\n\n## Code for exercise 9 goes here! \n\nQuestion 10 – Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nQuestion 11 – How did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not “see” with the summary statistics?"
   },
   {
     "objectID": "labs/lab-8.html",
@@ -4166,71 +4166,71 @@
     "objectID": "slides/week2-day1.html#warm-up",
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Warm-up+",
-    "text": "Warm-up+\n\n\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
+    "section": "Warm-up",
+    "text": "Warm-up\n\n\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
   },
   {
     "objectID": "slides/week2-day1.html#section",
     "href": "slides/week2-day1.html#section",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
+    "text": "15-minutes\n\n\n\nReview Lab 1 comments\nAsk questions\nStart revisions"
   },
   {
     "objectID": "slides/week2-day1.html#histogram",
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\nggplot(data = penguins, mapping = aes(x = bill_length_mm)) + \n  geom_histogram() +\n  labs(x = \"Bill Length (mm)\")"
+    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-1",
     "href": "slides/week2-day1.html#section-1",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Pros\n\nEasy to inspect\nHigher bars represent where data are relatively more common\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes\n\n\nCons\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to binwidth"
+    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
   },
   {
     "objectID": "slides/week2-day1.html#boxplot",
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm)) +\n  geom_boxplot() + \n  labs(x = \"Bill Length (mm)\")\n\n\n\n\n\n\nWhat calculations are necessary to create a boxplot?\nWhat are strengths of a boxplot?\nWhat are weaknesses of a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#density-plot",
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm)) +\n  geom_density() +\n  labs(x = \"Bill Length (mm)\")\n\n\n\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots\nFaceted Histograms\nSide-by-Side Boxplots\nStacked Density Plots (Ridge Plots)"
+    "text": "Pros\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nCons\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#scatterplots",
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\nggplot(data = penguins,\n       mapping = aes(y = bill_length_mm, x = bill_depth_mm)) +\n  geom_point() +\n  labs(x = \"Bill Depth (mm)\", \n       y = \"Bill Length (mm)\")"
+    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
     "href": "slides/week2-day1.html#section-4",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Multivariate Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\nColors\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\nFacets\n\ncreates subplots for every level of a variable\nlabels each sub-plot with the value of the variable"
+    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-categorical-variable",
     "href": "slides/week2-day1.html#colors-in-scatterplots-categorical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Colors in Scatterplots – Categorical Variable",
-    "text": "Colors in Scatterplots – Categorical Variable\n\nggplot(data = penguins,\n       mapping = aes(y = bill_length_mm,\n                     x = bill_depth_mm,\n                     color = species)\n       ) +\n  geom_point() +\n  labs(x = \"Bill Depth (mm)\", \n       y = \"Bill Length (mm)\", \n       color = \"Penguin Species\")"
+    "text": "Colors in Scatterplots – Categorical Variable"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-categorical-variable-output",
@@ -4244,7 +4244,7 @@
     "href": "slides/week2-day1.html#colors-in-scatterplots-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Colors in Scatterplots – Numerical Variable",
-    "text": "Colors in Scatterplots – Numerical Variable\n\nggplot(data = penguins,\n       mapping = aes(y = bill_length_mm,\n                     x = bill_depth_mm,\n                     color = body_mass_g)\n       ) +\n  geom_point() +\n  labs(x = \"Bill Depth (mm)\", \n       y = \"Bill Length (mm)\", \n       color = \"Body Mass (g)\")"
+    "text": "Colors in Scatterplots – Numerical Variable"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-numerical-variable-output",
@@ -4286,21 +4286,21 @@
     "href": "slides/week2-day1.html#section-5",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Measures of Center\n\n\n\n\n\nNot Resistant\n\nMean\n\n\n\n\nResistant\n\nMedian\n\n\n\n \n\n\n\n\n\n\n60-second question\n\n\nWhat does it mean for a statistic to be “resistant”?"
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
   },
   {
     "objectID": "slides/week2-day1.html#section-6",
     "href": "slides/week2-day1.html#section-6",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Measures of Spread\n\n\n\n\n\nNot Resistant\n\nVariance\nRange\n\n\n\n\nResistant\n\nInner Quartile Range (IQR)\n\n\n \n\n\n\n\n\n\n60-second question\n\n\nWhy are the variance and range not resistant?"
+    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
   },
   {
     "objectID": "slides/week2-day1.html#section-7",
     "href": "slides/week2-day1.html#section-7",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Given this distribution…\n\n\n\n\n\nWhat measure of center would you use? Why?"
+    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
   },
   {
     "objectID": "slides/week2-day1.html#for-right-skewed-data",
@@ -5513,5 +5513,124 @@
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.5 R Tutorial – Due Thursday by Midnight",
     "text": "1.5 R Tutorial – Due Thursday by Midnight\nRequired Tutorial: Derive Information with dplyr\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page for each tutorial to the Canvas assignment portal!"
+  },
+  {
+    "objectID": "slides/week2-day1.html#todays-layout",
+    "href": "slides/week2-day1.html#todays-layout",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Today’s Layout",
+    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
+  },
+  {
+    "objectID": "slides/week2-day1.html#recreate-my-plot",
+    "href": "slides/week2-day1.html#recreate-my-plot",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Recreate My Plot",
+    "text": "Recreate My Plot\nOpen today’s interactive document to code along with me!\nhttps://bit.ly/week-2-code-along"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-2",
+    "href": "slides/week2-day1.html#section-2",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-8",
+    "href": "slides/week2-day1.html#section-8",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-9",
+    "href": "slides/week2-day1.html#section-9",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-10",
+    "href": "slides/week2-day1.html#section-10",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "What are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form and strength of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-11",
+    "href": "slides/week2-day1.html#section-11",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\nColors\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\nFacets\n\ncreates subplots for every level of a categorial variable\nlabels each sub-plot with the value of the variable"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-12",
+    "href": "slides/week2-day1.html#section-12",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Recreate my plot!"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-13",
+    "href": "slides/week2-day1.html#section-13",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Measures of Spread\n\n\n\n\n\nNot Resistant\n\nVariance\nRange\n\n\n\n\nResistant\n\nInner Quartile Range (IQR)\n\n\n \n\n\n\n\n\n\n60-second question\n\n\nWhy are the variance and range not resistant?"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-14",
+    "href": "slides/week2-day1.html#section-14",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\n\n\n\n\n\n\nBoxplots (and such) don’t count as visualizing the raw data\n\n\n\n\n\n\nWe should only average things we are convinced are measuring the same thing"
+  },
+  {
+    "objectID": "slides/week2-day1.html#lab-2",
+    "href": "slides/week2-day1.html#lab-2",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Lab 2",
+    "text": "Lab 2"
+  },
+  {
+    "objectID": "slides/week2-day1.html#my-plan",
+    "href": "slides/week2-day1.html#my-plan",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "My Plan",
+    "text": "My Plan\n\n\n\nWhat you can expect from me:\n\nPost coursework by Friday\nPost slides from last quarter\nExtend Lab 2 revision deadline by 1-week\n\n\n\n\n\n\nWhat I expect from you:\n\nComplete coursework\nReview / work through slides as if you were in class\n\n\n\n\n\n\nWhat I expect from your group:\n\nComplete the lab assignment as a group"
+  },
+  {
+    "objectID": "slides/week2-day1.html#why-not-use-facets-with-numerical-variables",
+    "href": "slides/week2-day1.html#why-not-use-facets-with-numerical-variables",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Why not use facets with numerical variables???",
+    "text": "Why not use facets with numerical variables???"
+  },
+  {
+    "objectID": "activity/week-2-code-along.html#adding-colors-to-scatterplots",
+    "href": "activity/week-2-code-along.html#adding-colors-to-scatterplots",
+    "title": "Week 2 Lecture - Practicing Your Visualizations",
+    "section": "Adding Colors to Scatterplots",
+    "text": "Adding Colors to Scatterplots\nWhat happens when you use a categorical variable to color the points instead?"
+  },
+  {
+    "objectID": "slides/week2-day1.html",
+    "href": "slides/week2-day1.html",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "15-minutes\n\n\n\nReview Lab 1 comments\nAsk questions\nStart revisions"
+  },
+  {
+    "objectID": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
+    "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Why not use facets with a numerical variable???",
+    "text": "Why not use facets with a numerical variable???"
+  },
+  {
+    "objectID": "slides/week2-day1.html#departure-delays",
+    "href": "slides/week2-day1.html#departure-delays",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Departure Delays",
+    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with binwidth\nFilter data to include only certain flights\nCalculate summary statistics\nCompare summary statistics with a visualization"
   }
 ]

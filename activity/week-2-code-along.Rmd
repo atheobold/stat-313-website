@@ -1,0 +1,80 @@
+---
+title: "Week 2 Lecture - Practicing Your Visualizations"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, message = FALSE, warning = FALSE, include = FALSE}
+library(knitr)
+library(gridExtra)
+library(png)
+library(gtable)
+library(stringr)
+library(grid)
+library(learnr)
+library(kableExtra)
+library(tidyverse)
+library(emo)
+library(gt)
+library(palmerpenguins)
+
+knitr::opts_chunk$set(warning = FALSE,
+                      message = FALSE,
+                      fig.height = 3,
+                      fig.width = 5,
+                      fig.align = "center")
+```
+
+![](images/penguins-logo.png)
+
+# Today's Data
+
+Today we are working with data on three different species of penguins from the Palmer Archipelago near Palmer Station, Antarctica.
+
+Here is a preview of how the dataset looks:
+
+```{r, echo = FALSE}
+penguins %>%
+  slice_sample(n = 10) %>% 
+  gt()
+```
+
+# One Numerical Variable
+
+Edit the code chunk below to recreate the histogram from the lecture slides:
+
+```{r histogram, exercise = TRUE}
+ggplot(data = penguins, mapping = aes(x = ____)) + 
+  geom_XXXX() +
+  labs(x = "Bill Length (mm)")
+```
+
+How would you change your code to plot a boxplot instead?
+
+What if you wanted to plot a density plot?
+
+# Two Numerical Variables
+
+Edit the code chunk below to recreate the scatterplot from the lecture slides:
+
+```{r scatterplot, exercise = TRUE}
+ggplot(data = penguins,
+       mapping = aes(y = ____, x = ____) +
+  geom_XXXX() +
+  labs(x = "Bill Depth (mm)", 
+       y = "Bill Length (mm)")
+```
+
+# Three or More Variables
+
+## Adding Colors to Scatterplots
+
+```{r scatterplot-color-num}
+
+```
+
+What happens when you use a categorical variable to color the points instead?
+
