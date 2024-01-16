@@ -72,9 +72,13 @@ ggplot(data = penguins,
 
 ## Adding Colors to Scatterplots
 
-```{r scatterplot-color-num}
+In the code chunk below:
+
+1. copy and paste your scatterplot code
+2. color the points based on the body mass of the penguin
+
+```{r scatterplot-color-num, exercise = TRUE}
 
 ```
 
-What happens when you use a categorical variable to color the points instead?
-
+What happens when you color the points based on the penguin's species instead?
