@@ -4,7 +4,7 @@ author: "STAT 313"
 format: 
   revealjs:
     logo: images/ggplot2.png
-    theme: solarized
+    theme: [solarized, style.scss]
 editor: visual
 execute: 
   warning: false
@@ -20,12 +20,13 @@ library(tidyverse)
 library(ggridges)
 library(gridExtra)
 
-my_theme <- theme(axis.title.x = element_text(size = 14), 
+my_theme <- theme(axis.title.x = element_text(size = 14),
+                  axis.title.y = element_text(size = 14),
                   axis.title = element_text(size = 16), 
                   axis.text.x = element_text(size = 12), 
                   axis.text.y = element_text(size = 12), 
-                  legend.text = element_text(size = 14), 
-                  legend.title = element_text(size = 16)
+                  legend.text = element_text(size = 12), 
+                  legend.title = element_text(size = 14)
                   )
 ```
 
@@ -51,11 +52,14 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 ::: columns
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
+::: {.small}
 What you can expect from me:
 
 - Post coursework by Friday
 - Post slides from last quarter
 - Extend Lab 2 revision deadline by 1-week
+- Provide 2 additional deadline extensions
+:::
 :::
 :::
 
@@ -64,10 +68,12 @@ What you can expect from me:
 
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
+::: {.small}
 What I expect from you:
 
 - Complete coursework
 - Review / work through slides as if you were in class
+:::
 :::
 :::
 
@@ -76,9 +82,11 @@ What I expect from you:
 
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
+::: {.small}
 What I expect from your group:
 
 - Complete the lab assignment [**as a group**]{.underline}
+:::
 :::
 :::
 :::
@@ -122,7 +130,7 @@ What `geom`etric object is being plotted?
 
 Open today's interactive document, so you can be ready to code along with me! 
 
-::: {style="font-size: 1.5em;"}
+::: {style="font-size: 1.25em;"}
 <https://bit.ly/week-2-code-along>
 :::
 
@@ -172,14 +180,14 @@ Recreate my plot!
 
 ::: columns
 ::: {.column width="50"}
-### Pros
+### What are the strengths of a histogram?
 
 -   Inspect shape of a distribution (skewed or symmetric)
 -   Identify modes (most common values)
 :::
 
 ::: {.column width="50"}
-### Cons
+### What are the weaknesses of a histogram?
 
 -   **Do not** plot raw data, plot summaries (counts) of the data!
 -   Sensitive to the width of the bins (`binwidth`)
@@ -306,7 +314,7 @@ Bivariate (Two Variables) Visualizations -- For Numerical Data
 
 ::: incremental
 ::: {style="color: #000000;"}
--   Scatterplots
+-   Scatterplots (Week 2)
 
 -   Faceted Histograms (Week 3)
 
@@ -346,9 +354,11 @@ Recreate my plot!
 
 ##
 
-<!-- Quote about scatterplots being one of the most useful graphics invented -->
+> "The scatterplot the most generally useful invention in the history of statistical graphics." 
 
 </br>
+
+. . .
 
 ::: columns
 ::: {.column width="50"}
@@ -356,7 +366,7 @@ What are strengths of a scatterplot?
 
 :::{.fragment}
 - Plots the **raw** data! 
-- Inspect form and strength of a relationship
+- Inspect form, strength, and direction of a relationship
 - Identify unusual values
 :::
 :::
@@ -382,7 +392,9 @@ There are two main methods for adding a third (or fourth) variable into a data v
 ::: columns
 ::: {.column width="50%"}
 ::: {.fragment}
-**Colors**
+::: {style="color: #34605f; font-size: 1.25em;"}
+Colors
+:::
 
 -   creates colors for every level of a categorical variable
 -   creates a gradient for different values of a quantitative variable
@@ -391,9 +403,11 @@ There are two main methods for adding a third (or fourth) variable into a data v
 
 ::: {.column width="50%"}
 ::: {.fragment}
-**Facets**
+::: {style="color: #b76352; font-size: 1.25em;"}
+Facets
+:::
 
--   creates subplots for every level of a categorial variable
+-   creates subplots for every level of a categorical variable
 -   labels each sub-plot with the value of the variable
 :::
 :::

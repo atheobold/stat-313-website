@@ -4209,7 +4209,7 @@
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Pros\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nCons\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#scatterplots",
@@ -5540,7 +5540,7 @@
     "href": "slides/week2-day1.html#section-8",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
+    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots (Week 2)\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
   },
   {
     "objectID": "slides/week2-day1.html#section-9",
@@ -5554,14 +5554,14 @@
     "href": "slides/week2-day1.html#section-10",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form and strength of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#section-11",
     "href": "slides/week2-day1.html#section-11",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\nColors\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\nFacets\n\ncreates subplots for every level of a categorial variable\nlabels each sub-plot with the value of the variable"
+    "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\n\nColors\n\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\n\nFacets\n\n\ncreates subplots for every level of a categorical variable\nlabels each sub-plot with the value of the variable"
   },
   {
     "objectID": "slides/week2-day1.html#section-12",
@@ -5596,7 +5596,7 @@
     "href": "slides/week2-day1.html#my-plan",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "My Plan",
-    "text": "My Plan\n\n\n\nWhat you can expect from me:\n\nPost coursework by Friday\nPost slides from last quarter\nExtend Lab 2 revision deadline by 1-week\n\n\n\n\n\n\nWhat I expect from you:\n\nComplete coursework\nReview / work through slides as if you were in class\n\n\n\n\n\n\nWhat I expect from your group:\n\nComplete the lab assignment as a group"
+    "text": "My Plan\n\n\n\n\nWhat you can expect from me:\n\nPost coursework by Friday\nPost slides from last quarter\nExtend Lab 2 revision deadline by 1-week\nProvide 2 additional deadline extensions\n\n\n\n\n\n\n\n\nWhat I expect from you:\n\nComplete coursework\nReview / work through slides as if you were in class\n\n\n\n\n\n\n\n\nWhat I expect from your group:\n\nComplete the lab assignment as a group"
   },
   {
     "objectID": "slides/week2-day1.html#why-not-use-facets-with-numerical-variables",
