@@ -4171,7 +4171,7 @@
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Warm-up",
-    "text": "Warm-up\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
+    "text": "Warm-up\n\n\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
   },
   {
     "objectID": "slides/week2-day1.html#section",
@@ -4185,7 +4185,7 @@
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\n\n\n\n\n\n\n\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
+    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-1",
@@ -4199,28 +4199,28 @@
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat calculations are necessary for creating a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#density-plot",
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\n\n\n\n\n\n\n. . .\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#scatterplots",
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the geometric objects being plotted in a scatterplot?"
+    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
@@ -5523,7 +5523,7 @@
     "href": "slides/week2-day1.html#todays-layout",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Today’s Layout",
-    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n. . .\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
+    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
   },
   {
     "objectID": "slides/week2-day1.html#recreate-my-plot",
@@ -5558,7 +5558,7 @@
     "href": "slides/week2-day1.html#section-10",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n. . .\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#section-11",
@@ -5579,14 +5579,14 @@
     "href": "slides/week2-day1.html#section-13",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Measures of Spread\n\n\n\n\n\nNot Resistant\n\nVariance\nRange\n\n\n\n\nResistant\n\nInner Quartile Range (IQR)\n\n\n \n\n\n\n\n\n\n60-second question\n\n\nWhy are the variance and range not resistant?"
+    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and such) don’t count as visualizing the raw data"
   },
   {
     "objectID": "slides/week2-day1.html#section-14",
     "href": "slides/week2-day1.html#section-14",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Some Rules to Play By\n\n. . .\n\n\n\nLook at and understand your raw data before aggregating\n\n\n. . .\n\n\nBoxplots (and such) don’t count as visualizing the raw data\n\n\n. . .\n\n\nWe should only average things we are convinced are measuring the same thing"
+    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\n\n\n\n\n\n\nBoxplots (and such) don’t count as visualizing the raw data\n\n\n\n\n\n\nWe should only average things we are convinced are measuring the same thing"
   },
   {
     "objectID": "slides/week2-day1.html#lab-2",
@@ -5628,7 +5628,7 @@
     "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Why not use facets with a numerical variable???",
-    "text": "Why not use facets with a numerical variable???\n. . ."
+    "text": "Why not use facets with a numerical variable???"
   },
   {
     "objectID": "slides/week2-day1.html#departure-delays",
@@ -5650,5 +5650,19 @@
     "title": "Introduction to Modern Statistics Chapter 5: Exploring Numerical Data",
     "section": "",
     "text": "Section 5.1: Scatterplots for Paired Data\nDefine the following terms:\nScatterplot:\n \nLinear Relationship:\n \nNonlinear Relationship:\n \n\nNotes:\nWhat are two variables that would have a horseshoe-shaped association in a scatterplot (∩ or ⌢)?\n \n\n\n\n\nSection 5.2: Dot Plots and the Mean\nDefine the following terms:\nDot plot:\n \nDistribution:\n \n\\(\\mu\\)\n \n\\(\\bar{x}\\)\n \nPoint Estimate:\n \n\n\n\nSection 5.3: Histograms and Shape\nDefine the following terms:\nHistogram:\n \nWhat is the tail of a distribution?\n \nHow does a right skewed distribution look?\n \nHow does a left skewed distribution look?\n \nHow does a symmetric distribution look?\n \nDensity Plot:\n \nCan can you tell where (what value) the mode of a distribution is?\n \nHow does a unimodal distribution look?\n \nHow does a bimodal distribution look?\n \nHow does a multimodal distribution look?\n \n\n\n\nSection 5.4: Variance and Standard Deviation\n\nWhat is variability?\n \nStatistically, what is the meaning of “deviation”?\n \nWhat is the variance of a numerical variable? How is it calculated?\n \nHow is the standard deviation related to the variance?\n \nWhat does \\(\\sigma\\) represent?\n \n\n\n\nSection 5.5: Boxplots, Quartiles & The Median\n\nSketch how a boxplot looks:\n \nWhat is the inner quartile range (IQR)?\n \nWhat is the first quartile (Q1)? How is this value calculated?\n \nWhat is the third quartile (Q3)? How is this value calculated?\n \nWhat do the whiskers of a boxplot correspond to? (e.g., the median? the mean?)\n \nHow are “outliers” plotted in a boxplot?\n \n\nNotes:\nHow can you mathematically determine if an observation is an “outlier”?\n  \n\n\n\n\nSection 5.6: Robust Statistics\n\nWhat makes a statistic “robust”?\n \nWhat are some examples of robust statistics?\n \n\nNotes:\nWhat are the two ways to measure the “center” of a distribution? Which one is considered robust to skew / outliers?\n  \nWhat are the three ways to measure the “variability” of a distribution? Which one is considered robust to skew / outliers?\n  \n\n\n\n\nSection 5.7: Transforming Data\n\nWhat is a variable transformation?\n \nWhy would you decide to transform a variable?\n \n\n\n\nWrap-up\n\nWhat type of plot(s) are appropriate for displaying one quantitative variable?\n \nWhat type of plot(s) are appropriate for displaying two quantitative variables?\n \nFill in the following table with the appropriate notation.\n\n\n\nSummary Measure\nParameter\nStatistic\n\n\n\n\nMean\n\n\n\n\nVariance\n\n\n\n\nStandard deviation\n\n\n\n\n\n\nStatistics summarize _____________ .\nParameters summarize _____________."
+  },
+  {
+    "objectID": "slides/week2-day1.html#revisions",
+    "href": "slides/week2-day1.html#revisions",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Revisions",
+    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
+  },
+  {
+    "objectID": "slides/week2-day1.html#completing-revisions",
+    "href": "slides/week2-day1.html#completing-revisions",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Completing Revisions",
+    "text": "Completing Revisions\n\nLab 1 revisions are due by Thursday, January 25.\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   }
 ]

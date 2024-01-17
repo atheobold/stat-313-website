@@ -32,6 +32,51 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 
 # Lab 1
 
+## Revisions
+
+::: columns
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Complete" = Satisfactory
+:::
+
+- Your images were included in the document
+- You provided responses to every question
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Incomplete" = Growing
+:::
+
+- Your images [were not]{.underline} included in the document
+- You [did not]{.underline} provide responses to every question
+:::
+:::
+
+## Completing Revisions
+
+::: {style="font-size: 1.25em;"}
+Lab 1 revisions are due by Thursday, January 25. 
+:::
+
+::: {.small}
+1. Read comments on Canvas
+2. Go back into your Lab 1 on Posit Cloud and complete your revisions
+3. Render your revised Lab 1
+4. Download your revised HTML
+:::
+
+::: {.callout-warning}
+# Reflections
+
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas. 
+:::
+
+
 ## 
 
 ::: {style="font-size: 3em; color: #ed8402;"}
@@ -39,11 +84,10 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 :::
 
 ::: {style="font-size: 1.5em;"}
-- Review Lab 1 comments
-- Ask questions
-- Start revisions 
+-   Review Lab 1 comments
+-   Ask questions
+-   Start revisions
 :::
-
 
 # Week 3
 
@@ -52,13 +96,13 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 ::: columns
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
-::: {.small}
+::: small
 What you can expect from me:
 
-- Post coursework by Friday
-- Post slides from last quarter
-- Extend Lab 2 revision deadline by 1-week
-- Provide 2 additional deadline extensions
+-   Post coursework by Friday
+-   Post slides from last quarter
+-   Extend Lab 2 revision deadline by 1-week
+-   Provide 2 additional deadline extensions
 :::
 :::
 :::
@@ -68,11 +112,11 @@ What you can expect from me:
 
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
-::: {.small}
+::: small
 What I expect from you:
 
-- Complete coursework
-- Review / work through slides as if you were in class
+-   Complete coursework
+-   Review / work through slides as if you were in class
 :::
 :::
 :::
@@ -82,15 +126,14 @@ What I expect from you:
 
 ::: {.column width="30%"}
 ::: {.fragment .fade-in-then-semi-out}
-::: {.small}
+::: small
 What I expect from your group:
 
-- Complete the lab assignment [**as a group**]{.underline}
+-   Complete the lab assignment [**as a group**]{.underline}
 :::
 :::
 :::
 :::
-
 
 # Visualizing Numerical Variables
 
@@ -120,15 +163,15 @@ What `geom`etric object is being plotted?
 
 ## Today's Layout
 
-1. Review visualizations for numerical variables
-2. Practice producing these visualizations
-3. Discuss the pros / cons of each visualization
+1.  Review visualizations for numerical variables
+2.  Practice producing these visualizations
+3.  Discuss the pros / cons of each visualization
 
 . . .
 
 </br>
 
-Open today's interactive document, so you can be ready to code along with me! 
+Open today's interactive document, so you can be ready to code along with me!
 
 ::: {style="font-size: 1.25em;"}
 <https://bit.ly/week-2-code-along>
@@ -160,10 +203,9 @@ ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
   my_theme
 ```
 
-
-::: {.incremental}
-- Is `count` a variable in the dataset?
-- How did `ggplot` decide how tall each bar should be? 
+::: incremental
+-   Is `count` a variable in the dataset?
+-   How did `ggplot` decide how tall each bar should be?
 :::
 
 ##  {background-color="#B6CADA"}
@@ -176,7 +218,7 @@ Recreate my plot!
 <https://bit.ly/week-2-code-along>
 :::
 
-##
+## 
 
 ::: columns
 ::: {.column width="50"}
@@ -236,27 +278,26 @@ Recreate my plot!
 <https://bit.ly/week-2-code-along>
 :::
 
-##
+## 
 
 ::: columns
 ::: {.column width="50"}
 What are strengths of a boxplot?
 
-:::{.fragment}
-- Easy to flag unusual observations
-- Easy to see the median
+::: fragment
+-   Easy to flag unusual observations
+-   Easy to see the median
 :::
 :::
 
 ::: {.column width="50"}
 What are weaknesses of a boxplot?
 
-:::{.fragment}
-- Don't plot raw data
-- Only plot summary statistics
-- Hide multiple modes
+::: fragment
+-   Don't plot raw data
+-   Only plot summary statistics
+-   Hide multiple modes
 :::
-
 :::
 :::
 
@@ -282,26 +323,26 @@ ggplot(data = penguins,
 -   A smooth approximation to a variable's distribution
 -   Plots density (as a proportion) on the y-axis
 
-##
+## 
 
 ::: columns
 ::: {.column width="50"}
 What are strengths of a density plot?
 
-:::{.fragment}
-- Inspect shape of a distribution (skewed or symmetric)
-- Identify modes (most common values)
-- Less jagged than a histogram
+::: fragment
+-   Inspect shape of a distribution (skewed or symmetric)
+-   Identify modes (most common values)
+-   Less jagged than a histogram
 :::
 :::
 
 ::: {.column width="50"}
 What are weaknesses of a density plot?
 
-:::{.fragment}
-- Do not plot raw data, plot summaries (proportions) of the data!
-- y-axis is difficult to interpret
-- Can over smooth and hide interesting shapes
+::: fragment
+-   Do not plot raw data, plot summaries (proportions) of the data!
+-   y-axis is difficult to interpret
+-   Can over smooth and hide interesting shapes
 :::
 :::
 :::
@@ -352,9 +393,9 @@ Recreate my plot!
 <https://bit.ly/week-2-code-along>
 :::
 
-##
+## 
 
-> "The scatterplot the most generally useful invention in the history of statistical graphics." 
+> "The scatterplot the most generally useful invention in the history of statistical graphics."
 
 </br>
 
@@ -364,18 +405,18 @@ Recreate my plot!
 ::: {.column width="50"}
 What are strengths of a scatterplot?
 
-:::{.fragment}
-- Plots the **raw** data! 
-- Inspect form, strength, and direction of a relationship
-- Identify unusual values
+::: fragment
+-   Plots the **raw** data!
+-   Inspect form, strength, and direction of a relationship
+-   Identify unusual values
 :::
 :::
 
 ::: {.column width="50"}
 What are weaknesses of a scatterplot?
 
-:::{.fragment}
-- Can get "busy" when there are lots of observations (points)
+::: fragment
+-   Can get "busy" when there are lots of observations (points)
 :::
 :::
 :::
@@ -391,7 +432,7 @@ There are two main methods for adding a third (or fourth) variable into a data v
 
 ::: columns
 ::: {.column width="50%"}
-::: {.fragment}
+::: fragment
 ::: {style="color: #34605f; font-size: 1.25em;"}
 Colors
 :::
@@ -402,7 +443,7 @@ Colors
 :::
 
 ::: {.column width="50%"}
-::: {.fragment}
+::: fragment
 ::: {style="color: #b76352; font-size: 1.25em;"}
 Facets
 :::
@@ -413,7 +454,6 @@ Facets
 :::
 :::
 :::
-
 
 ## Colors in Scatterplots -- Numerical Variable
 
@@ -458,8 +498,7 @@ ggplot(data = penguins,
   my_theme
 ```
 
-
-## Why not use facets with a numerical variable??? 
+## Why not use facets with a numerical variable???
 
 . . .
 
@@ -477,43 +516,29 @@ ggplot(data = penguins,
   
 ```
 
-# 
-
 ##  {background-color="#f48153"}
 
 ::: {style="font-size: 3.5em; color: #000000;"}
 Some Rules to Play By
 :::
 
-. . .
-
 </br>
 
 ::: {style="font-size: 0.75em; color: #000000;"}
--   Look at and understand your raw data before aggregating
-:::
-
-. . .
-
-::: {style="font-size:0.75em; color: #000000;"}
+::: {.incremental}
+-   Look at and understand your *raw* data before aggregating
 -   Boxplots (and such) don't count as visualizing the raw data
 :::
-
-. . .
-
-::: {style="font-size: 0.75em; color: #000000;"}
--   We should only average things we are convinced are measuring the same thing
 :::
+
 
 # Lab 2
 
 ## Departure Delays
 
-- Inspect the `nycflights` dataset
-- Visualize departure delays
-- Play with `binwidth`
-- Filter data to include only certain flights
-- Calculate summary statistics
-- Compare summary statistics with a visualization
-
-
+-   Inspect the `nycflights` dataset
+-   Visualize departure delays
+-   Play with `binwidth`
+-   Filter data to include only certain flights
+-   Calculate summary statistics
+-   Compare summary statistics with a visualization
