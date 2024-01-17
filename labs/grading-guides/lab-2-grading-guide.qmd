@@ -81,8 +81,6 @@ ggplot(data = nycflights, mapping = aes(x = dep_delay)) +
 ```
 
 ::: callout-note
-Note: Axis labels are not required!
-
 Note: May choose their own binwidth, but that is not required!
 :::
 
@@ -113,7 +111,7 @@ ggplot(data = nycflights,
 
 ## 3 (b)
 
-**How do these three histograms compare? Are features revealed in one that are obscured in another?** <!-- Your answer goes below this line -- do not remove this!  -->
+**How do these three histograms compare? Are features revealed in one that are obscured in another?** 
 
 **Success**:
 
@@ -156,7 +154,9 @@ filter(sfo_flights,
   dim()
 ```
 
-**AND**
+## 6 
+
+**When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
 
 They should state that 45 flights arrived to SFO early in July.
 
@@ -174,12 +174,6 @@ They should state that 45 flights arrived to SFO early in July.
 
 *Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?
 
--   If they only say that the 45 goes with flights
-
-<!-- fix this! -->
-
-\*FeedbacK:
-
 -   If they don't interpret the conditions of the filter (arrived early in July)
 
 *Feedback:* For Question 5, what were the conditions of these 45 flights?
@@ -188,7 +182,7 @@ They should state that 45 flights arrived to SFO early in July.
 
 *Feedback:* For Question 5, what flights did you filter? All NYC flights or a smaller dataset?
 
-## 6
+## 7
 
 **Calculate the following statistics for the arrival delays in the sfo_flights dataset:**
 
@@ -226,7 +220,7 @@ summarise(sfo_flights,
 
 *Feedback:* For Question 6, what dataset should you be using to calculate your summary statistics?
 
-## 7
+## 8
 
 **Using the above summary statistics, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
 
@@ -245,11 +239,9 @@ summarise(sfo_flights,
 
 *Feedback:* You point out the statistics and what they mean in terms of an arrival delay, but how do these statistics connect with my question about what I should expect?
 
-## 8
+## 9
 
-**Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays. Be sure to give your visualization nice axis labels!**
-
-You choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays.
+**Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays.** 
 
 **Success**: Code should look like:
 
@@ -272,17 +264,17 @@ ggplot(data = nycflights,
 
 -   Uses `geom_boxplot()`
 
-*Feedback:* For Question 8, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
+*Feedback:* For Question 9, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
 
 -   Doesn't change x-axis label
 
-*Feedback:* For Question 8, you were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
+*Feedback:* For Question 9, you were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
 
 -   Doesn't include units (minutes) in axis label
 
-*Feedback:* For Question 8, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
+*Feedback:* For Question 9, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
 
-## 9
+## 10
 
 **Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
 
@@ -297,7 +289,7 @@ ggplot(data = nycflights,
 
 *Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
 
-## 10
+## 11
 
 **How did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not "see" with the summary statistics?**
 

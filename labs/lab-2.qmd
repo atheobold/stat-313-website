@@ -70,7 +70,7 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 Let's start by examining the distribution of departure delays (`dep_delay`) of all flights with a histogram.
 
-**Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data**
+**Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data.** *Don't forget to give your visualization informative axis labels!*
 
 ```{r}
 #| label: histogram
@@ -86,7 +86,7 @@ You can easily define the binwidth you want to use, by specifying the `binwidth`
 
 **Question 3**
 
-**(a) Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.**
+**(a) Make two other histograms, one with a `binwidth` of 15 and one with a `binwidth` of 150.** *Feel free to copy-and-paste the code you used for Question 2 and modify the `binwidth`*.
 
 ```{r binwidth}
 #| layout-nrow: 1
@@ -115,7 +115,6 @@ If you want to visualize only on delays of flights headed to Los Angeles, you ne
 
 ```{r}
 #| label: filtering-sfo-flights
-# Fill in the code for exercise 4 here! 
 
 sfo_flights <- filter(nycflights, 
                       dest == )
@@ -127,10 +126,12 @@ You can filter based on multiple criteria! Within the `filter()` function, each 
 
 ```{r}
 #| label: example-filter-lga-feb
-## Remember months are coded as numbers!
+
 filter(nycflights, 
        origin == "LGA", 
        month == 2)
+
+## Remember months are coded as numbers (February = 2)!
 ```
 
 Note that you can separate the conditions using commas if you want flights that are both leaving from LGA **and** flights in February. If you are interested in either flights leaving from LGA **or** flights that happened in February, you can use the `|` instead of the comma.
@@ -139,7 +140,6 @@ Note that you can separate the conditions using commas if you want flights that 
 
 ```{r}
 #| label: filter-sfo-july-early-flights
-## Fill in the code for exercise 5 here! 
 
 filter(sfo_flights, 
        month == __, 
@@ -155,6 +155,7 @@ You can also obtain numerical summaries for the flights headed to SFO, using the
 
 ```{r}
 #| label: summary-stats
+
 summarise(sfo_flights, 
           mean_dd   = mean(dep_delay), 
           median_dd = median(dep_delay), 
@@ -204,7 +205,7 @@ Let's think about how you could answer this question. One option is to summarize
 
 **Question 9 -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset.**
 
-*Choose the type of plot you believe is appropriate for visualizing the __distribution__ of departure delays. Don't forget to give your visualization informative axis labels!*
+*Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. Don't forget to give your visualization informative axis labels!*
 
 ```{r}
 #| label: arrival-delay-plot
