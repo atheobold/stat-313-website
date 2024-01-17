@@ -4,6 +4,7 @@ author: "Your group's names here!"
 date: "January 19, 2024"
 format: html
 editor: visual
+embed-resources: true
 execute: 
   echo: true
   eval: false
@@ -23,7 +24,11 @@ Let's load the following packages:
 
 -   The **openintro** `R` package: houses the dataset we will be working with
 
-```{r packages}
+```{r}
+#| message: false
+#| warning: false
+#| label: packages
+
 # Package for functions 
 library(tidyverse)
 

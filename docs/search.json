@@ -2100,7 +2100,11 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25 (class held asynchronously)\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n\nMon, January 29\nStatistical Critique 1 Due\n\n\n\n\n✍\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, February 4\nMidterm Project Proposal Due\n\n\n\n\n\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01"
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22 \n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25 (class held asynchronously)\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n\nMon, January 29\nStatistical Critique 1 Due\n\n\n\n\n✍\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, February 4\nMidterm Project Proposal Due\n\n\n\n\n\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
   },
   {
     "objectID": "computing-access.html",
@@ -4167,7 +4171,7 @@
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Warm-up",
-    "text": "Warm-up\n\n\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
+    "text": "Warm-up\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
   },
   {
     "objectID": "slides/week2-day1.html#section",
@@ -4181,7 +4185,7 @@
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
+    "text": "Histogram\n\n\n\n\n\n\n\n\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-1",
@@ -4195,28 +4199,28 @@
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#density-plot",
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\n\n\n\n\n\n\n. . .\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#scatterplots",
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
+    "text": "Scatterplots\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
@@ -5519,7 +5523,7 @@
     "href": "slides/week2-day1.html#todays-layout",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Today’s Layout",
-    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
+    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n. . .\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
   },
   {
     "objectID": "slides/week2-day1.html#recreate-my-plot",
@@ -5554,7 +5558,7 @@
     "href": "slides/week2-day1.html#section-10",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n. . .\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#section-11",
@@ -5582,7 +5586,7 @@
     "href": "slides/week2-day1.html#section-14",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\n\n\n\n\n\n\nBoxplots (and such) don’t count as visualizing the raw data\n\n\n\n\n\n\nWe should only average things we are convinced are measuring the same thing"
+    "text": "Some Rules to Play By\n\n. . .\n\n\n\nLook at and understand your raw data before aggregating\n\n\n. . .\n\n\nBoxplots (and such) don’t count as visualizing the raw data\n\n\n. . .\n\n\nWe should only average things we are convinced are measuring the same thing"
   },
   {
     "objectID": "slides/week2-day1.html#lab-2",
@@ -5610,7 +5614,7 @@
     "href": "activity/week-2-code-along.html#adding-colors-to-scatterplots",
     "title": "Week 2 Lecture - Practicing Your Visualizations",
     "section": "Adding Colors to Scatterplots",
-    "text": "Adding Colors to Scatterplots\nWhat happens when you use a categorical variable to color the points instead?"
+    "text": "Adding Colors to Scatterplots\nIn the code chunk below:\n\ncopy and paste your scatterplot code\ncolor the points based on the body mass of the penguin\n\n\n\n\n\n\nWhat happens when you color the points based on the penguin’s species instead?"
   },
   {
     "objectID": "slides/week2-day1.html",
@@ -5624,7 +5628,7 @@
     "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Why not use facets with a numerical variable???",
-    "text": "Why not use facets with a numerical variable???"
+    "text": "Why not use facets with a numerical variable???\n. . ."
   },
   {
     "objectID": "slides/week2-day1.html#departure-delays",
@@ -5639,5 +5643,12 @@
     "title": "Lab 2 - Grading Guide",
     "section": "11",
     "text": "11\nHow did your answer change when using the plot versus using the summary statistics? i.e. What were you able to see in the plot that could could not “see” with the summary statistics?\nSuccess:\n\nStates if / how their answer did / did not change\nDiscusses what could be see in the visualizations that could not be seen in the statistics\n\nskew\nmode / peak\n\n\nGrowing:\n\nResponse does not discuss what could be seen in the visualizations that could not be seen in the statistics\n\nFeedback: For Question 10, you should address what you were able to SEE in the visualization that you could not “see” in the summary statistics.\n\nResponse doesn’t discuss if / how the answer to the question changed\n\nFeedback: Great job discussing how the shape of the distribution informs you choice of statistic! You did not, however, discuss if / how your answer to my question changed between looking at the plot versus looking at the statistics."
+  },
+  {
+    "objectID": "weeks/reading-guide/week2-reading2.html",
+    "href": "weeks/reading-guide/week2-reading2.html",
+    "title": "Introduction to Modern Statistics Chapter 5: Exploring Numerical Data",
+    "section": "",
+    "text": "Section 5.1: Scatterplots for Paired Data\nDefine the following terms:\nScatterplot:\n \nLinear Relationship:\n \nNonlinear Relationship:\n \n\nNotes:\nWhat are two variables that would have a horseshoe-shaped association in a scatterplot (∩ or ⌢)?\n \n\n\n\n\nSection 5.2: Dot Plots and the Mean\nDefine the following terms:\nDot plot:\n \nDistribution:\n \n\\(\\mu\\)\n \n\\(\\bar{x}\\)\n \nPoint Estimate:\n \n\n\n\nSection 5.3: Histograms and Shape\nDefine the following terms:\nHistogram:\n \nWhat is the tail of a distribution?\n \nHow does a right skewed distribution look?\n \nHow does a left skewed distribution look?\n \nHow does a symmetric distribution look?\n \nDensity Plot:\n \nCan can you tell where (what value) the mode of a distribution is?\n \nHow does a unimodal distribution look?\n \nHow does a bimodal distribution look?\n \nHow does a multimodal distribution look?\n \n\n\n\nSection 5.4: Variance and Standard Deviation\n\nWhat is variability?\n \nStatistically, what is the meaning of “deviation”?\n \nWhat is the variance of a numerical variable? How is it calculated?\n \nHow is the standard deviation related to the variance?\n \nWhat does \\(\\sigma\\) represent?\n \n\n\n\nSection 5.5: Boxplots, Quartiles & The Median\n\nSketch how a boxplot looks:\n \nWhat is the inner quartile range (IQR)?\n \nWhat is the first quartile (Q1)? How is this value calculated?\n \nWhat is the third quartile (Q3)? How is this value calculated?\n \nWhat do the whiskers of a boxplot correspond to? (e.g., the median? the mean?)\n \nHow are “outliers” plotted in a boxplot?\n \n\nNotes:\nHow can you mathematically determine if an observation is an “outlier”?\n  \n\n\n\n\nSection 5.6: Robust Statistics\n\nWhat makes a statistic “robust”?\n \nWhat are some examples of robust statistics?\n \n\nNotes:\nWhat are the two ways to measure the “center” of a distribution? Which one is considered robust to skew / outliers?\n  \nWhat are the three ways to measure the “variability” of a distribution? Which one is considered robust to skew / outliers?\n  \n\n\n\n\nSection 5.7: Transforming Data\n\nWhat is a variable transformation?\n \nWhy would you decide to transform a variable?\n \n\n\n\nWrap-up\n\nWhat type of plot(s) are appropriate for displaying one quantitative variable?\n \nWhat type of plot(s) are appropriate for displaying two quantitative variables?\n \nFill in the following table with the appropriate notation.\n\n\n\nSummary Measure\nParameter\nStatistic\n\n\n\n\nMean\n\n\n\n\nVariance\n\n\n\n\nStandard deviation\n\n\n\n\n\n\nStatistics summarize _____________ .\nParameters summarize _____________."
   }
 ]
