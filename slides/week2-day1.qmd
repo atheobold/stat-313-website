@@ -40,8 +40,8 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 "Complete" = Satisfactory
 :::
 
-- Your images were included in the document
-- You provided responses to every question
+-   Your images were included in the document
+-   You provided responses to every question
 :::
 
 ::: {.column width="5%"}
@@ -52,41 +52,68 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 "Incomplete" = Growing
 :::
 
-- Your images [were not]{.underline} included in the document
-- You [did not]{.underline} provide responses to every question
+-   Your images [were not]{.underline} included in the document
+-   You [did not]{.underline} provide responses to every question
 :::
 :::
 
 ## Completing Revisions
 
 ::: {style="font-size: 1.25em;"}
-Lab 1 revisions are due by Thursday, January 25. 
+Lab 1 revisions are due by Thursday, January 25.
 :::
 
-::: {.small}
-1. Read comments on Canvas
-2. Go back into your Lab 1 on Posit Cloud and complete your revisions
-3. Render your revised Lab 1
-4. Download your revised HTML
+::: small
+1.  Read comments on Canvas
+2.  Go back into your Lab 1 on Posit Cloud and complete your revisions
+3.  Render your revised Lab 1
+4.  Download your revised HTML
 :::
 
-::: {.callout-warning}
+::: callout-warning
 # Reflections
 
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas. 
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
 :::
-
 
 ## 
 
 ::: {style="font-size: 3em; color: #ed8402;"}
-15-minutes
+10-minutes
 :::
 
 ::: {style="font-size: 1.5em;"}
 -   Review Lab 1 comments
 -   Ask questions
 -   Start revisions
+:::
+
+# Researching Group Collaborations
+
+## 
+
+::: {style="font-size: 3em; color: #ed8402;"}
+5-minutes
+:::
+
+::: columns
+::: {.column width="47%"}
+If you [would]{.underline} like to participate
+
+- Complete consent form
+- Complete 6-question pre-collaboration survey
+- Complete demographic survey
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+If you [would not]{.underline} like to participate
+
+- Complete consent form
+- Complete 6-question pre-collaboration survey
+:::
 :::
 
 # Week 3
@@ -526,12 +553,11 @@ Some Rules to Play By
 </br>
 
 ::: {style="font-size: 0.75em; color: #000000;"}
-::: {.incremental}
+::: incremental
 -   Look at and understand your *raw* data before aggregating
 -   Boxplots (and such) don't count as visualizing the raw data
 :::
 :::
-
 
 # Lab 2
 
