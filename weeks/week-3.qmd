@@ -27,7 +27,10 @@ countries <- tibble(Country =
                         "USA", 
                         "Brazil", 
                         "United Kingdom", 
-                        "Czech Republic")
+                        "Czech Republic", 
+                        "Bosnia and Herzegovina",
+                        "Sao Tome and Principe"
+                        )
                     )
 
 gapminder_small <- gapminder %>% 
@@ -75,7 +78,13 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Incorporating Categorical Variables into Visualizations](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
 
+::: {.callout-tip}
+# Only read Section 4.6!
+:::
+
 ## Textbook Reading -- Part 2
+
+[**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
 
 ::: column-margin
 ```{r}
@@ -86,7 +95,9 @@ knitr::include_graphics(here::here("images",
 ```
 :::
 
-[**Required Reading:** Incorporating Categorical Variables into Summary Statistics](https://moderndive.com/3-wrangling.html)
+::: {.callout-tip}
+# Read Sections 3.3 - 3.6!
+:::
 
 ## Concept Quiz -- Due Tuesday by Midnight
 
@@ -95,6 +106,8 @@ knitr::include_graphics(here::here("images",
 ```{r}
 #| label: code-for-bad-plot
 #| eval: false
+#| fig-width: 4
+#| fig-height: 6
 
 ggplot(data = gapminder_small, 
        mapping = aes(x = country, y = lifeExp)) +
@@ -154,11 +167,11 @@ This does not go inside the `aes()` function!
 
 ::: columns
 ::: {.column width="40%"}
-First Step
+Step 1 `%>%` 
 
-Second Step
+Step 2 `%>%`
 
-Third Step
+Step 3 
 :::
 
 ::: {.column width="5%"}
