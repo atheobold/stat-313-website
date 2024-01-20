@@ -202,7 +202,14 @@ Step 3
 
 ## R Tutorial -- Due Thursday by Midnight
 
-[**Required Tutorial:** Derive Information with dplyr](https://posit.cloud/learn/primers/2.3)
+It has come to my attention that Posit Cloud has removed their tutorials in 
+favor of what they are calling "recipes"---short tutorials on how to do 
+specific things in R. 
+
+So, I'm pivoting to a different tutorial that uses `group_by()`---the tool you 
+are learning this week---to explore different sampling strategies. 
+
+[**Required Tutorial:** Sampling Strategies & Experimental Design](https://openintro.shinyapps.io/ims-01-data-03/#section-sampling-in-r)
 
 ::: callout-note
 # Submission
