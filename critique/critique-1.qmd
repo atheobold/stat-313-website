@@ -68,6 +68,10 @@ It is becoming increasingly common for scientific articles to be required to pro
 
 2.  Save the image to your computer (as instructed above)
 
+::: callout-caution
+If the article you selected **does not** have a visualization, you are permitted to substitute a *table* for a visualization.
+:::
+
 ## Visualization Critique
 
 Your critique of the visualization you selected needs to address the following questions:
@@ -82,8 +86,9 @@ Remember: `aes`thetics map **variables** to aspects of the plot
 
 3.  Name **at least two** ways the visualization could be improved --- What would the reader struggle to understand?
 
-::: callout-caution
-If the article you selected **does not** have a visualization, you are permitted to substitute a *table* for a visualization. You will address the following questions:
+
+::: {.callout-tip} 
+# If you are referencing a table
 
 1.  What aesthetics are being used in the table? Similar to a visualization, the aesthetics of a table are variables being mapped to aspects of the table.
 
