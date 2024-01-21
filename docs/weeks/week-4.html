@@ -100,7 +100,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -331,14 +331,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#reading-guide" id="toc-reading-guide" class="nav-link" data-scroll-target="#reading-guide">Reading Guide</a></li>
   </ul></li>
-  <li><a href="#concept-quiz-due-tuesday-by-noon" id="toc-concept-quiz-due-tuesday-by-noon" class="nav-link" data-scroll-target="#concept-quiz-due-tuesday-by-noon"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by noon</a></li>
-  <li><a href="#r-tutorial-due-thursday-by-noon" id="toc-r-tutorial-due-thursday-by-noon" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-noon"><span class="header-section-number">1.3</span> 💻 R Tutorial – Due Thursday by noon</a></li>
+  <li><a href="#concept-quiz-due-tuesday-by-the-start-of-class" id="toc-concept-quiz-due-tuesday-by-the-start-of-class" class="nav-link" data-scroll-target="#concept-quiz-due-tuesday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by the start of class</a></li>
+  <li><a href="#r-tutorial-due-thursday-by-the-start-of-class" id="toc-r-tutorial-due-thursday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> 💻 R Tutorial – Due Thursday by the start of class</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-4.html">Week 4</a></li></ol></nav>
 <div class="quarto-title">
@@ -377,12 +377,13 @@ window.Quarto = {
 <li>calculate a residual for an observation</li>
 </ul>
 </section>
-<section id="prepare" class="level1" data-number="1">
+<section id="prepare" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Prepare</h1>
-<section id="textbook-reading" class="level2" data-number="1.1">
+<section id="textbook-reading" class="level2 page-columns page-full" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="textbook-reading"><span class="header-section-number">1.1</span> Textbook Reading</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
+<p><a href="https://moderndive.com/5-regression.html">Chapter 5 (https://moderndive.com/5-regression.html)</a></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -392,19 +393,13 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:55%;">
-<p><br> <a href="https://moderndive.com/5-regression.html">Chapter 5 (https://moderndive.com/5-regression.html)</a></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+</div></div><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -414,7 +409,7 @@ Note
 <section id="reading-guide" class="level3">
 <h3 class="anchored" data-anchor-id="reading-guide">Reading Guide</h3>
 <p><a href="reading-guide/week4-reading.docx">Download the Word Document</a></p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -429,8 +424,8 @@ Different colored answers
 </div>
 </section>
 </section>
-<section id="concept-quiz-due-tuesday-by-noon" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="concept-quiz-due-tuesday-by-noon"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by noon</h2>
+<section id="concept-quiz-due-tuesday-by-the-start-of-class" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="concept-quiz-due-tuesday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by the start of class</h2>
 <p><strong>1. What does the correlation coefficient measure?</strong></p>
 <ul>
 <li>strength of a relationship between two variables</li>
@@ -462,8 +457,8 @@ Different colored answers
 <li><code>geom_smooth()</code></li>
 </ul>
 </section>
-<section id="r-tutorial-due-thursday-by-noon" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="r-tutorial-due-thursday-by-noon"><span class="header-section-number">1.3</span> 💻 R Tutorial – Due Thursday by noon</h2>
+<section id="r-tutorial-due-thursday-by-the-start-of-class" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> 💻 R Tutorial – Due Thursday by the start of class</h2>
 <ol type="1">
 <li><p><a href="https://openintro.shinyapps.io/ims-03-model-03/">Regression modeling: Simple linear regression</a></p></li>
 <li><p><a href="https://openintro.shinyapps.io/ims-03-model-04/">Regression modeling: Interpreting regression models</a></p></li>
