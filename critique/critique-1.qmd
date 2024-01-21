@@ -8,6 +8,7 @@ format:
     number-sections: true
     number-depth: 2
 editor: visual
+bibliography: references.bib
 ---
 
 # Assignment Details
@@ -16,17 +17,23 @@ In your first statistical critique will focus on critiquing a key aspect of any 
 
 ## Including your Visualizations
 
-You are expected to include the two visualizations you decide to critique. These visualizations must be included in the paragraph surrounding your critique, not at the end of your document.
+You are expected to include the two visualizations you decide to critique. These visualizations **must** be included in the paragraph *surrounding your critique*. Please do not include the images at the end of your document.
 
 ### Getting your visualizations
 
 For the New York Times visualization, you can left click on the image and save it to your computer.
 
-![Figure 1: Options when left clicking on NYT visualization -- either copy the image or save it to your computer](images/save_nyt.png)
+![Figure 1: Options when left clicking on NYT visualization -- select "Save Image As..." to save it to your computer](images/save_nyt.png)
 
 For the visualization from your research article, you may need to take screenshot of the page and crop it to only include the image.
 
 ![Figure 2: Cropped image from scientific article](images/placebo_crop.png)
+
+::: callout-caution
+# No Visualization in Article
+
+If the article you selected **does not** have a visualization, you are permitted to substitute a *table* for a visualization. Similar to the instructions above, you are required to take a screenshot of the page and crop it to only include the table.
+:::
 
 ## Submission
 
@@ -44,6 +51,8 @@ It is common for blogs and online news to use visualizations to convey informati
 
 3.  Save the image to your computer (as instructed above)
 
+4.  Insert the image in your document (before your written critique)
+
 ## Visualization Critique
 
 Your critique of the visualization you selected needs to address the following questions:
@@ -51,7 +60,9 @@ Your critique of the visualization you selected needs to address the following q
 1.  What aesthetics are being used in the plot?
 
 ::: callout-tip
-Remember: `aes`thetics map **variables** to aspects of the plot
+# Aesthetics are Mapped to Variables
+
+Remember, `aes`thetics map **variables** to aspects of the plot. If your plot uses color, but the color **is not** associated with a variable, then color is not an aesthetic in the plot.
 :::
 
 2.  Name **at least two** things the visualization does well --- What makes the visualization clear to the reader?
@@ -66,33 +77,38 @@ It is becoming increasingly common for scientific articles to be required to pro
 
 1.  Access the research article you selected in Week 1. If you cannot find it on your computer, go to the [Week 1: Statitics in Your Field assignment](https://canvas.calpoly.edu/)
 
-2.  Save the image to your computer (as instructed above)
+2.  Locate the visualization (or table)
 
-::: callout-caution
-If the article you selected **does not** have a visualization, you are permitted to substitute a *table* for a visualization.
-:::
+3.  Take a screenshot of the visualization / table
 
-## Visualization Critique
+4.  Crop the image to only include the visualization / table you are critiquing
+
+5.  Save the image to your computer (as instructed above)
+
+6.  Insert the image in your document (before your written critique)
+
+## Visualization / Table Critique
 
 Your critique of the visualization you selected needs to address the following questions:
 
-1.  What aesthetics are being used in the plot?
+1.  What aesthetics are being used in the visualization / table?
+
+2.  Name **at least two** things the visualization / table does well --- What makes the visualization clear to the reader?
+
+3.  Name **at least two** ways the visualization / table could be improved --- What would the reader struggle to understand?
 
 ::: callout-tip
-Remember: `aes`thetics map **variables** to aspects of the plot
-:::
-
-2.  Name **at least two** things the visualization does well --- What makes the visualization clear to the reader?
-
-3.  Name **at least two** ways the visualization could be improved --- What would the reader struggle to understand?
-
-
-::: {.callout-tip} 
 # If you are referencing a table
 
-1.  What aesthetics are being used in the table? Similar to a visualization, the aesthetics of a table are variables being mapped to aspects of the table.
+Similar to a visualization, the aesthetics of a table are variables being mapped to aspects of the table. Below is a table from Coyne et al. [-@coyne2020]. I like to think of the rows and columns of a table as similar to the x- and y-axis of a visualization. 
 
-2.  Name **at least two** things the table does well --- What makes the table clear to the reader?
+![](images/table-example.png){fig-alt="An image of a table from a scientific journal."}
 
-3.  Name **at least two** ways the table could be improved --- What would the reader struggle to understand?
+- I start by noticing that the "study variables" are mapped to the rows (e.g., Social Network, Depressive Sym., Anxiety). 
+- Then, I notice that the columns are associated with different values of Age. 
+- Finally, I notice tha there are actually *two* rows per study variable, one associated with the mean and one associated with the standard deviation. 
+
+If I were to sketch out how this table would translate into a visualization, I would imagine the x-axis would be Age, the y-axis would be the value of the variable, there would be three facets (one per study variable), and there would be two types of points (one for the mean, one for the standard deviation). Here is a rough sketch of my mental image:
+
+![](images/table-to-plot.jpg){fig-alt="A drawing of how I would convert the table into a visualization. There are two plots, one with a title 'Social Network' and one with a title 'Anxiety', representing two of the variables the study researched. Each plot has an x-axis with different values of age (ranging from 13 to 20), and a y-axis ranging from 0 to 5. For each age, there are two points plotted. One point is plotted as a red triangle, representing the mean value for a specific age. A second point is plotted as a green circle, representing the standard devation for a specific age."}
 :::
