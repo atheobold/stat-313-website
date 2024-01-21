@@ -111,4 +111,11 @@ Similar to a visualization, the aesthetics of a table are variables being mapped
 If I were to sketch out how this table would translate into a visualization, I would imagine the x-axis would be Age, the y-axis would be the value of the variable, there would be three facets (one per study variable), and there would be two types of points (one for the mean, one for the standard deviation). Here is a rough sketch of my mental image:
 
 ![](images/table-to-plot.jpg){fig-alt="A drawing of how I would convert the table into a visualization. There are two plots, one with a title 'Social Network' and one with a title 'Anxiety', representing two of the variables the study researched. Each plot has an x-axis with different values of age (ranging from 13 to 20), and a y-axis ranging from 0 to 5. For each age, there are two points plotted. One point is plotted as a red triangle, representing the mean value for a specific age. A second point is plotted as a green circle, representing the standard devation for a specific age."}
+
+In this plot, there are four aesthetics: 
+
+1. the age (included on the x-axis)
+2. the study variable (included as facets)
+3. the statistic measured (included as a color)
+4. the value of the statistic (included on the y-axis)
 :::
