@@ -6,19 +6,6 @@ execute:
   eval: false
 ---
 
-Q1 (a)\
-Q1 (b)\
-Q2\
-Q3 (a)\
-Q3 (b)\
-Q4\
-Q5\
-Q6\
-Q7\
-Q8\
-Q9\
-Q10
-
 ## 1 (a)
 
 **How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)** <!-- Your response goes below this line! -->
@@ -111,7 +98,7 @@ ggplot(data = nycflights,
 
 ## 3 (b)
 
-**How do these three histograms compare? Are features revealed in one that are obscured in another?** 
+**How do these three histograms compare? Are features revealed in one that are obscured in another?**
 
 **Success**:
 
@@ -154,7 +141,7 @@ filter(sfo_flights,
   dim()
 ```
 
-## 6 
+## 6
 
 **When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
 
@@ -241,7 +228,7 @@ summarise(sfo_flights,
 
 ## 9
 
-**Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays.** 
+**Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset. Choose the type of plot you believe is appropriate for visualizing the distribution of arrival delays.**
 
 **Success**: Code should look like:
 

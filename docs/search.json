@@ -3497,14 +3497,14 @@
     "href": "labs/grading-guides/lab-2-grading-guide.html",
     "title": "Lab 2 - Grading Guide",
     "section": "",
-    "text": "Q1 (a)\nQ1 (b)\nQ2\nQ3 (a)\nQ3 (b)\nQ4\nQ5\nQ6\nQ7\nQ8\nQ9\nQ10"
+    "text": "How large is the nycflights dataset? (i.e. How many rows and columns does it have?) \nSuccess:\n\nUses glimpse() to obtain the size of the dataset\nSize of 32,735 rows and 16 columns\n\nGrowing:\n\nIf no code is present\nIf they flip the rows and columns\nIf they do not provide size of data\n\nFeedback for no code: For Question 1(a), you needed to write code to explore the size of the data and the types of variables.\nFeedback for not using glimpse(): For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which give a preview of a dataset?\nFeedback for no / incorrect dimensions: For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?"
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#a",
     "href": "labs/grading-guides/lab-2-grading-guide.html#a",
     "title": "Lab 2 - Grading Guide",
-    "section": "1 (a)",
-    "text": "1 (a)\nHow large is the nycflights dataset? (i.e. How many rows and columns does it have?) \nSuccess:\n\nUses glimpse() to obtain the size of the dataset\nSize of 32,735 rows and 16 columns\n\nGrowing:\n\nIf no code is present\nIf they flip the rows and columns\nIf they do not provide size of data\n\nFeedback for no code: For Question 1(a), you needed to write code to explore the size of the data and the types of variables.\nFeedback for not using glimpse(): For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which give a preview of a dataset?\nFeedback for no / incorrect dimensions: For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?"
+    "section": "",
+    "text": "How large is the nycflights dataset? (i.e. How many rows and columns does it have?) \nSuccess:\n\nUses glimpse() to obtain the size of the dataset\nSize of 32,735 rows and 16 columns\n\nGrowing:\n\nIf no code is present\nIf they flip the rows and columns\nIf they do not provide size of data\n\nFeedback for no code: For Question 1(a), you needed to write code to explore the size of the data and the types of variables.\nFeedback for not using glimpse(): For this course, we prefer you use the tools being taught in the textbook and course materials. What function have you learned in this class which give a preview of a dataset?\nFeedback for no / incorrect dimensions: For Question 1(a), look again at the output of the glimpse() function, how many rows and columns are included in the nycflights dataset?"
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#b",
