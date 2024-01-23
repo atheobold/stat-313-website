@@ -20,8 +20,6 @@ Let's load the following packages:
 
 -   The **tidyverse** "umbrella" package which houses a suite of many different `R` packages for data wrangling and data visualization
 
--   Note: This did not work last week, but should this week!
-
 -   The **openintro** `R` package: houses the dataset we will be working with
 
 ```{r}
@@ -210,7 +208,7 @@ Let's think about how you could answer this question. One option is to summarize
 
 **Question 9 -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset.**
 
-*Choose the type of plot you believe is appropriate for visualizing the **distribution** of departure delays. Don't forget to give your visualization informative axis labels!*
+*Choose the type of plot you believe is appropriate for visualizing the **distribution** of arrival delays. Don't forget to give your visualization informative axis labels!*
 
 ```{r}
 #| label: arrival-delay-plot
