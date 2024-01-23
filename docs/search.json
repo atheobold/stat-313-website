@@ -791,7 +791,7 @@
     "href": "slides/week3-day2-alt.html#section-9",
     "title": "Categorical Variables Recap and Some Ethics…",
     "section": "",
-    "text": "An aura objectivity\n\n\n\n\n\n\n\n\n\n\n\n\n“We focus on four conventions which imbue visualizations with a sense of objectivity, transparency and facticity. These include: (a) two-dimensional viewpoints, (b) clean layouts, (c) geometric shapes and lines, (d) the inclusion of data sources.”\nThe work that visualization communications do"
+    "text": "An aura objectivity\n\n\n\n\n\n\n\n\n“We focus on four conventions which imbue visualizations with a sense of objectivity, transparency and facticity. These include: (a) two-dimensional viewpoints, (b) clean layouts, (c) geometric shapes and lines, (d) the inclusion of data sources.”\nThe work that visualization communications do"
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-10",
@@ -2100,11 +2100,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n\nMon, January 29\nStatistical Critique 1 Due\n\n\n\n\n✍\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻\n\n📁\n\n\n\nSun, February 4\nMidterm Project Proposal Due\n\n\n\n\n\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5\n\n📁\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n📁\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01"
   },
   {
     "objectID": "computing-access.html",
@@ -2297,33 +2293,21 @@
     "href": "weeks/week-4.html",
     "title": "Week Four: Introduction to Linear Regression (Basic Regression)",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to start exploring statistical methods—linear regression. We will start with the “basic” case or simple linear regression, with a single quantitative explanatory variable and a quantitative response. We will review the concepts behind linear regression, learn how to visualize regression models, and practice obtaining the estimated regression lines in R.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
+    "text": "Welcome!\nIn this week’s coursework we are going to start exploring statistical methods—linear regression. We will start with the “basic” case or simple linear regression, with a single quantitative explanatory variable and a quantitative response. We will review the concepts behind linear regression, learn how to visualize regression models, and practice obtaining the estimated regression lines in R."
   },
   {
     "objectID": "weeks/week-4.html#learning-outcomes",
     "href": "weeks/week-4.html#learning-outcomes",
     "title": "Week Four: Introduction to Linear Regression (Basic Regression)",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe the difference between explanatory and predictive modeling\nproduce data visualizations for a simple linear regression\ndescribe how R decides on the “best” regression line\nfit a simple linear regression in R\nwrite out an estimated regression line\ninterpret the slope of an estimated regression line\ninterpret the intercept of an estimated regression line\ndescribe what an “offset” is in a simple linear regression\ninterpret the offsets of an estimated regression line\ncalculate a residual for an observation",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe the difference between explanatory and predictive modeling\nproduce data visualizations for a simple linear regression\ndescribe how R decides on the “best” regression line\nfit a simple linear regression in R\nwrite out an estimated regression line\ninterpret the slope of an estimated regression line\ninterpret the intercept of an estimated regression line\ndescribe what an “offset” is in a simple linear regression\ninterpret the offsets of an estimated regression line\ncalculate a residual for an observation"
   },
   {
     "objectID": "weeks/week-4.html#textbook-reading",
     "href": "weeks/week-4.html#textbook-reading",
     "title": "Week Four: Introduction to Linear Regression (Basic Regression)",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\nChapter 5 (https://moderndive.com/5-regression.html)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nDon’t worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.\n\n\n\nReading Guide\nDownload the Word Document\n\n\n\n\n\n\nDifferent colored answers\n\n\n\nPlease use a different color for your answers to the reading guide, so it is easier to find your responses! 😊",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
+    "text": "1.1 Textbook Reading\nChapter 5 (https://moderndive.com/5-regression.html)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nDon’t worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.\n\n\n\nReading Guide\nDownload the Word Document\n\n\n\n\n\n\nDifferent colored answers\n\n\n\nPlease use a different color for your answers to the reading guide, so it is easier to find your responses! 😊"
   },
   {
     "objectID": "weeks/week-4.html#concept-quiz-due-tuesday-by-noon",
@@ -3941,22 +3925,14 @@
     "href": "weeks/week-3.html",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to dive deeper into exploring data, by incorporating categorical variables. Specifically, we will explore how we can incorporate categorical variables into our visualizations through the use of colors and facets. We will also explore how we can obtain summary statistics for different groups of a categorical variable, making our summaries more specific.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "Welcome!\nIn this week’s coursework we are going to dive deeper into exploring data, by incorporating categorical variables. Specifically, we will explore how we can incorporate categorical variables into our visualizations through the use of colors and facets. We will also explore how we can obtain summary statistics for different groups of a categorical variable, making our summaries more specific."
   },
   {
     "objectID": "weeks/week-3.html#learning-outcomes",
     "href": "weeks/week-3.html#learning-outcomes",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what a categorical variable is and how these types of variables are stored in R\ndetermine whether a variable in a dataset is categorical\nincorporate categorical variables into visualizations of two and three variables\nobtain summary statistics for each level of a categorical variable",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what a categorical variable is and how these types of variables are stored in R\ndetermine whether a variable in a dataset is categorical\nincorporate categorical variables into visualizations of two and three variables\nobtain summary statistics for each level of a categorical variable"
   },
   {
     "objectID": "weeks/week-3.html#reading-guide-one-reading-guide-for-both-readings",
@@ -3974,22 +3950,14 @@
     "href": "weeks/week-3.html#textbook-reading-part-1",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.2 Textbook Reading – Part 1",
-    "text": "1.2 Textbook Reading – Part 1\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Incorporating Categorical Variables into Visualizations\n\n\n\n\n\n\nOnly read Section 4.6!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "1.2 Textbook Reading – Part 1\n\n\n\n\n\n\n\nRequired Reading: Incorporating Categorical Variables into Visualizations\n\n\n\n\n\n\nOnly read Section 4.6!"
   },
   {
     "objectID": "weeks/week-3.html#textbook-reading-part-2",
     "href": "weeks/week-3.html#textbook-reading-part-2",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.3 Textbook Reading – Part 2",
-    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Incorporating Categorical Variables into Summary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead Sections 3.3 - 3.6!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Incorporating Categorical Variables into Summary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead Sections 3.3 - 3.6!"
   },
   {
     "objectID": "weeks/week-3.html#concept-quiz-due-tuesday-by-noon",
@@ -5518,33 +5486,21 @@
     "href": "weeks/week-3.html#reading-guide-due-tuesday-by-midnight",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.1 Reading Guide – Due Tuesday by Midnight",
-    "text": "1.1 Reading Guide – Due Tuesday by Midnight\nDownload the Word Document\n\n\n\n\n\n\nAnswers\n\n\n\nPlease include your answers as a different color! You can pick whatever color you like, but please use a color other than black.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "1.1 Reading Guide – Due Tuesday by Midnight\nDownload the Word Document\n\n\n\n\n\n\nAnswers\n\n\n\nPlease include your answers as a different color! You can pick whatever color you like, but please use a color other than black."
   },
   {
     "objectID": "weeks/week-3.html#concept-quiz-due-tuesday-by-midnight",
     "href": "weeks/week-3.html#concept-quiz-due-tuesday-by-midnight",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.4 Concept Quiz – Due Tuesday by Midnight",
-    "text": "1.4 Concept Quiz – Due Tuesday by Midnight\n1. Suppose you’ve run the following code to make side-by-side boxplots of life expectancy:\n\nggplot(data = gapminder_small, \n       mapping = aes(x = country, y = lifeExp)) +\n  geom_boxplot() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Life Expectancy (in Years) by Country\",\n       fill = \"Country\"\n       )\n\nYour resulting plot looks like this:\n\n\n\n\n\n\n\n\n\nWhat should you do?\n\nMove country to the y-axis.\nRemove some countries so the names don’t overlap.\nNothing, it looks great!\n\n2. If you didn’t want to stack your boxplots side-by-side, how else could you separate the groups?\n\n\n\n\n\n\nTip\n\n\n\nThis does not go inside the aes() function!\n\n\n3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?\n\nsummarize()\nmutate()\narrange()\ngroup_by()\nfilter()\n\n4. A categorical variable could be correctly stored as what data types?\n\ninteger\ndouble\ncharacter\nfactor\n\n5. In Lab 2, you worked with the nycflights dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.\n\n\nStep 1 %&gt;%\nStep 2 %&gt;%\nStep 3\n\n\n\nnycflights\ngroup_by(airline)\nfilter(dest == \"SFO\")\nsummarize(mean_dd = mean(dep_delay))\n\n\n6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?\n\nmutate()\nfilter()\nif_else()\ngroup_by()\n\n7. The arrange() function sorts or reorder a data frame’s rows according to the values of the specified variable. By default, what ordering does it use for the rows?\n\nascending (smallest to largest)\ndescending (largest to smallest)",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "1.4 Concept Quiz – Due Tuesday by Midnight\n1. Suppose you’ve run the following code to make side-by-side boxplots of life expectancy:\n\nggplot(data = gapminder_small, \n       mapping = aes(x = country, y = lifeExp)) +\n  geom_boxplot() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Life Expectancy (in Years) by Country\",\n       fill = \"Country\"\n       )\n\nYour resulting plot looks like this:\n\n\n\n\n\nWhat should you do?\n\nMove country to the y-axis.\nRemove some countries so the names don’t overlap.\nNothing, it looks great!\n\n2. If you didn’t want to stack your boxplots side-by-side, how else could you separate the groups?\n\n\n\n\n\n\nTip\n\n\n\nThis does not go inside the aes() function!\n\n\n3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?\n\nsummarize()\nmutate()\narrange()\ngroup_by()\nfilter()\n\n4. A categorical variable could be correctly stored as what data types?\n\ninteger\ndouble\ncharacter\nfactor\n\n5. In Lab 2, you worked with the nycflights dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.\n\n\nStep 1 %&gt;%\nStep 2 %&gt;%\nStep 3\n\n\n\nnycflights\ngroup_by(airline)\nfilter(dest == \"SFO\")\nsummarize(mean_dd = mean(dep_delay))\n\n\n6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?\n\nmutate()\nfilter()\nif_else()\ngroup_by()\n\n7. The arrange() function sorts or reorder a data frame’s rows according to the values of the specified variable. By default, what ordering does it use for the rows?\n\nascending (smallest to largest)\ndescending (largest to smallest)"
   },
   {
     "objectID": "weeks/week-3.html#r-tutorial-due-thursday-by-midnight",
     "href": "weeks/week-3.html#r-tutorial-due-thursday-by-midnight",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.5 R Tutorial – Due Thursday by Midnight",
-    "text": "1.5 R Tutorial – Due Thursday by Midnight\nIt has come to my attention that Posit Cloud has removed their tutorials in favor of what they are calling “recipes”—short tutorials on how to do specific things in R.\nSo, I’m pivoting to a different tutorial that uses group_by()—the tool you are learning this week—to explore different sampling strategies.\nRequired Tutorial: Sampling Strategies & Experimental Design\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page for each tutorial to the Canvas assignment portal!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 3"
-    ]
+    "text": "1.5 R Tutorial – Due Thursday by Midnight\nIt has come to my attention that Posit Cloud has removed their tutorials in favor of what they are calling “recipes”—short tutorials on how to do specific things in R.\nSo, I’m pivoting to a different tutorial that uses group_by()—the tool you are learning this week—to explore different sampling strategies.\nRequired Tutorial: Sampling Strategies & Experimental Design\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page for each tutorial to the Canvas assignment portal!"
   },
   {
     "objectID": "slides/week2-day1.html#todays-layout",
@@ -5712,21 +5668,13 @@
     "href": "weeks/week-4.html#concept-quiz-due-tuesday-by-the-start-of-class",
     "title": "Week Four: Introduction to Linear Regression (Basic Regression)",
     "section": "1.2 Concept Quiz – Due Tuesday by the start of class",
-    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n1. What does the correlation coefficient measure?\n\nstrength of a relationship between two variables\nstrength of a linear relationship between two variables\nstrength of a relationship between two numerical variables\nstrength of a linear relationship between two numerical variables\n\n2. How do you interpret a slope coefficient?\n\nFor any increase of \\(x\\), the slope is the expected increase in \\(y\\)\nFor any increase of \\(x\\), the slope is the expected increase in the mean of \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in the mean of \\(y\\)\n\n3. How do you interpret an intercept coefficient?\n\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in the mean of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of the mean of \\(y\\)\n\n4. Match the explanatory and response variables to the correct variables in the lm() function syntax.\nlm(variable1 ~ variable2, data = &lt;NAME OF DATASET&gt;)\n5. What geom_ adds a linear regression line to a scatterplot?\n\ngeom_line()\ngeom_smoother()\ngeom_regression()\ngeom_smooth()",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
+    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n1. What does the correlation coefficient measure?\n\nstrength of a relationship between two variables\nstrength of a linear relationship between two variables\nstrength of a relationship between two numerical variables\nstrength of a linear relationship between two numerical variables\n\n2. How do you interpret a slope coefficient?\n\nFor any increase of \\(x\\), the slope is the expected increase in \\(y\\)\nFor any increase of \\(x\\), the slope is the expected increase in the mean of \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in the mean of \\(y\\)\n\n3. How do you interpret an intercept coefficient?\n\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in the mean of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of the mean of \\(y\\)\n\n4. Match the explanatory and response variables to the correct variables in the lm() function syntax.\nlm(variable1 ~ variable2, data = &lt;NAME OF DATASET&gt;)\n5. What geom_ adds a linear regression line to a scatterplot?\n\ngeom_line()\ngeom_smoother()\ngeom_regression()\ngeom_smooth()"
   },
   {
     "objectID": "weeks/week-4.html#r-tutorial-due-thursday-by-the-start-of-class",
     "href": "weeks/week-4.html#r-tutorial-due-thursday-by-the-start-of-class",
     "title": "Week Four: Introduction to Linear Regression (Basic Regression)",
     "section": "1.3 💻 R Tutorial – Due Thursday by the start of class",
-    "text": "1.3 💻 R Tutorial – Due Thursday by the start of class\n\nRegression modeling: Simple linear regression\nRegression modeling: Interpreting regression models",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
+    "text": "1.3 💻 R Tutorial – Due Thursday by the start of class\n\nRegression modeling: Simple linear regression\nRegression modeling: Interpreting regression models"
   }
 ]
