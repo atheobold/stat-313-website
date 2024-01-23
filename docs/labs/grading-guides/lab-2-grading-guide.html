@@ -358,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="a" class="level2">
 <h2 class="anchored" data-anchor-id="a">1 (a)</h2>
-<p><strong>How large is the <code>nycflights</code> dataset? (i.e.&nbsp;How many rows and columns does it have?)</strong> <!-- Your response goes below this line! --></p>
+<p><strong>How large is the <code>nycflights</code> dataset? (i.e.&nbsp;How many rows and columns does it have?)</strong></p>
 <p><strong>Success</strong>:</p>
 <ul>
 <li>Uses <code>glimpse()</code> to obtain the size of the dataset</li>
@@ -376,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="b" class="level2">
 <h2 class="anchored" data-anchor-id="b">1 (b)</h2>
-<p><strong>Are there numerical variables in the dataset? If so, what are their names?</strong> <!-- Your response goes below this line! --></p>
+<p><strong>Are there numerical variables in the dataset? If so, what are their names?</strong></p>
 <p><strong>Success</strong>:</p>
 <ul>
 <li>Lists <strong>all</strong> variables with an <code>int</code> or <code>dbl</code> data type:
@@ -409,7 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Success</strong>: Code should look like</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nycflights, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dep_delay)) <span class="sc">+</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Departure Delays (minutes)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -424,8 +425,15 @@ Note
 <p>Note: May choose their own binwidth, but that is not required!</p>
 </div>
 </div>
-<p><strong>Growing</strong>: If maps <code>dep_delay</code> to y-axis instead of x-axis</p>
+<p><strong>Growing</strong>:</p>
+<ul>
+<li>If maps <code>dep_delay</code> to y-axis instead of x-axis</li>
+</ul>
 <p><em>Feedback:</em> For Question 2, our histograms are always made with our quantitative variable on the x-axis!</p>
+<ul>
+<li>If they don’t label the axis with the units</li>
+</ul>
+<p><em>Feedback</em>: Every plot we make should have descriptive axis labels which include the units the variable was measured in. Were departure delays measured in hours? Minutes? Seconds? Days?</p>
 </section>
 <section id="a-1" class="level2">
 <h2 class="anchored" data-anchor-id="a-1">3 (a)</h2>
@@ -434,11 +442,28 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nycflights, </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dep_delay)) <span class="sc">+</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nycflights, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dep_delay)) <span class="sc">+</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">150</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Departure Delays (minutes)"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nycflights, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dep_delay)) <span class="sc">+</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">150</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Departure Delays (minutes)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Okay if their axis labels are not adjusted
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If they don’t have nice axis labels for this question, we don’t need to mark them down. But we can give this feedback:</p>
+<p>Careful! Look at the feedback for Question 2 about your axis lables.</p>
+</div>
 </div>
 <p><strong>Growing</strong>: If code does not use correct <code>binwidth</code>s</p>
 <p><em>Feedback:</em> For Question 3(a), pay attention to what binwidth you need to use <em>within</em> your <code>geom_histogram()</code>!</p>
@@ -482,28 +507,20 @@ Note
 <section id="section-3" class="level2">
 <h2 class="anchored" data-anchor-id="section-3">6</h2>
 <p><strong>When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?</strong></p>
-<p>They should state that 45 flights arrived to SFO early in July.</p>
+<p>They should state that 45 flights (rows) met the criteria (arrived to SFO early in July) and there are 16 variables (columns) measured on these flights.</p>
 <p><strong>Growing</strong>:</p>
 <ul>
-<li>If they don’t interpret the output</li>
+<li>If they don’t interpret 45 as the number of flights – only as the number of rows</li>
 </ul>
-<p><em>Feedback:</em> For Question 5, you were asked to interpret the output of the code.</p>
-<ul>
-<li>If they don’t interpret 45 as the number of flights</li>
-</ul>
-<p><em>Feedback:</em> For Question 5, what does the 45 refer to?</p>
+<p><em>Feedback:</em> What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights?</p>
 <ul>
 <li>If they interpret 45 and 16 as flight numbers</li>
 </ul>
-<p><em>Feedback:</em> For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?</p>
+<p><em>Feedback:</em> The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the <code>sfo_flights</code> dataset?</p>
 <ul>
-<li>If they don’t interpret the conditions of the filter (arrived early in July)</li>
+<li>If they don’t interpret the conditions of the filter (SFO flights that arrived early in July)</li>
 </ul>
-<p><em>Feedback:</em> For Question 5, what were the conditions of these 45 flights?</p>
-<ul>
-<li>If they don’t state the destination of these flights (SFO)</li>
-</ul>
-<p><em>Feedback:</em> For Question 5, what flights did you filter? All NYC flights or a smaller dataset?</p>
+<p><em>Feedback:</em> What were the conditions of these 45 flights?</p>
 </section>
 <section id="section-4" class="level2">
 <h2 class="anchored" data-anchor-id="section-4">7</h2>
@@ -526,11 +543,11 @@ Note
 <ul>
 <li>If they don’t name their summary statistics</li>
 </ul>
-<p><em>Feedback:</em> For Question 6, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)</p>
+<p><em>Feedback:</em> The output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)</p>
 <ul>
 <li>I’d write a comment if they used <code>_dd</code> in their names, since it should be <code>_ad</code> for the arrival delays.</li>
 </ul>
-<p><em>Feedback:</em> For Question 6, it would be more clear to use <code>_ad</code> at the end of your names, since you are summarizing the arrival delays (not the departure delays).</p>
+<p><em>Feedback:</em> It would be more clear to use <code>_ad</code> at the end of your names, since you are summarizing the arrival delays (not the departure delays).</p>
 <p><strong>Growing</strong>:</p>
 <ul>
 <li>If they miss some of the statistics</li>
@@ -584,13 +601,9 @@ Note
 </ul>
 <p><em>Feedback:</em> For Question 9, we need to use a geom which allows for us to see the <em>shape</em> of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?</p>
 <ul>
-<li>Doesn’t change x-axis label</li>
+<li>Doesn’t change x-axis label and / or doesn’t include the units (minutes) in their label</li>
 </ul>
-<p><em>Feedback:</em> For Question 9, you were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?</p>
-<ul>
-<li>Doesn’t include units (minutes) in axis label</li>
-</ul>
-<p><em>Feedback:</em> For Question 9, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?</p>
+<p><em>Feedback:</em> You were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?</p>
 </section>
 <section id="section-7" class="level2">
 <h2 class="anchored" data-anchor-id="section-7">10</h2>
@@ -622,7 +635,7 @@ Note
 <ul>
 <li>Response <strong>does not</strong> discuss what could be seen in the visualizations that could not be seen in the statistics</li>
 </ul>
-<p><em>Feedback:</em> For Question 10, you should address what you were able to SEE in the visualization that you could not “see” in the summary statistics.</p>
+<p><em>Feedback:</em> You should address what you were able to SEE in the visualization (e.g., shape, skew, number of peaks) that you could not “see” in the summary statistics.</p>
 <ul>
 <li>Response doesn’t discuss if / how the answer to the question changed</li>
 </ul>

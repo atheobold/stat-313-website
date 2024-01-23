@@ -8,7 +8,7 @@ execute:
 
 ## 1 (a)
 
-**How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)** <!-- Your response goes below this line! -->
+**How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)**
 
 **Success**:
 
@@ -29,7 +29,7 @@ execute:
 
 ## 1 (b)
 
-**Are there numerical variables in the dataset? If so, what are their names?** <!-- Your response goes below this line! -->
+**Are there numerical variables in the dataset? If so, what are their names?** 
 
 **Success**:
 
@@ -63,7 +63,8 @@ execute:
 
 ```{r histogram}
 ggplot(data = nycflights, mapping = aes(x = dep_delay)) + 
-  geom_histogram()
+  geom_histogram() + 
+  labs(x = "Departure Delays (minutes)")
 
 ```
 
@@ -71,9 +72,16 @@ ggplot(data = nycflights, mapping = aes(x = dep_delay)) +
 Note: May choose their own binwidth, but that is not required!
 :::
 
-**Growing**: If maps `dep_delay` to y-axis instead of x-axis
+**Growing**: 
+
+- If maps `dep_delay` to y-axis instead of x-axis
 
 *Feedback:* For Question 2, our histograms are always made with our quantitative variable on the x-axis!
+
+- If they don't label the axis with the units
+
+*Feedback*: Every plot we make should have descriptive axis labels which include the units the variable was measured in. Were departure delays measured in hours? Minutes? Seconds? Days? 
+
 
 ## 3 (a)
 
@@ -84,13 +92,24 @@ Note: May choose their own binwidth, but that is not required!
 ```{r binwidth}
 ggplot(data = nycflights, 
        mapping = aes(x = dep_delay)) + 
-  geom_histogram(binwidth = 15)
+  geom_histogram(binwidth = 15) + 
+  labs(x = "Departure Delays (minutes)")
+
 
 ggplot(data = nycflights, 
        mapping = aes(x = dep_delay)) + 
-  geom_histogram(binwidth = 150)
+  geom_histogram(binwidth = 150) +
+  labs(x = "Departure Delays (minutes)")
 
 ```
+
+::: {.callout-note}
+# Okay if their axis labels are not adjusted
+
+If they don't have nice axis labels for this question, we don't need to mark them down. But we can give this feedback:
+
+Careful! Look at the feedback for Question 2 about your axis lables. 
+:::
 
 **Growing**: If code does not use correct `binwidth`s
 
@@ -145,29 +164,21 @@ filter(sfo_flights,
 
 **When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
 
-They should state that 45 flights arrived to SFO early in July.
+They should state that 45 flights (rows) met the criteria (arrived to SFO early in July) and there are 16 variables (columns) measured on these flights.
 
 **Growing**:
 
--   If they don't interpret the output
+- If they don't interpret 45 as the number of flights -- only as the number of rows
 
-*Feedback:* For Question 5, you were asked to interpret the output of the code.
-
--   If they don't interpret 45 as the number of flights
-
-*Feedback:* For Question 5, what does the 45 refer to?
+*Feedback:* What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights? 
 
 -   If they interpret 45 and 16 as flight numbers
 
-*Feedback:* For Question 5, the 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?
+*Feedback:* The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the `sfo_flights` dataset?
 
--   If they don't interpret the conditions of the filter (arrived early in July)
+-   If they don't interpret the conditions of the filter (SFO flights that arrived early in July)
 
-*Feedback:* For Question 5, what were the conditions of these 45 flights?
-
--   If they don't state the destination of these flights (SFO)
-
-*Feedback:* For Question 5, what flights did you filter? All NYC flights or a smaller dataset?
+*Feedback:* What were the conditions of these 45 flights?
 
 ## 7
 
@@ -191,11 +202,11 @@ summarise(sfo_flights,
 
 -   If they don't name their summary statistics
 
-*Feedback:* For Question 6, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
+*Feedback:* The output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
 
 -   I'd write a comment if they used `_dd` in their names, since it should be `_ad` for the arrival delays.
 
-*Feedback:* For Question 6, it would be more clear to use `_ad` at the end of your names, since you are summarizing the arrival delays (not the departure delays).
+*Feedback:* It would be more clear to use `_ad` at the end of your names, since you are summarizing the arrival delays (not the departure delays).
 
 **Growing**:
 
@@ -253,13 +264,10 @@ ggplot(data = nycflights,
 
 *Feedback:* For Question 9, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
 
--   Doesn't change x-axis label
+-   Doesn't change x-axis label and / or doesn't include the units (minutes) in their label
 
-*Feedback:* For Question 9, you were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
+*Feedback:* You were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
 
--   Doesn't include units (minutes) in axis label
-
-*Feedback:* For Question 9, it is important for the axis label to contain the units of the variable. What units were the arrival delays measured in?
 
 ## 10
 
@@ -291,7 +299,7 @@ ggplot(data = nycflights,
 
 -   Response **does not** discuss what could be seen in the visualizations that could not be seen in the statistics
 
-*Feedback:* For Question 10, you should address what you were able to SEE in the visualization that you could not "see" in the summary statistics.
+*Feedback:* You should address what you were able to SEE in the visualization (e.g., shape, skew, number of peaks) that you could not "see" in the summary statistics. 
 
 -   Response doesn't discuss if / how the answer to the question changed
 
