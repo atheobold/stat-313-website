@@ -101,7 +101,7 @@ You can easily define the binwidth you want to use, by specifying the `binwidth`
 
 **(b) How do these three histograms compare? Are features revealed in one that are obscured in another?**
 
-## SFO Dstinations
+## SFO Destinations
 
 One of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a `dest` of `"LAX"`, flights into San Francisco have a `dest` of `"SFO"`, and flights into Chicago (O'Hare) have a `dest` of `"ORD"`.
 
