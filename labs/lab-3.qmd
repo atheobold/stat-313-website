@@ -103,7 +103,9 @@ trout <- ...
 
 Alright, now that we've gotten our data ready for analysis, let's start with some visualizations
 
-**Question 5 -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).** *Keep in mind your plot should only extend to 101mm if you completed #4 correctly*
+**Question 5 -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).** *Your plot should have axis lables that describe the variable being plotted, and its associated units!*
+
+*Keep in mind your plot should only extend to 101mm if you completed #4 correctly.*
 
 ```{r}
 #| label: distribution-of-filtered-lengths
