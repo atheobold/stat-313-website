@@ -91,3 +91,30 @@ ggplot(data = penguins,
 ```
 
 <center>[List of all `ggplot()` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html)</center>
+
+## 
+
+::: {style="font-size: 2.5em;"}
+An aura objectivity
+:::
+
+```{r}
+#| echo: false
+#| out-width: 40%
+#| out-height: 20%
+knitr::include_graphics("images/active_shooters.PNG")
+```
+
+::: {style="font-size: 0.75em;"}
+> "We focus on four conventions which imbue visualizations with a sense of objectivity, transparency and facticity. These include: (a) two-dimensional viewpoints, (b) clean layouts, (c) geometric shapes and lines, (d) the inclusion of data sources."
+>
+> *The work that visualization communications do*
+:::
+
+## 
+
+::: {style="font-size: 3em;"}
+Elevate emotion
+:::
+
+<https://guns.periscopic.com/>
