@@ -262,7 +262,7 @@ summarise(sfo_flights,
 **Success**: Code should look like:
 
 ```{r}
-ggplot(data = nycflights, 
+ggplot(data = sfo_flights, 
        mapping = aes(x = arr_delay)) + 
   geom_histogram() + 
   labs(x = "Arrival Delays (min)")
