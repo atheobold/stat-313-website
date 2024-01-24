@@ -3509,14 +3509,14 @@
     "href": "labs/grading-guides/lab-2-grading-guide.html#a-1",
     "title": "Lab 2 - Grading Guide",
     "section": "3 (a)",
-    "text": "3 (a)\nMake two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\nSuccess: Code should look like:\n\nggplot(data = nycflights, \n       mapping = aes(x = dep_delay)) + \n  geom_histogram(binwidth = 15) + \n  labs(x = \"Departure Delays (minutes)\")\n\n\nggplot(data = nycflights, \n       mapping = aes(x = dep_delay)) + \n  geom_histogram(binwidth = 150) +\n  labs(x = \"Departure Delays (minutes)\")\n\n\n\n\n\n\n\nOkay if their axis labels are not adjusted\n\n\n\nIf they don’t have nice axis labels for this question, we don’t need to mark them down. But we can give this feedback:\nCareful! Look at the feedback for Question 2 about your axis lables.\n\n\nGrowing: If code does not use correct binwidths\nFeedback: For Question 3(a), pay attention to what binwidth you need to use within your geom_histogram()!"
+    "text": "3 (a)\nMake two other histograms, one with a binwidth of 15 and one with a binwidth of 150.\nSuccess: Code should look like:\n\nggplot(data = nycflights, \n       mapping = aes(x = dep_delay)) + \n  geom_histogram(binwidth = 15) + \n  labs(x = \"Departure Delays (minutes)\")\n\n\nggplot(data = nycflights, \n       mapping = aes(x = dep_delay)) + \n  geom_histogram(binwidth = 150) +\n  labs(x = \"Departure Delays (minutes)\")\n\n\n\n\n\n\n\nOkay if their axis labels are not adjusted\n\n\n\nIf they don’t have nice axis labels for this question, we don’t need to mark them down. But we can give this feedback:\nCareful! Look at the feedback for Question 2 about your axis labels.\n\n\nGrowing: If code does not use correct binwidths\nFeedback: For Question 3(a), pay attention to what binwidth you need to use within your geom_histogram()!"
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#b-1",
     "href": "labs/grading-guides/lab-2-grading-guide.html#b-1",
     "title": "Lab 2 - Grading Guide",
     "section": "3 (b)",
-    "text": "3 (b)\nHow do these three histograms compare? Are features revealed in one that are obscured in another?\nSuccess:\n\nDiscusses how wider bins make it hard to see where there are small differences and / or how smaller bins make it easier to see differences\n\nGrowing:\n\nIf description only references how the bins are larger or smaller, but doesn’t talk about shape the distribution\nOnly talks about how the y-axis scale changes\n\nFeedback: For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution and what you are able to see."
+    "text": "3 (b)\nHow do these three histograms compare? Are features revealed in one that are obscured in another?\nSuccess:\n\nDiscusses how wider bins make it hard to see where there are small differences and / or how smaller bins make it easier to see differences\n\nGrowing:\n\nIf description only references how the bins are larger or smaller, but doesn’t talk about shape the distribution\nOnly talks about how the y-axis scale changes\n\nFeedback: For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution (e.g., skew, peak) and what you are able to see."
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#section-1",
@@ -3530,14 +3530,14 @@
     "href": "labs/grading-guides/lab-2-grading-guide.html#section-2",
     "title": "Lab 2 - Grading Guide",
     "section": "5",
-    "text": "5\nFill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?\nSuccess: Code should look like:\n\nfilter(sfo_flights, \n       month == 7, \n       arr_delay &lt; 0) %&gt;% \n  dim()"
+    "text": "5\nFill in the code below to find the number of flights flying into SFO in July that arrived early. What does the result tell you?\nSuccess: Code should look like:\n\nfilter(sfo_flights, \n       month == 7, \n       arr_delay &lt; 0) %&gt;% \n  dim()\n\nGrowing:\n\nIf they put 7 in quotations (\"7\")\n\nFeedback: We use quotations for variables that are categorical. Does R think that month is a categorical variable? (look back at what you said in Question 1b)\n\nIf they use a &gt; instead of a &lt;\n\nFeedback: Careful! If my flight arrived 5 minutes early, how would my arrival delay be recorded in the dataset? How does this translate to the inequality we want to use in our data filter?"
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#section-3",
     "href": "labs/grading-guides/lab-2-grading-guide.html#section-3",
     "title": "Lab 2 - Grading Guide",
     "section": "6",
-    "text": "6\nWhen you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?\nThey should state that 45 flights (rows) met the criteria (arrived to SFO early in July) and there are 16 variables (columns) measured on these flights.\nGrowing:\n\nIf they don’t interpret 45 as the number of flights – only as the number of rows\n\nFeedback: What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights?\n\nIf they interpret 45 and 16 as flight numbers\n\nFeedback: The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?\n\nIf they don’t interpret the conditions of the filter (SFO flights that arrived early in July)\n\nFeedback: What were the conditions of these 45 flights?"
+    "text": "6\nWhen you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?\nThey should state that 45 flights (rows) met the criteria (arrived to SFO early in July) and there are 16 variables (columns) measured on these flights.\nGrowing:\n\nIf they don’t interpret 45 as the number of flights – only as the number of rows\n\nFeedback: What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights?\n\nIf they interpret 45 and 16 as flight numbers\n\nFeedback: The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the sfo_flights dataset?\n\nIf they say 16 is the flights that arrived early (second filter)\n\nFeedback: You are on the right track! The 45 and the 16 refer to the size of the filtered dataset. You are correct that the 45 refers to the number of observations / rows / flights that satisfied the criteria you specified. In Question 1a, you used two numbers to describe the size of the dataset. What did that second number represent?\n\nIf they don’t interpret the conditions of the filter (SFO flights that arrived early in July)\n\nFeedback: What were the conditions of these 45 flights?"
   },
   {
     "objectID": "labs/grading-guides/lab-2-grading-guide.html#section-4",
@@ -3565,7 +3565,7 @@
     "href": "labs/grading-guides/lab-2-grading-guide.html#section-7",
     "title": "Lab 2 - Grading Guide",
     "section": "10",
-    "text": "10\nUsing the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nSuccess\n\nMakes a statement about what I should expect (flight to be early / late)\nJustifies statement based on the plot\n\nGrowing\n\nDoes not justify their statement\n\nFeedback: In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?"
+    "text": "10\nUsing the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?\nSuccess\n\nMakes a statement about what I should expect (flight to be early / late)\nJustifies statement based on the plot\n\nGrowing\n\nDoes not justify their statement\n\nFeedback: In Statistics it is critical to back your claim with data! How did you use this distribution to decide what I should expect if I am flying from NYC to SFO?"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",

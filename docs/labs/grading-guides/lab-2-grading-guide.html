@@ -462,7 +462,7 @@ Okay if their axis labels are not adjusted
 </div>
 <div class="callout-body-container callout-body">
 <p>If they don’t have nice axis labels for this question, we don’t need to mark them down. But we can give this feedback:</p>
-<p>Careful! Look at the feedback for Question 2 about your axis lables.</p>
+<p>Careful! Look at the feedback for Question 2 about your axis labels.</p>
 </div>
 </div>
 <p><strong>Growing</strong>: If code does not use correct <code>binwidth</code>s</p>
@@ -480,7 +480,7 @@ Okay if their axis labels are not adjusted
 <li>If description only references how the bins are larger or smaller, but doesn’t talk about shape the distribution</li>
 <li>Only talks about how the y-axis scale changes</li>
 </ul>
-<p><em>Feedback:</em> For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution and what you are able to see.</p>
+<p><em>Feedback:</em> For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution (e.g., skew, peak) and what you are able to see.</p>
 </section>
 <section id="section-1" class="level2">
 <h2 class="anchored" data-anchor-id="section-1">4</h2>
@@ -503,6 +503,15 @@ Okay if their axis labels are not adjusted
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       arr_delay <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Growing</strong>:</p>
+<ul>
+<li>If they put <code>7</code> in quotations (<code>"7"</code>)</li>
+</ul>
+<p><em>Feedback:</em> We use quotations for variables that are categorical. Does R think that month is a categorical variable? (look back at what you said in Question 1b)</p>
+<ul>
+<li>If they use a <code>&gt;</code> instead of a <code>&lt;</code></li>
+</ul>
+<p><em>Feedback</em>: Careful! If my flight arrived 5 minutes early, how would my arrival delay be recorded in the dataset? How does this translate to the inequality we want to use in our data filter?</p>
 </section>
 <section id="section-3" class="level2">
 <h2 class="anchored" data-anchor-id="section-3">6</h2>
@@ -517,6 +526,10 @@ Okay if their axis labels are not adjusted
 <li>If they interpret 45 and 16 as flight numbers</li>
 </ul>
 <p><em>Feedback:</em> The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the <code>sfo_flights</code> dataset?</p>
+<ul>
+<li>If they say 16 is the flights that arrived early (second filter)</li>
+</ul>
+<p><em>Feedback:</em> You are on the right track! The 45 and the 16 refer to the size of the filtered dataset. You are correct that the 45 refers to the number of observations / rows / flights that satisfied the criteria you specified. In Question 1a, you used two numbers to describe the size of the dataset. What did that second number represent?</p>
 <ul>
 <li>If they don’t interpret the conditions of the filter (SFO flights that arrived early in July)</li>
 </ul>
@@ -621,7 +634,7 @@ Okay if their axis labels are not adjusted
 <ul>
 <li>Does not justify their statement</li>
 </ul>
-<p><em>Feedback:</em> In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?</p>
+<p><em>Feedback:</em> In Statistics it is critical to back your claim with data! How did you use this distribution to decide what I should expect if I am flying from NYC to SFO?</p>
 </section>
 <section id="section-8" class="level2">
 <h2 class="anchored" data-anchor-id="section-8">11</h2>

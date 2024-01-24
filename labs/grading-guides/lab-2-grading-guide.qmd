@@ -108,7 +108,7 @@ ggplot(data = nycflights,
 
 If they don't have nice axis labels for this question, we don't need to mark them down. But we can give this feedback:
 
-Careful! Look at the feedback for Question 2 about your axis lables. 
+Careful! Look at the feedback for Question 2 about your axis labels. 
 :::
 
 **Growing**: If code does not use correct `binwidth`s
@@ -128,7 +128,7 @@ Careful! Look at the feedback for Question 2 about your axis lables.
 -   If description only references how the bins are larger or smaller, but doesn't talk about shape the distribution
 -   Only talks about how the y-axis scale changes
 
-*Feedback:* For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution and what you are able to see.
+*Feedback:* For Question 3(b), your discussion should address how the binwidth affects the shape of the distribution (e.g., skew, peak) and what you are able to see.
 
 ## 4
 
@@ -160,6 +160,16 @@ filter(sfo_flights,
   dim()
 ```
 
+**Growing**: 
+
+- If they put `7` in quotations (`"7"`)
+
+*Feedback:* We use quotations for variables that are categorical. Does R think that month is a categorical variable? (look back at what you said in Question 1b)
+
+- If they use a `>` instead of a `<`
+
+*Feedback*: Careful! If my flight arrived 5 minutes early, how would my arrival delay be recorded in the dataset? How does this translate to the inequality we want to use in our data filter?
+
 ## 6
 
 **When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
@@ -175,6 +185,10 @@ They should state that 45 flights (rows) met the criteria (arrived to SFO early 
 -   If they interpret 45 and 16 as flight numbers
 
 *Feedback:* The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the `sfo_flights` dataset?
+
+- If they say 16 is the flights that arrived early (second filter)
+
+*Feedback:* You are on the right track! The 45 and the 16 refer to the size of the filtered dataset. You are correct that the 45 refers to the number of observations / rows / flights that satisfied the criteria you specified. In Question 1a, you used two numbers to describe the size of the dataset. What did that second number represent?
 
 -   If they don't interpret the conditions of the filter (SFO flights that arrived early in July)
 
@@ -286,7 +300,7 @@ ggplot(data = nycflights,
 
 -   Does not justify their statement
 
-*Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
+*Feedback:* In Statistics it is critical to back your claim with data! How did you use this distribution to decide what I should expect if I am flying from NYC to SFO?
 
 ## 11
 
