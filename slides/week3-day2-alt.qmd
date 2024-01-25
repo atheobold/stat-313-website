@@ -31,6 +31,12 @@ salamander <- vertebrates_full_code %>%
   filter(species != "Cutthroat trout")
 ```
 
+# Lab 1
+
+## Revisions Due Tonight
+
+If you submitted revisions and your grade is still "Incomplete" -- you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day. 
+
 # Lab 2
 
 ## A Grading Reminder

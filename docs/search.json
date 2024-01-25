@@ -5714,7 +5714,7 @@
     "href": "slides/week3-day2-alt.html#data-layout",
     "title": "Incorporating Categorical Variables",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2011\nMACKOG-M\nOG\nM\n1\n10\nSC\n20\nNA\nCoastal giant salamander\n57\n103\n7.05\nNONE\n2011-09-14\nNA\n\n\n2008\nMACKCC-L\nCC\nL\n1\n3\nC\n67\nNA\nCoastal giant salamander\n41\n59\nNA\nNONE\n2008-09-17\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n2\n2\nSC\n7\nNA\nCutthroat trout\n42\nNA\nNA\nNONE\n2003-09-02\nNA\n\n\n2007\nMACKOG-M\nOG\nM\n1\n9\nC\n62\nNA\nCutthroat trout\n40\nNA\nNA\nNONE\n2007-09-12\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.8\nNONE\n2013-09-03\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n2\n3\nC\n10\nNA\nCoastal giant salamander\n79\n140\nNA\nNONE\n2001-08-20\nADULT\n\n\n2019\nMACKOG-U\nOG\nU\n1\n16\nC\n21\n1043564\nCoastal giant salamander\n60\n106\n7.1\nNONE\n2019-09-05\nNA\n\n\n1999\nMACKCC-L\nCC\nL\n1\n1\nC\n13\nNA\nCutthroat trout\n93\nNA\nNA\nNONE\n1999-08-31\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n2\n8\nC\n3\nNA\nCutthroat trout\n118\nNA\n16.7\nNONE\n1995-08-30\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
@@ -5904,5 +5904,12 @@
     "title": "Incorporating Categorical Variables",
     "section": "A Grading Reminder",
     "text": "A Grading Reminder\n\n\n\n\n“Complete” = Satisfactory\n\n\nYour group obtained a “Success” on every question\n\n\n\n\n“Incomplete” = Growing\n\n\nYour group received a “Growing” on at least one question"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#revisions-due-tonight",
+    "href": "slides/week3-day2-alt.html#revisions-due-tonight",
+    "title": "Incorporating Categorical Variables",
+    "section": "Revisions Due Tonight",
+    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   }
 ]
