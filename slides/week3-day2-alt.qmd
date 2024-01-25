@@ -1,22 +1,26 @@
 ---
 title: "Incorporating Categorical Variables"
 subtitle: "STAT 313"
-format: revealjs
+format: 
+  revealjs:
+    theme: [simple, style.scss]
 editor: visual
 bibliography: references.bib
 ---
 
-```{r set-up}
+```{r}
 #| include: false
+#| label: set-up
 
 library(lterdatasampler)
 library(tidyverse)
+library(ggridges)
 library(palmerpenguins)
 
 vertebrates_full_code <- and_vertebrates %>% 
   mutate(section = if_else(section == "CC", 
-                           "clear cut forest",
-                           "upstream old growth coniferous forest"
+                           "Clear cut",
+                           "Old growth"
                            )
          ) 
 
@@ -27,46 +31,197 @@ salamander <- vertebrates_full_code %>%
   filter(species != "Cutthroat trout")
 ```
 
-## 
+# Lab 2
 
-::: {style="margin-top: 100px; font-size: 2em;"}
-If you wanted means for each level of a categorical variable, what would you do?
+## A Grading Reminder
+
+<br>
+
+::: columns
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Complete" = Satisfactory
 :::
 
-## Trout Size
+<br>
 
-::: {style="font-size: 0.75em;"}
-The HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.
+Your group obtained a "Success" on **every** question
 :::
 
-</br>
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Incomplete" = Growing
+:::
+
+<br>
+
+Your group received a "Growing" on *at least one* question
+:::
+:::
+
+## Common Mistakes
+
+## Copying the Lab
+
+## Completing Revisions
+
+Lab 2 revisions are due by Thursday, February 1.
+
+::: small
+1.  Read comments on Canvas
+2.  Copy your group's lab assignment
+3.  Complete your revisions
+3.  Render your revised Lab 2
+4.  Download your revised HTML
+5.  Submit your revisions to the Lab 2 Revisions assignment
+:::
+
+::: callout-warning
+# Reflections
+
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+:::
+
+# Review
+
+## Today's Data
+
+::: small
+> The and_vertebrates dataset contains length and weight observations for Coastal Cutthroat Trout and two salamander species (Coastal Giant Salamander, and Cascade Torrent Salamander) in previously clear cut (c. 1963) and old growth coniferous forest sections of Mack Creek in HJ Andrews Experimental Forest, Willamette National Forest, Oregon.
+:::
+
+![](images/hj-andrews.jpeg)
+
+## Data Layout
+
+```{r}
+#| label: data-preview
+#| echo: false
+
+and_vertebrates %>% 
+  group_by(species) %>% 
+  slice_sample(n = 2) %>% 
+  ungroup() %>% 
+  gt::gt()
+```
+
+. . .
+
+What are the observations / rows in this dataset?
+
+## Research Question
+
+</br> </br>
+
+::: centered
+> Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
+:::
+
+## If you wanted to find the mean mass for Cutthroat trout in each section, what would you do? {background-color="#B6CADA"}
+
+## Step 1: Remove Salamanders
+
+</br> </br>
 
 ```{r}
 #| echo: true
 #| output-location: fragment
 #| code-line-numbers: false
+#| eval: false
+
+trout <- filter(and_vertebrates, 
+                species == "Cutthroat trout") 
+```
+
+## Step 2: `group_by()` + `summarize()`
+
+```{r}
+#| label: fish-mean-mass
+#| code-line-numbers: false
+#| echo: true
+#| output-location: fragment
+
 trout %>% 
   group_by(section) %>% 
-  summarize(mean_length = mean(length_1_mm, na.rm = TRUE)
+  summarize(mean_mass = mean(weight_g, 
+                             na.rm = TRUE)
             )
 ```
 
 . . .
 
-</br>
-
-<center>
-
-::: {style="font-size: 0.75em;"}
-**Why `na.rm = TRUE`?**
+::: columns
+::: {.column width="40%"}
 :::
 
-</center>
+::: {.column width="5%"}
+:::
 
-## Classifying Channel Types
+::: {.column width="55%"}
+**Why `na.rm = TRUE`?**
+:::
+:::
+
+## Are they different?
+
+```{r}
+#| label: fish-mean-mass-table
+
+trout %>% 
+  group_by(section) %>% 
+  summarize(mean_mass = mean(weight_g, 
+                             na.rm = TRUE)
+            ) %>% 
+  rename(`Forest Section` = section, 
+         `Mean Biomass` = mean_mass) %>% 
+  gt::gt()
+```
+
+Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
+
+## Let's Make a Visualization!
+
+```{r}
+#| label: section-ridge-plots
+#| echo: true
+#| code-line-numbers: false
+#| message: false
+#| warning: false
+#| out-height: 50%
+#| out-width: 70%
+#| fig-align: center
+
+ggplot(data = trout, 
+       mapping = aes(x = weight_g, 
+                     y = section)) +
+  geom_density_ridges() +
+  labs(x = "Weight of Cutthroat Trout (g)", 
+       y = "Section of Forest")
+```
+
+## Are they different?
+
+```{r}
+#| label: trout-plot-inference
+#| echo: false
+
+ggplot(data = trout, 
+       mapping = aes(x = weight_g, 
+                     y = section)) +
+  geom_density_ridges() +
+  labs(x = "Weight of Cutthroat Trout (g)", 
+       y = "Section of Forest")
+```
+
+Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
+
+## Let's Add in the Type of Channel
 
 ::: {style="font-size: 0.75em;"}
-The channels of the Mack Creek which were sampled were classified into the following groups:
+The channels (`unittype`) of the Mack Creek which were sampled were classified into the following groups:
 :::
 
 ::: columns
@@ -110,65 +265,119 @@ not sampled by unit
 :::
 :::
 
-## `filter()`-ing Specific Channel Types
+## If you wanted to find the mean mass for Cutthroat trout for each *type of channel* in each *section*, what would you do? {background-color="#B6CADA"}
 
-::: {style="font-size: 0.9em;"}
-The majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the `unittype` variable.
-:::
-
-. . .
-
-</br>
+## `group_by()` + `summarize()`
 
 ```{r}
-#| eval: false
+#| label: section-channel-mass
+#| code-line-numbers: false
+#| echo: true
+#| output-location: fragment
+
+trout %>% 
+  group_by(section, unittype) %>% 
+  summarize(mean_mass = mean(weight_g, 
+                             na.rm = TRUE)
+            )
+```
+
+## Visualization 2.0 -- Incorporating Color
+
+```{r}
+#| label: ridge-plots-with-color
 #| echo: true
 #| code-line-numbers: false
-trout %>% 
-  filter(unittype %in% c("C", "P", "SC"))
+#| message: false
+#| warning: false
+#| output-location: slide
+#| fig-align: center
+
+ggplot(data = trout, 
+       mapping = aes(x = weight_g, 
+                     fill = section, 
+                     y = unittype)) +
+  geom_density_ridges(alpha = 0.5) +
+  labs(x = "Weight of Cutthroat Trout (g)", 
+       fill = "Section of Forest", 
+       y = "Type of Channel")
 ```
 
 . . .
 
 </br>
 
-::: callout-tip
-# `%in%`
+Why put `unittype` on the y-axis instead of `section`???
 
-If you filter includes *more than one value* you must use `%in%` **not** `==`!
-:::
+## Visualization 2.0 -- Incorporating Facets
 
-##  {background-color="#B6CADA"}
+```{r}
+#| label: ridge-plots-with-facets
+#| echo: true
+#| code-line-numbers: false
+#| message: false
+#| warning: false
+#| output-location: slide
+#| fig-align: center
 
-::: {style="font-size: 4em;"}
-Categorical Variables for Whom?
-:::
+ggplot(data = trout, 
+       mapping = aes(x = weight_g, 
+                     y = unittype)) +
+  geom_density_ridges() +
+  labs(x = "Weight of Cutthroat Trout (g)", 
+       y = "Section of Forest") +
+  facet_wrap(~section)
+```
 
-## 
+# Ethical Considerations
 
-::: {style="font-size: 1.25em;"}
-A study examined whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth. [@keller2017]
-:::
+## Choosing What to Measure
+
+Keller et al. [-@keller2017] designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.
+
+. . .
 
 </br>
 
-> What is your gender identity?
+Students attending the *Let's Talk* theater workshop, were asked to report their gender, race, and age.
+
+## Choosing What to Measure
+
+Researchers provided students with the following question:
+
+> What is your gender?
 >
 > Male, Female, Other
 
 . . .
 
+</br> </br>
+
 ::: {style="font-size: 1.5em; color: #0F4C81"}
-Who benefits from these options?
-
-Who suffers from these options?
+What information are the researchers missing?
 :::
 
-##  {background-color="D4D4D4"}
+## Choosing What to Measure
 
-::: {style="font-size: 3em; color: #063970"}
-Data Feminism
+$\beta$ blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen [@khan2000]. 
+
+## Choosing What to Measure
+
+The intake form for a local heart clinic asks the following question:
+
+> What is your sex?
+>
+> Male, Female, Other
+
+. . .
+
+</br> </br>
+
+::: {style="font-size: 1.5em; color: #0F4C81"}
+What information are the doctors missing?
 :::
+
+## Data Feminism
 
 ::: columns
 ::: {.column width="55%"}
@@ -191,7 +400,7 @@ Data Feminism
 :::
 :::
 
-## 
+## Principles of Data Feminism
 
 ::: columns
 ::: {.column width="60%"}
@@ -206,31 +415,4 @@ Data Feminism
 :::
 :::
 
-## 
-
-::: {style="font-size: 3em;"}
-Rethink binaries
-:::
-
-. . .
-
-</br> </br>
-
-<center>
-
-::: {style="font-size: 1.25em; color: #0F4C81"}
-How would you redesign the survey question about student's gender identity?
-:::
-
-## 
-
-::: {style="font-size: 3em;"}
-Challenge power
-:::
-
-```{r}
-#| echo: false
-#| out-width: 60%
-#| out-height: 30%
-knitr::include_graphics("images/data_file.PNG")
-```
+## References

@@ -705,9 +705,9 @@
   {
     "objectID": "slides/week3-day2-alt.html#section",
     "href": "slides/week3-day2-alt.html#section",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "What are the two data types R stores categorical variables as?"
+    "text": "Keller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#dplyr-a-tool-bag-for-data-wrangling",
@@ -719,65 +719,65 @@
   {
     "objectID": "slides/week3-day2-alt.html#section-1",
     "href": "slides/week3-day2-alt.html#section-1",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "The Pipe %&gt;%"
+    "text": "Rethink binaries\n\n\n \n\n\nHow would you redesign the survey question about student’s gender identity?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-2",
     "href": "slides/week3-day2-alt.html#section-2",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "If you wanted means for each level of a categorical variable, what would you do?"
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#trout-size",
     "href": "slides/week3-day2-alt.html#trout-size",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "Trout Size",
     "text": "Trout Size\n\nThe HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.\n\n\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_length = mean(length_1_mm, na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section                               mean_length\n  &lt;chr&gt;                                       &lt;dbl&gt;\n1 clear cut forest                             85.3\n2 upstream old growth coniferous forest        81.4\n\n\n\n\n\n\nWhy na.rm = TRUE?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#classifying-channel-types",
     "href": "slides/week3-day2-alt.html#classifying-channel-types",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "Classifying Channel Types",
     "text": "Classifying Channel Types\n\nThe channels of the Mack Creek which were sampled were classified into the following groups:\n\n\n\n\"C\"\n\"I\"\n\"IP\"\n\"P\"\n\"R\"\n\"S\"\n\"SC\"\nNA\n\n\n\ncascade\nriffle\nisolated pool\npool\nrapid\nstep (small falls)\nside channel\nnot sampled by unit"
   },
   {
     "objectID": "slides/week3-day2-alt.html#filter-ing-specific-channel-types",
     "href": "slides/week3-day2-alt.html#filter-ing-specific-channel-types",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "filter()-ing Specific Channel Types",
     "text": "filter()-ing Specific Channel Types\n\nThe majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the unittype variable.\n\n\n\n\ntrout %&gt;% \n  filter(unittype %in% c(\"C\", \"P\", \"SC\"))\n\n\n\n\n\n\n\n\n\n\n%in%\n\n\nIf you filter includes more than one value you must use %in% not ==!"
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-3",
     "href": "slides/week3-day2-alt.html#section-3",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "Categorical Variables for Whom?"
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-4",
     "href": "slides/week3-day2-alt.html#section-4",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "Suppose Cal Poly is interested in summarizing the demographics of their undergraduate students. They have designed the following question asking about student’s gender identity:\n\n\n\nWhat is your gender identity?\nMale, Female, Other\n\n\n\nWho benefits from these options?\nWho suffers from these options?"
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-5",
     "href": "slides/week3-day2-alt.html#section-5",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "Data Feminism\n\n\n\n\n\n\n\n\n\nData science by whom?\nData science for whom?\nData sets about whom?\nData science with whose values?"
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-7",
     "href": "slides/week3-day2-alt.html#section-7",
-    "title": "Categorical Variables Recap and Some Ethics…",
+    "title": "Incorporating Categorical Variables",
     "section": "",
-    "text": "Rethink binaries\n\n\n \n\n\nHow would you redesign the survey question about student’s gender identity?"
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
   },
   {
     "objectID": "slides/week3-day2-alt.html#section-8",
@@ -5687,5 +5687,222 @@
     "title": "Visualizing and Summarizing Numerical Data",
     "section": "SFO Destinations",
     "text": "SFO Destinations\nOne of the variables refers to the destination (i.e. airport) of the flight, which have three letter abbreviations. For example, flights into Los Angeles have a dest of \"LAX\", flights into San Francisco have a dest of \"SFO\", and flights into Chicago (O’Hare) have a dest of \"ORD\".\nIf you want to visualize only on delays of flights headed to Los Angeles, you need to first filter() the data for flights with that destination (e.g., filter(dest == \"LAX\")) and then make a histogram of the departure delays of only those flights.\nLogical operators: Filtering for certain observations (e.g. flights from a particular airport) is often of interest in data frames where we might want to examine observations with certain characteristics separately from the rest of the data. To do so, you can use the filter() function and a series of logical operators. The most commonly used logical operators for data analysis are as follows:\n\n== means “equal to”\n!= means “not equal to”\n&gt; or &lt; means “greater than” or “less than”\n&gt;= or &lt;= means “greater than or equal to” or “less than or equal to”\n\nQuestion 4 – Fill in the code to create a new dataframe named sfo_flights that is the result of filter()ing only the observations whose destination was San Francisco.\n\nsfo_flights &lt;- filter(nycflights, \n                      dest == )\n\n\nMultiple Data Filters\nYou can filter based on multiple criteria! Within the filter() function, each criteria is separated using commas. For example, suppose you are interested in flights leaving from LaGuardia (LGA) in February:\n\nfilter(nycflights, \n       origin == \"LGA\", \n       month == 2)\n\n## Remember months are coded as numbers (February = 2)!\n\nNote that you can separate the conditions using commas if you want flights that are both leaving from LGA and flights in February. If you are interested in either flights leaving from LGA or flights that happened in February, you can use the | instead of the comma.\nQuestion 5 – Fill in the code below to find the number of flights flying into SFO in July that arrived early.\n\nfilter(sfo_flights, \n       month == __, \n       arr_delay &gt; __) %&gt;% \n  dim()\n\nQuestion 6 – When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#todays-data",
+    "href": "slides/week3-day2-alt.html#todays-data",
+    "title": "Incorporating Categorical Variables",
+    "section": "Today’s Data",
+    "text": "Today’s Data\n\n\nThe and_vertebrates dataset contains length and weight observations for Coastal Cutthroat Trout and two salamander species (Coastal Giant Salamander, and Cascade Torrent Salamander) in previously clear cut (c. 1963) and old growth coniferous forest sections of Mack Creek in HJ Andrews Experimental Forest, Willamette National Forest, Oregon."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#section-6",
+    "href": "slides/week3-day2-alt.html#section-6",
+    "title": "Incorporating Categorical Variables",
+    "section": "",
+    "text": "Challenge power\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#research-question",
+    "href": "slides/week3-day2-alt.html#research-question",
+    "title": "Incorporating Categorical Variables",
+    "section": "Research Question",
+    "text": "Research Question\n \n\n\nAre there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#data-layout",
+    "href": "slides/week3-day2-alt.html#data-layout",
+    "title": "Incorporating Categorical Variables",
+    "section": "Data Layout",
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2011\nMACKOG-M\nOG\nM\n1\n10\nSC\n20\nNA\nCoastal giant salamander\n57\n103\n7.05\nNONE\n2011-09-14\nNA\n\n\n2008\nMACKCC-L\nCC\nL\n1\n3\nC\n67\nNA\nCoastal giant salamander\n41\n59\nNA\nNONE\n2008-09-17\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n2\n2\nSC\n7\nNA\nCutthroat trout\n42\nNA\nNA\nNONE\n2003-09-02\nNA\n\n\n2007\nMACKOG-M\nOG\nM\n1\n9\nC\n62\nNA\nCutthroat trout\n40\nNA\nNA\nNONE\n2007-09-12\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
+    "href": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
+    "title": "Incorporating Categorical Variables",
+    "section": "If you wanted means for each level of a categorical variable, what would you do?",
+    "text": "If you wanted means for each level of a categorical variable, what would you do?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-section-what-would-you-do",
+    "href": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-section-what-would-you-do",
+    "title": "Incorporating Categorical Variables",
+    "section": "If you wanted to find the mean mass for Cutthroat trout for each section, what would you do?",
+    "text": "If you wanted to find the mean mass for Cutthroat trout for each section, what would you do?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
+    "href": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
+    "title": "Incorporating Categorical Variables",
+    "section": "If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?",
+    "text": "If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#step-1-remove-salamanders",
+    "href": "slides/week3-day2-alt.html#step-1-remove-salamanders",
+    "title": "Incorporating Categorical Variables",
+    "section": "Step 1: Remove Salamanders",
+    "text": "Step 1: Remove Salamanders\n \n\ntrout &lt;- filter(and_vertebrates, \n                species == \"Cutthroat trout\")"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#step-2-group_by-summarize",
+    "href": "slides/week3-day2-alt.html#step-2-group_by-summarize",
+    "title": "Incorporating Categorical Variables",
+    "section": "Step 2: group_by() + summarize()",
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#are-they-different",
+    "href": "slides/week3-day2-alt.html#are-they-different",
+    "title": "Incorporating Categorical Variables",
+    "section": "Are they different?",
+    "text": "Are they different?\n\n\n\n\n\n\n\n\nForest Section\nMean Biomass\n\n\n\n\nClear cut\n9.380571\n\n\nOld growth\n8.213796\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#lets-make-a-visualization",
+    "href": "slides/week3-day2-alt.html#lets-make-a-visualization",
+    "title": "Incorporating Categorical Variables",
+    "section": "Let’s Make a Visualization!",
+    "text": "Let’s Make a Visualization!\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = section)) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of Forest\")"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#are-they-different-1",
+    "href": "slides/week3-day2-alt.html#are-they-different-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Are they different?",
+    "text": "Are they different?\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#lets-add-in-the-type-of-channel",
+    "href": "slides/week3-day2-alt.html#lets-add-in-the-type-of-channel",
+    "title": "Incorporating Categorical Variables",
+    "section": "Let’s Add in the Type of Channel",
+    "text": "Let’s Add in the Type of Channel\n\nThe channels (unittype) of the Mack Creek which were sampled were classified into the following groups:\n\n\n\n\"C\"\n\"I\"\n\"IP\"\n\"P\"\n\"R\"\n\"S\"\n\"SC\"\nNA\n\n\n\ncascade\nriffle\nisolated pool\npool\nrapid\nstep (small falls)\nside channel\nnot sampled by unit"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do",
+    "href": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do",
+    "title": "Incorporating Categorical Variables",
+    "section": "If you wanted to find the mean mass for Cutthroat trout for each type of channel in each section, what would you do?",
+    "text": "If you wanted to find the mean mass for Cutthroat trout for each type of channel in each section, what would you do?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#group_by-summarize",
+    "href": "slides/week3-day2-alt.html#group_by-summarize",
+    "title": "Incorporating Categorical Variables",
+    "section": "group_by() + summarize()",
+    "text": "group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
+    "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
+    "title": "Incorporating Categorical Variables",
+    "section": "Visualization 2.0 – Incorporating Color",
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets",
+    "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets",
+    "title": "Incorporating Categorical Variables",
+    "section": "Visualization 2.0 – Incorporating Facets",
+    "text": "Visualization 2.0 – Incorporating Facets\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = unittype)) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of Forest\") +\n  facet_wrap(~section)"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color-output",
+    "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color-output",
+    "title": "Incorporating Categorical Variables",
+    "section": "Visualization 2.0 – Incorporating Color",
+    "text": "Visualization 2.0 – Incorporating Color"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets-output",
+    "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets-output",
+    "title": "Incorporating Categorical Variables",
+    "section": "Visualization 2.0 – Incorporating Facets",
+    "text": "Visualization 2.0 – Incorporating Facets"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure",
+    "href": "slides/week3-day2-alt.html#choosing-what-to-measure",
+    "title": "Incorporating Categorical Variables",
+    "section": "Choosing What to Measure",
+    "text": "Choosing What to Measure\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
+    "href": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Choosing What to Measure",
+    "text": "Choosing What to Measure\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-2",
+    "href": "slides/week3-day2-alt.html#choosing-what-to-measure-2",
+    "title": "Incorporating Categorical Variables",
+    "section": "Choosing What to Measure",
+    "text": "Choosing What to Measure\n\\(\\beta\\) blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen (Khan and Movahed 2000)."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#data-feminism",
+    "href": "slides/week3-day2-alt.html#data-feminism",
+    "title": "Incorporating Categorical Variables",
+    "section": "Data Feminism",
+    "text": "Data Feminism\n\n\n\n\n\n\n\n\nData science by whom?\nData science for whom?\nData sets about whom?\nData science with whose values?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#principles-of-data-feminism",
+    "href": "slides/week3-day2-alt.html#principles-of-data-feminism",
+    "title": "Incorporating Categorical Variables",
+    "section": "Principles of Data Feminism",
+    "text": "Principles of Data Feminism"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#references",
+    "href": "slides/week3-day2-alt.html#references",
+    "title": "Incorporating Categorical Variables",
+    "section": "References",
+    "text": "References\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086.\n\n\nKhan, Nazim Uddin Azam, and Assad Movahed. 2000. “Role of ß Blockers in Congestive Heart Failure.” Congestive Heart Failure 6 (6): 299–312. https://doi.org/10.1111/j.1527-5299.2000.80176.x."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-3",
+    "href": "slides/week3-day2-alt.html#choosing-what-to-measure-3",
+    "title": "Incorporating Categorical Variables",
+    "section": "Choosing What to Measure",
+    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#common-mistakes",
+    "href": "slides/week3-day2-alt.html#common-mistakes",
+    "title": "Incorporating Categorical Variables",
+    "section": "Common Mistakes",
+    "text": "Common Mistakes"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab",
+    "href": "slides/week3-day2-alt.html#copying-the-lab",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab",
+    "text": "Copying the Lab"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#revisions",
+    "href": "slides/week3-day2-alt.html#revisions",
+    "title": "Incorporating Categorical Variables",
+    "section": "Revisions",
+    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#completing-revisions",
+    "href": "slides/week3-day2-alt.html#completing-revisions",
+    "title": "Incorporating Categorical Variables",
+    "section": "Completing Revisions",
+    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#a-grading-reminder",
+    "href": "slides/week3-day2-alt.html#a-grading-reminder",
+    "title": "Incorporating Categorical Variables",
+    "section": "A Grading Reminder",
+    "text": "A Grading Reminder\n\n\n\n\n“Complete” = Satisfactory\n\n\nYour group obtained a “Success” on every question\n\n\n\n\n“Incomplete” = Growing\n\n\nYour group received a “Growing” on at least one question"
   }
 ]
