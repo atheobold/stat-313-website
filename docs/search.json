@@ -5714,7 +5714,7 @@
     "href": "slides/week3-day2-alt.html#data-layout",
     "title": "Incorporating Categorical Variables",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.8\nNONE\n2013-09-03\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n2\n3\nC\n10\nNA\nCoastal giant salamander\n79\n140\nNA\nNONE\n2001-08-20\nADULT\n\n\n2019\nMACKOG-U\nOG\nU\n1\n16\nC\n21\n1043564\nCoastal giant salamander\n60\n106\n7.1\nNONE\n2019-09-05\nNA\n\n\n1999\nMACKCC-L\nCC\nL\n1\n1\nC\n13\nNA\nCutthroat trout\n93\nNA\nNA\nNONE\n1999-08-31\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n2\n8\nC\n3\nNA\nCutthroat trout\n118\nNA\n16.7\nNONE\n1995-08-30\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2003\nMACKCC-L\nCC\nL\n2\n2\nSC\n20\nNA\nCascade torrent salamander\n39\n68\nNA\nNONE\n2003-09-02\nNA\n\n\n2013\nMACKOG-U\nOG\nU\n1\n14\nP\n1\nNA\nCascade torrent salamander\n41\n71\nNA\nNONE\n2013-09-06\nNA\n\n\n2010\nMACKCC-U\nCC\nU\n1\n9\nC\n21\nNA\nCoastal giant salamander\n55\n101\n5.45\nNONE\n2010-09-08\nNA\n\n\n1996\nMACKOG-L\nOG\nL\n1\n2\nC\n19\nNA\nCoastal giant salamander\n54\n101\n6.80\nNONE\n1996-08-28\nNA\n\n\n2007\nMACKOG-L\nOG\nL\n1\n3\nP\n37\nNA\nCutthroat trout\n51\nNA\nNA\nNONE\n2007-09-12\nNA\n\n\n2005\nMACKCC-U\nCC\nU\n1\n12\nC\n24\nNA\nCutthroat trout\n98\nNA\nNA\nNONE\n2005-08-31\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
@@ -5875,7 +5875,7 @@
     "href": "slides/week3-day2-alt.html#common-mistakes",
     "title": "Incorporating Categorical Variables",
     "section": "Common Mistakes",
-    "text": "Common Mistakes"
+    "text": "Common Mistakes\n\nUnits in axis labels (Q2 & Q9)\n\nWhat unit were the departure / arrival delays measured in?\n\ndimensions of filtered data (Q6)\n\nHow do the two numbers output relate to the size of the filtered dataset?\n\nJustifying why I should expect to be early / late (Q8 & Q10)\n\nWhy is the mean / median a reasonable estimate of the “typical” delay?\nWhat aspect(s) of the distribution did you use to decide what a “typical” delay is?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#copying-the-lab",
@@ -5911,5 +5911,47 @@
     "title": "Incorporating Categorical Variables",
     "section": "Revisions Due Tonight",
     "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-step-1",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-step-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Step 1",
+    "text": "Copying the Lab – Step 1\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 / 513 workspace\nClick on “Your Content”\nOpen the settings for your Lab 1 project"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-step-1-1",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-step-1-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Step 1",
+    "text": "Copying the Lab – Step 1\n\nChange the access for your project to “Space Members”"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-last-weeks-recorder",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-last-weeks-recorder",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Last Week’s Recorder",
+    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 / 513 workspace\nClick on “Your Content”\nOpen the settings for your Lab 1 project"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-last-weeks-recorder-1",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-last-weeks-recorder-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Last Week’s Recorder",
+    "text": "Copying the Lab – Last Week’s Recorder\n\nChange the access for your project to “Space Members”"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-everyone-else",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-everyone-else",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Everyone Else",
+    "text": "Copying the Lab – Everyone Else\n\nFind your group member’s lab (you can use the search bar to search for their name)\n\n\n\nOpen their Lab 2 project\nSelect “Save a Permanent Copy”"
+  },
+  {
+    "objectID": "slides/week3-day2-alt.html#copying-the-lab-everyone-else-1",
+    "href": "slides/week3-day2-alt.html#copying-the-lab-everyone-else-1",
+    "title": "Incorporating Categorical Variables",
+    "section": "Copying the Lab – Everyone Else",
+    "text": "Copying the Lab – Everyone Else\n\nDelete the old lab-1.qmd file\n\n\n\nUpload the lab-1.qmd file you downloaded (from your group’s lab)"
   }
 ]

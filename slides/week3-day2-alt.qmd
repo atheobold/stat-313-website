@@ -70,7 +70,43 @@ Your group received a "Growing" on *at least one* question
 
 ## Common Mistakes
 
-## Copying the Lab
+- Units in axis labels (Q2 & Q9)
+  * What unit were the departure / arrival delays measured in?
+  
+- dimensions of filtered data (Q6)
+  * How do the two numbers output relate to the size of the filtered dataset?
+  
+- Justifying *why* I should expect to be early / late (Q8 & Q10)
+  * Why is the mean / median a reasonable estimate of the "typical" delay?
+  * What aspect(s) of the distribution did you use to decide what a "typical" delay is?
+
+## Copying the Lab -- Last Week's Recorder
+
+The person who typed your lab needs to make their project "public"
+
+1. Open Posit Cloud
+2. Go to the STAT 313 / 513 workspace
+3. Click on "Your Content"
+4. Open the settings for your Lab 1 project
+
+![](images/open-project-settings.png)
+
+## Copying the Lab -- Last Week's Recorder
+
+5. Change the access for your project to "Space Members"
+
+![](images/make-project-public.png)
+
+## Copying the Lab -- Everyone Else
+
+1. Find your group member's lab (you can use the search bar to search for their name)
+
+![](images/search-for-name.png)
+
+2. Open their Lab 2 project
+3. Select "Save a Permanent Copy"
+
+![](images/save-a-copy.png)
 
 ## Completing Revisions
 
