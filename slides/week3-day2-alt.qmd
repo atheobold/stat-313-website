@@ -29,6 +29,15 @@ trout <- vertebrates_full_code %>%
 
 salamander <- vertebrates_full_code %>% 
   filter(species != "Cutthroat trout")
+
+my_theme <- theme(axis.title.x = element_text(size = 16),
+                  axis.title.y = element_text(size = 16),
+                  axis.title = element_text(size = 18), 
+                  axis.text.x = element_text(size = 14), 
+                  axis.text.y = element_text(size = 14), 
+                  legend.text = element_text(size = 14), 
+                  legend.title = element_text(size = 16)
+                  )
 ```
 
 # Lab 1
@@ -70,6 +79,7 @@ Your group received a "Growing" on *at least one* question
 
 ## Common Mistakes
 
+:::{.small}
 - Units in axis labels (Q2 & Q9)
   * What unit were the departure / arrival delays measured in?
   
@@ -79,6 +89,7 @@ Your group received a "Growing" on *at least one* question
 - Justifying *why* I should expect to be early / late (Q8 & Q10)
   * Why is the mean / median a reasonable estimate of the "typical" delay?
   * What aspect(s) of the distribution did you use to decide what a "typical" delay is?
+:::
 
 ## Copying the Lab -- Last Week's Recorder
 
@@ -118,13 +129,15 @@ Lab 2 revisions are due by Thursday, February 1.
 3.  Complete your revisions
 3.  Render your revised Lab 2
 4.  Download your revised HTML
-5.  Submit your revisions to the Lab 2 Revisions assignment
+5.  Submit your revisions to the [Lab 2 Revisions]{.underline} assignment
 :::
 
 ::: callout-warning
 # Reflections
 
+::: {.small}
 Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+:::
 :::
 
 # Review
@@ -136,6 +149,14 @@ Revisions are required to be accompanied with reflections on what you learned wh
 :::
 
 ![](images/hj-andrews.jpeg)
+
+## Research Question
+
+</br> </br>
+
+::: centered
+> Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
+:::
 
 ## Data Layout
 
@@ -154,14 +175,6 @@ and_vertebrates %>%
 
 What are the observations / rows in this dataset?
 
-## Research Question
-
-</br> </br>
-
-::: centered
-> Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
-:::
-
 ## If you wanted to find the mean mass for Cutthroat trout in each section, what would you do? {background-color="#B6CADA"}
 
 ## Step 1: Remove Salamanders
@@ -170,7 +183,6 @@ What are the observations / rows in this dataset?
 
 ```{r}
 #| echo: true
-#| output-location: fragment
 #| code-line-numbers: false
 #| eval: false
 
@@ -196,13 +208,13 @@ trout %>%
 . . .
 
 ::: columns
-::: {.column width="40%"}
+::: {.column width="50%"}
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+::: {.column width="45%"}
 **Why `na.rm = TRUE`?**
 :::
 :::
@@ -232,8 +244,7 @@ Would you conclude there is a difference in fish biomass between clear cut and o
 #| code-line-numbers: false
 #| message: false
 #| warning: false
-#| out-height: 50%
-#| out-width: 70%
+#| out-width: 60%
 #| fig-align: center
 
 ggplot(data = trout, 
@@ -241,7 +252,7 @@ ggplot(data = trout,
                      y = section)) +
   geom_density_ridges() +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       y = "Section of Forest")
+       y = "Section of Forest") 
 ```
 
 ## Are they different?
@@ -255,7 +266,8 @@ ggplot(data = trout,
                      y = section)) +
   geom_density_ridges() +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       y = "Section of Forest")
+       y = "Section of Forest") + 
+  my_theme
 ```
 
 Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?

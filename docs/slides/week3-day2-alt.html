@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.3.361">
 
   <title>STAT 313 / 513 - Winter 2024 - Incorporating Categorical Variables</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -97,7 +97,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -240,8 +239,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -454,6 +452,7 @@
 </section>
 <section id="common-mistakes" class="slide level2">
 <h2>Common Mistakes</h2>
+<div class="small">
 <ul>
 <li>Units in axis labels (Q2 &amp; Q9)
 <ul>
@@ -469,6 +468,7 @@
 <li>What aspect(s) of the distribution did you use to decide what a “typical” delay is?</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="copying-the-lab-last-weeks-recorder" class="slide level2">
 <h2>Copying the Lab – Last Week’s Recorder</h2>
@@ -510,7 +510,7 @@
 <li>Complete your revisions</li>
 <li>Render your revised Lab 2</li>
 <li>Download your revised HTML</li>
-<li>Submit your revisions to the Lab 2 Revisions assignment</li>
+<li>Submit your revisions to the <u>Lab 2 Revisions</u> assignment</li>
 </ol>
 </div>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -522,7 +522,9 @@
 <p><strong>Reflections</strong></p>
 </div>
 <div class="callout-content">
+<div class="small">
 <p>Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.</p>
+</div>
 </div>
 </div>
 </div>
@@ -541,27 +543,37 @@
 </div>
 
 <img data-src="images/hj-andrews.jpeg" class="r-stretch"></section>
+<section id="research-question" class="slide level2">
+<h2>Research Question</h2>
+<p><br> <br></p>
+<div class="centered">
+<blockquote>
+<p>Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
+</blockquote>
+</div>
+</section>
 <section id="data-layout" class="slide level2">
 <h2>Data Layout</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="cchwjxwgvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cchwjxwgvk table {
+
+<div id="pwyllabmat" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pwyllabmat table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cchwjxwgvk thead, #cchwjxwgvk tbody, #cchwjxwgvk tfoot, #cchwjxwgvk tr, #cchwjxwgvk td, #cchwjxwgvk th {
+#pwyllabmat thead, #pwyllabmat tbody, #pwyllabmat tfoot, #pwyllabmat tr, #pwyllabmat td, #pwyllabmat th {
   border-style: none;
 }
 
-#cchwjxwgvk p {
+#pwyllabmat p {
   margin: 0;
   padding: 0;
 }
 
-#cchwjxwgvk .gt_table {
+#pwyllabmat .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -587,12 +599,12 @@
   border-left-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_caption {
+#pwyllabmat .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cchwjxwgvk .gt_title {
+#pwyllabmat .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -604,7 +616,7 @@
   border-bottom-width: 0;
 }
 
-#cchwjxwgvk .gt_subtitle {
+#pwyllabmat .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -616,7 +628,7 @@
   border-top-width: 0;
 }
 
-#cchwjxwgvk .gt_heading {
+#pwyllabmat .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -628,13 +640,13 @@
   border-right-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_bottom_border {
+#pwyllabmat .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_col_headings {
+#pwyllabmat .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -649,7 +661,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_col_heading {
+#pwyllabmat .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -669,7 +681,7 @@
   overflow-x: hidden;
 }
 
-#cchwjxwgvk .gt_column_spanner_outer {
+#pwyllabmat .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -681,15 +693,15 @@
   padding-right: 4px;
 }
 
-#cchwjxwgvk .gt_column_spanner_outer:first-child {
+#pwyllabmat .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cchwjxwgvk .gt_column_spanner_outer:last-child {
+#pwyllabmat .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cchwjxwgvk .gt_column_spanner {
+#pwyllabmat .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -701,11 +713,11 @@
   width: 100%;
 }
 
-#cchwjxwgvk .gt_spanner_row {
+#pwyllabmat .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cchwjxwgvk .gt_group_heading {
+#pwyllabmat .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -731,7 +743,7 @@
   text-align: left;
 }
 
-#cchwjxwgvk .gt_empty_group_heading {
+#pwyllabmat .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -746,15 +758,15 @@
   vertical-align: middle;
 }
 
-#cchwjxwgvk .gt_from_md > :first-child {
+#pwyllabmat .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cchwjxwgvk .gt_from_md > :last-child {
+#pwyllabmat .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cchwjxwgvk .gt_row {
+#pwyllabmat .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -773,7 +785,7 @@
   overflow-x: hidden;
 }
 
-#cchwjxwgvk .gt_stub {
+#pwyllabmat .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -786,7 +798,7 @@
   padding-right: 5px;
 }
 
-#cchwjxwgvk .gt_stub_row_group {
+#pwyllabmat .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -800,15 +812,15 @@
   vertical-align: top;
 }
 
-#cchwjxwgvk .gt_row_group_first td {
+#pwyllabmat .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cchwjxwgvk .gt_row_group_first th {
+#pwyllabmat .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cchwjxwgvk .gt_summary_row {
+#pwyllabmat .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -818,16 +830,16 @@
   padding-right: 5px;
 }
 
-#cchwjxwgvk .gt_first_summary_row {
+#pwyllabmat .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_first_summary_row.thick {
+#pwyllabmat .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cchwjxwgvk .gt_last_summary_row {
+#pwyllabmat .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +849,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_grand_summary_row {
+#pwyllabmat .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -847,7 +859,7 @@
   padding-right: 5px;
 }
 
-#cchwjxwgvk .gt_first_grand_summary_row {
+#pwyllabmat .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -857,7 +869,7 @@
   border-top-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_last_grand_summary_row_top {
+#pwyllabmat .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -867,11 +879,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_striped {
+#pwyllabmat .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cchwjxwgvk .gt_table_body {
+#pwyllabmat .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -880,7 +892,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_footnotes {
+#pwyllabmat .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -894,7 +906,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_footnote {
+#pwyllabmat .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -903,7 +915,7 @@
   padding-right: 5px;
 }
 
-#cchwjxwgvk .gt_sourcenotes {
+#pwyllabmat .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -917,7 +929,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cchwjxwgvk .gt_sourcenote {
+#pwyllabmat .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -925,250 +937,226 @@
   padding-right: 5px;
 }
 
-#cchwjxwgvk .gt_left {
+#pwyllabmat .gt_left {
   text-align: left;
 }
 
-#cchwjxwgvk .gt_center {
+#pwyllabmat .gt_center {
   text-align: center;
 }
 
-#cchwjxwgvk .gt_right {
+#pwyllabmat .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cchwjxwgvk .gt_font_normal {
+#pwyllabmat .gt_font_normal {
   font-weight: normal;
 }
 
-#cchwjxwgvk .gt_font_bold {
+#pwyllabmat .gt_font_bold {
   font-weight: bold;
 }
 
-#cchwjxwgvk .gt_font_italic {
+#pwyllabmat .gt_font_italic {
   font-style: italic;
 }
 
-#cchwjxwgvk .gt_super {
+#pwyllabmat .gt_super {
   font-size: 65%;
 }
 
-#cchwjxwgvk .gt_footnote_marks {
+#pwyllabmat .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cchwjxwgvk .gt_asterisk {
+#pwyllabmat .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cchwjxwgvk .gt_indent_1 {
+#pwyllabmat .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cchwjxwgvk .gt_indent_2 {
+#pwyllabmat .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cchwjxwgvk .gt_indent_3 {
+#pwyllabmat .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cchwjxwgvk .gt_indent_4 {
+#pwyllabmat .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cchwjxwgvk .gt_indent_5 {
+#pwyllabmat .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="header gt_col_headings">
-<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">year</th>
-<th id="sitecode" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">sitecode</th>
-<th id="section" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">section</th>
-<th id="reach" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reach</th>
-<th id="pass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pass</th>
-<th id="unitnum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">unitnum</th>
-<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
-<th id="vert_index" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">vert_index</th>
-<th id="pitnumber" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pitnumber</th>
-<th id="species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">species</th>
-<th id="length_1_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">length_1_mm</th>
-<th id="length_2_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">length_2_mm</th>
-<th id="weight_g" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_g</th>
-<th id="clip" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">clip</th>
-<th id="sampledate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">sampledate</th>
-<th id="notes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">notes</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="year">2003</td>
-<td class="gt_row gt_left" headers="sitecode">MACKCC-L</td>
-<td class="gt_row gt_left" headers="section">CC</td>
-<td class="gt_row gt_left" headers="reach">L</td>
-<td class="gt_row gt_right" headers="pass">2</td>
-<td class="gt_row gt_right" headers="unitnum">2</td>
-<td class="gt_row gt_left" headers="unittype">SC</td>
-<td class="gt_row gt_right" headers="vert_index">20</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Cascade torrent salamander</td>
-<td class="gt_row gt_right" headers="length_1_mm">39</td>
-<td class="gt_row gt_right" headers="length_2_mm">68</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">2003-09-02</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="year">2013</td>
-<td class="gt_row gt_left" headers="sitecode">MACKOG-U</td>
-<td class="gt_row gt_left" headers="section">OG</td>
-<td class="gt_row gt_left" headers="reach">U</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">14</td>
-<td class="gt_row gt_left" headers="unittype">P</td>
-<td class="gt_row gt_right" headers="vert_index">1</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Cascade torrent salamander</td>
-<td class="gt_row gt_right" headers="length_1_mm">41</td>
-<td class="gt_row gt_right" headers="length_2_mm">71</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">2013-09-06</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="year">2010</td>
-<td class="gt_row gt_left" headers="sitecode">MACKCC-U</td>
-<td class="gt_row gt_left" headers="section">CC</td>
-<td class="gt_row gt_left" headers="reach">U</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">9</td>
-<td class="gt_row gt_left" headers="unittype">C</td>
-<td class="gt_row gt_right" headers="vert_index">21</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Coastal giant salamander</td>
-<td class="gt_row gt_right" headers="length_1_mm">55</td>
-<td class="gt_row gt_right" headers="length_2_mm">101</td>
-<td class="gt_row gt_right" headers="weight_g">5.45</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">2010-09-08</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="year">1996</td>
-<td class="gt_row gt_left" headers="sitecode">MACKOG-L</td>
-<td class="gt_row gt_left" headers="section">OG</td>
-<td class="gt_row gt_left" headers="reach">L</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">2</td>
-<td class="gt_row gt_left" headers="unittype">C</td>
-<td class="gt_row gt_right" headers="vert_index">19</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Coastal giant salamander</td>
-<td class="gt_row gt_right" headers="length_1_mm">54</td>
-<td class="gt_row gt_right" headers="length_2_mm">101</td>
-<td class="gt_row gt_right" headers="weight_g">6.80</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">1996-08-28</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="year">2007</td>
-<td class="gt_row gt_left" headers="sitecode">MACKOG-L</td>
-<td class="gt_row gt_left" headers="section">OG</td>
-<td class="gt_row gt_left" headers="reach">L</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">3</td>
-<td class="gt_row gt_left" headers="unittype">P</td>
-<td class="gt_row gt_right" headers="vert_index">37</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Cutthroat trout</td>
-<td class="gt_row gt_right" headers="length_1_mm">51</td>
-<td class="gt_row gt_right" headers="length_2_mm">NA</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">2007-09-12</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="year">2005</td>
-<td class="gt_row gt_left" headers="sitecode">MACKCC-U</td>
-<td class="gt_row gt_left" headers="section">CC</td>
-<td class="gt_row gt_left" headers="reach">U</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">12</td>
-<td class="gt_row gt_left" headers="unittype">C</td>
-<td class="gt_row gt_right" headers="vert_index">24</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">Cutthroat trout</td>
-<td class="gt_row gt_right" headers="length_1_mm">98</td>
-<td class="gt_row gt_right" headers="length_2_mm">NA</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">2005-08-31</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="year">1995</td>
-<td class="gt_row gt_left" headers="sitecode">MACKOG-M</td>
-<td class="gt_row gt_left" headers="section">OG</td>
-<td class="gt_row gt_left" headers="reach">M</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">10</td>
-<td class="gt_row gt_left" headers="unittype">S</td>
-<td class="gt_row gt_right" headers="vert_index">1</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">NA</td>
-<td class="gt_row gt_right" headers="length_1_mm">NA</td>
-<td class="gt_row gt_right" headers="length_2_mm">NA</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">1995-08-29</td>
-<td class="gt_row gt_left" headers="notes">JAM</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="year">1995</td>
-<td class="gt_row gt_left" headers="sitecode">MACKCC-M</td>
-<td class="gt_row gt_left" headers="section">CC</td>
-<td class="gt_row gt_left" headers="reach">M</td>
-<td class="gt_row gt_right" headers="pass">1</td>
-<td class="gt_row gt_right" headers="unitnum">9</td>
-<td class="gt_row gt_left" headers="unittype">SC</td>
-<td class="gt_row gt_right" headers="vert_index">1</td>
-<td class="gt_row gt_right" headers="pitnumber">NA</td>
-<td class="gt_row gt_left" headers="species">NA</td>
-<td class="gt_row gt_right" headers="length_1_mm">NA</td>
-<td class="gt_row gt_right" headers="length_2_mm">NA</td>
-<td class="gt_row gt_right" headers="weight_g">NA</td>
-<td class="gt_row gt_left" headers="clip">NONE</td>
-<td class="gt_row gt_right" headers="sampledate">1995-08-30</td>
-<td class="gt_row gt_left" headers="notes">DRY</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="year">year</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="sitecode">sitecode</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="section">section</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="reach">reach</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="pass">pass</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="unitnum">unitnum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="unittype">unittype</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="vert_index">vert_index</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="pitnumber">pitnumber</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="species">species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="length_1_mm">length_1_mm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="length_2_mm">length_2_mm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="weight_g">weight_g</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="clip">clip</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="sampledate">sampledate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="notes">notes</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="year" class="gt_row gt_right">2003</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-L</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">L</td>
+<td headers="pass" class="gt_row gt_right">2</td>
+<td headers="unitnum" class="gt_row gt_right">2</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">20</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">Cascade torrent salamander</td>
+<td headers="length_1_mm" class="gt_row gt_right">39</td>
+<td headers="length_2_mm" class="gt_row gt_right">68</td>
+<td headers="weight_g" class="gt_row gt_right">NA</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">2003-09-02</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">2013</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-L</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">L</td>
+<td headers="pass" class="gt_row gt_right">2</td>
+<td headers="unitnum" class="gt_row gt_right">2</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">12</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">Cascade torrent salamander</td>
+<td headers="length_1_mm" class="gt_row gt_right">34</td>
+<td headers="length_2_mm" class="gt_row gt_right">59</td>
+<td headers="weight_g" class="gt_row gt_right">0.80</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">2013-09-03</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">2010</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-L</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">L</td>
+<td headers="pass" class="gt_row gt_right">1</td>
+<td headers="unitnum" class="gt_row gt_right">2</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">32</td>
+<td headers="pitnumber" class="gt_row gt_right">16391862</td>
+<td headers="species" class="gt_row gt_left">Coastal giant salamander</td>
+<td headers="length_1_mm" class="gt_row gt_right">60</td>
+<td headers="length_2_mm" class="gt_row gt_right">113</td>
+<td headers="weight_g" class="gt_row gt_right">8.29</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">2010-09-07</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">1995</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-L</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">L</td>
+<td headers="pass" class="gt_row gt_right">1</td>
+<td headers="unitnum" class="gt_row gt_right">6</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">18</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">Coastal giant salamander</td>
+<td headers="length_1_mm" class="gt_row gt_right">66</td>
+<td headers="length_2_mm" class="gt_row gt_right">116</td>
+<td headers="weight_g" class="gt_row gt_right">11.30</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">1995-08-30</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">2014</td>
+<td headers="sitecode" class="gt_row gt_left">MACKOG-U</td>
+<td headers="section" class="gt_row gt_left">OG</td>
+<td headers="reach" class="gt_row gt_left">U</td>
+<td headers="pass" class="gt_row gt_right">1</td>
+<td headers="unitnum" class="gt_row gt_right">13</td>
+<td headers="unittype" class="gt_row gt_left">C</td>
+<td headers="vert_index" class="gt_row gt_right">14</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">Cutthroat trout</td>
+<td headers="length_1_mm" class="gt_row gt_right">49</td>
+<td headers="length_2_mm" class="gt_row gt_right">NA</td>
+<td headers="weight_g" class="gt_row gt_right">1.16</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">2014-09-11</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">1991</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-U</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">U</td>
+<td headers="pass" class="gt_row gt_right">2</td>
+<td headers="unitnum" class="gt_row gt_right">15</td>
+<td headers="unittype" class="gt_row gt_left">C</td>
+<td headers="vert_index" class="gt_row gt_right">5</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">Cutthroat trout</td>
+<td headers="length_1_mm" class="gt_row gt_right">52</td>
+<td headers="length_2_mm" class="gt_row gt_right">NA</td>
+<td headers="weight_g" class="gt_row gt_right">1.35</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">1991-09-05</td>
+<td headers="notes" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">1995</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-M</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">M</td>
+<td headers="pass" class="gt_row gt_right">1</td>
+<td headers="unitnum" class="gt_row gt_right">9</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">1</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">NA</td>
+<td headers="length_1_mm" class="gt_row gt_right">NA</td>
+<td headers="length_2_mm" class="gt_row gt_right">NA</td>
+<td headers="weight_g" class="gt_row gt_right">NA</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">1995-08-30</td>
+<td headers="notes" class="gt_row gt_left">DRY</td></tr>
+    <tr><td headers="year" class="gt_row gt_right">1990</td>
+<td headers="sitecode" class="gt_row gt_left">MACKCC-L</td>
+<td headers="section" class="gt_row gt_left">CC</td>
+<td headers="reach" class="gt_row gt_left">L</td>
+<td headers="pass" class="gt_row gt_right">1</td>
+<td headers="unitnum" class="gt_row gt_right">3</td>
+<td headers="unittype" class="gt_row gt_left">SC</td>
+<td headers="vert_index" class="gt_row gt_right">1</td>
+<td headers="pitnumber" class="gt_row gt_right">NA</td>
+<td headers="species" class="gt_row gt_left">NA</td>
+<td headers="length_1_mm" class="gt_row gt_right">NA</td>
+<td headers="length_2_mm" class="gt_row gt_right">NA</td>
+<td headers="weight_g" class="gt_row gt_right">NA</td>
+<td headers="clip" class="gt_row gt_left">NONE</td>
+<td headers="sampledate" class="gt_row gt_right">1990-08-15</td>
+<td headers="notes" class="gt_row gt_left">not sampled</td></tr>
+  </tbody>
+  
+  
 </table>
-
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>What are the observations / rows in this dataset?</p>
-</div>
-</section>
-<section id="research-question" class="slide level2">
-<h2>Research Question</h2>
-<p><br> <br></p>
-<div class="centered">
-<blockquote>
-<p>Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
-</blockquote>
 </div>
 </section>
 <section id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do" class="slide level2" data-background-color="#B6CADA">
@@ -1178,21 +1166,18 @@
 <h2>Step 1: Remove Salamanders</h2>
 <p><br> <br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="ot">&lt;-</span> <span class="fu">filter</span>(and_vertebrates, </span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>                species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>trout <span class="ot">&lt;-</span> <span class="fu">filter</span>(and_vertebrates, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-2-group_by-summarize" class="slide level2">
 <h2>Step 2: <code>group_by()</code> + <code>summarize()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1205,11 +1190,11 @@
 </div>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:50%;">
 
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:55%;">
+</div><div class="column" style="width:45%;">
 <p><strong>Why <code>na.rm = TRUE</code>?</strong></p>
 </div>
 </div>
@@ -1219,23 +1204,24 @@
 <h2>Are they different?</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hfrnqhyvsh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hfrnqhyvsh table {
+
+<div id="czeqtgfrjh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#czeqtgfrjh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hfrnqhyvsh thead, #hfrnqhyvsh tbody, #hfrnqhyvsh tfoot, #hfrnqhyvsh tr, #hfrnqhyvsh td, #hfrnqhyvsh th {
+#czeqtgfrjh thead, #czeqtgfrjh tbody, #czeqtgfrjh tfoot, #czeqtgfrjh tr, #czeqtgfrjh td, #czeqtgfrjh th {
   border-style: none;
 }
 
-#hfrnqhyvsh p {
+#czeqtgfrjh p {
   margin: 0;
   padding: 0;
 }
 
-#hfrnqhyvsh .gt_table {
+#czeqtgfrjh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1261,12 +1247,12 @@
   border-left-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_caption {
+#czeqtgfrjh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hfrnqhyvsh .gt_title {
+#czeqtgfrjh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1278,7 +1264,7 @@
   border-bottom-width: 0;
 }
 
-#hfrnqhyvsh .gt_subtitle {
+#czeqtgfrjh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1290,7 +1276,7 @@
   border-top-width: 0;
 }
 
-#hfrnqhyvsh .gt_heading {
+#czeqtgfrjh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1302,13 +1288,13 @@
   border-right-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_bottom_border {
+#czeqtgfrjh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_col_headings {
+#czeqtgfrjh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1323,7 +1309,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_col_heading {
+#czeqtgfrjh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1343,7 +1329,7 @@
   overflow-x: hidden;
 }
 
-#hfrnqhyvsh .gt_column_spanner_outer {
+#czeqtgfrjh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1355,15 +1341,15 @@
   padding-right: 4px;
 }
 
-#hfrnqhyvsh .gt_column_spanner_outer:first-child {
+#czeqtgfrjh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hfrnqhyvsh .gt_column_spanner_outer:last-child {
+#czeqtgfrjh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hfrnqhyvsh .gt_column_spanner {
+#czeqtgfrjh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1375,11 +1361,11 @@
   width: 100%;
 }
 
-#hfrnqhyvsh .gt_spanner_row {
+#czeqtgfrjh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hfrnqhyvsh .gt_group_heading {
+#czeqtgfrjh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1405,7 +1391,7 @@
   text-align: left;
 }
 
-#hfrnqhyvsh .gt_empty_group_heading {
+#czeqtgfrjh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1420,15 +1406,15 @@
   vertical-align: middle;
 }
 
-#hfrnqhyvsh .gt_from_md > :first-child {
+#czeqtgfrjh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hfrnqhyvsh .gt_from_md > :last-child {
+#czeqtgfrjh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hfrnqhyvsh .gt_row {
+#czeqtgfrjh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1447,7 +1433,7 @@
   overflow-x: hidden;
 }
 
-#hfrnqhyvsh .gt_stub {
+#czeqtgfrjh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1460,7 +1446,7 @@
   padding-right: 5px;
 }
 
-#hfrnqhyvsh .gt_stub_row_group {
+#czeqtgfrjh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1474,15 +1460,15 @@
   vertical-align: top;
 }
 
-#hfrnqhyvsh .gt_row_group_first td {
+#czeqtgfrjh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hfrnqhyvsh .gt_row_group_first th {
+#czeqtgfrjh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hfrnqhyvsh .gt_summary_row {
+#czeqtgfrjh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1492,16 +1478,16 @@
   padding-right: 5px;
 }
 
-#hfrnqhyvsh .gt_first_summary_row {
+#czeqtgfrjh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_first_summary_row.thick {
+#czeqtgfrjh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hfrnqhyvsh .gt_last_summary_row {
+#czeqtgfrjh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1511,7 +1497,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_grand_summary_row {
+#czeqtgfrjh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1521,7 +1507,7 @@
   padding-right: 5px;
 }
 
-#hfrnqhyvsh .gt_first_grand_summary_row {
+#czeqtgfrjh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1531,7 +1517,7 @@
   border-top-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_last_grand_summary_row_top {
+#czeqtgfrjh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1541,11 +1527,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_striped {
+#czeqtgfrjh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hfrnqhyvsh .gt_table_body {
+#czeqtgfrjh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1554,7 +1540,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_footnotes {
+#czeqtgfrjh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1568,7 +1554,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_footnote {
+#czeqtgfrjh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1577,7 +1563,7 @@
   padding-right: 5px;
 }
 
-#hfrnqhyvsh .gt_sourcenotes {
+#czeqtgfrjh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1591,7 +1577,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hfrnqhyvsh .gt_sourcenote {
+#czeqtgfrjh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1599,86 +1585,83 @@
   padding-right: 5px;
 }
 
-#hfrnqhyvsh .gt_left {
+#czeqtgfrjh .gt_left {
   text-align: left;
 }
 
-#hfrnqhyvsh .gt_center {
+#czeqtgfrjh .gt_center {
   text-align: center;
 }
 
-#hfrnqhyvsh .gt_right {
+#czeqtgfrjh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hfrnqhyvsh .gt_font_normal {
+#czeqtgfrjh .gt_font_normal {
   font-weight: normal;
 }
 
-#hfrnqhyvsh .gt_font_bold {
+#czeqtgfrjh .gt_font_bold {
   font-weight: bold;
 }
 
-#hfrnqhyvsh .gt_font_italic {
+#czeqtgfrjh .gt_font_italic {
   font-style: italic;
 }
 
-#hfrnqhyvsh .gt_super {
+#czeqtgfrjh .gt_super {
   font-size: 65%;
 }
 
-#hfrnqhyvsh .gt_footnote_marks {
+#czeqtgfrjh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hfrnqhyvsh .gt_asterisk {
+#czeqtgfrjh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hfrnqhyvsh .gt_indent_1 {
+#czeqtgfrjh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hfrnqhyvsh .gt_indent_2 {
+#czeqtgfrjh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hfrnqhyvsh .gt_indent_3 {
+#czeqtgfrjh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hfrnqhyvsh .gt_indent_4 {
+#czeqtgfrjh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hfrnqhyvsh .gt_indent_5 {
+#czeqtgfrjh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="header gt_col_headings">
-<th id="Forest Section" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Forest Section</th>
-<th id="Mean Biomass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean Biomass</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Forest Section">Clear cut</td>
-<td class="gt_row gt_right" headers="Mean Biomass">9.380571</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Forest Section">Old growth</td>
-<td class="gt_row gt_right" headers="Mean Biomass">8.213796</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Forest Section">Forest Section</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Mean Biomass">Mean Biomass</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Forest Section" class="gt_row gt_left">Clear cut</td>
+<td headers="Mean Biomass" class="gt_row gt_right">9.380571</td></tr>
+    <tr><td headers="Forest Section" class="gt_row gt_left">Old growth</td>
+<td headers="Mean Biomass" class="gt_row gt_right">8.213796</td></tr>
+  </tbody>
+  
+  
 </table>
-
 </div>
 </div>
 </div>
@@ -1687,21 +1670,15 @@
 <section id="lets-make-a-visualization" class="slide level2">
 <h2>Let’s Make a Visualization!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> section)) <span class="sc">+</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week3-day2-alt_files/figure-revealjs/section-ridge-plots-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%;height:50.0%"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> section)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</div>
-</section>
+<img data-src="week3-day2-alt_files/figure-revealjs/section-ridge-plots-1.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
 <section id="are-they-different-1" class="slide level2">
 <h2>Are they different?</h2>
 
@@ -1742,11 +1719,11 @@
 <section id="group_by-summarize" class="slide level2">
 <h2><code>group_by()</code> + <code>summarize()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section, unittype) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section, unittype) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1773,14 +1750,14 @@
 <section id="visualization-2.0-incorporating-color" class="slide level2">
 <h2>Visualization 2.0 – Incorporating Color</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> section, </span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Section of Forest"</span>, </span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Type of Channel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> section, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Section of Forest"</span>, </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Type of Channel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="fragment">
@@ -1792,27 +1769,27 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-color-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-color-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="visualization-2.0-incorporating-facets" class="slide level2">
 <h2>Visualization 2.0 – Incorporating Facets</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) <span class="sc">+</span></span>
-<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>section)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>section)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section><section id="visualization-2.0-incorporating-facets-output" class="slide level2 output-location-slide"><h2>Visualization 2.0 – Incorporating Facets</h2><div class="cell output-location-slide" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-facets-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-facets-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1896,8 +1873,10 @@
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
+<div class="footer footer-default">
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-keller2017" class="csl-entry" role="listitem">
 Keller, Sarah N., and Timothy Wilkinson. 2017. <span>“Preventing Suicide in Montana: A Community-Based Theatre Intervention.”</span> <em>Journal of Social Marketing</em> 7 (4): 423–40. <a href="https://doi.org/10.1108/jsocm-12-2016-0086">https://doi.org/10.1108/jsocm-12-2016-0086</a>.
 </div>
@@ -1905,11 +1884,7 @@ Keller, Sarah N., and Timothy Wilkinson. 2017. <span>“Preventing Suicide in Mo
 Khan, Nazim Uddin Azam, and Assad Movahed. 2000. <span>“Role of ß Blockers in Congestive Heart Failure.”</span> <em>Congestive Heart Failure</em> 6 (6): 299–312. <a href="https://doi.org/10.1111/j.1527-5299.2000.80176.x">https://doi.org/10.1111/j.1527-5299.2000.80176.x</a>.
 </div>
 </div>
-</section><div class="quarto-auto-generated-content">
-<div class="footer footer-default">
-
-</div>
-</div></section>
+</section></section>
     </div>
   </div>
 
@@ -1936,6 +1911,7 @@ Khan, Nazim Uddin Azam, and Assad Movahed. 2000. <span>“Role of ß Blockers in
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2234,9 +2210,10 @@ Khan, Nazim Uddin Azam, and Assad Movahed. 2000. <span>“Role of ß Blockers in
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2246,17 +2223,8 @@ Khan, Nazim Uddin Azam, and Assad Movahed. 2000. <span>“Role of ß Blockers in
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
