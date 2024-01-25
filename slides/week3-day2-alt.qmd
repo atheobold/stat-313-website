@@ -1,8 +1,9 @@
 ---
-title: "Categorical Variables Recap and Some Ethics..."
+title: "Incorporating Categorical Variables"
 subtitle: "STAT 313"
 format: revealjs
 editor: visual
+bibliography: references.bib
 ---
 
 ```{r set-up}
@@ -25,68 +26,6 @@ trout <- vertebrates_full_code %>%
 salamander <- vertebrates_full_code %>% 
   filter(species != "Cutthroat trout")
 ```
-
-##  {background-color="#D4D4D4"}
-
-<center>
-
-::: {style="margin-top: 100px; font-size: 3em; color: #000000;"}
-What are the two data types R stores categorical variables as?
-:::
-
-</center>
-
-## `dplyr` -- a tool bag for data wrangling
-
-::: columns
-::: {.column width="40%"}
-![](images/dplyr.png)
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-`filter()`
-
-`select()`
-
-`mutate()`
-
-`summarize()`
-
-`arrange()`
-
-`group_by()`
-:::
-:::
-
-## 
-
-::: columns
-::: {.column width="55"}
-::: {style="font-size: 1.5em;"}
-The Pipe `%>%`
-:::
-:::
-
-::: {.column width="15%"}
-:::
-
-::: {.column width="15%"}
-```{r}
-knitr::include_graphics("images/pipe.png")
-```
-:::
-
-::: {.column width="15%"}
-```{r}
-knitr::include_graphics("images/not_a_pipe.jpg")
-```
-:::
-:::
-
-<center>![](images/pipe_process.png)</center>
 
 ## 
 
@@ -208,7 +147,7 @@ Categorical Variables for Whom?
 ## 
 
 ::: {style="font-size: 1.25em;"}
-Suppose Cal Poly is interested in summarizing the demographics of their undergraduate students. They have designed the following question asking about student's gender identity:
+A study examined whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth. [@keller2017]
 :::
 
 </br>
@@ -295,30 +234,3 @@ Challenge power
 #| out-height: 30%
 knitr::include_graphics("images/data_file.PNG")
 ```
-
-## 
-
-::: {style="font-size: 2.5em;"}
-An aura objectivity
-:::
-
-```{r}
-#| echo: false
-#| out-width: 40%
-#| out-height: 20%
-knitr::include_graphics("images/active_shooters.PNG")
-```
-
-::: {style="font-size: 0.75em;"}
-> "We focus on four conventions which imbue visualizations with a sense of objectivity, transparency and facticity. These include: (a) two-dimensional viewpoints, (b) clean layouts, (c) geometric shapes and lines, (d) the inclusion of data sources."
->
-> *The work that visualization communications do*
-:::
-
-## 
-
-::: {style="font-size: 3em;"}
-Elevate emotion
-:::
-
-<https://guns.periscopic.com/>
