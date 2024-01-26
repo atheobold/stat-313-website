@@ -1,5 +1,5 @@
 ---
-title: "Midterm Project Proposal"
+title: "STAT 313: Midterm Project Proposal"
 subtitle: "Due February 5, 2023 by 5pm"
 format: 
   html:
@@ -24,7 +24,7 @@ For the **Midterm Project Proposal** assignment on Canvas, you are required to s
 
 ## Option 2 -- Use a public dataset
 
-I've compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis.
+I've compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis. Each of these datasets are included in an R package, so there is no need for you to download the dataset! All you will need to do is load in the necessary package (e.g., `library(lterdatasampler)`) at the beginning of your analysis. 
 
 From the **lterdatasampler** package:
 
@@ -35,7 +35,7 @@ From the **lterdatasampler** package:
 
 From the **openintro** package:
 
--   [`ncbirths`](https://www.openintro.org/data/index.php?data=ncbirths): Data from North Carolina births in 2004 (from Week 4).
+-   [`births14`](https://www.openintro.org/data/index.php?data=births14): Data from US births from 2014 (similar to `ncbirths` dataset from Week 4).
 -   [`possum`](https://www.openintro.org/data/index.php?data=possum): Data representing possums in Australia and New Guinea.
 
 From the **moderndive** package:
@@ -56,29 +56,52 @@ For the **Midterm Project Proposal** assignment on Canvas, you are required to s
 
 **Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from?
 
-I don't know **anything** about your data, so I expect for this description to be *extensive*. If the data you are using are from a class, you are responsible for obtaining the context of the data--you cannot simply say "These were data used in BIO 253."
+I don't know anything about your data, so I expect for this description to be *extensive*. If the data you are using are from a class, you are responsible for obtaining the context of the data--you cannot simply say "These were data used in BIO 253."
 
 **Step 2:** Choose your variables
 
-Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables.
+We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose 
+
+- one numeric variable for the response variable
+- one numeric variable for the explanatory variable
+
+Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical. 
+
+:::{.callout-note}
+# Write-up
+
+Describe each variable you chose for your analysis---how was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?
+:::
 
 ## If you chose a dataset from the list above
 
-**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from?
+**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from? Were these data included in any publications?
 
 ::: callout-tip
+# Getting information about your dataset
 To obtain information on the dataset, click on the link provided in its name!
 :::
 
 **Step 2:** Choose your variables
 
-Describe **at least three** variables you are interested in. Choose one variable for the response and at least two explanatory variables.
+We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose 
+
+- one numeric variable for the response variable
+- one numeric variable for the explanatory variable
+
+Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical. 
+
+:::{.callout-note}
+# Write-up
+
+Describe each variable you chose for your analysis---how was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?
+:::
 
 # Step 3: Submitting on Canvas
 
 For the **Midterm Project Proposal** assignment on Canvas, your proposal is required to consist of **both** components (dataset and description).
 
-You are allowed to use any text editing software to make your critique (e.g., Word, Pages, Google Docs), but your submission **must be a PDF**. If you are unsure how to save your file as a PDF, I recommend using Google!
+You are allowed to use any text editing software to make your proposal (e.g., Word, Pages, Google Docs), but your submission **must be a PDF**. If you are unsure how to save your file as a PDF, I recommend using Google!
 
 ::: callout-caution
 Remember, if you chose to use your own dataset, you are required to submit your data as an Excel file (.csv or .xlsx).

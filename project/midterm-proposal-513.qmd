@@ -1,0 +1,56 @@
+---
+title: "STAT 513: Midterm Project Proposal"
+subtitle: "Due February 5, 2023 by 5pm"
+format: 
+  html:
+    table-of-contents: true
+    toc-depth: 2
+    number-sections: true
+    number-depth: 2
+editor: visual
+---
+
+This week you will get started on your midterm project by selecting what dataset you wish to analyze and writing an introduction about the dataset you chose.
+
+# Step 1: Picking a Dataset
+
+## Option 1 -- Use your own data
+
+If you have a dataset from your research which you believe can be appropriately modeled with a *linear regression*, you can propose to use these data.
+
+## Option 2 -- Acquire a dataset from your adviser
+
+If you do not have a dataset from your research, then you are expected to work with your adviser to obtain a dataset relevant to your research / project. 
+
+## Deliverable
+
+For the **Midterm Project Proposal** assignment on Canvas, you are required to submit the data you have chosen to use as an Excel file (stored as either a .csv or .xlsx).
+
+# Step 2: Writing an Introduction
+
+**Step 1:** Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from? I don't know **anything** about your data, so I expect for this description to be *extensive*. 
+
+**Step 2:** Choose your variables
+
+We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose 
+
+- one numeric variable for the response variable
+- one numeric variable for the explanatory variable
+
+Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical. 
+
+:::{.callout-note}
+# Write-up
+
+Describe each variable you chose for your analysis---How was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?
+:::
+
+# Step 3: Submitting on Canvas
+
+For the **Midterm Project Proposal** assignment on Canvas, your proposal is required to consist of **both** components (dataset and description).
+
+You are allowed to use any text editing software to make your proposal (e.g., Word, Pages, Google Docs), but your submission **must be a PDF**. If you are unsure how to save your file as a PDF, I recommend using Google!
+
+::: callout-caution
+Remember, you are required to submit the dataset you have chosen to analyze as an Excel file (.csv or .xlsx).
+:::
