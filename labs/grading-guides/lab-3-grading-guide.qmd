@@ -6,20 +6,6 @@ execute:
   eval: false
 ---
 
-Q1\
-Q2\
-Q3\
-Q4\
-Q5\
-Q6\
-Q7\
-Q8\
-Q9\
-Q10\
-Q11\
-Q12\
-Q13
-
 # Question 1 -- Size of `and_vertebrates` dataset
 
 **Success**:
@@ -33,9 +19,9 @@ Q13
 -   If they flip the rows and columns
 -   If they do not provide size of data
 
-*Feedback for no code:* For Question 1, you needed to write code to explore the size of the data and the types of variables.
+*Feedback for no code:* You needed to write code to explore the size of the data and the types of variables.
 
-*Feedback for no / incorrect dimensions:* For Question 1, look again at the output of the `glimpse()` function, how many rows and columns are included in the nycflights dataset?
+*Feedback for no / incorrect dimensions:* Look again at the output of the `glimpse()` function, how many rows and columns are included in the `and_vertebrates` dataset?
 
 # Question 2 -- Categorical variables in dataset
 
@@ -56,7 +42,7 @@ Q13
 -   If misses 2 or more variables
 -   If includes date variable (`sampledate`)
 
-*Feedback:* For Question 2, you need to be careful to include ALL of the variables that R believes are categorical. What data types did we say in class that categorical variables can have?
+*Feedback:* Yu need to be careful to include ALL of the variables that R believes are categorical. What data types did we say in class that categorical variables can have?
 
 # Question 3 -- Levels of the species variable
 
@@ -67,15 +53,16 @@ Q13
 
 **Growing:** Does not use `distinct()` function
 
-*Feedback:* For Question 3, there is a function which finds the *distinct* levels of a categorical variable. What function might that be?
+*Feedback:* There is a function which finds the *distinct* levels of a categorical variable. What function might that be?
 
 # Question 4 -- Filtering to including only trout
 
 **Success:** Code should look similar to:
 
-```{r fish-filter-1}
+```{r trout-filter}
 trout <- filter(and_vertebrates, 
-                species == "Cutthroat trout")
+                species == "Cutthroat trout", 
+                length_1_mm > 101)
 ```
 
 ::: callout-note
@@ -84,62 +71,47 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 **Growing:** If `filter()` is not correct
 
-# Question 5 -- Filtering to include only catchable trout
+-   using the wrong variable / value (e.g., wrong spelling of Cutthroat trout, putting 101 in quotations)
 
-**Success:** Code should look similar to:
+*Feedback for spelling Cutthroat trout incorrectly:* Careful! R is case sensitive, so we need to be sure that we use the same spelling and capitalization the researchers used. How did these researchers spell Cutthroat trout? The output of the `distinct()` function should help you! 
 
-```{r fish-filter-2}
-trout <- filter(trout, 
-                length_1_mm > 101)
-```
+*Feedback for using `"101"` instead of `101`:* Careful! We use quotations to indicate values of a categorical variable. Is `length_1_mm` a categorical variable?
 
-**Growing:** If `filter()` is not correct
-
--   using `and_vertebrates`
--   using the wrong variable / value
--   making a new dataset instead of updating the `trout` dataset
-
-*Feedback for filtering `and_vertebrates`:* Careful! In Question 5 you need to filter the `trout` dataset you made in Question 4 to meet the criteria specified.
-
-*Feedback for making a new dataset:* Careful! In Question 5 you were given code that would update the trout dataset, *not* make a new dataset. By making a new dataset, you forgot to use the correct name of the dataset later on!
-
-## Question 6 -- Distribution of trout lengths
+# Question 5 -- Distribution of trout lengths
 
 **Success**: Acceptable `geom`s:
 
 -   `geom_histogram()`
 -   `geom_density()`
 
-::: callout-note
-Note: Axis labels are not required! But, if they don't change it, give the following feedback:
-
-*For Question 6, it is always nice to have professional looking axis labels!*
-:::
-
 **Growing**:
 
--   Use `geom_dotplot()`
+-   Uses `geom_dotplot()`
 
-*Feedback:* Careful! A dotplot doesn't automatically resize the dots based on the number of observations you have. This makes it so your dots are running off the page! You can resize the dots using the dotsize argument, with a number smaller than 1 (e.g., 0.5).
+*Feedback for using a dotplot:* Careful! A dotplot doesn't automatically resize the dots based on the number of observations you have. This makes it so your dots are running off the page! You can resize the dots using the dotsize argument, with a number smaller than 1 (e.g., 0.5).
 
 -   Uses `geom_boxplot()`
 
-*Feedback:* For Question 6, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
+*Feedback for using a boxplot:* For Question 6, we need to use a geom which allows for us to see the *shape* of the distribution. Boxplots hide distributions with multiple modes, so what type of plot would be better?
 
-## Question 7 -- Sources of variation
+-   Not including axis label with units (mm)
 
-**Success:** Names three "reasonable" sources of variation in fish length
+*Feedback for not including axis labels with units:* Every plot we make should have descriptive axis labels which include the units the variable was measured in. What unit were the length of each trout measured in? 
 
-**Growing:** Names an unreasonable source of variation in fish lengths
+## Question 6 -- Sources of variation
 
-*Feedback:* For Question 7, we are interested in variables that, if changed, we would expect changes in the length of the Cutthroat trout.
+**Success:** Names three "reasonable" sources of variation in trout length
 
-## Question 8 -- Ridge plot
+**Growing:** Names an unreasonable source of variation in trout lengths
+
+*Feedback:* We are interested in variables that, if changed, we would expect the length of the Cutthroat trout to change. 
+
+## Question 7 -- Ridge plot
 
 **Success:** Code should look like the following
 
 ```{r}
-ggplot(data = fish, 
+ggplot(data = trout, 
        mapping = aes(x = length_1_mm, y = unittype)) +
   geom_density_ridges() +
   labs(x = "Length (mm)", 
@@ -148,32 +120,28 @@ ggplot(data = fish,
 
 **Growing:**
 
--   Doesn't change axis labels
-
-*Feedback:* For Question 8, you were asked to give your visualization nice axis labels. Note that means BOTH axes!
-
 -   Doesn't include units (mm) in x-axis label
 
-*Feedback:* For Question 8, it is important for the axis label to contain the units of the variable. What units were the lengths measured in?
+*Feedback:* It is important for the axis label to contain the units of the variable. What units were the lengths measured in?
 
--   Y-axis should say something about the type of channel
+-   y-axis should say something about the type of channel
 
-*Feedback:* For Question 8, it is important for the axis label to describe the variable that is being measured.
+*Feedback:* It is important for the axis label to describe the variable that is being measured. What would be a good y-axis title for what the `unittype` variable measured?
 
-## Question 9 -- Adding another categorical variable
+## Question 8 -- Adding another categorical variable
 
 **Success:** Uses either color or facets to incorporate `species`
 
 ```{r channel-section}
-## Option 1
-ggplot(data = fish, 
+## Option 1 -- Facets
+ggplot(data = trout, 
        mapping = aes(x = length_1_mm, y = unittype)) +
   geom_density_ridges() +
   facet_wrap(~species)
 
-## Option 2
-ggplot(data = fish, 
-       mapping = aes(x = length_1_mm, y = unittype, color = species)) +
+## Option 2 -- Colors
+ggplot(data = trout, 
+       mapping = aes(x = length_1_mm, y = unittype, fill = species)) +
   geom_density_ridges() 
 
 ```
@@ -181,12 +149,17 @@ ggplot(data = fish,
 **Growing:** If doesn't use facets or colors
 
 ::: callout-note
+# Not marking down on axis label
 If they got a growing on #8 for an axis label, they don't get a growing here.
 :::
 
-**Question 10** -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?
+::: {.callout-note}
+# If they used `color` instead of `fill`
 
-## Question 10 -- Based on the plot, how different are the lengths between the channel types and forest sections?
+*Feedback:* The `color` aesthetic only colors the outside of the ridge plot. However, if you were to use the `fill` aesthetic the entire ridge would be filled with color! 
+:::
+
+## Question 9 -- Based on the plot, how different are the lengths between the channel types and forest sections?
 
 **Success:** Must have all of the following
 
@@ -202,9 +175,9 @@ If they got a growing on #8 for an axis label, they don't get a growing here.
 
 -   Does not state what channel types did not have both types of forest
 
-*Feedback:* Careful! For Question 10 you should note if not every forest type was observed for every type of channel.
+*Feedback:* Careful! You should note if not every forest type was observed for every type of channel.
 
-## Question 11 -- Average length of Cutthroat trout between channel types
+## Question 10 -- Average length of Cutthroat trout between channel types
 
 **Success:** Code should look similar to:
 
@@ -214,15 +187,15 @@ trout %>%
   summarize(mean_length = mean(length_1_mm))
 ```
 
-If they don't name their summary statistics
+::: {.callout-note}
+# If they don't name their summary statistics
 
 *Feedback:* For Question 11, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
+:::
 
 **Growing:** If process is not correct
 
-## Question 12 -- Find the average length of Cutthroat trout between channel
-
-types and forest section
+## Question 11 -- Find the average length of Cutthroat trout between channel types and forest section
 
 **Success:** Code should look similar to:
 
@@ -234,13 +207,13 @@ trout %>%
 
 **Growing:** If process is not correct
 
-## Question 13 -- Differences in averages compared to plot
+## Question 12 -- Differences in averages compared to plot
 
 **Success:**
 
 -   States that the averages are all fairly similar (comparing the centers)
--   Connects with the skew seen in the visualizations
+-   Connects averages with the skew seen in the visualizations
 
 **Growing:** If all they say is that the differences in means are similar to the visualization
 
-**Feedback:** Note that in Question 13 you are specifically using the mean to summarize the center of the distribution. In Question 9 you saw the shape of each channel / forest section's distribution. Based on what you saw, how do the shapes of the distributions influence the means you are seeing in Question 13?
+**Feedback:** Note that in Question 11 you are specifically using the mean to summarize the center of the distribution. In Question 8 you saw the shape of each channel / forest section's distribution. Based on what you saw, how do the shapes of the distributions influence the means you are seeing in Question 11?
