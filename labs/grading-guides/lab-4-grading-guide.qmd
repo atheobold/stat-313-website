@@ -6,18 +6,6 @@ execute:
   eval: false
 ---
 
-Q1 -\
-Q2 -\
-Q3 -\
-Q4 -\
-Q5 -\
-Q6 -\
-Q7 -\
-Q8 -\
-Q9 -\
-Q10 -\
-Q11 -\
-
 # Question 1 -- Size of `ntl_icecover` dataset
 
 **Success**:
@@ -52,11 +40,7 @@ ggplot(data = ntl_icecover,
 
 -   Doesn't change y-axis labels
 
-*Feedback:* For Question 2, you were asked to give your visualization nice axis labels. Also, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?
-
--   Doesn't include units (days) in y-axis label
-
-*Feedback:* For Question 2, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?
+*Feedback:* You were asked to give your visualization nice axis labels. Also, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?
 
 # Question 3 -- Describe the regression line
 
@@ -71,11 +55,11 @@ ggplot(data = ntl_icecover,
 
 -   If they don't discuss one of the for aspects.
 
-*Feedback:* For Question 3, you were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!
+*Feedback:* You were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!
 
 -   If they say there are unusual points / outliers but don't say where.
 
-*Feedback:* For Question 3, if you believe there are unusual observations you need to tell the reader where these points are!
+*Feedback:* If you believe there are unusual observations you need to tell the reader where these points are!
 
 # Question 4 -- Add a regression line
 
@@ -84,32 +68,34 @@ ggplot(data = ntl_icecover,
 -   Includes regression line with `geom_smooth()` **and** `method = "lm"` option
 
 ::: callout-note
-They don't need to turn the standard errors off (`se = FALSE`), but great if they did!
+They don't need to turn the standard errors off (`se = FALSE`), but that's fine if they did!
 :::
 
 **Growing**:
 
 -   If they do not add regression line
 
-*Feedback:* For Question 4, you needed to add a regression line to the previous scatterplot!
+*Feedback:* For this question you needed to add a regression line to the previous scatterplot!
 
 -   If they do not use `method = "lm"` to get straight line
 
-*Feedback:* For Question 4, you need to have a **straight** line, not a wiggly line! Take a look at the R resources to see how you specify a straight line!
+*Feedback:* You need to have a **straight** line, not a wiggly line! Take a look at the R resources to see how you specify a straight line!
 
 # Question 5 -- Find correlation
 
 **Success:** Code should look like the following
 
 ```{r}
-get_correlation(data = ntl_icecover, ice_duration ~ year, na.rm = TRUE)
+get_correlation(data = ntl_icecover, 
+                ice_duration ~ year, 
+                na.rm = TRUE)
 ```
 
 **Growing:**
 
 -   Doesn't remove NAs
 
-*Feedback:* For Question 5, it is important to remove the NAs before calculation the correlation! Is there another argument (input) for the `get_correlation()` function that allows you to remove the missing values? Hint: it looks like the option we used to remove missing values in the `mean()` function!
+*Feedback:* It is important to remove the NAs before calculation the correlation! Is there another argument (input) for the `get_correlation()` function that allows you to remove the missing values? Hint: it looks like the option we used to remove missing values in the `mean()` function in Week 3!
 
 # Question 6 -- Fit linear regression
 
@@ -137,7 +123,7 @@ get_regression_table(my_model)
 
 -   Doesn't use the `get_regression_table()` function
 
-*Feedback:* For Question 7, we want out model output to look tidy, which is why we use the `get_regression_table()` function!
+*Feedback:* We want out model output to look tidy, which is why we use the `get_regression_table()` function!
 
 # Question 8 -- Write out regression equation
 
@@ -145,15 +131,15 @@ get_regression_table(my_model)
 
 $$ \widehat{\text{ice duration}} = 495 - 0.203 \times (\text{year})$$
 
--   Indicates the response (ice duration not y) is estimated / predicted / the mean with either a hat or with language
+-   Indicates the response (ice duration) is estimated / predicted / the mean with either a hat or with language
 -   Inputs values in correct location
--   References `year`(not x)
+-   References `year` and `ice duration` (not x and y)
 
 **Growing**:
 
 -   Does not indicate the response (ice duration) is estimated / predicted / the mean
 
-*Feedback:* For Question 8, remember the estimated regression equation has a hat over y. What does that hat mean? How can you incorporate that into your regression equation?
+*Feedback:* Remember, the estimated regression equation has a hat over y. What does that hat mean? How can you incorporate that language into your interpretation?
 
 -   Uses x and y instead of variable names
 
@@ -171,6 +157,9 @@ If they use x and y in the equation but then define what variables they are asso
     -   1 year increase
     -   mean / predicted / estimated ice duration
     -   decreases by 0.203 days
+    
+**Growing**:
+
 -   Incorrect interpretation of the slope
 
 *Feedback:* For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable.

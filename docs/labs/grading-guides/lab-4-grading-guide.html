@@ -392,18 +392,6 @@ window.Quarto = {
 </header>
 
 
-<p>Q1 -<br>
-Q2 -<br>
-Q3 -<br>
-Q4 -<br>
-Q5 -<br>
-Q6 -<br>
-Q7 -<br>
-Q8 -<br>
-Q9 -<br>
-Q10 -<br>
-Q11 -<br>
-</p>
 <section id="question-1-size-of-ntl_icecover-dataset" class="level1">
 <h1>Question 1 – Size of <code>ntl_icecover</code> dataset</h1>
 <p><strong>Success</strong>:</p>
@@ -445,11 +433,7 @@ Note
 <ul>
 <li>Doesn’t change y-axis labels</li>
 </ul>
-<p><em>Feedback:</em> For Question 2, you were asked to give your visualization nice axis labels. Also, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?</p>
-<ul>
-<li>Doesn’t include units (days) in y-axis label</li>
-</ul>
-<p><em>Feedback:</em> For Question 2, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?</p>
+<p><em>Feedback:</em> You were asked to give your visualization nice axis labels. Also, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?</p>
 </section>
 <section id="question-3-describe-the-regression-line" class="level1">
 <h1>Question 3 – Describe the regression line</h1>
@@ -464,11 +448,11 @@ Note
 <ul>
 <li>If they don’t discuss one of the for aspects.</li>
 </ul>
-<p><em>Feedback:</em> For Question 3, you were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!</p>
+<p><em>Feedback:</em> You were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!</p>
 <ul>
 <li>If they say there are unusual points / outliers but don’t say where.</li>
 </ul>
-<p><em>Feedback:</em> For Question 3, if you believe there are unusual observations you need to tell the reader where these points are!</p>
+<p><em>Feedback:</em> If you believe there are unusual observations you need to tell the reader where these points are!</p>
 </section>
 <section id="question-4-add-a-regression-line" class="level1">
 <h1>Question 4 – Add a regression line</h1>
@@ -486,30 +470,32 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>They don’t need to turn the standard errors off (<code>se = FALSE</code>), but great if they did!</p>
+<p>They don’t need to turn the standard errors off (<code>se = FALSE</code>), but that’s fine if they did!</p>
 </div>
 </div>
 <p><strong>Growing</strong>:</p>
 <ul>
 <li>If they do not add regression line</li>
 </ul>
-<p><em>Feedback:</em> For Question 4, you needed to add a regression line to the previous scatterplot!</p>
+<p><em>Feedback:</em> For this question you needed to add a regression line to the previous scatterplot!</p>
 <ul>
 <li>If they do not use <code>method = "lm"</code> to get straight line</li>
 </ul>
-<p><em>Feedback:</em> For Question 4, you need to have a <strong>straight</strong> line, not a wiggly line! Take a look at the R resources to see how you specify a straight line!</p>
+<p><em>Feedback:</em> You need to have a <strong>straight</strong> line, not a wiggly line! Take a look at the R resources to see how you specify a straight line!</p>
 </section>
 <section id="question-5-find-correlation" class="level1">
 <h1>Question 5 – Find correlation</h1>
 <p><strong>Success:</strong> Code should look like the following</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_correlation</span>(<span class="at">data =</span> ntl_icecover, ice_duration <span class="sc">~</span> year, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_correlation</span>(<span class="at">data =</span> ntl_icecover, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                ice_duration <span class="sc">~</span> year, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Growing:</strong></p>
 <ul>
 <li>Doesn’t remove NAs</li>
 </ul>
-<p><em>Feedback:</em> For Question 5, it is important to remove the NAs before calculation the correlation! Is there another argument (input) for the <code>get_correlation()</code> function that allows you to remove the missing values? Hint: it looks like the option we used to remove missing values in the <code>mean()</code> function!</p>
+<p><em>Feedback:</em> It is important to remove the NAs before calculation the correlation! Is there another argument (input) for the <code>get_correlation()</code> function that allows you to remove the missing values? Hint: it looks like the option we used to remove missing values in the <code>mean()</code> function in Week 3!</p>
 </section>
 <section id="question-6-fit-linear-regression" class="level1">
 <h1>Question 6 – Fit linear regression</h1>
@@ -533,22 +519,22 @@ Note
 <ul>
 <li>Doesn’t use the <code>get_regression_table()</code> function</li>
 </ul>
-<p><em>Feedback:</em> For Question 7, we want out model output to look tidy, which is why we use the <code>get_regression_table()</code> function!</p>
+<p><em>Feedback:</em> We want out model output to look tidy, which is why we use the <code>get_regression_table()</code> function!</p>
 </section>
 <section id="question-8-write-out-regression-equation" class="level1">
 <h1>Question 8 – Write out regression equation</h1>
 <p><strong>Success</strong>:</p>
 <p><span class="math display">\[ \widehat{\text{ice duration}} = 495 - 0.203 \times (\text{year})\]</span></p>
 <ul>
-<li>Indicates the response (ice duration not y) is estimated / predicted / the mean with either a hat or with language</li>
+<li>Indicates the response (ice duration) is estimated / predicted / the mean with either a hat or with language</li>
 <li>Inputs values in correct location</li>
-<li>References <code>year</code>(not x)</li>
+<li>References <code>year</code> and <code>ice duration</code> (not x and y)</li>
 </ul>
 <p><strong>Growing</strong>:</p>
 <ul>
 <li>Does not indicate the response (ice duration) is estimated / predicted / the mean</li>
 </ul>
-<p><em>Feedback:</em> For Question 8, remember the estimated regression equation has a hat over y. What does that hat mean? How can you incorporate that into your regression equation?</p>
+<p><em>Feedback:</em> Remember, the estimated regression equation has a hat over y. What does that hat mean? How can you incorporate that language into your interpretation?</p>
 <ul>
 <li>Uses x and y instead of variable names</li>
 </ul>
@@ -577,6 +563,9 @@ Note
 <li>mean / predicted / estimated ice duration</li>
 <li>decreases by 0.203 days</li>
 </ul></li>
+</ul>
+<p><strong>Growing</strong>:</p>
+<ul>
 <li>Incorrect interpretation of the slope</li>
 </ul>
 <p><em>Feedback:</em> For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable.</p>

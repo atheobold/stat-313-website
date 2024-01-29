@@ -359,7 +359,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#old-packages" id="toc-old-packages" class="nav-link active" data-scroll-target="#old-packages">Old Packages</a></li>
-  <li><a href="#new-package" id="toc-new-package" class="nav-link" data-scroll-target="#new-package">New Package!</a></li>
   <li><a href="#data-for-today" id="toc-data-for-today" class="nav-link" data-scroll-target="#data-for-today">Data for Today</a></li>
   <li><a href="#inspecting-the-data" id="toc-inspecting-the-data" class="nav-link" data-scroll-target="#inspecting-the-data">Inspecting the Data</a></li>
   <li><a href="#visualize-a-simple-linear-regression" id="toc-visualize-a-simple-linear-regression" class="nav-link" data-scroll-target="#visualize-a-simple-linear-regression">Visualize a Simple Linear Regression</a>
@@ -417,13 +416,10 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="old-packages">Old Packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lterdatasampler)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="new-package" class="level2">
-<h2 class="anchored" data-anchor-id="new-package">New Package!</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lterdatasampler)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># New package from reading</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-for-today" class="level2">
@@ -435,7 +431,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="inspecting-the-data">Inspecting the Data</h2>
 <p><strong>Question 1 – How large is the <code>ntl_icecover</code> dataset? (i.e.&nbsp;How many rows and columns does it have?)</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 1 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 1 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualize-a-simple-linear-regression" class="level2">
@@ -451,19 +447,16 @@ window.Quarto = {
 </section>
 <section id="step-1" class="level3">
 <h3 class="anchored" data-anchor-id="step-1">Step 1</h3>
-<p><strong>Question 2 – Make a scatterplot of the relationship between the <code>ice_duration</code> (response) and the <code>year</code> (explanatory).</strong></p>
-<p><em>Be sure to make the axis labels look nice, including any necessary units!</em></p>
+<p><strong>Question 2 – Make a scatterplot of the relationship between the <code>ice_duration</code> (response) and the <code>year</code> (explanatory).</strong> <em>Be sure to make the axis labels look nice, including any necessary units!</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 2 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 2 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 3 – Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.</strong></p>
-<p><em>Hint: You need to explicitly state <strong>where</strong> the unusual observations are!</em></p>
+<p><strong>Question 3 – Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points.</strong> <em>Hint: You need to explicitly state <strong>where</strong> the unusual observations are!</em></p>
 </section>
 <section id="step-2" class="level3">
 <h3 class="anchored" data-anchor-id="step-2">Step 2</h3>
 <p>To add a regression line on top of a scatterplot, you add (<code>+</code>) a <code>geom_smooth()</code> layer to your plot. However, if you add a “plain” <code>geom_smooth()</code> to the plot, it uses a wiggly line. You need to tell <code>geom_smooth()</code> what type of smoother line you want for it to use! We can get a straight line by including <code>method = "lm"</code> <strong>inside</strong> of <code>geom_smooth()</code>.</p>
-<p><strong>Question 4 – Add a linear regression line to the scatterplot you made in Question 3.</strong></p>
-<p><em>No code goes here, you need to modify your scatterplot from Question 3!</em></p>
+<p><strong>Question 4 – Add a linear regression line to the scatterplot you made in Question 3.</strong> <em>No code goes here, you need to modify your scatterplot from Question 3!</em></p>
 </section>
 </section>
 <section id="fit-a-simple-linear-regression-model" class="level2">
@@ -481,16 +474,17 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="step-1-1">Step 1</h3>
 <p><strong>Question 5 – Calculate the correlation between these variables, using the <code>get_correlation()</code> function.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 5 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 5 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-2-1" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-1">Step 2</h3>
-<p>Next, we will “fit” a linear regression with the <code>lm()</code> function. Remember, the “formula” for <code>lm()</code> is <code>response_variable ~ explanatory_variable</code>. Also recall that you need to tell <code>lm()</code> where the data live using <code>data =</code>!</p>
-<p><strong>Question 6 – Fit a linear regression modeling the relationship between between <code>ice_duration</code> and <code>year</code>. Save your linear regression into an object named <code>ice_lm</code> (using the <code>&lt;-</code> assignment arrow) so you can use it later.</strong></p>
-<p><em>Remember what order you need to put the response and explanatory variables!</em></p>
+<p>Next, we will “fit” a linear regression with the <code>lm()</code> function. Remember, the “formula” for <code>lm()</code> is <code>response_variable ~ explanatory_variable</code>. Also recall that you need to tell <code>lm()</code> where the data live using <code>data =</code> argument!</p>
+<p><strong>Question 6 – Fit a linear regression modeling the relationship between between <code>ice_duration</code> and <code>year</code>.</strong> <em>The only part you need to remove is the <code>...</code>! Keep the <code>ice_lm &lt;-</code>!</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 6 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 6 goes here!</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ice_lm <span class="ot">&lt;-</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-3" class="level3">
@@ -498,21 +492,19 @@ window.Quarto = {
 <p>Finally, to get the regression equation, we need grab the coefficients out of the linear model object you made in Step 2. The <code>get_regression_table()</code> function is a handy tool to do just that!</p>
 <p><strong>Question 7 – Use the <code>get_regression_table()</code> function to obtain the coefficient estimates for the <code>ice_lm</code> regression you fit in Question 6.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 7 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 7 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 8 – Using the coefficient estimates above, write out the estimated regression equation.</strong></p>
-<p><em>Your equation needs to be in the context of the variables, not in generic</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> statements!</p>
-<p><strong>Question 9 – Interpret the value of the slope coefficient.</strong></p>
-<p><em>Your interpretation needs to be in the context of the variables, not in generic</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> statements!</p>
-<p><strong>Question 10 – What do you expect to happen to the duration of ice if the number of years is increased by 100?</strong></p>
+<p><strong>Question 8 – Using the coefficient estimates above, write out the estimated regression equation.</strong> <em>Your equation needs to be in the context of the variables, not in generic</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> statements!</p>
+<p><strong>Question 9 – Interpret the value of the slope coefficient.</strong> <em>Your interpretation needs to be in the context of the variables, not in generic</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> statements!</p>
+<p><strong>Question 10 – Sometimes interpreting a 1-unit increase in the explanatory variable is not a meaningful change, so we instead use larger increases. Based on your slope interpretation from Q9, what do you expect to happen to the duration of ice for an incease of 100 years?</strong></p>
 </section>
 </section>
 <section id="a-preview-of-whats-to-come" class="level2">
 <h2 class="anchored" data-anchor-id="a-preview-of-whats-to-come">A preview of what’s to come</h2>
-<p>In our analysis above, we only looked at the relationship between ice duration and year, not accounting for which lake the duration was for. That is another explanatory variable we could include in our regression model!</p>
-<p><strong>Question 11 – Using the code you wrote for Question 2 (with the regression line added), add a <code>color</code> for the name of the lake (<code>lakeid</code>).</strong></p>
+<p>In our analysis above, we only looked at the relationship between ice duration and year, not accounting for which lake the measurements came from. That is another (categorical) explanatory variable we could include in our regression model!</p>
+<p><strong>Question 11 – Using the code you wrote for Question 4 (with the regression line added), add a <code>color</code> for the name of the lake (<code>lakeid</code>).</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 11 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to answer question 11 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
