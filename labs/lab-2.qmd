@@ -73,7 +73,7 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 Let's start by examining the distribution of departure delays (`dep_delay`) of all flights with a histogram.
 
-**Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data.** *Don't forget to give your visualization informative axis labels!*
+**Question 2 -- Create a histogram of the `dep_delay` variable from the `nycflights` data.** *Don't forget to give your visualization informative axis labels that include the units the variable was measured in!*
 
 ```{r}
 #| label: histogram
@@ -208,7 +208,7 @@ Let's think about how you could answer this question. One option is to summarize
 
 **Question 9 -- Now, rather than calculating summary statistics, plot the distribution of arrival delays for the `sfo_flights` dataset.**
 
-*Choose the type of plot you believe is appropriate for visualizing the **distribution** of arrival delays. Don't forget to give your visualization informative axis labels!*
+*Choose the type of plot you believe is appropriate for visualizing the **distribution** of arrival delays. Don't forget to give your visualization informative axis labels that include the units of measurement!*
 
 ```{r}
 #| label: arrival-delay-plot
