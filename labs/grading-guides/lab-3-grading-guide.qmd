@@ -42,7 +42,7 @@ execute:
 -   If misses 2 or more variables
 -   If includes date variable (`sampledate`)
 
-*Feedback:* Yu need to be careful to include ALL of the variables that R believes are categorical. What data types did we say in class that categorical variables can have?
+*Feedback:* You need to be careful to include ALL of the variables that R believes are categorical. What data types did we say in class that categorical variables can have?
 
 # Question 3 -- Levels of the species variable
 
@@ -71,9 +71,13 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 **Growing:** If `filter()` is not correct
 
+-   using `<` instead of `>`
+
+*Feedback:* Careful! What lengths of trout were you told to include in the dataset? We think really small fish are not catchable, so we decided to remove them from the dataset.  
+
 -   using the wrong variable / value (e.g., wrong spelling of Cutthroat trout, putting 101 in quotations)
 
-*Feedback for spelling Cutthroat trout incorrectly:* Careful! R is case sensitive, so we need to be sure that we use the same spelling and capitalization the researchers used. How did these researchers spell Cutthroat trout? The output of the `distinct()` function should help you! 
+*Feedback for spelling Cutthroat trout incorrectly:* Careful! R is case sensitive, so we need to be sure that we use the same spelling and capitalization the researchers used. How did these researchers spell Cutthroat trout? The output of the `distinct()` function should help you!
 
 *Feedback for using `"101"` instead of `101`:* Careful! We use quotations to indicate values of a categorical variable. Is `length_1_mm` a categorical variable?
 
@@ -96,7 +100,7 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 -   Not including axis label with units (mm)
 
-*Feedback for not including axis labels with units:* Every plot we make should have descriptive axis labels which include the units the variable was measured in. What unit were the length of each trout measured in? 
+*Feedback for not including axis labels with units:* Every plot we make should have descriptive axis labels which include the units the variable was measured in. What unit were the length of each trout measured in?
 
 ## Question 6 -- Sources of variation
 
@@ -104,7 +108,7 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 **Growing:** Names an unreasonable source of variation in trout lengths
 
-*Feedback:* We are interested in variables that, if changed, we would expect the length of the Cutthroat trout to change. 
+*Feedback:* We are interested in variables that, if changed, we would expect the length of the Cutthroat trout to change.
 
 ## Question 7 -- Ridge plot
 
@@ -150,13 +154,14 @@ ggplot(data = trout,
 
 ::: callout-note
 # Not marking down on axis label
+
 If they got a growing on #8 for an axis label, they don't get a growing here.
 :::
 
-::: {.callout-note}
+::: callout-note
 # If they used `color` instead of `fill`
 
-*Feedback:* The `color` aesthetic only colors the outside of the ridge plot. However, if you were to use the `fill` aesthetic the entire ridge would be filled with color! 
+*Feedback:* The `color` aesthetic only colors the outside of the ridge plot. However, if you were to use the `fill` aesthetic the entire ridge would be filled with color!
 :::
 
 ## Question 9 -- Based on the plot, how different are the lengths between the channel types and forest sections?
@@ -169,13 +174,17 @@ If they got a growing on #8 for an axis label, they don't get a growing here.
 
 **Growing:**
 
+-   If they say the distributions are all fairly similar
+
+*Feedback:* While I would agree that most of these distributions are fairly similar (they overlap a lot), there are a few channel types where the lengths of trout are quite different between clear cut and old growth forests. Which channel types are these? In these channel types, how do the distributions of fish lengths differ (e.g., are trout in the CC section larger?)? 
+
 -   Comparisons are incomplete
 
 *Feedback:* Your comparison of these distributions should include similarities / differences in their centers and shapes.
 
 -   Does not state what channel types did not have both types of forest
 
-*Feedback:* Careful! You should note if not every forest type was observed for every type of channel.
+*Feedback:* Careful! Were there clear cut and old growth forests for every type of channel? If not, what channel types only had one section of forest?
 
 ## Question 10 -- Average length of Cutthroat trout between channel types
 
@@ -184,10 +193,10 @@ If they got a growing on #8 for an axis label, they don't get a growing here.
 ```{r mean-length}
 trout %>%
   group_by(unittype) %>%
-  summarize(mean_length = mean(length_1_mm))
+  summarize(mean_length = mean(length_1_mm, na.rm = TRUE))
 ```
 
-::: {.callout-note}
+::: callout-note
 # If they don't name their summary statistics
 
 *Feedback:* For Question 11, the output of your summary statistics looks a lot nicer if you give them names! (like the example that was given)
@@ -214,6 +223,10 @@ trout %>%
 -   States that the averages are all fairly similar (comparing the centers)
 -   Connects averages with the skew seen in the visualizations
 
-**Growing:** If all they say is that the differences in means are similar to the visualization
+**Growing:** 
+
+- If their statement doesn't connect the means to the shape of the distributions seen in Question 8
 
 **Feedback:** Note that in Question 11 you are specifically using the mean to summarize the center of the distribution. In Question 8 you saw the shape of each channel / forest section's distribution. Based on what you saw, how do the shapes of the distributions influence the means you are seeing in Question 11?
+
+
