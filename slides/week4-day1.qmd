@@ -34,22 +34,6 @@ births_table <- get_regression_table(weeks_lm)
 ```
 
 ::: {style="font-size: 2em; color: #000000;"}
-Data for Today
-:::
-
-The [ncbirths]{style="color: #e28743;"} dataset is a random sample of 1,000 cases taken from a larger dataset collected in North Carolina in 2004.
-
-::: {style="font-size: 0.75em;"}
-> Each case describes the birth of a single child born in North Carolina, along with various characteristics of the child (e.g. birth weight, length of gestation, etc.), the child's mother (e.g. age, weight gained during pregnancy, smoking habits, etc.) and the child's father (e.g. age).
-:::
-
-. . .
-
-[Draw a picture of how would you expect this dataset to look.]{style="color: #e28743; font-size: 1.5em;"}
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
 Relationships Between Variables
 :::
 
@@ -57,17 +41,15 @@ Relationships Between Variables
 
 -   In a statistical model, we generally have one variable that is the output and one or more variables that are the inputs.
 
-. . .
-
-<!-- TODO make fragmented columns! -->
-
 ::: columns
 ::: {.column width="40%"}
+::: {.fragment .fade-in-then-semi-out}
 ::: {style="font-size: 0.85em;"}
 -   Response variable
     -   a.k.a. $y$, dependent
     -   The quantity you want to understand
     -   In this class -- always numerical
+:::
 :::
 :::
 
@@ -76,10 +58,12 @@ Relationships Between Variables
 
 ::: {.column width="55%"}
 ::: {style="font-size: 0.85em;"}
+::: {.fragment}
 -   Explanatory variable
     -   a.k.a. $x$, independent, explanatory, predictor
     -   Something you think might be related to the response
     -   Either numerical or categorical
+:::
 :::
 :::
 :::
@@ -142,6 +126,18 @@ Characterizing Relationships
 
 ## 
 
+::: {style="font-size: 2em; color: #000000;"}
+Data for Today
+:::
+
+The [ncbirths]{style="color: #e28743;"} dataset is a random sample of 1,000 cases taken from a larger dataset collected in North Carolina in 2004.
+
+::: {style="font-size: 0.75em;"}
+> Each case describes the birth of a single child born in North Carolina, along with various characteristics of the child (e.g. birth weight, length of gestation, etc.), the child's mother (e.g. age, weight gained during pregnancy, smoking habits, etc.) and the child's father (e.g. age).
+:::
+
+## 
+
 ::: {style="font-size: 2em; color: #0F4C81;"}
 Your Turn!
 :::
@@ -183,7 +179,7 @@ What if you added another variable?
 . . .
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: false
 #| fig-align: center
@@ -197,16 +193,18 @@ ggplot(aes(x = weeks, y = weight)) +
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ```{r}
 #| echo: false
 #| fig-align: center
 
 ncbirths %>% 
-ggplot(aes(x = weeks, y = weight, color = premie)) +
-  geom_jitter() + 
+  drop_na(habit) %>% 
+  ggplot(aes(x = weeks, y = weight, color = habit)) +
+  geom_jitter(alpha = 0.5) + 
   labs(x = "Length of pregnancy (in weeks)",
-       y = "Birth weight of baby (in lbs)") + 
+       y = "Birth weight of baby (in lbs)", 
+       color = "Habit") + 
   my_theme +
   theme(legend.text = element_text(size = 16), 
         legend.title = element_text(size = 20))
@@ -214,11 +212,9 @@ ggplot(aes(x = weeks, y = weight, color = premie)) +
 :::
 :::
 
-## 
+# Summarizing a Linear Relationship
 
-::: {style="font-size: 2em; color: #000000;"}
-Summarizing a Linear Relationship
-:::
+## 
 
 ::: columns
 ::: {.column width="20%"}
@@ -232,35 +228,9 @@ Summarizing a Linear Relationship
 
 . . .
 
-<!-- TODO use fragments -->
-
-::: columns
-::: {.column width="45%"}
-::: {style="font-size: 0.75em;"}
 -   Correlation coefficient between -1 and 1
 -   Sign of the correlations shows direction
 -   Magnitude of the correlation shows strength
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-```{r}
-#| echo: true
-#| code-line-numbers: false
-
-births_post26 <- ncbirths %>% 
-  drop_na(weight, weeks) %>% 
-  filter(weeks > 26)
-
-
-get_correlation(births_post26, 
-                weeks ~ weight)
-```
-:::
-:::
 
 ## 
 
@@ -269,7 +239,7 @@ Anscombe Correlations
 :::
 
 ::: columns
-::: {.column width="75%"}
+::: {.column width="65%"}
 ```{r}
 #| echo: false
 #| out-width: 100%
@@ -289,8 +259,8 @@ ggplot(data = anscombe, aes(x = x, y = y)) +
 ::: {.column width="5%"}
 :::
 
-::: {.column width="20%"}
-::: {style="font-size: 0.5em;"}
+::: {.column width="30%"}
+::: {style="font-size: 0.75em;"}
 Four datasets, very different graphical presentations
 
 -   same mean and standard deviation in both $x$ and $y$
@@ -305,6 +275,21 @@ Four datasets, very different graphical presentations
 <center>
 
 [For which of these relationships is correlation a reasonable summary measure?]{style="font-size: 1.25em; color: #e28743;"}
+
+## Calculating Correlation in R
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+births_post26 <- ncbirths %>% 
+  drop_na(weight, weeks) %>% 
+  filter(weeks > 26)
+
+
+get_correlation(births_post26, 
+                weeks ~ weight)
+```
 
 ## 
 
@@ -322,50 +307,90 @@ The Importance of Language
 
 ## 
 
-::: {style="font-size: 2em; color: #000000;"}
-Linear Regression
+::: columns
+::: {.column width="20%"}
+</br> Linear regression:
 :::
 
-::: incremental
--   Models are ubiquitous in Statistics!
-
--   We often assume that the value of our response variable is some function of our explanatory variable, plus some random noise.
-
-</br>
-
--   In this case, we assume the relationship between $x$ and $y$ takes the form of a **linear function**.
-    -   $response = intercept + slope \cdot explanatory + noise$
+::: {.column width="80%"}
+>  we assume the the relationship between our response variable ($y$) and 
+explanatory variable ($x$) can be modeled with a linear function, plus some random noise
 :::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Estimated / Fitted Regression Model
 :::
-
-$$
-  \widehat{y} = b_0 + b_1 \cdot x
-$$
 
 . . .
 
-<center>
+::: {.centered}
+$response = intercept + slope \cdot explanatory + noise$
+:::
 
-[Why does this equation have a hat on y?]{style="color: #e28743; font-size: 1.5em"}
+## Writing the Regression Equation
+
+</br>
+
+::: columns
+::: {.column width="47%"}
+::: {.fragment}
+**Population Model**
+
+$y = \beta_0 + \beta_1 \cdot x + \epsilon$
+
+</br>
+
+$y$ = response
+
+$\beta_0$ = population intercept
+
+$\beta_1$ = population slope
+
+$\epsilon$ = errors / residuals
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Sample Model**
+
+$\widehat{y} = b_0 + b_1 \cdot x$
+
+</br> 
+
+[Why does this equation have a hat on $y$?]{style="color: #e28743;"}
+:::
+:::
+:::
+
+
+# Linear Regression with One Numerical Explanatory Variable
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Coefficient Estimates
+Obtaining Coefficient Estimates
 :::
 
+Step 1: Fit a linear regression
 ```{r}
 #| echo: true
 #| code-line-numbers: false
 weeks_lm <- lm(weight ~ weeks, data = births_post26)
-  
+```
+
+. . .
+
+</br>
+
+Step 2: Obtain coefficient table
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
 get_regression_table(weeks_lm)
 ```
+
 
 ## 
 
@@ -400,18 +425,26 @@ get_regression_table(weeks_lm)
 
 [Write out the estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
 
-##  {background-color="#0F4C81"}
+##  {background-color="#b76352"}
 
-::: {style="font-size: 2.5em; color: #000000;"}
+::: columns
+::: {.column width="45%"}
+::: {style="font-size: 1.75em; color: #000000;"}
 How do you interpret the intercept value of `r filter(births_table, term == "intercept")$estimate`?
 :::
 
-. . .
+:::
 
-</br>
+::: {.column width="5%"}
+:::
 
-::: {style="font-size: 2.5em; color: #000000;"}
+::: {.column width="45%"}
+:::{.fragment}
+::: {style="font-size: 1.75em; color: #000000;"}
 How do you interpret the slope value of `r filter(births_table, term == "weeks")$estimate`?
+:::
+:::
+:::
 :::
 
 ## 
@@ -420,7 +453,7 @@ How do you interpret the slope value of `r filter(births_table, term == "weeks")
 Obtaining Residuals
 :::
 
-. . .
+</br>
 
 $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r filter(births_table, term == "weeks")$estimate` \cdot weeks$
 
@@ -430,57 +463,49 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 
 [What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?]{style="color: #e28743; font-size: 1.5em;"}
 
-## 
+<!-- ##  -->
 
-::: {style="font-size: 2em; color: #000000;"}
-A different explanatory variable
-:::
+<!-- ::: {style="font-size: 2em; color: #000000;"} -->
+<!-- A different explanatory variable -->
+<!-- ::: -->
 
-```{r}
-#| code-line-numbers: false
-#| echo: true
+<!-- ```{r} -->
+<!-- #| code-line-numbers: false -->
+<!-- #| echo: true -->
 
-weight_gain_lm <- lm(weight ~ gained, data = births_post26)
-  
-get_regression_table(weight_gain_lm)
-```
+<!-- weight_gain_lm <- lm(weight ~ gained, data = births_post26) -->
 
-. . .
+<!-- get_regression_table(weight_gain_lm) -->
+<!-- ``` -->
 
-</br>
+<!-- . . . -->
 
-[Write out this estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
+<!-- </br> -->
 
-## 
+<!-- [Write out this estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"} -->
 
-::: {style="font-size: 2em; color: #000000;"}
-How would you choose which model is better?!
-:::
+<!-- ##  -->
 
-. . .
+<!-- ::: {style="font-size: 2em; color: #000000;"} -->
+<!-- How would you choose which model is better?! -->
+<!-- ::: -->
 
-```{r}
-#| echo: true
-#| code-line-numbers: false
-births_post26 %>% 
-  drop_na(weight, gained, weeks) %>% 
-  summarize(cor_weeks = cor(weight, weeks), 
-            R_sq_weeks = cor_weeks^2, 
-            cor_gained = cor(weight, gained),
-            R_sq_gained = cor_gained^2)
-```
+<!-- . . . -->
 
-## 
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+<!-- births_post26 %>%  -->
+<!--   drop_na(weight, gained, weeks) %>%  -->
+<!--   summarize(cor_weeks = cor(weight, weeks),  -->
+<!--             R_sq_weeks = cor_weeks^2,  -->
+<!--             cor_gained = cor(weight, gained), -->
+<!--             R_sq_gained = cor_gained^2) -->
+<!-- ``` -->
 
-::: {style="font-size: 2.5em; color: #000000;"}
-Categorical Explanatory Variables
-:::
+# Linear Regression with One Categorical Explanatory Variables
 
-. . .
-
-::: {style="font-size: 1.5em;"}
-Finding `distinct` levels:
-:::
+## Step 1: Finding `distinct` levels
 
 ```{r}
 #| code-line-numbers: false
@@ -491,12 +516,65 @@ distinct(births_post26, habit)
 
 ## 
 
+::: {style="font-size: 1.75em; color: #000000;"}
+Step 2: Fit a linear regression
+:::
+
+```{r}
+#| code-line-numbers: false
+#| echo: true
+habit_lm <- lm(weight ~ habit, data = births_post26)
+
+```
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.75em; color: #000000;"}
+Step 3: Obtain coefficient table
+:::
+
+```{r}
+#| code-line-numbers: false
+#| echo: true
+get_regression_table(habit_lm)
+```
+
+. . .
+
+::: {.centered}
+::: {style="font-size: 2em;"}
+🤔
+:::
+:::
+
+## Estimated Regression Equation
+
+```{r}
+get_regression_table(habit_lm)
+```
+
+</br> 
+
+. . .
+
+$$\widehat{weight} = 7.23 - 0.4 \cdot Smoker$$
+
+</br>
+
+. . .
+
+[But what does $Smoker$ represent???]{style="color: #e28743; font-size: 1.25em;"}
+
+## 
+
 ::: {style="font-size: 2em; color: #000000;"}
 Indicator Variables
 :::
 
 <center>$$
-  \hat{y} = b_0 + b_1 \cdot x
+  \widehat{y} = b_0 + b_1 \cdot x
 $$</center>
 
 . . .
@@ -513,14 +591,22 @@ $x$ is a categorical variable with levels:
 :::
 
 ::: {.column width="55%"}
-Need:
+We need to convert to:
 
--   "baseline" mean
--   "offsets"
+-   a "baseline" group
+-   "offsets" / adjustments to the baseline
 :::
 :::
 
 . . .
+
+[Based on the regression table, what `habit` group was chosen to be the baseline?]{style="color: #e28743; font-size: 1.25em;"}
+
+## A More Intuitive Equation
+
+$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{Smoker}(x)$$
+
+where 
 
 <center>
 
@@ -528,22 +614,19 @@ $1_{smoker}(x) = 1$ if the mother was a `"smoker"`
 
 $1_{smoker}(x) = 0$ if the mother was a `"nonsmoker"`
 
-## 
+## Obtaining Group Means
 
-::: {style="font-size: 2em; color: #000000;"}
-A different equation
-:::
+$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{Smoker}(x)$$
+</br>
 
-```{r}
-#| code-line-numbers: false
-#| echo: true
-habit_lm <- lm(weight ~ habit, data = births_post26)
-  
-get_regression_table(habit_lm)
-```
-
-. . .
+Given the equation, what is the estimated mean birth weight for nonsmoking mothers?
 
 </br>
 
-[What is the estimated mean birth weight for nonsmoking mothers?]{style="color: #e28743; font-size: 1.5em;"}
+For smoking mothers?
+
+# Choose Your Adventure
+
+## Statistical Critique
+
+## Midterm Project Proposal
