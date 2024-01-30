@@ -4736,7 +4736,7 @@
     "href": "slides/week4-day1.html#section-3",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
+    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
   },
   {
     "objectID": "slides/week4-day1.html#section-4",
@@ -4750,7 +4750,7 @@
     "href": "slides/week4-day1.html#section-5",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
+    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
   },
   {
     "objectID": "slides/week4-day1.html#section-6",
@@ -4778,7 +4778,7 @@
     "href": "slides/week4-day1.html#section-9",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n  \n  \n  \n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-10",
@@ -4799,7 +4799,7 @@
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\n\n🤔"
+    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\n\n🤔"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
@@ -6151,7 +6151,7 @@
     "href": "slides/week4-day1.html#estimated-regression-equation",
     "title": "Introduction to Linear Regression",
     "section": "Estimated Regression Equation",
-    "text": "Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
+    "text": "Estimated Regression Equation\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
   },
   {
     "objectID": "slides/week4-day1.html#choosing-baseline-group",
@@ -6207,6 +6207,6 @@
     "href": "slides/week4-day1.html#step-2-obtain-coefficient-table",
     "title": "Introduction to Linear Regression",
     "section": "Step 2: Obtain coefficient table",
-    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
+    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
   }
 ]

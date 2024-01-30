@@ -174,9 +174,7 @@ How would your characterize this relationship?
 
 ## Cleaning & Filtering the Data
 
-It seems like pregnancies with a gestation less than 28 weeks have a non-linear
-relationship with a baby's birth weight, so we will filter these observations out
-of our dataset. 
+It seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby's birth weight, so we will filter these observations out of our dataset.
 
 </br>
 
@@ -192,51 +190,80 @@ births_post28 <- ncbirths %>%
 
 . . .
 
-::: {.callout-caution}
+::: callout-caution
 # Change in scope of inference
 
 Removing these observations narrows the population of births we are able to make inferences onto!
 :::
+
 <!-- ##  -->
 
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
 <!-- What if you added another variable? -->
+
 <!-- ::: -->
 
 <!-- . . . -->
 
 <!-- ::: columns -->
+
 <!-- ::: {.column width="40%"} -->
+
 <!-- ```{r} -->
+
 <!-- #| echo: false -->
+
 <!-- #| fig-align: center -->
 
 <!-- ncbirths %>%  -->
+
 <!-- ggplot(aes(x = weeks, y = weight)) + -->
+
 <!--   geom_jitter() +  -->
+
 <!--   labs(x = "Length of pregnancy (in weeks)", -->
+
 <!--        y = "Birth weight of baby (in lbs)") +  -->
+
 <!--   my_theme -->
+
 <!-- ``` -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="60%"} -->
+
 <!-- ```{r} -->
+
 <!-- #| echo: false -->
+
 <!-- #| fig-align: center -->
 
 <!-- ncbirths %>%  -->
+
 <!--   drop_na(habit) %>%  -->
+
 <!--   ggplot(aes(x = weeks, y = weight, color = habit)) + -->
+
 <!--   geom_jitter(alpha = 0.5) +  -->
+
 <!--   labs(x = "Length of pregnancy (in weeks)", -->
+
 <!--        y = "Birth weight of baby (in lbs)",  -->
+
 <!--        color = "Habit") +  -->
+
 <!--   my_theme + -->
+
 <!--   theme(legend.text = element_text(size = 16),  -->
+
 <!--         legend.title = element_text(size = 20)) -->
+
 <!-- ``` -->
+
 <!-- ::: -->
+
 <!-- ::: -->
 
 # Summarizing a Linear Relationship
@@ -315,7 +342,7 @@ get_correlation(births_post28,
 
 . . .
 
-</br> 
+</br>
 
 What if I ran `get_correlation(births_post28, weight ~ weeks)` instead? Would I get the same value?
 
@@ -414,7 +441,6 @@ get_regression_table(weeks_lm)
 get_regression_table(weeks_lm) %>% 
   gt::gt()
 ```
-
 
 ## 
 
@@ -586,7 +612,6 @@ get_regression_table(habit_lm) %>%
 gt::gt()
 ```
 
-
 . . .
 
 ::: centered
@@ -673,45 +698,46 @@ For smoking mothers?
 
 # Choose Your Adventure
 
-## Statistical Critique
+## [Statistical Critique](../critique/critique-1.qmd)
 
-:::{.small}
-1. Get out the article you picked for *Statistics in Your Field* (Week 1)
+::: small
+1.  Get out the article you picked for *Statistics in Your Field* (Week 1)
 
-2. Choose a visualization from the article
+2.  Choose a visualization from the article
 :::
 
-:::{.callout-tip}
+::: callout-tip
 # Use a table if there are no visualizations
 :::
 
-:::{.small}
-3. Where are **variables** being used in the visualization / table? Those are the aesthetics!
+::: small
+3.  Where are **variables** being used in the visualization / table? Those are the aesthetics!
 
-4. Write a critique of the good / bad aspects of the plot
+4.  Write a critique of the good / bad aspects of the plot
 
 *Repeat with a "pop" visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph).*
 :::
 
 ## Midterm Project Proposal
 
-::: {.small}
-1. Choose a dataset
+::: small
+1.  Choose a dataset
 
-2. Choose a numerical response variable
+2.  Choose a numerical response variable
 
-3. Choose a numerical explanatory variable
+3.  Choose a numerical explanatory variable
 
-4. Choose a second explanatory variable, either numerical or categorical 
+4.  Choose a second explanatory variable, either numerical or categorical
 :::
 
-:::{.callout-tip}
+::: callout-tip
 # Checking values of your numerical variable(s)
-:::{.small}
-Your numerical variable **cannot** have a small (e.g., 2 or 3) number of values. You can use the `distinct()` function to determine the unique values of your variable. For example, by running `distinct(hbr_maples, year)` I would discover that `year` only has two values (2003 and 2004), meaning `year` is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!  
+
+::: small
+Your numerical variable **cannot** have a small (e.g., 2 or 3) number of values. You can use the `distinct()` function to determine the unique values of your variable. For example, by running `distinct(hbr_maples, year)` I would discover that `year` only has two values (2003 and 2004), meaning `year` is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!
 :::
 :::
 
-:::{.small}
-5. Write your Introduction
+::: small
+5.  Write your Introduction
 :::
