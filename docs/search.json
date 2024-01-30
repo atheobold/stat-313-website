@@ -4736,84 +4736,84 @@
     "href": "slides/week4-day1.html#section-3",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nshape\ndirection\nstrength\noutliers"
+    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
   },
   {
     "objectID": "slides/week4-day1.html#section-4",
     "href": "slides/week4-day1.html#section-4",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "What if you added another variable?"
+    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
   },
   {
     "objectID": "slides/week4-day1.html#section-5",
     "href": "slides/week4-day1.html#section-5",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
+    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
   },
   {
     "objectID": "slides/week4-day1.html#section-6",
     "href": "slides/week4-day1.html#section-6",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
+    "text": "The Importance of Language\n\n\n\nThe word “correlation” has both a precise mathematical definition and a more general definition for typical usage in English.\nThese uses are obviously related and generally in sync.\nThere are times when these two uses can be conflated and / or misconstrued."
   },
   {
     "objectID": "slides/week4-day1.html#section-7",
     "href": "slides/week4-day1.html#section-7",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "The Importance of Language\n\n\n\nThe word “correlation” has both a precise mathematical definition and a more general definition for typical usage in English.\nThese uses are obviously related and generally in sync.\nThere are times when these two uses can be conflated and/or misconstrued."
+    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
   },
   {
     "objectID": "slides/week4-day1.html#section-8",
     "href": "slides/week4-day1.html#section-8",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
+    "text": "Our focus (for now…)"
   },
   {
     "objectID": "slides/week4-day1.html#section-9",
     "href": "slides/week4-day1.html#section-9",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Coefficient Estimates\n\nStep 1: Fit a linear regression\n\nweeks_lm &lt;- lm(weight ~ weeks, data = births_post26)\n\n\n\nStep 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-10",
     "href": "slides/week4-day1.html#section-10",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Our focus (for now…)"
+    "text": "How do you interpret the intercept value of -5.003?\n\n\n\n\n\n\nHow do you interpret the slope value of 0.316?"
   },
   {
     "objectID": "slides/week4-day1.html#section-11",
     "href": "slides/week4-day1.html#section-11",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept   -5.34      0.565     -9.45       0   -6.45    -4.23 \n2 weeks        0.325     0.015     22.2        0    0.296    0.354\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
   },
   {
     "objectID": "slides/week4-day1.html#section-12",
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "How do you interpret the intercept value of -5.341?\n\n\n\n\n\n\nHow do you interpret the slope value of 0.325?"
+    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\n\n🤔"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
     "href": "slides/week4-day1.html#section-13",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.341+0.325 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
   },
   {
     "objectID": "slides/week4-day1.html#section-14",
     "href": "slides/week4-day1.html#section-14",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit, data = births_post26)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n# A tibble: 2 × 7\n  term          estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept         7.23     0.047    155.     0        7.14     7.32 \n2 habit: smoker    -0.4      0.13      -3.07   0.002   -0.656   -0.145\n\n\n\n\n\n\n🤔"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
   },
   {
     "objectID": "slides/week4-day1.html#section-15",
@@ -6130,7 +6130,7 @@
     "href": "slides/week4-day1.html#calculating-correlation-in-r",
     "title": "Introduction to Linear Regression",
     "section": "Calculating Correlation in R",
-    "text": "Calculating Correlation in R\n\nbirths_post26 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 26)\n\n\nget_correlation(births_post26, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.578"
+    "text": "Calculating Correlation in R\n\nget_correlation(births_post28, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.557\n\n\n\n\nWhat if I ran get_correlation(births_post28, weight ~ weeks) instead? Would I get the same value?"
   },
   {
     "objectID": "slides/week4-day1.html#writing-the-regression-equation",
@@ -6144,14 +6144,14 @@
     "href": "slides/week4-day1.html#step-1-finding-distinct-levels",
     "title": "Introduction to Linear Regression",
     "section": "Step 1: Finding distinct levels",
-    "text": "Step 1: Finding distinct levels\n\ndistinct(births_post26, habit)\n\n# A tibble: 2 × 1\n  habit    \n  &lt;fct&gt;    \n1 nonsmoker\n2 smoker"
+    "text": "Step 1: Finding distinct levels\n\ndistinct(births_post28, habit)\n\n# A tibble: 2 × 1\n  habit    \n  &lt;fct&gt;    \n1 nonsmoker\n2 smoker"
   },
   {
     "objectID": "slides/week4-day1.html#estimated-regression-equation",
     "href": "slides/week4-day1.html#estimated-regression-equation",
     "title": "Introduction to Linear Regression",
     "section": "Estimated Regression Equation",
-    "text": "Estimated Regression Equation\n\n\n# A tibble: 2 × 7\n  term          estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept         7.23     0.047    155.     0        7.14     7.32 \n2 habit: smoker    -0.4      0.13      -3.07   0.002   -0.656   -0.145\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
+    "text": "Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
   },
   {
     "objectID": "slides/week4-day1.html#choosing-baseline-group",
@@ -6165,7 +6165,7 @@
     "href": "slides/week4-day1.html#a-more-intuitive-equation",
     "title": "Introduction to Linear Regression",
     "section": "A More Intuitive Equation",
-    "text": "A More Intuitive Equation\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot 1_{Smoker}(x)\\]\nwhere\n\n\\(1_{smoker}(x) = 1\\) if the mother was a \"smoker\"\n\\(1_{smoker}(x) = 0\\) if the mother was a \"nonsmoker\""
+    "text": "A More Intuitive Equation\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot 1_{smoker}(x)\\]\nwhere\n\n\\(1_{smoker}(x) = 1\\) if the mother was a \"smoker\"\n\\(1_{smoker}(x) = 0\\) if the mother was a \"nonsmoker\""
   },
   {
     "objectID": "slides/week4-day1.html#obtaining-group-means",
@@ -6179,13 +6179,34 @@
     "href": "slides/week4-day1.html#statistical-critique",
     "title": "Introduction to Linear Regression",
     "section": "Statistical Critique",
-    "text": "Statistical Critique"
+    "text": "Statistical Critique\n\n\nGet out the article you picked for Statistics in Your Field (Week 1)\nChoose a visualization from the article\n\n\n\n\n\n\n\n\nUse a table if there are no visualizations\n\n\n\n\n\n\n\n\nWhere are variables being used in the visualization / table? Those are the aesthetics!\nWrite a critique of the good / bad aspects of the plot\n\nRepeat with a “pop” visualization from the New York Times."
   },
   {
     "objectID": "slides/week4-day1.html#midterm-project-proposal",
     "href": "slides/week4-day1.html#midterm-project-proposal",
     "title": "Introduction to Linear Regression",
     "section": "Midterm Project Proposal",
-    "text": "Midterm Project Proposal"
+    "text": "Midterm Project Proposal\n\n\nChoose a dataset\nChoose a numerical response variable\nChoose a numerical explanatory variable\nChoose a second explanatory variable, either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\nYour numerical variable cannot have a small (e.g., 2 or 3) number of values. You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\n\nWrite your Introduction"
+  },
+  {
+    "objectID": "slides/week4-day1.html#cleaning-filtering-the-data",
+    "href": "slides/week4-day1.html#cleaning-filtering-the-data",
+    "title": "Introduction to Linear Regression",
+    "section": "Cleaning & Filtering the Data",
+    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n\n\n\n\n\n\n\nChange in scope of inference\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
+  },
+  {
+    "objectID": "slides/week4-day1.html#step-1-fit-a-linear-regression",
+    "href": "slides/week4-day1.html#step-1-fit-a-linear-regression",
+    "title": "Introduction to Linear Regression",
+    "section": "Step 1: Fit a linear regression",
+    "text": "Step 1: Fit a linear regression\n\nweeks_lm &lt;- lm(weight ~ weeks, \n               data = births_post28)"
+  },
+  {
+    "objectID": "slides/week4-day1.html#step-2-obtain-coefficient-table",
+    "href": "slides/week4-day1.html#step-2-obtain-coefficient-table",
+    "title": "Introduction to Linear Regression",
+    "section": "Step 2: Obtain coefficient table",
+    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
   }
 ]

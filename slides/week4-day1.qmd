@@ -1,6 +1,8 @@
 ---
 title: "Introduction to Linear Regression"
-format: revealjs
+format: 
+  revealjs:
+    theme: style.scss
 embed-resources: true
 editor: visual
 ---
@@ -24,11 +26,11 @@ my_theme <- theme_bw() +
 ```
 
 ```{r post-26-births-table}
-births_post26 <- ncbirths %>% 
+births_post28 <- ncbirths %>% 
   drop_na(weight, weeks) %>% 
-  filter(weeks > 26)
+  filter(weeks > 28)
 
-weeks_lm <- lm(weight ~ weeks, data = births_post26)
+weeks_lm <- lm(weight ~ weeks, data = births_post28)
 
 births_table <- get_regression_table(weeks_lm)
 ```
@@ -44,7 +46,7 @@ Relationships Between Variables
 ::: columns
 ::: {.column width="40%"}
 ::: {.fragment .fade-in-then-semi-out}
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 0.65em;"}
 -   Response variable
     -   a.k.a. $y$, dependent
     -   The quantity you want to understand
@@ -57,8 +59,8 @@ Relationships Between Variables
 :::
 
 ::: {.column width="55%"}
-::: {style="font-size: 0.85em;"}
-::: {.fragment}
+::: {style="font-size: 0.65em;"}
+::: fragment
 -   Explanatory variable
     -   a.k.a. $x$, independent, explanatory, predictor
     -   Something you think might be related to the response
@@ -163,54 +165,79 @@ ggplot(aes(x = weeks, y = weight)) +
 ::: {.column width="30%"}
 How would your characterize this relationship?
 
--   shape
+-   form
 -   direction
 -   strength
 -   outliers
 :::
 :::
 
-## 
+## Cleaning & Filtering the Data
 
-::: {style="font-size: 2em; color: #000000;"}
-What if you added another variable?
-:::
+It seems like pregnancies with a gestation less than 28 weeks have a non-linear
+relationship with a baby's birth weight, so we will filter these observations out
+of our dataset. 
+
+</br>
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+#| label: filter-clean-births-post-26-weeks
+
+births_post28 <- ncbirths %>% 
+  drop_na(weight, weeks) %>% 
+  filter(weeks > 28)
+```
 
 . . .
 
-::: columns
-::: {.column width="40%"}
-```{r}
-#| echo: false
-#| fig-align: center
+::: {.callout-caution}
+# Change in scope of inference
 
-ncbirths %>% 
-ggplot(aes(x = weeks, y = weight)) +
-  geom_jitter() + 
-  labs(x = "Length of pregnancy (in weeks)",
-       y = "Birth weight of baby (in lbs)") + 
-  my_theme
-```
+Removing these observations narrows the population of births we are able to make inferences onto!
 :::
+<!-- ##  -->
 
-::: {.column width="60%"}
-```{r}
-#| echo: false
-#| fig-align: center
+<!-- ::: {style="font-size: 2em; color: #000000;"} -->
+<!-- What if you added another variable? -->
+<!-- ::: -->
 
-ncbirths %>% 
-  drop_na(habit) %>% 
-  ggplot(aes(x = weeks, y = weight, color = habit)) +
-  geom_jitter(alpha = 0.5) + 
-  labs(x = "Length of pregnancy (in weeks)",
-       y = "Birth weight of baby (in lbs)", 
-       color = "Habit") + 
-  my_theme +
-  theme(legend.text = element_text(size = 16), 
-        legend.title = element_text(size = 20))
-```
-:::
-:::
+<!-- . . . -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
+
+<!-- ncbirths %>%  -->
+<!-- ggplot(aes(x = weeks, y = weight)) + -->
+<!--   geom_jitter() +  -->
+<!--   labs(x = "Length of pregnancy (in weeks)", -->
+<!--        y = "Birth weight of baby (in lbs)") +  -->
+<!--   my_theme -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ::: {.column width="60%"} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
+
+<!-- ncbirths %>%  -->
+<!--   drop_na(habit) %>%  -->
+<!--   ggplot(aes(x = weeks, y = weight, color = habit)) + -->
+<!--   geom_jitter(alpha = 0.5) +  -->
+<!--   labs(x = "Length of pregnancy (in weeks)", -->
+<!--        y = "Birth weight of baby (in lbs)",  -->
+<!--        color = "Habit") +  -->
+<!--   my_theme + -->
+<!--   theme(legend.text = element_text(size = 16),  -->
+<!--         legend.title = element_text(size = 20)) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
 
 # Summarizing a Linear Relationship
 
@@ -282,14 +309,15 @@ Four datasets, very different graphical presentations
 #| echo: true
 #| code-line-numbers: false
 
-births_post26 <- ncbirths %>% 
-  drop_na(weight, weeks) %>% 
-  filter(weeks > 26)
-
-
-get_correlation(births_post26, 
+get_correlation(births_post28, 
                 weeks ~ weight)
 ```
+
+. . .
+
+</br> 
+
+What if I ran `get_correlation(births_post28, weight ~ weeks)` instead? Would I get the same value?
 
 ## 
 
@@ -302,7 +330,7 @@ The Importance of Language
 
 -   These uses are obviously related and generally in sync.
 
--   There are times when these two uses can be conflated and/or misconstrued.
+-   There are times when these two uses can be conflated and / or misconstrued.
 :::
 
 ## 
@@ -313,14 +341,13 @@ The Importance of Language
 :::
 
 ::: {.column width="80%"}
->  we assume the the relationship between our response variable ($y$) and 
-explanatory variable ($x$) can be modeled with a linear function, plus some random noise
+> we assume the the relationship between our response variable ($y$) and explanatory variable ($x$) can be modeled with a linear function, plus some random noise
 :::
 :::
 
 . . .
 
-::: {.centered}
+::: centered
 $response = intercept + slope \cdot explanatory + noise$
 :::
 
@@ -330,7 +357,7 @@ $response = intercept + slope \cdot explanatory + noise$
 
 ::: columns
 ::: {.column width="47%"}
-::: {.fragment}
+::: fragment
 **Population Model**
 
 $y = \beta_0 + \beta_1 \cdot x + \epsilon$
@@ -351,44 +378,41 @@ $\epsilon$ = errors / residuals
 :::
 
 ::: {.column width="50%"}
-::: {.fragment}
+::: fragment
 **Sample Model**
 
 $\widehat{y} = b_0 + b_1 \cdot x$
 
-</br> 
+</br>
 
 [Why does this equation have a hat on $y$?]{style="color: #e28743;"}
 :::
 :::
 :::
 
-
 # Linear Regression with One Numerical Explanatory Variable
 
-## 
+## Step 1: Fit a linear regression
 
-::: {style="font-size: 2em; color: #000000;"}
-Obtaining Coefficient Estimates
-:::
-
-Step 1: Fit a linear regression
 ```{r}
 #| echo: true
 #| code-line-numbers: false
-weeks_lm <- lm(weight ~ weeks, data = births_post26)
+weeks_lm <- lm(weight ~ weeks, 
+               data = births_post28)
 ```
 
-. . .
-
-</br>
-
-Step 2: Obtain coefficient table
+## Step 2: Obtain coefficient table
 
 ```{r}
 #| echo: true
 #| code-line-numbers: false
+#| eval: false
 get_regression_table(weeks_lm)
+```
+
+```{r}
+get_regression_table(weeks_lm) %>% 
+  gt::gt()
 ```
 
 
@@ -398,9 +422,7 @@ get_regression_table(weeks_lm)
 Our focus (for now...)
 :::
 
-<!-- Change to only focus on estimates! -->
-
-![](images/coefficients.jpg)
+![](images/table-focus-estimate-sd.jpeg)
 
 ## 
 
@@ -414,7 +436,8 @@ $$\widehat{y} = b_0 + b_1 \cdot x$$
 
 ```{r}
 #| code-line-numbers: false
-get_regression_table(weeks_lm)
+get_regression_table(weeks_lm) %>% 
+  gt::gt()
 ```
 
 . . .
@@ -432,14 +455,13 @@ get_regression_table(weeks_lm)
 ::: {style="font-size: 1.75em; color: #000000;"}
 How do you interpret the intercept value of `r filter(births_table, term == "intercept")$estimate`?
 :::
-
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-:::{.fragment}
+::: fragment
 ::: {style="font-size: 1.75em; color: #000000;"}
 How do you interpret the slope value of `r filter(births_table, term == "weeks")$estimate`?
 :::
@@ -466,16 +488,21 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 <!-- ##  -->
 
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
 <!-- A different explanatory variable -->
+
 <!-- ::: -->
 
 <!-- ```{r} -->
+
 <!-- #| code-line-numbers: false -->
+
 <!-- #| echo: true -->
 
 <!-- weight_gain_lm <- lm(weight ~ gained, data = births_post26) -->
 
 <!-- get_regression_table(weight_gain_lm) -->
+
 <!-- ``` -->
 
 <!-- . . . -->
@@ -487,20 +514,31 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 <!-- ##  -->
 
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
 <!-- How would you choose which model is better?! -->
+
 <!-- ::: -->
 
 <!-- . . . -->
 
 <!-- ```{r} -->
+
 <!-- #| echo: true -->
+
 <!-- #| code-line-numbers: false -->
+
 <!-- births_post26 %>%  -->
+
 <!--   drop_na(weight, gained, weeks) %>%  -->
+
 <!--   summarize(cor_weeks = cor(weight, weeks),  -->
+
 <!--             R_sq_weeks = cor_weeks^2,  -->
+
 <!--             cor_gained = cor(weight, gained), -->
+
 <!--             R_sq_gained = cor_gained^2) -->
+
 <!-- ``` -->
 
 # Linear Regression with One Categorical Explanatory Variables
@@ -511,7 +549,7 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 #| code-line-numbers: false
 #| echo: true
 
-distinct(births_post26, habit)
+distinct(births_post28, habit)
 ```
 
 ## 
@@ -523,7 +561,8 @@ Step 2: Fit a linear regression
 ```{r}
 #| code-line-numbers: false
 #| echo: true
-habit_lm <- lm(weight ~ habit, data = births_post26)
+habit_lm <- lm(weight ~ habit,
+               data = births_post28)
 
 ```
 
@@ -538,12 +577,19 @@ Step 3: Obtain coefficient table
 ```{r}
 #| code-line-numbers: false
 #| echo: true
+#| eval: false
 get_regression_table(habit_lm)
 ```
 
+```{r}
+get_regression_table(habit_lm) %>% 
+gt::gt()
+```
+
+
 . . .
 
-::: {.centered}
+::: centered
 ::: {style="font-size: 2em;"}
 🤔
 :::
@@ -552,10 +598,11 @@ get_regression_table(habit_lm)
 ## Estimated Regression Equation
 
 ```{r}
-get_regression_table(habit_lm)
+get_regression_table(habit_lm) %>% 
+gt::gt()
 ```
 
-</br> 
+</br>
 
 . . .
 
@@ -604,9 +651,9 @@ We need to convert to:
 
 ## A More Intuitive Equation
 
-$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{Smoker}(x)$$
+$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{smoker}(x)$$
 
-where 
+where
 
 <center>
 
@@ -616,8 +663,7 @@ $1_{smoker}(x) = 0$ if the mother was a `"nonsmoker"`
 
 ## Obtaining Group Means
 
-$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{Smoker}(x)$$
-</br>
+$$\widehat{weight} = 7.23 - 0.4 \cdot 1_{Smoker}(x)$$ </br>
 
 Given the equation, what is the estimated mean birth weight for nonsmoking mothers?
 
@@ -629,4 +675,43 @@ For smoking mothers?
 
 ## Statistical Critique
 
+:::{.small}
+1. Get out the article you picked for *Statistics in Your Field* (Week 1)
+
+2. Choose a visualization from the article
+:::
+
+:::{.callout-tip}
+# Use a table if there are no visualizations
+:::
+
+:::{.small}
+3. Where are **variables** being used in the visualization / table? Those are the aesthetics!
+
+4. Write a critique of the good / bad aspects of the plot
+
+*Repeat with a "pop" visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph).*
+:::
+
 ## Midterm Project Proposal
+
+::: {.small}
+1. Choose a dataset
+
+2. Choose a numerical response variable
+
+3. Choose a numerical explanatory variable
+
+4. Choose a second explanatory variable, either numerical or categorical 
+:::
+
+:::{.callout-tip}
+# Checking values of your numerical variable(s)
+:::{.small}
+Your numerical variable **cannot** have a small (e.g., 2 or 3) number of values. You can use the `distinct()` function to determine the unique values of your variable. For example, by running `distinct(hbr_maples, year)` I would discover that `year` only has two values (2003 and 2004), meaning `year` is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!  
+:::
+:::
+
+:::{.small}
+5. Write your Introduction
+:::
