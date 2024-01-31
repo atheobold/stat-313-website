@@ -4757,49 +4757,49 @@
     "href": "slides/week4-day1.html#section-6",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "The Importance of Language\n\n\n\nThe word “correlation” has both a precise mathematical definition and a more general definition for typical usage in English.\nThese uses are obviously related and generally in sync.\nThere are times when these two uses can be conflated and / or misconstrued."
+    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
   },
   {
     "objectID": "slides/week4-day1.html#section-7",
     "href": "slides/week4-day1.html#section-7",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
+    "text": "Our focus (for now…)"
   },
   {
     "objectID": "slides/week4-day1.html#section-8",
     "href": "slides/week4-day1.html#section-8",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Our focus (for now…)"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n  \n  \n  \n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-9",
     "href": "slides/week4-day1.html#section-9",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n  \n  \n  \n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "How do you interpret the intercept value of -5.003?\n\n\n\n\n\n\nHow do you interpret the slope value of 0.316?"
   },
   {
     "objectID": "slides/week4-day1.html#section-10",
     "href": "slides/week4-day1.html#section-10",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "How do you interpret the intercept value of -5.003?\n\n\n\n\n\n\nHow do you interpret the slope value of 0.316?"
+    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
   },
   {
     "objectID": "slides/week4-day1.html#section-11",
     "href": "slides/week4-day1.html#section-11",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
+    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\n\n🤔"
   },
   {
     "objectID": "slides/week4-day1.html#section-12",
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\n\n🤔"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
@@ -5997,7 +5997,7 @@
     "href": "project/midterm-proposal-313.html#option-2-use-a-public-dataset",
     "title": "STAT 313: Midterm Project Proposal",
     "section": "1.2 Option 2 – Use a public dataset",
-    "text": "1.2 Option 2 – Use a public dataset\nI’ve compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis. Each of these datasets are included in an R package, so there is no need for you to download the dataset! All you will need to do is load in the necessary package (e.g., library(lterdatasampler)) at the beginning of your analysis.\nFrom the lterdatasampler package:\n\nand_vertebrates: Size data for Cutthroat trout and salamanders in different sections of forest (from Lab 3).\nntl_icecover: Data on duration of ice cover of lakes in the Madison, WI area (from Lab 4).\nhbr_maples: Data on the growth of Sugar Maple (Acer saccharum) seedlings in response to calcium addition.\npie_crab: Data on Fiddler crab body size in salt marshes from Florida to Massachusetts.\n\nFrom the openintro package:\n\nbirths14: Data from US births from 2014 (similar to ncbirths dataset from Week 4).\npossum: Data representing possums in Australia and New Guinea.\n\nFrom the moderndive package:\n\nevals: Data from end of semester student evaluations from University of Texas at Austin (discussed in ModernDive textbook).\n\nFrom the gapminder package:\n\ngapminder: Data on life expectancy, GDP per capita, and population by country (discussed in ModernDive textbook).\n\n\nDeliverable\nFor the Midterm Project Proposal assignment on Canvas, you are required to state at the beginning of the document, the name of the dataset you have chosen to use."
+    "text": "1.2 Option 2 – Use a public dataset\nI’ve compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis. Each of these datasets are included in an R package, so there is no need for you to download the dataset! All you will need to do is load in the necessary package (e.g., library(lterdatasampler)) at the beginning of your analysis.\nFrom the lterdatasampler package:\n\nand_vertebrates: Size data for Cutthroat trout and salamanders in different sections of forest (from Lab 3).\nntl_icecover: Data on duration of ice cover of lakes in the Madison, WI area (from Lab 4).\nhbr_maples: Data on the growth of Sugar Maple (Acer saccharum) seedlings in response to calcium addition.\npie_crab: Data on Fiddler crab body size in salt marshes from Florida to Massachusetts.\n\nFrom the openintro package:\n\nbirths14: Data from US births from 2014 (similar to ncbirths dataset from Week 4).\npossum: Data representing possums in Australia and New Guinea – link to scientific article referenced in possum information\n\nFrom the moderndive package:\n\nevals: Data from end of semester student evaluations from University of Texas at Austin (discussed in ModernDive textbook).\n\nFrom the gapminder package:\n\ngapminder: Data on life expectancy, GDP per capita, and population by country (discussed in ModernDive textbook).\n\n\nDeliverable\nFor the Midterm Project Proposal assignment on Canvas, you are required to state at the beginning of the document, the name of the dataset you have chosen to use."
   },
   {
     "objectID": "project/midterm-proposal-313.html#if-you-chose-to-use-your-own-data",

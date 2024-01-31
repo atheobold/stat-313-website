@@ -24,7 +24,7 @@ For the **Midterm Project Proposal** assignment on Canvas, you are required to s
 
 ## Option 2 -- Use a public dataset
 
-I've compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis. Each of these datasets are included in an R package, so there is no need for you to download the dataset! All you will need to do is load in the necessary package (e.g., `library(lterdatasampler)`) at the beginning of your analysis. 
+I've compiled a list of datasets from a variety of contexts, all which are relatively tidy and ready for analysis. Each of these datasets are included in an R package, so there is no need for you to download the dataset! All you will need to do is load in the necessary package (e.g., `library(lterdatasampler)`) at the beginning of your analysis.
 
 From the **lterdatasampler** package:
 
@@ -36,7 +36,7 @@ From the **lterdatasampler** package:
 From the **openintro** package:
 
 -   [`births14`](https://www.openintro.org/data/index.php?data=births14): Data from US births from 2014 (similar to `ncbirths` dataset from Week 4).
--   [`possum`](https://www.openintro.org/data/index.php?data=possum): Data representing possums in Australia and New Guinea.
+-   [`possum`](https://www.openintro.org/data/index.php?data=possum): Data representing possums in Australia and New Guinea – [link to scientific article referenced in `possum` information](https://cpslo-my.sharepoint.com/:b:/g/personal/atheobol_calpoly_edu/EUxnosoiksNLhrGopLITu8oBSNoSuZGoNBJ9mdwPPeKJ4w?e=tFRm96)
 
 From the **moderndive** package:
 
@@ -60,14 +60,14 @@ I don't know anything about your data, so I expect for this description to be *e
 
 **Step 2:** Choose your variables
 
-We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose 
+We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose
 
-- one numeric variable for the response variable
-- one numeric variable for the explanatory variable
+-   one numeric variable for the response variable
+-   one numeric variable for the explanatory variable
 
-Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical. 
+Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical.
 
-:::{.callout-note}
+::: callout-note
 # Write-up
 
 Describe each variable you chose for your analysis---how was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?
@@ -79,19 +79,20 @@ Describe each variable you chose for your analysis---how was the variable measur
 
 ::: callout-tip
 # Getting information about your dataset
+
 To obtain information on the dataset, click on the link provided in its name!
 :::
 
 **Step 2:** Choose your variables
 
-We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose 
+We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You **must** choose
 
-- one numeric variable for the response variable
-- one numeric variable for the explanatory variable
+-   one numeric variable for the response variable
+-   one numeric variable for the explanatory variable
 
-Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical. 
+Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical.
 
-:::{.callout-note}
+::: callout-note
 # Write-up
 
 Describe each variable you chose for your analysis---how was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?

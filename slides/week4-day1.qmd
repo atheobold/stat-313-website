@@ -348,20 +348,6 @@ What if I ran `get_correlation(births_post28, weight ~ weeks)` instead? Would I 
 
 ## 
 
-::: {style="font-size: 2em; color: #000000;"}
-The Importance of Language
-:::
-
-::: incremental
--   The word "correlation" has both a precise mathematical definition and a more general definition for typical usage in English.
-
--   These uses are obviously related and generally in sync.
-
--   There are times when these two uses can be conflated and / or misconstrued.
-:::
-
-## 
-
 ::: columns
 ::: {.column width="20%"}
 </br> Linear regression:
@@ -567,7 +553,7 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 
 <!-- ``` -->
 
-# Linear Regression with One Categorical Explanatory Variables
+# Linear Regression with One Categorical Explanatory Variable
 
 ## Step 1: Finding `distinct` levels
 
