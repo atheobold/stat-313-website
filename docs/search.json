@@ -1316,7 +1316,7 @@
     "href": "slides/week4-day2.html#section-1",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Least Squares\n\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
+    "text": "Least Squares\n\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
   },
   {
     "objectID": "slides/week4-day2.html#section-2",
@@ -1358,7 +1358,7 @@
     "href": "slides/week4-day2.html#section-9",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
+    "text": "Would you exist?\n\n. . .\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
   },
   {
     "objectID": "slides/week5-day1.html#section",
@@ -6213,8 +6213,8 @@
     "objectID": "slides/week4-day2.html#revisions-due-tonight",
     "href": "slides/week4-day2.html#revisions-due-tonight",
     "title": "The Ugly History of Linear Regression",
-    "section": "Revisions Due Tonight",
-    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   },
   {
     "objectID": "slides/week4-day2.html#a-grading-reminder",
@@ -6256,7 +6256,7 @@
     "href": "slides/week4-day2.html#completing-revisions",
     "title": "The Ugly History of Linear Regression",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week4-day2.html#todays-data",
@@ -6277,7 +6277,7 @@
     "href": "slides/week4-day2.html#data-layout",
     "title": "The Ugly History of Linear Regression",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1874-12-10\n1875-04-15\n126\n1874\n\n\nLake Mendota\n2010-12-15\n2011-04-03\n110\n2010\n\n\nLake Mendota\n1969-12-16\n1970-04-08\n113\n1969\n\n\nLake Mendota\n2003-01-04\n2003-04-03\n89\n2002\n\n\nLake Monona\n1876-01-10\n1876-04-10\n91\n1875\n\n\nLake Monona\n2019-12-16\n2020-03-20\n80\n2019\n\n\nLake Monona\n1973-12-20\n1974-03-24\n94\n1973\n\n\nLake Monona\n1906-12-08\n1907-03-24\n106\n1906"
+    "text": "Data Layout\n\n\n\n\n\n\n  \n    \n    \n      lakeid\n      ice_on\n      ice_off\n      ice_duration\n      year\n    \n  \n  \n    Lake Mendota\n1874-12-10\n1875-04-15\n126\n1874\n    Lake Mendota\n2010-12-15\n2011-04-03\n110\n2010\n    Lake Mendota\n1969-12-16\n1970-04-08\n113\n1969\n    Lake Mendota\n2003-01-04\n2003-04-03\n89\n2002\n    Lake Monona\n1876-01-10\n1876-04-10\n91\n1875\n    Lake Monona\n2019-12-16\n2020-03-20\n80\n2019\n    Lake Monona\n1973-12-20\n1974-03-24\n94\n1973\n    Lake Monona\n1906-12-08\n1907-03-24\n106\n1906"
   },
   {
     "objectID": "slides/week4-day2.html#section-4",
@@ -6291,7 +6291,7 @@
     "href": "slides/week4-day2.html#section-7",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
+    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
   },
   {
     "objectID": "slides/week4-day2.html#section-10",
@@ -6299,5 +6299,12 @@
     "title": "The Ugly History of Linear Regression",
     "section": "",
     "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
+  },
+  {
+    "objectID": "slides/week4-day2.html",
+    "href": "slides/week4-day2.html",
+    "title": "The Ugly History of Linear Regression",
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   }
 ]
