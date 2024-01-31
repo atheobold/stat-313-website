@@ -1,8 +1,9 @@
 ---
 title: "Lab 4: Simple Linear Regression"
-author: "Your group's names here!"
-date: "April 27, 2023"
+author: "The names of the people working in your group TODAY!"
+date: "February 1, 2024"
 format: html
+embed-resources: true
 editor: visual
 execute: 
   eval: false
@@ -10,8 +11,6 @@ execute:
   warning: false
   message: false
 ---
-
-## Old Packages
 
 ```{r}
 #| label: packages

@@ -1,6 +1,8 @@
 ---
 title: "The Ugly History of Linear Regression"
-format: revealjs
+format: 
+  revealjs: 
+    theme: style.scss
 ---
 
 ```{r pakages}
@@ -13,9 +15,111 @@ library(gridExtra)
 library(kableExtra)
 library(png)
 library(moderndive)
+library(lterdatasampler)
 
 options(show.signif.stars = FALSE)
 ```
+
+# Lab 2
+
+## Revisions Due Tonight
+
+If you submitted revisions and your grade is still "Incomplete" -- either you forgot to submit reflections or you are being asked to complete a second round of revisions. 
+
+# Lab 3
+
+## A Grading Reminder
+
+<br>
+
+::: columns
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Complete" = Satisfactory
+:::
+
+<br>
+
+Your group obtained a "Success" on **every** question
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Incomplete" = Growing
+:::
+
+<br>
+
+Your group received a "Growing" on *at least one* question
+:::
+:::
+
+## Common Mistakes
+
+::: small
+-   Categorical variables in R (Q2)
+    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates? 
+-   Comparing distributions between groups (Q9)
+    -   Were 
+
+-   Comparing group means with distributions (Q11)
+    - Where did you believe the "center" of the distribution was? 
+    - Is that different from the means you are seeing? Why do you think that is? 
+:::
+
+## Copying the Lab -- Last Week's Recorder
+
+The person who typed your lab needs to make their project "public"
+
+1.  Open Posit Cloud
+2.  Go to the STAT 313 / 513 workspace
+3.  Click on "Your Content"
+4.  Open the settings for your Lab 1 project
+
+![](images/open-project-settings.png)
+
+## Copying the Lab -- Last Week's Recorder
+
+5.  Change the access for your project to "Space Members"
+
+![](images/make-project-public.png)
+
+## Copying the Lab -- Everyone Else
+
+1.  Find your group member's lab (you can use the search bar to search for their name)
+
+![](images/search-for-name.png)
+
+2.  Open their Lab 2 project
+3.  Select "Save a Permanent Copy"
+
+![](images/save-a-copy.png)
+
+## Completing Revisions
+
+Lab 2 revisions are due by Thursday, February 1.
+
+::: small
+1.  Read comments on Canvas
+2.  Copy your group's lab assignment
+3.  Complete your revisions
+4.  Render your revised Lab 2
+5.  Download your revised HTML
+6.  Submit your revisions to the [Lab 2 Revisions]{.underline} assignment
+:::
+
+::: callout-warning
+# Reflections
+
+::: small
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+:::
+:::
+
+## 
 
 <center>
 
@@ -225,6 +329,38 @@ More Information
 
 -   Radiolab Presents: G
     -   "G" is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.
-    -   <https://www.wnycstudios.org/podcasts/radiolab/projects/radiolab-presents-g>
+    -   [https://www.wnycstudios.org](https://www.wnycstudios.org/podcasts/radiolab/projects/radiolab-presents-g)
 -   How Eugenics shaped Statistics
-    -   <https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics>
+    -   [https://nautil.us](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
+    
+# Lab 4
+
+## Today's Data
+
+::: small
+> Data includes lake name, dates of freeze-up and thaw, and duration of ice cover of lakes in the Madison, WI area. Ice cover duration is the number of days that a lake is frozen, excluding periods where the lake thaws before refreezing again. Lakes Monona and Wingra are considered to be frozen if they are completely ice covered, while Lake Mendota is considered to be frozen if there is ice from Picnic Point to Maple Bluff and more than 50% of the lake is covered by ice.
+:::
+
+![](images/madison.jpeg)
+
+## Research Question
+
+</br> </br>
+
+::: centered
+> Has the duration of ice cover changed over the last 175 years?
+:::
+
+## Data Layout
+
+```{r}
+#| label: data-preview
+#| echo: false
+
+ntl_icecover %>% 
+  group_by(lakeid) %>% 
+  slice_sample(n = 4) %>% 
+  ungroup() %>% 
+  gt::gt()
+```
+
