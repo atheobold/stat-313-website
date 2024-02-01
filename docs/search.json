@@ -1309,56 +1309,56 @@
     "href": "slides/week4-day2.html#section",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Least Squares\n\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
+    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
   },
   {
     "objectID": "slides/week4-day2.html#section-1",
     "href": "slides/week4-day2.html#section-1",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Least Squares\n\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
+    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
   },
   {
     "objectID": "slides/week4-day2.html#section-2",
     "href": "slides/week4-day2.html#section-2",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "“regression”\n\n\n\n\n\n\n\n\nCoined by Francis Galton in the 19th century\nDescribed a biological phenomenon\n\nHeights of children of tall parents tend to be tall, but shorter than their parents"
+    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
   },
   {
     "objectID": "slides/week4-day2.html#section-3",
     "href": "slides/week4-day2.html#section-3",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "A “polymath”\n\n\n\n\n\n\n\n\nIn Statistics, Galton (1822–1911) is a towering figure.\nHe invented standard deviation, correlation, linear regression, ANOVA\nGalton’s developments and discoveries were fueled in large part by his fascination with the science of heredity."
+    "text": "knitr::include_graphics(\"images/bumi-patio.jpg\")"
   },
   {
     "objectID": "slides/week4-day2.html#section-5",
     "href": "slides/week4-day2.html#section-5",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Eugenics and the US\n\n\n\n\nIn 1896 Connecticut made it illegal for people with epilepsy or who were “feeble-minded” to marry.\nJohn Kellogg established a “pedigree registry”\nFrom 1909 to 1979 California sterilized nearly 20,000 residents of the state mental institutions\nIn 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution — “…three generations of imbeciles are enough.”\nBetween 1970 and 1976 between 25 and 50% of Native Americans were sterilized, many without consent"
+    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
   },
   {
     "objectID": "slides/week4-day2.html#section-6",
     "href": "slides/week4-day2.html#section-6",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Eugenics and the US\n\n\n\n\nIn 1896 Connecticut made it illegal for people with epilepsy or who were “feeble-minded” to marry.\nJohn Kellogg established a “pedigree registry”\nFrom 1909 to 1979 California sterilized nearly 20,000 residents of the state mental institutions\nIn 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution — “…three generations of imbeciles are enough.”\nBetween 1970 and 1976 between 25 and 50% of Native Americans were sterilized, many without consent"
+    "text": "knitr::include_graphics(\"images/bumi-water.jpg\")"
   },
   {
     "objectID": "slides/week4-day2.html#section-8",
     "href": "slides/week4-day2.html#section-8",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
+    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
   },
   {
     "objectID": "slides/week4-day2.html#section-9",
     "href": "slides/week4-day2.html#section-9",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "Would you exist?\n\n. . .\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
+    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
   },
   {
     "objectID": "slides/week5-day1.html#section",
@@ -2100,7 +2100,11 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01"
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
   },
   {
     "objectID": "computing-access.html",
@@ -4715,7 +4719,7 @@
     "href": "slides/week4-day1.html#section",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Visualizing Linear Regression\n\n\n\n\n\n\n\nThe scatterplot has been called the most “generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nIt is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation."
+    "text": "Visualizing Linear Regression\n\n\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\nThe scatterplot has been called the most “generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nIt is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation."
   },
   {
     "objectID": "slides/week4-day1.html#section-1",
@@ -4736,28 +4740,28 @@
     "href": "slides/week4-day1.html#section-3",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
+    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
   },
   {
     "objectID": "slides/week4-day1.html#section-4",
     "href": "slides/week4-day1.html#section-4",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
+    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n. . .\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
   },
   {
     "objectID": "slides/week4-day1.html#section-5",
     "href": "slides/week4-day1.html#section-5",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
+    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n. . .\n\nFor which of these relationships is correlation a reasonable summary measure?"
   },
   {
     "objectID": "slides/week4-day1.html#section-6",
     "href": "slides/week4-day1.html#section-6",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
+    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n. . .\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
   },
   {
     "objectID": "slides/week4-day1.html#section-7",
@@ -4771,7 +4775,7 @@
     "href": "slides/week4-day1.html#section-8",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n  \n  \n  \n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n. . .\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n. . .\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-9",
@@ -4785,21 +4789,21 @@
     "href": "slides/week4-day1.html#section-10",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
+    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n. . .\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
   },
   {
     "objectID": "slides/week4-day1.html#section-11",
     "href": "slides/week4-day1.html#section-11",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\n\n🤔"
+    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n. . .\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n. . .\n\n\n🤔"
   },
   {
     "objectID": "slides/week4-day1.html#section-12",
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n. . .\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n. . .\nBased on the regression table, what habit group was chosen to be the baseline?"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
@@ -6130,7 +6134,7 @@
     "href": "slides/week4-day1.html#calculating-correlation-in-r",
     "title": "Introduction to Linear Regression",
     "section": "Calculating Correlation in R",
-    "text": "Calculating Correlation in R\n\nget_correlation(births_post28, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.557\n\n\n\n\nWhat if I ran get_correlation(births_post28, weight ~ weeks) instead? Would I get the same value?"
+    "text": "Calculating Correlation in R\n\nget_correlation(births_post28, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.557\n\n\n. . .\n\nWhat if I ran get_correlation(births_post28, weight ~ weeks) instead? Would I get the same value?"
   },
   {
     "objectID": "slides/week4-day1.html#writing-the-regression-equation",
@@ -6151,7 +6155,7 @@
     "href": "slides/week4-day1.html#estimated-regression-equation",
     "title": "Introduction to Linear Regression",
     "section": "Estimated Regression Equation",
-    "text": "Estimated Regression Equation\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n    habit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n  \n  \n  \n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
+    "text": "Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n. . .\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n. . .\nBut what does \\(Smoker\\) represent???"
   },
   {
     "objectID": "slides/week4-day1.html#choosing-baseline-group",
@@ -6186,14 +6190,14 @@
     "href": "slides/week4-day1.html#midterm-project-proposal",
     "title": "Introduction to Linear Regression",
     "section": "Midterm Project Proposal",
-    "text": "Midterm Project Proposal\n\n\nChoose a dataset\nChoose a numerical response variable\nChoose a numerical explanatory variable\nChoose a second explanatory variable, either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\nYour numerical variable cannot have a small (e.g., 2 or 3) number of values. You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\n\nWrite your Introduction"
+    "text": "Midterm Project Proposal\n\n\nChoose a dataset\nChoose a numerical response variable\nChoose a numerical explanatory variable\nChoose a second explanatory variable, either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\n\nYour numerical variable cannot have a small (e.g., 2 or 3) number of values. You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\nWrite your Introduction"
   },
   {
     "objectID": "slides/week4-day1.html#cleaning-filtering-the-data",
     "href": "slides/week4-day1.html#cleaning-filtering-the-data",
     "title": "Introduction to Linear Regression",
     "section": "Cleaning & Filtering the Data",
-    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n\n\n\n\n\n\n\nChange in scope of inference\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
+    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n. . .\n\n\n\n\n\n\nChange in scope of inference\n\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
   },
   {
     "objectID": "slides/week4-day1.html#step-1-fit-a-linear-regression",
@@ -6207,14 +6211,14 @@
     "href": "slides/week4-day1.html#step-2-obtain-coefficient-table",
     "title": "Introduction to Linear Regression",
     "section": "Step 2: Obtain coefficient table",
-    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n  \n    \n    \n      term\n      estimate\n      std_error\n      statistic\n      p_value\n      lower_ci\n      upper_ci\n    \n  \n  \n    intercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n    weeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
+    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
   },
   {
     "objectID": "slides/week4-day2.html#revisions-due-tonight",
     "href": "slides/week4-day2.html#revisions-due-tonight",
     "title": "The Ugly History of Linear Regression",
-    "section": "",
-    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "section": "Revisions Due Tonight",
+    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   },
   {
     "objectID": "slides/week4-day2.html#a-grading-reminder",
@@ -6256,7 +6260,7 @@
     "href": "slides/week4-day2.html#completing-revisions",
     "title": "The Ugly History of Linear Regression",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week4-day2.html#todays-data",
@@ -6277,21 +6281,21 @@
     "href": "slides/week4-day2.html#data-layout",
     "title": "The Ugly History of Linear Regression",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n  \n    \n    \n      lakeid\n      ice_on\n      ice_off\n      ice_duration\n      year\n    \n  \n  \n    Lake Mendota\n1874-12-10\n1875-04-15\n126\n1874\n    Lake Mendota\n2010-12-15\n2011-04-03\n110\n2010\n    Lake Mendota\n1969-12-16\n1970-04-08\n113\n1969\n    Lake Mendota\n2003-01-04\n2003-04-03\n89\n2002\n    Lake Monona\n1876-01-10\n1876-04-10\n91\n1875\n    Lake Monona\n2019-12-16\n2020-03-20\n80\n2019\n    Lake Monona\n1973-12-20\n1974-03-24\n94\n1973\n    Lake Monona\n1906-12-08\n1907-03-24\n106\n1906"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1972-01-05\n1972-04-19\n105\n1971\n\n\nLake Mendota\n1919-12-09\n1920-03-28\n110\n1919\n\n\nLake Mendota\n1868-12-10\n1869-04-16\n127\n1868\n\n\nLake Mendota\n1957-12-30\n1958-04-04\n95\n1957\n\n\nLake Monona\n1963-12-18\n1964-03-19\n92\n1963\n\n\nLake Monona\n2002-01-01\n2002-02-26\n56\n2001\n\n\nLake Monona\n1972-01-04\n1972-04-08\n95\n1971\n\n\nLake Monona\n1856-12-04\n1857-05-04\n151\n1856"
   },
   {
     "objectID": "slides/week4-day2.html#section-4",
     "href": "slides/week4-day2.html#section-4",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "The Invention of Eugenics\n\n\n\n\nThe science of heredity could help humanity better itself through breeding.\nBased on Greek eugenes, meaning “well-born”\nGalton served as founding president of the British Eugenics Society\n\n\n\n\n\n“What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction.”"
+    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
   },
   {
     "objectID": "slides/week4-day2.html#section-7",
     "href": "slides/week4-day2.html#section-7",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
+    "text": "Would you exist?\n\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nAre you LGBTQIQ+?"
   },
   {
     "objectID": "slides/week4-day2.html#section-10",
@@ -6305,6 +6309,62 @@
     "href": "slides/week4-day2.html",
     "title": "The Ugly History of Linear Regression",
     "section": "",
-    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "text": "library(emo)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(openintro)\n\nLoading required package: airports\nLoading required package: cherryblossom\nLoading required package: usdata\n\nlibrary(ggridges)\nlibrary(broom)\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\nlibrary(kableExtra)\n\n\nAttaching package: 'kableExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\nlibrary(png)\nlibrary(moderndive)\n\n\nAttaching package: 'moderndive'\n\nThe following objects are masked from 'package:openintro':\n\n    babies, evals\n\nlibrary(lterdatasampler)\n\noptions(show.signif.stars = FALSE)"
+  },
+  {
+    "objectID": "slides/week4-day1.html",
+    "href": "slides/week4-day1.html",
+    "title": "Introduction to Linear Regression",
+    "section": "",
+    "text": "Relationships Between Variables\n. . ."
+  },
+  {
+    "objectID": "slides/week4-day2.html#least-squares",
+    "href": "slides/week4-day2.html#least-squares",
+    "title": "The Ugly History of Linear Regression",
+    "section": "Least Squares",
+    "text": "Least Squares\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
+  },
+  {
+    "objectID": "slides/week4-day2.html#regression",
+    "href": "slides/week4-day2.html#regression",
+    "title": "The Ugly History of Linear Regression",
+    "section": "“regression”",
+    "text": "“regression”\n\n\n\n\n\n\n\nCoined by Francis Galton in the 19th century\nDescribed a biological phenomenon\n\nHeights of children of tall parents tend to be tall, but shorter than their parents"
+  },
+  {
+    "objectID": "slides/week4-day2.html#a-polymath",
+    "href": "slides/week4-day2.html#a-polymath",
+    "title": "The Ugly History of Linear Regression",
+    "section": "A “polymath”",
+    "text": "A “polymath”\n\n\n\n\n\n\n\nIn Statistics, Galton (1822–1911) is a towering figure.\nHe invented standard deviation, correlation, linear regression, ANOVA\nGalton’s developments and discoveries were fueled in large part by his fascination with the science of heredity."
+  },
+  {
+    "objectID": "slides/week4-day2.html#the-invention-of-eugenics",
+    "href": "slides/week4-day2.html#the-invention-of-eugenics",
+    "title": "The Ugly History of Linear Regression",
+    "section": "The Invention of Eugenics",
+    "text": "The Invention of Eugenics\n\n\n\nThe science of heredity could help humanity better itself through breeding.\nBased on Greek eugenes, meaning “well-born”\nGalton served as founding president of the British Eugenics Society\n\n\n\n\n\n“What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction.”"
+  },
+  {
+    "objectID": "slides/week4-day2.html#and-then-it-spread",
+    "href": "slides/week4-day2.html#and-then-it-spread",
+    "title": "The Ugly History of Linear Regression",
+    "section": "And then it spread…",
+    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
+  },
+  {
+    "objectID": "slides/week4-day2.html#but-wasnt-that-a-long-time-ago",
+    "href": "slides/week4-day2.html#but-wasnt-that-a-long-time-ago",
+    "title": "The Ugly History of Linear Regression",
+    "section": "But wasn’t that a long time ago?",
+    "text": "But wasn’t that a long time ago?\n\n\n\n\n\nBetween 1970 and 1976 between 25% and 50% of Native Americans were sterilized, many without consent\n\n\n\n\n\n\n\n\nIn 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution — “…three generations of imbeciles are enough.”\n\nIn 1957 “conservatorship” was introduced as a “modern legal mechanism to meet a realistic human desire to avoid the stigma of incompetency”"
+  },
+  {
+    "objectID": "slides/week4-day2.html#would-you-exist",
+    "href": "slides/week4-day2.html#would-you-exist",
+    "title": "The Ugly History of Linear Regression",
+    "section": "Would you exist?",
+    "text": "Would you exist?\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
   }
 ]

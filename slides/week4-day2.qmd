@@ -119,19 +119,9 @@ Revisions are required to be accompanied with reflections on what you learned wh
 :::
 :::
 
-## 
+# The History of Regression
 
-<center>
-
-```{r, out.width = "60%"}
-knitr::include_graphics("images/bumi-fire.jpg")
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Least Squares
-:::
+## Least Squares
 
 ::: columns
 ::: {.column width="55%"}
@@ -158,11 +148,7 @@ knitr::include_graphics("images/gauss.jpg")
 Used to determine, from astronomical observations, the orbits of bodies about the Sun.
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-"regression"
-:::
+## "regression"
 
 ::: columns
 ::: {.column width="40%"}
@@ -183,11 +169,7 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 
 <!-- A phenomenon also known as regression toward the mean. -->
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-A "polymath"
-:::
+## A "polymath"
 
 ::: columns
 ::: {.column width="40%"}
@@ -208,11 +190,7 @@ A "polymath"
 
 <!-- Galton was wrestling with the unanswered question of how different traits stayed stable in a population over generations, building on the work of his cousin Charles Darwin, who had published On the Origin of Species in 1859. -->
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-The Invention of Eugenics
-:::
+## The Invention of Eugenics
 
 ::: columns
 ::: {.column width="50%"}
@@ -231,39 +209,7 @@ The Invention of Eugenics
 :::
 :::
 
-## 
-
-<center>
-
-```{r, out.width = "60%"}
-knitr::include_graphics("images/bumi-patio.jpg")
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Eugenics and the US
-:::
-
-::: incremental
-::: {style="font-size: 0.95em;"}
--   In 1896 Connecticut made it illegal for people with epilepsy or who were "feeble-minded" to marry.
-
--   John Kellogg established a "pedigree registry"
-
--   From 1909 to 1979 California sterilized nearly 20,000 residents of the state mental institutions
-
--   In 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution --- "...three generations of imbeciles are enough."
-
--   Between 1970 and 1976 between 25 and 50% of Native Americans were sterilized, many without consent
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-And then it spread...
-:::
+## And then it spread...
 
 ::: columns
 ::: {.column width="45%"}
@@ -284,19 +230,39 @@ knitr::include_graphics("images/hitler.jpg")
 :::
 :::
 
-## 
+## But wasn't that a long time ago?
 
-<center>
+::: columns
+::: {.column width="40%"}
+::: {.fragment}
+![](images/native-sterilization.png)
 
-```{r, out.width = "60%"}
-knitr::include_graphics("images/bumi-water.jpg")
-```
-
-## 
-
-::: {style="font-size: 4em; color: #000000;"}
-Would you exist?
+:::{.small}
+Between 1970 and 1976 between 25% and 50% of Native Americans were sterilized, many without consent
 :::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+:::{.fragment}
+![](images/free-britney.jpeg)
+
+::: {.small}
+In 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution --- "...three generations of imbeciles are enough."
+
+</br>
+
+In 1957 "conservatorship" was introduced as a "modern legal mechanism to meet a realistic human desire to avoid the stigma of incompetency"
+:::
+:::
+:::
+:::
+
+
+## Would you exist?
 
 . . .
 
@@ -317,7 +283,7 @@ Were your ancestors poor?
 
 Are you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?
 
-Are you LGBTQIQ+?
+Do you identify as LGBTQIQ+?
 :::
 :::
 
