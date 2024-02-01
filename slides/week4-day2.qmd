@@ -1,5 +1,5 @@
 ---
-title: "The Ugly History of Linear Regression"
+title: "Week 4, Day 2"
 format: 
   revealjs: 
     theme: style.scss
@@ -24,7 +24,7 @@ options(show.signif.stars = FALSE)
 
 ## Revisions Due Tonight
 
-If you submitted revisions and your grade is still "Incomplete" -- either you forgot to submit reflections or you are being asked to complete a second round of revisions. 
+If you submitted revisions and your grade is still "Incomplete" -- either you forgot to submit reflections or you are being asked to complete a second round of revisions.
 
 # Lab 3
 
@@ -60,14 +60,15 @@ Your group received a "Growing" on *at least one* question
 ## Common Mistakes
 
 ::: small
--   Categorical variables in R (Q2)
-    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates? 
--   Comparing distributions between groups (Q9)
-    -   Were 
-
--   Comparing group means with distributions (Q11)
-    - Where did you believe the "center" of the distribution was? 
-    - Is that different from the means you are seeing? Why do you think that is? 
+-   **Categorical variables in R (Q2)**
+    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?
+-   **Comparing distributions between groups (Q9)**
+    - Are the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?
+    - Are the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?
+    - Was every channel type observed in both sections of forest?
+-   **Comparing group means with distributions (Q11)**
+    -   Where did you believe the "center" of the distribution was?
+    -   Is that different from the means you are seeing? Why do you think that is?
 :::
 
 ## Copying the Lab -- Last Week's Recorder
@@ -77,7 +78,7 @@ The person who typed your lab needs to make their project "public"
 1.  Open Posit Cloud
 2.  Go to the STAT 313 / 513 workspace
 3.  Click on "Your Content"
-4.  Open the settings for your Lab 1 project
+4.  Open the settings for your Lab 3 project
 
 ![](images/open-project-settings.png)
 
@@ -93,29 +94,29 @@ The person who typed your lab needs to make their project "public"
 
 ![](images/search-for-name.png)
 
-2.  Open their Lab 2 project
+2.  Open their Lab 3 project
 3.  Select "Save a Permanent Copy"
 
 ![](images/save-a-copy.png)
 
 ## Completing Revisions
 
-Lab 2 revisions are due by Thursday, February 1.
+Lab 3 revisions are due by Thursday, February 8.
 
 ::: small
 1.  Read comments on Canvas
 2.  Copy your group's lab assignment
 3.  Complete your revisions
-4.  Render your revised Lab 2
+4.  Render your revised Lab 3
 5.  Download your revised HTML
-6.  Submit your revisions to the [Lab 2 Revisions]{.underline} assignment
+6.  Submit your revisions to the [Lab 3 Revisions]{.underline} assignment
 :::
 
 ::: callout-warning
 # Reflections
 
 ::: small
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
 :::
 :::
 
@@ -233,34 +234,41 @@ knitr::include_graphics("images/hitler.jpg")
 ## But wasn't that a long time ago?
 
 ::: columns
-::: {.column width="40%"}
-::: {.fragment}
-![](images/native-sterilization.png)
+::: {.column width="50%"}
+::: fragment
 
-:::{.small}
+```{r}
+#| out-height: 25%
+#| out-width: 60%
+knitr::include_graphics("images/native-sterilization.png")
+```
+
+::: small
 Between 1970 and 1976 between 25% and 50% of Native Americans were sterilized, many without consent
 :::
 :::
 :::
 
-::: {.column width="5%"}
-:::
+::: {.column width="50%"}
+::: fragment
 
-::: {.column width="55%"}
-:::{.fragment}
-![](images/free-britney.jpeg)
+```{r}
+#| out-height: 25%
+#| out-width: 60%
 
-::: {.small}
-In 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution --- "...three generations of imbeciles are enough."
+knitr::include_graphics("images/free-britney.jpeg")
+```
+
+::: small
+In 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution.
 
 </br>
 
-In 1957 "conservatorship" was introduced as a "modern legal mechanism to meet a realistic human desire to avoid the stigma of incompetency"
+In 1957 "conservatorship" was introduced "to avoid the stigma of incompetency"
 :::
 :::
 :::
 :::
-
 
 ## Would you exist?
 
@@ -298,7 +306,7 @@ More Information
     -   [https://www.wnycstudios.org](https://www.wnycstudios.org/podcasts/radiolab/projects/radiolab-presents-g)
 -   How Eugenics shaped Statistics
     -   [https://nautil.us](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
-    
+
 # Lab 4
 
 ## Today's Data
@@ -329,4 +337,3 @@ ntl_icecover %>%
   ungroup() %>% 
   gt::gt()
 ```
-
