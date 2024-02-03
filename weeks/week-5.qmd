@@ -1,5 +1,5 @@
 ---
-title: "Week Five: Diving Deeper into Regression (Multiple Linear Regression)"
+title: "Week Five: Multiple Linear Regression"
 format: 
   html: 
     number-sections: true
@@ -44,7 +44,6 @@ By the end of this coursework you should be able to:
 
 ::: columns
 ::: {.column width="40%"}
-</br>
 
 ```{r}
 #| echo: false
@@ -62,11 +61,11 @@ knitr::include_graphics(here::here("images",
 :::
 :::
 
-### Reading Guide -- Due Tuesday by noon
+### Reading Guide -- Due Tuesday by the start of class
 
 [Download the Word Document](reading-guide/week5-reading.docx)
 
-## Concept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Tuesday by the start of class
 
 ```{r}
 #| layout-nrow: 1
@@ -167,7 +166,7 @@ get_regression_table(bty_lm)
 
 For every \[1 day / 1 year / 1 evaluation\] increase in professor's \[evaluation score / age / average beauty\] we expect the \[course evaluation score / mean course evaluation score\] to \[increase / decrease\] by \_\_, after accounting for \[ethnicity / gender / average beauty scores\].
 
-## R Tutorial -- Due Thursday by noon
+## R Tutorial -- Due Thursday by the start of class
 
 1.  [Regression modeling: Parallel Slopes](https://openintro.shinyapps.io/ims-03-model-06/)
 
