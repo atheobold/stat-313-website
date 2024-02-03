@@ -1,0 +1,60 @@
+---
+title: "Your Title Goes Here! Make it fun!"
+author: "Your Name Here!"
+format: 
+  html:
+    code-tools: true
+    embed-resources: true
+editor: visual
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r data}
+library(tidyverse)
+library(moderndive)
+library(readxl)
+
+# This is where you will load in your data! 
+
+
+```
+
+## Introduction
+
+## Methods
+
+### Variables
+
+### Data Visualizations
+
+```{r scatterplot}
+#| fig-align: center
+#| layout-nrow: 1
+
+## Code to make your scatterplots goes here! 
+## Don't forget to choose nice axis labels!
+
+
+```
+
+### Proposed Statistical Model
+
+## Findings
+
+### Multiple Linear Regression Model
+
+```{r lm}
+## Code to fit your multiple linear regression model
+
+## Code to get coefficient table from regression model
+
+```
+
+### Model Interpretations
+
+## Study Limitations
+
+## Conclusions

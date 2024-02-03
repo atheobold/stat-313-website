@@ -4,6 +4,7 @@ author: "Your Name Here!"
 format: 
   html:
     code-tools: true
+    embed-resources: true
 editor: visual
 execute: 
   echo: false
@@ -55,6 +56,6 @@ library(moderndive)
 
 ### Model Interpretations
 
-### Model Conclusions
+## Study Limitations
 
-## Scope of Inference
+## Conclusions
