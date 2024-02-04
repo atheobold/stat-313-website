@@ -1992,7 +1992,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -3717,21 +3717,33 @@
     "href": "weeks/week-5.html",
     "title": "Week Five: Multiple Linear Regression",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to build off the concepts we learned last week and delve deeper into linear regression. We are going to explore multiple linear regression, a statistical model where we have multiple explanatory variables and a single numerical response. We are going to refresh how to visualize these types of models, practice fitting these types of models in R, and the learn how to interpret these types of models."
+    "text": "Welcome!\nIn this week’s coursework we are going to build off the concepts we learned last week and delve deeper into linear regression. We are going to explore multiple linear regression, a statistical model where we have multiple explanatory variables and a single numerical response. We are going to refresh how to visualize these types of models, practice fitting these types of models in R, and the learn how to interpret these types of models.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
   },
   {
     "objectID": "weeks/week-5.html#learning-outcomes",
     "href": "weeks/week-5.html#learning-outcomes",
     "title": "Week Five: Multiple Linear Regression",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe to someone what a multiple linear regression is\noutline how a categorical explanatory variable can be included in a simple linear regression\nvisualize multiple linear regression models with one numerical and one categorical explanatory variable\ncalculate the simple linear regression line for each group of a categorical variable\noutline how a second numerical explanatory variable can be included in a simple linear regression\nvisualize multiple linear regression models with two numerical explanatory variables\ninterpret the coefficient of each explanatory variable included in the regression model\nrecite different methods that can be used to decide what multiple linear regression model is “best”\ndescribe the benefits and costs of using “model selection” for deciding on a multiple linear regression model"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe to someone what a multiple linear regression is\noutline how a categorical explanatory variable can be included in a simple linear regression\nvisualize multiple linear regression models with one numerical and one categorical explanatory variable\ncalculate the simple linear regression line for each group of a categorical variable\noutline how a second numerical explanatory variable can be included in a simple linear regression\nvisualize multiple linear regression models with two numerical explanatory variables\ninterpret the coefficient of each explanatory variable included in the regression model\nrecite different methods that can be used to decide what multiple linear regression model is “best”\ndescribe the benefits and costs of using “model selection” for deciding on a multiple linear regression model",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
   },
   {
     "objectID": "weeks/week-5.html#textbook-reading",
     "href": "weeks/week-5.html#textbook-reading",
     "title": "Week Five: Multiple Linear Regression",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n Chapter 6 (https://moderndive.com/6-multiple-regression.html)\n\n\n\nReading Guide – Due Tuesday by the start of class\nDownload the Word Document"
+    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Chapter 6 (https://moderndive.com/6-multiple-regression.html)\n\n\n\nReading Guide – Due Tuesday by the start of class\nDownload the Word Document",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
   },
   {
     "objectID": "weeks/week-5.html#concept-quiz-due-tuesday-by-noon",
@@ -6089,8 +6101,8 @@
     "objectID": "slides/week4-day2.html#revisions-due-tonight",
     "href": "slides/week4-day2.html#revisions-due-tonight",
     "title": "Week 4, Day 2",
-    "section": "Revisions Due Tonight",
-    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   },
   {
     "objectID": "slides/week4-day2.html#a-grading-reminder",
@@ -6132,7 +6144,7 @@
     "href": "slides/week4-day2.html#completing-revisions",
     "title": "Week 4, Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 3 revisions are due by Thursday, February 8.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the Lab 3 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 3 revisions are due by Thursday, February 8.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the Lab 3 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week4-day2.html#todays-data",
@@ -6153,7 +6165,7 @@
     "href": "slides/week4-day2.html#data-layout",
     "title": "Week 4, Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n  \n    \n    \n      lakeid\n      ice_on\n      ice_off\n      ice_duration\n      year\n    \n  \n  \n    Lake Mendota\n1942-01-03\n1942-03-26\n82\n1941\n    Lake Mendota\n1855-12-18\n1856-04-14\n118\n1855\n    Lake Mendota\n1897-12-17\n1898-03-27\n100\n1897\n    Lake Mendota\n1970-12-24\n1971-04-13\n110\n1970\n    Lake Monona\n1868-12-10\n1869-04-15\n126\n1868\n    Lake Monona\n1851-12-13\n1852-03-25\n103\n1851\n    Lake Monona\n1876-01-10\n1876-04-10\n91\n1875\n    Lake Monona\n1998-12-30\n1999-03-10\n70\n1998"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1942-01-03\n1942-03-26\n82\n1941\n\n\nLake Mendota\n1855-12-18\n1856-04-14\n118\n1855\n\n\nLake Mendota\n1897-12-17\n1898-03-27\n100\n1897\n\n\nLake Mendota\n1970-12-24\n1971-04-13\n110\n1970\n\n\nLake Monona\n1868-12-10\n1869-04-15\n126\n1868\n\n\nLake Monona\n1851-12-13\n1852-03-25\n103\n1851\n\n\nLake Monona\n1876-01-10\n1876-04-10\n91\n1875\n\n\nLake Monona\n1998-12-30\n1999-03-10\n70\n1998"
   },
   {
     "objectID": "slides/week4-day2.html#section-4",
@@ -6179,9 +6191,9 @@
   {
     "objectID": "slides/week4-day2.html",
     "href": "slides/week4-day2.html",
-    "title": "The Ugly History of Linear Regression",
+    "title": "Week 4, Day 2",
     "section": "",
-    "text": "library(emo)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(openintro)\n\nLoading required package: airports\nLoading required package: cherryblossom\nLoading required package: usdata\n\nlibrary(ggridges)\nlibrary(broom)\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\nlibrary(kableExtra)\n\n\nAttaching package: 'kableExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\nlibrary(png)\nlibrary(moderndive)\n\n\nAttaching package: 'moderndive'\n\nThe following objects are masked from 'package:openintro':\n\n    babies, evals\n\nlibrary(lterdatasampler)\n\noptions(show.signif.stars = FALSE)"
+    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   },
   {
     "objectID": "slides/week4-day1.html",
@@ -6195,7 +6207,7 @@
     "href": "slides/week4-day2.html#least-squares",
     "title": "Week 4, Day 2",
     "section": "Least Squares",
-    "text": "Least Squares\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
+    "text": "Least Squares\n\n\nPublished in 1805 by Legendre\n\n\n\n\n\n\n\n\n\n\n\n\nand Gauss in 1809\n\n\n\n\n\n\n\n\n\n\n\n\nUsed to determine, from astronomical observations, the orbits of bodies about the Sun."
   },
   {
     "objectID": "slides/week4-day2.html#regression",
@@ -6223,34 +6235,133 @@
     "href": "slides/week4-day2.html#and-then-it-spread",
     "title": "Week 4, Day 2",
     "section": "And then it spread…",
-    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
+    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
   },
   {
     "objectID": "slides/week4-day2.html#but-wasnt-that-a-long-time-ago",
     "href": "slides/week4-day2.html#but-wasnt-that-a-long-time-ago",
     "title": "Week 4, Day 2",
     "section": "But wasn’t that a long time ago?",
-    "text": "But wasn’t that a long time ago?\n\n\n\n\n\n\n\n\n\nBetween 1970 and 1976 between 25% and 50% of Native Americans were sterilized, many without consent\n\n\n\n\n\n\n\n\n\n\nIn 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution.\n\nIn 1957 “conservatorship” was introduced “to avoid the stigma of incompetency”"
+    "text": "But wasn’t that a long time ago?\n\n\n\n\n\n\n\n\n\n\n\n\n\nBetween 1970 and 1976 between 25% and 50% of Native Americans were sterilized, many without consent\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn 1927 the US Supreme Court ruled that sterilization of the handicapped did not violate the Constitution.\n\nIn 1957 “conservatorship” was introduced “to avoid the stigma of incompetency”"
   },
   {
     "objectID": "slides/week4-day2.html#would-you-exist",
     "href": "slides/week4-day2.html#would-you-exist",
     "title": "Week 4, Day 2",
     "section": "Would you exist?",
-    "text": "Would you exist?\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
+    "text": "Would you exist?\n. . .\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
   },
   {
     "objectID": "weeks/week-5.html#concept-quiz-due-tuesday-by-the-start-of-class",
     "href": "weeks/week-5.html#concept-quiz-due-tuesday-by-the-start-of-class",
     "title": "Week Five: Multiple Linear Regression",
     "section": "1.2 Concept Quiz – Due Tuesday by the start of class",
-    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n\n\n\n\n\n\n\n\n\n\nQuestion 1 – Based on the visualizations above, I believe the [interaction / parallel slopes] model is more appropriate because the slopes between the groups are [very different / very similar].\nQuestion 2 – What type of model does the following code obtain?\n\nminority_lm &lt;- lm(score ~ age * ethnicity, data = evals)\n\n\ninteraction model\nparallel slopes model\nsimple linear regression model\n\n\nThe following is the output from the above regression model (from Question 2):\n\n\n# A tibble: 4 × 7\n  term                    estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;                      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept                  2.61      0.518      5.04   0        1.59     3.63 \n2 age                        0.032     0.011      2.84   0.005    0.01     0.054\n3 ethnicity: not minority    2.00      0.534      3.74   0        0.945    3.04 \n4 age:ethnicitynot minor…   -0.04      0.012     -3.51   0       -0.063   -0.018\n\n\n\nQuestion 3 – The intercept line represents the [evaluation score / mean evaluation score] for [male / female / minority / non-minority] faculty.\n\nQuestion 4 – The age line represents the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 5 – The ethnicity:not minority line represents the [mean / adjustment to the mean] evaluation score for [male / female / minority / non-minority] faculty.\n\nQuestion 6 – The age:ethnicitynot minority line represents the [slope / adjustment to the slope] for the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 7 – The value of the age:ethnicitynot minority line (-0.004) [does / does not ] match the decision I made in Question 1 as there is [little difference / substantial difference] in the slopes between the minority and non-minority faculty.\n\nQuestion 8 – What type of model does the following code obtain?\n\nbty_lm &lt;- lm(score ~ age + bty_avg, data = evals)\n\n\nmultiple linear regression with two numerical predictors\ninteraction model\nparallel slopes\n\n\nThe following is the output from the above regression model (from Question 8):\n\n\n# A tibble: 3 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    4.06      0.17      23.9    0        3.72     4.39 \n2 age         -0.003     0.003     -1.15   0.251   -0.008    0.002\n3 bty_avg      0.061     0.017      3.55   0        0.027    0.094\n\n\n\nQuestion 9 – The intercept represents the [course evaluation score / mean course evaluation score] for professors whose age is __ and who have a average beauty score of ___.\n\nQuestion 10 – We interpret the value of -0.003 by age as:\nFor every [1 day / 1 year / 1 evaluation] increase in professor’s [evaluation score / age / average beauty] we expect the [course evaluation score / mean course evaluation score] to [increase / decrease] by __, after accounting for [ethnicity / gender / average beauty scores]."
+    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 – Based on the visualizations above, I believe the [interaction / parallel slopes] model is more appropriate because the slopes between the groups are [very different / very similar].\nQuestion 2 – What type of model does the following code obtain?\n\nminority_lm &lt;- lm(score ~ age * ethnicity, data = evals)\n\n\ninteraction model\nparallel slopes model\nsimple linear regression model\n\n\nThe following is the output from the above regression model (from Question 2):\n\n\n# A tibble: 4 × 7\n  term                    estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;                      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept                  2.61      0.518      5.04   0        1.59     3.63 \n2 age                        0.032     0.011      2.84   0.005    0.01     0.054\n3 ethnicity: not minority    2.00      0.534      3.74   0        0.945    3.04 \n4 age:ethnicitynot minor…   -0.04      0.012     -3.51   0       -0.063   -0.018\n\n\n\nQuestion 3 – The intercept line represents the [evaluation score / mean evaluation score] for [male / female / minority / non-minority] faculty.\n\nQuestion 4 – The age line represents the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 5 – The ethnicity:not minority line represents the [mean / adjustment to the mean] evaluation score for [male / female / minority / non-minority] faculty.\n\nQuestion 6 – The age:ethnicitynot minority line represents the [slope / adjustment to the slope] for the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 7 – The value of the age:ethnicitynot minority line (-0.004) [does / does not ] match the decision I made in Question 1 as there is [little difference / substantial difference] in the slopes between the minority and non-minority faculty.\n\nQuestion 8 – What type of model does the following code obtain?\n\nbty_lm &lt;- lm(score ~ age + bty_avg, data = evals)\n\n\nmultiple linear regression with two numerical predictors\ninteraction model\nparallel slopes\n\n\nThe following is the output from the above regression model (from Question 8):\n\n\n# A tibble: 3 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    4.06      0.17      23.9    0        3.72     4.39 \n2 age         -0.003     0.003     -1.15   0.251   -0.008    0.002\n3 bty_avg      0.061     0.017      3.55   0        0.027    0.094\n\n\n\nQuestion 9 – The intercept represents the [course evaluation score / mean course evaluation score] for professors whose age is __ and who have a average beauty score of ___.\n\nQuestion 10 – We interpret the value of -0.003 by age as:\nFor every [1 day / 1 year / 1 evaluation] increase in professor’s [evaluation score / age / average beauty] we expect the [course evaluation score / mean course evaluation score] to [increase / decrease] by __, after accounting for [ethnicity / gender / average beauty scores].",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
   },
   {
     "objectID": "weeks/week-5.html#r-tutorial-due-thursday-by-the-start-of-class",
     "href": "weeks/week-5.html#r-tutorial-due-thursday-by-the-start-of-class",
     "title": "Week Five: Multiple Linear Regression",
     "section": "1.3 R Tutorial – Due Thursday by the start of class",
-    "text": "1.3 R Tutorial – Due Thursday by the start of class\n\nRegression modeling: Parallel Slopes\nRegression modeling: Evaluating and extending parallel slopes model"
+    "text": "1.3 R Tutorial – Due Thursday by the start of class\n\nRegression modeling: Parallel Slopes\nRegression modeling: Evaluating and extending parallel slopes model",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "project/data-formatting-513.html",
+    "href": "project/data-formatting-513.html",
+    "title": "Midterm Project Data Formatting",
+    "section": "",
+    "text": "Although R is a component of this course, it is not one of the learning outcomes. Thus, I have decided we will not be spending time writing the R code to wrangle your data into the format R expects them to be in. Instead, you are responsible for formatting your data so they are ready to be analyzed in class on Thursday."
+  },
+  {
+    "objectID": "project/data-formatting-513.html#required-format",
+    "href": "project/data-formatting-513.html#required-format",
+    "title": "Midterm Project Data Formatting",
+    "section": "Required Format",
+    "text": "Required Format\nR expects every dataset to be in “tidy” format, meaning\n\nevery column is a variable\nevery row is an observation\nevery cell has one value\n\nEach variable you selected to analyze for your midterm project will need to be included as one column in your dataset.\nFor example, suppose the ntl_icecover data we worked with for Lab 4 had one row for each lake and column for every (displayed below):\n\n\n\n\n\n\n\n\nlakeid\n1852\n1853\n1855\n1856\n1857\n1858\n1859\n1860\n1861\n1862\n1863\n\n\n\n\nLake Mendota\nNA\nNA\n118\n151\n121\n96\n110\n117\n132\n104\n125\n\n\nLake Monona\nNA\nNA\n118\n151\n119\n94\n111\n129\n133\n119\n131\n\n\n\n\n\n\n\nThese data could not be analyzed by R, as the variable year occupies more than one column. To format these data, we would need to create two news columns, one to store the years and one to store the ice durations. The reformatted data would look like:\n\n\n\n\n\n\n\n\nlakeid\nyear\nice_duration\n\n\n\n\nLake Mendota\n1852\nNA\n\n\nLake Mendota\n1853\nNA\n\n\nLake Mendota\n1855\n118\n\n\nLake Mendota\n1856\n151\n\n\nLake Mendota\n1857\n121\n\n\nLake Mendota\n1858\n96\n\n\nLake Mendota\n1859\n110\n\n\nLake Mendota\n1860\n117\n\n\nLake Mendota\n1861\n132\n\n\nLake Mendota\n1862\n104\n\n\nLake Mendota\n1863\n125\n\n\nLake Monona\n1852\nNA\n\n\nLake Monona\n1853\nNA\n\n\nLake Monona\n1855\n118\n\n\nLake Monona\n1856\n151\n\n\nLake Monona\n1857\n119\n\n\nLake Monona\n1858\n94\n\n\nLake Monona\n1859\n111\n\n\nLake Monona\n1860\n129\n\n\nLake Monona\n1861\n133\n\n\nLake Monona\n1862\n119\n\n\nLake Monona\n1863\n131"
+  },
+  {
+    "objectID": "project/data-formatting-513.html#example-video",
+    "href": "project/data-formatting-513.html#example-video",
+    "title": "Midterm Project Data Formatting",
+    "section": "Example Video",
+    "text": "Example Video\nIn case you are unsure what I mean by “copy-and-paste” your variables into a dataset, I have recorded this short video walking you through how I would reformat a dataset to be ready for analysis.\nLink to Zoom recording: &lt;&gt;"
+  },
+  {
+    "objectID": "project/midterm_project_template-313.html#methods",
+    "href": "project/midterm_project_template-313.html#methods",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Methods",
+    "text": "Methods\n\nVariables\n\n\nData Visualizations\n\n\n\n\n\n\n\n\nProposed Statistical Model"
+  },
+  {
+    "objectID": "project/midterm_project_template-313.html#findings",
+    "href": "project/midterm_project_template-313.html#findings",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Findings",
+    "text": "Findings\n\nMultiple Linear Regression Model\n\n\nModel Interpretations"
+  },
+  {
+    "objectID": "project/midterm_project_template-313.html#study-limitations",
+    "href": "project/midterm_project_template-313.html#study-limitations",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Study Limitations",
+    "text": "Study Limitations"
+  },
+  {
+    "objectID": "project/midterm_project_template-313.html#conclusions",
+    "href": "project/midterm_project_template-313.html#conclusions",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Conclusions",
+    "text": "Conclusions"
+  },
+  {
+    "objectID": "project/midterm_project_template-513.html#methods",
+    "href": "project/midterm_project_template-513.html#methods",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Methods",
+    "text": "Methods\n\nVariables\n\n\nData Visualizations\n\n\n\n\n\n\n\n\nProposed Statistical Model"
+  },
+  {
+    "objectID": "project/midterm_project_template-513.html#findings",
+    "href": "project/midterm_project_template-513.html#findings",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Findings",
+    "text": "Findings\n\nMultiple Linear Regression Model\n\n\nModel Interpretations"
+  },
+  {
+    "objectID": "project/midterm_project_template-513.html#study-limitations",
+    "href": "project/midterm_project_template-513.html#study-limitations",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Study Limitations",
+    "text": "Study Limitations"
+  },
+  {
+    "objectID": "project/midterm_project_template-513.html#conclusions",
+    "href": "project/midterm_project_template-513.html#conclusions",
+    "title": "Your Title Goes Here! Make it fun!",
+    "section": "Conclusions",
+    "text": "Conclusions"
+  },
+  {
+    "objectID": "project/data-formatting-513.html#how-to-format-your-data",
+    "href": "project/data-formatting-513.html#how-to-format-your-data",
+    "title": "Midterm Project Data Formatting",
+    "section": "How to Format Your Data",
+    "text": "How to Format Your Data\nTo get your data in the correct format, you have two options:\n\ncopy-and-paste each variable into a column in a new dataset\nwrite the R (or Python) code to reformat your data\n\nYou should not spend time Googling or using Chat GPT to write the R code to format your data. I will not provide assistance writing R code to format your data. Yes, copying and pasting is a pain, but this is a lesson in good data storage practices."
+  },
+  {
+    "objectID": "project/data-formatting-513.html#file-format",
+    "href": "project/data-formatting-513.html#file-format",
+    "title": "Midterm Project Data Formatting",
+    "section": "File Format",
+    "text": "File Format\nYou are expected to save your new dataset as either an Excel file (.xlsx) or as a comma separated values file (.csv). No other format will be accepted."
   }
 ]
