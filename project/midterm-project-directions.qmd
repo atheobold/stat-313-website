@@ -32,7 +32,7 @@ This section should lay out the steps, decisions, and logic leading to the stati
     -   For a multiple linear regression with *two numerical variables*, you should produce **three** visualizations: one with both explanatory variables included, and two with each explanatory variable on its own.
 
 ::: callout-caution
-Every visualization should have nicely formatted axis labels!
+# Every visualization should have nicely formatted axis labels!
 :::
 
 -   Describe what you see in the visualizations, making direct references to the plots!
@@ -40,6 +40,7 @@ Every visualization should have nicely formatted axis labels!
 -   Outline the appropriate statistical model you will use to answer the question(s) of interest that you stated previously. Be specific about ***why*** the method being used are appropriate for the investigation at hand making direct reference to the visualizations.
 
 ::: callout-tip
+# Deciding on a Statistical Model
 The statistical model you fit in the next section depends on what you see in your visualization. [Click here](midterm-project-help/model-selection.qmd) for a flowchart of how you should select the statistical model that is best for your situation.
 :::
 
@@ -51,6 +52,7 @@ In this section you will write up your findings for each research question of in
 -   Obtain the coefficients for the model
 
 ::: callout-tip
+# Table of Coefficents
 Use the `get_regression_table()` function from the **moderndive** package to provide nicely formatted output from your regression model.
 :::
 
@@ -60,16 +62,18 @@ Use the `get_regression_table()` function from the **moderndive** package to pro
 
 -   Interpret **in the context of the data** the coefficients from the regression equation.
 
--   Based on your visualizations **and** the regression model, what is your conclusion for the questions of interest?
-
-::: callout-caution
-There should be **no** mention of p-values in your conclusion!
-:::
-
-# Scope of Inference
+# Study Limitations
 
 Write a 3-4 sentence statement on what can be inferred from the design of the study and the results of your statistical analysis. Specifically, answer these two questions and comment on their implications:
 
 -   Based on the sampling method used, what larger population can you infer the results or your analysis onto?
 
 -   Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables. Specifically, can cause-and-effect statements be made?
+
+# Conclusions
+
+Based on your visualizations **and** the regression model, what is your conclusion for the questions of interest?
+
+::: callout-caution
+There should be **no** mention of p-values in your conclusion!
+:::
