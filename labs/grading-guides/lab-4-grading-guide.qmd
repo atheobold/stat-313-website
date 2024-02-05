@@ -42,6 +42,10 @@ ggplot(data = ntl_icecover,
 
 *Feedback:* You were asked to give your visualization nice axis labels. Also, it is important for the axis label to contain the units of the variable. What unit was ice duration measured in?
 
+-   Swaps the x- and y-variable
+
+**Feedback:** Careful! Which variable is supposed to be the response? 
+
 # Question 3 -- Describe the regression line
 
 **Success**: Addresses form, direction, strength and unusual points.
@@ -57,9 +61,9 @@ ggplot(data = ntl_icecover,
 
 *Feedback:* You were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!
 
--   If they say there are unusual points / outliers but don't say where.
+-   If they say there are unusual points / outliers but don't say where. The description should point to the exact x **and** y location (not just one or the other). 
 
-*Feedback:* If you believe there are unusual observations you need to tell the reader where these points are!
+*Feedback:* If you believe there are unusual observations you need to tell the reader where these points are, which includes both their x- and y-coordinates! 
 
 # Question 4 -- Add a regression line
 
@@ -109,7 +113,9 @@ my_model <- lm(ice_duration ~ year, data = ntl_icecover)
 
 -   Swaps response and explanatory
 
-*Feedback:* Careful! With the `lm()` function the response variable goes first (before the `~`) and the explanatory comes second (after the `~`).
+*Feedback:* Careful! With the `lm()` function the response variable goes first (before the `~`) and the explanatory comes second (after the `~`). Which variable were you instructed to use as the response? 
+
+When you make this change, your coefficient table (and resulting interpretations) will change! These changes to Questions 8, 9, 10, and 11 should be included in your revisions. 
 
 # Question 7 -- Get regression table
 
@@ -160,9 +166,9 @@ If they use x and y in the equation but then define what variables they are asso
 
 **Growing**:
 
--   Incorrect interpretation of the slope
+<!-- -   Don't state what the increase in years is  -->
 
-*Feedback:* For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable.
+<!-- *Feedback:* For slope interpretations, we always increase the explanatory variable by 1 unit and the slope coefficient is the expected change in the mean of the response variable. -->
 
 -   Doesn't interpret the value of -0.203
 
@@ -180,14 +186,14 @@ If they use x and y in the equation but then define what variables they are asso
 
 -   Correct interpretation of slope for 100 year increase
     -   100 year increase
-    -   mean / predicted / estimated ice duration
+    -   mean / predicted / estimated / approximate ice duration
     -   decreases by 20.3 days
 
 **Growing**:
 
 -   Uses y-intercept when increasing 100 years
 
-*Feedback:* When we increase 100 years, technically the only aspect of the equation that changes is the amount of time our slope is multiplied by. The y-intercept does not change! With that in mind, how does a 100 year increase in time affect what you would expect for the duration of the ice on these lakes?
+*Feedback:* Careful! Look back at your interpretation for Question 9. Did you include the y-intercept when you interpreted the value of the slope? How can you translate what you did in Question 9 to an increase of 100 years instead of 1 year? 
 
 -   Don't provide an estimate of the change
 
@@ -199,8 +205,9 @@ If they use x and y in the equation but then define what variables they are asso
 
 ```{r}
 ggplot(data = ntl_icecover, 
-       mapping = aes(y = ice_duration, x = year, color = lakeid)) +
+       mapping = aes(y = ice_duration, x = year, fill = "lakeid")) +
   geom_point() +
+  geom_smooth(method = "lm") +
   labs(x = "Year", 
        y = "Ice Duration (days)")
 ```
@@ -211,4 +218,7 @@ If they got a Growing for Question 4 from using a wiggly line, they don't need t
 
 **Growing**:
 
-????
+- If they use `fill` instead of `color`
+
+*Feedback:* I know it is confusing, but to change the color of the points and the lines in a scatterplot we need to use the `color` aesthetic, not the `fill`. 
+
