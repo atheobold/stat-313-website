@@ -182,6 +182,10 @@ If they use x and y in the equation but then define what variables they are asso
 
 *Feedback:* Careful! Your interpretation sounds like it is guaranteed that every 1 year increase in time will result in **exactly** a 0.203 day decrease in ice duration. Will there always be exactly this decrease? How do we indicate that our slope estimate is not exact?
 
+-   Uses the word "cause"
+
+*Feedback:* The word "cause" in statistics means a very specific thing. We can only use cause and effect statements in an experiment. Was this study an experiment? If not, what word would be more appropriate to use? 
+
 # Question 10 -- 100 Year Increase
 
 -   Correct interpretation of slope for 100 year increase
