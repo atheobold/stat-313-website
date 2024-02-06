@@ -6411,5 +6411,12 @@
     "title": "Introduction to Multiple Linear Regression",
     "section": "Estimated Regression Equations",
     "text": "Estimated Regression Equations\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\nWhat is the regression equation for non-smoker mothers?\n\n\n\nWhat is the regression equation for smoker mothers?"
+  },
+  {
+    "objectID": "activity/week-5-sample-selection.html#births14",
+    "href": "activity/week-5-sample-selection.html#births14",
+    "title": "Sample Selection & Scope of Inference",
+    "section": "births14",
+    "text": "births14\n\nWhat are the observations / rows in this dataset?\nFrom what population was the sample drawn?\nFor an observation to be included in the dataset, what inclusion criteria needed to be met?\nHow were the observations who satisfied the inclusion criteria sampled from the population?\nBased on the inclusion criteria and sampling methods, to what population can the findings of the study be generalized?"
   }
 ]

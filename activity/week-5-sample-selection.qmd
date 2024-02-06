@@ -1,7 +1,6 @@
 ---
 title: "Sample Selection & Scope of Inference"
 format: html
-editor: visual
 ---
 
 This activity is designed to help you critically evaluate how the data you are using in your Midterm Project were collected. You only need to complete **one** section of the activity, the section related to your dataset!
@@ -73,7 +72,7 @@ Alright, let's give this a go with the dataset you chose for your Midterm Projec
 
 5.  Based on the inclusion criteria and sampling methods, to what population can the findings of the study be generalized?
 
-## [`ncbirths`](https://www.openintro.org/data/index.php?data=ncbirths)
+## [births14](https://www.openintro.org/data/index.php?data=births14)
 
 1.  What are the observations / rows in this dataset?
 
