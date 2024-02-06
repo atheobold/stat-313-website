@@ -6355,5 +6355,40 @@
     "title": "Midterm Project Data Formatting",
     "section": "File Format",
     "text": "File Format\nYou are expected to save your new dataset as either an Excel file (.xlsx) or as a comma separated values file (.csv). No other format will be accepted."
+  },
+  {
+    "objectID": "slides/week5-day1.html#plan-for-today",
+    "href": "slides/week5-day1.html#plan-for-today",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Plan for Today",
+    "text": "Plan for Today\n\nReview different types of multiple linear regression models\nComplete an activity on sample selection\nStart Midterm Project write-up"
+  },
+  {
+    "objectID": "slides/week5-day1.html#find-your-data-group",
+    "href": "slides/week5-day1.html#find-your-data-group",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Find Your Data Group!",
+    "text": "Find Your Data Group!\nOnce you have found other students working on the same dataset, complete the sample selection activity."
+  },
+  {
+    "objectID": "slides/week5-day1.html#steps-before-thursday",
+    "href": "slides/week5-day1.html#steps-before-thursday",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Steps Before Thursday",
+    "text": "Steps Before Thursday\n\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
+  },
+  {
+    "objectID": "slides/week5-day1.html#steps-before-thursday-stat-313",
+    "href": "slides/week5-day1.html#steps-before-thursday-stat-313",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Steps Before Thursday (STAT 313)",
+    "text": "Steps Before Thursday (STAT 313)\n\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
+  },
+  {
+    "objectID": "slides/week5-day1.html#steps-before-thursday-stat-513",
+    "href": "slides/week5-day1.html#steps-before-thursday-stat-513",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Steps Before Thursday (STAT 513)",
+    "text": "Steps Before Thursday (STAT 513)\n\nCreate a nicely formatted version of your dataset\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nWork with Dr. Theobold to write code to read in your data!\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
   }
 ]

@@ -23,6 +23,16 @@ my_theme <- theme_bw() +
         )
 ```
 
+## Plan for Today
+
+1.  Review different types of multiple linear regression models
+
+2.  Complete an activity on sample selection
+
+3.  Start Midterm Project write-up
+
+# Multiple Linear Regression
+
 ##  {background-color="#D4D4D4"}
 
 ::: {style="font-size: 3em; color: #000000;"}
@@ -56,7 +66,7 @@ ncbirths %>%
   geom_smooth(method = "lm") +
   labs(x = "Weeks of Gestation", 
        y = "Weight of Baby (lbs)", 
-       color = "Mother Smoking Status") + 
+       color = "Parent Smoking Status") + 
   my_theme
 
 ```
@@ -439,3 +449,39 @@ $$\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}$$
 . . .
 
 $$\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}$$
+
+# Sample Selection Activity
+
+## Find Your Data Group!
+
+Once you have found other students working on the same dataset, complete [the sample selection activity](../activity/week-5-sample-selection.qmd). 
+
+# Midterm Project Work Time
+
+## Steps Before Thursday (STAT 313)
+
+1.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project
+
+2.  Pose a research question about your selected variables, **which can be addressed with multiple linear regression**
+
+3.  Insert the code to create the required two (or three) visualizations
+
+4.  Write a description of what you see in the visualizations
+
+5.  Make a decision which model you believe is "best"
+
+## Steps Before Thursday (STAT 513)
+
+1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd)
+
+2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project
+
+3.  Pose a research question about your selected variables, **which can be addressed with multiple linear regression**
+
+4.  Work with Dr. Theobold to write code to read in your data!
+
+5.  Insert the code to create the required two (or three) visualizations
+
+6.  Write a description of what you see in the visualizations
+
+7.  Make a decision which model you believe is "best"
