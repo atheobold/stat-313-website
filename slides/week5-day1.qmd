@@ -1,6 +1,8 @@
 ---
 title: "Introduction to Multiple Linear Regression"
-format: revealjs
+format: 
+  revealjs:
+    theme: style.scss
 editor: visual
 ---
 
@@ -23,6 +25,8 @@ my_theme <- theme_bw() +
         )
 ```
 
+# Midterm Project Week
+
 ## Plan for Today
 
 1.  Review different types of multiple linear regression models
@@ -30,6 +34,20 @@ my_theme <- theme_bw() +
 2.  Complete an activity on sample selection
 
 3.  Start Midterm Project write-up
+
+## Plan for Thursday
+
+**No lab** -- focus on getting **all** the coding accomplished for the Midterm Project
+
+## Draft Due by Sunday
+
+To get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday. 
+
+::: {.callout-caution}
+# Deadline Extension
+
+A deadline extension is permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).  
+:::
 
 # Multiple Linear Regression
 
@@ -89,8 +107,6 @@ How?
 Offsets!
 :::
 
-::: columns
-::: {.column width="75%"}
 ```{r smoke-mlr}
 #| eval: false
 #| echo: true
@@ -109,19 +125,20 @@ smoke_lm <- lm(weight ~ weeks * habit, data = ncbirths)
 get_regression_table(smoke_lm) %>% 
   select(term:std_error)
 ```
-:::
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="20%"}
+::: {.callout-note}
+# Interaction Model
 The \* means the variables are interacting!
 :::
-:::
 
-. . .
+## Estimated Regression Equations
 
-</br>
+```{r}
+#| echo: false
+
+get_regression_table(smoke_lm) %>% 
+  select(term:std_error)
+```
 
 ::: {style="font-size: 1.1em; color: #0F4C81;"}
 What is the regression equation for non-smoker mothers?
@@ -183,8 +200,6 @@ get_regression_table(age_lm) %>%
 ```
 
 . . .
-
-</br>
 
 ::: {style="font-size: 1.25em; color: #0F4C81;"}
 How do you interpret the value of 0.346?
@@ -436,25 +451,30 @@ lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>%
 
 . . .
 
+::: {.small}
 $$\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \times \text{percent disadvan}$$
+:::
 
-. . .
-
+::: {.small}
 $$\widehat{SAT}_{medium} = 576.1 - 2.78 \times \text{percent disadvan}$$
+:::
 
 . . .
 
+::: {.small}
 $$\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}$$
+:::
 
-. . .
 
+::: {.small}
 $$\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}$$
+:::
 
 # Sample Selection Activity
 
 ## Find Your Data Group!
 
-Once you have found other students working on the same dataset, complete [the sample selection activity](../activity/week-5-sample-selection.qmd). 
+Once you have found other students working on the same dataset, complete [the sample selection activity](../activity/week-5-sample-selection.qmd).
 
 # Midterm Project Work Time
 
@@ -472,6 +492,7 @@ Once you have found other students working on the same dataset, complete [the sa
 
 ## Steps Before Thursday (STAT 513)
 
+::: {.small}
 1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd)
 
 2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project
@@ -485,3 +506,4 @@ Once you have found other students working on the same dataset, complete [the sa
 6.  Write a description of what you see in the visualizations
 
 7.  Make a decision which model you believe is "best"
+:::

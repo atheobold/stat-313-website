@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.3.361">
 
   <title>STAT 313 / 513 - Winter 2024 - Introduction to Multiple Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,8 +220,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -396,6 +395,11 @@
 </div>
 
 </section>
+<section>
+<section id="midterm-project-week" class="title-slide slide level1 center">
+<h1>Midterm Project Week</h1>
+
+</section>
 <section id="plan-for-today" class="slide level2">
 <h2>Plan for Today</h2>
 <ol type="1">
@@ -404,6 +408,27 @@
 <li><p>Start Midterm Project write-up</p></li>
 </ol>
 </section>
+<section id="plan-for-thursday" class="slide level2">
+<h2>Plan for Thursday</h2>
+<p><strong>No lab</strong> – focus on getting <strong>all</strong> the coding accomplished for the Midterm Project</p>
+</section>
+<section id="draft-due-by-sunday" class="slide level2">
+<h2>Draft Due by Sunday</h2>
+<p>To get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday.</p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Deadline Extension</strong></p>
+</div>
+<div class="callout-content">
+<p>A deadline extension is permitted for the first draft. Deadline extensions <u><strong>are not</strong></u> permitted for the final version (due next week).</p>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="multiple-linear-regression" class="title-slide slide level1 center">
 <h1>Multiple Linear Regression</h1>
@@ -437,12 +462,10 @@
 <div style="font-size: 2em; color: #000000;">
 <p>Offsets!</p>
 </div>
-<div class="columns">
-<div class="column" style="width:75%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>smoke_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">*</span> habit, <span class="at">data =</span> ncbirths)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(smoke_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>smoke_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">*</span> habit, <span class="at">data =</span> ncbirths)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(smoke_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -455,17 +478,35 @@
 4 weeks:habitsmoker    0.039     0.042</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:20%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Interaction Model</strong></p>
+</div>
+<div class="callout-content">
 <p>The * means the variables are interacting!</p>
 </div>
 </div>
-<div class="fragment">
-<p><br></p>
+</div>
+</section>
+<section id="estimated-regression-equations" class="slide level2">
+<h2>Estimated Regression Equations</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  term              estimate std_error
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;
+1 intercept           -5.94      0.484
+2 weeks                0.341     0.013
+3 habit: smoker       -1.86      1.63 
+4 weeks:habitsmoker    0.039     0.042</code></pre>
+</div>
+</div>
 <div style="font-size: 1.1em; color: #0F4C81;">
 <p>What is the regression equation for non-smoker mothers?</p>
-</div>
 </div>
 <div class="fragment">
 <div style="font-size: 1.1em; color: #0F4C81;">
@@ -491,9 +532,9 @@
 <p>Multiple slopes</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>age_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">+</span> mage, <span class="at">data =</span> ncbirths)</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(age_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>age_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">+</span> mage, <span class="at">data =</span> ncbirths)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(age_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -506,7 +547,6 @@
 </div>
 </div>
 <div class="fragment">
-<p><br></p>
 <div style="font-size: 1.25em; color: #0F4C81;">
 <p>How do you interpret the value of 0.346?</p>
 </div>
@@ -552,22 +592,22 @@
 <p>Different Enough?</p>
 </div>
 
-<img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="section-10" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Behind the Plot</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> MA_schools, </span>
-<span id="cb5-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> average_sat_math, </span>
-<span id="cb5-3"><a></a>                       <span class="at">x =</span> perc_disadvan, </span>
-<span id="cb5-4"><a></a>                       <span class="at">color =</span> size)) <span class="sc">+</span> </span>
-<span id="cb5-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span> </span>
-<span id="cb5-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Percent Economically Disadvantaged"</span>, </span>
-<span id="cb5-8"><a></a>       <span class="at">y =</span> <span class="st">"Average SAT Math"</span>, </span>
-<span id="cb5-9"><a></a>       <span class="at">color =</span> <span class="st">"Size of School"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> MA_schools, </span>
+<span id="cb6-2"><a href="#cb6-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> average_sat_math, </span>
+<span id="cb6-3"><a href="#cb6-3"></a>                       <span class="at">x =</span> perc_disadvan, </span>
+<span id="cb6-4"><a href="#cb6-4"></a>                       <span class="at">color =</span> size)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span> </span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Percent Economically Disadvantaged"</span>, </span>
+<span id="cb6-8"><a href="#cb6-8"></a>       <span class="at">y =</span> <span class="st">"Average SAT Math"</span>, </span>
+<span id="cb6-9"><a href="#cb6-9"></a>       <span class="at">color =</span> <span class="st">"Size of School"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><code>geom_smooth()</code> allows for <em>both</em> the intercepts and the slopes to differ</p>
@@ -648,7 +688,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%;height:50.0%"></p>
+<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%;height:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -657,7 +697,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%;height:50.0%"></p>
+<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:50.0%;height:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -669,7 +709,7 @@
 <p>Parallel Slopes</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(average_sat_math <span class="sc">~</span> perc_disadvan <span class="sc">+</span> size, <span class="at">data =</span> MA_schools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(average_sat_math <span class="sc">~</span> perc_disadvan <span class="sc">+</span> size, <span class="at">data =</span> MA_schools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
@@ -721,16 +761,20 @@
 </div>
 </div>
 <div class="fragment">
+<div class="small">
 <p><span class="math display">\[\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \times \text{percent disadvan}\]</span></p>
 </div>
-<div class="fragment">
+<div class="small">
 <p><span class="math display">\[\widehat{SAT}_{medium} = 576.1 - 2.78 \times \text{percent disadvan}\]</span></p>
 </div>
-<div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}\]</span></p>
 </div>
 <div class="fragment">
+<div class="small">
+<p><span class="math display">\[\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}\]</span></p>
+</div>
+<div class="small">
 <p><span class="math display">\[\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}\]</span></p>
+</div>
 </div>
 </section></section>
 <section>
@@ -740,7 +784,7 @@
 </section>
 <section id="find-your-data-group" class="slide level2">
 <h2>Find Your Data Group!</h2>
-<p>Once you have found other students working on the same dataset, complete <a href="../activity/week-5-sample-selection.html">the sample selection activity</a>.</p>
+<p>Once you have found other students working on the same dataset, complete <a href="../activity/week-5-sample-selection.qmd">the sample selection activity</a>.</p>
 </section></section>
 <section>
 <section id="midterm-project-work-time" class="title-slide slide level1 center">
@@ -759,8 +803,9 @@
 </section>
 <section id="steps-before-thursday-stat-513" class="slide level2">
 <h2>Steps Before Thursday (STAT 513)</h2>
+<div class="small">
 <ol type="1">
-<li><p>Create a <a href="../project/data-formatting-513.html">nicely formatted version of your dataset</a></p></li>
+<li><p>Create a <a href="../project/data-formatting-513.qmd">nicely formatted version of your dataset</a></p></li>
 <li><p>Insert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project</p></li>
 <li><p>Pose a research question about your selected variables, <strong>which can be addressed with multiple linear regression</strong></p></li>
 <li><p>Work with Dr.&nbsp;Theobold to write code to read in your data!</p></li>
@@ -768,13 +813,12 @@
 <li><p>Write a description of what you see in the visualizations</p></li>
 <li><p>Make a decision which model you believe is “best”</p></li>
 </ol>
+</div>
 
-
-</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></section>
+</section></section>
     </div>
   </div>
 
@@ -801,6 +845,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1099,9 +1144,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1111,17 +1157,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

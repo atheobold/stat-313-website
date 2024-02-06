@@ -1278,7 +1278,7 @@
     "href": "slides/week5-day1.html#section-3",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Offsets!\n\n\n\n\nsmoke_lm &lt;- lm(weight ~ weeks * habit, data = ncbirths)\n\nget_regression_table(smoke_lm)\n\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\n\n\nThe * means the variables are interacting!\n\n\n\n\n\nWhat is the regression equation for non-smoker mothers?\n\n\n\n\nWhat is the regression equation for smoker mothers?"
+    "text": "Offsets!\n\n\nsmoke_lm &lt;- lm(weight ~ weeks * habit, data = ncbirths)\n\nget_regression_table(smoke_lm)\n\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\n\n\n\n\n\nInteraction Model\n\n\nThe * means the variables are interacting!"
   },
   {
     "objectID": "slides/week5-day1.html#section-4",
@@ -1292,7 +1292,7 @@
     "href": "slides/week5-day1.html#section-6",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Multiple slopes\n\n\nage_lm &lt;- lm(weight ~ weeks + mage, data = ncbirths)\n\nget_regression_table(age_lm)\n\n\n\n# A tibble: 3 × 3\n  term      estimate std_error\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept   -6.68      0.492\n2 weeks        0.346     0.012\n3 mage         0.02      0.006\n\n\n\n\n\nHow do you interpret the value of 0.346?\n\n\n\n\nHow do you interpret the value of 0.02?"
+    "text": "Multiple slopes\n\n\nage_lm &lt;- lm(weight ~ weeks + mage, data = ncbirths)\n\nget_regression_table(age_lm)\n\n\n\n# A tibble: 3 × 3\n  term      estimate std_error\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept   -6.68      0.492\n2 weeks        0.346     0.012\n3 mage         0.02      0.006\n\n\n\n\nHow do you interpret the value of 0.346?\n\n\n\n\nHow do you interpret the value of 0.02?"
   },
   {
     "objectID": "slides/week5-day1.html#section-7",
@@ -1383,7 +1383,7 @@
     "href": "slides/week5-day1.html#section-19",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Group equations – Offsets\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\\[\\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{medium} = 576.1 - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = 581.64 - 2.78 \\times \\text{percent disadvan}\\]"
+    "text": "Group equations – Offsets\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\n\\[\\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{medium} = 576.1 - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\n\n\\[\\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = 581.64 - 2.78 \\times \\text{percent disadvan}\\]"
   },
   {
     "objectID": "slides/week7-day2-why-bootstrap.html#section",
@@ -6389,6 +6389,27 @@
     "href": "slides/week5-day1.html#steps-before-thursday-stat-513",
     "title": "Introduction to Multiple Linear Regression",
     "section": "Steps Before Thursday (STAT 513)",
-    "text": "Steps Before Thursday (STAT 513)\n\nCreate a nicely formatted version of your dataset\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nWork with Dr. Theobold to write code to read in your data!\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
+    "text": "Steps Before Thursday (STAT 513)\n\n\nCreate a nicely formatted version of your dataset\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nWork with Dr. Theobold to write code to read in your data!\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
+  },
+  {
+    "objectID": "slides/week5-day1.html#plan-for-thursday",
+    "href": "slides/week5-day1.html#plan-for-thursday",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Plan for Thursday",
+    "text": "Plan for Thursday\nNo lab – focus on getting all the coding accomplished for the Midterm Project"
+  },
+  {
+    "objectID": "slides/week5-day1.html#draft-due-by-sunday",
+    "href": "slides/week5-day1.html#draft-due-by-sunday",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Draft Due by Sunday",
+    "text": "Draft Due by Sunday\nTo get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday.\n\n\n\n\n\n\nDeadline Extension\n\n\nA deadline extension is permitted for the first draft. Deadline extensions are not permitted for the final version (due next week)."
+  },
+  {
+    "objectID": "slides/week5-day1.html#estimated-regression-equations",
+    "href": "slides/week5-day1.html#estimated-regression-equations",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Estimated Regression Equations",
+    "text": "Estimated Regression Equations\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\nWhat is the regression equation for non-smoker mothers?\n\n\n\nWhat is the regression equation for smoker mothers?"
   }
 ]
