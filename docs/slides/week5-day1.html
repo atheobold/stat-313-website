@@ -593,123 +593,21 @@
 </div>
 
 <img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Behind the Plot</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> MA_schools, </span>
-<span id="cb6-2"><a href="#cb6-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> average_sat_math, </span>
-<span id="cb6-3"><a href="#cb6-3"></a>                       <span class="at">x =</span> perc_disadvan, </span>
-<span id="cb6-4"><a href="#cb6-4"></a>                       <span class="at">color =</span> size)) <span class="sc">+</span> </span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span> </span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Percent Economically Disadvantaged"</span>, </span>
-<span id="cb6-8"><a href="#cb6-8"></a>       <span class="at">y =</span> <span class="st">"Average SAT Math"</span>, </span>
-<span id="cb6-9"><a href="#cb6-9"></a>       <span class="at">color =</span> <span class="st">"Size of School"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<p><code>geom_smooth()</code> allows for <em>both</em> the intercepts and the slopes to differ</p>
-</section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>What about now?</p>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  term                     estimate std_error
-  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;
-1 intercept                 594.       13.3  
-2 perc_disadvan              -2.93      0.294
-3 size: medium              -17.8      15.8  
-4 size: large               -13.3      13.8  
-5 perc_disadvan:sizemedium    0.146     0.371
-6 perc_disadvan:sizelarge     0.189     0.323</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div style="font-size: 3em; color: #B6CADA;">
-<p>🤨</p>
-</div>
-</div>
-</section>
-<section id="section-12" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Who is baseline?</p>
-</div>
-
-<img data-src="images/baseline.jpg" class="r-stretch"></section>
-<section id="section-13" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Deciphering groups – Small schools</p>
-</div>
-
-<img data-src="images/small_coefficients.jpg" class="r-stretch"><div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{small} = 594 - 2.93 \times \text{percent disadvan}\]</span></p>
-</div>
-</section>
-<section id="section-14" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Deciphering groups – Medium schools</p>
-</div>
-
-<img data-src="images/medium_coefficients.jpg" class="r-stretch"><div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{medium} = (594 - 17.8) + (- 2.93 + 0.146) \times \text{percent disadvan}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{medium} = 576.2 - 2.784 \times \text{percent disadvan}\]</span></p>
-</div>
-</section>
-<section id="section-15" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Deciphering groups – Large schools</p>
-</div>
-
-<img data-src="images/large_coefficients.jpg" class="r-stretch"><div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{large} = (594 - 13.3) + (- 2.93 + 0.189) \times \text{percent disadvan}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\widehat{SAT}_{large} = 580.7 - 2.741 \times \text{percent disadvan}\]</span></p>
-</div>
-</section>
-<section id="section-16" class="slide level2" data-background-color="#B6CADA">
+<section id="section-10" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 1.5em; color: #000000;">
 <p>What if they’re not very different?</p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%;height:50.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:50.0%;height:50.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="section-17" class="slide level2">
+
+<img data-src="week5-day1_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Parallel Slopes</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(average_sat_math <span class="sc">~</span> perc_disadvan <span class="sc">+</span> size, <span class="at">data =</span> MA_schools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(average_sat_math <span class="sc">~</span> perc_disadvan <span class="sc">+</span> size, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">data =</span> MA_schools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
@@ -724,7 +622,7 @@
 </div>
 </div>
 </section>
-<section id="section-18" class="slide level2" data-background-color="#B6CADA">
+<section id="section-12" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Group equations – Baseline</p>
@@ -744,7 +642,7 @@
 <p><span class="math display">\[\widehat{SAT}_{small} = 588 - 2.78 \times \text{percent disadvantaged}\]</span></p>
 </div>
 </section>
-<section id="section-19" class="slide level2" data-background-color="#B6CADA">
+<section id="section-13" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Group equations – Offsets</p>

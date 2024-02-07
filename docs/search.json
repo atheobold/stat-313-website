@@ -1320,28 +1320,28 @@
     "href": "slides/week5-day1.html#section-10",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Behind the Plot\n\n\nggplot(data = MA_schools, \n       mapping = aes(y = average_sat_math, \n                       x = perc_disadvan, \n                       color = size)) + \n  geom_point() +\n  geom_smooth(method = \"lm\") + \n  labs(x = \"Percent Economically Disadvantaged\", \n       y = \"Average SAT Math\", \n       color = \"Size of School\")\n\n\ngeom_smooth() allows for both the intercepts and the slopes to differ"
+    "text": "What if they’re not very different?"
   },
   {
     "objectID": "slides/week5-day1.html#section-11",
     "href": "slides/week5-day1.html#section-11",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "What about now?\n\n\n\n# A tibble: 6 × 3\n  term                     estimate std_error\n  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept                 594.       13.3  \n2 perc_disadvan              -2.93      0.294\n3 size: medium              -17.8      15.8  \n4 size: large               -13.3      13.8  \n5 perc_disadvan:sizemedium    0.146     0.371\n6 perc_disadvan:sizelarge     0.189     0.323\n\n\n\n\n🤨"
+    "text": "Parallel Slopes\n\n\nlm(average_sat_math ~ perc_disadvan + size, \n   data = MA_schools)\n\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92"
   },
   {
     "objectID": "slides/week5-day1.html#section-12",
     "href": "slides/week5-day1.html#section-12",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Who is baseline?"
+    "text": "Group equations – Baseline\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\\[\\widehat{SAT}_{small} = 588 - 2.78 \\times \\text{percent disadvantaged}\\]"
   },
   {
     "objectID": "slides/week5-day1.html#section-13",
     "href": "slides/week5-day1.html#section-13",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Deciphering groups – Small schools\n\n\n\n\\[\\widehat{SAT}_{small} = 594 - 2.93 \\times \\text{percent disadvan}\\]"
+    "text": "Group equations – Offsets\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\n\\[\\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{medium} = 576.1 - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\n\n\\[\\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = 581.64 - 2.78 \\times \\text{percent disadvan}\\]"
   },
   {
     "objectID": "slides/week5-day1.html#section-14",

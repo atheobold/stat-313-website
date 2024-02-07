@@ -266,101 +266,6 @@ ggplot(data = MA_schools,
   my_theme
 ```
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Behind the Plot
-:::
-
-```{r}
-#| eval: false
-#| echo: true
-
-ggplot(data = MA_schools, 
-       mapping = aes(y = average_sat_math, 
-                       x = perc_disadvan, 
-                       color = size)) + 
-  geom_point() +
-  geom_smooth(method = "lm") + 
-  labs(x = "Percent Economically Disadvantaged", 
-       y = "Average SAT Math", 
-       color = "Size of School")
-```
-
-</br>
-
-`geom_smooth()` allows for *both* the intercepts and the slopes to differ
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-What about now?
-:::
-
-```{r}
-lm(average_sat_math ~ perc_disadvan*size, data = MA_schools) %>% 
-  get_regression_table() %>% 
-  select(term:std_error)
-```
-
-. . .
-
-::: {style="font-size: 3em; color: #B6CADA;"}
-🤨
-:::
-
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Who is baseline?
-:::
-
-![](images/baseline.jpg)
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Deciphering groups -- Small schools
-:::
-
-![](images/small_coefficients.jpg)
-
-. . .
-
-$$\widehat{SAT}_{small} = 594 - 2.93 \times \text{percent disadvan}$$
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Deciphering groups -- Medium schools
-:::
-
-![](images/medium_coefficients.jpg)
-
-. . .
-
-$$\widehat{SAT}_{medium} = (594 - 17.8) + (- 2.93 + 0.146) \times \text{percent disadvan}$$
-
-. . .
-
-$$\widehat{SAT}_{medium} = 576.2 - 2.784 \times \text{percent disadvan}$$
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Deciphering groups -- Large schools
-:::
-
-![](images/large_coefficients.jpg)
-
-. . .
-
-$$\widehat{SAT}_{large} = (594 - 13.3) + (- 2.93 + 0.189) \times \text{percent disadvan}$$
-
-. . .
-
-$$\widehat{SAT}_{large} = 580.7 - 2.741 \times \text{percent disadvan}$$
-
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 1.5em; color: #000000;"}
@@ -368,8 +273,6 @@ What if they're not very different?
 :::
 
 ```{r}
-#| out-height: 50%
-#| out-width: 50%
 #| fig-align: center
 
 MA_schools %>% 
@@ -380,21 +283,6 @@ MA_schools %>%
   geom_parallel_slopes() + 
   labs(x = "Percent Economically Disadvantaged", 
        y = "Average SAT Math", 
-       color = "Size of School") +
-  my_theme
-```
-
-```{r}
-#| out-height: 50%
-#| out-width: 50%
-#| fig-align: center
-
-MA_schools %>% 
-  ggplot(mapping = aes(y = average_sat_math, x = perc_disadvan, color = size)) + 
-  geom_point() +
-  geom_smooth(method = "lm") + 
-  labs(y = "Average SAT Math Score", 
-       x = "Percent of Students Economically Disadvantaged", 
        color = "Size of School") +
   my_theme
 ```
@@ -410,13 +298,15 @@ Parallel Slopes
 #| echo: true
 #| code-line-numbers: false
 
-lm(average_sat_math ~ perc_disadvan + size, data = MA_schools)
+lm(average_sat_math ~ perc_disadvan + size, 
+   data = MA_schools)
 ```
 
 </br>
 
 ```{r}
-lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>% 
+lm(average_sat_math ~ perc_disadvan + size, 
+   data = MA_schools) %>% 
   get_regression_table() %>% 
   select(term:std_error)
 ```
