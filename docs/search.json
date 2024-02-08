@@ -4746,14 +4746,14 @@
     "href": "slides/week5-day2.html#section-1",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 0 – Read in Your Data\n\n\n\nSTAT 313\n\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\nSTAT 513\n\n\nUpload your formatted dataset to your Midterm Project on Posit Cloud\nWrite the following code to load in your dataset:\n\n\n\n\n \n\nname_you_want &lt;- read_xlsx(\"name of your dataset.xlsx\")\n\nOR\n\nname_you_want &lt;- read_csv(\"name of your dataset.csv\")"
+    "text": "Step 0 – Read in Your Data\n\n\n\nSTAT 313\n\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\nSTAT 513\n\n\nUpload your formatted dataset to your Midterm Project on Posit Cloud\nWrite the following code to load in your dataset:\n\n\n\n\n\n\nname_you_want &lt;- read_xlsx(\"name of your dataset.xlsx\")\n\nOR\n\nname_you_want &lt;- read_csv(\"name of your dataset.csv\")"
   },
   {
     "objectID": "slides/week5-day2.html#section-2",
     "href": "slides/week5-day2.html#section-2",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 1 – Create Your Visualizations\n\n\n\nTwo Numerical Variables\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_lines()\n\n\n\n\n\n\n\n\nTwo total visualizations"
+    "text": "Step 1 – Visualizations\n\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\nI like grid lines! Please use theme_bw() instead!"
   },
   {
     "objectID": "slides/week5-day2.html#section-3",

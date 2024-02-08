@@ -486,7 +486,7 @@
 </div>
 </div>
 </div>
-<p><br> <br></p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>name_you_want <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"name of your dataset.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -498,17 +498,11 @@
 <section id="section-2" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 1 – Create Your Visualizations</p>
+<p>Step 1 – Visualizations</p>
 </div>
 <div class="columns">
 <div class="column" style="width:47%;">
 <p><u>Two Numerical Variables</u></p>
-<div class="small">
-<ul>
-<li><p>Visualize the model with <strong>both</strong> variables – <code>color</code> gradient</p></li>
-<li><p>Visualize <strong>two</strong> simple linear regression models – one for each variable</p></li>
-</ul>
-</div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -522,16 +516,16 @@
 </div>
 </div>
 </div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:47%;">
-<p><u>One Categorical &amp; One Numerical Variable</u></p>
 <div class="small">
 <ul>
-<li><p>Visualize the model using <code>geom_smooth(method = "lm")</code></p></li>
-<li><p>Visualize the model using <code>geom_parallel_lines()</code></p></li>
+<li>Visualize the model with <strong>both</strong> variables – <code>color</code> gradient</li>
+<li>Visualize <strong>two</strong> simple linear regression models – one for each variable</li>
 </ul>
 </div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:50%;">
+<p><u>One Categorical &amp; One Numerical Variable</u></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -544,6 +538,25 @@
 
 </div>
 </div>
+</div>
+<div class="small">
+<ul>
+<li>Visualize the model using <code>geom_smooth(method = "lm")</code></li>
+<li>Visualize the model using <code>geom_parallel_slopes()</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>No <code>theme_classic()</code></strong></p>
+</div>
+<div class="callout-content">
+<p>I like grid lines! Please use <code>theme_bw()</code> instead!</p>
 </div>
 </div>
 </div>

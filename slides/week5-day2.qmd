@@ -80,7 +80,6 @@ STAT 513
 :::
 
 </br>
-</br>
 
 ```{r}
 #| eval: false
@@ -99,40 +98,43 @@ name_you_want <- read_csv("name of your dataset.csv")
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 1 -- Create Your Visualizations
+Step 1 -- Visualizations
 :::
 
 ::: columns
 ::: {.column width="47%"}
 [Two Numerical Variables]{.underline}
 
-:::{.small}
--   Visualize the model with **both** variables -- `color` gradient
-
--   Visualize **two** simple linear regression models -- one for each variable
-:::
-
 :::{.callout-tip}
 # Three total visualizations
 :::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="47%"}
-[One Categorical & One Numerical Variable]{.underline}
 
 :::{.small}
--   Visualize the model using `geom_smooth(method = "lm")`
-
--   Visualize the model using `geom_parallel_lines()`
+-   Visualize the model with **both** variables -- `color` gradient
+-   Visualize **two** simple linear regression models -- one for each variable
 :::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="50%"}
+[One Categorical & One Numerical Variable]{.underline}
 
 :::{.callout-tip}
 # Two total visualizations
 :::
+
+:::{.small}
+-   Visualize the model using `geom_smooth(method = "lm")`
+-   Visualize the model using `geom_parallel_slopes()`
 :::
+:::
+:::
+
+:::{.callout-warning}
+# No `theme_classic()`
+I like grid lines! Please use `theme_bw()` instead!
 :::
 
 ##  {background-color="#D4D4D4"}
