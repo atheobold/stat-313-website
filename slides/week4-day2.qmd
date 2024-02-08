@@ -63,9 +63,9 @@ Your group received a "Growing" on *at least one* question
 -   **Categorical variables in R (Q2)**
     -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?
 -   **Comparing distributions between groups (Q9)**
-    - Are the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?
-    - Are the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?
-    - Was every channel type observed in both sections of forest?
+    -   Are the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?
+    -   Are the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?
+    -   Was every channel type observed in both sections of forest?
 -   **Comparing group means with distributions (Q11)**
     -   Where did you believe the "center" of the distribution was?
     -   Is that different from the means you are seeing? Why do you think that is?
@@ -236,7 +236,6 @@ knitr::include_graphics("images/hitler.jpg")
 ::: columns
 ::: {.column width="50%"}
 ::: fragment
-
 ```{r}
 #| out-height: 25%
 #| out-width: 60%
@@ -251,7 +250,6 @@ Between 1970 and 1976 between 25% and 50% of Native Americans were sterilized, m
 
 ::: {.column width="50%"}
 ::: fragment
-
 ```{r}
 #| out-height: 25%
 #| out-width: 60%

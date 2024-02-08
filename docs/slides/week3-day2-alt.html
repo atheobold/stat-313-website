@@ -1,421 +1,438 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>STAT 313 / 513 - Winter 2024 - Incorporating Categorical Variables</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<html lang="en"><head>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 20,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.533">
+
+  <title>STAT 313 / 513 - Winter 2024 - Incorporating Categorical Variables</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
   }
-}</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
 
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-sidebar docked">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Incorporating Categorical Variables</h1>
+  <p class="subtitle">STAT 313</p>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Incorporating Categorical Variables</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
-    <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
-</div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Support</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching team</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Computing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Access</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">R Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course_resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Projects</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Midterm Project Description</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Final Project Description</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 0</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#lab-1" id="toc-lab-1" class="nav-link active" data-scroll-target="#lab-1">Lab 1</a>
-  <ul class="collapse">
-  <li><a href="#revisions-due-tonight" id="toc-revisions-due-tonight" class="nav-link" data-scroll-target="#revisions-due-tonight">Revisions Due Tonight</a></li>
-  </ul></li>
-  <li><a href="#lab-2" id="toc-lab-2" class="nav-link" data-scroll-target="#lab-2">Lab 2</a>
-  <ul class="collapse">
-  <li><a href="#a-grading-reminder" id="toc-a-grading-reminder" class="nav-link" data-scroll-target="#a-grading-reminder">A Grading Reminder</a></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
-  <li><a href="#copying-the-lab-last-weeks-recorder" id="toc-copying-the-lab-last-weeks-recorder" class="nav-link" data-scroll-target="#copying-the-lab-last-weeks-recorder">Copying the Lab – Last Week’s Recorder</a></li>
-  <li><a href="#copying-the-lab-last-weeks-recorder-1" id="toc-copying-the-lab-last-weeks-recorder-1" class="nav-link" data-scroll-target="#copying-the-lab-last-weeks-recorder-1">Copying the Lab – Last Week’s Recorder</a></li>
-  <li><a href="#copying-the-lab-everyone-else" id="toc-copying-the-lab-everyone-else" class="nav-link" data-scroll-target="#copying-the-lab-everyone-else">Copying the Lab – Everyone Else</a></li>
-  <li><a href="#completing-revisions" id="toc-completing-revisions" class="nav-link" data-scroll-target="#completing-revisions">Completing Revisions</a></li>
-  </ul></li>
-  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a>
-  <ul class="collapse">
-  <li><a href="#todays-data" id="toc-todays-data" class="nav-link" data-scroll-target="#todays-data">Today’s Data</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
-  <li><a href="#data-layout" id="toc-data-layout" class="nav-link" data-scroll-target="#data-layout">Data Layout</a></li>
-  <li><a href="#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do" id="toc-if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do" class="nav-link" data-scroll-target="#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do">If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?</a></li>
-  <li><a href="#step-1-remove-salamanders" id="toc-step-1-remove-salamanders" class="nav-link" data-scroll-target="#step-1-remove-salamanders">Step 1: Remove Salamanders</a></li>
-  <li><a href="#step-2-group_by-summarize" id="toc-step-2-group_by-summarize" class="nav-link" data-scroll-target="#step-2-group_by-summarize">Step 2: <code>group_by()</code> + <code>summarize()</code></a></li>
-  <li><a href="#are-they-different" id="toc-are-they-different" class="nav-link" data-scroll-target="#are-they-different">Are they different?</a></li>
-  <li><a href="#lets-make-a-visualization" id="toc-lets-make-a-visualization" class="nav-link" data-scroll-target="#lets-make-a-visualization">Let’s Make a Visualization!</a></li>
-  <li><a href="#are-they-different-1" id="toc-are-they-different-1" class="nav-link" data-scroll-target="#are-they-different-1">Are they different?</a></li>
-  <li><a href="#lets-add-in-the-type-of-channel" id="toc-lets-add-in-the-type-of-channel" class="nav-link" data-scroll-target="#lets-add-in-the-type-of-channel">Let’s Add in the Type of Channel</a></li>
-  <li><a href="#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do" id="toc-if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do" class="nav-link" data-scroll-target="#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do">If you wanted to find the mean mass for Cutthroat trout for each <em>type of channel</em> in each <em>section</em>, what would you do?</a></li>
-  <li><a href="#group_by-summarize" id="toc-group_by-summarize" class="nav-link" data-scroll-target="#group_by-summarize"><code>group_by()</code> + <code>summarize()</code></a></li>
-  <li><a href="#visualization-2.0-incorporating-color" id="toc-visualization-2.0-incorporating-color" class="nav-link" data-scroll-target="#visualization-2.0-incorporating-color">Visualization 2.0 – Incorporating Color</a></li>
-  <li><a href="#visualization-2.0-incorporating-facets" id="toc-visualization-2.0-incorporating-facets" class="nav-link" data-scroll-target="#visualization-2.0-incorporating-facets">Visualization 2.0 – Incorporating Facets</a></li>
-  </ul></li>
-  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a>
-  <ul class="collapse">
-  <li><a href="#choosing-what-to-measure" id="toc-choosing-what-to-measure" class="nav-link" data-scroll-target="#choosing-what-to-measure">Choosing What to Measure</a></li>
-  <li><a href="#choosing-what-to-measure-1" id="toc-choosing-what-to-measure-1" class="nav-link" data-scroll-target="#choosing-what-to-measure-1">Choosing What to Measure</a></li>
-  <li><a href="#choosing-what-to-measure-2" id="toc-choosing-what-to-measure-2" class="nav-link" data-scroll-target="#choosing-what-to-measure-2">Choosing What to Measure</a></li>
-  <li><a href="#choosing-what-to-measure-3" id="toc-choosing-what-to-measure-3" class="nav-link" data-scroll-target="#choosing-what-to-measure-3">Choosing What to Measure</a></li>
-  <li><a href="#data-feminism" id="toc-data-feminism" class="nav-link" data-scroll-target="#data-feminism">Data Feminism</a></li>
-  <li><a href="#principles-of-data-feminism" id="toc-principles-of-data-feminism" class="nav-link" data-scroll-target="#principles-of-data-feminism">Principles of Data Feminism</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week3-day2-alt.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Incorporating Categorical Variables</h1>
-<p class="subtitle lead">STAT 313</p>
+<div class="quarto-title-authors">
 </div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="lab-1" class="level1">
+</section>
+<section>
+<section id="lab-1" class="title-slide slide level1 center">
 <h1>Lab 1</h1>
-<section id="revisions-due-tonight" class="level2">
-<h2 class="anchored" data-anchor-id="revisions-due-tonight">Revisions Due Tonight</h2>
+
+</section>
+<section id="revisions-due-tonight" class="slide level2">
+<h2>Revisions Due Tonight</h2>
 <p>If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day.</p>
-</section>
-</section>
-<section id="lab-2" class="level1">
+</section></section>
+<section>
+<section id="lab-2" class="title-slide slide level1 center">
 <h1>Lab 2</h1>
-<section id="a-grading-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="a-grading-reminder">A Grading Reminder</h2>
+
+</section>
+<section id="a-grading-reminder" class="slide level2">
+<h2>A Grading Reminder</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:47%;">
@@ -435,8 +452,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="common-mistakes" class="level2">
-<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<section id="common-mistakes" class="slide level2">
+<h2>Common Mistakes</h2>
 <div class="small">
 <ul>
 <li>Units in axis labels (Q2 &amp; Q9)
@@ -455,8 +472,8 @@ div.csl-indent {
 </ul>
 </div>
 </section>
-<section id="copying-the-lab-last-weeks-recorder" class="level2">
-<h2 class="anchored" data-anchor-id="copying-the-lab-last-weeks-recorder">Copying the Lab – Last Week’s Recorder</h2>
+<section id="copying-the-lab-last-weeks-recorder" class="slide level2">
+<h2>Copying the Lab – Last Week’s Recorder</h2>
 <p>The person who typed your lab needs to make their project “public”</p>
 <ol type="1">
 <li>Open Posit Cloud</li>
@@ -464,29 +481,29 @@ div.csl-indent {
 <li>Click on “Your Content”</li>
 <li>Open the settings for your Lab 1 project</li>
 </ol>
-<p><img src="images/open-project-settings.png" class="img-fluid"></p>
-</section>
-<section id="copying-the-lab-last-weeks-recorder-1" class="level2">
-<h2 class="anchored" data-anchor-id="copying-the-lab-last-weeks-recorder-1">Copying the Lab – Last Week’s Recorder</h2>
+
+<img data-src="images/open-project-settings.png" class="r-stretch"></section>
+<section id="copying-the-lab-last-weeks-recorder-1" class="slide level2">
+<h2>Copying the Lab – Last Week’s Recorder</h2>
 <ol start="5" type="1">
 <li>Change the access for your project to “Space Members”</li>
 </ol>
-<p><img src="images/make-project-public.png" class="img-fluid"></p>
-</section>
-<section id="copying-the-lab-everyone-else" class="level2">
-<h2 class="anchored" data-anchor-id="copying-the-lab-everyone-else">Copying the Lab – Everyone Else</h2>
+
+<img data-src="images/make-project-public.png" class="r-stretch"></section>
+<section id="copying-the-lab-everyone-else" class="slide level2">
+<h2>Copying the Lab – Everyone Else</h2>
 <ol type="1">
 <li>Find your group member’s lab (you can use the search bar to search for their name)</li>
 </ol>
-<p><img src="images/search-for-name.png" class="img-fluid"></p>
+<p><img data-src="images/search-for-name.png"></p>
 <ol start="2" type="1">
 <li>Open their Lab 2 project</li>
 <li>Select “Save a Permanent Copy”</li>
 </ol>
-<p><img src="images/save-a-copy.png" class="img-fluid"></p>
+<p><img data-src="images/save-a-copy.png"></p>
 </section>
-<section id="completing-revisions" class="level2">
-<h2 class="anchored" data-anchor-id="completing-revisions">Completing Revisions</h2>
+<section id="completing-revisions" class="slide level2">
+<h2>Completing Revisions</h2>
 <p>Lab 2 revisions are due by Thursday, February 1.</p>
 <div class="small">
 <ol type="1">
@@ -498,65 +515,66 @@ div.csl-indent {
 <li>Submit your revisions to the <u>Lab 2 Revisions</u> assignment</li>
 </ol>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Reflections
+<p><strong>Reflections</strong></p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-content">
 <div class="small">
 <p>Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="review" class="level1">
+</div>
+</section></section>
+<section>
+<section id="review" class="title-slide slide level1 center">
 <h1>Review</h1>
-<section id="todays-data" class="level2">
-<h2 class="anchored" data-anchor-id="todays-data">Today’s Data</h2>
+
+</section>
+<section id="todays-data" class="slide level2">
+<h2>Today’s Data</h2>
 <div class="small">
-<blockquote class="blockquote">
+<blockquote>
 <p>The and_vertebrates dataset contains length and weight observations for Coastal Cutthroat Trout and two salamander species (Coastal Giant Salamander, and Cascade Torrent Salamander) in previously clear cut (c.&nbsp;1963) and old growth coniferous forest sections of Mack Creek in HJ Andrews Experimental Forest, Willamette National Forest, Oregon.</p>
 </blockquote>
 </div>
-<p><img src="images/hj-andrews.jpeg" class="img-fluid"></p>
-</section>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+
+<img data-src="images/hj-andrews.jpeg" class="r-stretch"></section>
+<section id="research-question" class="slide level2">
+<h2>Research Question</h2>
 <p><br> <br></p>
 <div class="centered">
-<blockquote class="blockquote">
+<blockquote>
 <p>Are there differences in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
 </blockquote>
 </div>
 </section>
-<section id="data-layout" class="level2">
-<h2 class="anchored" data-anchor-id="data-layout">Data Layout</h2>
+<section id="data-layout" class="slide level2">
+<h2>Data Layout</h2>
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="zmrjuznuqx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zmrjuznuqx table {
+<div id="muaojsrmet" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#muaojsrmet table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zmrjuznuqx thead, #zmrjuznuqx tbody, #zmrjuznuqx tfoot, #zmrjuznuqx tr, #zmrjuznuqx td, #zmrjuznuqx th {
+#muaojsrmet thead, #muaojsrmet tbody, #muaojsrmet tfoot, #muaojsrmet tr, #muaojsrmet td, #muaojsrmet th {
   border-style: none;
 }
 
-#zmrjuznuqx p {
+#muaojsrmet p {
   margin: 0;
   padding: 0;
 }
 
-#zmrjuznuqx .gt_table {
+#muaojsrmet .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -582,12 +600,12 @@ Reflections
   border-left-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_caption {
+#muaojsrmet .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zmrjuznuqx .gt_title {
+#muaojsrmet .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -599,7 +617,7 @@ Reflections
   border-bottom-width: 0;
 }
 
-#zmrjuznuqx .gt_subtitle {
+#muaojsrmet .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -611,7 +629,7 @@ Reflections
   border-top-width: 0;
 }
 
-#zmrjuznuqx .gt_heading {
+#muaojsrmet .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -623,13 +641,13 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_bottom_border {
+#muaojsrmet .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_col_headings {
+#muaojsrmet .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -644,7 +662,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_col_heading {
+#muaojsrmet .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -664,7 +682,7 @@ Reflections
   overflow-x: hidden;
 }
 
-#zmrjuznuqx .gt_column_spanner_outer {
+#muaojsrmet .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,15 +694,15 @@ Reflections
   padding-right: 4px;
 }
 
-#zmrjuznuqx .gt_column_spanner_outer:first-child {
+#muaojsrmet .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zmrjuznuqx .gt_column_spanner_outer:last-child {
+#muaojsrmet .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zmrjuznuqx .gt_column_spanner {
+#muaojsrmet .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -696,11 +714,11 @@ Reflections
   width: 100%;
 }
 
-#zmrjuznuqx .gt_spanner_row {
+#muaojsrmet .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zmrjuznuqx .gt_group_heading {
+#muaojsrmet .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -726,7 +744,7 @@ Reflections
   text-align: left;
 }
 
-#zmrjuznuqx .gt_empty_group_heading {
+#muaojsrmet .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -741,15 +759,15 @@ Reflections
   vertical-align: middle;
 }
 
-#zmrjuznuqx .gt_from_md > :first-child {
+#muaojsrmet .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zmrjuznuqx .gt_from_md > :last-child {
+#muaojsrmet .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zmrjuznuqx .gt_row {
+#muaojsrmet .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -768,7 +786,7 @@ Reflections
   overflow-x: hidden;
 }
 
-#zmrjuznuqx .gt_stub {
+#muaojsrmet .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,7 +799,7 @@ Reflections
   padding-right: 5px;
 }
 
-#zmrjuznuqx .gt_stub_row_group {
+#muaojsrmet .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -795,15 +813,15 @@ Reflections
   vertical-align: top;
 }
 
-#zmrjuznuqx .gt_row_group_first td {
+#muaojsrmet .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zmrjuznuqx .gt_row_group_first th {
+#muaojsrmet .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zmrjuznuqx .gt_summary_row {
+#muaojsrmet .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -813,16 +831,16 @@ Reflections
   padding-right: 5px;
 }
 
-#zmrjuznuqx .gt_first_summary_row {
+#muaojsrmet .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_first_summary_row.thick {
+#muaojsrmet .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zmrjuznuqx .gt_last_summary_row {
+#muaojsrmet .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -832,7 +850,7 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_grand_summary_row {
+#muaojsrmet .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -842,7 +860,7 @@ Reflections
   padding-right: 5px;
 }
 
-#zmrjuznuqx .gt_first_grand_summary_row {
+#muaojsrmet .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -852,7 +870,7 @@ Reflections
   border-top-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_last_grand_summary_row_top {
+#muaojsrmet .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -862,11 +880,11 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_striped {
+#muaojsrmet .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zmrjuznuqx .gt_table_body {
+#muaojsrmet .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -875,7 +893,7 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_footnotes {
+#muaojsrmet .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -889,7 +907,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_footnote {
+#muaojsrmet .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -898,7 +916,7 @@ Reflections
   padding-right: 5px;
 }
 
-#zmrjuznuqx .gt_sourcenotes {
+#muaojsrmet .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -912,7 +930,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#zmrjuznuqx .gt_sourcenote {
+#muaojsrmet .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -920,246 +938,264 @@ Reflections
   padding-right: 5px;
 }
 
-#zmrjuznuqx .gt_left {
+#muaojsrmet .gt_left {
   text-align: left;
 }
 
-#zmrjuznuqx .gt_center {
+#muaojsrmet .gt_center {
   text-align: center;
 }
 
-#zmrjuznuqx .gt_right {
+#muaojsrmet .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zmrjuznuqx .gt_font_normal {
+#muaojsrmet .gt_font_normal {
   font-weight: normal;
 }
 
-#zmrjuznuqx .gt_font_bold {
+#muaojsrmet .gt_font_bold {
   font-weight: bold;
 }
 
-#zmrjuznuqx .gt_font_italic {
+#muaojsrmet .gt_font_italic {
   font-style: italic;
 }
 
-#zmrjuznuqx .gt_super {
+#muaojsrmet .gt_super {
   font-size: 65%;
 }
 
-#zmrjuznuqx .gt_footnote_marks {
+#muaojsrmet .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zmrjuznuqx .gt_asterisk {
+#muaojsrmet .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zmrjuznuqx .gt_indent_1 {
+#muaojsrmet .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zmrjuznuqx .gt_indent_2 {
+#muaojsrmet .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zmrjuznuqx .gt_indent_3 {
+#muaojsrmet .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zmrjuznuqx .gt_indent_4 {
+#muaojsrmet .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zmrjuznuqx .gt_indent_5 {
+#muaojsrmet .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="year">year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="sitecode">sitecode</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="section">section</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="reach">reach</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="pass">pass</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="unitnum">unitnum</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="unittype">unittype</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="vert_index">vert_index</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="pitnumber">pitnumber</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="species">species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="length_1_mm">length_1_mm</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="length_2_mm">length_2_mm</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="weight_g">weight_g</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="clip">clip</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="sampledate">sampledate</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="notes">notes</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="year" class="gt_row gt_right">2017</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-M</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">M</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">8</td>
-<td headers="unittype" class="gt_row gt_left">SC</td>
-<td headers="vert_index" class="gt_row gt_right">20</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Cascade torrent salamander</td>
-<td headers="length_1_mm" class="gt_row gt_right">30</td>
-<td headers="length_2_mm" class="gt_row gt_right">51</td>
-<td headers="weight_g" class="gt_row gt_right">0.65</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">2017-09-07</td>
-<td headers="notes" class="gt_row gt_left">NA</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">2019</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-M</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">M</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">8</td>
-<td headers="unittype" class="gt_row gt_left">SC</td>
-<td headers="vert_index" class="gt_row gt_right">17</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Cascade torrent salamander</td>
-<td headers="length_1_mm" class="gt_row gt_right">28</td>
-<td headers="length_2_mm" class="gt_row gt_right">52</td>
-<td headers="weight_g" class="gt_row gt_right">0.80</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">2019-09-04</td>
-<td headers="notes" class="gt_row gt_left">Torrent salamander</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">2008</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-U</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">U</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">13</td>
-<td headers="unittype" class="gt_row gt_left">C</td>
-<td headers="vert_index" class="gt_row gt_right">51</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Coastal giant salamander</td>
-<td headers="length_1_mm" class="gt_row gt_right">48</td>
-<td headers="length_2_mm" class="gt_row gt_right">86</td>
-<td headers="weight_g" class="gt_row gt_right">3.43</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">2008-09-17</td>
-<td headers="notes" class="gt_row gt_left">NA</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">2016</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-U</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">U</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">16</td>
-<td headers="unittype" class="gt_row gt_left">C</td>
-<td headers="vert_index" class="gt_row gt_right">16</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Coastal giant salamander</td>
-<td headers="length_1_mm" class="gt_row gt_right">58</td>
-<td headers="length_2_mm" class="gt_row gt_right">103</td>
-<td headers="weight_g" class="gt_row gt_right">6.05</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">2016-09-08</td>
-<td headers="notes" class="gt_row gt_left">NA</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">1994</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-L</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">L</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">1</td>
-<td headers="unittype" class="gt_row gt_left">P</td>
-<td headers="vert_index" class="gt_row gt_right">5</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Cutthroat trout</td>
-<td headers="length_1_mm" class="gt_row gt_right">69</td>
-<td headers="length_2_mm" class="gt_row gt_right">NA</td>
-<td headers="weight_g" class="gt_row gt_right">4.00</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">1994-08-31</td>
-<td headers="notes" class="gt_row gt_left">NA</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">1998</td>
-<td headers="sitecode" class="gt_row gt_left">MACKCC-U</td>
-<td headers="section" class="gt_row gt_left">CC</td>
-<td headers="reach" class="gt_row gt_left">U</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">10</td>
-<td headers="unittype" class="gt_row gt_left">P</td>
-<td headers="vert_index" class="gt_row gt_right">14</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">Cutthroat trout</td>
-<td headers="length_1_mm" class="gt_row gt_right">44</td>
-<td headers="length_2_mm" class="gt_row gt_right">NA</td>
-<td headers="weight_g" class="gt_row gt_right">NA</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">1998-09-09</td>
-<td headers="notes" class="gt_row gt_left">NA</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">1995</td>
-<td headers="sitecode" class="gt_row gt_left">MACKCC-M</td>
-<td headers="section" class="gt_row gt_left">CC</td>
-<td headers="reach" class="gt_row gt_left">M</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">9</td>
-<td headers="unittype" class="gt_row gt_left">SC</td>
-<td headers="vert_index" class="gt_row gt_right">1</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">NA</td>
-<td headers="length_1_mm" class="gt_row gt_right">NA</td>
-<td headers="length_2_mm" class="gt_row gt_right">NA</td>
-<td headers="weight_g" class="gt_row gt_right">NA</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">1995-08-30</td>
-<td headers="notes" class="gt_row gt_left">DRY</td></tr>
-    <tr><td headers="year" class="gt_row gt_right">1995</td>
-<td headers="sitecode" class="gt_row gt_left">MACKOG-M</td>
-<td headers="section" class="gt_row gt_left">OG</td>
-<td headers="reach" class="gt_row gt_left">M</td>
-<td headers="pass" class="gt_row gt_right">1</td>
-<td headers="unitnum" class="gt_row gt_right">10</td>
-<td headers="unittype" class="gt_row gt_left">S</td>
-<td headers="vert_index" class="gt_row gt_right">1</td>
-<td headers="pitnumber" class="gt_row gt_right">NA</td>
-<td headers="species" class="gt_row gt_left">NA</td>
-<td headers="length_1_mm" class="gt_row gt_right">NA</td>
-<td headers="length_2_mm" class="gt_row gt_right">NA</td>
-<td headers="weight_g" class="gt_row gt_right">NA</td>
-<td headers="clip" class="gt_row gt_left">NONE</td>
-<td headers="sampledate" class="gt_row gt_right">1995-08-29</td>
-<td headers="notes" class="gt_row gt_left">JAM</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">year</th>
+<th id="sitecode" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">sitecode</th>
+<th id="section" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">section</th>
+<th id="reach" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reach</th>
+<th id="pass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pass</th>
+<th id="unitnum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">unitnum</th>
+<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
+<th id="vert_index" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">vert_index</th>
+<th id="pitnumber" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pitnumber</th>
+<th id="species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">species</th>
+<th id="length_1_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">length_1_mm</th>
+<th id="length_2_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">length_2_mm</th>
+<th id="weight_g" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_g</th>
+<th id="clip" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">clip</th>
+<th id="sampledate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">sampledate</th>
+<th id="notes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">notes</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="year">1994</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-L</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">L</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">3</td>
+<td class="gt_row gt_left" headers="unittype">SC</td>
+<td class="gt_row gt_right" headers="vert_index">21</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">Cascade torrent salamander</td>
+<td class="gt_row gt_right" headers="length_1_mm">32</td>
+<td class="gt_row gt_right" headers="length_2_mm">55</td>
+<td class="gt_row gt_right" headers="weight_g">0.94</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">1994-08-30</td>
+<td class="gt_row gt_left" headers="notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="year">2012</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-L</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">L</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">2</td>
+<td class="gt_row gt_left" headers="unittype">SC</td>
+<td class="gt_row gt_right" headers="vert_index">49</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">Cascade torrent salamander</td>
+<td class="gt_row gt_right" headers="length_1_mm">39</td>
+<td class="gt_row gt_right" headers="length_2_mm">70</td>
+<td class="gt_row gt_right" headers="weight_g">1.60</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">2012-09-04</td>
+<td class="gt_row gt_left" headers="notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="year">2013</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-U</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">U</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">7</td>
+<td class="gt_row gt_left" headers="unittype">C</td>
+<td class="gt_row gt_right" headers="vert_index">72</td>
+<td class="gt_row gt_right" headers="pitnumber">19078866</td>
+<td class="gt_row gt_left" headers="species">Coastal giant salamander</td>
+<td class="gt_row gt_right" headers="length_1_mm">73</td>
+<td class="gt_row gt_right" headers="length_2_mm">136</td>
+<td class="gt_row gt_right" headers="weight_g">15.60</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">2013-09-03</td>
+<td class="gt_row gt_left" headers="notes">RECAP</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="year">2010</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-U</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">U</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">7</td>
+<td class="gt_row gt_left" headers="unittype">C</td>
+<td class="gt_row gt_right" headers="vert_index">41</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">Coastal giant salamander</td>
+<td class="gt_row gt_right" headers="length_1_mm">34</td>
+<td class="gt_row gt_right" headers="length_2_mm">68</td>
+<td class="gt_row gt_right" headers="weight_g">1.74</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">2010-09-08</td>
+<td class="gt_row gt_left" headers="notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="year">2003</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-L</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">L</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">1</td>
+<td class="gt_row gt_left" headers="unittype">C</td>
+<td class="gt_row gt_right" headers="vert_index">5</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">Cutthroat trout</td>
+<td class="gt_row gt_right" headers="length_1_mm">52</td>
+<td class="gt_row gt_right" headers="length_2_mm">NA</td>
+<td class="gt_row gt_right" headers="weight_g">NA</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">2003-09-02</td>
+<td class="gt_row gt_left" headers="notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="year">1997</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-M</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">M</td>
+<td class="gt_row gt_right" headers="pass">2</td>
+<td class="gt_row gt_right" headers="unitnum">3</td>
+<td class="gt_row gt_left" headers="unittype">P</td>
+<td class="gt_row gt_right" headers="vert_index">1</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">Cutthroat trout</td>
+<td class="gt_row gt_right" headers="length_1_mm">50</td>
+<td class="gt_row gt_right" headers="length_2_mm">NA</td>
+<td class="gt_row gt_right" headers="weight_g">NA</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">1997-08-27</td>
+<td class="gt_row gt_left" headers="notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="year">1995</td>
+<td class="gt_row gt_left" headers="sitecode">MACKOG-M</td>
+<td class="gt_row gt_left" headers="section">OG</td>
+<td class="gt_row gt_left" headers="reach">M</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">10</td>
+<td class="gt_row gt_left" headers="unittype">S</td>
+<td class="gt_row gt_right" headers="vert_index">1</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">NA</td>
+<td class="gt_row gt_right" headers="length_1_mm">NA</td>
+<td class="gt_row gt_right" headers="length_2_mm">NA</td>
+<td class="gt_row gt_right" headers="weight_g">NA</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">1995-08-29</td>
+<td class="gt_row gt_left" headers="notes">JAM</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="year">1990</td>
+<td class="gt_row gt_left" headers="sitecode">MACKCC-L</td>
+<td class="gt_row gt_left" headers="section">CC</td>
+<td class="gt_row gt_left" headers="reach">L</td>
+<td class="gt_row gt_right" headers="pass">1</td>
+<td class="gt_row gt_right" headers="unitnum">3</td>
+<td class="gt_row gt_left" headers="unittype">SC</td>
+<td class="gt_row gt_right" headers="vert_index">1</td>
+<td class="gt_row gt_right" headers="pitnumber">NA</td>
+<td class="gt_row gt_left" headers="species">NA</td>
+<td class="gt_row gt_right" headers="length_1_mm">NA</td>
+<td class="gt_row gt_right" headers="length_2_mm">NA</td>
+<td class="gt_row gt_right" headers="weight_g">NA</td>
+<td class="gt_row gt_left" headers="clip">NONE</td>
+<td class="gt_row gt_right" headers="sampledate">1990-08-15</td>
+<td class="gt_row gt_left" headers="notes">not sampled</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p>What are the observations / rows in this dataset?</p>
+</div>
 </section>
-<section id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do" class="level2" data-background-color="#B6CADA">
-<h2 data-background-color="#B6CADA" class="anchored" data-anchor-id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do">If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?</h2>
+<section id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do" class="slide level2" data-background-color="#B6CADA">
+<h2>If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?</h2>
 </section>
-<section id="step-1-remove-salamanders" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-remove-salamanders">Step 1: Remove Salamanders</h2>
+<section id="step-1-remove-salamanders" class="slide level2">
+<h2>Step 1: Remove Salamanders</h2>
 <p><br> <br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>trout <span class="ot">&lt;-</span> <span class="fu">filter</span>(and_vertebrates, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="ot">&lt;-</span> <span class="fu">filter</span>(and_vertebrates, </span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>                species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-2-group_by-summarize" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-group_by-summarize">Step 2: <code>group_by()</code> + <code>summarize()</code></h2>
-<div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-2-group_by-summarize" class="slide level2">
+<h2>Step 2: <code>group_by()</code> + <code>summarize()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   section    mean_mass
@@ -1168,7 +1204,7 @@ Reflections
 2 Old growth      8.21</code></pre>
 </div>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 
@@ -1178,29 +1214,29 @@ Reflections
 <p><strong>Why <code>na.rm = TRUE</code>?</strong></p>
 </div>
 </div>
+</div>
 </section>
-<section id="are-they-different" class="level2">
-<h2 class="anchored" data-anchor-id="are-they-different">Are they different?</h2>
+<section id="are-they-different" class="slide level2">
+<h2>Are they different?</h2>
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="nuoajppmmh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nuoajppmmh table {
+<div id="iopdytjnnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iopdytjnnh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nuoajppmmh thead, #nuoajppmmh tbody, #nuoajppmmh tfoot, #nuoajppmmh tr, #nuoajppmmh td, #nuoajppmmh th {
+#iopdytjnnh thead, #iopdytjnnh tbody, #iopdytjnnh tfoot, #iopdytjnnh tr, #iopdytjnnh td, #iopdytjnnh th {
   border-style: none;
 }
 
-#nuoajppmmh p {
+#iopdytjnnh p {
   margin: 0;
   padding: 0;
 }
 
-#nuoajppmmh .gt_table {
+#iopdytjnnh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1226,12 +1262,12 @@ Reflections
   border-left-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_caption {
+#iopdytjnnh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nuoajppmmh .gt_title {
+#iopdytjnnh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1243,7 +1279,7 @@ Reflections
   border-bottom-width: 0;
 }
 
-#nuoajppmmh .gt_subtitle {
+#iopdytjnnh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1255,7 +1291,7 @@ Reflections
   border-top-width: 0;
 }
 
-#nuoajppmmh .gt_heading {
+#iopdytjnnh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1267,13 +1303,13 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_bottom_border {
+#iopdytjnnh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_col_headings {
+#iopdytjnnh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1288,7 +1324,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_col_heading {
+#iopdytjnnh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1308,7 +1344,7 @@ Reflections
   overflow-x: hidden;
 }
 
-#nuoajppmmh .gt_column_spanner_outer {
+#iopdytjnnh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1320,15 +1356,15 @@ Reflections
   padding-right: 4px;
 }
 
-#nuoajppmmh .gt_column_spanner_outer:first-child {
+#iopdytjnnh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nuoajppmmh .gt_column_spanner_outer:last-child {
+#iopdytjnnh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nuoajppmmh .gt_column_spanner {
+#iopdytjnnh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1340,11 +1376,11 @@ Reflections
   width: 100%;
 }
 
-#nuoajppmmh .gt_spanner_row {
+#iopdytjnnh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nuoajppmmh .gt_group_heading {
+#iopdytjnnh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1370,7 +1406,7 @@ Reflections
   text-align: left;
 }
 
-#nuoajppmmh .gt_empty_group_heading {
+#iopdytjnnh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1385,15 +1421,15 @@ Reflections
   vertical-align: middle;
 }
 
-#nuoajppmmh .gt_from_md > :first-child {
+#iopdytjnnh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nuoajppmmh .gt_from_md > :last-child {
+#iopdytjnnh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nuoajppmmh .gt_row {
+#iopdytjnnh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1412,7 +1448,7 @@ Reflections
   overflow-x: hidden;
 }
 
-#nuoajppmmh .gt_stub {
+#iopdytjnnh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1425,7 +1461,7 @@ Reflections
   padding-right: 5px;
 }
 
-#nuoajppmmh .gt_stub_row_group {
+#iopdytjnnh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1439,15 +1475,15 @@ Reflections
   vertical-align: top;
 }
 
-#nuoajppmmh .gt_row_group_first td {
+#iopdytjnnh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nuoajppmmh .gt_row_group_first th {
+#iopdytjnnh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nuoajppmmh .gt_summary_row {
+#iopdytjnnh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1457,16 +1493,16 @@ Reflections
   padding-right: 5px;
 }
 
-#nuoajppmmh .gt_first_summary_row {
+#iopdytjnnh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_first_summary_row.thick {
+#iopdytjnnh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nuoajppmmh .gt_last_summary_row {
+#iopdytjnnh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1476,7 +1512,7 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_grand_summary_row {
+#iopdytjnnh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1486,7 +1522,7 @@ Reflections
   padding-right: 5px;
 }
 
-#nuoajppmmh .gt_first_grand_summary_row {
+#iopdytjnnh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1496,7 +1532,7 @@ Reflections
   border-top-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_last_grand_summary_row_top {
+#iopdytjnnh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1506,11 +1542,11 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_striped {
+#iopdytjnnh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nuoajppmmh .gt_table_body {
+#iopdytjnnh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1519,7 +1555,7 @@ Reflections
   border-bottom-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_footnotes {
+#iopdytjnnh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1533,7 +1569,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_footnote {
+#iopdytjnnh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1542,7 +1578,7 @@ Reflections
   padding-right: 5px;
 }
 
-#nuoajppmmh .gt_sourcenotes {
+#iopdytjnnh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1556,7 +1592,7 @@ Reflections
   border-right-color: #D3D3D3;
 }
 
-#nuoajppmmh .gt_sourcenote {
+#iopdytjnnh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1564,117 +1600,110 @@ Reflections
   padding-right: 5px;
 }
 
-#nuoajppmmh .gt_left {
+#iopdytjnnh .gt_left {
   text-align: left;
 }
 
-#nuoajppmmh .gt_center {
+#iopdytjnnh .gt_center {
   text-align: center;
 }
 
-#nuoajppmmh .gt_right {
+#iopdytjnnh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nuoajppmmh .gt_font_normal {
+#iopdytjnnh .gt_font_normal {
   font-weight: normal;
 }
 
-#nuoajppmmh .gt_font_bold {
+#iopdytjnnh .gt_font_bold {
   font-weight: bold;
 }
 
-#nuoajppmmh .gt_font_italic {
+#iopdytjnnh .gt_font_italic {
   font-style: italic;
 }
 
-#nuoajppmmh .gt_super {
+#iopdytjnnh .gt_super {
   font-size: 65%;
 }
 
-#nuoajppmmh .gt_footnote_marks {
+#iopdytjnnh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nuoajppmmh .gt_asterisk {
+#iopdytjnnh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nuoajppmmh .gt_indent_1 {
+#iopdytjnnh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nuoajppmmh .gt_indent_2 {
+#iopdytjnnh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nuoajppmmh .gt_indent_3 {
+#iopdytjnnh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nuoajppmmh .gt_indent_4 {
+#iopdytjnnh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nuoajppmmh .gt_indent_5 {
+#iopdytjnnh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Forest Section">Forest Section</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Mean Biomass">Mean Biomass</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Forest Section" class="gt_row gt_left">Clear cut</td>
-<td headers="Mean Biomass" class="gt_row gt_right">9.380571</td></tr>
-    <tr><td headers="Forest Section" class="gt_row gt_left">Old growth</td>
-<td headers="Mean Biomass" class="gt_row gt_right">8.213796</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Forest Section" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Forest Section</th>
+<th id="Mean Biomass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean Biomass</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Forest Section">Clear cut</td>
+<td class="gt_row gt_right" headers="Mean Biomass">9.380571</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Forest Section">Old growth</td>
+<td class="gt_row gt_right" headers="Mean Biomass">8.213796</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
 </section>
-<section id="lets-make-a-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="lets-make-a-visualization">Let’s Make a Visualization!</h2>
+<section id="lets-make-a-visualization" class="slide level2">
+<h2>Let’s Make a Visualization!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> section)) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week3-day2-alt_files/figure-revealjs/section-ridge-plots-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> section)) <span class="sc">+</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</div>
+<img data-src="week3-day2-alt_files/figure-revealjs/section-ridge-plots-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
+<section id="are-they-different-1" class="slide level2">
+<h2>Are they different?</h2>
+
+<img data-src="week3-day2-alt_files/figure-revealjs/trout-plot-inference-1.png" width="960" class="r-stretch"><p>Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
 </section>
-<section id="are-they-different-1" class="level2">
-<h2 class="anchored" data-anchor-id="are-they-different-1">Are they different?</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="week3-day2-alt_files/figure-revealjs/trout-plot-inference-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-<p>Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?</p>
-</section>
-<section id="lets-add-in-the-type-of-channel" class="level2">
-<h2 class="anchored" data-anchor-id="lets-add-in-the-type-of-channel">Let’s Add in the Type of Channel</h2>
+<section id="lets-add-in-the-type-of-channel" class="slide level2">
+<h2>Let’s Add in the Type of Channel</h2>
 <div style="font-size: 0.75em;">
 <p>The channels (<code>unittype</code>) of the Mack Creek which were sampled were classified into the following groups:</p>
 </div>
@@ -1702,17 +1731,19 @@ Reflections
 </div>
 </div>
 </section>
-<section id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do" class="level2" data-background-color="#B6CADA">
-<h2 data-background-color="#B6CADA" class="anchored" data-anchor-id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do">If you wanted to find the mean mass for Cutthroat trout for each <em>type of channel</em> in each <em>section</em>, what would you do?</h2>
+<section id="if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-for-each-type-of-channel-in-each-section-what-would-you-do" class="slide level2" data-background-color="#B6CADA">
+<h2>If you wanted to find the mean mass for Cutthroat trout for each <em>type of channel</em> in each <em>section</em>, what would you do?</h2>
 </section>
-<section id="group_by-summarize" class="level2">
-<h2 class="anchored" data-anchor-id="group_by-summarize"><code>group_by()</code> + <code>summarize()</code></h2>
-<div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section, unittype) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="group_by-summarize" class="slide level2">
+<h2><code>group_by()</code> + <code>summarize()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>trout <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(section, unittype) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(weight_g, </span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>                             <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 3
 # Groups:   section [2]
@@ -1734,93 +1765,103 @@ Reflections
 </div>
 </div>
 </section>
-<section id="visualization-2.0-incorporating-color" class="level2">
-<h2 class="anchored" data-anchor-id="visualization-2.0-incorporating-color">Visualization 2.0 – Incorporating Color</h2>
-<div class="cell" data-layout-align="center" data-output-location="slide">
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> section, </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Section of Forest"</span>, </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Type of Channel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-color-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
+<section id="visualization-2.0-incorporating-color" class="slide level2">
+<h2>Visualization 2.0 – Incorporating Color</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> section, </span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Section of Forest"</span>, </span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Type of Channel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>. . .</p>
+
+<div class="fragment">
 <p><br></p>
 <p>Why put <code>unittype</code> on the y-axis instead of <code>section</code>???</p>
+</div>
 </section>
-<section id="visualization-2.0-incorporating-facets" class="level2">
-<h2 class="anchored" data-anchor-id="visualization-2.0-incorporating-facets">Visualization 2.0 – Incorporating Facets</h2>
-<div class="cell" data-layout-align="center" data-output-location="slide">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>section)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="visualization-2.0-incorporating-color-output" class="slide level2 output-location-slide"><h2>Visualization 2.0 – Incorporating Color</h2><div class="cell output-location-slide" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-facets-1.png" class="img-fluid figure-img" width="960"></p>
+<figure>
+<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-color-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
+</div></section><section id="visualization-2.0-incorporating-facets" class="slide level2">
+<h2>Visualization 2.0 – Incorporating Facets</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> trout, </span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight_g, </span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> unittype)) <span class="sc">+</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight of Cutthroat Trout (g)"</span>, </span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Section of Forest"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>section)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="ethical-considerations" class="level1">
+
+</section><section id="visualization-2.0-incorporating-facets-output" class="slide level2 output-location-slide"><h2>Visualization 2.0 – Incorporating Facets</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3-day2-alt_files/figure-revealjs/ridge-plots-with-facets-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section></section>
+<section>
+<section id="ethical-considerations" class="title-slide slide level1 center">
 <h1>Ethical Considerations</h1>
-<section id="choosing-what-to-measure" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-what-to-measure">Choosing What to Measure</h2>
-<p>Keller et al. <span class="citation" data-cites="keller2017">(<a href="#ref-keller2017" role="doc-biblioref">2017</a>)</span> designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.</p>
-<p>. . .</p>
+
+</section>
+<section id="choosing-what-to-measure" class="slide level2">
+<h2>Choosing What to Measure</h2>
+<p>Keller et al. <span class="citation" data-cites="keller2017">(<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span> designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.</p>
+<div class="fragment">
 <p><br></p>
 <p>Students attending the <em>Let’s Talk</em> theater workshop, were asked to report their gender, race, and age.</p>
+</div>
 </section>
-<section id="choosing-what-to-measure-1" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-what-to-measure-1">Choosing What to Measure</h2>
+<section id="choosing-what-to-measure-1" class="slide level2">
+<h2>Choosing What to Measure</h2>
 <p>Researchers provided students with the following question:</p>
-<blockquote class="blockquote">
+<blockquote>
 <p>What is your gender?</p>
 <p>Male, Female, Other</p>
 </blockquote>
-<p>. . .</p>
+<div class="fragment">
 <p><br> <br></p>
 <div style="font-size: 1.5em; color: #0F4C81">
 <p>What information are the researchers missing?</p>
 </div>
+</div>
 </section>
-<section id="choosing-what-to-measure-2" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-what-to-measure-2">Choosing What to Measure</h2>
-<p><span class="math inline">\(\beta\)</span> blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen <span class="citation" data-cites="khan2000">(<a href="#ref-khan2000" role="doc-biblioref">Khan and Movahed 2000</a>)</span>.</p>
+<section id="choosing-what-to-measure-2" class="slide level2">
+<h2>Choosing What to Measure</h2>
+<p><span class="math inline">\(\beta\)</span> blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen <span class="citation" data-cites="khan2000">(<a href="#/references" role="doc-biblioref" onclick="">Khan and Movahed 2000</a>)</span>.</p>
 </section>
-<section id="choosing-what-to-measure-3" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-what-to-measure-3">Choosing What to Measure</h2>
+<section id="choosing-what-to-measure-3" class="slide level2">
+<h2>Choosing What to Measure</h2>
 <p>The intake form for a local heart clinic asks the following question:</p>
-<blockquote class="blockquote">
+<blockquote>
 <p>What is your sex?</p>
 <p>Male, Female, Other</p>
 </blockquote>
-<p>. . .</p>
+<div class="fragment">
 <p><br> <br></p>
 <div style="font-size: 1.5em; color: #0F4C81">
 <p>What information are the doctors missing?</p>
 </div>
+</div>
 </section>
-<section id="data-feminism" class="level2">
-<h2 class="anchored" data-anchor-id="data-feminism">Data Feminism</h2>
+<section id="data-feminism" class="slide level2">
+<h2>Data Feminism</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><img src="images/feminist.png" class="img-fluid"></p>
+<p><img data-src="images/feminist.png"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:40%;">
@@ -1835,316 +1876,437 @@ Reflections
 </div>
 </div>
 </section>
-<section id="principles-of-data-feminism" class="level2">
-<h2 class="anchored" data-anchor-id="principles-of-data-feminism">Principles of Data Feminism</h2>
+<section id="principles-of-data-feminism" class="slide level2">
+<h2>Principles of Data Feminism</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img src="images/principles_data_feminism.PNG" class="img-fluid"></p>
+<p><img data-src="images/principles_data_feminism.PNG"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:35%;">
-<p><img src="images/data_feminism_book.jpg" class="img-fluid"></p>
+<p><img data-src="images/data_feminism_book.jpg"></p>
 </div>
 </div>
 </section>
-<section id="references" class="level2">
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 
-
-
-</section>
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-keller2017" class="csl-entry" role="listitem">
 Keller, Sarah N., and Timothy Wilkinson. 2017. <span>“Preventing Suicide in Montana: A Community-Based Theatre Intervention.”</span> <em>Journal of Social Marketing</em> 7 (4): 423–40. <a href="https://doi.org/10.1108/jsocm-12-2016-0086">https://doi.org/10.1108/jsocm-12-2016-0086</a>.
 </div>
 <div id="ref-khan2000" class="csl-entry" role="listitem">
 Khan, Nazim Uddin Azam, and Assad Movahed. 2000. <span>“Role of ß Blockers in Congestive Heart Failure.”</span> <em>Congestive Heart Failure</em> 6 (6): 299–312. <a href="https://doi.org/10.1111/j.1527-5299.2000.80176.x">https://doi.org/10.1111/j.1527-5299.2000.80176.x</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div>
+</section><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
 
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2023, Allison Theobold</div>   
-    <div class="nav-footer-center">
-      &nbsp;
+</div>
+</div></section>
     </div>
-    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
-</footer>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
 
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
 
 </body></html>

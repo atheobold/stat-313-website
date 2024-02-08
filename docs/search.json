@@ -4039,7 +4039,7 @@
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Warm-up",
-    "text": "Warm-up\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
+    "text": "Warm-up\n\n\nWhat are the aesthetics in this plot?\nWhat geometric object is being plotted?"
   },
   {
     "objectID": "slides/week2-day1.html#section",
@@ -4053,7 +4053,7 @@
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\n\n\n\n\n\n\n\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
+    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-1",
@@ -4067,14 +4067,14 @@
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat calculations are necessary for creating a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#density-plot",
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\n\n\n\n\n\n\n. . .\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
@@ -4088,14 +4088,14 @@
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the geometric objects being plotted in a scatterplot?"
+    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
     "href": "slides/week2-day1.html#section-4",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-categorical-variable",
@@ -4599,7 +4599,7 @@
     "href": "slides/week4-day1.html#section",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Visualizing Linear Regression\n\n\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\nThe scatterplot has been called the most “generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nIt is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation."
+    "text": "Visualizing Linear Regression\n\n\n\n\n\n\n\nThe scatterplot has been called the most “generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nIt is a simple two-dimensional plot in which the two coordinates of each dot represent the values of two variables measured on a single observation."
   },
   {
     "objectID": "slides/week4-day1.html#section-1",
@@ -4627,21 +4627,21 @@
     "href": "slides/week4-day1.html#section-4",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n. . .\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
+    "text": "Correlation:\n\n\nstrength and direction of a linear relationship between two quantitative variables\n\n\n\n\n\nCorrelation coefficient between -1 and 1\nSign of the correlations shows direction\nMagnitude of the correlation shows strength"
   },
   {
     "objectID": "slides/week4-day1.html#section-5",
     "href": "slides/week4-day1.html#section-5",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n. . .\n\nFor which of these relationships is correlation a reasonable summary measure?"
+    "text": "Anscombe Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFour datasets, very different graphical presentations\n\nsame mean and standard deviation in both \\(x\\) and \\(y\\)\nsame correlation\nsame regression line\n\n\n\n\n\n\nFor which of these relationships is correlation a reasonable summary measure?"
   },
   {
     "objectID": "slides/week4-day1.html#section-6",
     "href": "slides/week4-day1.html#section-6",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n. . .\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
+    "text": "Linear regression:\n\n\nwe assume the the relationship between our response variable (\\(y\\)) and explanatory variable (\\(x\\)) can be modeled with a linear function, plus some random noise\n\n\n\n\n\n\\(response = intercept + slope \\cdot explanatory + noise\\)"
   },
   {
     "objectID": "slides/week4-day1.html#section-7",
@@ -4655,7 +4655,7 @@
     "href": "slides/week4-day1.html#section-8",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n. . .\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n. . .\n\n\nWrite out the estimated regression equation!"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-9",
@@ -4669,21 +4669,21 @@
     "href": "slides/week4-day1.html#section-10",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n. . .\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
+    "text": "Obtaining Residuals\n\n\n\\(\\widehat{weight} = -5.003+0.316 \\cdot weeks\\)\n\n\nWhat would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?"
   },
   {
     "objectID": "slides/week4-day1.html#section-11",
     "href": "slides/week4-day1.html#section-11",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n. . .\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n. . .\n\n\n🤔"
+    "text": "Step 2: Fit a linear regression\n\n\nhabit_lm &lt;- lm(weight ~ habit,\n               data = births_post28)\n\n\n\n\nStep 3: Obtain coefficient table\n\n\nget_regression_table(habit_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\n\n🤔"
   },
   {
     "objectID": "slides/week4-day1.html#section-12",
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n. . .\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n. . .\nBased on the regression table, what habit group was chosen to be the baseline?"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
   },
   {
     "objectID": "slides/week4-day1.html#section-13",
@@ -5387,7 +5387,7 @@
     "href": "slides/week2-day1.html#todays-layout",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Today’s Layout",
-    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n. . .\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
+    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
   },
   {
     "objectID": "slides/week2-day1.html#recreate-my-plot",
@@ -5429,7 +5429,7 @@
     "href": "slides/week2-day1.html#section-11",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n. . .\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#section-12",
@@ -5492,7 +5492,7 @@
     "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Why not use facets with a numerical variable???",
-    "text": "Why not use facets with a numerical variable???\n. . ."
+    "text": "Why not use facets with a numerical variable???"
   },
   {
     "objectID": "slides/week2-day1.html#departure-delays",
@@ -5519,15 +5519,15 @@
     "objectID": "slides/week2-day1.html#revisions",
     "href": "slides/week2-day1.html#revisions",
     "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
+    "section": "Revisions",
+    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
   },
   {
     "objectID": "slides/week2-day1.html#completing-revisions",
     "href": "slides/week2-day1.html#completing-revisions",
     "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Lab 1 revisions are due by Thursday, January 25.\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "section": "Completing Revisions",
+    "text": "Completing Revisions\n\nLab 1 revisions are due by Thursday, January 25.\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "labs/lab-3.html#r-resources",
@@ -5590,7 +5590,7 @@
     "href": "slides/week3-day2-alt.html#data-layout",
     "title": "Incorporating Categorical Variables",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n  \n    \n    \n      year\n      sitecode\n      section\n      reach\n      pass\n      unitnum\n      unittype\n      vert_index\n      pitnumber\n      species\n      length_1_mm\n      length_2_mm\n      weight_g\n      clip\n      sampledate\n      notes\n    \n  \n  \n    2017\nMACKOG-M\nOG\nM\n1\n8\nSC\n20\nNA\nCascade torrent salamander\n30\n51\n0.65\nNONE\n2017-09-07\nNA\n    2019\nMACKOG-M\nOG\nM\n1\n8\nSC\n17\nNA\nCascade torrent salamander\n28\n52\n0.80\nNONE\n2019-09-04\nTorrent salamander\n    2008\nMACKOG-U\nOG\nU\n1\n13\nC\n51\nNA\nCoastal giant salamander\n48\n86\n3.43\nNONE\n2008-09-17\nNA\n    2016\nMACKOG-U\nOG\nU\n1\n16\nC\n16\nNA\nCoastal giant salamander\n58\n103\n6.05\nNONE\n2016-09-08\nNA\n    1994\nMACKOG-L\nOG\nL\n1\n1\nP\n5\nNA\nCutthroat trout\n69\nNA\n4.00\nNONE\n1994-08-31\nNA\n    1998\nMACKCC-U\nCC\nU\n1\n10\nP\n14\nNA\nCutthroat trout\n44\nNA\nNA\nNONE\n1998-09-09\nNA\n    1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n    1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n  \n  \n  \n\n\n\n\n. . .\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n21\nNA\nCascade torrent salamander\n32\n55\n0.94\nNONE\n1994-08-30\nNA\n\n\n2012\nMACKCC-L\nCC\nL\n1\n2\nSC\n49\nNA\nCascade torrent salamander\n39\n70\n1.60\nNONE\n2012-09-04\nNA\n\n\n2013\nMACKCC-U\nCC\nU\n1\n7\nC\n72\n19078866\nCoastal giant salamander\n73\n136\n15.60\nNONE\n2013-09-03\nRECAP\n\n\n2010\nMACKCC-U\nCC\nU\n1\n7\nC\n41\nNA\nCoastal giant salamander\n34\n68\n1.74\nNONE\n2010-09-08\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n1\n1\nC\n5\nNA\nCutthroat trout\n52\nNA\nNA\nNONE\n2003-09-02\nNA\n\n\n1997\nMACKCC-M\nCC\nM\n2\n3\nP\n1\nNA\nCutthroat trout\n50\nNA\nNA\nNONE\n1997-08-27\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
@@ -5625,14 +5625,14 @@
     "href": "slides/week3-day2-alt.html#step-2-group_by-summarize",
     "title": "Incorporating Categorical Variables",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n. . .\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#are-they-different",
     "href": "slides/week3-day2-alt.html#are-they-different",
     "title": "Incorporating Categorical Variables",
     "section": "Are they different?",
-    "text": "Are they different?\n\n\n\n\n\n\n  \n    \n    \n      Forest Section\n      Mean Biomass\n    \n  \n  \n    Clear cut\n9.380571\n    Old growth\n8.213796\n  \n  \n  \n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\n\n\n\n\n\n\n\nForest Section\nMean Biomass\n\n\n\n\nClear cut\n9.380571\n\n\nOld growth\n8.213796\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#lets-make-a-visualization",
@@ -5646,7 +5646,7 @@
     "href": "slides/week3-day2-alt.html#are-they-different-1",
     "title": "Incorporating Categorical Variables",
     "section": "Are they different?",
-    "text": "Are they different?\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#lets-add-in-the-type-of-channel",
@@ -5667,14 +5667,14 @@
     "href": "slides/week3-day2-alt.html#group_by-summarize",
     "title": "Incorporating Categorical Variables",
     "section": "group_by() + summarize()",
-    "text": "group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+    "text": "group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
   },
   {
     "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
     "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
     "title": "Incorporating Categorical Variables",
     "section": "Visualization 2.0 – Incorporating Color",
-    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\n\n\n\n\n. . .\n\nWhy put unittype on the y-axis instead of section???"
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
   },
   {
     "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets",
@@ -5702,14 +5702,14 @@
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure",
     "title": "Incorporating Categorical Variables",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n. . .\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+    "text": "Choosing What to Measure\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
   },
   {
     "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
     "title": "Incorporating Categorical Variables",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the researchers missing?"
+    "text": "Choosing What to Measure\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-2",
@@ -5744,7 +5744,7 @@
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure-3",
     "title": "Incorporating Categorical Variables",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the doctors missing?"
+    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#common-mistakes",
@@ -5772,7 +5772,7 @@
     "href": "slides/week3-day2-alt.html#completing-revisions",
     "title": "Incorporating Categorical Variables",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2-alt.html#a-grading-reminder",
@@ -5785,8 +5785,8 @@
     "objectID": "slides/week3-day2-alt.html#revisions-due-tonight",
     "href": "slides/week3-day2-alt.html#revisions-due-tonight",
     "title": "Incorporating Categorical Variables",
-    "section": "",
-    "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+    "section": "Revisions Due Tonight",
+    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   },
   {
     "objectID": "slides/week3-day2-alt.html#copying-the-lab-step-1",
@@ -6010,7 +6010,7 @@
     "href": "slides/week4-day1.html#calculating-correlation-in-r",
     "title": "Introduction to Linear Regression",
     "section": "Calculating Correlation in R",
-    "text": "Calculating Correlation in R\n\nget_correlation(births_post28, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.557\n\n\n. . .\n\nWhat if I ran get_correlation(births_post28, weight ~ weeks) instead? Would I get the same value?"
+    "text": "Calculating Correlation in R\n\nget_correlation(births_post28, \n                weeks ~ weight)\n\n# A tibble: 1 × 1\n    cor\n  &lt;dbl&gt;\n1 0.557\n\n\n\n\nWhat if I ran get_correlation(births_post28, weight ~ weeks) instead? Would I get the same value?"
   },
   {
     "objectID": "slides/week4-day1.html#writing-the-regression-equation",
@@ -6031,7 +6031,7 @@
     "href": "slides/week4-day1.html#estimated-regression-equation",
     "title": "Introduction to Linear Regression",
     "section": "Estimated Regression Equation",
-    "text": "Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n. . .\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n. . .\nBut what does \\(Smoker\\) represent???"
+    "text": "Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
   },
   {
     "objectID": "slides/week4-day1.html#choosing-baseline-group",
@@ -6066,14 +6066,14 @@
     "href": "slides/week4-day1.html#midterm-project-proposal",
     "title": "Introduction to Linear Regression",
     "section": "Midterm Project Proposal",
-    "text": "Midterm Project Proposal\n\n\nChoose a dataset\nChoose a numerical response variable\nChoose a numerical explanatory variable\nChoose a second explanatory variable, either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\n\nYour numerical variable cannot have a small (e.g., 2 or 3) number of values. You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\nWrite your Introduction"
+    "text": "Midterm Project Proposal\n\n\nChoose a dataset\nChoose a numerical response variable\nChoose a numerical explanatory variable\nChoose a second explanatory variable, either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\nYour numerical variable cannot have a small (e.g., 2 or 3) number of values. You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\n\nWrite your Introduction"
   },
   {
     "objectID": "slides/week4-day1.html#cleaning-filtering-the-data",
     "href": "slides/week4-day1.html#cleaning-filtering-the-data",
     "title": "Introduction to Linear Regression",
     "section": "Cleaning & Filtering the Data",
-    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n. . .\n\n\n\n\n\n\nChange in scope of inference\n\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
+    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n\n\n\n\n\n\n\nChange in scope of inference\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
   },
   {
     "objectID": "slides/week4-day1.html#step-1-fit-a-linear-regression",
@@ -6093,8 +6093,8 @@
     "objectID": "slides/week4-day2.html#revisions-due-tonight",
     "href": "slides/week4-day2.html#revisions-due-tonight",
     "title": "Week 4, Day 2",
-    "section": "",
-    "text": "If you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "section": "Revisions Due Tonight",
+    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
   },
   {
     "objectID": "slides/week4-day2.html#a-grading-reminder",
@@ -6136,7 +6136,7 @@
     "href": "slides/week4-day2.html#completing-revisions",
     "title": "Week 4, Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 3 revisions are due by Thursday, February 8.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the Lab 3 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 3 revisions are due by Thursday, February 8.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the Lab 3 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week4-day2.html#todays-data",
@@ -6157,7 +6157,7 @@
     "href": "slides/week4-day2.html#data-layout",
     "title": "Week 4, Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1942-01-03\n1942-03-26\n82\n1941\n\n\nLake Mendota\n1855-12-18\n1856-04-14\n118\n1855\n\n\nLake Mendota\n1897-12-17\n1898-03-27\n100\n1897\n\n\nLake Mendota\n1970-12-24\n1971-04-13\n110\n1970\n\n\nLake Monona\n1868-12-10\n1869-04-15\n126\n1868\n\n\nLake Monona\n1851-12-13\n1852-03-25\n103\n1851\n\n\nLake Monona\n1876-01-10\n1876-04-10\n91\n1875\n\n\nLake Monona\n1998-12-30\n1999-03-10\n70\n1998"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1906-12-20\n1907-03-24\n94\n1906\n\n\nLake Mendota\n1980-12-20\n1981-03-23\n93\n1980\n\n\nLake Mendota\n2018-12-15\n2019-03-31\n86\n2018\n\n\nLake Mendota\n1887-12-24\n1888-04-15\n113\n1887\n\n\nLake Monona\n1927-12-09\n1928-03-26\n108\n1927\n\n\nLake Monona\n1942-12-07\n1943-03-31\n114\n1942\n\n\nLake Monona\n1977-12-07\n1978-04-07\n121\n1977\n\n\nLake Monona\n1983-12-18\n1984-04-03\n107\n1983"
   },
   {
     "objectID": "slides/week4-day2.html#section-4",
@@ -6241,7 +6241,7 @@
     "href": "slides/week4-day2.html#would-you-exist",
     "title": "Week 4, Day 2",
     "section": "Would you exist?",
-    "text": "Would you exist?\n. . .\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
+    "text": "Would you exist?\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
   },
   {
     "objectID": "weeks/week-5.html#concept-quiz-due-tuesday-by-the-start-of-class",
