@@ -44,6 +44,55 @@ If you were the recorder (typer) for your group, you need to [make your project 
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
+Step 0 -- Read in Your Data
+:::
+
+::: columns
+::: {.column width="47%"}
+STAT 313
+
+:::{.small}
+- Locate what package your data live in (found in the directions for the midterm project proposal)
+
+- Load in the package you need! 
+
+- Get started!
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="50%"}
+STAT 513
+
+:::{.small}
+- Upload your formatted dataset to your Midterm Project on Posit Cloud
+- Write the following code to load in your dataset:
+:::
+:::
+:::
+
+</br>
+</br>
+
+```{r}
+#| eval: false
+#| echo: true
+name_you_want <- read_xlsx("name of your dataset.xlsx")
+```
+
+**OR**
+
+```{r}
+#| eval: false
+#| echo: true
+name_you_want <- read_csv("name of your dataset.csv")
+```
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 2em; color: #000000;"}
 Step 1 -- Create Your Visualizations
 :::
 
