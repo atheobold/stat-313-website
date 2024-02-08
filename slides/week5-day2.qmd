@@ -23,11 +23,17 @@ If you were the recorder (typer) for your group, you need to [make your project 
 
 # Comments from Project Proposals
 
-##  For Every Dataset
+##  For Every Dataset (in STAT 313)
 
 - [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
 
 - If your dataset is associated with a publication, that publication should be referenced in your Introduction!
+
+## Introduction Versus Methods
+
+- The description of your data goes and your research question goes in your Introduction. 
+
+- The description of your variables goes at the beginning of your Methods! 
 
 ## Specific Dataset Advice
 

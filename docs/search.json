@@ -6460,5 +6460,19 @@
     "title": "Midterm Project Work Day",
     "section": "Specific Dataset Advice",
     "text": "Specific Dataset Advice\n\nFor the and_vertebrates data, you should include species as an explanatory variable. If you don’t you are assuming the same relationship applies to trout AND salamanders.\nFor the hbr_maples data, you cannot use year as a numerical variable. There are only two years of data!\nFor the pie_crabs data:\n\nsize should be the response variable\nsite and latitude measure the same thing"
+  },
+  {
+    "objectID": "slides/week5-day2.html#for-every-dataset-in-stat-313",
+    "href": "slides/week5-day2.html#for-every-dataset-in-stat-313",
+    "title": "Midterm Project Work Day",
+    "section": "For Every Dataset (in STAT 313)",
+    "text": "For Every Dataset (in STAT 313)\n\nEvery dataset is included in an R package! You need to find which package that is and load it in!\nIf your dataset is associated with a publication, that publication should be referenced in your Introduction!"
+  },
+  {
+    "objectID": "slides/week5-day2.html#introduction-versus-methods",
+    "href": "slides/week5-day2.html#introduction-versus-methods",
+    "title": "Midterm Project Work Day",
+    "section": "Introduction Versus Methods",
+    "text": "Introduction Versus Methods\n\nThe description of your data goes and your research question goes in your Introduction.\nThe description of your variables goes at the beginning of your Methods!"
   }
 ]
