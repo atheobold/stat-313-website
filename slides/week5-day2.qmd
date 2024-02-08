@@ -1,22 +1,65 @@
 ---
-title: "Work Day: Coding a Multiple Linear Regression"
-format: revealjs
+title: "Midterm Project Work Day"
+format: 
+  revealjs:
+    theme: style.scss
 editor: visual
 ---
+
+# Reminders About Deadlines
+
+##  {background-color="#B6CADA"}
+
+- Lab 3 Revisions are due today (Thursday, February 8)
+
+- Lab 4 Revisions are due next Thursday (February 15)
+
+:::{.callout-caution}
+# Making a copy of your group's Lab 4
+If you were the recorder (typer) for your group, you need to [make your project public](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder). If you were not the recorder, you need to [make a copy of your group's project](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else). 
+:::
+
+- The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}. 
+
+# Comments from Project Proposals
+
+##  For Every Dataset
+
+- [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
+
+- If your dataset is associated with a publication, that publication should be referenced in your Introduction!
+
+## Specific Dataset Advice
+
+- For the `and_vertebrates` data, you should include `species` as an explanatory variable. If you don't you are assuming the same relationship applies to trout AND salamanders. 
+
+- For the `hbr_maples` data, you cannot use `year` as a numerical variable. There are only two years of data!
+
+- For the `pie_crabs` data:
+  * `size` should be the response variable
+  * `site` and `latitude` measure the [same]{.underline} thing
+
+# Coding a Multiple Linear Regression
 
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 1
+Step 1 -- Create Your Visualizations
 :::
 
 ::: columns
 ::: {.column width="47%"}
 [Two Numerical Variables]{.underline}
 
+:::{.small}
 -   Visualize the model with **both** variables -- `color` gradient
 
 -   Visualize **two** simple linear regression models -- one for each variable
+:::
+
+:::{.callout-tip}
+# Three total visualizations
+:::
 :::
 
 ::: {.column width="5%"}
@@ -25,26 +68,32 @@ Step 1
 ::: {.column width="47%"}
 [One Categorical & One Numerical Variable]{.underline}
 
+:::{.small}
 -   Visualize the model using `geom_smooth(method = "lm")`
 
 -   Visualize the model using `geom_parallel_lines()`
+:::
+
+:::{.callout-tip}
+# Two total visualizations
+:::
 :::
 :::
 
 ##  {background-color="#D4D4D4"}
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 2
+Step 2 -- Decide the "Best" Model
 :::
 
 ::: columns
 ::: {.column width="45%"}
 [Two Numerical Variables]{.underline}
 
-::: {style="color: #0F4C81; font-size: 0.95em"}
+::: {style="color: #0F4C81; font-size: 0.75em"}
 -   If there appears to be a relationship with the colors -- include **both** variables!
 
--   If the colors are equally dispersed throughout the plot -- choose the **one** variable that has the **stronger** relationship!
+-   If the colors are equally dispersed throughout the plot -- choose the [**one**]{.underline} variable that has the [**stronger**]{.underline} relationship (larger slope)!
 :::
 :::
 
@@ -54,8 +103,8 @@ Step 2
 ::: {.column width="45%"}
 [One Categorical & One Numerical Variable]{.underline}
 
-::: {style="color: #0F4C81; font-size: 0.95em"}
--   Compare the plots! Which looks like a better representation of the relationship?
+::: {style="color: #0F4C81; font-size: 0.75em"}
+- Look at the plot where the lines are allowed to be different! Does it look like they are?
 :::
 :::
 :::
@@ -70,7 +119,7 @@ Step 3 -- Fit the regression model with `lm()`
 ::: {.column width="45%"}
 [Two Numerical Variables]{.underline}
 
-::: {style="color: #0F4C81"}
+::: {style="color: #0F4C81; font-size: 0.75em"}
 -   Are both variables included? Use a `+` to separate them!
 :::
 :::
@@ -81,10 +130,10 @@ Step 3 -- Fit the regression model with `lm()`
 ::: {.column width="45%"}
 [One Categorical & One Numerical Variable]{.underline}
 
-::: {style="color: #0F4C81"}
--   Are the slopes different? Use a `*` to separate the variables!
+::: {style="color: #0F4C81; font-size: 0.75em"}
+-   Are the slopes different? You need to fit a different slopes model! Use a `*` to separate the variables!
 
--   Are the slopes similar? Use a `+` to separate the variables!
+-   Are the slopes similar? You need to fit a parallel slopes model! Use a `+` to separate the variables!
 :::
 :::
 :::
@@ -94,6 +143,14 @@ Step 3 -- Fit the regression model with `lm()`
 ::: {style="font-size: 2em; color: #000000;"}
 Step 4: Get the coefficients with `get_regression_table()`
 :::
+
+
+##  {background-color="#D4D4D4"}
+
+::: {style="font-size: 5em; color: #000000;"}
+Now interpret! 
+:::
+
 
 <!-- ##  {background-color="#B6CADA"} -->
 

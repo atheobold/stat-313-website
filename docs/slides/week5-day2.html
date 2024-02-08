@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 / 513 - Winter 2024 - Work Day: Coding a Multiple Linear Regression</title>
+  <title>STAT 313 / 513 - Winter 2024 - Midterm Project Work Day</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,57 +325,118 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Work Day: Coding a Multiple Linear Regression</h1>
+  <h1 class="title">Midterm Project Work Day</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section>
+<section id="reminders-about-deadlines" class="title-slide slide level1 center">
+<h1>Reminders About Deadlines</h1>
+
+</section>
 <section id="section" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
+<ul>
+<li><p>Lab 3 Revisions are due today (Thursday, February 8)</p></li>
+<li><p>Lab 4 Revisions are due next Thursday (February 15)</p></li>
+</ul>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Making a copy of your group’s Lab 4</strong></p>
+</div>
+<div class="callout-content">
+<p>If you were the recorder (typer) for your group, you need to <a href="https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder">make your project public</a>. If you were not the recorder, you need to <a href="https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else">make a copy of your group’s project</a>.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>The first draft of your Midterm Project is due on <u>Sunday at midnight</u>.</li>
+</ul>
+</section></section>
+<section>
+<section id="comments-from-project-proposals" class="title-slide slide level1 center">
+<h1>Comments from Project Proposals</h1>
+
+</section>
+<section id="for-every-dataset" class="slide level2">
+<h2>For Every Dataset</h2>
+<ul>
+<li><p><span class="underine">Every</span> dataset is included in an R package! You need to find which package that is and load it in!</p></li>
+<li><p>If your dataset is associated with a publication, that publication should be referenced in your Introduction!</p></li>
+</ul>
+</section>
+<section id="specific-dataset-advice" class="slide level2">
+<h2>Specific Dataset Advice</h2>
+<ul>
+<li><p>For the <code>and_vertebrates</code> data, you should include <code>species</code> as an explanatory variable. If you don’t you are assuming the same relationship applies to trout AND salamanders.</p></li>
+<li><p>For the <code>hbr_maples</code> data, you cannot use <code>year</code> as a numerical variable. There are only two years of data!</p></li>
+<li><p>For the <code>pie_crabs</code> data:</p>
+<ul>
+<li><code>size</code> should be the response variable</li>
+<li><code>site</code> and <code>latitude</code> measure the <u>same</u> thing</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="coding-a-multiple-linear-regression" class="title-slide slide level1 center">
+<h1>Coding a Multiple Linear Regression</h1>
+
+</section>
+<section id="section-1" class="slide level2" data-background-color="#B6CADA">
+<h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 1</p>
+<p>Step 1 – Create Your Visualizations</p>
 </div>
 <div class="columns">
 <div class="column" style="width:47%;">
 <p><u>Two Numerical Variables</u></p>
+<div class="small">
 <ul>
 <li><p>Visualize the model with <strong>both</strong> variables – <code>color</code> gradient</p></li>
 <li><p>Visualize <strong>two</strong> simple linear regression models – one for each variable</p></li>
 </ul>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Three total visualizations</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:47%;">
 <p><u>One Categorical &amp; One Numerical Variable</u></p>
+<div class="small">
 <ul>
 <li><p>Visualize the model using <code>geom_smooth(method = "lm")</code></p></li>
 <li><p>Visualize the model using <code>geom_parallel_lines()</code></p></li>
 </ul>
 </div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="section-1" class="slide level2" data-background-color="#D4D4D4">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 2</p>
+<p><strong>Two total visualizations</strong></p>
 </div>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><u>Two Numerical Variables</u></p>
-<div style="color: #0F4C81; font-size: 0.95em">
-<ul>
-<li><p>If there appears to be a relationship with the colors – include <strong>both</strong> variables!</p></li>
-<li><p>If the colors are equally dispersed throughout the plot – choose the <strong>one</strong> variable that has the <strong>stronger</strong> relationship!</p></li>
-</ul>
-</div>
-</div><div class="column" style="width:5%;">
+<div class="callout-content">
 
-</div><div class="column" style="width:45%;">
-<p><u>One Categorical &amp; One Numerical Variable</u></p>
-<div style="color: #0F4C81; font-size: 0.95em">
-<ul>
-<li>Compare the plots! Which looks like a better representation of the relationship?</li>
-</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -383,24 +444,24 @@
 <section id="section-2" class="slide level2" data-background-color="#D4D4D4">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 3 – Fit the regression model with <code>lm()</code></p>
+<p>Step 2 – Decide the “Best” Model</p>
 </div>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><u>Two Numerical Variables</u></p>
-<div style="color: #0F4C81">
+<div style="color: #0F4C81; font-size: 0.75em">
 <ul>
-<li>Are both variables included? Use a <code>+</code> to separate them!</li>
+<li><p>If there appears to be a relationship with the colors – include <strong>both</strong> variables!</p></li>
+<li><p>If the colors are equally dispersed throughout the plot – choose the <u><strong>one</strong></u> variable that has the <u><strong>stronger</strong></u> relationship (larger slope)!</p></li>
 </ul>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
 <p><u>One Categorical &amp; One Numerical Variable</u></p>
-<div style="color: #0F4C81">
+<div style="color: #0F4C81; font-size: 0.75em">
 <ul>
-<li><p>Are the slopes different? Use a <code>*</code> to separate the variables!</p></li>
-<li><p>Are the slopes similar? Use a <code>+</code> to separate the variables!</p></li>
+<li>Look at the plot where the lines are allowed to be different! Does it look like they are?</li>
 </ul>
 </div>
 </div>
@@ -409,7 +470,39 @@
 <section id="section-3" class="slide level2" data-background-color="#D4D4D4">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
+<p>Step 3 – Fit the regression model with <code>lm()</code></p>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><u>Two Numerical Variables</u></p>
+<div style="color: #0F4C81; font-size: 0.75em">
+<ul>
+<li>Are both variables included? Use a <code>+</code> to separate them!</li>
+</ul>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p><u>One Categorical &amp; One Numerical Variable</u></p>
+<div style="color: #0F4C81; font-size: 0.75em">
+<ul>
+<li><p>Are the slopes different? You need to fit a different slopes model! Use a <code>*</code> to separate the variables!</p></li>
+<li><p>Are the slopes similar? You need to fit a parallel slopes model! Use a <code>+</code> to separate the variables!</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2" data-background-color="#D4D4D4">
+<h2></h2>
+<div style="font-size: 2em; color: #000000;">
 <p>Step 4: Get the coefficients with <code>get_regression_table()</code></p>
+</div>
+</section>
+<section id="section-5" class="slide level2" data-background-color="#D4D4D4">
+<h2></h2>
+<div style="font-size: 5em; color: #000000;">
+<p>Now interpret!</p>
 </div>
 <!-- ##  {background-color="#B6CADA"} -->
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
@@ -437,12 +530,12 @@
 <!--     -   The concern is not to eradicate our finitude, but to recognize the consequences of our limits. -->
 
 
-</section>
-    <div class="quarto-auto-generated-content">
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</div></section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
