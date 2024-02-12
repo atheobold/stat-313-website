@@ -6,9 +6,9 @@ title: "Stat Critique 1 Grading Guide"
 
 ### 1. Visualization included!
 
-### 2.  Aesthetics are correctly identified
+### 2. Aesthetics are correctly identified
 
-:::{.callout-tip}
+::: callout-tip
 # Double Encoding
 
 It's okay if they only mention one of the aesthetics that a variable is associated with when it is mapped to multiple aesthetics.
@@ -26,11 +26,11 @@ It's okay if they only mention one of the aesthetics that a variable is associat
 
 -   Misses an aesthetic that is being used
 
-*Feedback for general plots:* You've got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are <multiple plots / multiple colors / multiple lines> not just one. What variable is associated with these separate <plots / colors / lines>?
+*Feedback for general plots:* You've got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are [multiple plots / multiple colors / multiple lines] not just one. What variable is associated with these separate [plots / colors / lines]?
 
 *Feedback for maps:* You've got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, we have "hidden" x- and y-variables. What variables are associated with the location of a state on the map?
 
-### 3.  Offers two aspects the visualization does well
+### 3. Offers two aspects the visualization does well
 
 **Growing**
 
@@ -42,9 +42,9 @@ It's okay if they only mention one of the aesthetics that a variable is associat
 
 *Feedback:* I'm having a hard time understanding what specific aspect you believe the visualization does well.
 
-### 4.  Offers two aspects of the visualization that could be improved
+### 4. Offers two aspects of the visualization that could be improved
 
-**Growing** 
+**Growing**
 
 -   Only says one thing the visualization does well
 
