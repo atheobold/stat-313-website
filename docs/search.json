@@ -4991,7 +4991,7 @@
     "href": "slides/week6-day1.html#section-1",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n107\n19\n4.3\n46\n4.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\nblack&white\n30\n45\nupper\n\n\n45\n9\n4.4\n33\n4.667\nfemale\nnot minority\nenglish\ntenure track\nnot formal\ncolor\n11\n44\nupper\n\n\n391\n80\n4.0\n51\n6.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n67\n78\nupper"
+    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n397\n81\n4.8\n45\n3.333\nmale\nnot minority\nenglish\nteaching\nnot formal\ncolor\n19\n26\nlower\n\n\n426\n85\n4.9\n58\n7.833\nmale\nnot minority\nenglish\nteaching\nnot formal\nblack&white\n16\n17\nlower\n\n\n222\n40\n4.7\n42\n4.000\nmale\nnot minority\nenglish\ntenure track\nnot formal\ncolor\n13\n15\nupper"
   },
   {
     "objectID": "slides/week6-day1.html#section-2",
@@ -5040,7 +5040,7 @@
     "href": "slides/week6-day1.html#section-8",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "\\(R^2_{adj} = 1 - R^2 \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n\n\nSuppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
+    "text": "\\(R^2_{adj} = 1 - R^2 \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n\n\nSuppose you have a categorical variable with 4 levels included in your parallel slopes multiple linear regression.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
   },
   {
     "objectID": "slides/week6-day1.html#section-9",

@@ -286,7 +286,7 @@ $R^2_{adj} = 1 - R^2 \times \frac{(n - 1)}{(n - k - 1)}$
 . . .
 
 ::: {style="font-size: 1.2em; color: #e28743;"}
-Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels.
+Suppose you have a categorical variable with 4 levels included in your **parallel slopes** multiple linear regression.
 
 > What value will you use for $k$ in the calculation of $n - k - 1$?
 :::
