@@ -4991,7 +4991,7 @@
     "href": "slides/week6-day1.html#section-1",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n368\n73\n4.9\n51\n6.167\nmale\nnot minority\nenglish\ntenured\nformal\ncolor\n322\n527\nlower\n\n\n287\n53\n4.1\n34\n1.667\nfemale\nnot minority\nenglish\ntenure track\nnot formal\ncolor\n25\n44\nupper\n\n\n189\n34\n3.0\n47\n4.333\nfemale\nminority\nenglish\ntenure track\nnot formal\ncolor\n26\n27\nlower"
+    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n441\n89\n3.7\n35\n7.833\nfemale\nminority\nenglish\ntenure track\nnot formal\ncolor\n43\n108\nlower\n\n\n67\n12\n3.5\n37\n4.333\nmale\nnot minority\nenglish\nteaching\nnot formal\ncolor\n25\n35\nupper\n\n\n57\n10\n5.0\n47\n5.500\nmale\nnot minority\nenglish\nteaching\nnot formal\ncolor\n15\n18\nlower"
   },
   {
     "objectID": "slides/week6-day1.html#section-2",
@@ -5005,14 +5005,14 @@
     "href": "slides/week6-day1.html#section-3",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "How do you use model selection?\n\n\n\n\n\nStepwise Selection\n\nForward Selection\nBackward Selection\n\n\n\n\n\n\nResampling Methods\n\nCross Validation\nTesting / Training Datasets\n\n\n\n\n\n\n\n\nWith any of these methods, you get to choose how you decide if one model is better than another model."
+    "text": "How do you use model selection?\n\n\n\n\n\nStepwise Selection\n\nForward Selection\nBackward Selection\n\n\n\n\n\n\nResampling Methods\n\nCross Validation\nTesting / Training Datasets\n\n\n\n\n\n\n\nWith any of these methods, you get to choose how you decide if one model is better than another model."
   },
   {
     "objectID": "slides/week6-day1.html#section-4",
     "href": "slides/week6-day1.html#section-4",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "\\(R^2\\) – Coefficient of Determination\n\n\n\n\n\n\nWright, Sewall. 1921. Correlation and causation. Journal of Agricultural Research 20: 557-585.\n\n\n\n\n\n\nIn statistics, the coefficient of determination, denoted \\(R^2\\) or \\(r^2\\) and pronounced “R squared,” is the proportion of the variation in the dependent variable that is predictable from the independent variable(s).\nWikipedia"
+    "text": "\\(R^2\\) – Coefficient of Determination\n\n\n\n\n\n\nWright, Sewall (1921). Correlation and causation. Journal of Agricultural Research 20: 557-585.\n\n\n\n\n\n\nIn statistics, the coefficient of determination, denoted \\(R^2\\) or \\(r^2\\) and pronounced “R squared,” is the proportion of the variation in the dependent variable that is predictable from the independent variable(s).\nWikipedia"
   },
   {
     "objectID": "slides/week6-day1.html#section-5",
@@ -5033,35 +5033,35 @@
     "href": "slides/week6-day1.html#section-7",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Adjusted \\(R^2\\)\n\n\n\n\n\n\n\n\n\nThe use of an adjusted \\(R^2\\) is an attempt to account for the phenomenon of the \\(R^2\\) automatically increasing when extra explanatory variables are added to the model.\nWikipedia"
+    "text": "Adjusted \\(R^2\\)\n\n\n\n\n\nMordecai Ezekiel (1930). Methods Of Correlation Analysis, Wiley, pp. 208-211.\n\n\n\n\n\n\nThe use of an adjusted \\(R^2\\) is an attempt to account for the phenomenon of the \\(R^2\\) automatically increasing when extra explanatory variables are added to the model.\nWikipedia"
   },
   {
     "objectID": "slides/week6-day1.html#section-8",
     "href": "slides/week6-day1.html#section-8",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "\\(R^2_{adj} = 1 - \\frac{\\text{var(residuals)}}{\\text{var}(y)} \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n\n\nSuppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
+    "text": "\\(R^2_{adj} = 1 - R^2 \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n\n\nSuppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
   },
   {
     "objectID": "slides/week6-day1.html#section-9",
     "href": "slides/week6-day1.html#section-9",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "p-values\n\n\n\n\n\n\n\n\n\nIn null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.\nWikipedia"
+    "text": "p-values\n\n\n\n\n\nFisher R. A. (1950). Statistical methods for research workers.\n\n\n\n\n\n\nIn null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.\nWikipedia"
   },
   {
     "objectID": "slides/week6-day1.html#section-10",
     "href": "slides/week6-day1.html#section-10",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "AIC – An Information Criterion\n\n\n\n\n\n\n\n\n\nThe Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.\nWikipedia"
+    "text": "AIC\n\n\n\n\n\n\n\n\n\n\n\n\n\nAkaike, H. (1973). Information theory and an extension of the maximum likelihood principle.\n\n\n\n\n\n\nThe Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.\nWikipedia"
   },
   {
     "objectID": "slides/week6-day1.html#section-11",
     "href": "slides/week6-day1.html#section-11",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "How do you use AIC to choose a “best” model?\n\n\n\n\n\n\n\n\n\nmodel\nAIC\nDelta AIC\n\n\n\n\nFull Model\n4724.970\n0.000000\n\n\nAll Variables Except Year\n4727.242\n2.272501\n\n\nAll Variables Except Flipper Length\n4757.214\n32.244605\n\n\nAll Variables Except Species\n4793.681\n68.710933\n\n\n\n\n\n\n\n\n\n\n\n\nIf you’ve ever assessed whether \\(\\Delta\\) AIC \\(&gt; 2\\) you have done something that is mathematically close to \\(p &gt; 0.05\\)."
+    "text": "How do you use AIC to choose a “best” model?\n\n\n\n\n\n\n\n\n\nmodel\nAIC\nDelta AIC\n\n\n\n\nFull Model\n4724.970\n0.000000\n\n\nAll Variables Except Year\n4727.242\n2.272501\n\n\nAll Variables Except Flipper Length\n4757.214\n32.244605\n\n\nAll Variables Except Species\n4793.681\n68.710933\n\n\n\n\n\n\n\n\n\n\n\n\nIf you’ve ever assessed whether \\(\\Delta\\) AIC \\(&gt; 2\\) you have done something that is mathematically close to \\(p &lt; 0.05\\)."
   },
   {
     "objectID": "slides/week6-day1.html#section-12",
@@ -6533,7 +6533,7 @@
     "href": "slides/week6-day1.html#feedback-revisions",
     "title": "Variable Selection in Multiple Regression",
     "section": "Feedback & Revisions",
-    "text": "Feedback & Revisions\n\n\n\nYou are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\nRevisions for Statistical Critiques are due next Thursday (February 22)"
+    "text": "Feedback & Revisions\n\n\n\nYou are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n\n\n\n\n\n\nRevision Deadline\n\n\nRevisions for Statistical Critiques are due next Thursday (February 22)"
   },
   {
     "objectID": "slides/week6-day1.html#feedback-on-drafts",
@@ -6547,7 +6547,7 @@
     "href": "slides/week6-day1.html#what-are-you-looking-for-in-the-study-limitations-section",
     "title": "Variable Selection in Multiple Regression",
     "section": "What are you looking for in the Study Limitations section?",
-    "text": "What are you looking for in the Study Limitations section?"
+    "text": "What are you looking for in the Study Limitations section?\nBased on how the study was designed,\n\n\nwhat can you say about the relationships between the variables?\n\nCan you say that your explanatory variable(s) causes changes in your response variable?\nWhy or why not?\n\n\n\n\n\nwhat population can you infer these results onto?\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?"
   },
   {
     "objectID": "slides/week6-day1.html#section-13",
@@ -6590,5 +6590,54 @@
     "title": "Machine Learning",
     "section": "An Example",
     "text": "An Example"
+  },
+  {
+    "objectID": "slides/week6-day1.html#research-questions",
+    "href": "slides/week6-day1.html#research-questions",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Research Questions",
+    "text": "Research Questions\n\n\nYour research question should be a question\nYour question should be able to be addressed with a multiple linear regression\n\nIs the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?\nWhat is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?"
+  },
+  {
+    "objectID": "slides/week6-day1.html#data-visualizations-coefficient-interpretations",
+    "href": "slides/week6-day1.html#data-visualizations-coefficient-interpretations",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Data Visualizations & Coefficient Interpretations",
+    "text": "Data Visualizations & Coefficient Interpretations\n\nDescriptions of your visualizations should address:\n\nform, direction, strength, and unusual points\n\nYou should interpret every coefficient from your regression equation(s)!\n\nEvery y-intercept and every slope"
+  },
+  {
+    "objectID": "slides/week6-day1.html#writing-conclusions",
+    "href": "slides/week6-day1.html#writing-conclusions",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Writing Conclusions",
+    "text": "Writing Conclusions\n\nCircle back to your research question\nWhat did you learn in your visualizations?\nWhat did you learn in your regression model?\nWhat conclusions would you reach about your research question?\n\n\n\n\n\n\n\nNo “significance” & no p-values"
+  },
+  {
+    "objectID": "slides/week6-day1.html#study-limitations-scope-of-inference",
+    "href": "slides/week6-day1.html#study-limitations-scope-of-inference",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Study Limitations – Scope of Inference",
+    "text": "Study Limitations – Scope of Inference\nBased on how the study was designed,\n\n\nwhat population can you infer these results onto?\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?\n\n\n\n\n\nWhy?"
+  },
+  {
+    "objectID": "slides/week6-day1.html#study-limitations-causal-inference",
+    "href": "slides/week6-day1.html#study-limitations-causal-inference",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Study Limitations – Causal Inference",
+    "text": "Study Limitations – Causal Inference\nBased on how the study was designed,\n\n\nwhat can you say about the relationships between the variables?\n\nCan you say that your explanatory variable(s) causes changes in your response variable?\nWhy or why not?\nWhat can you say about these relationships?"
+  },
+  {
+    "objectID": "slides/week6-day2.html#formatting-guidelines",
+    "href": "slides/week6-day2.html#formatting-guidelines",
+    "title": "Machine Learning",
+    "section": "Formatting Guidelines",
+    "text": "Formatting Guidelines\n\nDon’t write in bullet points\nAvoid redundancy as much as possible\nMake contents easy to navigate\n\nUse subheaders and / or boldface to indicate important content\nPlace your regression equations on their own line"
+  },
+  {
+    "objectID": "slides/week6-day1.html#peer-review",
+    "href": "slides/week6-day1.html#peer-review",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Peer Review",
+    "text": "Peer Review\nPlease print your Midterm Project and bring it to class!"
   }
 ]

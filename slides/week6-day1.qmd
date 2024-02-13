@@ -16,34 +16,93 @@ library(palmerpenguins)
 
 ## Feedback & Revisions
 
-:::{.incremental}
-::: {.small}
-- You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time). 
+::: incremental
+::: small
+-   You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).
 
-- Aesthetics are associated with **variables**
-  * If there is only one color / shape / linetype being used in the plot, it is not associated with a variable! 
-  * If there are multiple plots, then there is a variable associated with how the plots are separated!  
+-   Aesthetics are associated with **variables**
 
-- Revisions for Statistical Critiques are due next Thursday (February 22)
+    -   If there is only one color / shape / linetype being used in the plot, it is not associated with a variable!
+    -   If there are multiple plots, then there is a variable associated with how the plots are separated!
 :::
+:::
+
+:::{.callout-caution}
+# Revision Deadline
+Revisions for Statistical Critiques are due next Thursday (February 22)
 :::
 
 # Midterm Project
 
-## Feedback on Drafts
+## Research Questions
 
-::: {.small}
-- Your research question should be appropriate for the multiple regression you are interested in! 
-  * Is the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?
-  * What is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?
+:::{.incremental}
+-   Your research question should be a [question]{.underline} 
 
-- The descriptions of your visualizations should address: form, direction, strength, and unusual points
+-   Your question should be able to be addressed with a [multiple linear regression]{.underline} 
 
-- You should interpret **every** coefficient from your regression equation(s)! This includes your estimated y-intercept! 
+    * Is the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?
+    * What is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?
 :::
 
-## What are you looking for in the Study Limitations section?
+## Data Visualizations & Coefficient Interpretations
 
+-   Descriptions of your visualizations should address:
+    * form, direction, strength, and unusual points
+
+-   You should interpret **every** coefficient from your regression equation(s)! 
+    * Every y-intercept and every slope
+
+## Study Limitations -- Scope of Inference
+
+Based on how the study was designed, 
+
+:::{.fragment}
+:::{.small}
+what population can you infer these results onto?
+
+:::{.small}
+  * Every sugar maple? 
+  * Sugar maples in the Northeast? 
+  * Sugar maples in New Hampshire?
+  * Sugar maples in the Hubbard Brook Experimental Forest?
+  * Sugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled? 
+  * This sample of sugar maples?
+:::
+:::
+:::
+
+. . .
+
+Why?
+
+## Study Limitations -- Causal Inference
+
+Based on how the study was designed, 
+
+:::{.fragment}
+:::{.small}
+what can you say about the relationships between the variables?
+
+  * Can you say that your explanatory variable(s) [causes]{.underline} changes in your response variable? 
+  * Why or why not?
+  * What can you say about these relationships?
+:::
+:::
+
+
+## Writing Conclusions
+
+- Circle back to your research question 
+- What did you learn in your visualizations?
+- What did you learn in your regression model?
+- What conclusions would you reach about your research question?
+
+:::{.callout-caution}
+# No "significance" & no p-values
+:::
+
+# Model Selection
 
 ## 
 
@@ -114,11 +173,11 @@ How do you use model selection?
 
 . . .
 
-</br>
-
 ::: {style="font-size: 0.9em; color: #e28743;"}
 **With any of these methods, you get to choose *how* you decide if one model is better than another model.**
 :::
+
+# Model Comparison Measures
 
 ## 
 
@@ -133,7 +192,7 @@ $R^2$ -- Coefficient of Determination
 ![](images/wright.jpg)
 
 ::: {style="font-size: 0.75em;"}
-Wright, Sewall. 1921. Correlation and causation. Journal of Agricultural Research 20: 557-585.
+Wright, Sewall (1921). Correlation and causation. Journal of Agricultural Research 20: 557-585.
 :::
 :::
 
@@ -205,6 +264,10 @@ Adjusted $R^2$
 ::: columns
 ::: {.column width="45%"}
 ![](images/ezekiel.jpeg)
+
+::: {style="font-size: 0.75em;"}
+Mordecai Ezekiel (1930). Methods Of Correlation Analysis, Wiley, pp. 208-211.
+:::
 :::
 
 ::: {.column width="5%"}
@@ -222,7 +285,7 @@ Adjusted $R^2$
 ## 
 
 ::: {style="font-size: 1.25em"}
-$R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1)}{(n - k - 1)}$
+$R^2_{adj} = 1 - R^2 \times \frac{(n - 1)}{(n - k - 1)}$
 :::
 
 -   $n$ is the sample size
@@ -231,7 +294,7 @@ $R^2_{adj} = 1 - \frac{\text{var(residuals)}}{\text{var}(y)} \times \frac{(n - 1
 
 . . .
 
-::: {style="font-size: 1.25em; color: #e28743;"}
+::: {style="font-size: 1.2em; color: #e28743;"}
 Suppose you have a two categorical variables included in your regression, one with 7 levels and one with 4 levels.
 
 > What value will you use for $k$ in the calculation of $n - k - 1$?
@@ -246,6 +309,10 @@ p-values
 ::: columns
 ::: {.column width="45%"}
 ![](images/fisher.jpeg)
+
+::: {style="font-size: 0.75em;"}
+Fisher R. A. (1950). Statistical methods for research workers. 
+:::
 :::
 
 ::: {.column width="5%"}
@@ -263,19 +330,26 @@ p-values
 ## 
 
 ::: {style="font-size: 2em; color: #76b5c5;"}
-AIC -- An Information Criterion
+AIC
 :::
 
 ::: columns
-::: {.column width="45%"}
-![](images/akaike.jpg)
+::: {.column width="55%"}
+```{r}
+#| out-width: 40%
+knitr::include_graphics("images/akaike.jpg")
+```
+
+::: {style="font-size: 0.75em;"}
+Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle. 
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-::: {style="font-size: 0.75em;"}
+::: {.column width="40%"}
+::: {style="font-size: 0.6em;"}
 > The Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.
 >
 > *Wikipedia*
@@ -332,8 +406,8 @@ aic_table %>%
 
 </br>
 
-::: {style="font-size: 1.1em; color: #e28743;"}
-If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that is mathematically close to $p > 0.05$.
+::: {style="font-size: 0.75em; color: #e28743;"}
+If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that is mathematically close to $p < 0.05$.
 :::
 
 ## 
@@ -351,3 +425,9 @@ What should you use instead?
 > In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
 >
 > *Introduction to Modern Statistics*
+
+# For Thursday
+
+## Peer Review
+
+Please print your Midterm Project and bring it to class! 
