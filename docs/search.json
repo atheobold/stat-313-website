@@ -4991,7 +4991,7 @@
     "href": "slides/week6-day1.html#section-1",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n441\n89\n3.7\n35\n7.833\nfemale\nminority\nenglish\ntenure track\nnot formal\ncolor\n43\n108\nlower\n\n\n67\n12\n3.5\n37\n4.333\nmale\nnot minority\nenglish\nteaching\nnot formal\ncolor\n25\n35\nupper\n\n\n57\n10\n5.0\n47\n5.500\nmale\nnot minority\nenglish\nteaching\nnot formal\ncolor\n15\n18\nlower"
+    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n139\n24\n4.3\n64\n4.167\nmale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n21\n39\nupper\n\n\n390\n80\n4.0\n51\n6.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n9\n11\nupper\n\n\n25\n6\n4.6\n62\n5.500\nmale\nnot minority\nenglish\ntenured\nformal\ncolor\n160\n292\nupper"
   },
   {
     "objectID": "slides/week6-day1.html#section-2",
@@ -6617,14 +6617,14 @@
     "href": "slides/week6-day1.html#study-limitations-scope-of-inference",
     "title": "Variable Selection in Multiple Regression",
     "section": "Study Limitations – Scope of Inference",
-    "text": "Study Limitations – Scope of Inference\nBased on how the study was designed,\n\n\nwhat population can you infer these results onto?\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?\n\n\n\n\n\nWhy?"
+    "text": "Study Limitations – Scope of Inference\nBased on how the study was designed, what population can you infer these results onto?\n\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?\n\n\n\n\nWhy?"
   },
   {
     "objectID": "slides/week6-day1.html#study-limitations-causal-inference",
     "href": "slides/week6-day1.html#study-limitations-causal-inference",
     "title": "Variable Selection in Multiple Regression",
     "section": "Study Limitations – Causal Inference",
-    "text": "Study Limitations – Causal Inference\nBased on how the study was designed,\n\n\nwhat can you say about the relationships between the variables?\n\nCan you say that your explanatory variable(s) causes changes in your response variable?\nWhy or why not?\nWhat can you say about these relationships?"
+    "text": "Study Limitations – Causal Inference\nBased on how the study was designed, what can you say about the relationships between the variables?\n\n\n\nCan you say that your explanatory variable(s) causes changes in your response variable?\nWhy or why not?\nWhat can you say about these relationships?"
   },
   {
     "objectID": "slides/week6-day2.html#formatting-guidelines",

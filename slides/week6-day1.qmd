@@ -19,9 +19,7 @@ library(palmerpenguins)
 ::: incremental
 ::: small
 -   You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).
-
 -   Aesthetics are associated with **variables**
-
     -   If there is only one color / shape / linetype being used in the plot, it is not associated with a variable!
     -   If there are multiple plots, then there is a variable associated with how the plots are separated!
 :::
@@ -55,12 +53,9 @@ Revisions for Statistical Critiques are due next Thursday (February 22)
 
 ## Study Limitations -- Scope of Inference
 
-Based on how the study was designed, 
+Based on how the study was designed, what population can you infer these results onto?
 
 :::{.fragment}
-:::{.small}
-what population can you infer these results onto?
-
 :::{.small}
   * Every sugar maple? 
   * Sugar maples in the Northeast? 
@@ -70,7 +65,6 @@ what population can you infer these results onto?
   * This sample of sugar maples?
 :::
 :::
-:::
 
 . . .
 
@@ -78,12 +72,10 @@ Why?
 
 ## Study Limitations -- Causal Inference
 
-Based on how the study was designed, 
+Based on how the study was designed, what can you say about the relationships between the variables?
 
 :::{.fragment}
 :::{.small}
-what can you say about the relationships between the variables?
-
   * Can you say that your explanatory variable(s) [causes]{.underline} changes in your response variable? 
   * Why or why not?
   * What can you say about these relationships?
