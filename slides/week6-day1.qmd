@@ -2,7 +2,7 @@
 title: "Variable Selection in Multiple Regression"
 format: 
   revealjs:
-    theme: night
+    theme: style.scss
 editor: visual
 ---
 
@@ -11,6 +11,41 @@ library(tidyverse)
 library(moderndive)
 library(palmerpenguins)
 ```
+
+# Statistical Critique
+
+## Feedback & Revisions
+
+:::{.incremental}
+::: {.small}
+- You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time). 
+
+- Aesthetics are associated with **variables**
+  * If there is only one color / shape / linetype being used in the plot, it is not associated with a variable! 
+  * If there are multiple plots, then there is a variable associated with how the plots are separated!  
+
+- Revisions for Statistical Critiques are due next Thursday (February 22)
+:::
+:::
+
+# Midterm Project
+
+## Feedback on Drafts
+
+::: {.small}
+- Your research question should be appropriate for the multiple regression you are interested in! 
+  * Is the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?
+  * What is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?
+
+- The descriptions of your visualizations should address: form, direction, strength, and unusual points
+
+- You should interpret **every** coefficient from your regression equation(s)! This includes your estimated y-intercept! 
+:::
+
+## What are you looking for in the Study Limitations section?
+
+
+## 
 
 ::: {style="font-size: 2.5em; color: #76b5c5;"}
 **What is model selection?**
@@ -169,7 +204,7 @@ Adjusted $R^2$
 
 ::: columns
 ::: {.column width="45%"}
-![](images/ezekiel.jfif)
+![](images/ezekiel.jpeg)
 :::
 
 ::: {.column width="5%"}
@@ -210,7 +245,7 @@ p-values
 
 ::: columns
 ::: {.column width="45%"}
-![](images/fisher.jfif)
+![](images/fisher.jpeg)
 :::
 
 ::: {.column width="5%"}
