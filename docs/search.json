@@ -4991,7 +4991,7 @@
     "href": "slides/week6-day1.html#section-1",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n139\n24\n4.3\n64\n4.167\nmale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n21\n39\nupper\n\n\n390\n80\n4.0\n51\n6.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n9\n11\nupper\n\n\n25\n6\n4.6\n62\n5.500\nmale\nnot minority\nenglish\ntenured\nformal\ncolor\n160\n292\nupper"
+    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n107\n19\n4.3\n46\n4.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\nblack&white\n30\n45\nupper\n\n\n45\n9\n4.4\n33\n4.667\nfemale\nnot minority\nenglish\ntenure track\nnot formal\ncolor\n11\n44\nupper\n\n\n391\n80\n4.0\n51\n6.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n67\n78\nupper"
   },
   {
     "objectID": "slides/week6-day1.html#section-2",
@@ -5054,7 +5054,7 @@
     "href": "slides/week6-day1.html#section-10",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "AIC\n\n\n\n\n\n\n\n\n\n\n\n\n\nAkaike, H. (1973). Information theory and an extension of the maximum likelihood principle.\n\n\n\n\n\n\nThe Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.\nWikipedia"
+    "text": "AIC\n\n\n\n\n\n\n\n\n\nAkaike, H. (1973). Information theory and an extension of the maximum likelihood principle.\n\n\n\n\n\n\nThe Akaike information criterion (AIC) is an estimator of prediction error and thereby relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.\nWikipedia"
   },
   {
     "objectID": "slides/week6-day1.html#section-11",
@@ -5068,7 +5068,7 @@
     "href": "slides/week6-day1.html#section-12",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Model Selection Activity!"
+    "text": "What’s your best model?"
   },
   {
     "objectID": "project/midterm-proposal.html",
@@ -6554,7 +6554,7 @@
     "href": "slides/week6-day1.html#section-13",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "What should you use instead?\n\n\nIn fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.\nIntroduction to Modern Statistics"
+    "text": "What’s your best model?"
   },
   {
     "objectID": "slides/week6-day2.html#deadline-reminders",
@@ -6639,5 +6639,26 @@
     "title": "Variable Selection in Multiple Regression",
     "section": "Peer Review",
     "text": "Peer Review\nPlease print your Midterm Project and bring it to class!"
+  },
+  {
+    "objectID": "slides/week6-day1.html#backward-selection-by-hand",
+    "href": "slides/week6-day1.html#backward-selection-by-hand",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Backward Selection by Hand",
+    "text": "Backward Selection by Hand\n\nStart with “full” model (every explanatory variable is included)\n\nUse adjusted \\(R^2\\) to summarize the “fit” of this model\n\nDecide which one variable to remove\n\nHighest adjusted \\(R^2\\)\n\nDecide what one variable to remove next\n\nHighest adjusted \\(R^2\\)\n\nKeep removing variables until adjusted \\(R^2\\) doesn’t increase"
+  },
+  {
+    "objectID": "slides/week6-day1.html#adding-a-constraint",
+    "href": "slides/week6-day1.html#adding-a-constraint",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "Adding a Constraint",
+    "text": "Adding a Constraint\nRepeat the same process, but now for a variable to be removed the adjusted \\(R^2\\) must increase by at least 2% (0.02)."
+  },
+  {
+    "objectID": "slides/week6-day1.html#section-14",
+    "href": "slides/week6-day1.html#section-14",
+    "title": "Variable Selection in Multiple Regression",
+    "section": "",
+    "text": "If you’re not interested in prediction, what should you use instead?\n\n\nIn fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.\nIntroduction to Modern Statistics"
   }
 ]

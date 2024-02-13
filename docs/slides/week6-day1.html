@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.3.361">
 
   <title>STAT 313 / 513 - Winter 2024 - Variable Selection in Multiple Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -155,8 +155,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -319,6 +318,7 @@
       margin-right: 0; 
     }
   </style>
+  
   <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
   <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
@@ -499,23 +499,39 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">139</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">4.3</td>
-<td style="text-align: right;">64</td>
-<td style="text-align: right;">4.167</td>
-<td style="text-align: left;">male</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">4.333</td>
+<td style="text-align: left;">female</td>
 <td style="text-align: left;">not minority</td>
 <td style="text-align: left;">english</td>
 <td style="text-align: left;">tenured</td>
 <td style="text-align: left;">not formal</td>
-<td style="text-align: left;">color</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">39</td>
+<td style="text-align: left;">black&amp;white</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: left;">upper</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">390</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">4.667</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: left;">not minority</td>
+<td style="text-align: left;">english</td>
+<td style="text-align: left;">tenure track</td>
+<td style="text-align: left;">not formal</td>
+<td style="text-align: left;">color</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: left;">upper</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">391</td>
 <td style="text-align: right;">80</td>
 <td style="text-align: right;">4.0</td>
 <td style="text-align: right;">51</td>
@@ -526,24 +542,8 @@
 <td style="text-align: left;">tenured</td>
 <td style="text-align: left;">not formal</td>
 <td style="text-align: left;">color</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">upper</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">62</td>
-<td style="text-align: right;">5.500</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">not minority</td>
-<td style="text-align: left;">english</td>
-<td style="text-align: left;">tenured</td>
-<td style="text-align: left;">formal</td>
-<td style="text-align: left;">color</td>
-<td style="text-align: right;">160</td>
-<td style="text-align: right;">292</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">78</td>
 <td style="text-align: left;">upper</td>
 </tr>
 </tbody>
@@ -741,11 +741,7 @@
 <div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="images/akaike.jpg" style="width:40.0%"></p>
-</figure>
-</div>
 </div>
 </div>
 <div style="font-size: 0.75em;">
@@ -816,17 +812,50 @@
 <p>If you’ve ever assessed whether <span class="math inline">\(\Delta\)</span> AIC <span class="math inline">\(&gt; 2\)</span> you have done something that is mathematically close to <span class="math inline">\(p &lt; 0.05\)</span>.</p>
 </div>
 </div>
+</section></section>
+<section>
+<section id="model-selection-activity" class="title-slide slide level1 center">
+<h1>Model Selection Activity!</h1>
+
+</section>
+<section id="backward-selection-by-hand" class="slide level2">
+<h2>Backward Selection by Hand</h2>
+<ul>
+<li>Start with “full” model (every explanatory variable is included)
+<ul>
+<li>Use adjusted <span class="math inline">\(R^2\)</span> to summarize the “fit” of this model</li>
+</ul></li>
+<li>Decide which <strong>one</strong> variable to remove
+<ul>
+<li>Highest adjusted <span class="math inline">\(R^2\)</span></li>
+</ul></li>
+<li>Decide what <strong>one</strong> variable to remove next
+<ul>
+<li>Highest adjusted <span class="math inline">\(R^2\)</span></li>
+</ul></li>
+<li>Keep removing variables until adjusted <span class="math inline">\(R^2\)</span> doesn’t increase</li>
+</ul>
 </section>
 <section id="section-12" class="slide level2">
 <h2></h2>
-<div style="font-size: 4em; color: #B6CADA;">
-<p>Model Selection Activity!</p>
+<div style="font-size: 4em;">
+<p>What’s your best model?</p>
 </div>
+</section>
+<section id="adding-a-constraint" class="slide level2">
+<h2>Adding a Constraint</h2>
+<p>Repeat the same process, but now for a variable to be removed the adjusted <span class="math inline">\(R^2\)</span> must increase by <strong>at least</strong> 2% (0.02).</p>
 </section>
 <section id="section-13" class="slide level2">
 <h2></h2>
+<div style="font-size: 4em;">
+<p>What’s your best model?</p>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
 <div style="font-size: 2em; color: #B6CADA;">
-<p>What should you use instead?</p>
+<p>If you’re not interested in prediction, what should you use instead?</p>
 </div>
 <blockquote>
 <p>In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.</p>
@@ -842,12 +871,10 @@
 <h2>Peer Review</h2>
 <p>Please print your Midterm Project and bring it to class!</p>
 
-
-</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></section>
+</section></section>
     </div>
   </div>
 
@@ -874,6 +901,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1172,9 +1200,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1184,17 +1213,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

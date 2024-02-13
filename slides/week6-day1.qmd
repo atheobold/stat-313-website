@@ -25,8 +25,9 @@ library(palmerpenguins)
 :::
 :::
 
-:::{.callout-caution}
+::: callout-caution
 # Revision Deadline
+
 Revisions for Statistical Critiques are due next Thursday (February 22)
 :::
 
@@ -34,35 +35,34 @@ Revisions for Statistical Critiques are due next Thursday (February 22)
 
 ## Research Questions
 
-:::{.incremental}
--   Your research question should be a [question]{.underline} 
+::: incremental
+-   Your research question should be a [question]{.underline}
 
--   Your question should be able to be addressed with a [multiple linear regression]{.underline} 
+-   Your question should be able to be addressed with a [multiple linear regression]{.underline}
 
-    * Is the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?
-    * What is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?
+    -   Is the relationship between stem length and stem dry mass different for watersheds treated with calcium versus without?
+    -   What is the relationship between the size of a fiddler crab and the latitude and water temperature in which it lives?
 :::
 
 ## Data Visualizations & Coefficient Interpretations
 
 -   Descriptions of your visualizations should address:
-    * form, direction, strength, and unusual points
-
--   You should interpret **every** coefficient from your regression equation(s)! 
-    * Every y-intercept and every slope
+    -   form, direction, strength, and unusual points
+-   You should interpret **every** coefficient from your regression equation(s)!
+    -   Every y-intercept and every slope
 
 ## Study Limitations -- Scope of Inference
 
 Based on how the study was designed, what population can you infer these results onto?
 
-:::{.fragment}
-:::{.small}
-  * Every sugar maple? 
-  * Sugar maples in the Northeast? 
-  * Sugar maples in New Hampshire?
-  * Sugar maples in the Hubbard Brook Experimental Forest?
-  * Sugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled? 
-  * This sample of sugar maples?
+::: fragment
+::: small
+-   Every sugar maple?
+-   Sugar maples in the Northeast?
+-   Sugar maples in New Hampshire?
+-   Sugar maples in the Hubbard Brook Experimental Forest?
+-   Sugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?
+-   This sample of sugar maples?
 :::
 :::
 
@@ -74,23 +74,22 @@ Why?
 
 Based on how the study was designed, what can you say about the relationships between the variables?
 
-:::{.fragment}
-:::{.small}
-  * Can you say that your explanatory variable(s) [causes]{.underline} changes in your response variable? 
-  * Why or why not?
-  * What can you say about these relationships?
+::: fragment
+::: small
+-   Can you say that your explanatory variable(s) [causes]{.underline} changes in your response variable?
+-   Why or why not?
+-   What can you say about these relationships?
 :::
 :::
-
 
 ## Writing Conclusions
 
-- Circle back to your research question 
-- What did you learn in your visualizations?
-- What did you learn in your regression model?
-- What conclusions would you reach about your research question?
+-   Circle back to your research question
+-   What did you learn in your visualizations?
+-   What did you learn in your regression model?
+-   What conclusions would you reach about your research question?
 
-:::{.callout-caution}
+::: callout-caution
 # No "significance" & no p-values
 :::
 
@@ -303,7 +302,7 @@ p-values
 ![](images/fisher.jpeg)
 
 ::: {style="font-size: 0.75em;"}
-Fisher R. A. (1950). Statistical methods for research workers. 
+Fisher R. A. (1950). Statistical methods for research workers.
 :::
 :::
 
@@ -333,7 +332,7 @@ knitr::include_graphics("images/akaike.jpg")
 ```
 
 ::: {style="font-size: 0.75em;"}
-Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle. 
+Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle.
 :::
 :::
 
@@ -402,16 +401,41 @@ aic_table %>%
 If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that is mathematically close to $p < 0.05$.
 :::
 
+# Model Selection Activity!
+
+## Backward Selection by Hand
+
+- Start with "full" model (every explanatory variable is included)
+  * Use adjusted $R^2$ to summarize the "fit" of this model
+
+- Decide which **one** variable to remove
+  * Highest adjusted $R^2$
+
+- Decide what **one** variable to remove next
+  * Highest adjusted $R^2$
+
+- Keep removing variables until adjusted $R^2$ doesn't increase
+
 ## 
 
-::: {style="font-size: 4em; color: #B6CADA;"}
-Model Selection Activity!
+::: {style="font-size: 4em;"}
+What's your best model?
+:::
+
+## Adding a Constraint
+
+Repeat the same process, but now for a variable to be removed the adjusted $R^2$ must increase by **at least** 2% (0.02). 
+
+## 
+
+::: {style="font-size: 4em;"}
+What's your best model?
 :::
 
 ## 
 
 ::: {style="font-size: 2em; color: #B6CADA;"}
-What should you use instead?
+If you're not interested in prediction, what should you use instead?
 :::
 
 > In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
@@ -422,4 +446,4 @@ What should you use instead?
 
 ## Peer Review
 
-Please print your Midterm Project and bring it to class! 
+Please print your Midterm Project and bring it to class!
