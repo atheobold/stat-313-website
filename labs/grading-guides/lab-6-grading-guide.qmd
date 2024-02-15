@@ -9,25 +9,17 @@ editor: visual
 ::: callout-note
 Based on my code, the model selection process should go:
 
-`eval_completion` $\rightarrow$ `pic_color` $\rightarrow$ `gender`
+`cls_credits` $\rightarrow$ `bty_avg` $\rightarrow$ `gender` 
 
-Then, in Step 4 they will need to choose between `age` and `bty_avg`. Here is how their respective models should go:
-
-`age` $\rightarrow$ `rank` $\rightarrow$ DONE
-
--   No variables add at least 1% (0.01) to previous model
-
-`bty_avg` $\rightarrow$ DONE
-
--   No variables add at least 1% (0.01) to previous model
+In Step 4 they are given two variables (`cls_perc_eval`, `eval_completion`) which both increase adjusted $R^2$ by 0.018, not the 0.02 which is required to add another variable. So, **everyone** should stop at Step 4. 
 :::
 
 ## Question 1
 
 **To earn a Success:**
 
--   fits other 6 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)
--   finds other 6 adjusted $R^2$ values
+-   fits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)
+-   finds other 7 adjusted $R^2$ values
 -   states top model includes **eval_completion** variable
 
 *If they do not state the top model or what variable was chosen:*
@@ -113,10 +105,9 @@ OR
 
 ## Question 6
 
-**To earn a Success:**
+**To earn a Success:** 
 
--   includes **all** variables from top model in regression
+- states that the `step()` function did not choose the same model
+- hypothesizes why these models differed
 
-*If the model fit here differs from their top model, they **must** state why they fit a different model.*
 
-## Question 7

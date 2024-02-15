@@ -330,7 +330,6 @@ window.Quarto = {
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -370,24 +369,16 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Based on my code, the model selection process should go:</p>
-<p><code>eval_completion</code> <span class="math inline">\(\rightarrow\)</span> <code>pic_color</code> <span class="math inline">\(\rightarrow\)</span> <code>gender</code></p>
-<p>Then, in Step 4 they will need to choose between <code>age</code> and <code>bty_avg</code>. Here is how their respective models should go:</p>
-<p><code>age</code> <span class="math inline">\(\rightarrow\)</span> <code>rank</code> <span class="math inline">\(\rightarrow\)</span> DONE</p>
-<ul>
-<li>No variables add at least 1% (0.01) to previous model</li>
-</ul>
-<p><code>bty_avg</code> <span class="math inline">\(\rightarrow\)</span> DONE</p>
-<ul>
-<li>No variables add at least 1% (0.01) to previous model</li>
-</ul>
+<p><code>cls_credits</code> <span class="math inline">\(\rightarrow\)</span> <code>bty_avg</code> <span class="math inline">\(\rightarrow\)</span> <code>gender</code></p>
+<p>In Step 4 they are given two variables (<code>cls_perc_eval</code>, <code>eval_completion</code>) which both increase adjusted <span class="math inline">\(R^2\)</span> by 0.018, not the 0.02 which is required to add another variable. So, <strong>everyone</strong> should stop at Step 4.</p>
 </div>
 </div>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p><strong>To earn a Success:</strong></p>
 <ul>
-<li>fits other 6 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)</li>
-<li>finds other 6 adjusted <span class="math inline">\(R^2\)</span> values</li>
+<li>fits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)</li>
+<li>finds other 7 adjusted <span class="math inline">\(R^2\)</span> values</li>
 <li>states top model includes <strong>eval_completion</strong> variable</li>
 </ul>
 <p><em>If they do not state the top model or what variable was chosen:</em></p>
@@ -480,12 +471,9 @@ Note
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p><strong>To earn a Success:</strong></p>
 <ul>
-<li>includes <strong>all</strong> variables from top model in regression</li>
+<li>states that the <code>step()</code> function did not choose the same model</li>
+<li>hypothesizes why these models differed</li>
 </ul>
-<p><em>If the model fit here differs from their top model, they <strong>must</strong> state why they fit a different model.</em></p>
-</section>
-<section id="question-7" class="level2">
-<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 
 
 </section>

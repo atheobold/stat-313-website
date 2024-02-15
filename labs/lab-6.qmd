@@ -61,7 +61,7 @@ Based on this output, we are starting with a **really** low adjusted $R^2$. So, 
 
 ### Step 1
 
-**Rules: You can only add a variable to the model if it improves the adjusted** $R^2$ by at least 1% (0.01).
+**Rules: You can only add a variable to the model if it improves the adjusted** $R^2$ by at least 2% (0.02).
 
 Alright, so now we get cooking. The next step is to fit **every** model with **one** explanatory variable. I've provided a list of every explanatory variable you are allowed to consider!
 
@@ -150,7 +150,7 @@ Again, the name of the model will need to change. This round, you are on your ow
 
 Alright, now you should have 13 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 13 models is the "top" model.
 
-**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01) from the model you chose in Question 1.
+**Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 2% (0.02) from the model you chose in Question 1.
 
 ```{r}
 #| label: two-variable-model-summaries
@@ -173,8 +173,7 @@ This process of fitting 12-14 models at a time is getting rather tedious! So, I'
 evals %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, 
-         -score,
+  select(-score,
          -<VARIABLE 1 SELECTED>,
          -<VARIABLE 2 SELECTED>
          ) %>% 
@@ -199,8 +198,7 @@ map(.f = ~lm(score ~ .x + gender + age, data = evals)) %>%
 and your code on the fourth line would look like:
 
 ```         
-  select(-ID, 
-         -score,
+  select(-score,
          -gender,
          -sex
          ) %>% 
@@ -217,8 +215,7 @@ Your turn!
 evals %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, 
-         -score, 
+  select(-score, 
          -<VARIABLE 1 SELECTED>, 
          -<VARIABLE 2 SELECTED>
            ) %>% 
@@ -228,13 +225,13 @@ evals %>%
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 2 and see if it improved adjusted $R^2$ by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
 
 **3. What model was your top model? State which variables are included in the model you chose!**
 
 ### Step 4 - Adding a Fourth Variable
 
-As you might have expected, in this step we add a *fourth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
+**If you decided to add a variable in Step 3, then you keep going! If you didn't add a variable in Step 3, then you stop!**
 
 ```{r}
 #| label: adding-a-forth-variable
@@ -245,8 +242,7 @@ As you might have expected, in this step we add a *fourth* variable to our top m
 evals %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, 
-         -score, 
+  select(-score, 
          -<VARIABLE 1 SELECTED>, 
          -<VARIABLE 2 SELECTED>, 
          -<VARIABLE 3 SELECTED>
@@ -257,13 +253,13 @@ evals %>%
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted $R^2$ by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
 
 **4. What model was your top model? You must state which variables are included in the model you chose!**
 
 ### Step 5 - Adding a Fifth Variable
 
-As you might have expected, in this step we add a *fifth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
+**If you decided to add a variable in Step 4, then you keep going! If you didn't add a variable in Step 4, then you stop!**
 
 ```{r}
 #| label: adding-a-fifth-variable
@@ -274,8 +270,7 @@ As you might have expected, in this step we add a *fifth* variable to our top mo
 evals %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, 
-         -score, 
+  select(-score, 
          -<VARIABLE 1 SELECTED>, 
          -<VARIABLE 2 SELECTED>, 
          -<VARIABLE 3 SELECTED>,
@@ -287,40 +282,9 @@ evals %>%
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 4 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted $R^2$ by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 4 is the "best" model!
 
 **5. What model was your top model? You must state which variables are included in the model you chose!**
-
-### Step 6 - Adding a Sixth Variable
-
-As you might have expected, in this step we add a *sixth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
-
-```{r}
-#| label: adding-a-sixth-variable
-
-## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
-## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
-
-evals %>% 
-  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
-  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, 
-         -score, 
-         -<VARIABLE 1 SELECTED>, 
-         -<VARIABLE 2 SELECTED>, 
-         -<VARIABLE 3 SELECTED>,
-         -<VARIABLE 4 SELECTED>,
-         -<VARIABLE 5 SELECTED>
-          ) %>% 
-  pivot_longer(cols = everything(), 
-               names_to = "variable", 
-               values_to = "adj_r_sq") %>% 
-  slice_max(adj_r_sq)
-```
-
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 5 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 5 is the "best" model!
-
-**6. What model was your top model? State which variables are included in the model you chose!**
 
 ## Comparing with the `step()` Function
 
@@ -333,4 +297,4 @@ full_model <- lm(score ~ ., data = evals)
 step(full_model, direction = "forward")
 ```
 
-7.  **Did the `step()` function choose the same model as you? If your "best" models do not not agree, why do you think this might have happened?**
+6.  **Did the `step()` function choose the same model as you? If your "best" models do not not agree, why do you think this might have happened?**
