@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="STAT 313">
-  <title>STAT 313 / 513 - Winter 2024 - Machine Learning</title>
+  <title>STAT 313 / 513 - Winter 2024 - Midterm Project Feedback, Visualization Best (Better) Practices &amp; Machine Learning</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning</h1>
+  <h1 class="title">Midterm Project Feedback, Visualization Best (Better) Practices &amp; Machine Learning</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -344,10 +409,55 @@ STAT 313
 <li>Statistical Critique 1 revisions are due next Thursday</li>
 <li>The final version of your Midterm Project is due Sunday at midnight</li>
 </ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Deadline Extensions</strong></p>
+</div>
+<div class="callout-content">
+<p>You <strong>cannot</strong> request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. <strong>Do not ride the line.</strong></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Responding to Questions / Issues</strong></p>
+</div>
+<div class="callout-content">
+<p>I <strong>will not</strong> be responding to emails / Discord messages this weekend, so please plan accordingly.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section>
 <section id="midterm-project-review" class="title-slide slide level1 center">
 <h1>Midterm Project Review</h1>
+
+</section>
+<section id="help-your-peers" class="slide level2">
+<h2>Help your peers!</h2>
+<ul>
+<li><p>Are the arguments / sentences easy to understand? Does the report flow?</p></li>
+<li><p>Is the same information included in multiple places?</p></li>
+<li><p>Do the plots have nice axis labels?</p></li>
+<li><p>Can you easily find the regression equations? Do the equations make sense?</p></li>
+<li><p>Do the interpretations / conclusions from the equations make sense?</p></li>
+<li><p>Do they justify <em>who</em> they can infer their results onto?</p></li>
+<li><p>Do they justify why they can / cannot use <em>causal</em> language?</p></li>
+</ul>
+</section></section>
+<section>
+<section id="peer-feedback" class="title-slide slide level1 center">
+<h1>Peer Feedback</h1>
 
 </section>
 <section id="formatting-guidelines" class="slide level2">
@@ -361,53 +471,155 @@ STAT 313
 <li>Place your regression equations on their own line</li>
 </ul></li>
 </ul>
-</section></section>
-<section id="peer-feedback" class="title-slide slide level1 center">
-<h1>Peer Feedback</h1>
-
 </section>
-
-<section>
-<section id="better-practices-for-data-visualization" class="title-slide slide level1 center">
-<h1>Better Practices for Data Visualization</h1>
-
-</section>
-<section id="when-to-use-plot-titles" class="slide level2">
-<h2>When to Use Plot Titles</h2>
-</section>
-<section id="tailoring-colors" class="slide level2">
-<h2>Tailoring Colors</h2>
-</section>
-<section id="tailoring-backgrounds" class="slide level2">
-<h2>Tailoring Backgrounds</h2>
-</section>
-<section id="an-example" class="slide level2">
-<h2>An Example</h2>
-</section></section>
-<section>
-<section id="machine-learning" class="title-slide slide level1 center">
-<h1>Machine Learning</h1>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div style="font-size: 2em; color: #000000;">
-<p><strong>Supervised Learning</strong></p>
+<section id="section" class="slide level2" data-background-color="black" data-background-image="images/glamour-of-graphics.jpg" data-background-size="contain">
+<h2></h2>
+<div style="font-size: 4em; color: #ed8402;">
+<p>Better Practices for Data Visualization</p>
 </div>
-<blockquote>
-<p>Supervises algorithms that are used to classify data or predict outcomes</p>
-</blockquote>
+</section>
+<section id="some-guidelines" class="slide level2">
+<h2>Some Guidelines</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Titles should be top left aligned (usually)</li>
+<li>Don’t make people tilt their head</li>
+<li>Alignment should create clean lines and symmetry</li>
+<li>Remove and lighten grids as much as possible</li>
+</ul>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:45%;">
-<div style="font-size: 2em; color: #000000;">
-<p><strong>Unsupervised Learning</strong></p>
-</div>
-<blockquote>
-<p>Allows computers to learn patterns in the dataset without the need for human intervention</p>
-</blockquote>
+</div><div class="column" style="width:55%;">
+<ul>
+<li>Legends suck</li>
+<li>Whitespace is like garlic; take the amount you need and then triple it</li>
+<li>Fonts matter</li>
+<li>Color is hard</li>
+</ul>
 </div>
 </div>
 </section>
-<section id="section" class="slide level2" data-background-color="#B6CADA">
+<section id="some-guidelines-1" class="slide level2">
+<h2>Some Guidelines</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Titles should be top left aligned (usually)</li>
+<li><span style="color: #ed8402;">Don’t make people tilt their head</span></li>
+<li>Alignment should create clean lines and symmetry</li>
+<li><span style="color: #ed8402;">Remove and lighten grids as much as possible</span></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<ul>
+<li>Legends suck</li>
+<li>Whitespace is like garlic; take the amount you need and then triple it</li>
+<li>Fonts matter</li>
+<li><span style="color: #ed8402;">Color is hard</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="dont-make-people-tilt-their-head" class="slide level2">
+<h2>Don’t make people <span style="color: #34605f;">tilt</span> their head</h2>
+
+<img data-src="images/plot-title.png" class="r-stretch"></section>
+<section id="tailoring-colors" class="slide level2">
+<h2>Tailoring Colors</h2>
+<p>Different color palettes are available through a variety of R packages. Popular options include:</p>
+<div class="columns">
+<div class="column" style="width:47%;">
+<div class="fragment">
+<p><a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">RColorBrewer</a></p>
+<p><img data-src="images/color-brewer.png"></p>
+</div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:47%;">
+<div class="fragment">
+<p><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></p>
+<p><img data-src="images/viridis.png"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><a href="https://github.com/EmilHvitfeldt/r-color-palettes">This website</a> provides an exhaustive list of color themes available through various packages.</p>
+</div>
+</section>
+<section id="grids-remove-and-lighten-as-much-as-possible" class="slide level2">
+<h2>Grids: <span style="color: #34605f;">remove and lighten</span> as much as possible</h2>
+
+<img data-src="images/backgrounds.png" class="r-stretch"></section>
+<section id="a-reasonable-option-theme_minimal" class="slide level2">
+<h2>A Reasonable Option – <code>theme_minimal()</code></h2>
+<p><br></p>
+
+<img data-src="week6-day2_files/figure-revealjs/example-theme-minimal-1.png" width="960" class="r-stretch"></section>
+<section id="an-example-for-categorical" class="slide level2">
+<h2>An Example for Categorical</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>and_vertebrates <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> length_1_mm, </span>
+<span id="cb1-3"><a></a>                     <span class="at">y =</span> weight_g, </span>
+<span id="cb1-4"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length (mm)"</span>, </span>
+<span id="cb1-7"><a></a>      <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb1-8"><a></a>      <span class="at">color =</span> <span class="st">"Species"</span>,</span>
+<span id="cb1-9"><a></a>      <span class="at">title =</span> <span class="st">"Comparing Weight (g) versus Length (mm) </span><span class="sc">\n</span><span class="st">for Vertebrates in Mack Creek"</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-11"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</section>
+<section id="an-example-for-categorical-output" class="slide level2 output-location-slide"><h2>An Example for Categorical</h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="week6-day2_files/figure-revealjs/example-color-discrete-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="an-example-for-continuous" class="slide level2">
+<h2>An Example for Continuous</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>pie_crab <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> latitude, </span>
+<span id="cb2-3"><a></a>                     <span class="at">y =</span> size, </span>
+<span id="cb2-4"><a></a>                     <span class="at">color =</span> water_temp)) <span class="sc">+</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Latitude"</span>, </span>
+<span id="cb2-7"><a></a>      <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb2-8"><a></a>      <span class="at">color =</span> <span class="st">"Water Temperature (C)"</span>,</span>
+<span id="cb2-9"><a></a>      <span class="at">title =</span> <span class="st">"Size of Fiddler Crabs (mm) Across the Atlantic Coast"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-11"><a></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</section><section id="an-example-for-continuous-output" class="slide level2 output-location-slide"><h2>An Example for Continuous</h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="week6-day2_files/figure-revealjs/example-color-gradient-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section></section>
+<section id="machine-learning" class="title-slide slide level1 center">
+<h1>Machine Learning</h1>
+
+</section>
+
+<section>
+<section id="machine-learning-1" class="title-slide slide level1 center">
+<h1>Machine Learning</h1>
+<blockquote>
+<p>“the use and development of computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyze and draw inferences from patterns in data”</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <p><br></p>
 <center>
@@ -415,28 +627,6 @@ STAT 313
 <p><strong>Data is Power</strong></p>
 </div>
 </center>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<div style="font-size: 3em; color: #0F4C81;">
-<p>Intersectional Feminism</p>
-</div>
-<blockquote>
-<p>Focuses on the distribution of <strong>power</strong> — who has it and who doesn’t</p>
-</blockquote>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><img data-src="images/combahee_crenshaw_lorde.jpg"></p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<div style="font-size: 0.75em; color: #000000;">
-<p><em>Intersectionality</em> is a concept out of Black feminism, conceptually derived by the Combahee River Collective and linguistically created by Kimberlee Crenshaw.</p>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
@@ -456,28 +646,62 @@ STAT 313
 <p><img data-src="images/books.jpg"></p>
 </div>
 </section>
-<section id="section-3" class="slide level2">
-<h2></h2>
+<section id="does-your-phone-recognize-your-face" class="slide level2">
+<h2>Does your phone recognize your face?</h2>
 
 <img data-src="images/buolamwini.jpg" class="r-stretch quarto-figure-center"><p class="caption">Joy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face.</p></section>
-<section id="section-4" class="slide level2">
-<h2></h2>
+<section id="how-does-google-label-your-images" class="slide level2">
+<h2>How does Google label your images?</h2>
 
 <img data-src="images/google.png" class="r-stretch"></section>
-<section id="proposition-25" class="slide level2">
-<h2>Proposition 25</h2>
+<section id="should-the-cash-bail-system-change" class="slide level2">
+<h2>Should the cash bail system change?</h2>
 
 <img data-src="images/prop-25.png" class="r-stretch"></section>
-<section id="section-5" class="slide level2">
-<h2></h2>
+<section id="will-your-car-be-able-to-drive-you" class="slide level2">
+<h2>Will your car be able to drive you?</h2>
 
+<img data-src="images/cars.jpg" class="r-stretch"></section></section>
+<section>
+<section id="lab-6" class="title-slide slide level1 center">
+<h1>Lab 6</h1>
 
+</section>
+<section id="forward-selection-by-hand" class="slide level2">
+<h2>Forward Selection (by Hand)</h2>
+<ol type="1">
+<li><p>Start with the most basic model (one mean)</p></li>
+<li><p>Decide which <strong>one</strong> variable to add (based on adjusted <span class="math inline">\(R^2\)</span>)</p></li>
+<li><p>Decide if you should add another variable</p></li>
+</ol>
+<p><span class="math inline">\(\vdots\)</span></p>
+<ol start="4" type="1">
+<li>Stop adding variables when adjusted <span class="math inline">\(R^2\)</span> stops increasing</li>
+</ol>
+</section>
+<section id="a-more-automated-option" class="slide level2">
+<h2>A More Automated Option</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|2,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb3-5"><a></a>         <span class="sc">-</span>score,</span>
+<span id="cb3-6"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>,</span>
+<span id="cb3-7"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb3-8"><a></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb3-10"><a></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb3-11"><a></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-12"><a></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
-<img data-src="images/cars.jpg" class="r-stretch"></section><div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></section>
+</div>
+</section></section>
     </div>
   </div>
 
@@ -688,6 +912,44 @@ STAT 313
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -8,12 +8,12 @@ execute:
   eval: false
 ---
 
-```{r set-up}
+```{r}
+#| label: packages-data-clean
+
 library(tidyverse)
 library(moderndive)
-
-# This is needed to make sure everyone gets the SAME testing / training datasets!
-set.seed(1234)
+library(openintro)
 
 evals <- evals |> 
   mutate(large_class = if_else(cls_students > 100, 
@@ -22,41 +22,32 @@ evals <- evals |>
          eval_completion = cls_did_eval / cls_students 
          ) |> 
   select(-cls_did_eval, 
-         -cls_students)
+         -cls_students, 
+         -prof_id,
+         -course_id)
 ```
 
 ## Your Challenge
 
 This week you have learned about model selection. During class you worked on performing a backward selection process to determine the "best" model for penguin body mass.
 
-Today, you are going to use **forward selection** to determine the "best" model for professor's evaluation score. There is an extra layer to this challenge, you are going to test how well your model predicts the evaluation scores of professors **not** in your dataset. The group(s) with the lowest prediction error will win **two** extra tokens.
-
-This task will require you to fit **tons** of linear regressions. **You must be able to show me exactly how you got to your top model.** Meaning, I need to see a record of **every** model you fit and compared along the way.
-
-### Your Datasets
-
-I've used the `slice_sample()` function to divide the `evals` dataset into two datasets:
-
-1.  `evals_train` contains 80% of the observations in the original `evals` dataset -- **this is the dataset you will use for your models**
-
-2.  `evals_test` contains the other 20% of observations -- **this is the dataset you will use for your predictions**
-
-```{r test-train}
-evals_train <- slice_sample(evals, prop = 0.8)
-evals_test <- anti_join(evals, evals_train, by = "ID")
-```
+Today, you are going to use **forward selection** to determine the "best" model for professor's evaluation score. This task will require you to fit **tons** of linear regressions. **You must be able to show me exactly how you got to your top model.** Meaning, I need to see a record of **every** model you fit and compared along the way.
 
 ## Forward Selection
 
 The forward selection process starts with a model with **no** predictor variables. That means, this model predicts the *same* mean evaluation score for every professor. I've fit this model for you below!
 
-```{r one-mean}
+```{r}
+#| label: one-mean
+
 one_mean <- lm(score ~ 1, data = evals_train)
 ```
 
 You can pull out the adjusted $R^2$ for this model using the `get_regression_summaries()` function.
 
-```{r one-mean-summary}
+```{r}
+#| label: one-mean-summary
+
 get_regression_summaries(one_mean)
 ```
 
@@ -81,7 +72,7 @@ Alright, so now we get cooking. The next step is to fit **every** model with **o
 -   `eval_completion` -- proportion of students who completed the evaluation
 -   `cls_level` -- class level
 
-Woof, that's 12 different variables. That means, for this first round, you will need to compare the adjusted $R^2$ for **12** different models to decide what variable should be added.
+Woof, that's 12 different variables. That means, for this first round, you will need to compare the adjusted $R^2$ for [**12**]{.underline} different models to decide what variable should be added.
 
 Every model you fit will have the *same* format:
 
@@ -91,7 +82,8 @@ name_of_model <- lm(score ~ <variable>, data = evals_train)
 
 But, the name of the model will need to change. I've started the process for you, using the naming style of `one_` followed by the variable name (e.g., `one_id`, `one_bty`, etc.).
 
-```{r all-one-variable-models}
+```{r}
+#| label: all-one-variable-models
 
 one_id <- lm(score ~ prof_ID, data = evals_train)
 one_age <- lm(score ~ age, data = evals_train)
@@ -107,7 +99,9 @@ one_language <- lm(score ~ language, data = evals_train)
 
 Alright, now that you've fit the models, you need to inspect the adjusted $R^2$ values to see which of these 12 models is the "top" model -- the model with the highest adjusted $R^2$! Similar to before, I've provided you with some code to get you started, but you need to write the remaining code.
 
-```{r one-variable_model-summaries}
+```{r}
+#| label: one-variable_model-summaries
+
 get_regression_summaries(one_id)
 get_regression_summaries(one_age)
 get_regression_summaries(one_bty)
@@ -122,7 +116,7 @@ get_regression_summaries(one_language)
 
 **1. What model was your top model? Specifically, which variable was selected to be included?**
 
-### Step 2
+### Step 2 - Adding a Second Variable
 
 Alright, you've added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: **every model you fit needs to contain the variable you decided to add**. So, if you decided to add the `bty_avg` variable, every model you fit would look like this:
 
@@ -135,37 +129,45 @@ Again, the name of the model will need to change. This round, you are on your ow
 -   name each model `two_` followed by the names of both variables included in the model (e.g., `two_bty_id`)
 -   go through each variable step-by-step just like you did before
 
-```{r adding-a-second-variable}
+```{r}
+#| label: adding-a-second-variable
+
 ## Code to fit all 11 models that add a second variable to your top model goes here!
 
 
 
 ```
 
-Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 101models is the "top" model.
+Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted $R^2$ values to see which of these 11 models is the "top" model.
 
 **Rules: You can only add a variable to the model if it improves adjusted** $R^2$ by at least 1% (0.01) from the model you chose in Question 1.
 
-```{r two-variable-model-summaries}
+```{r}
+#| label: two-variable-model-summaries
+
 ## Code to compare all 11 models you fit goes here!
 
 
 
 ```
 
-**2. What model was your top model? You must state which variables are included in the model you chose!**
+**2. What model was your top model? State which variables are included in the model you chose!**
 
-### Step 3
+### Step 3 - Adding a Third Variable
 
 As you might have expected, in this step we add a *third* variable to our top model from the previous step. This process should be getting familiar at this point!
 
-This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how what the code looks:
+This process of fitting 10-12 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how the code looks:
 
 ```         
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  select(-ID, 
+         -score,
+         -<VARIABLE 1 SELECTED>,
+         -<VARIABLE 2 SELECTED>
+         ) %>% 
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %>% 
@@ -178,8 +180,26 @@ Woah, that's a lot. The only thing you need to change is:
 
 -   add in the names of the variables you selected in Steps 1 & 2 in the `select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>)` step
 
-```{r adding-a-third-variable}
-## Code to fit all  models that add a third variable to your top model goes here!
+For example, if you chose `gender` and `age` in Steps 1 and 2, your code on the first line would look like:
+
+```         
+map(.f = ~lm(score ~ .x + gender + age, data = evals_train)) %>% 
+```
+
+and your code on the fourth line would look like:
+
+```         
+  select(-ID, 
+         -score,
+         -gender,
+         -sex
+         ) %>% 
+```
+
+Your turn!
+
+```{r}
+#| label: adding-a-third-variable
 
 ## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1 & 2
 ## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1 & 2
@@ -187,23 +207,27 @@ Woah, that's a lot. The only thing you need to change is:
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  select(-ID, 
+         -score, 
+         -<VARIABLE 1 SELECTED>, 
+         -<VARIABLE 2 SELECTED>
+           ) %>% 
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %>% 
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the "best" model!
 
-**3. What model was your top model? You must state which variables are included in the model you chose!**
+**3. What model was your top model? State which variables are included in the model you chose!**
 
-### Step 4
+### Step 4 - Adding a Fourth Variable
 
 As you might have expected, in this step we add a *fourth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
 
-```{r adding-a-forth-variable}
-## Code to fit all  models that add a forth variable to your top model goes here!
+```{r}
+#| label: adding-a-forth-variable
 
 ## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, & 3
 ## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2 & 3
@@ -211,23 +235,28 @@ As you might have expected, in this step we add a *fourth* variable to our top m
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  select(-ID, 
+         -score, 
+         -<VARIABLE 1 SELECTED>, 
+         -<VARIABLE 2 SELECTED>, 
+         -<VARIABLE 3 SELECTED>
+         ) %>% 
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %>% 
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 3 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
 
 **4. What model was your top model? You must state which variables are included in the model you chose!**
 
-### Step 5
+### Step 5 - Adding a Fifth Variable
 
 As you might have expected, in this step we add a *fifth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
 
-```{r adding-a-fifth-variable}
-## Code to fit all  models that add a forth variable to your top model goes here!
+```{r}
+#| label: adding-a-fifth-variable
 
 ## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4
 ## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4
@@ -235,23 +264,29 @@ As you might have expected, in this step we add a *fifth* variable to our top mo
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  select(-ID, 
+         -score, 
+         -<VARIABLE 1 SELECTED>, 
+         -<VARIABLE 2 SELECTED>, 
+         -<VARIABLE 3 SELECTED>,
+         -<VARIABLE 4 SELECTED>
+          ) %>%  
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %>% 
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 4 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 4 is the "best" model!
 
 **5. What model was your top model? You must state which variables are included in the model you chose!**
 
-### Step 6
+### Step 6 - Adding a Sixth Variable
 
 As you might have expected, in this step we add a *sixth* variable to our top model from the previous step. We're again going to use the code that allows for us to fit **lots** of regressions without having to type them all out.
 
-```{r adding-a-sixth-variable}
-## Code to fit all  models that add a forth variable to your top model goes here!
+```{r}
+#| label: adding-a-sixth-variable
 
 ## Change the <VARIABLES SELECTED> in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
 ## Change the <VARIABLE 1 SELECTED> and <VARIABLE 2 SELECTED> in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5
@@ -259,28 +294,33 @@ As you might have expected, in this step we add a *sixth* variable to our top mo
 evals_train %>% 
   map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>) %>% 
+  select(-ID, 
+         -score, 
+         -<VARIABLE 1 SELECTED>, 
+         -<VARIABLE 2 SELECTED>, 
+         -<VARIABLE 3 SELECTED>,
+         -<VARIABLE 4 SELECTED>,
+         -<VARIABLE 5 SELECTED>
+          ) %>% 
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %>% 
   slice_max(adj_r_sq)
 ```
 
-The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 5 and see if it improved adjusted\*\* $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the "best" model!
+The output of this code is the variable that has the highest adjusted $R^2$. Compare this value to the value of your "top" model from Step 5 and see if it improved adjusted $R^2$ by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 5 is the "best" model!
 
-**6. What model was your top model? You must state which variables are included in the model you chose!**
+**6. What model was your top model? State which variables are included in the model you chose!**
 
-## Testing Your Top Model
+## Comparing with the `step()` Function
 
-**If you choose to test the data on a different model than what you said in #6, you must justify why you are using a different model!**
+Let's check the forward selection model you found with what model the `step()` function decides is best. Run the code chunk below to obtain the "best" model chosen by this function.
 
-```{r prediction-error}
+```{r}
+#| label: comparing-model-selected
 
-top_model <- lm(score ~ <ALL VARIABLES SELECTED>, data = evals_train)
-
-evals_test %>% 
-  mutate(predictions = predict(top_model, newdata = evals_test), 
-         residuals = score - predictions) %>%
-  summarize(RMSE = sd(residuals))
-
+full_model <- lm(score ~ ., data = evals_train)
+step(full_model, direction = "forward")
 ```
+
+7.  **Did the `step()` function choose the same model as you? If your "best" models do not not agree, why do you think this might have happened?**

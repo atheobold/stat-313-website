@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -156,7 +156,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -358,20 +358,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#your-challenge" id="toc-your-challenge" class="nav-link active" data-scroll-target="#your-challenge">Your Challenge</a>
-  <ul class="collapse">
-  <li><a href="#your-datasets" id="toc-your-datasets" class="nav-link" data-scroll-target="#your-datasets">Your Datasets</a></li>
-  </ul></li>
+  <li><a href="#your-challenge" id="toc-your-challenge" class="nav-link active" data-scroll-target="#your-challenge">Your Challenge</a></li>
   <li><a href="#forward-selection" id="toc-forward-selection" class="nav-link" data-scroll-target="#forward-selection">Forward Selection</a>
   <ul class="collapse">
   <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1">Step 1</a></li>
-  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2">Step 2</a></li>
-  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3">Step 3</a></li>
-  <li><a href="#step-4" id="toc-step-4" class="nav-link" data-scroll-target="#step-4">Step 4</a></li>
-  <li><a href="#step-5" id="toc-step-5" class="nav-link" data-scroll-target="#step-5">Step 5</a></li>
-  <li><a href="#step-6" id="toc-step-6" class="nav-link" data-scroll-target="#step-6">Step 6</a></li>
+  <li><a href="#step-2---adding-a-second-variable" id="toc-step-2---adding-a-second-variable" class="nav-link" data-scroll-target="#step-2---adding-a-second-variable">Step 2 - Adding a Second Variable</a></li>
+  <li><a href="#step-3---adding-a-third-variable" id="toc-step-3---adding-a-third-variable" class="nav-link" data-scroll-target="#step-3---adding-a-third-variable">Step 3 - Adding a Third Variable</a></li>
+  <li><a href="#step-4---adding-a-fourth-variable" id="toc-step-4---adding-a-fourth-variable" class="nav-link" data-scroll-target="#step-4---adding-a-fourth-variable">Step 4 - Adding a Fourth Variable</a></li>
+  <li><a href="#step-5---adding-a-fifth-variable" id="toc-step-5---adding-a-fifth-variable" class="nav-link" data-scroll-target="#step-5---adding-a-fifth-variable">Step 5 - Adding a Fifth Variable</a></li>
+  <li><a href="#step-6---adding-a-sixth-variable" id="toc-step-6---adding-a-sixth-variable" class="nav-link" data-scroll-target="#step-6---adding-a-sixth-variable">Step 6 - Adding a Sixth Variable</a></li>
   </ul></li>
-  <li><a href="#testing-your-top-model" id="toc-testing-your-top-model" class="nav-link" data-scroll-target="#testing-your-top-model">Testing Your Top Model</a></li>
+  <li><a href="#comparing-with-the-step-function" id="toc-comparing-with-the-step-function" class="nav-link" data-scroll-target="#comparing-with-the-step-function">Comparing with the <code>step()</code> Function</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -412,46 +409,33 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This is needed to make sure everyone gets the SAME testing / training datasets!</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>evals <span class="ot">&lt;-</span> evals <span class="sc">|&gt;</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">large_class =</span> <span class="fu">if_else</span>(cls_students <span class="sc">&gt;</span> <span class="dv">100</span>, </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"large class"</span>, </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"regular class"</span>), </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">eval_completion =</span> cls_did_eval <span class="sc">/</span> cls_students </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>cls_did_eval, </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>cls_students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>evals <span class="ot">&lt;-</span> evals <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">large_class =</span> <span class="fu">if_else</span>(cls_students <span class="sc">&gt;</span> <span class="dv">100</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"large class"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"regular class"</span>), </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">eval_completion =</span> cls_did_eval <span class="sc">/</span> cls_students </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>cls_did_eval, </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>cls_students, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>prof_id,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>course_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="your-challenge" class="level2">
 <h2 class="anchored" data-anchor-id="your-challenge">Your Challenge</h2>
 <p>This week you have learned about model selection. During class you worked on performing a backward selection process to determine the “best” model for penguin body mass.</p>
-<p>Today, you are going to use <strong>forward selection</strong> to determine the “best” model for professor’s evaluation score. There is an extra layer to this challenge, you are going to test how well your model predicts the evaluation scores of professors <strong>not</strong> in your dataset. The group(s) with the lowest prediction error will win <strong>two</strong> extra tokens.</p>
-<p>This task will require you to fit <strong>tons</strong> of linear regressions. <strong>You must be able to show me exactly how you got to your top model.</strong> Meaning, I need to see a record of <strong>every</strong> model you fit and compared along the way.</p>
-<section id="your-datasets" class="level3">
-<h3 class="anchored" data-anchor-id="your-datasets">Your Datasets</h3>
-<p>I’ve used the <code>slice_sample()</code> function to divide the <code>evals</code> dataset into two datasets:</p>
-<ol type="1">
-<li><p><code>evals_train</code> contains 80% of the observations in the original <code>evals</code> dataset – <strong>this is the dataset you will use for your models</strong></p></li>
-<li><p><code>evals_test</code> contains the other 20% of observations – <strong>this is the dataset you will use for your predictions</strong></p></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>evals_train <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(evals, <span class="at">prop =</span> <span class="fl">0.8</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>evals_test <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(evals, evals_train, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+<p>Today, you are going to use <strong>forward selection</strong> to determine the “best” model for professor’s evaluation score. This task will require you to fit <strong>tons</strong> of linear regressions. <strong>You must be able to show me exactly how you got to your top model.</strong> Meaning, I need to see a record of <strong>every</strong> model you fit and compared along the way.</p>
 </section>
 <section id="forward-selection" class="level2">
 <h2 class="anchored" data-anchor-id="forward-selection">Forward Selection</h2>
 <p>The forward selection process starts with a model with <strong>no</strong> predictor variables. That means, this model predicts the <em>same</em> mean evaluation score for every professor. I’ve fit this model for you below!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>one_mean <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> evals_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>one_mean <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> evals_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can pull out the adjusted <span class="math inline">\(R^2\)</span> for this model using the <code>get_regression_summaries()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Based on this output, we are starting with a <strong>really</strong> low adjusted <span class="math inline">\(R^2\)</span>. So, things can only get better from here!</p>
 <section id="step-1" class="level3">
@@ -472,35 +456,35 @@ window.Quarto = {
 <li><code>eval_completion</code> – proportion of students who completed the evaluation</li>
 <li><code>cls_level</code> – class level</li>
 </ul>
-<p>Woof, that’s 12 different variables. That means, for this first round, you will need to compare the adjusted <span class="math inline">\(R^2\)</span> for <strong>12</strong> different models to decide what variable should be added.</p>
+<p>Woof, that’s 12 different variables. That means, for this first round, you will need to compare the adjusted <span class="math inline">\(R^2\)</span> for <u><strong>12</strong></u> different models to decide what variable should be added.</p>
 <p>Every model you fit will have the <em>same</em> format:</p>
 <pre><code>name_of_model &lt;- lm(score ~ &lt;variable&gt;, data = evals_train)</code></pre>
 <p>But, the name of the model will need to change. I’ve started the process for you, using the naming style of <code>one_</code> followed by the variable name (e.g., <code>one_id</code>, <code>one_bty</code>, etc.).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>one_id <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> prof_ID, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>one_age <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> age, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>one_bty <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>one_gender <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> gender, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>one_ethnicity <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> ethnicity, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>one_language <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> language, <span class="at">data =</span> evals_train)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Now, you need to fit the other six models! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>one_id <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> prof_ID, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>one_age <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> age, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>one_bty <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>one_gender <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> gender, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>one_ethnicity <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> ethnicity, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>one_language <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> language, <span class="at">data =</span> evals_train)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Now, you need to fit the other six models! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Alright, now that you’ve fit the models, you need to inspect the adjusted <span class="math inline">\(R^2\)</span> values to see which of these 12 models is the “top” model – the model with the highest adjusted <span class="math inline">\(R^2\)</span>! Similar to before, I’ve provided you with some code to get you started, but you need to write the remaining code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_id)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_age)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_bty)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_gender)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_ethnicity)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_language)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Now, you need to compare the other six models! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_id)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_age)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_bty)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_gender)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_ethnicity)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_summaries</span>(one_language)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Now, you need to compare the other six models! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>1. What model was your top model? Specifically, which variable was selected to be included?</strong></p>
 </section>
-<section id="step-2" class="level3">
-<h3 class="anchored" data-anchor-id="step-2">Step 2</h3>
+<section id="step-2---adding-a-second-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-2---adding-a-second-variable">Step 2 - Adding a Second Variable</h3>
 <p>Alright, you’ve added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: <strong>every model you fit needs to contain the variable you decided to add</strong>. So, if you decided to add the <code>bty_avg</code> variable, every model you fit would look like this:</p>
 <pre><code>name_of_model &lt;- lm(score ~ bty_avg + &lt;variable&gt;, data = evals_train)</code></pre>
 <p>Again, the name of the model will need to change. This round, you are on your own – I’ve provided you with no code. Here are my recommendations:</p>
@@ -509,23 +493,27 @@ window.Quarto = {
 <li>go through each variable step-by-step just like you did before</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all 11 models that add a second variable to your top model goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all 11 models that add a second variable to your top model goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted <span class="math inline">\(R^2\)</span> values to see which of these 101models is the “top” model.</p>
+<p>Alright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted <span class="math inline">\(R^2\)</span> values to see which of these 11 models is the “top” model.</p>
 <p><strong>Rules: You can only add a variable to the model if it improves adjusted</strong> <span class="math inline">\(R^2\)</span> by at least 1% (0.01) from the model you chose in Question 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to compare all 11 models you fit goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to compare all 11 models you fit goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>2. What model was your top model? You must state which variables are included in the model you chose!</strong></p>
+<p><strong>2. What model was your top model? State which variables are included in the model you chose!</strong></p>
 </section>
-<section id="step-3" class="level3">
-<h3 class="anchored" data-anchor-id="step-3">Step 3</h3>
+<section id="step-3---adding-a-third-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-3---adding-a-third-variable">Step 3 - Adding a Third Variable</h3>
 <p>As you might have expected, in this step we add a <em>third</em> variable to our top model from the previous step. This process should be getting familiar at this point!</p>
-<p>This process of fitting 10-12 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in <strong>one</strong> pipeline! This is how what the code looks:</p>
+<p>This process of fitting 10-12 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in <strong>one</strong> pipeline! This is how the code looks:</p>
 <pre><code>evals_train %&gt;% 
   map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% 
   map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% 
-  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% 
+  select(-ID, 
+         -score,
+         -&lt;VARIABLE 1 SELECTED&gt;,
+         -&lt;VARIABLE 2 SELECTED&gt;
+         ) %&gt;% 
   pivot_longer(cols = everything(), 
                names_to = "variable", 
                values_to = "adj_r_sq") %&gt;% 
@@ -535,99 +523,121 @@ window.Quarto = {
 <li><p>add in the names of the variables you selected in Steps 1 &amp; 2 in the <code>~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)</code> step</p></li>
 <li><p>add in the names of the variables you selected in Steps 1 &amp; 2 in the <code>select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;)</code> step</p></li>
 </ul>
+<p>For example, if you chose <code>gender</code> and <code>age</code> in Steps 1 and 2, your code on the first line would look like:</p>
+<pre><code>map(.f = ~lm(score ~ .x + gender + age, data = evals_train)) %&gt;% </code></pre>
+<p>and your code on the fourth line would look like:</p>
+<pre><code>  select(-ID, 
+         -score,
+         -gender,
+         -sex
+         ) %&gt;% </code></pre>
+<p>Your turn!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all  models that add a third variable to your top model goes here!</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 &amp; 2</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 &amp; 2</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, <span class="sc">-</span>score, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 &amp; 2</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 &amp; 2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>score, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>           ) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted** <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!</p>
-<p><strong>3. What model was your top model? You must state which variables are included in the model you chose!</strong></p>
+<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!</p>
+<p><strong>3. What model was your top model? State which variables are included in the model you chose!</strong></p>
 </section>
-<section id="step-4" class="level3">
-<h3 class="anchored" data-anchor-id="step-4">Step 4</h3>
+<section id="step-4---adding-a-fourth-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-4---adding-a-fourth-variable">Step 4 - Adding a Fourth Variable</h3>
 <p>As you might have expected, in this step we add a <em>fourth</em> variable to our top model from the previous step. We’re again going to use the code that allows for us to fit <strong>lots</strong> of regressions without having to type them all out.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all  models that add a forth variable to your top model goes here!</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, &amp; 3</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 &amp; 3</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, <span class="sc">-</span>score, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, &amp; 3</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 &amp; 3</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>score, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">3</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted** <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!</p>
+<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!</p>
 <p><strong>4. What model was your top model? You must state which variables are included in the model you chose!</strong></p>
 </section>
-<section id="step-5" class="level3">
-<h3 class="anchored" data-anchor-id="step-5">Step 5</h3>
+<section id="step-5---adding-a-fifth-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-5---adding-a-fifth-variable">Step 5 - Adding a Fifth Variable</h3>
 <p>As you might have expected, in this step we add a <em>fifth</em> variable to our top model from the previous step. We’re again going to use the code that allows for us to fit <strong>lots</strong> of regressions without having to type them all out.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all  models that add a forth variable to your top model goes here!</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 &amp; 4</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 &amp; 4</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, <span class="sc">-</span>score, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 &amp; 4</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 &amp; 4</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>score, </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">3</span> SELECTED<span class="sc">&gt;</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">4</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span>  </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted** <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!</p>
+<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 4 is the “best” model!</p>
 <p><strong>5. What model was your top model? You must state which variables are included in the model you chose!</strong></p>
 </section>
-<section id="step-6" class="level3">
-<h3 class="anchored" data-anchor-id="step-6">Step 6</h3>
+<section id="step-6---adding-a-sixth-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-6---adding-a-sixth-variable">Step 6 - Adding a Sixth Variable</h3>
 <p>As you might have expected, in this step we add a <em>sixth</em> variable to our top model from the previous step. We’re again going to use the code that allows for us to fit <strong>lots</strong> of regressions without having to type them all out.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Code to fit all  models that add a forth variable to your top model goes here!</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 &amp; 5</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 &amp; 5</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, <span class="sc">-</span>score, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 &amp; 5</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 &amp; 5</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>score, </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span>, </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">3</span> SELECTED<span class="sc">&gt;</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">4</span> SELECTED<span class="sc">&gt;</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">5</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 5 and see if it improved adjusted** <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!</p>
-<p><strong>6. What model was your top model? You must state which variables are included in the model you chose!</strong></p>
+<p>The output of this code is the variable that has the highest adjusted <span class="math inline">\(R^2\)</span>. Compare this value to the value of your “top” model from Step 5 and see if it improved adjusted <span class="math inline">\(R^2\)</span> by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 5 is the “best” model!</p>
+<p><strong>6. What model was your top model? State which variables are included in the model you chose!</strong></p>
 </section>
 </section>
-<section id="testing-your-top-model" class="level2">
-<h2 class="anchored" data-anchor-id="testing-your-top-model">Testing Your Top Model</h2>
-<p><strong>If you choose to test the data on a different model than what you said in #6, you must justify why you are using a different model!</strong></p>
+<section id="comparing-with-the-step-function" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-with-the-step-function">Comparing with the <code>step()</code> Function</h2>
+<p>Let’s check the forward selection model you found with what model the <code>step()</code> function decides is best. Run the code chunk below to obtain the “best” model chosen by this function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>top_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> <span class="er">&lt;</span>ALL VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>evals_test <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">predictions =</span> <span class="fu">predict</span>(top_model, <span class="at">newdata =</span> evals_test), </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">residuals =</span> score <span class="sc">-</span> predictions) <span class="sc">%&gt;%</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">RMSE =</span> <span class="fu">sd</span>(residuals))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> ., <span class="at">data =</span> evals_train)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">step</span>(full_model, <span class="at">direction =</span> <span class="st">"forward"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="7" type="1">
+<li><strong>Did the <code>step()</code> function choose the same model as you? If your “best” models do not not agree, why do you think this might have happened?</strong></li>
+</ol>
 
 
 </section>
@@ -794,7 +804,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

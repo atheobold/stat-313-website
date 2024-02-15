@@ -3118,21 +3118,21 @@
     "href": "labs/lab-6.html",
     "title": "Predicting Professor Evaluation Scores",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(moderndive)\n\n# This is needed to make sure everyone gets the SAME testing / training datasets!\nset.seed(1234)\n\nevals &lt;- evals |&gt; \n  mutate(large_class = if_else(cls_students &gt; 100, \n                               \"large class\", \n                               \"regular class\"), \n         eval_completion = cls_did_eval / cls_students \n         ) |&gt; \n  select(-cls_did_eval, \n         -cls_students)"
+    "text": "library(tidyverse)\nlibrary(moderndive)\nlibrary(openintro)\n\nevals &lt;- evals |&gt; \n  mutate(large_class = if_else(cls_students &gt; 100, \n                               \"large class\", \n                               \"regular class\"), \n         eval_completion = cls_did_eval / cls_students \n         ) |&gt; \n  select(-cls_did_eval, \n         -cls_students, \n         -prof_id,\n         -course_id)"
   },
   {
     "objectID": "labs/lab-6.html#your-challenge",
     "href": "labs/lab-6.html#your-challenge",
     "title": "Predicting Professor Evaluation Scores",
     "section": "Your Challenge",
-    "text": "Your Challenge\nThis week you have learned about model selection. During class you worked on performing a backward selection process to determine the “best” model for penguin body mass.\nToday, you are going to use forward selection to determine the “best” model for professor’s evaluation score. There is an extra layer to this challenge, you are going to test how well your model predicts the evaluation scores of professors not in your dataset. The group(s) with the lowest prediction error will win two extra tokens.\nThis task will require you to fit tons of linear regressions. You must be able to show me exactly how you got to your top model. Meaning, I need to see a record of every model you fit and compared along the way.\n\nYour Datasets\nI’ve used the slice_sample() function to divide the evals dataset into two datasets:\n\nevals_train contains 80% of the observations in the original evals dataset – this is the dataset you will use for your models\nevals_test contains the other 20% of observations – this is the dataset you will use for your predictions\n\n\nevals_train &lt;- slice_sample(evals, prop = 0.8)\nevals_test &lt;- anti_join(evals, evals_train, by = \"ID\")"
+    "text": "Your Challenge\nThis week you have learned about model selection. During class you worked on performing a backward selection process to determine the “best” model for penguin body mass.\nToday, you are going to use forward selection to determine the “best” model for professor’s evaluation score. This task will require you to fit tons of linear regressions. You must be able to show me exactly how you got to your top model. Meaning, I need to see a record of every model you fit and compared along the way."
   },
   {
     "objectID": "labs/lab-6.html#forward-selection",
     "href": "labs/lab-6.html#forward-selection",
     "title": "Predicting Professor Evaluation Scores",
     "section": "Forward Selection",
-    "text": "Forward Selection\nThe forward selection process starts with a model with no predictor variables. That means, this model predicts the same mean evaluation score for every professor. I’ve fit this model for you below!\n\none_mean &lt;- lm(score ~ 1, data = evals_train)\n\nYou can pull out the adjusted \\(R^2\\) for this model using the get_regression_summaries() function.\n\nget_regression_summaries(one_mean)\n\nBased on this output, we are starting with a really low adjusted \\(R^2\\). So, things can only get better from here!\n\nStep 1\nRules: You can only add a variable to the model if it improves the adjusted \\(R^2\\) by at least 1% (0.01).\nAlright, so now we get cooking. The next step is to fit every model with one explanatory variable. I’ve provided a list of every explanatory variable you are allowed to consider!\n\nprof_ID – identification variable for each professor\nage – age of the professor\nbty_avg – average beauty rating of the professor\ngender – gender of the professor\nethnicity – ethnicity of the professor\nlanguage – language of school where professor received education\nrank – rank of professor\npic_outfit – outfit of professor in picture\npic_color – color of professor’s picture\nlarge_class – whether the class had over 100 students\neval_completion – proportion of students who completed the evaluation\ncls_level – class level\n\nWoof, that’s 12 different variables. That means, for this first round, you will need to compare the adjusted \\(R^2\\) for 12 different models to decide what variable should be added.\nEvery model you fit will have the same format:\nname_of_model &lt;- lm(score ~ &lt;variable&gt;, data = evals_train)\nBut, the name of the model will need to change. I’ve started the process for you, using the naming style of one_ followed by the variable name (e.g., one_id, one_bty, etc.).\n\none_id &lt;- lm(score ~ prof_ID, data = evals_train)\none_age &lt;- lm(score ~ age, data = evals_train)\none_bty &lt;- lm(score ~ bty_avg, data = evals_train)\none_gender &lt;- lm(score ~ gender, data = evals_train)\none_ethnicity &lt;- lm(score ~ ethnicity, data = evals_train)\none_language &lt;- lm(score ~ language, data = evals_train)\n\n## Now, you need to fit the other six models! \n\nAlright, now that you’ve fit the models, you need to inspect the adjusted \\(R^2\\) values to see which of these 12 models is the “top” model – the model with the highest adjusted \\(R^2\\)! Similar to before, I’ve provided you with some code to get you started, but you need to write the remaining code.\n\nget_regression_summaries(one_id)\nget_regression_summaries(one_age)\nget_regression_summaries(one_bty)\nget_regression_summaries(one_gender)\nget_regression_summaries(one_ethnicity)\nget_regression_summaries(one_language)\n\n## Now, you need to compare the other six models! \n\n1. What model was your top model? Specifically, which variable was selected to be included?\n\n\nStep 2\nAlright, you’ve added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: every model you fit needs to contain the variable you decided to add. So, if you decided to add the bty_avg variable, every model you fit would look like this:\nname_of_model &lt;- lm(score ~ bty_avg + &lt;variable&gt;, data = evals_train)\nAgain, the name of the model will need to change. This round, you are on your own – I’ve provided you with no code. Here are my recommendations:\n\nname each model two_ followed by the names of both variables included in the model (e.g., two_bty_id)\ngo through each variable step-by-step just like you did before\n\n\n## Code to fit all 11 models that add a second variable to your top model goes here!\n\nAlright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted \\(R^2\\) values to see which of these 101models is the “top” model.\nRules: You can only add a variable to the model if it improves adjusted \\(R^2\\) by at least 1% (0.01) from the model you chose in Question 1.\n\n## Code to compare all 11 models you fit goes here!\n\n2. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 3\nAs you might have expected, in this step we add a third variable to our top model from the previous step. This process should be getting familiar at this point!\nThis process of fitting 10-12 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in one pipeline! This is how what the code looks:\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\nWoah, that’s a lot. The only thing you need to change is:\n\nadd in the names of the variables you selected in Steps 1 & 2 in the ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train) step\nadd in the names of the variables you selected in Steps 1 & 2 in the select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) step\n\n\n## Code to fit all  models that add a third variable to your top model goes here!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 & 2\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 & 2\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted** \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!\n3. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 4\nAs you might have expected, in this step we add a fourth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Code to fit all  models that add a forth variable to your top model goes here!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, & 3\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 & 3\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted** \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n4. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 5\nAs you might have expected, in this step we add a fifth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Code to fit all  models that add a forth variable to your top model goes here!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted** \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n5. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 6\nAs you might have expected, in this step we add a sixth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Code to fit all  models that add a forth variable to your top model goes here!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 5 and see if it improved adjusted** \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n6. What model was your top model? You must state which variables are included in the model you chose!"
+    "text": "Forward Selection\nThe forward selection process starts with a model with no predictor variables. That means, this model predicts the same mean evaluation score for every professor. I’ve fit this model for you below!\n\none_mean &lt;- lm(score ~ 1, data = evals_train)\n\nYou can pull out the adjusted \\(R^2\\) for this model using the get_regression_summaries() function.\n\nget_regression_summaries(one_mean)\n\nBased on this output, we are starting with a really low adjusted \\(R^2\\). So, things can only get better from here!\n\nStep 1\nRules: You can only add a variable to the model if it improves the adjusted \\(R^2\\) by at least 1% (0.01).\nAlright, so now we get cooking. The next step is to fit every model with one explanatory variable. I’ve provided a list of every explanatory variable you are allowed to consider!\n\nprof_ID – identification variable for each professor\nage – age of the professor\nbty_avg – average beauty rating of the professor\ngender – gender of the professor\nethnicity – ethnicity of the professor\nlanguage – language of school where professor received education\nrank – rank of professor\npic_outfit – outfit of professor in picture\npic_color – color of professor’s picture\nlarge_class – whether the class had over 100 students\neval_completion – proportion of students who completed the evaluation\ncls_level – class level\n\nWoof, that’s 12 different variables. That means, for this first round, you will need to compare the adjusted \\(R^2\\) for 12 different models to decide what variable should be added.\nEvery model you fit will have the same format:\nname_of_model &lt;- lm(score ~ &lt;variable&gt;, data = evals_train)\nBut, the name of the model will need to change. I’ve started the process for you, using the naming style of one_ followed by the variable name (e.g., one_id, one_bty, etc.).\n\none_id &lt;- lm(score ~ prof_ID, data = evals_train)\none_age &lt;- lm(score ~ age, data = evals_train)\none_bty &lt;- lm(score ~ bty_avg, data = evals_train)\none_gender &lt;- lm(score ~ gender, data = evals_train)\none_ethnicity &lt;- lm(score ~ ethnicity, data = evals_train)\none_language &lt;- lm(score ~ language, data = evals_train)\n\n## Now, you need to fit the other six models! \n\nAlright, now that you’ve fit the models, you need to inspect the adjusted \\(R^2\\) values to see which of these 12 models is the “top” model – the model with the highest adjusted \\(R^2\\)! Similar to before, I’ve provided you with some code to get you started, but you need to write the remaining code.\n\nget_regression_summaries(one_id)\nget_regression_summaries(one_age)\nget_regression_summaries(one_bty)\nget_regression_summaries(one_gender)\nget_regression_summaries(one_ethnicity)\nget_regression_summaries(one_language)\n\n## Now, you need to compare the other six models! \n\n1. What model was your top model? Specifically, which variable was selected to be included?\n\n\nStep 2 - Adding a Second Variable\nAlright, you’ve added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: every model you fit needs to contain the variable you decided to add. So, if you decided to add the bty_avg variable, every model you fit would look like this:\nname_of_model &lt;- lm(score ~ bty_avg + &lt;variable&gt;, data = evals_train)\nAgain, the name of the model will need to change. This round, you are on your own – I’ve provided you with no code. Here are my recommendations:\n\nname each model two_ followed by the names of both variables included in the model (e.g., two_bty_id)\ngo through each variable step-by-step just like you did before\n\n\n## Code to fit all 11 models that add a second variable to your top model goes here!\n\nAlright, now you should have 11 more models to compare! Like before, you need to inspect the adjusted \\(R^2\\) values to see which of these 11 models is the “top” model.\nRules: You can only add a variable to the model if it improves adjusted \\(R^2\\) by at least 1% (0.01) from the model you chose in Question 1.\n\n## Code to compare all 11 models you fit goes here!\n\n2. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 3 - Adding a Third Variable\nAs you might have expected, in this step we add a third variable to our top model from the previous step. This process should be getting familiar at this point!\nThis process of fitting 10-12 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in one pipeline! This is how the code looks:\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score,\n         -&lt;VARIABLE 1 SELECTED&gt;,\n         -&lt;VARIABLE 2 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\nWoah, that’s a lot. The only thing you need to change is:\n\nadd in the names of the variables you selected in Steps 1 & 2 in the ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train) step\nadd in the names of the variables you selected in Steps 1 & 2 in the select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) step\n\nFor example, if you chose gender and age in Steps 1 and 2, your code on the first line would look like:\nmap(.f = ~lm(score ~ .x + gender + age, data = evals_train)) %&gt;% \nand your code on the fourth line would look like:\n  select(-ID, \n         -score,\n         -gender,\n         -sex\n         ) %&gt;% \nYour turn!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 & 2\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 & 2\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;\n           ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!\n3. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 4 - Adding a Fourth Variable\nAs you might have expected, in this step we add a fourth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, & 3\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 & 3\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n4. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 5 - Adding a Fifth Variable\nAs you might have expected, in this step we add a fifth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;,\n         -&lt;VARIABLE 4 SELECTED&gt;\n          ) %&gt;%  \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 4 is the “best” model!\n5. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 6 - Adding a Sixth Variable\nAs you might have expected, in this step we add a sixth variable to our top model from the previous step. We’re again going to use the code that allows for us to fit lots of regressions without having to type them all out.\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3, 4 & 5\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;,\n         -&lt;VARIABLE 4 SELECTED&gt;,\n         -&lt;VARIABLE 5 SELECTED&gt;\n          ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 5 and see if it improved adjusted \\(R^2\\) by at least 1% (0.01). If so, this variable should be added. If not, then your model from Step 5 is the “best” model!\n6. What model was your top model? State which variables are included in the model you chose!"
   },
   {
     "objectID": "labs/lab-6.html#testing-your-top-model",
@@ -4947,21 +4947,21 @@
   {
     "objectID": "slides/week6-day2.html#section",
     "href": "slides/week6-day2.html#section",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
-    "text": "Data is Power"
+    "text": "Better Practices for Data Visualization"
   },
   {
     "objectID": "slides/week6-day2.html#section-1",
     "href": "slides/week6-day2.html#section-1",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
-    "text": "Intersectional Feminism\n\n\nFocuses on the distribution of power — who has it and who doesn’t\n\n\n\n\n\n\n\n\n\nIntersectionality is a concept out of Black feminism, conceptually derived by the Combahee River Collective and linguistically created by Kimberlee Crenshaw."
+    "text": "Data is Power"
   },
   {
     "objectID": "slides/week6-day2.html#section-2",
     "href": "slides/week6-day2.html#section-2",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
     "text": "“Data is the new oil.”\n\n\nThe Economist, Intel CEO, Reliance Industrices CEO, UAE Minister of Artifical Intelligence, Google execs, etc., mainly elite white men\n\n\n\n“Data is the same old oppression.”\n\n\nBIWOC, white women, Indigenous people, immigrant communities, LGBTQ+ individuals, + more"
   },
@@ -6559,9 +6559,9 @@
   {
     "objectID": "slides/week6-day2.html#deadline-reminders",
     "href": "slides/week6-day2.html#deadline-reminders",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Deadline Reminders",
-    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight"
+    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n\n\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\nI will not be responding to emails / Discord messages this weekend, so please plan accordingly."
   },
   {
     "objectID": "slides/week6-day2.html#when-to-use-plot-titles",
@@ -6573,9 +6573,9 @@
   {
     "objectID": "slides/week6-day2.html#tailoring-colors",
     "href": "slides/week6-day2.html#tailoring-colors",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Tailoring Colors",
-    "text": "Tailoring Colors"
+    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n\nThis website provides an exhaustive list of color themes available through various packages."
   },
   {
     "objectID": "slides/week6-day2.html#tailoring-backgrounds",
@@ -6589,7 +6589,7 @@
     "href": "slides/week6-day2.html#an-example",
     "title": "Machine Learning",
     "section": "An Example",
-    "text": "An Example"
+    "text": "An Example\n\nand_vertebrates %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                     y = weight_g, \n                     color = species)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Length (mm)\", \n      y = \"\", \n      color = \"Species\",\n      title = \"Comparing Weight (g) versus Length (mm) \\nfor Vertebrates in Mack Creek\") +\n  theme_minimal() +\n  scale_color_brewer(palette = \"Dark2\")"
   },
   {
     "objectID": "slides/week6-day1.html#research-questions",
@@ -6629,7 +6629,7 @@
   {
     "objectID": "slides/week6-day2.html#formatting-guidelines",
     "href": "slides/week6-day2.html#formatting-guidelines",
-    "title": "Machine Learning",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Formatting Guidelines",
     "text": "Formatting Guidelines\n\nDon’t write in bullet points\nAvoid redundancy as much as possible\nMake contents easy to navigate\n\nUse subheaders and / or boldface to indicate important content\nPlace your regression equations on their own line"
   },
@@ -6660,5 +6660,159 @@
     "title": "Variable Selection in Multiple Regression",
     "section": "",
     "text": "If you’re not interested in prediction, what should you use instead?\n\n\nIn fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.\nIntroduction to Modern Statistics"
+  },
+  {
+    "objectID": "labs/lab-6.html#comparing-with-the-step-function",
+    "href": "labs/lab-6.html#comparing-with-the-step-function",
+    "title": "Predicting Professor Evaluation Scores",
+    "section": "Comparing with the step() Function",
+    "text": "Comparing with the step() Function\nLet’s check the forward selection model you found with what model the step() function decides is best. Run the code chunk below to obtain the “best” model chosen by this function.\n\nfull_model &lt;- lm(score ~ ., data = evals_train)\nstep(full_model, direction = \"forward\")\n\n\nDid the step() function choose the same model as you? If your “best” models do not not agree, why do you think this might have happened?"
+  },
+  {
+    "objectID": "slides/week6-day2.html",
+    "href": "slides/week6-day2.html",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight"
+  },
+  {
+    "objectID": "slides/week6-day2.html#forward-selection-by-hand",
+    "href": "slides/week6-day2.html#forward-selection-by-hand",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Forward Selection (by Hand)",
+    "text": "Forward Selection (by Hand)\n\nStart with the most basic model (one mean)\nDecide which one variable to add (based on adjusted \\(R^2\\))\nDecide if you should add another variable\n\n\\(\\vdots\\)\n\nStop adding variables when adjusted \\(R^2\\) stops increasing"
+  },
+  {
+    "objectID": "slides/week6-day2.html#a-more-automated-option",
+    "href": "slides/week6-day2.html#a-more-automated-option",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "A More Automated Option",
+    "text": "A More Automated Option\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score,\n         -&lt;VARIABLE 1 SELECTED&gt;,\n         -&lt;VARIABLE 2 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)"
+  },
+  {
+    "objectID": "slides/week6-day2.html#help-your-peers",
+    "href": "slides/week6-day2.html#help-your-peers",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Help your peers!",
+    "text": "Help your peers!\n\nAre the arguments / sentences easy to understand? Does the report flow?\nIs the same information included in multiple places?\nDo the plots have nice axis labels?\nCan you easily find the regression equations? Do the equations make sense?\nDo the interpretations / conclusions from the equations make sense?\nDo they justify who they can infer their results onto?\nDo they justify why they can / cannot use causal language?"
+  },
+  {
+    "objectID": "slides/week6-day2.html#plot-titles",
+    "href": "slides/week6-day2.html#plot-titles",
+    "title": "Machine Learning",
+    "section": "Plot Titles",
+    "text": "Plot Titles"
+  },
+  {
+    "objectID": "slides/week6-day2.html#some-guidelines",
+    "href": "slides/week6-day2.html#some-guidelines",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Some Guidelines",
+    "text": "Some Guidelines\n\n\n\nTitles should be top left aligned (usually)\nDon’t make people tilt their head\nAlignment should create clean lines and symmetry\nRemove and lighten grids as much as possible\n\n\n\n\n\nLegends suck\nWhitespace is like garlic; take the amount you need and then triple it\nFonts matter\nColor is hard"
+  },
+  {
+    "objectID": "slides/week6-day2.html#some-guidelines-1",
+    "href": "slides/week6-day2.html#some-guidelines-1",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Some Guidelines",
+    "text": "Some Guidelines\n\n\n\nTitles should be top left aligned (usually)\nDon’t make people tilt their head\nAlignment should create clean lines and symmetry\nRemove and lighten grids as much as possible\n\n\n\n\n\nLegends suck\nWhitespace is like garlic; take the amount you need and then triple it\nFonts matter\nColor is hard"
+  },
+  {
+    "objectID": "slides/week6-day2.html#dont-make-people-tilt-their-head",
+    "href": "slides/week6-day2.html#dont-make-people-tilt-their-head",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Don’t make people tilt their head",
+    "text": "Don’t make people tilt their head"
+  },
+  {
+    "objectID": "slides/week6-day2.html#grids-remove-and-lighten-as-much-as-possible",
+    "href": "slides/week6-day2.html#grids-remove-and-lighten-as-much-as-possible",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Grids: remove and lighten as much as possible",
+    "text": "Grids: remove and lighten as much as possible"
+  },
+  {
+    "objectID": "slides/week6-day2.html#some-options",
+    "href": "slides/week6-day2.html#some-options",
+    "title": "Machine Learning",
+    "section": "Some Options",
+    "text": "Some Options"
+  },
+  {
+    "objectID": "slides/week6-day2.html#a-reasonable-option",
+    "href": "slides/week6-day2.html#a-reasonable-option",
+    "title": "Machine Learning",
+    "section": "A Reasonable Option",
+    "text": "A Reasonable Option"
+  },
+  {
+    "objectID": "slides/week6-day2.html#a-reasonable-option-theme_minimal",
+    "href": "slides/week6-day2.html#a-reasonable-option-theme_minimal",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "A Reasonable Option – theme_minimal()",
+    "text": "A Reasonable Option – theme_minimal()"
+  },
+  {
+    "objectID": "slides/week6-day2.html#an-example-output",
+    "href": "slides/week6-day2.html#an-example-output",
+    "title": "Machine Learning",
+    "section": "An Example",
+    "text": "An Example"
+  },
+  {
+    "objectID": "slides/week6-day2.html#an-example-for-categorical",
+    "href": "slides/week6-day2.html#an-example-for-categorical",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "An Example for Categorical",
+    "text": "An Example for Categorical\n\nand_vertebrates %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                     y = weight_g, \n                     color = species)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Length (mm)\", \n      y = \"\", \n      color = \"Species\",\n      title = \"Comparing Weight (g) versus Length (mm) \\nfor Vertebrates in Mack Creek\") +\n  theme_minimal() +\n  scale_color_brewer(palette = \"Dark2\")"
+  },
+  {
+    "objectID": "slides/week6-day2.html#an-example-for-categorical-output",
+    "href": "slides/week6-day2.html#an-example-for-categorical-output",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "An Example for Categorical",
+    "text": "An Example for Categorical"
+  },
+  {
+    "objectID": "slides/week6-day2.html#an-example-for-continuous",
+    "href": "slides/week6-day2.html#an-example-for-continuous",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "An Example for Continuous",
+    "text": "An Example for Continuous\n\npie_crab %&gt;% \n  ggplot(mapping = aes(x = latitude, \n                     y = size, \n                     color = water_temp)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Latitude\", \n      y = \"\", \n      color = \"Water Temperature (C)\",\n      title = \"Size of Fiddler Crabs (mm) Across the Atlantic Coast\") +\n  theme_minimal() +\n  scale_color_viridis_c(option = \"viridis\")"
+  },
+  {
+    "objectID": "slides/week6-day2.html#an-example-for-continuous-output",
+    "href": "slides/week6-day2.html#an-example-for-continuous-output",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "An Example for Continuous",
+    "text": "An Example for Continuous"
+  },
+  {
+    "objectID": "slides/week6-day2.html#does-your-phone-recognize-your-face",
+    "href": "slides/week6-day2.html#does-your-phone-recognize-your-face",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Does your phone recognize your face?",
+    "text": "Does your phone recognize your face?\n\nJoy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face."
+  },
+  {
+    "objectID": "slides/week6-day2.html#how-does-google-label-your-images",
+    "href": "slides/week6-day2.html#how-does-google-label-your-images",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "How does Google label your images?",
+    "text": "How does Google label your images?"
+  },
+  {
+    "objectID": "slides/week6-day2.html#should-the-cash-bail-system-change",
+    "href": "slides/week6-day2.html#should-the-cash-bail-system-change",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Should the cash bail system change?",
+    "text": "Should the cash bail system change?"
+  },
+  {
+    "objectID": "slides/week6-day2.html#will-your-car-be-able-to-drive-you",
+    "href": "slides/week6-day2.html#will-your-car-be-able-to-drive-you",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Will your car be able to drive you?",
+    "text": "Will your car be able to drive you?"
   }
 ]

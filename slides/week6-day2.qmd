@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning"
+title: "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning"
 author: "STAT 313"
 format: revealjs
 editor: visual
@@ -11,7 +11,37 @@ editor: visual
 -   Statistical Critique 1 revisions are due next Thursday
 -   The final version of your Midterm Project is due Sunday at midnight
 
+:::{.callout-important}
+# Deadline Extensions
+You **cannot** request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. **Do not ride the line.**
+:::
+
+. . .
+
+:::{.callout-warning}
+# Responding to Questions / Issues
+I **will not** be responding to emails / Discord messages this weekend, so please plan accordingly. 
+:::
+
 # Midterm Project Review
+
+## Help your peers!
+
+- Are the arguments / sentences easy to understand? Does the report flow? 
+
+- Is the same information included in multiple places?
+
+- Do the plots have nice axis labels?
+
+- Can you easily find the regression equations? Do the equations make sense?
+
+- Do the interpretations / conclusions from the equations make sense?
+
+- Do they justify *who* they can infer their results onto?
+
+- Do they justify why they can / cannot use *causal* language?
+
+# Peer Feedback
 
 ## Formatting Guidelines
 
@@ -20,41 +50,160 @@ editor: visual
 - Make contents easy to navigate
   * Use subheaders and / or boldface to indicate important content
   * Place your regression equations on their own line
-  
-# Peer Feedback
 
-# Better Practices for Data Visualization
+## {background-color="black" background-image="images/glamour-of-graphics.jpg" background-size="contain"}
 
-## When to Use Plot Titles
-
-## Tailoring Colors
-
-## Tailoring Backgrounds
-
-## An Example
-
-# Machine Learning
-
-::: columns
-::: {.column width="45%"}
-::: {style="font-size: 2em; color: #000000;"}
-**Supervised Learning**
+::: {style="font-size: 4em; color: #ed8402;"}
+Better Practices for Data Visualization
 :::
 
-> Supervises algorithms that are used to classify data or predict outcomes
+## Some Guidelines
+
+::: columns
+::: {.column width="40%"}
+- Titles should be top left aligned (usually)
+- Don’t make people tilt their head
+- Alignment should create clean lines and symmetry
+- Remove and lighten grids as much as possible
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-::: {style="font-size: 2em; color: #000000;"}
-**Unsupervised Learning**
+::: {.column width="55%"}
+- Legends suck
+- Whitespace is like garlic; take the amount you need and then triple it
+- Fonts matter
+- Color is hard
+:::
 :::
 
-> Allows computers to learn patterns in the dataset without the need for human intervention
+## Some Guidelines
+
+::: columns
+::: {.column width="40%"}
+- Titles should be top left aligned (usually)
+- [Don’t make people tilt their head]{style="color: #ed8402;"}
+- Alignment should create clean lines and symmetry
+- [Remove and lighten grids as much as possible]{style="color: #ed8402;"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+- Legends suck
+- Whitespace is like garlic; take the amount you need and then triple it
+- Fonts matter
+- [Color is hard]{style="color: #ed8402;"}
 :::
 :::
+
+## Don’t make people [tilt]{style="color: #34605f;"} their head
+
+![](images/plot-title.png)
+
+## Tailoring Colors
+
+Different color palettes are available through a variety of R packages. Popular options include:
+
+::: columns
+::: {.column width="47%"}
+:::{.fragment}
+[RColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
+
+![](images/color-brewer.png)
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+:::{.fragment}
+[viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) 
+
+![](images/viridis.png)
+:::
+:::
+:::
+
+. . .
+
+[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes available through various packages.
+
+## Grids: [remove and lighten]{style="color: #34605f;"} as much as possible
+
+![](images/backgrounds.png)
+
+## A Reasonable Option -- `theme_minimal()`
+
+</br>
+
+```{r}
+#| label: example-theme-minimal
+
+library(tidyverse)
+library(openintro)
+library(ggridges)
+library(lterdatasampler)
+
+ggplot(data = nycflights, 
+       mapping = aes(x = dep_delay)) +
+  geom_histogram() +
+  labs(x = "Departure Delays (min)", 
+      y = "", 
+      title = "Number of Delayed Flights Leaving NYC Airports") +
+  theme_minimal()
+```
+
+## An Example for Categorical
+
+```{r}
+#| label: example-color-discrete
+#| echo: true
+#| output-location: slide
+
+and_vertebrates %>% 
+  ggplot(mapping = aes(x = length_1_mm, 
+                     y = weight_g, 
+                     color = species)) +
+  geom_point(alpha = 0.5) +
+  labs(x = "Length (mm)", 
+      y = "", 
+      color = "Species",
+      title = "Comparing Weight (g) versus Length (mm) \nfor Vertebrates in Mack Creek") +
+  theme_minimal() +
+  scale_color_brewer(palette = "Dark2")
+
+```
+
+## An Example for Continuous
+
+```{r}
+#| label: example-color-gradient
+#| echo: true
+#| output-location: slide
+
+pie_crab %>% 
+  ggplot(mapping = aes(x = latitude, 
+                     y = size, 
+                     color = water_temp)) +
+  geom_point(alpha = 0.5) +
+  labs(x = "Latitude", 
+      y = "", 
+      color = "Water Temperature (C)",
+      title = "Size of Fiddler Crabs (mm) Across the Atlantic Coast") +
+  theme_minimal() +
+  scale_color_viridis_c(option = "viridis")
+
+```
+
+# Machine Learning
+
+# Machine Learning
+
+> "the use and development of computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyze and draw inferences from patterns in data"
 
 ##  {background-color="#B6CADA"}
 
@@ -67,31 +216,6 @@ editor: visual
 :::
 
 </center>
-
-## 
-
-::: {style="font-size: 3em; color: #0F4C81;"}
-Intersectional Feminism
-:::
-
-> Focuses on the distribution of **power** --- who has it and who doesn't
-
-. . .
-
-::: columns
-::: {.column width="45%"}
-![](images/combahee_crenshaw_lorde.jpg)
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-::: {style="font-size: 0.75em; color: #000000;"}
-*Intersectionality* is a concept out of Black feminism, conceptually derived by the Combahee River Collective and linguistically created by Kimberlee Crenshaw.
-:::
-:::
-:::
 
 ## 
 
@@ -111,18 +235,56 @@ Intersectional Feminism
 
 ![](images/books.jpg)
 
-## 
+## Does your phone recognize your face?
 
 ![Joy Buolamwini found that she had to put on a white mask for the facial detection program to "see" her face.](images/buolamwini.jpg)
 
-## 
+## How does Google label your images?
 
 ![](images/google.png)
 
-## Proposition 25
+## Should the cash bail system change?
 
 ![](images/prop-25.png)
 
-## 
+## Will your car be able to drive you?
 
 ![](images/cars.jpg)
+
+# Lab 6
+
+## Forward Selection (by Hand)
+
+1. Start with the most basic model (one mean)
+
+2. Decide which **one** variable to add (based on adjusted $R^2$)
+
+3. Decide if you should add another variable
+
+$\vdots$
+
+4. Stop adding variables when adjusted $R^2$ stops increasing
+
+
+## A More Automated Option
+
+```{r}
+#| eval: false
+#| label: code-from-lab
+#| echo: true
+#| code-line-numbers: "|2,6,7"
+
+evals_train %>% 
+  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals_train)) %>% 
+  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
+  select(-ID, 
+         -score,
+         -<VARIABLE 1 SELECTED>,
+         -<VARIABLE 2 SELECTED>
+         ) %>% 
+  pivot_longer(cols = everything(), 
+               names_to = "variable", 
+               values_to = "adj_r_sq") %>% 
+  slice_max(adj_r_sq)
+```
+
