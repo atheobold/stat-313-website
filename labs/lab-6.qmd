@@ -93,7 +93,7 @@ But, the name of the model will need to change. I've started the process for you
 ```{r}
 #| label: all-one-variable-models
 
-one_rank <- lm(score ~ age, data = evals)
+one_rank <- lm(score ~ rank, data = evals)
 one_ethnicity <- lm(score ~ ethnicity, data = evals)
 one_gender <- lm(score ~ gender, data = evals)
 one_language <- lm(score ~ language, data = evals)
