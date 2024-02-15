@@ -4,23 +4,9 @@ format: html
 editor: visual
 ---
 
-Q1 -
-
-Q2 -
-
-Q3 -
-
-Q4 -
-
-Q5 -
-
-Q6 -
-
-Prediction -
-
-::: callout-note
 # Model Selection Order
 
+::: callout-note
 Based on my code, the model selection process should go:
 
 `eval_completion` $\rightarrow$ `pic_color` $\rightarrow$ `gender`
@@ -133,9 +119,4 @@ OR
 
 *If the model fit here differs from their top model, they **must** state why they fit a different model.*
 
-## Prediction
-
-**To earn a Success:**
-
--   make predictions using the top model from #6 (or #5)
--   if a different model is chosen then justification is provided for why
+## Question 7
