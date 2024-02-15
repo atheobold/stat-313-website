@@ -6561,7 +6561,7 @@
     "href": "slides/week6-day2.html#deadline-reminders",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Deadline Reminders",
-    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n\n\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\nI will not be responding to emails / Discord messages this weekend, so please plan accordingly."
+    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n\n\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\nI will not be responding to emails / Discord messages this weekend."
   },
   {
     "objectID": "slides/week6-day2.html#when-to-use-plot-titles",
@@ -6575,7 +6575,7 @@
     "href": "slides/week6-day2.html#tailoring-colors",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Tailoring Colors",
-    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n\nThis website provides an exhaustive list of color themes available through various packages."
+    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n\nThis website provides an exhaustive list of color themes."
   },
   {
     "objectID": "slides/week6-day2.html#tailoring-backgrounds",

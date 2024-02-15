@@ -20,7 +20,7 @@ You **cannot** request deadline extensions for the final version of your Midterm
 
 :::{.callout-warning}
 # Responding to Questions / Issues
-I **will not** be responding to emails / Discord messages this weekend, so please plan accordingly. 
+I **will not** be responding to emails / Discord messages this weekend.
 :::
 
 # Midterm Project Review
@@ -53,7 +53,7 @@ I **will not** be responding to emails / Discord messages this weekend, so pleas
 
 ## {background-color="black" background-image="images/glamour-of-graphics.jpg" background-size="contain"}
 
-::: {style="font-size: 4em; color: #ed8402;"}
+::: {style="font-size: 3em; color: #ed8402;"}
 Better Practices for Data Visualization
 :::
 
@@ -130,7 +130,7 @@ Different color palettes are available through a variety of R packages. Popular 
 
 . . .
 
-[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes available through various packages.
+[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes.
 
 ## Grids: [remove and lighten]{style="color: #34605f;"} as much as possible
 
