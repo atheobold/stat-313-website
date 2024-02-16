@@ -41,12 +41,12 @@ my_theme <- theme_bw() +
 
 ## Draft Due by Sunday
 
-To get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday. 
+To get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday.
 
-::: {.callout-caution}
+::: callout-caution
 # Deadline Extension
 
-A deadline extension is permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).  
+A deadline extension is permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).
 :::
 
 # Multiple Linear Regression
@@ -126,8 +126,9 @@ get_regression_table(smoke_lm) %>%
   select(term:std_error)
 ```
 
-::: {.callout-note}
+::: callout-note
 # Interaction Model
+
 The \* means the variables are interacting!
 :::
 
@@ -341,22 +342,21 @@ lm(average_sat_math ~ perc_disadvan + size, data = MA_schools) %>%
 
 . . .
 
-::: {.small}
+::: small
 $$\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \times \text{percent disadvan}$$
 :::
 
-::: {.small}
+::: small
 $$\widehat{SAT}_{medium} = 576.1 - 2.78 \times \text{percent disadvan}$$
 :::
 
 . . .
 
-::: {.small}
+::: small
 $$\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \times \text{percent disadvan}$$
 :::
 
-
-::: {.small}
+::: small
 $$\widehat{SAT}_{large} = 581.64 - 2.78 \times \text{percent disadvan}$$
 :::
 
@@ -382,7 +382,7 @@ Once you have found other students working on the same dataset, complete [the sa
 
 ## Steps Before Thursday (STAT 513)
 
-::: {.small}
+::: small
 1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd)
 
 2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project

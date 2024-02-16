@@ -405,16 +405,13 @@ If you've ever assessed whether $\Delta$ AIC $> 2$ you have done something that 
 
 ## Backward Selection by Hand
 
-- Start with "full" model (every explanatory variable is included)
-  * Use adjusted $R^2$ to summarize the "fit" of this model
-
-- Decide which **one** variable to remove
-  * Highest adjusted $R^2$
-
-- Decide what **one** variable to remove next
-  * Highest adjusted $R^2$
-
-- Keep removing variables until adjusted $R^2$ doesn't increase
+-   Start with "full" model (every explanatory variable is included)
+    -   Use adjusted $R^2$ to summarize the "fit" of this model
+-   Decide which **one** variable to remove
+    -   Highest adjusted $R^2$
+-   Decide what **one** variable to remove next
+    -   Highest adjusted $R^2$
+-   Keep removing variables until adjusted $R^2$ doesn't increase
 
 ## 
 
@@ -424,7 +421,7 @@ What's your best model?
 
 ## Adding a Constraint
 
-Repeat the same process, but now for a variable to be removed the adjusted $R^2$ must increase by **at least** 2% (0.02). 
+Repeat the same process, but now for a variable to be removed the adjusted $R^2$ must increase by **at least** 2% (0.02).
 
 ## 
 

@@ -10,40 +10,42 @@ editor: visual
 
 ##  {background-color="#B6CADA"}
 
-- Lab 3 Revisions are due today (Thursday, February 8)
+-   Lab 3 Revisions are due today (Thursday, February 8)
 
-- Lab 4 Revisions are due next Thursday (February 15)
+-   Lab 4 Revisions are due next Thursday (February 15)
 
-:::{.callout-caution}
+::: callout-caution
 # Making a copy of your group's Lab 4
-If you were the recorder (typer) for your group, you need to [make your project public](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder). If you were not the recorder, you need to [make a copy of your group's project](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else). 
+
+If you were the recorder (typer) for your group, you need to [make your project public](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder). If you were not the recorder, you need to [make a copy of your group's project](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else).
 :::
 
-- The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}. 
+-   The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}.
 
 # Comments from Project Proposals
 
-##  For Every Dataset (in STAT 313)
+## For Every Dataset (in STAT 313)
 
-- [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
+-   [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
 
-- If your dataset is associated with a publication, that publication should be referenced in your Introduction!
+-   If your dataset is associated with a publication, that publication should be referenced in your Introduction!
 
 ## Introduction Versus Methods
 
-- The description of your data goes and your research question goes in your Introduction. 
+-   The description of your data goes and your research question goes in your Introduction.
 
-- The description of your variables goes at the beginning of your Methods! 
+-   The description of your variables goes at the beginning of your Methods!
 
 ## Specific Dataset Advice
 
-- For the `and_vertebrates` data, you should include `species` as an explanatory variable. If you don't you are assuming the same relationship applies to trout AND salamanders. 
+-   For the `and_vertebrates` data, you should include `species` as an explanatory variable. If you don't you are assuming the same relationship applies to trout AND salamanders.
 
-- For the `hbr_maples` data, you cannot use `year` as a numerical variable. There are only two years of data!
+-   For the `hbr_maples` data, you cannot use `year` as a numerical variable. There are only two years of data!
 
-- For the `pie_crabs` data:
-  * `size` should be the response variable
-  * `site` and `latitude` measure the [same]{.underline} thing
+-   For the `pie_crabs` data:
+
+    -   `size` should be the response variable
+    -   `site` and `latitude` measure the [same]{.underline} thing
 
 # Coding a Multiple Linear Regression
 
@@ -57,12 +59,12 @@ Step 0 -- Read in Your Data
 ::: {.column width="47%"}
 STAT 313
 
-:::{.small}
-- Locate what package your data live in (found in the directions for the midterm project proposal)
+::: small
+-   Locate what package your data live in (found in the directions for the midterm project proposal)
 
-- Load in the package you need! 
+-   Load in the package you need!
 
-- Get started!
+-   Get started!
 :::
 :::
 
@@ -72,9 +74,9 @@ STAT 313
 ::: {.column width="50%"}
 STAT 513
 
-:::{.small}
-- Upload your formatted dataset to your Midterm Project on Posit Cloud
-- Write the following code to load in your dataset:
+::: small
+-   Upload your formatted dataset to your Midterm Project on Posit Cloud
+-   Write the following code to load in your dataset:
 :::
 :::
 :::
@@ -105,11 +107,11 @@ Step 1 -- Visualizations
 ::: {.column width="47%"}
 [Two Numerical Variables]{.underline}
 
-:::{.callout-tip}
+::: callout-tip
 # Three total visualizations
 :::
 
-:::{.small}
+::: small
 -   Visualize the model with **both** variables -- `color` gradient
 -   Visualize **two** simple linear regression models -- one for each variable
 :::
@@ -121,19 +123,20 @@ Step 1 -- Visualizations
 ::: {.column width="50%"}
 [One Categorical & One Numerical Variable]{.underline}
 
-:::{.callout-tip}
+::: callout-tip
 # Two total visualizations
 :::
 
-:::{.small}
+::: small
 -   Visualize the model using `geom_smooth(method = "lm")`
 -   Visualize the model using `geom_parallel_slopes()`
 :::
 :::
 :::
 
-:::{.callout-warning}
+::: callout-warning
 # No `theme_classic()`
+
 I like grid lines! Please use `theme_bw()` instead!
 :::
 
@@ -161,7 +164,7 @@ Step 2 -- Decide the "Best" Model
 [One Categorical & One Numerical Variable]{.underline}
 
 ::: {style="color: #0F4C81; font-size: 0.75em"}
-- Look at the plot where the lines are allowed to be different! Does it look like they are?
+-   Look at the plot where the lines are allowed to be different! Does it look like they are?
 :::
 :::
 :::
@@ -201,13 +204,11 @@ Step 3 -- Fit the regression model with `lm()`
 Step 4: Get the coefficients with `get_regression_table()`
 :::
 
-
 ##  {background-color="#D4D4D4"}
 
 ::: {style="font-size: 5em; color: #000000;"}
-Now interpret! 
+Now interpret!
 :::
-
 
 <!-- ##  {background-color="#B6CADA"} -->
 
