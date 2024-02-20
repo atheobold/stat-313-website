@@ -6855,7 +6855,7 @@
     "href": "slides/week7-day1.html#virtual-sampling",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nMark S Sampson\nHEAD COACH - 12 MONTH\n195229.1\n\n\nElizabeth Grace Ferris\nIntercol Ath Head Coach Ex\n72558.0\n\n\nJordan Wolfrum\nIntercol Ath Head Coach Ex\n76597.0\n\n\nJoel Suchil\nHead Coach 5\n12000.0\n\n\nDaniel Leyson\nHead Coach 5\n133592.0\n\n\nKevin Grimes\nHead Coach 5\n249352.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nWolfgang Wigo\nHead Coach 5\n126795.0\n\n\nHans C Kersting\nHEAD COACH - 12 MONTH\n137574.9\n\n\nGregory L Kamansky\nHEAD COACH - 12 MONTH\n198151.7\n\n\nAnna Temple\nHead Coach 5\n90443.0\n\n\nJordon R Twohig\nHEAD COACH - 12 MONTH\n113919.9\n\n\nErin Bridges-Thorpe\nHead Coach 5\n132923.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#precision-accuracy",
