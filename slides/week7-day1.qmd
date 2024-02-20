@@ -1,5 +1,5 @@
 ---
-title: "Sampling Variability -- The Heart of Inference"
+title: "Sampling Variability -- The Heart of Statistical Inference"
 format: 
   revealjs: 
     theme: style.scss
@@ -366,7 +366,7 @@ master_samples %>%
 . . .
 
 ::: callout-caution
-# Standard drror vs. Standard deviation
+# Standard error vs. Standard deviation
 
 Careful! There are important differences between **standard errors** and *standard deviations*.
 :::

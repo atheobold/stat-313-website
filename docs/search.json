@@ -478,56 +478,56 @@
   {
     "objectID": "slides/week7-day1.html#section",
     "href": "slides/week7-day1.html#section",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Would you feel comfortable inferring that the median salary of your sample is close to the median salary of all UC & CSU coaches?\n\n\n\n\nWhy or why not?"
   },
   {
     "objectID": "slides/week7-day1.html#section-1",
     "href": "slides/week7-day1.html#section-1",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Statistical Inference Reasoning\n\n\n\n\nIf the sampling is done at random\nthen the sample should be representative of the population\nany result based on the sample can generalize to the population\nthe point estimate is a “good guess” of the unknown population parameter\n\n\n\n\n\nEvery group had a random sample of 25 coach salaries, so why were some of the medians really far off?"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
     "href": "slides/week7-day1.html#section-2",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Distribution of 1000 medians from samples of 25 coaches"
   },
   {
     "objectID": "slides/week7-day1.html#section-3",
     "href": "slides/week7-day1.html#section-3",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Sampling Distributions\n\n\nVisualize the effect of sampling variation on the distribution of any point estimate\n\nIn this case, the sample median!\n\nWe can use sampling distributions to make statements about what values we can typically expect.\n\n\n\n\n\n\n\n\nSampling distribution vs. Sample distribution\n\n\nBe careful! A sampling distribution is different from a sample’s distribution!"
   },
   {
     "objectID": "slides/week7-day1.html#section-4",
     "href": "slides/week7-day1.html#section-4",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Distributions of 1000 medians from different sample sizes\n\n\n\nWhat differences do you see?"
   },
   {
     "objectID": "slides/week7-day1.html#section-5",
     "href": "slides/week7-day1.html#section-5",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19408.079\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\n\n\n\n\nStandard drror vs. Standard deviation\n\n\nCareful! There are important differences between standard errors and standard deviations."
+    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19408.079\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\n\n\n\n\nStandard error vs. Standard deviation\n\n\nCareful! There are important differences between standard errors and standard deviations."
   },
   {
     "objectID": "slides/week7-day1.html#section-6",
     "href": "slides/week7-day1.html#section-6",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Does sample size change how accurate the estimate is?\n\n\nDoes sample size change how precise the estimate is?"
   },
   {
     "objectID": "slides/week7-day1.html#section-7",
     "href": "slides/week7-day1.html#section-7",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
     "text": "Sampling Activity!"
   },
@@ -6839,42 +6839,42 @@
   {
     "objectID": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
     "href": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Each table has a different sample of 25 UC & CSU coach salaries.",
     "text": "Each table has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
   },
   {
     "objectID": "slides/week7-day1.html#why-sample-more-than-once",
     "href": "slides/week7-day1.html#why-sample-more-than-once",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Why sample more than once?",
     "text": "Why sample more than once?\n\n\n\n\nWhat do we get when we take multiple samples?\n\n\n\n\nA distribution of statistics!\n\n\n\n\n\n\n\nWhy do we want a distribution of statistics?\n\n\n\n\n\nUnderstanding the variability of a statistic is the heart of statistical inference!"
   },
   {
     "objectID": "slides/week7-day1.html#virtual-sampling",
     "href": "slides/week7-day1.html#virtual-sampling",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nWolfgang Wigo\nHead Coach 5\n126795.0\n\n\nHans C Kersting\nHEAD COACH - 12 MONTH\n137574.9\n\n\nGregory L Kamansky\nHEAD COACH - 12 MONTH\n198151.7\n\n\nAnna Temple\nHead Coach 5\n90443.0\n\n\nJordon R Twohig\nHEAD COACH - 12 MONTH\n113919.9\n\n\nErin Bridges-Thorpe\nHead Coach 5\n132923.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nAnthony Sandoval\nHead Coach 5\n95484.0\n\n\nAlan R Sue\nHEAD COACH - 12 MONTH\n163113.8\n\n\nStella Webster\nIntercol Ath Head Coach Ex\n234608.0\n\n\nDion Thompson\nHead Coach 5\n24389.0\n\n\nKendrick Mcdaniel\nHEAD COACH - 12 MONTH\n145162.4\n\n\nPaul Stumpf\nHead Coach 5\n105885.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#precision-accuracy",
     "href": "slides/week7-day1.html#precision-accuracy",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Precision & Accuracy",
     "text": "Precision & Accuracy\n\n\n\n\n\n\n\nRandom sampling ensures our point estimates are accurate.\n\n\n\nLarger sample sizes ensure our point estimates are precise."
   },
   {
     "objectID": "slides/week7-day1.html#statistical-inference",
     "href": "slides/week7-day1.html#statistical-inference",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Statistical Inference",
     "text": "Statistical Inference\nThere were 252 “Head Coaches” at University of California and California State Universities in 2021 (that satisfied my search criteria)\n\n\n\nMedian salary for all 252 coaches\n$137,619\n\n\n\n\nWas the median of your sample of 25 coaches a good estimate of the salary for all 252 coaches?"
   },
   {
     "objectID": "slides/week7-day1.html#sampling-framework",
     "href": "slides/week7-day1.html#sampling-framework",
-    "title": "Sampling Variability – The Heart of Inference",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Sampling Framework",
     "text": "Sampling Framework\npopulation – collection of observations / individuals we are interested in\npopulation parameter – numerical summary about the population that is unknown but you wish you knew\n\n\nsample – a collection of observations from the population\nsample statistic – a summary statistic computed from a sample that estimates the unknown population parameter."
   },
