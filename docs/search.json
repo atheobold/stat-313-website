@@ -823,7 +823,7 @@
     "href": "slides/week7-day2.html#section-18",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00353\n0.00458\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00354\n0.00452\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-19",
@@ -6940,5 +6940,12 @@
     "title": "Exploring Sampling Concepts",
     "section": "Repeated Samples",
     "text": "Repeated Samples\nRepeated samples are necessary for us to create a sampling distribution—a distribution of statistics from lots of different samples—like the one below.\n\nWhat are we assuming about how the samples were collected when we plot every statistic on the same distribution?"
+  },
+  {
+    "objectID": "slides/week7-day2.html#course-updates",
+    "href": "slides/week7-day2.html#course-updates",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Course Updates",
+    "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
   }
 ]

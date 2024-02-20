@@ -12,9 +12,19 @@ library(stringr)
 library(palmerpenguins)
 ```
 
-::: {style="font-size: 4em; color: #000000;"}
-What if I only have one sample?
+## Course Updates
+
+-   Statistical Critique 1 revisions are due tonight
+-   Midterm Projects will be graded by Friday
+-   Next week you will work on your second statistical critique 
+
+:::{.callout-caution}
+# Don't forget reflections!
+
+If your reflections are not present by the deadline for revisions, your revisions **are not** eligible to be regraded. Please don't forget your reflections! 
 :::
+
+# What if I only have one sample?
 
 ## 
 
