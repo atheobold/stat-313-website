@@ -1,6 +1,8 @@
 ---
 title: "Sampling Variability -- The Heart of Inference"
-format: revealjs
+format: 
+  revealjs: 
+    theme: style.scss
 editor: visual
 ---
 
@@ -19,7 +21,7 @@ Salaries of football coaches
 ```{r football-image}
 knitr::include_graphics(here::here("slides", 
                                    "images", 
-                                   "football.png"))
+                                   "coach-salary.jpg"))
 ```
 
 ```{r data}
@@ -38,137 +40,74 @@ uc <- coaches %>%
 
 ```
 
-## 
+# Individual Samples
 
-::: {style="font-size: 3em; color: #000000;"}
-Sampling Strategies
-:::
+## Each table has a different sample of 25 UC & CSU coach salaries.
 
-```{r pop-to-sample}
-#| echo: false
-#| fig-align: center
-
-par_og <- par(no.readonly = TRUE) # save original par
-par(mar = rep(0, 4))
-plot(c(0, 2),
-     c(0, 1.1),
-     type = 'n',
-     axes = FALSE, 
-     xlab = "",
-     ylab = "")
-temp <- seq(0, 2 * pi, 2 * pi / 100)
-x <- 0.5 + 0.5 * cos(temp)
-y <- 0.5 + 0.5 * sin(temp)
-lines(x, y)
-
-s <- matrix(runif(700), ncol = 2)
-S <- matrix(NA, 350, 2)
-j <- 0
-for (i in 1:nrow(s)) {
-  if(sum((s[i, ] - 0.5)^2) < 0.23){
-    j <- j + 1
-    S[j, ] <- s[i, ]
-  }
-}
-points(S, col = COL[1, 3], pch = 20)
-text(0.5, 1, 'population', pos = 3, cex = 1.3)
-
-set.seed(50)
-N <- sample(j, 25)
-lines((x - 0.5) / 2 + 1.5, (y - 0.5) / 2 +  0.5, pch = 20)
-
-SS <- (S[N, ] - 0.5) / 2 + 0.5
-these <- c(2, 5, 11, 10, 12)
-points(SS[these, 1] + 1,
-       SS[these, 2],
-       col = COL[4, 2],
-       pch = 20,
-       cex = 1.5)
-text(1.5, 0.75, 'sample', pos = 3, cex = 1.3)
-
-for (i in these) {
-  arrows(S[N[i], 1], S[N[i], 2],
-         SS[i, 1] + 1 - 0.03, SS[i, 2],
-         length = 0.08, col = COL[5], lwd = 1.5)
-}
-par(par_og) # restore original par
-```
-
-## 
-
-::: {style="font-size: 2.5em; color: #000000;"}
-What types of samples could we collect? Are some methods "better" than other methods?
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-At your table...
-:::
 
 ::: columns
 ::: {.column width="45%"}
-::: {style="font-size: 2em; color: #000000;"}
-**First**
+::: {style="font-size: 1.5em; color: #000000;"}
+**First**...
 :::
 
 -   each person samples 10 salaries
 -   calculate the median
+-   write your median on a post-it note
+-   place your median on the class plot
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-::: {style="font-size: 2em; color: #000000;"}
-**Then**
+::: {style="font-size: 1.5em; color: #000000;"}
+**Then**...
 :::
 
--   calculate the median of all 25 salaries
+everyone works together to calculate the median of all 25 salaries
 :::
 :::
 
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 2em; color: #000000;"}
-Each table has a sample of 25 UC & CSU coach salaries.
+Would you feel comfortable inferring that the median salary of your sample is close to the median salary of ***all*** UC & CSU coaches?
 :::
-
-. . .
-
-</br>
-
-Would you feel comfortable inferring that the median salary of your sample is close to the median salary of *all* UC & CSU coaches?
 
 </br>
 
 <center>
 
+::: {style="font-size: 1.25em; color: #000000;"}
 Why or why not?
-
-## 
-
-::: {style="font-size: 3em; color: #0F4C81;"}
-**Why sample more than once?**
 :::
 
-. . .
+## Statistical Inference
 
-Variability is a central focus of the discipline of ***Statistics***!
 
-. . .
+There were `r nrow(coaches)` "Head Coaches" at University of California and California State Universities in 2021 (that satisfied my search criteria)
 
-Making decisions based on limited information is uncomfortable!
+</br>
 
-. . .
+::: columns
+::: {.column width="45%"}
+**Median salary for all `r nrow(coaches)` coaches**
 
-> You likely weren't willing to infer the population median salary from your sample!
-
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Sampling Framework
+`r median(coaches$'Total Pay & Benefits') %>% scales::dollar()`
 :::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+:::{.fragment}
+Was the median of your sample of 25 coaches a good estimate of the salary for all 252 coaches?
+:::
+:::
+:::
+
+##  Sampling Framework
 
 *population* -- collection of observations / individuals we are interested in
 
@@ -185,54 +124,87 @@ Sampling Framework
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Statistical Inference
+Statistical Inference Reasoning
 :::
 
-There were `r nrow(coaches)` "Head Coaches" at University of California and California State Universities in 2019 (that satisfied my search criteria)
+::: incremental
+:::{.small}
+-   If the sampling is done at random
+-   then the sample should be representative of the population
+-   any result based on the sample can generalize to the population
+-   the point estimate is a "good guess" of the unknown population parameter
+:::
+:::
 
-</br>
+. . .
+
+::: {style="font-size: 1.25em; color: #ed8402;"}
+Every group had a random sample of 25 coach salaries, so why were some of the medians really far off?
+:::
+
+## Precision & Accuracy
 
 ::: columns
-::: {.column width="45%"}
-**Median salary for all `r nrow(coaches)` coaches**
-
-`r median(coaches$'Total Pay & Benefits') %>% scales::dollar()`
+::: {.column width="55%"}
+![](images/accuracy_vs_precision.jpg)
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-Inferring information from your sample onto the population is called **statistical inference**.
+::: {.column width="40%"}
+-   Random sampling ensures our point estimates are accurate.
+
+</br>
+
+-   Larger sample sizes ensure our point estimates are precise.
 :::
 :::
 
-## 
+# Repeated Samples
 
-::: {style="font-size: 2em; color: #000000;"}
-Statistical Inference Reasoning
+## Why sample more than once?
+
+. . .
+
+</br>
+
+::: columns
+::: {.column width="40%"}
+What do we get when we take multiple samples?
 :::
 
-::: incremental
--   If the sampling is done at random
--   the sample is representative of the population
--   any result based on the sample can generalize to the population
--   the point estimate is a "good guess" of the unknown population parameter
+::: {.column width="5%"}
 :::
 
-##  {background-color="#B6CADA"}
-
-</br> </br>
-
-::: {style="font-size: 2em; color: #000000;"}
-Shouldn't one random sample be enough then? Isn't that what we use to make confidence intervals and do hypothesis tests?
+::: {.column width="55%"}
+:::{.fragment}
+A distribution of statistics!
+:::
+:::
 :::
 
-## 
+</br>
 
-::: {style="font-size: 2em; color: #000000;"}
-Virtual Sampling
+::: columns
+::: {.column width="40%"}
+:::{.fragment}
+Why do we want a distribution of statistics?
 :::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+:::{.fragment}
+Understanding the *variability* of a statistic is the heart of statistical inference!
+:::
+:::
+:::
+
+## Virtual Sampling
+
 
 ```{r rep-sample-code}
 #| echo: true
@@ -242,12 +214,12 @@ Virtual Sampling
 rep_sample_n(coaches, 
              size = 25, 
              reps = 1, 
-             replace = TRUE)
+             replace = FALSE)
 ```
 
 </br>
 
-::: {style="font-size: 0.65em; color: #000000;"}
+::: {style="font-size: 0.5em;"}
 ```{r rep-sample-coaches}
 #| echo: false
 coaches %>% 
@@ -321,37 +293,40 @@ Sampling Distributions
 :::
 
 -   Visualize the effect of sampling variation on the distribution of any point estimate
-    -   In this case, the sample median
+    -   In this case, the sample median!
 -   We can use sampling distributions to make statements about what values we can typically expect.
 
 . . .
 
-<center>
+:::{.callout-caution}
+# Sampling distribution vs. Sample distribution
 
 Be careful! A **sampling distribution** is different from a *sample's distribution*!
+:::
 
 ##  {background-color="#B6CADA"}
 
-::: {style="font-size: 2em; color: #000000;"}
+::: {style="font-size: 1.5em; color: #000000;"}
 Distributions of 1000 medians from different sample sizes
 :::
 
 ```{r samp-plots}
-#| fig-align: center
+#| out-width: 80%
 
 master_samples %>% 
-  mutate(samps = factor(samps, 
-                        levels = c("25", "50", "100")
+  mutate(samps = as.factor(samps), 
+         samps = case_when(samps == "25" ~ "n = 25", 
+                           samps == "50" ~ "n = 50", 
+                           samps == "100" ~ "n = 100"), 
+         samps = factor(samps, 
+                        levels = c("n = 25", "n = 50", "n = 100")
                         )
          ) %>% 
   ggplot(mapping = aes(x = median)) + 
   geom_histogram(binwidth = 6500, color = "white") + 
   facet_wrap(~samps) + 
   scale_x_continuous(labels = scales::dollar_format()) +
-  labs(x = "Median Salary") +
-  theme(axis.text.x = element_text(hjust = 1, 
-                                   vjust = 1, 
-                                   angle = 45))
+  labs(x = "Median Salary")
 
 ```
 
@@ -365,7 +340,7 @@ master_samples %>%
 Variability for Different Sample Sizes
 :::
 
-::: {style="font-size: 0.85em; color: #000000;"}
+::: {style="font-size: 0.65em; color: #000000;"}
 ```{r sd-comparison-table}
 #| echo: false
 
@@ -385,7 +360,7 @@ master_samples %>%
 
 . . .
 
-::: {style="font-size: 0.85em; color: #000000;"}
+:::{.small}
 -   Standard errors quantify the variability of point estimates
 
 -   As a general rule, as sample size increases, the standard error decreases.
@@ -393,17 +368,13 @@ master_samples %>%
 
 . . .
 
-<center>
+::: {.callout-caution}
+# Standard drror vs. Standard deviation
 
-::: {style="font-size: 0.85em; color: #000000;"}
 Careful! There are important differences between **standard errors** and *standard deviations*.
 :::
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-A good guess?
-:::
+##  
 
 ```{r samp-plots-true-value}
 #| out-width: 70%
@@ -423,31 +394,78 @@ master_samples %>%
 
 ```
 
-## 
+. . .
 
-::: {style="font-size: 2em; color: #000000;"}
-Precision & Accuracy
-:::
+Does sample size change how accurate the estimate is?
 
-::: columns
-::: {.column width="55%"}
-![](images/accuracy_vs_precision.jpg)
-:::
+. . .
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
--   Random sampling ensures our point estimates are accurate.
-
-</br>
-
--   Larger sample sizes ensure our point estimates are precise.
-:::
-:::
+Does sample size change how precise the estimate is?
 
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 4em; color: #000000;"}
 Sampling Activity!
 :::
+
+<!-- ##  -->
+
+<!-- ::: {style="font-size: 3em; color: #000000;"} -->
+<!-- Sampling Strategies -->
+<!-- ::: -->
+
+<!-- ```{r pop-to-sample} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
+
+<!-- par_og <- par(no.readonly = TRUE) # save original par -->
+<!-- par(mar = rep(0, 4)) -->
+<!-- plot(c(0, 2), -->
+<!--      c(0, 1.1), -->
+<!--      type = 'n', -->
+<!--      axes = FALSE,  -->
+<!--      xlab = "", -->
+<!--      ylab = "") -->
+<!-- temp <- seq(0, 2 * pi, 2 * pi / 100) -->
+<!-- x <- 0.5 + 0.5 * cos(temp) -->
+<!-- y <- 0.5 + 0.5 * sin(temp) -->
+<!-- lines(x, y) -->
+
+<!-- s <- matrix(runif(700), ncol = 2) -->
+<!-- S <- matrix(NA, 350, 2) -->
+<!-- j <- 0 -->
+<!-- for (i in 1:nrow(s)) { -->
+<!--   if(sum((s[i, ] - 0.5)^2) < 0.23){ -->
+<!--     j <- j + 1 -->
+<!--     S[j, ] <- s[i, ] -->
+<!--   } -->
+<!-- } -->
+<!-- points(S, col = COL[1, 3], pch = 20) -->
+<!-- text(0.5, 1, 'population', pos = 3, cex = 1.3) -->
+
+<!-- set.seed(50) -->
+<!-- N <- sample(j, 25) -->
+<!-- lines((x - 0.5) / 2 + 1.5, (y - 0.5) / 2 +  0.5, pch = 20) -->
+
+<!-- SS <- (S[N, ] - 0.5) / 2 + 0.5 -->
+<!-- these <- c(2, 5, 11, 10, 12) -->
+<!-- points(SS[these, 1] + 1, -->
+<!--        SS[these, 2], -->
+<!--        col = COL[4, 2], -->
+<!--        pch = 20, -->
+<!--        cex = 1.5) -->
+<!-- text(1.5, 0.75, 'sample', pos = 3, cex = 1.3) -->
+
+<!-- for (i in these) { -->
+<!--   arrows(S[N[i], 1], S[N[i], 2], -->
+<!--          SS[i, 1] + 1 - 0.03, SS[i, 2], -->
+<!--          length = 0.08, col = COL[5], lwd = 1.5) -->
+<!-- } -->
+<!-- par(par_og) # restore original par -->
+<!-- ``` -->
+
+<!-- ##  -->
+
+<!-- ::: {style="font-size: 2.5em; color: #000000;"} -->
+<!-- What types of samples could we collect? Are some methods "better" than other methods? -->
+<!-- ::: -->

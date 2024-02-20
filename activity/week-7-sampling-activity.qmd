@@ -11,95 +11,82 @@ library(moderndive)
 library(infer)
 ```
 
-## Deciding a Study Population
+<!-- ## Deciding a Study Population -->
 
-Often when reading a statistical study, you will not know who the researchers thought of as their target population, and are left to imagine who the study population may have been.
+<!-- Often when reading a statistical study, you will not know who the researchers thought of as their target population, and are left to imagine who the study population may have been. -->
 
-**Comment on the study population for the following studies:**
+<!-- **Comment on the study population for the following studies:** -->
 
-1.  `hsb2`: "Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics."
+<!-- 1.  `hsb2`: "Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics." -->
 
-</br></br>
+<!-- </br></br> -->
 
-2.  `evals`: "The data on the 463 courses at UT Austin."
+<!-- 2.  `evals`: "The data on the 463 courses at UT Austin." -->
 
-\newpage
+<!-- \newpage -->
 
 ## Random Sampling
 
-3.  What is the central tenant of random sampling? i.e. How are observations selected from the study population?
+1.  What is the central tenant of random sampling? i.e. How are observations selected from the study population?
 
 </br></br>
 
-4.  Comment on the **"random-ness"** (not representative-ness) of the following study:
+2.  Comment on the **"random-ness"** (not representative-ness) of the following study:
 
--   A Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers.
+> A Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers.
 
 </br></br>
 
 ## Sampling Randomly
 
-5.  Suppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor's teaching evaluations and their age.
+Suppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor's teaching evaluations and their age.
 
--   How would we go about randomly sampling observations from the database?
-
-</br></br>
-
--   Would we allow for individuals to be selected more than once?
+3. How would we go about randomly sampling observations from the database?
 
 </br></br>
 
--   Would we expect that our sample look like the population of professors at UT Austin?
+4. Would we expect that our sample look like the population of professors at UT Austin?
 
 </br></br>
 
 ## Representative Sampling
 
-6.  What is the central tenant of representative sampling? i.e. How are observations selected from the study population?
+5.  What is the central tenant of representative sampling? i.e. How are observations selected from the study population?
 
 </br></br>
 
-7.  Comment on the "representative-ness" of the following studies:
+6.  Comment on the "representative-ness" of the following studies:
 
--   The Royal Air Force wants to study how resistant all their airplanes are to bullets. They study the bullet holes on all the airplanes on the tarmac after an air battle against the Luftwaffe (German Air Force).
+> The Royal Air Force wants to study how resistant all their airplanes are to bullets. They study the bullet holes on all the airplanes on the tarmac after an air battle against the Luftwaffe (German Air Force).
 
 </br></br>
 
--   You want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house.
+> You want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house.
 
 </br></br>
 
 ## Sampling Representatively
 
-8.  Suppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different tenure statuses. How would we go about collecting a representative sample that accounts for these demographic characteristics?
+Suppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different ranks (e.g., teaching, tenure track, tenured). The table below summarizes the demographics of women and men faculty of different ranks:
 
 ::: columns
 ::: {.column width="45%"}
-**Sample Demographics**
-
-```{r}
-#| echo: false
-evals  %>% 
-  select(prof_ID, gender, ethnicity, rank) %>% 
-  slice_sample(n = 50) %>% 
-  count(gender, rank) %>% 
-  mutate(perc = paste(n / 50 * 100, "%", sep = "")) %>% 
-  select(-n) %>% 
-  gt::gt() 
-```
+-   Women teaching = 58%
+-   Women tenure track = 30%
+-   Women tenured = 12%
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-**Population Demographics**
+::: {.column width="45%"}
+-   Men teaching = 20%
+-   Men tenure track = 42%
+-   Men tenured = 38%
+:::
+:::
 
--   Female teaching = 28%\
--   Female tenure track = 15%\
--   Female tenured = 12%
-:::
-:::
+7. Suppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?
 
 \newpage
 
@@ -124,7 +111,7 @@ count(evals, prof_ID, sort = TRUE) %>%
 :::
 
 ::: {.column width="55%"}
-9.  How would you use sampling to remedy this situation?
+8.  How could you use sampling to remedy this situation?
 :::
 :::
 
@@ -134,11 +121,11 @@ count(evals, prof_ID, sort = TRUE) %>%
 
 To investigate the relationship between course evaluation score and the professor's age, we would carry out a simple linear regression.
 
-10. What would be the population parameter we are interested in? Do we know its value?
+9. What would be the population parameter we are interested in? Do we know its value?
 
 </br></br>
 
-11. What would be our point estimate? What is its purpose?
+10. What would be our point estimate?
 
 </br></br>
 
@@ -158,9 +145,9 @@ evals %>%
 
 ## Repeated Samples
 
-Repeated samples are necessary for us to create a sampling distribution like the one below.
+Repeated samples are necessary for us to create a sampling distribution---a distribution of statistics from lots of different samples---like the one below. 
 
-12. What are we assuming when we plot the result of every sample on the **same** distribution?
+11. What are we assuming about how the samples were collected when we plot every statistic on the **same** distribution?
 
 ```{r slope-statisics}
 #| echo: false

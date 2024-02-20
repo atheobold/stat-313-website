@@ -480,119 +480,119 @@
     "href": "slides/week7-day1.html#section",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Sampling Strategies"
+    "text": "Would you feel comfortable inferring that the median salary of your sample is close to the median salary of all UC & CSU coaches?\n\n\n\n\nWhy or why not?"
   },
   {
     "objectID": "slides/week7-day1.html#section-1",
     "href": "slides/week7-day1.html#section-1",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
+    "text": "Statistical Inference Reasoning\n\n\n\n\nIf the sampling is done at random\nthen the sample should be representative of the population\nany result based on the sample can generalize to the population\nthe point estimate is a “good guess” of the unknown population parameter\n\n\n\n\n\nEvery group had a random sample of 25 coach salaries, so why were some of the medians really far off?"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
     "href": "slides/week7-day1.html#section-2",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "At your table…\n\n\n\n\nFirst\n\n\neach person samples 10 salaries\ncalculate the median\n\n\n\n\n\nThen\n\n\ncalculate the median of all 25 salaries"
+    "text": "Distribution of 1000 medians from samples of 25 coaches"
   },
   {
     "objectID": "slides/week7-day1.html#section-3",
     "href": "slides/week7-day1.html#section-3",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Each table has a sample of 25 UC & CSU coach salaries.\n\n\n\nWould you feel comfortable inferring that the median salary of your sample is close to the median salary of all UC & CSU coaches?\n\n\nWhy or why not?"
+    "text": "Sampling Distributions\n\n\nVisualize the effect of sampling variation on the distribution of any point estimate\n\nIn this case, the sample median!\n\nWe can use sampling distributions to make statements about what values we can typically expect.\n\n\n\n\n\n\n\n\nSampling distribution vs. Sample distribution\n\n\nBe careful! A sampling distribution is different from a sample’s distribution!"
   },
   {
     "objectID": "slides/week7-day1.html#section-4",
     "href": "slides/week7-day1.html#section-4",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Why sample more than once?\n\n\nVariability is a central focus of the discipline of Statistics!\n\n\nMaking decisions based on limited information is uncomfortable!\n\n\n\nYou likely weren’t willing to infer the population median salary from your sample!"
+    "text": "Distributions of 1000 medians from different sample sizes\n\n\n\nWhat differences do you see?"
   },
   {
     "objectID": "slides/week7-day1.html#section-5",
     "href": "slides/week7-day1.html#section-5",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Sampling Framework\n\npopulation – collection of observations / individuals we are interested in\npopulation parameter – numerical summary about the population that is unknown but you wish you knew\n\n\nsample – a collection of observations from the population\nsample statistic – a summary statistic computed from a sample that estimates the unknown population parameter."
+    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19408.079\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\n\n\n\n\nStandard drror vs. Standard deviation\n\n\nCareful! There are important differences between standard errors and standard deviations."
   },
   {
     "objectID": "slides/week7-day1.html#section-6",
     "href": "slides/week7-day1.html#section-6",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Statistical Inference\n\nThere were 252 “Head Coaches” at University of California and California State Universities in 2019 (that satisfied my search criteria)\n\n\n\nMedian salary for all 252 coaches\n$137,619\n\n\n\nInferring information from your sample onto the population is called statistical inference."
+    "text": "Does sample size change how accurate the estimate is?\n\n\nDoes sample size change how precise the estimate is?"
   },
   {
     "objectID": "slides/week7-day1.html#section-7",
     "href": "slides/week7-day1.html#section-7",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Statistical Inference Reasoning\n\n\n\nIf the sampling is done at random\nthe sample is representative of the population\nany result based on the sample can generalize to the population\nthe point estimate is a “good guess” of the unknown population parameter"
+    "text": "Sampling Activity!"
   },
   {
     "objectID": "slides/week7-day1.html#section-8",
     "href": "slides/week7-day1.html#section-8",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Shouldn’t one random sample be enough then? Isn’t that what we use to make confidence intervals and do hypothesis tests?"
+    "text": "Sampling Strategies"
   },
   {
     "objectID": "slides/week7-day1.html#section-9",
     "href": "slides/week7-day1.html#section-9",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Virtual Sampling\n\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = TRUE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nBeau Baldwin\nAsc Head Coach Crd 4\n708408\n\n\nStein Metzger\nIntercol Ath Head Coach Ex\n191728\n\n\nJordan Wolfrum\nIntercol Ath Head Coach Ex\n76597\n\n\nDavid Bradley Kreutzkamp\nHead Coach 5\n105683\n\n\nDaniel Dykes\nHead Coach 5\n540000\n\n\nDaniel Conners\nHead Coach 5\n156181\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
   },
   {
     "objectID": "slides/week7-day1.html#section-10",
     "href": "slides/week7-day1.html#section-10",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Distribution of 1000 medians from samples of 25 coaches"
+    "text": "Sampling Strategies"
   },
   {
     "objectID": "slides/week7-day1.html#section-11",
     "href": "slides/week7-day1.html#section-11",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Sampling Distributions\n\n\nVisualize the effect of sampling variation on the distribution of any point estimate\n\nIn this case, the sample median\n\nWe can use sampling distributions to make statements about what values we can typically expect.\n\n\n\nBe careful! A sampling distribution is different from a sample’s distribution!"
+    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
   },
   {
     "objectID": "slides/week7-day1.html#section-12",
     "href": "slides/week7-day1.html#section-12",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Distributions of 1000 medians from different sample sizes\n\n\n\nWhat differences do you see?"
+    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
   },
   {
     "objectID": "slides/week7-day1.html#section-13",
     "href": "slides/week7-day1.html#section-13",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19343.969\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\nCareful! There are important differences between standard errors and standard deviations."
+    "text": "Sampling Activity!"
   },
   {
     "objectID": "slides/week7-day1.html#section-14",
     "href": "slides/week7-day1.html#section-14",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "A good guess?"
+    "text": "Sampling Strategies"
   },
   {
     "objectID": "slides/week7-day1.html#section-15",
     "href": "slides/week7-day1.html#section-15",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Precision & Accuracy\n\n\n\n\n\n\n\n\nRandom sampling ensures our point estimates are accurate.\n\n\n\nLarger sample sizes ensure our point estimates are precise."
+    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
   },
   {
     "objectID": "slides/week7-day1.html#section-16",
     "href": "slides/week7-day1.html#section-16",
     "title": "Sampling Variability – The Heart of Inference",
     "section": "",
-    "text": "Sampling Activity!"
+    "text": "What types of samples could we collect? Are some methods “better” than other methods?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#section",
@@ -6835,5 +6835,110 @@
     "title": "Midterm Project Plan",
     "section": "",
     "text": "For the Midterm Project I am striving to earn a:\n\nExcellent\nSatisfactory\nProgressing\n\nHow will you use the feedback you’ve received from Dr. Theobold, the notes you received from your peers, and the grading rubric to revise your project?"
+  },
+  {
+    "objectID": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "href": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Each table has a different sample of 25 UC & CSU coach salaries.",
+    "text": "Each table has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
+  },
+  {
+    "objectID": "slides/week7-day1.html#why-sample-more-than-once",
+    "href": "slides/week7-day1.html#why-sample-more-than-once",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Why sample more than once?",
+    "text": "Why sample more than once?\n\n\n\n\nWhat do we get when we take multiple samples?\n\n\n\n\nA distribution of statistics!\n\n\n\n\n\n\n\nWhy do we want a distribution of statistics?\n\n\n\n\n\nUnderstanding the variability of a statistic is the heart of statistical inference!"
+  },
+  {
+    "objectID": "slides/week7-day1.html#virtual-sampling",
+    "href": "slides/week7-day1.html#virtual-sampling",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Virtual Sampling",
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nMark S Sampson\nHEAD COACH - 12 MONTH\n195229.1\n\n\nElizabeth Grace Ferris\nIntercol Ath Head Coach Ex\n72558.0\n\n\nJordan Wolfrum\nIntercol Ath Head Coach Ex\n76597.0\n\n\nJoel Suchil\nHead Coach 5\n12000.0\n\n\nDaniel Leyson\nHead Coach 5\n133592.0\n\n\nKevin Grimes\nHead Coach 5\n249352.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+  },
+  {
+    "objectID": "slides/week7-day1.html#precision-accuracy",
+    "href": "slides/week7-day1.html#precision-accuracy",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Precision & Accuracy",
+    "text": "Precision & Accuracy\n\n\n\n\n\n\n\nRandom sampling ensures our point estimates are accurate.\n\n\n\nLarger sample sizes ensure our point estimates are precise."
+  },
+  {
+    "objectID": "slides/week7-day1.html#statistical-inference",
+    "href": "slides/week7-day1.html#statistical-inference",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Statistical Inference",
+    "text": "Statistical Inference\nThere were 252 “Head Coaches” at University of California and California State Universities in 2021 (that satisfied my search criteria)\n\n\n\nMedian salary for all 252 coaches\n$137,619\n\n\n\n\nWas the median of your sample of 25 coaches a good estimate of the salary for all 252 coaches?"
+  },
+  {
+    "objectID": "slides/week7-day1.html#sampling-framework",
+    "href": "slides/week7-day1.html#sampling-framework",
+    "title": "Sampling Variability – The Heart of Inference",
+    "section": "Sampling Framework",
+    "text": "Sampling Framework\npopulation – collection of observations / individuals we are interested in\npopulation parameter – numerical summary about the population that is unknown but you wish you knew\n\n\nsample – a collection of observations from the population\nsample statistic – a summary statistic computed from a sample that estimates the unknown population parameter."
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html",
+    "href": "activity/week-7-sampling-activity.html",
+    "title": "Exploring Sampling Concepts",
+    "section": "",
+    "text": "What is the central tenant of random sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “random-ness” (not representative-ness) of the following study:\n\n\nA Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers."
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#deciding-a-study-population",
+    "href": "activity/week-7-sampling-activity.html#deciding-a-study-population",
+    "title": "Exploring Sampling Concepts",
+    "section": "",
+    "text": "Often when reading a statistical study, you will not know who the researchers thought of as their target population, and are left to imagine who the study population may have been.\nComment on the study population for the following studies:\n\nhsb2: “Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics.”\n\n\n\nevals: “The data on the 463 courses at UT Austin.”"
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#random-sampling",
+    "href": "activity/week-7-sampling-activity.html#random-sampling",
+    "title": "Exploring Sampling Concepts",
+    "section": "",
+    "text": "What is the central tenant of random sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “random-ness” (not representative-ness) of the following study:\n\n\nA Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers."
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#sampling-randomly",
+    "href": "activity/week-7-sampling-activity.html#sampling-randomly",
+    "title": "Exploring Sampling Concepts",
+    "section": "Sampling Randomly",
+    "text": "Sampling Randomly\nSuppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor’s teaching evaluations and their age.\n\nHow would we go about randomly sampling observations from the database?\n\n\n\nWould we expect that our sample look like the population of professors at UT Austin?"
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#representative-sampling",
+    "href": "activity/week-7-sampling-activity.html#representative-sampling",
+    "title": "Exploring Sampling Concepts",
+    "section": "Representative Sampling",
+    "text": "Representative Sampling\n\nWhat is the central tenant of representative sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “representative-ness” of the following studies:\n\n\nThe Royal Air Force wants to study how resistant all their airplanes are to bullets. They study the bullet holes on all the airplanes on the tarmac after an air battle against the Luftwaffe (German Air Force).\n\n\n\nYou want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house."
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#sampling-representatively",
+    "href": "activity/week-7-sampling-activity.html#sampling-representatively",
+    "title": "Exploring Sampling Concepts",
+    "section": "Sampling Representatively",
+    "text": "Sampling Representatively\nSuppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different ranks (e.g., teaching, tenure track, tenured). The table below summarizes the demographics of women and men faculty of different ranks:\n\n\n\nWomen teaching = 58%\nWomen tenure track = 30%\nWomen tenured = 12%\n\n\n\n\n\nMen teaching = 20%\nMen tenure track = 42%\nMen tenured = 38%\n\n\n\n\nSuppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?"
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#sampling-issues",
+    "href": "activity/week-7-sampling-activity.html#sampling-issues",
+    "title": "Exploring Sampling Concepts",
+    "section": "Sampling Issues",
+    "text": "Sampling Issues\nIn the evals data, the courses included in the dataset were only taught by 94 unique professors. If we were interested in making inferences about the relationship between eval scores and age for professors at UT Austin, a simpler approach would be to have one observation per professor!\n\n\n\n\n\n\n\n\n\n\nProfessor ID\nNumber of Times Sampled\n\n\n\n\n34\n13\n\n\n49\n13\n\n\n82\n11\n\n\n10\n10\n\n\n20\n10\n\n\n58\n10\n\n\n71\n10\n\n\n19\n9\n\n\n70\n9\n\n\n4\n8\n\n\n\n\n\n\n\n\n\n\n\nHow could you use sampling to remedy this situation?"
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#population-parameter",
+    "href": "activity/week-7-sampling-activity.html#population-parameter",
+    "title": "Exploring Sampling Concepts",
+    "section": "Population Parameter",
+    "text": "Population Parameter\nTo investigate the relationship between course evaluation score and the professor’s age, we would carry out a simple linear regression.\n\nWhat would be the population parameter we are interested in? Do we know its value?\n\n\n\nWhat would be our point estimate?"
+  },
+  {
+    "objectID": "activity/week-7-sampling-activity.html#repeated-samples",
+    "href": "activity/week-7-sampling-activity.html#repeated-samples",
+    "title": "Exploring Sampling Concepts",
+    "section": "Repeated Samples",
+    "text": "Repeated Samples\nRepeated samples are necessary for us to create a sampling distribution—a distribution of statistics from lots of different samples—like the one below.\n\nWhat are we assuming about how the samples were collected when we plot every statistic on the same distribution?"
   }
 ]
