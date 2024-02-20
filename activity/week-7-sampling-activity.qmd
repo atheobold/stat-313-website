@@ -1,6 +1,7 @@
 ---
 title: "Exploring Sampling Concepts"
-format: docx
+format: html
+embed-resources: true
 editor: visual
 ---
 
@@ -41,11 +42,11 @@ library(infer)
 
 Suppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor's teaching evaluations and their age.
 
-3. How would we go about randomly sampling observations from the database?
+3.  How would we go about randomly sampling observations from the database?
 
 </br></br>
 
-4. Would we expect that our sample look like the population of professors at UT Austin?
+4.  Would we expect that our sample look like the population of professors at UT Austin?
 
 </br></br>
 
@@ -71,6 +72,8 @@ Suppose we want to ensure that we have a representative proportion of faculty wh
 
 ::: columns
 ::: {.column width="45%"}
+**Women make up approximately 40% of all UT Austin faculty**
+
 -   Women teaching = 58%
 -   Women tenure track = 30%
 -   Women tenured = 12%
@@ -80,13 +83,15 @@ Suppose we want to ensure that we have a representative proportion of faculty wh
 :::
 
 ::: {.column width="45%"}
+**Men make up approximately 60% of all UT Austin faculty**
+
 -   Men teaching = 20%
 -   Men tenure track = 42%
 -   Men tenured = 38%
 :::
 :::
 
-7. Suppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?
+7.  Suppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?
 
 \newpage
 
@@ -121,7 +126,7 @@ count(evals, prof_ID, sort = TRUE) %>%
 
 To investigate the relationship between course evaluation score and the professor's age, we would carry out a simple linear regression.
 
-9. What would be the population parameter we are interested in? Do we know its value?
+9.  What would be the population parameter we are interested in? Do we know its value?
 
 </br></br>
 
@@ -145,7 +150,7 @@ evals %>%
 
 ## Repeated Samples
 
-Repeated samples are necessary for us to create a sampling distribution---a distribution of statistics from lots of different samples---like the one below. 
+Repeated samples are necessary for us to create a sampling distribution---a distribution of statistics from lots of different samples---like the one below.
 
 11. What are we assuming about how the samples were collected when we plot every statistic on the **same** distribution?
 

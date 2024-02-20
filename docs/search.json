@@ -1278,7 +1278,7 @@
     "href": "slides/week5-day1.html#section-3",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Offsets!\n\n\nsmoke_lm &lt;- lm(weight ~ weeks * habit, data = ncbirths)\n\nget_regression_table(smoke_lm)\n\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\n\n\n\n\n\nInteraction Model\n\n\nThe * means the variables are interacting!"
+    "text": "Offsets!\n\n\nsmoke_lm &lt;- lm(weight ~ weeks * habit, data = ncbirths)\n\nget_regression_table(smoke_lm)\n\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\n\n\n\n\n\nInteraction Model\n\n\n\nThe * means the variables are interacting!"
   },
   {
     "objectID": "slides/week5-day1.html#section-4",
@@ -1292,7 +1292,7 @@
     "href": "slides/week5-day1.html#section-6",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Multiple slopes\n\n\nage_lm &lt;- lm(weight ~ weeks + mage, data = ncbirths)\n\nget_regression_table(age_lm)\n\n\n\n# A tibble: 3 × 3\n  term      estimate std_error\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept   -6.68      0.492\n2 weeks        0.346     0.012\n3 mage         0.02      0.006\n\n\n\n\nHow do you interpret the value of 0.346?\n\n\n\n\nHow do you interpret the value of 0.02?"
+    "text": "Multiple slopes\n\n\nage_lm &lt;- lm(weight ~ weeks + mage, data = ncbirths)\n\nget_regression_table(age_lm)\n\n\n\n# A tibble: 3 × 3\n  term      estimate std_error\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept   -6.68      0.492\n2 weeks        0.346     0.012\n3 mage         0.02      0.006\n\n\n. . .\n\nHow do you interpret the value of 0.346?\n\n. . .\n\nHow do you interpret the value of 0.02?"
   },
   {
     "objectID": "slides/week5-day1.html#section-7",
@@ -1306,7 +1306,7 @@
     "href": "slides/week5-day1.html#section-8",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "When investigating if a relationship differs…\n\n\n\nAlways start with the “interaction” / different slopes model.\n\n\n\n\nIf the slopes look different, you’re done!\n\n\n\n\nIf the slopes look similar, then fit the “additive” / parallel slopes model."
+    "text": "When investigating if a relationship differs…\n\n. . .\n\nAlways start with the “interaction” / different slopes model.\n\n. . .\n\nIf the slopes look different, you’re done!\n\n. . .\n\nIf the slopes look similar, then fit the “additive” / parallel slopes model."
   },
   {
     "objectID": "slides/week5-day1.html#section-9",
@@ -1334,14 +1334,14 @@
     "href": "slides/week5-day1.html#section-12",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Group equations – Baseline\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\\[\\widehat{SAT}_{small} = 588 - 2.78 \\times \\text{percent disadvantaged}\\]"
+    "text": "Group equations – Baseline\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n. . .\n\\[\\widehat{SAT}_{small} = 588 - 2.78 \\times \\text{percent disadvantaged}\\]"
   },
   {
     "objectID": "slides/week5-day1.html#section-13",
     "href": "slides/week5-day1.html#section-13",
     "title": "Introduction to Multiple Linear Regression",
     "section": "",
-    "text": "Group equations – Offsets\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n\n\n\\[\\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{medium} = 576.1 - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\n\n\\[\\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = 581.64 - 2.78 \\times \\text{percent disadvan}\\]"
+    "text": "Group equations – Offsets\n\n\n\n# A tibble: 4 × 3\n  term          estimate std_error\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept       588.       7.61 \n2 perc_disadvan    -2.78     0.106\n3 size: medium    -11.9      7.54 \n4 size: large      -6.36     6.92 \n\n\n. . .\n\n\\[\\widehat{SAT}_{medium} = (588 - 11.9) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{medium} = 576.1 - 2.78 \\times \\text{percent disadvan}\\]\n\n. . .\n\n\\[\\widehat{SAT}_{large} = (588 - 6.36) - 2.78 \\times \\text{percent disadvan}\\]\n\n\n\\[\\widehat{SAT}_{large} = 581.64 - 2.78 \\times \\text{percent disadvan}\\]"
   },
   {
     "objectID": "slides/week5-day1.html#section-14",
@@ -4739,7 +4739,7 @@
     "href": "slides/week5-day2.html#section",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Lab 3 Revisions are due today (Thursday, February 8)\nLab 4 Revisions are due next Thursday (February 15)\n\n\n\n\n\n\n\nMaking a copy of your group’s Lab 4\n\n\nIf you were the recorder (typer) for your group, you need to make your project public. If you were not the recorder, you need to make a copy of your group’s project.\n\n\n\n\nThe first draft of your Midterm Project is due on Sunday at midnight."
+    "text": "Lab 3 Revisions are due today (Thursday, February 8)\nLab 4 Revisions are due next Thursday (February 15)\n\n\n\n\n\n\n\nMaking a copy of your group’s Lab 4\n\n\n\nIf you were the recorder (typer) for your group, you need to make your project public. If you were not the recorder, you need to make a copy of your group’s project.\n\n\n\nThe first draft of your Midterm Project is due on Sunday at midnight."
   },
   {
     "objectID": "slides/week5-day2.html#section-1",
@@ -4753,7 +4753,7 @@
     "href": "slides/week5-day2.html#section-2",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 1 – Visualizations\n\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\nI like grid lines! Please use theme_bw() instead!"
+    "text": "Step 1 – Visualizations\n\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\n\nI like grid lines! Please use theme_bw() instead!"
   },
   {
     "objectID": "slides/week5-day2.html#section-3",
@@ -4963,7 +4963,7 @@
     "href": "slides/week6-day2.html#section-2",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
-    "text": "“Data is the new oil.”\n\n\nThe Economist, Intel CEO, Reliance Industrices CEO, UAE Minister of Artifical Intelligence, Google execs, etc., mainly elite white men\n\n\n\n“Data is the same old oppression.”\n\n\nBIWOC, white women, Indigenous people, immigrant communities, LGBTQ+ individuals, + more"
+    "text": "“Data is the new oil.”\n\n\nThe Economist, Intel CEO, Reliance Industrices CEO, UAE Minister of Artifical Intelligence, Google execs, etc., mainly elite white men\n\n. . .\n\n“Data is the same old oppression.”\n\n\nBIWOC, white women, Indigenous people, immigrant communities, LGBTQ+ individuals, + more"
   },
   {
     "objectID": "slides/week6-day2.html#section-3",
@@ -4984,7 +4984,7 @@
     "href": "slides/week6-day1.html#section",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "What is model selection?\n\n\n \n\nWhy use model selection?"
+    "text": "What is model selection?\n\n. . .\n \n\nWhy use model selection?"
   },
   {
     "objectID": "slides/week6-day1.html#section-1",
@@ -4998,14 +4998,14 @@
     "href": "slides/week6-day1.html#section-2",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Interested in prediction not explanation\n\n\n\n\nYou want to predict an outcome variable \\(y\\) based on the information contained in a set of predictor variables \\(x\\). You don’t care so much about understanding how all the variables relate and interact with one another, but rather only whether you can make good predictions about \\(y\\) using the information in \\(x\\).\nModernDive"
+    "text": "Interested in prediction not explanation\n\n\n. . .\n\nYou want to predict an outcome variable \\(y\\) based on the information contained in a set of predictor variables \\(x\\). You don’t care so much about understanding how all the variables relate and interact with one another, but rather only whether you can make good predictions about \\(y\\) using the information in \\(x\\).\nModernDive"
   },
   {
     "objectID": "slides/week6-day1.html#section-3",
     "href": "slides/week6-day1.html#section-3",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "How do you use model selection?\n\n\n\n\n\nStepwise Selection\n\nForward Selection\nBackward Selection\n\n\n\n\n\n\nResampling Methods\n\nCross Validation\nTesting / Training Datasets\n\n\n\n\n\n\n\nWith any of these methods, you get to choose how you decide if one model is better than another model."
+    "text": "How do you use model selection?\n\n. . .\n\n\n\nStepwise Selection\n\nForward Selection\nBackward Selection\n\n\n\n\n\n\nResampling Methods\n\nCross Validation\nTesting / Training Datasets\n\n\n\n\n. . .\n\nWith any of these methods, you get to choose how you decide if one model is better than another model."
   },
   {
     "objectID": "slides/week6-day1.html#section-4",
@@ -5019,14 +5019,14 @@
     "href": "slides/week6-day1.html#section-5",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "\\(R^2 = 1 - \\frac{\\text{var}(\\text{residuals})}{\\text{var}(y)}\\)\n\n\n\\(\\text{var}(\\text{residuals})\\) is the variance of the residuals “leftover” from the regression model\n\\(\\text{var}(y)\\) is the inherent variability of the response variable\n\n\n\nSuppose we have a simple linear regression with an \\(R^2\\) of 0.85. How would you interpret this quantity?"
+    "text": "\\(R^2 = 1 - \\frac{\\text{var}(\\text{residuals})}{\\text{var}(y)}\\)\n\n\n\\(\\text{var}(\\text{residuals})\\) is the variance of the residuals “leftover” from the regression model\n\\(\\text{var}(y)\\) is the inherent variability of the response variable\n\n. . .\n\nSuppose we have a simple linear regression with an \\(R^2\\) of 0.85. How would you interpret this quantity?"
   },
   {
     "objectID": "slides/week6-day1.html#section-6",
     "href": "slides/week6-day1.html#section-6",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "But! \\(R^2\\) always increases as you increase the number of explanatory variables.\n\n\n\n\nThe variance of the residuals will always decrease when you include additional explanatory variables.\n\n\n\nSimple Linear Regression\n\\(0.85 = 1 - \\frac{0.75}{5}\\)\n\n\n\nOne Additional Variable\n\\(0.86 = 1 - \\frac{0.7}{5}\\)"
+    "text": "But! \\(R^2\\) always increases as you increase the number of explanatory variables.\n\n. . .\n\n\nThe variance of the residuals will always decrease when you include additional explanatory variables.\n\n\n\nSimple Linear Regression\n\\(0.85 = 1 - \\frac{0.75}{5}\\)\n\n\n\nOne Additional Variable\n\\(0.86 = 1 - \\frac{0.7}{5}\\)"
   },
   {
     "objectID": "slides/week6-day1.html#section-7",
@@ -5040,7 +5040,7 @@
     "href": "slides/week6-day1.html#section-8",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "\\(R^2_{adj} = 1 - R^2 \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n\n\nSuppose you have a categorical variable with 4 levels included in your parallel slopes multiple linear regression.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
+    "text": "\\(R^2_{adj} = 1 - R^2 \\times \\frac{(n - 1)}{(n - k - 1)}\\)\n\n\n\\(n\\) is the sample size\n\\(k\\) is the number of coefficients needed to be calculated\n\n. . .\n\nSuppose you have a categorical variable with 4 levels included in your parallel slopes multiple linear regression.\n\nWhat value will you use for \\(k\\) in the calculation of \\(n - k - 1\\)?"
   },
   {
     "objectID": "slides/week6-day1.html#section-9",
@@ -5061,7 +5061,7 @@
     "href": "slides/week6-day1.html#section-11",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "How do you use AIC to choose a “best” model?\n\n\n\n\n\n\n\n\n\nmodel\nAIC\nDelta AIC\n\n\n\n\nFull Model\n4724.970\n0.000000\n\n\nAll Variables Except Year\n4727.242\n2.272501\n\n\nAll Variables Except Flipper Length\n4757.214\n32.244605\n\n\nAll Variables Except Species\n4793.681\n68.710933\n\n\n\n\n\n\n\n\n\n\n\n\nIf you’ve ever assessed whether \\(\\Delta\\) AIC \\(&gt; 2\\) you have done something that is mathematically close to \\(p &lt; 0.05\\)."
+    "text": "How do you use AIC to choose a “best” model?\n\n. . .\n\n\n\n\n\n\n\nmodel\nAIC\nDelta AIC\n\n\n\n\nFull Model\n4724.970\n0.000000\n\n\nAll Variables Except Year\n4727.242\n2.272501\n\n\nAll Variables Except Flipper Length\n4757.214\n32.244605\n\n\nAll Variables Except Species\n4793.681\n68.710933\n\n\n\n\n\n\n\n\n. . .\n\n\nIf you’ve ever assessed whether \\(\\Delta\\) AIC \\(&gt; 2\\) you have done something that is mathematically close to \\(p &lt; 0.05\\)."
   },
   {
     "objectID": "slides/week6-day1.html#section-12",
@@ -5590,7 +5590,7 @@
     "href": "slides/week3-day2-alt.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.30\nNONE\n2017-09-05\nNA\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n20\nNA\nCascade torrent salamander\n40\n72\n1.95\nNONE\n1994-08-30\nNA\n\n\n2001\nMACKOG-M\nOG\nM\n1\n11\nC\n24\nNA\nCoastal giant salamander\n59\n101\nNA\nNONE\n2001-08-21\nCUT TAIL\n\n\n1999\nMACKOG-M\nOG\nM\n2\n9\nC\n24\nNA\nCoastal giant salamander\n26\n54\nNA\nNONE\n1999-09-02\nNA\n\n\n1998\nMACKCC-L\nCC\nL\n1\n2\nSC\n13\nNA\nCutthroat trout\n45\nNA\nNA\nNONE\n1998-09-04\nNA\n\n\n2017\nMACKCC-M\nCC\nM\n1\n9\nC\n5\nNA\nCutthroat trout\n43\nNA\n0.89\nNONE\n2017-09-06\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.30\nNONE\n2017-09-05\nNA\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n20\nNA\nCascade torrent salamander\n40\n72\n1.95\nNONE\n1994-08-30\nNA\n\n\n2001\nMACKOG-M\nOG\nM\n1\n11\nC\n24\nNA\nCoastal giant salamander\n59\n101\nNA\nNONE\n2001-08-21\nCUT TAIL\n\n\n1999\nMACKOG-M\nOG\nM\n2\n9\nC\n24\nNA\nCoastal giant salamander\n26\n54\nNA\nNONE\n1999-09-02\nNA\n\n\n1998\nMACKCC-L\nCC\nL\n1\n2\nSC\n13\nNA\nCutthroat trout\n45\nNA\nNA\nNONE\n1998-09-04\nNA\n\n\n2017\nMACKCC-M\nCC\nM\n1\n9\nC\n5\nNA\nCutthroat trout\n43\nNA\n0.89\nNONE\n2017-09-06\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n. . .\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#if-you-wanted-means-for-each-level-of-a-categorical-variable-what-would-you-do",
@@ -5625,7 +5625,7 @@
     "href": "slides/week3-day2-alt.html#step-2-group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n. . .\n\n\n\n\n\n\nWhy na.rm = TRUE?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#are-they-different",
@@ -5646,7 +5646,7 @@
     "href": "slides/week3-day2-alt.html#are-they-different-1",
     "title": "Week 3 Day 2",
     "section": "Are they different?",
-    "text": "Are they different?\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\n\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#lets-add-in-the-type-of-channel",
@@ -5667,14 +5667,14 @@
     "href": "slides/week3-day2-alt.html#group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "group_by() + summarize()",
-    "text": "group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+    "text": "group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
   },
   {
     "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
     "href": "slides/week3-day2-alt.html#visualization-2.0-incorporating-color",
     "title": "Week 3 Day 2",
     "section": "Visualization 2.0 – Incorporating Color",
-    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\n\n\n\n\n. . .\n\nWhy put unittype on the y-axis instead of section???"
   },
   {
     "objectID": "slides/week3-day2-alt.html#visualization-2.0-incorporating-facets",
@@ -5702,14 +5702,14 @@
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+    "text": "Choosing What to Measure\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n. . .\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
   },
   {
     "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
+    "text": "Choosing What to Measure\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the researchers missing?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#choosing-what-to-measure-2",
@@ -5744,7 +5744,7 @@
     "href": "slides/week3-day2-alt.html#choosing-what-to-measure-3",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
+    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the doctors missing?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#common-mistakes",
@@ -5772,7 +5772,7 @@
     "href": "slides/week3-day2-alt.html#completing-revisions",
     "title": "Week 3 Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2-alt.html#a-grading-reminder",
@@ -5785,8 +5785,8 @@
     "objectID": "slides/week3-day2-alt.html#revisions-due-tonight",
     "href": "slides/week3-day2-alt.html#revisions-due-tonight",
     "title": "Week 3 Day 2",
-    "section": "Revisions Due Tonight",
-    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   },
   {
     "objectID": "slides/week3-day2-alt.html#copying-the-lab-step-1",
@@ -5833,7 +5833,7 @@
   {
     "objectID": "slides/week3-day2-alt.html",
     "href": "slides/week3-day2-alt.html",
-    "title": "Incorporating Categorical Variables",
+    "title": "Week 3 Day 2",
     "section": "",
     "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   },
@@ -6360,8 +6360,8 @@
     "objectID": "slides/week5-day1.html#plan-for-today",
     "href": "slides/week5-day1.html#plan-for-today",
     "title": "Introduction to Multiple Linear Regression",
-    "section": "Plan for Today",
-    "text": "Plan for Today\n\nReview different types of multiple linear regression models\nComplete an activity on sample selection\nStart Midterm Project write-up"
+    "section": "",
+    "text": "Review different types of multiple linear regression models\nComplete an activity on sample selection\nStart Midterm Project write-up"
   },
   {
     "objectID": "slides/week5-day1.html#find-your-data-group",
@@ -6395,22 +6395,22 @@
     "objectID": "slides/week5-day1.html#plan-for-thursday",
     "href": "slides/week5-day1.html#plan-for-thursday",
     "title": "Introduction to Multiple Linear Regression",
-    "section": "Plan for Thursday",
-    "text": "Plan for Thursday\nNo lab – focus on getting all the coding accomplished for the Midterm Project"
+    "section": "",
+    "text": "No lab – focus on getting all the coding accomplished for the Midterm Project"
   },
   {
     "objectID": "slides/week5-day1.html#draft-due-by-sunday",
     "href": "slides/week5-day1.html#draft-due-by-sunday",
     "title": "Introduction to Multiple Linear Regression",
-    "section": "Draft Due by Sunday",
-    "text": "Draft Due by Sunday\nTo get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday.\n\n\n\n\n\n\nDeadline Extension\n\n\nA deadline extension is permitted for the first draft. Deadline extensions are not permitted for the final version (due next week)."
+    "section": "",
+    "text": "To get everyone feedback on their drafts in a timely manner, the first drafts are due by Sunday.\n\n\n\n\n\n\nDeadline Extension\n\n\n\nA deadline extension is permitted for the first draft. Deadline extensions are not permitted for the final version (due next week)."
   },
   {
     "objectID": "slides/week5-day1.html#estimated-regression-equations",
     "href": "slides/week5-day1.html#estimated-regression-equations",
     "title": "Introduction to Multiple Linear Regression",
     "section": "Estimated Regression Equations",
-    "text": "Estimated Regression Equations\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\nWhat is the regression equation for non-smoker mothers?\n\n\n\nWhat is the regression equation for smoker mothers?"
+    "text": "Estimated Regression Equations\n\n\n# A tibble: 4 × 3\n  term              estimate std_error\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;\n1 intercept           -5.94      0.484\n2 weeks                0.341     0.013\n3 habit: smoker       -1.86      1.63 \n4 weeks:habitsmoker    0.039     0.042\n\n\n\nWhat is the regression equation for non-smoker mothers?\n\n. . .\n\nWhat is the regression equation for smoker mothers?"
   },
   {
     "objectID": "activity/week-5-sample-selection.html#births14",
@@ -6532,8 +6532,8 @@
     "objectID": "slides/week6-day1.html#feedback-revisions",
     "href": "slides/week6-day1.html#feedback-revisions",
     "title": "Variable Selection in Multiple Regression",
-    "section": "Feedback & Revisions",
-    "text": "Feedback & Revisions\n\n\n\nYou are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n\n\n\n\n\n\nRevision Deadline\n\n\nRevisions for Statistical Critiques are due next Thursday (February 22)"
+    "section": "",
+    "text": "You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n\n\n\n\n\n\nRevision Deadline\n\n\n\nRevisions for Statistical Critiques are due next Thursday (February 22)"
   },
   {
     "objectID": "slides/week6-day1.html#feedback-on-drafts",
@@ -6560,8 +6560,8 @@
     "objectID": "slides/week6-day2.html#deadline-reminders",
     "href": "slides/week6-day2.html#deadline-reminders",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Deadline Reminders",
-    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n\n\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\nI will not be responding to emails / Discord messages this weekend."
+    "section": "",
+    "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n. . .\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\n\nI will not be responding to emails / Discord messages this weekend."
   },
   {
     "objectID": "slides/week6-day2.html#when-to-use-plot-titles",
@@ -6575,7 +6575,7 @@
     "href": "slides/week6-day2.html#tailoring-colors",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Tailoring Colors",
-    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n\nThis website provides an exhaustive list of color themes."
+    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n. . .\nThis website provides an exhaustive list of color themes."
   },
   {
     "objectID": "slides/week6-day2.html#tailoring-backgrounds",
@@ -6617,7 +6617,7 @@
     "href": "slides/week6-day1.html#study-limitations-scope-of-inference",
     "title": "Variable Selection in Multiple Regression",
     "section": "Study Limitations – Scope of Inference",
-    "text": "Study Limitations – Scope of Inference\nBased on how the study was designed, what population can you infer these results onto?\n\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?\n\n\n\n\nWhy?"
+    "text": "Study Limitations – Scope of Inference\nBased on how the study was designed, what population can you infer these results onto?\n\n\n\nEvery sugar maple?\nSugar maples in the Northeast?\nSugar maples in New Hampshire?\nSugar maples in the Hubbard Brook Experimental Forest?\nSugar maples in similar areas of the Hubbard Brook Experimental Forest to those that were sampled?\nThis sample of sugar maples?\n\n\n\n. . .\nWhy?"
   },
   {
     "objectID": "slides/week6-day1.html#study-limitations-causal-inference",
@@ -6792,7 +6792,7 @@
     "href": "slides/week6-day2.html#does-your-phone-recognize-your-face",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Does your phone recognize your face?",
-    "text": "Does your phone recognize your face?\n\nJoy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face."
+    "text": "Does your phone recognize your face?\n\n\n\nJoy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face."
   },
   {
     "objectID": "slides/week6-day2.html#how-does-google-label-your-images",
@@ -6918,7 +6918,7 @@
     "href": "activity/week-7-sampling-activity.html#sampling-representatively",
     "title": "Exploring Sampling Concepts",
     "section": "Sampling Representatively",
-    "text": "Sampling Representatively\nSuppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different ranks (e.g., teaching, tenure track, tenured). The table below summarizes the demographics of women and men faculty of different ranks:\n\n\n\nWomen teaching = 58%\nWomen tenure track = 30%\nWomen tenured = 12%\n\n\n\n\n\nMen teaching = 20%\nMen tenure track = 42%\nMen tenured = 38%\n\n\n\n\nSuppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?"
+    "text": "Sampling Representatively\nSuppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different ranks (e.g., teaching, tenure track, tenured). The table below summarizes the demographics of women and men faculty of different ranks:\n\n\nWomen make up approximately 40% of all UT Austin faculty\n\nWomen teaching = 58%\nWomen tenure track = 30%\nWomen tenured = 12%\n\n\n\n\nMen make up approximately 60% of all UT Austin faculty\n\nMen teaching = 20%\nMen tenure track = 42%\nMen tenured = 38%\n\n\n\n\nSuppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?"
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#sampling-issues",
