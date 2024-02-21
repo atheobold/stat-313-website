@@ -328,7 +328,6 @@ window.Quarto = {
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
-  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   </ul></li>
   </ul>
@@ -379,32 +378,37 @@ Note
 <ul>
 <li>fits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)</li>
 <li>finds other 7 adjusted <span class="math inline">\(R^2\)</span> values</li>
-<li>states top model includes <strong>eval_completion</strong> variable</li>
+<li>states top model includes <strong>cls_credits</strong> variable</li>
 </ul>
 <p><em>If they do not state the top model or what variable was chosen:</em></p>
 <blockquote class="blockquote">
-<p>When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.</p>
+<p>Careful! Technically, you told me the name of the object that contains the model you decided was best. I want you to tell me the name of the variable(s) included in that model!</p>
 </blockquote>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p><strong>To earn a Success:</strong></p>
 <ul>
-<li>fits 11 models that <strong>include the variable chosen in #1 as an explanatory variable</strong></li>
-<li>finds 11 adjusted <span class="math inline">\(R^2\)</span> values</li>
-<li>states top model includes <strong>eval_completion</strong> &amp; <strong>pic_color</strong> variables</li>
+<li>fits 113models that <strong>include the variable chosen in #1 as an explanatory variable</strong></li>
+<li>finds 13 adjusted <span class="math inline">\(R^2\)</span> values</li>
+<li>states top model includes <strong>cls_credits</strong> &amp; <strong>bty_avg</strong></li>
 </ul>
-<p><em>If they do not state the top model or what new variable was chosen:</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Indicating Multiple Variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The response needs to indicate in some way that there are <strong>two</strong> variables included in the model. This can be by saying <code>bty_avg</code> was “added” to the previous model or by stating both variables included in the model.</p>
+</div>
+</div>
+<p><em>If they do not indicate that there are two variables in the model (e.g., “beauty average was chosen” or “beauty score was included”):</em></p>
 <blockquote class="blockquote">
-<p>When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.</p>
-</blockquote>
-<p>OR</p>
-<blockquote class="blockquote">
-<p>You need to state <strong>every</strong> variable that is included in your top model, not the name of the model that was fit.</p>
-</blockquote>
-<p>OR</p>
-<blockquote class="blockquote">
-<p>Careful! Your model contains more variables than just gender! What are <strong>all</strong> the variables included in your top model?</p>
+<p>Careful! Your model contains more variables than just bty_avg. Be specific about naming <strong>every</strong> variable included in your top model!</p>
 </blockquote>
 </section>
 <section id="question-3" class="level2">
@@ -412,23 +416,28 @@ Note
 <p><strong>To earn a Success:</strong></p>
 <ul>
 <li>modifies code to fit models that <strong>include the variables chosen in #1 and #2 as an explanatory variables</strong></li>
-<li>states top model includes <strong>all</strong> the variables they’ve chosen</li>
+<li>states top model includes <strong>all</strong> the variables they’ve chosen (cls_credits, bty_avg, gender)</li>
 </ul>
 <p><em>If they don’t include a variable from #1 or #2 as an explanatory variable</em></p>
 <blockquote class="blockquote">
-<p>Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1 and #2 need to be included in the models you are comparing.</p>
+<p>Careful! Thus far, you’ve chosen two variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!</p>
 </blockquote>
-<p><em>If they do not state the top model or what new variable was chosen:</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Indicating Multiple Variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The response needs to indicate in some way that there are <strong>two</strong> variables included in the model. This can be by saying <code>bty_avg</code> was “added” to the previous model or by stating both variables included in the model.</p>
+</div>
+</div>
+<p><em>If they do not indicate that there are three variables in the model (e.g., “gender was included in the model” or “gender was chosen”):</em></p>
 <blockquote class="blockquote">
-<p>When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.</p>
-</blockquote>
-<p>OR</p>
-<blockquote class="blockquote">
-<p>You need to state <strong>every</strong> variable that is included in your top model, not the name of the model that was fit.</p>
-</blockquote>
-<p>OR</p>
-<blockquote class="blockquote">
-<p>Careful! Your model contains more variables than just gender! What are <strong>all</strong> the variables included in your top model?</p>
+<p>Careful! You were specifically asked to name EVERY variable included in your top model.</p>
 </blockquote>
 </section>
 <section id="question-4" class="level2">
@@ -436,35 +445,15 @@ Note
 <p><strong>To earn a Success:</strong></p>
 <ul>
 <li>modifies code to fit models that <strong>include the variables chosen in #1, #2, and #3 as an explanatory variables</strong></li>
-<li>states top model includes <strong>all</strong> the variables they’ve chosen</li>
+<li>state the top model is the model from Step 3 (cls_credits, bty_avg, gender)</li>
 </ul>
 <p><em>If they don’t include a variable from #1, #2, or #3 as an explanatory variable</em></p>
 <blockquote class="blockquote">
-<p>Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2 AND #3 need to be included in the models you are comparing.</p>
+<p>Careful! Thus far, you’ve chosen three variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!</p>
 </blockquote>
-<p><em>If they do not state the top model or what new variable was chosen:</em></p>
+<p><em>If they choose to add either <code>cls_perc_eval</code> or <code>eval_completion</code>:</em></p>
 <blockquote class="blockquote">
-<p>When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.</p>
-</blockquote>
-<p><em>If they state they added both variables that were tied:</em></p>
-<blockquote class="blockquote">
-<p>You need to choose <strong>one</strong> of the variables provided!</p>
-</blockquote>
-</section>
-<section id="question-5" class="level2">
-<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p><strong>To earn a Success:</strong></p>
-<ul>
-<li>modifies code to fit models that <strong>include the variables chosen in #1, #2, #3, and #4 as an explanatory variables</strong></li>
-<li>states top model includes <strong>all</strong> the variables they’ve chosen</li>
-</ul>
-<p><em>If they don’t include a variable from #1, #2, #3, or #4 as an explanatory variable</em></p>
-<blockquote class="blockquote">
-<p>Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2, #3 AND #4 need to be included in the models you are comparing.</p>
-</blockquote>
-<p><em>If they do not state the top model or what new variable was chosen:</em></p>
-<blockquote class="blockquote">
-<p>When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.</p>
+<p>Careful! Look back at the adjusted R-squareds for these variables. Did they increase 2% (0.02) from your last adjusted R-squared?</p>
 </blockquote>
 </section>
 <section id="question-6" class="level2">
@@ -472,8 +461,12 @@ Note
 <p><strong>To earn a Success:</strong></p>
 <ul>
 <li>states that the <code>step()</code> function did not choose the same model</li>
-<li>hypothesizes why these models differed</li>
+<li>state that this difference was caused by different criteria (or the use of AIC)</li>
 </ul>
+<p><em>If they don’t talk about the <code>step()</code> function using a different model comparison criteria:</em></p>
+<blockquote class="blockquote">
+<p>Look back at the output from the step() function, specifically the first line of the output. Based on this line, do you think the step() function is using the same criteria that you used to compare your models (adjusted R-squared)?</p>
+</blockquote>
 
 
 </section>

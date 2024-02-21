@@ -697,42 +697,42 @@
     "href": "slides/week7-day2.html#section",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Approximate the variability you’d expect to see in other samples!\n\n\n\n\nBootstrapping!"
+    "text": "Approximate the variability you’d expect to see in other samples!\n\n. . .\n\n\nBootstrapping!"
   },
   {
     "objectID": "slides/week7-day2.html#section-1",
     "href": "slides/week7-day2.html#section-1",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "A Bootstrap Resample\n\n\n\nAssumes the original sample is “representative” of observations in the population.\n\n\n\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n\n\n\nWe can use the statistics from these bootstrap resamples to approximate the true sampling distribution!"
+    "text": "A Bootstrap Resample\n\n. . .\n\nAssumes the original sample is “representative” of observations in the population.\n\n. . .\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n. . .\n\nWe can use the statistics from these bootstrap resamples to approximate the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#section-2",
     "href": "slides/week7-day2.html#section-2",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Estimating a population parameter\n\n\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n\n\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n\n\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
+    "text": "Estimating a population parameter\n\n. . .\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n. . .\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n. . .\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
   },
   {
     "objectID": "slides/week7-day2.html#section-3",
     "href": "slides/week7-day2.html#section-3",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do I get this plausible range of values?\n\n\n\n\nBootstrapping!\n\n\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\nThese are your bootstrap statistics"
+    "text": "How do I get this plausible range of values?\n\n. . .\n\n\nBootstrapping!\n\n. . .\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n. . .\n\n\nThis is your bootstrap resample.\n\n\n. . .\n\nRepeat this process many, many times.\n\n. . .\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\nThese are your bootstrap statistics"
   },
   {
     "objectID": "slides/week7-day2.html#section-4",
     "href": "slides/week7-day2.html#section-4",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Bootstrap Distribution\n\n\n\na distribution of the bootstrap statistics from every bootstrap resample\n\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n\n\n\nApproximates the true sampling distribution!"
+    "text": "Bootstrap Distribution\n\n. . .\n\na distribution of the bootstrap statistics from every bootstrap resample\n\n. . .\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n. . .\n\nApproximates the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#section-5",
     "href": "slides/week7-day2.html#section-5",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Generating bootstrap resamples and calculating bootstrap statistics\n\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: generate() bootstrap resamples\n\n\nStep 3: calculate() the statistic of interest"
+    "text": "Generating bootstrap resamples and calculating bootstrap statistics\n\n. . .\n\nStep 1: specify() your response and explanatory variables\n. . .\nStep 2: generate() bootstrap resamples\n. . .\nStep 3: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-6",
@@ -746,21 +746,21 @@
     "href": "slides/week7-day2.html#section-7",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Step 2: Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n\nreps – the number of resamples you want to generate\n\n\"bootstrap\" – the method that should be used to generate the new samples"
+    "text": "Step 2: Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n. . .\nreps – the number of resamples you want to generate\n\n\"bootstrap\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week7-day2.html#section-8",
     "href": "slides/week7-day2.html#section-8",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about our sample?"
+    "text": "Your turn!\n\n. . .\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about our sample?"
   },
   {
     "objectID": "slides/week7-day2.html#section-9",
     "href": "slides/week7-day2.html#section-9",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Step 3: Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 1000, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n\"slope\" – the statistic of interest"
+    "text": "Step 3: Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 1000, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n. . .\n\"slope\" – the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-10",
@@ -781,21 +781,21 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00457\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00457\n\n\n\n\n\n\n\n. . .\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
     "href": "slides/week7-day2.html#section-13",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do we interpret this interval?\n\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.\n\n\n\n\nWhat does it mean to be 95% confident?"
+    "text": "How do we interpret this interval?\n\n. . .\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n. . .\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.\n\n. . .\n\nWhat does it mean to be 95% confident?"
   },
   {
     "objectID": "slides/week7-day2.html#section-14",
     "href": "slides/week7-day2.html#section-14",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
+    "text": "Classic interpretation mistakes\n\n. . .\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n. . .\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-15",
@@ -1992,7 +1992,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5  Lab 4 Feedback\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\nFormatting Your Data (STAT 513)\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5  Lab 4 Feedback\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\nFormatting Your Data (STAT 513)\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻  Due February 19  Lab 6 Feedback\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2572,35 +2572,35 @@
     "href": "labs/grading-guides/lab-6-grading-guide.html",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "Note\n\n\n\nBased on my code, the model selection process should go:\ncls_credits \\(\\rightarrow\\) bty_avg \\(\\rightarrow\\) gender\nIn Step 4 they are given two variables (cls_perc_eval, eval_completion) which both increase adjusted \\(R^2\\) by 0.018, not the 0.02 which is required to add another variable. So, everyone should stop at Step 4.\n\n\n\n\nTo earn a Success:\n\nfits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)\nfinds other 7 adjusted \\(R^2\\) values\nstates top model includes eval_completion variable\n\nIf they do not state the top model or what variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\n\n\n\nTo earn a Success:\n\nfits 11 models that include the variable chosen in #1 as an explanatory variable\nfinds 11 adjusted \\(R^2\\) values\nstates top model includes eval_completion & pic_color variables\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nOR\n\nYou need to state every variable that is included in your top model, not the name of the model that was fit.\n\nOR\n\nCareful! Your model contains more variables than just gender! What are all the variables included in your top model?\n\n\n\n\nTo earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1 and #2 as an explanatory variables\nstates top model includes all the variables they’ve chosen\n\nIf they don’t include a variable from #1 or #2 as an explanatory variable\n\nCareful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1 and #2 need to be included in the models you are comparing.\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nOR\n\nYou need to state every variable that is included in your top model, not the name of the model that was fit.\n\nOR\n\nCareful! Your model contains more variables than just gender! What are all the variables included in your top model?\n\n\n\n\nTo earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1, #2, and #3 as an explanatory variables\nstates top model includes all the variables they’ve chosen\n\nIf they don’t include a variable from #1, #2, or #3 as an explanatory variable\n\nCareful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2 AND #3 need to be included in the models you are comparing.\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nIf they state they added both variables that were tied:\n\nYou need to choose one of the variables provided!\n\n\n\n\nTo earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1, #2, #3, and #4 as an explanatory variables\nstates top model includes all the variables they’ve chosen\n\nIf they don’t include a variable from #1, #2, #3, or #4 as an explanatory variable\n\nCareful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2, #3 AND #4 need to be included in the models you are comparing.\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\n\n\n\nTo earn a Success:\n\nstates that the step() function did not choose the same model\nhypothesizes why these models differed"
+    "text": "Note\n\n\n\nBased on my code, the model selection process should go:\ncls_credits \\(\\rightarrow\\) bty_avg \\(\\rightarrow\\) gender\nIn Step 4 they are given two variables (cls_perc_eval, eval_completion) which both increase adjusted \\(R^2\\) by 0.018, not the 0.02 which is required to add another variable. So, everyone should stop at Step 4.\n\n\n\n\nTo earn a Success:\n\nfits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)\nfinds other 7 adjusted \\(R^2\\) values\nstates top model includes cls_credits variable\n\nIf they do not state the top model or what variable was chosen:\n\nCareful! Technically, you told me the name of the object that contains the model you decided was best. I want you to tell me the name of the variable(s) included in that model!\n\n\n\n\nTo earn a Success:\n\nfits 113models that include the variable chosen in #1 as an explanatory variable\nfinds 13 adjusted \\(R^2\\) values\nstates top model includes cls_credits & bty_avg\n\n\n\n\n\n\n\nIndicating Multiple Variables\n\n\n\nThe response needs to indicate in some way that there are two variables included in the model. This can be by saying bty_avg was “added” to the previous model or by stating both variables included in the model.\n\n\nIf they do not indicate that there are two variables in the model (e.g., “beauty average was chosen” or “beauty score was included”):\n\nCareful! Your model contains more variables than just bty_avg. Be specific about naming every variable included in your top model!\n\n\n\n\nTo earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1 and #2 as an explanatory variables\nstates top model includes all the variables they’ve chosen (cls_credits, bty_avg, gender)\n\nIf they don’t include a variable from #1 or #2 as an explanatory variable\n\nCareful! Thus far, you’ve chosen two variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!\n\n\n\n\n\n\n\nIndicating Multiple Variables\n\n\n\nThe response needs to indicate in some way that there are two variables included in the model. This can be by saying bty_avg was “added” to the previous model or by stating both variables included in the model.\n\n\nIf they do not indicate that there are three variables in the model (e.g., “gender was included in the model” or “gender was chosen”):\n\nCareful! You were specifically asked to name EVERY variable included in your top model.\n\n\n\n\nTo earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1, #2, and #3 as an explanatory variables\nstate the top model is the model from Step 3 (cls_credits, bty_avg, gender)\n\nIf they don’t include a variable from #1, #2, or #3 as an explanatory variable\n\nCareful! Thus far, you’ve chosen three variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!\n\nIf they choose to add either cls_perc_eval or eval_completion:\n\nCareful! Look back at the adjusted R-squareds for these variables. Did they increase 2% (0.02) from your last adjusted R-squared?\n\n\n\n\nTo earn a Success:\n\nstates that the step() function did not choose the same model\nstate that this difference was caused by different criteria (or the use of AIC)\n\nIf they don’t talk about the step() function using a different model comparison criteria:\n\nLook back at the output from the step() function, specifically the first line of the output. Based on this line, do you think the step() function is using the same criteria that you used to compare your models (adjusted R-squared)?"
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#question-1",
     "href": "labs/grading-guides/lab-6-grading-guide.html#question-1",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "To earn a Success:\n\nfits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)\nfinds other 7 adjusted \\(R^2\\) values\nstates top model includes eval_completion variable\n\nIf they do not state the top model or what variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”."
+    "text": "To earn a Success:\n\nfits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)\nfinds other 7 adjusted \\(R^2\\) values\nstates top model includes cls_credits variable\n\nIf they do not state the top model or what variable was chosen:\n\nCareful! Technically, you told me the name of the object that contains the model you decided was best. I want you to tell me the name of the variable(s) included in that model!"
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#question-2",
     "href": "labs/grading-guides/lab-6-grading-guide.html#question-2",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "To earn a Success:\n\nfits 11 models that include the variable chosen in #1 as an explanatory variable\nfinds 11 adjusted \\(R^2\\) values\nstates top model includes eval_completion & pic_color variables\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nOR\n\nYou need to state every variable that is included in your top model, not the name of the model that was fit.\n\nOR\n\nCareful! Your model contains more variables than just gender! What are all the variables included in your top model?"
+    "text": "To earn a Success:\n\nfits 113models that include the variable chosen in #1 as an explanatory variable\nfinds 13 adjusted \\(R^2\\) values\nstates top model includes cls_credits & bty_avg\n\n\n\n\n\n\n\nIndicating Multiple Variables\n\n\n\nThe response needs to indicate in some way that there are two variables included in the model. This can be by saying bty_avg was “added” to the previous model or by stating both variables included in the model.\n\n\nIf they do not indicate that there are two variables in the model (e.g., “beauty average was chosen” or “beauty score was included”):\n\nCareful! Your model contains more variables than just bty_avg. Be specific about naming every variable included in your top model!"
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#question-3",
     "href": "labs/grading-guides/lab-6-grading-guide.html#question-3",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "To earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1 and #2 as an explanatory variables\nstates top model includes all the variables they’ve chosen\n\nIf they don’t include a variable from #1 or #2 as an explanatory variable\n\nCareful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1 and #2 need to be included in the models you are comparing.\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nOR\n\nYou need to state every variable that is included in your top model, not the name of the model that was fit.\n\nOR\n\nCareful! Your model contains more variables than just gender! What are all the variables included in your top model?"
+    "text": "To earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1 and #2 as an explanatory variables\nstates top model includes all the variables they’ve chosen (cls_credits, bty_avg, gender)\n\nIf they don’t include a variable from #1 or #2 as an explanatory variable\n\nCareful! Thus far, you’ve chosen two variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!\n\n\n\n\n\n\n\nIndicating Multiple Variables\n\n\n\nThe response needs to indicate in some way that there are two variables included in the model. This can be by saying bty_avg was “added” to the previous model or by stating both variables included in the model.\n\n\nIf they do not indicate that there are three variables in the model (e.g., “gender was included in the model” or “gender was chosen”):\n\nCareful! You were specifically asked to name EVERY variable included in your top model."
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#question-4",
     "href": "labs/grading-guides/lab-6-grading-guide.html#question-4",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "To earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1, #2, and #3 as an explanatory variables\nstates top model includes all the variables they’ve chosen\n\nIf they don’t include a variable from #1, #2, or #3 as an explanatory variable\n\nCareful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2 AND #3 need to be included in the models you are comparing.\n\nIf they do not state the top model or what new variable was chosen:\n\nWhen comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, “The top model was selected to have the following variables: ….”.\n\nIf they state they added both variables that were tied:\n\nYou need to choose one of the variables provided!"
+    "text": "To earn a Success:\n\nmodifies code to fit models that include the variables chosen in #1, #2, and #3 as an explanatory variables\nstate the top model is the model from Step 3 (cls_credits, bty_avg, gender)\n\nIf they don’t include a variable from #1, #2, or #3 as an explanatory variable\n\nCareful! Thus far, you’ve chosen three variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one!\n\nIf they choose to add either cls_perc_eval or eval_completion:\n\nCareful! Look back at the adjusted R-squareds for these variables. Did they increase 2% (0.02) from your last adjusted R-squared?"
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#question-5",
@@ -2614,7 +2614,7 @@
     "href": "labs/grading-guides/lab-6-grading-guide.html#question-6",
     "title": "Lab 6 Grading Guide",
     "section": "",
-    "text": "To earn a Success:\n\nstates that the step() function did not choose the same model\nhypothesizes why these models differed"
+    "text": "To earn a Success:\n\nstates that the step() function did not choose the same model\nstate that this difference was caused by different criteria (or the use of AIC)\n\nIf they don’t talk about the step() function using a different model comparison criteria:\n\nLook back at the output from the step() function, specifically the first line of the output. Based on this line, do you think the step() function is using the same criteria that you used to compare your models (adjusted R-squared)?"
   },
   {
     "objectID": "labs/grading-guides/lab-6-grading-guide.html#prediction",
@@ -6945,8 +6945,8 @@
     "objectID": "slides/week7-day2.html#course-updates",
     "href": "slides/week7-day2.html#course-updates",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
-    "section": "Course Updates",
-    "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+    "section": "",
+    "text": "Statistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
   },
   {
     "objectID": "slides/week7-day2.html",
@@ -6974,7 +6974,7 @@
     "href": "slides/week7-day2.html#in-this-sample-of-344-penguins",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "In this sample of 344 penguins…",
-    "text": "In this sample of 344 penguins…\n\\[\\widehat{\\text{bill length}} = 26.899 + 0.004 \\times \\text{body mass}\\]\n\n\n\nWhat slope could have happened in a different sample of penguins?"
+    "text": "In this sample of 344 penguins…\n\\[\\widehat{\\text{bill length}} = 26.899 + 0.004 \\times \\text{body mass}\\]\n. . .\n\n\nWhat slope could have happened in a different sample of penguins?"
   },
   {
     "objectID": "slides/week7-day2.html#statistic-beta_1",

@@ -9,9 +9,9 @@ editor: visual
 ::: callout-note
 Based on my code, the model selection process should go:
 
-`cls_credits` $\rightarrow$ `bty_avg` $\rightarrow$ `gender` 
+`cls_credits` $\rightarrow$ `bty_avg` $\rightarrow$ `gender`
 
-In Step 4 they are given two variables (`cls_perc_eval`, `eval_completion`) which both increase adjusted $R^2$ by 0.018, not the 0.02 which is required to add another variable. So, **everyone** should stop at Step 4. 
+In Step 4 they are given two variables (`cls_perc_eval`, `eval_completion`) which both increase adjusted $R^2$ by 0.018, not the 0.02 which is required to add another variable. So, **everyone** should stop at Step 4.
 :::
 
 ## Question 1
@@ -20,94 +20,73 @@ In Step 4 they are given two variables (`cls_perc_eval`, `eval_completion`) whic
 
 -   fits other 7 models (rank, pic_outfit, pic_color, large_class, eval_completion, cls_level)
 -   finds other 7 adjusted $R^2$ values
--   states top model includes **eval_completion** variable
+-   states top model includes **cls_credits** variable
 
 *If they do not state the top model or what variable was chosen:*
 
-> When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....".
+> Careful! Technically, you told me the name of the object that contains the model you decided was best. I want you to tell me the name of the variable(s) included in that model! 
 
 ## Question 2
 
 **To earn a Success:**
 
--   fits 11 models that **include the variable chosen in #1 as an explanatory variable**
--   finds 11 adjusted $R^2$ values
--   states top model includes **eval_completion** & **pic_color** variables
+-   fits 113models that **include the variable chosen in #1 as an explanatory variable**
+-   finds 13 adjusted $R^2$ values
+-   states top model includes **cls_credits** & **bty_avg** 
 
-*If they do not state the top model or what new variable was chosen:*
+:::{.callout-note}
+# Indicating Multiple Variables
 
-> When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....".
+The response needs to indicate in some way that there are **two** variables included in the model. This can be by saying `bty_avg` was "added" to the previous model or by stating both variables included in the model. 
+:::
 
-OR
+*If they do not indicate that there are two variables in the model (e.g., "beauty average was chosen" or "beauty score was included"):*
 
-> You need to state **every** variable that is included in your top model, not the name of the model that was fit.
-
-OR
-
-> Careful! Your model contains more variables than just gender! What are **all** the variables included in your top model?
+> Careful! Your model contains more variables than just bty_avg. Be specific about naming **every** variable included in your top model!
 
 ## Question 3
 
 **To earn a Success:**
 
 -   modifies code to fit models that **include the variables chosen in #1 and #2 as an explanatory variables**
--   states top model includes **all** the variables they've chosen
+-   states top model includes **all** the variables they've chosen (cls_credits, bty_avg, gender)
 
 *If they don't include a variable from #1 or #2 as an explanatory variable*
 
-> Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1 and #2 need to be included in the models you are comparing.
+> Careful! Thus far, you've chosen two variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one! 
 
-*If they do not state the top model or what new variable was chosen:*
+:::{.callout-note}
+# Indicating Multiple Variables
 
-> When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....".
+The response needs to indicate in some way that there are **two** variables included in the model. This can be by saying `bty_avg` was "added" to the previous model or by stating both variables included in the model. 
+:::
 
-OR
+*If they do not indicate that there are three variables in the model (e.g., "gender was included in the model" or "gender was chosen"):*
 
-> You need to state **every** variable that is included in your top model, not the name of the model that was fit.
+> Careful! You were specifically asked to name EVERY variable included in your top model. 
 
-OR
-
-> Careful! Your model contains more variables than just gender! What are **all** the variables included in your top model?
-
-## Question 4
+## Question 4 
 
 **To earn a Success:**
 
--   modifies code to fit models that **include the variables chosen in #1, #2, and #3 as an explanatory variables**
--   states top model includes **all** the variables they've chosen
+-   modifies code to fit models that **include the variables chosen in #1, #2, and #3  as an explanatory variables**
+-   state the top model is the model from Step 3 (cls_credits, bty_avg, gender)
 
 *If they don't include a variable from #1, #2, or #3 as an explanatory variable*
 
-> Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2 AND #3 need to be included in the models you are comparing.
+> Careful! Thus far, you've chosen three variables to be included in your model. So, your code (the map() function and select() function) need to have both these variables included, not just one! 
 
-*If they do not state the top model or what new variable was chosen:*
+*If they choose to add either `cls_perc_eval` or `eval_completion`:* 
 
-> When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....".
-
-*If they state they added both variables that were tied:*
-
-> You need to choose **one** of the variables provided!
-
-## Question 5
-
-**To earn a Success:**
-
--   modifies code to fit models that **include the variables chosen in #1, #2, #3, and #4 as an explanatory variables**
--   states top model includes **all** the variables they've chosen
-
-*If they don't include a variable from #1, #2, #3, or #4 as an explanatory variable*
-
-> Careful! You need to deciding what variable to add, given the variables you have already chosen! The variables you chose in #1, #2, #3 AND #4 need to be included in the models you are comparing.
-
-*If they do not state the top model or what new variable was chosen:*
-
-> When comparing multiple models it is important to explicitly state what model was selected as the top model. This can be a simple statement like, "The top model was selected to have the following variables: ....".
+> Careful! Look back at the adjusted R-squareds for these variables. Did they increase 2% (0.02) from your last adjusted R-squared? 
 
 ## Question 6
 
-**To earn a Success:** 
+**To earn a Success:**
 
-- states that the `step()` function did not choose the same model
-- hypothesizes why these models differed
+-   states that the `step()` function did not choose the same model
+-   state that this difference was caused by different criteria (or the use of AIC)
 
+*If they don't talk about the `step()` function using a different model comparison criteria:* 
 
+> Look back at the output from the step() function, specifically the first line of the output. Based on this line, do you think the step() function is using the same criteria that you used to compare your models (adjusted R-squared)? 
