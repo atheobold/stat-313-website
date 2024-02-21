@@ -1,5 +1,5 @@
 ---
-title: "Exploring Sampling Concepts"
+title: "Exploring Sampling Concepts (30-minutes)"
 format: html
 embed-resources: true
 editor: visual
@@ -11,20 +11,6 @@ library(tidyverse)
 library(moderndive)
 library(infer)
 ```
-
-<!-- ## Deciding a Study Population -->
-
-<!-- Often when reading a statistical study, you will not know who the researchers thought of as their target population, and are left to imagine who the study population may have been. -->
-
-<!-- **Comment on the study population for the following studies:** -->
-
-<!-- 1.  `hsb2`: "Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics." -->
-
-<!-- </br></br> -->
-
-<!-- 2.  `evals`: "The data on the 463 courses at UT Austin." -->
-
-<!-- \newpage -->
 
 ## Random Sampling
 

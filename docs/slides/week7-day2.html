@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>STAT 313 / 513 - Winter 2024 - Confidence Intervals – Real Life Sampling Distributions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -454,17 +454,16 @@
 </div>
 <div class="fragment">
 <div style="font-size: 1em; color: #0F4C81;">
-<p>We can use the statistics from these bootstrap samples to approximate the true sampling distribution!</p>
+<p>We can use the statistics from these bootstrap resamples to approximate the true sampling distribution!</p>
 </div>
 </div>
+</section></section>
+<section>
+<section id="why-do-we-want-a-sampling-distribution" class="title-slide slide level1 center">
+<h1>Why do we want a sampling distribution?</h1>
+
 </section>
-<section id="section-2" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 5em; color: #000000;">
-<p>Why???</p>
-</div>
-</section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Estimating a population parameter</p>
@@ -484,12 +483,10 @@
 <li>This helps us estimate what values are more or less likely for the population parameter to have.</li>
 </ul>
 </div>
-</section>
-<section id="section-4" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Confidence Intervals</p>
-</div>
+</section></section>
+<section>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence Intervals</h1>
 <div class="fragment">
 <blockquote>
 <p>Capture a range of plausible values for the population parameter.</p>
@@ -502,13 +499,21 @@
 </blockquote>
 </div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Using bootstrap resamples to generate a confidence interval</p>
+<p>How do I get this plausible range of values?</p>
 </div>
 <div class="fragment">
-<p>From your original sample, resample with replacement the same number of times as your original sample.</p>
+<center>
+<div style="font-size: 2em; color: #0F4C81;">
+<p>Bootstrapping!</p>
+</div>
+</center></div>
+<div class="fragment">
+<ol type="1">
+<li>From your original sample, resample with replacement the same number of times as your original sample.</li>
+</ol>
 </div>
 <div class="fragment">
 <center>
@@ -518,10 +523,14 @@
 </center>
 </div>
 <div class="fragment">
-<p>Repeat this process many, many times.</p>
+<ol start="2" type="1">
+<li>Repeat this process many, many times.</li>
+</ol>
 </div>
 <div class="fragment">
-<p>Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.</p>
+<ol start="3" type="1">
+<li>Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.</li>
+</ol>
 <center>
 <div style="font-size: 1em; color: #0F4C81;">
 <p>These are your bootstrap statistics</p>
@@ -529,14 +538,14 @@
 </center>
 </div>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Bootstrap Distribution</p>
 </div>
 <div class="fragment">
 <blockquote>
-<p><em>definition</em>: a distribution of the <strong>bootstrap statistics</strong> from every <strong>bootstrap resample</strong></p>
+<p>a distribution of the <strong>bootstrap statistics</strong> from every <strong>bootstrap resample</strong></p>
 </blockquote>
 </div>
 <div class="fragment">
@@ -548,32 +557,10 @@
 <p>Approximates the true sampling distribution!</p>
 </div>
 </div>
-</section>
-<section id="section-7" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 3em; color: #000000;">
-<p>Confidence Interval</p>
-</div>
-<p><strong>Goal</strong>: Capture a range of plausible values for the population parameter.</p>
-</section>
-<section id="section-8" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>How do I get this plausible range of values?</p>
-</div>
-<div class="fragment">
-<p><br></p>
-<center>
-<div style="font-size: 2em; color: #0F4C81;">
-<p>Bootstrapping!</p>
-</div>
-</center></div>
-</section>
-<section id="section-9" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Penguins!</p>
-</div>
+</section></section>
+<section>
+<section id="penguins" class="title-slide slide level1 center">
+<h1>Penguins!</h1>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><img data-src="images/adelie_penguin.jpg"></p>
@@ -584,11 +571,8 @@
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Statistic: <span class="math inline">\(\beta_1\)</span></p>
-</div>
+<section id="statistic-beta_1" class="slide level2">
+<h2>Statistic: <span class="math inline">\(\beta_1\)</span></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="cell">
@@ -607,12 +591,23 @@
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="in-this-sample-of-344-penguins" class="slide level2">
+<h2>In this sample of 344 penguins…</h2>
+<p><span class="math display">\[\widehat{\text{bill length}} = 26.899 + 0.004 \times \text{body mass}\]</span></p>
+<div class="fragment">
+<p><br></p>
+<div style="font-size: 1.5em;">
+<p>What slope could have happened in a different sample of penguins?</p>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Generating a bootstrap resample</p>
+<p>Generating bootstrap resamples and calculating bootstrap statistics</p>
 </div>
 <div class="fragment">
+<p><br></p>
 <p><strong>Step 1:</strong> <code>specify()</code> your response and explanatory variables</p>
 </div>
 <div class="fragment">
@@ -622,21 +617,22 @@
 <p><strong>Step 3:</strong> <code>calculate()</code> the statistic of interest</p>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Declare your variables!</p>
+<p>Step 1: Specify your variables!</p>
 </div>
 
 <img data-src="images/specify_scatterplot.jpg" class="r-stretch"><div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> bill_length_mm, <span class="at">explanatory =</span> body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> bill_length_mm, </span>
+<span id="cb1-3"><a></a>          <span class="at">explanatory =</span> body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Generate your resamples!</p>
+<p>Step 2: Generate your resamples!</p>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>penguins <span class="sc">%&gt;%</span> </span>
@@ -647,10 +643,11 @@
 <p><br></p>
 <div class="fragment">
 <p><code>reps</code> – the number of resamples you want to generate</p>
+<p><br></p>
 <p><code>"bootstrap"</code> – the method that should be used to generate the new samples</p>
 </div>
 </section>
-<section id="section-14" class="slide level2" data-background-color="#B6CADA">
+<section id="section-8" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 3em; color: #000000;">
 <p>Your turn!</p>
@@ -662,16 +659,16 @@
 <p>When we resample with replacement from our original sample what are we assuming about our sample?</p>
 </div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Calculate your statistics!</p>
+<p>Step 3: Calculate your statistics!</p>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> bill_length_mm, </span>
 <span id="cb3-3"><a></a>          <span class="at">explanatory =</span> body_mass_g) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">500</span>, </span>
+<span id="cb3-4"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, </span>
 <span id="cb3-5"><a></a>           <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-6"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -680,36 +677,35 @@
 <p><code>"slope"</code> – the <code>stat</code>istic of interest</p>
 </div>
 </section>
-<section id="section-16" class="slide level2" data-background-color="#B6CADA">
+<section id="section-10" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>The final product</p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">visualize</span>(boot1) <span class="sc">+</span> </span>
-<span id="cb4-2"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Bootstrap Distribution of 500 reps"</span>, </span>
-<span id="cb4-3"><a></a>       <span class="at">x =</span> <span class="st">"Slope Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(boot1) <span class="sc">+</span> </span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of 1,000 Bootstrap Resamples"</span>, </span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Slope Statistic"</span>, </span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
-</div>
-<img data-src="week7-day2_files/figure-revealjs/bootstrap-viz-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
-<p>What does one dot / point on a bootstrap distribution represent?</p>
-</div>
-</section>
-<section id="section-17" class="slide level2">
+<img data-src="week7-day2_files/figure-revealjs/bootstrap-viz-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>A plausible range of values for: <span class="math inline">\(\beta_1\)</span></p>
+<p>A plausible range of values for <span class="math inline">\(\beta_1\)</span></p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">visualise</span>(boot1) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">shade_confidence_interval</span>(<span class="at">endpoints =</span> boot1_CI, </span>
-<span id="cb5-3"><a></a>                            <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span>  </span>
-<span id="cb5-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Bootstrap Distribution of 500 reps"</span>, </span>
-<span id="cb5-5"><a></a>       <span class="at">x =</span> <span class="st">"Slope Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">visualise</span>(boot1) <span class="sc">+</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_confidence_interval</span>(<span class="at">endpoints =</span> boot1_CI, </span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>                            <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span>  </span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of 1,000 Bootstrap Resamples"</span>, </span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Slope Statistic"</span>, </span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
-<section id="section-17-output" class="slide level2 output-location-slide"><h2></h2><div class="cell output-location-slide">
+<section id="section-11-output" class="slide level2 output-location-slide"><h2></h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -717,7 +713,7 @@
 </figure>
 </div>
 </div>
-</div></section><section id="section-18" class="slide level2">
+</div></section><section id="section-12" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>The 95% confidence interval is…</p>
@@ -739,8 +735,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.00354</td>
-<td style="text-align: right;">0.00452</td>
+<td style="text-align: right;">0.00355</td>
+<td style="text-align: right;">0.00457</td>
 </tr>
 </tbody>
 </table>
@@ -753,7 +749,7 @@
 <p><strong>What do we hope is captured by this interval?</strong></p>
 </div>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>How do we interpret this interval?</p>
@@ -764,10 +760,17 @@
 </blockquote>
 </div>
 <div class="fragment">
+<p><br></p>
+<blockquote>
+<p>“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><br></p>
 <p><strong>What does it mean to be 95% confident?</strong></p>
 </div>
 </section>
-<section id="section-20" class="slide level2" data-background-color="#B6CADA">
+<section id="section-14" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Classic interpretation mistakes</p>
@@ -783,14 +786,25 @@
 <blockquote>
 <p>“We are 95% confident the sample statistic is in our interval.”</p>
 </blockquote>
+</div>
+</section></section>
+<section>
+<section id="scaling-to-multiple-linear-regression" class="title-slide slide level1 center">
+<h1>Scaling to Multiple Linear Regression</h1>
 
-<div class="quarto-auto-generated-content">
+</section>
+<section id="incorporating-penguin-sex" class="slide level2">
+<h2>Incorporating Penguin Sex</h2>
+</section>
+<section id="incorporating-penguin-bill-length" class="slide level2">
+<h2>Incorporating Penguin Bill Length</h2>
+
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 

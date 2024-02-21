@@ -487,7 +487,7 @@
     "href": "slides/week7-day1.html#section-1",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Statistical Inference Reasoning\n\n\n\n\nIf the sampling is done at random\nthen the sample should be representative of the population\nany result based on the sample can generalize to the population\nthe point estimate is a “good guess” of the unknown population parameter\n\n\n\n\n\nEvery group had a random sample of 25 coach salaries, so why were some of the medians really far off?"
+    "text": "Statistical Inference Reasoning\n\n\n\n\nIf the sampling is done at random\nthen the sample should be representative of the population\nany result based on the sample can generalize to the population\nthe point estimate is a “good guess” of the unknown population parameter\n\n\n\n. . .\n\nEvery group had a random sample of 25 coach salaries, so why were some of the medians really far off?"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
@@ -501,28 +501,28 @@
     "href": "slides/week7-day1.html#section-3",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Sampling Distributions\n\n\nVisualize the effect of sampling variation on the distribution of any point estimate\n\nIn this case, the sample median!\n\nWe can use sampling distributions to make statements about what values we can typically expect.\n\n\n\n\n\n\n\n\nSampling distribution vs. Sample distribution\n\n\nBe careful! A sampling distribution is different from a sample’s distribution!"
+    "text": "Sampling Distributions\n\n\nVisualize the effect of sampling variation on the distribution of any point estimate\n\nIn this case, the sample median!\n\nWe can use sampling distributions to make statements about what values we can typically expect.\n\n. . .\n\n\n\n\n\n\nSampling distribution vs. Sample distribution\n\n\n\nBe careful! A sampling distribution is different from a sample’s distribution!"
   },
   {
     "objectID": "slides/week7-day1.html#section-4",
     "href": "slides/week7-day1.html#section-4",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Distributions of 1000 medians from different sample sizes\n\n\n\nWhat differences do you see?"
+    "text": "Distributions of 1000 medians from different sample sizes\n\n\n\n\n\n\n\n\n\n\n\nWhat differences do you see?"
   },
   {
     "objectID": "slides/week7-day1.html#section-5",
     "href": "slides/week7-day1.html#section-5",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19408.079\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n\n\n\n\n\n\n\n\nStandard error vs. Standard deviation\n\n\nCareful! There are important differences between standard errors and standard deviations."
+    "text": "Variability for Different Sample Sizes\n\n\n\n\n\n\n\nSample Size\nStandard Error of Median\n\n\n\n\n25\n19408.079\n\n\n50\n12459.358\n\n\n100\n8279.311\n\n\n\n\n\n\n\n\n. . .\n\n\nStandard errors quantify the variability of point estimates\nAs a general rule, as sample size increases, the standard error decreases.\n\n\n. . .\n\n\n\n\n\n\nStandard error vs. Standard deviation\n\n\n\nCareful! There are important differences between standard errors and standard deviations."
   },
   {
     "objectID": "slides/week7-day1.html#section-6",
     "href": "slides/week7-day1.html#section-6",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "",
-    "text": "Does sample size change how accurate the estimate is?\n\n\nDoes sample size change how precise the estimate is?"
+    "text": ". . .\nDoes sample size change how accurate the estimate is?\n. . .\nDoes sample size change how precise the estimate is?"
   },
   {
     "objectID": "slides/week7-day1.html#section-7",
@@ -704,126 +704,126 @@
     "href": "slides/week7-day2.html#section-1",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "A Bootstrap Resample\n\n\n\nAssumes the original sample is “representative” of observations in the population.\n\n\n\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n\n\n\nWe can use the statistics from these bootstrap samples to approximate the true sampling distribution!"
+    "text": "A Bootstrap Resample\n\n\n\nAssumes the original sample is “representative” of observations in the population.\n\n\n\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n\n\n\nWe can use the statistics from these bootstrap resamples to approximate the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#section-2",
     "href": "slides/week7-day2.html#section-2",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Why???"
+    "text": "Estimating a population parameter\n\n\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n\n\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n\n\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
   },
   {
     "objectID": "slides/week7-day2.html#section-3",
     "href": "slides/week7-day2.html#section-3",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Estimating a population parameter\n\n\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n\n\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n\n\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
+    "text": "How do I get this plausible range of values?\n\n\n\n\nBootstrapping!\n\n\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\nThese are your bootstrap statistics"
   },
   {
     "objectID": "slides/week7-day2.html#section-4",
     "href": "slides/week7-day2.html#section-4",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Confidence Intervals\n\n\n\nCapture a range of plausible values for the population parameter.\n\n\n\n\n\nAre more likely to capture the population parameter than a point estimate."
+    "text": "Bootstrap Distribution\n\n\n\na distribution of the bootstrap statistics from every bootstrap resample\n\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n\n\n\nApproximates the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#section-5",
     "href": "slides/week7-day2.html#section-5",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Using bootstrap resamples to generate a confidence interval\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\nRepeat this process many, many times.\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\nThese are your bootstrap statistics"
+    "text": "Generating bootstrap resamples and calculating bootstrap statistics\n\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: generate() bootstrap resamples\n\n\nStep 3: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-6",
     "href": "slides/week7-day2.html#section-6",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Bootstrap Distribution\n\n\n\ndefinition: a distribution of the bootstrap statistics from every bootstrap resample\n\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n\n\n\nApproximates the true sampling distribution!"
+    "text": "Step 1: Specify your variables!\n\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g)"
   },
   {
     "objectID": "slides/week7-day2.html#section-7",
     "href": "slides/week7-day2.html#section-7",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Confidence Interval\n\nGoal: Capture a range of plausible values for the population parameter."
+    "text": "Step 2: Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n\nreps – the number of resamples you want to generate\n\n\"bootstrap\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week7-day2.html#section-8",
     "href": "slides/week7-day2.html#section-8",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do I get this plausible range of values?\n\n\n\n\n\nBootstrapping!"
+    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about our sample?"
   },
   {
     "objectID": "slides/week7-day2.html#section-9",
     "href": "slides/week7-day2.html#section-9",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Penguins!"
+    "text": "Step 3: Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 1000, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n\"slope\" – the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-10",
     "href": "slides/week7-day2.html#section-10",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Statistic: \\(\\beta_1\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe relationship between penguin’s bill length and body mass for all penguins in the Palmer Archipelago"
+    "text": "The final product\n\n\nvisualize(boot1) + \n  labs(title = \"Distribution of 1,000 Bootstrap Resamples\", \n       x = \"Slope Statistic\", \n       y = \"\")"
   },
   {
     "objectID": "slides/week7-day2.html#section-11",
     "href": "slides/week7-day2.html#section-11",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Generating a bootstrap resample\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: generate() bootstrap resamples\n\n\nStep 3: calculate() the statistic of interest"
+    "text": "A plausible range of values for \\(\\beta_1\\)\n\n\nvisualise(boot1) +\n  shade_confidence_interval(endpoints = boot1_CI, \n                            color = \"red\", fill = \"pink\") +  \n  labs(title = \"Distribution of 1,000 Bootstrap Resamples\", \n       x = \"Slope Statistic\", \n       y = \"\")"
   },
   {
     "objectID": "slides/week7-day2.html#section-12",
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Declare your variables!\n\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, explanatory = body_mass_g)"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00457\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
     "href": "slides/week7-day2.html#section-13",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n\nreps – the number of resamples you want to generate\n\"bootstrap\" – the method that should be used to generate the new samples"
+    "text": "How do we interpret this interval?\n\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.\n\n\n\n\nWhat does it mean to be 95% confident?"
   },
   {
     "objectID": "slides/week7-day2.html#section-14",
     "href": "slides/week7-day2.html#section-14",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about our sample?"
+    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-15",
     "href": "slides/week7-day2.html#section-15",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n\"slope\" – the statistic of interest"
+    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-16",
     "href": "slides/week7-day2.html#section-16",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The final product\n\n\nvisualize(boot1) + \n  labs(title = \"Bootstrap Distribution of 500 reps\", \n       x = \"Slope Statistic\")\n\n\n\nWhat does one dot / point on a bootstrap distribution represent?"
+    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-17",
     "href": "slides/week7-day2.html#section-17",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "A plausible range of values for: \\(\\beta_1\\)\n\n\nvisualise(boot1) +\n  shade_confidence_interval(endpoints = boot1_CI, \n                            color = \"red\", fill = \"pink\") +  \n  labs(title = \"Bootstrap Distribution of 500 reps\", \n       x = \"Slope Statistic\")"
+    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-18",
     "href": "slides/week7-day2.html#section-18",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00354\n0.00452\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#section-19",
@@ -6848,7 +6848,7 @@
     "href": "slides/week7-day1.html#why-sample-more-than-once",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Why sample more than once?",
-    "text": "Why sample more than once?\n\n\n\n\nWhat do we get when we take multiple samples?\n\n\n\n\nA distribution of statistics!\n\n\n\n\n\n\n\nWhy do we want a distribution of statistics?\n\n\n\n\n\nUnderstanding the variability of a statistic is the heart of statistical inference!"
+    "text": "Why sample more than once?\n. . .\n\n\n\nWhat do we get when we take multiple samples?\n\n\n\n\nA distribution of statistics!\n\n\n\n\n\n\n\nWhy do we want a distribution of statistics?\n\n\n\n\n\nUnderstanding the variability of a statistic is the heart of statistical inference!"
   },
   {
     "objectID": "slides/week7-day1.html#virtual-sampling",
@@ -6876,12 +6876,12 @@
     "href": "slides/week7-day1.html#sampling-framework",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Sampling Framework",
-    "text": "Sampling Framework\npopulation – collection of observations / individuals we are interested in\npopulation parameter – numerical summary about the population that is unknown but you wish you knew\n\n\nsample – a collection of observations from the population\nsample statistic – a summary statistic computed from a sample that estimates the unknown population parameter."
+    "text": "Sampling Framework\npopulation – collection of observations / individuals we are interested in\npopulation parameter – numerical summary about the population that is unknown but you wish you knew\n. . .\n\nsample – a collection of observations from the population\nsample statistic – a summary statistic computed from a sample that estimates the unknown population parameter."
   },
   {
     "objectID": "activity/week-7-sampling-activity.html",
     "href": "activity/week-7-sampling-activity.html",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "",
     "text": "What is the central tenant of random sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “random-ness” (not representative-ness) of the following study:\n\n\nA Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers."
   },
@@ -6895,49 +6895,49 @@
   {
     "objectID": "activity/week-7-sampling-activity.html#random-sampling",
     "href": "activity/week-7-sampling-activity.html#random-sampling",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "",
     "text": "What is the central tenant of random sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “random-ness” (not representative-ness) of the following study:\n\n\nA Cal Poly administrator wants to know the average income of all graduates in the last 10 years. So they get the records of fifty randomly chosen graduates, contact them, and obtain their answers."
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#sampling-randomly",
     "href": "activity/week-7-sampling-activity.html#sampling-randomly",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Sampling Randomly",
     "text": "Sampling Randomly\nSuppose we have a database of every professor at UT Austin, and are interested in studying the relationship between a professor’s teaching evaluations and their age.\n\nHow would we go about randomly sampling observations from the database?\n\n\n\nWould we expect that our sample look like the population of professors at UT Austin?"
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#representative-sampling",
     "href": "activity/week-7-sampling-activity.html#representative-sampling",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Representative Sampling",
     "text": "Representative Sampling\n\nWhat is the central tenant of representative sampling? i.e. How are observations selected from the study population?\n\n\n\nComment on the “representative-ness” of the following studies:\n\n\nThe Royal Air Force wants to study how resistant all their airplanes are to bullets. They study the bullet holes on all the airplanes on the tarmac after an air battle against the Luftwaffe (German Air Force).\n\n\n\nYou want to know the average number of people living in houses in the 1-mile radius surrounding Cal Poly. You randomly pick 25 houses and record data by knocking on the door of each house."
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#sampling-representatively",
     "href": "activity/week-7-sampling-activity.html#sampling-representatively",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Sampling Representatively",
     "text": "Sampling Representatively\nSuppose we want to ensure that we have a representative proportion of faculty who are women and faculty of different ranks (e.g., teaching, tenure track, tenured). The table below summarizes the demographics of women and men faculty of different ranks:\n\n\nWomen make up approximately 40% of all UT Austin faculty\n\nWomen teaching = 58%\nWomen tenure track = 30%\nWomen tenured = 12%\n\n\n\n\nMen make up approximately 60% of all UT Austin faculty\n\nMen teaching = 20%\nMen tenure track = 42%\nMen tenured = 38%\n\n\n\n\nSuppose we can reasonably collect data on 200 individuals. How could we go about collecting a representative sample that accounts for these demographic characteristics?"
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#sampling-issues",
     "href": "activity/week-7-sampling-activity.html#sampling-issues",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Sampling Issues",
     "text": "Sampling Issues\nIn the evals data, the courses included in the dataset were only taught by 94 unique professors. If we were interested in making inferences about the relationship between eval scores and age for professors at UT Austin, a simpler approach would be to have one observation per professor!\n\n\n\n\n\n\n\n\n\n\nProfessor ID\nNumber of Times Sampled\n\n\n\n\n34\n13\n\n\n49\n13\n\n\n82\n11\n\n\n10\n10\n\n\n20\n10\n\n\n58\n10\n\n\n71\n10\n\n\n19\n9\n\n\n70\n9\n\n\n4\n8\n\n\n\n\n\n\n\n\n\n\n\nHow could you use sampling to remedy this situation?"
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#population-parameter",
     "href": "activity/week-7-sampling-activity.html#population-parameter",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Population Parameter",
     "text": "Population Parameter\nTo investigate the relationship between course evaluation score and the professor’s age, we would carry out a simple linear regression.\n\nWhat would be the population parameter we are interested in? Do we know its value?\n\n\n\nWhat would be our point estimate?"
   },
   {
     "objectID": "activity/week-7-sampling-activity.html#repeated-samples",
     "href": "activity/week-7-sampling-activity.html#repeated-samples",
-    "title": "Exploring Sampling Concepts",
+    "title": "Exploring Sampling Concepts (30-minutes)",
     "section": "Repeated Samples",
     "text": "Repeated Samples\nRepeated samples are necessary for us to create a sampling distribution—a distribution of statistics from lots of different samples—like the one below.\n\nWhat are we assuming about how the samples were collected when we plot every statistic on the same distribution?"
   },
@@ -6947,5 +6947,54 @@
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Course Updates",
     "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+  },
+  {
+    "objectID": "slides/week7-day2.html",
+    "href": "slides/week7-day2.html",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "",
+    "text": "Statistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+  },
+  {
+    "objectID": "slides/week7-day1.html",
+    "href": "slides/week7-day1.html",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
+    "section": "",
+    "text": "Salaries of football coaches"
+  },
+  {
+    "objectID": "slides/week7-day2.html#in-this-sample-of-344",
+    "href": "slides/week7-day2.html#in-this-sample-of-344",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "In this sample of 344…",
+    "text": "In this sample of 344…"
+  },
+  {
+    "objectID": "slides/week7-day2.html#in-this-sample-of-344-penguins",
+    "href": "slides/week7-day2.html#in-this-sample-of-344-penguins",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "In this sample of 344 penguins…",
+    "text": "In this sample of 344 penguins…\n\\[\\widehat{\\text{bill length}} = 26.899 + 0.004 \\times \\text{body mass}\\]\n\n\n\nWhat slope could have happened in a different sample of penguins?"
+  },
+  {
+    "objectID": "slides/week7-day2.html#statistic-beta_1",
+    "href": "slides/week7-day2.html#statistic-beta_1",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Statistic: \\(\\beta_1\\)",
+    "text": "Statistic: \\(\\beta_1\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe relationship between penguin’s bill length and body mass for all penguins in the Palmer Archipelago"
+  },
+  {
+    "objectID": "slides/week7-day2.html#incorporating-penguin-sex",
+    "href": "slides/week7-day2.html#incorporating-penguin-sex",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Incorporating Penguin Sex",
+    "text": "Incorporating Penguin Sex"
+  },
+  {
+    "objectID": "slides/week7-day2.html#incorporating-penguin-bill-length",
+    "href": "slides/week7-day2.html#incorporating-penguin-bill-length",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Incorporating Penguin Bill Length",
+    "text": "Incorporating Penguin Bill Length"
   }
 ]

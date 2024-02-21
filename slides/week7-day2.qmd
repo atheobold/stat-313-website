@@ -1,6 +1,8 @@
 ---
 title: "Confidence Intervals -- Real Life Sampling Distributions"
-format: revealjs
+format: 
+  revealjs:
+    theme: style.scss
 editor: visual
 ---
 
@@ -16,12 +18,12 @@ library(palmerpenguins)
 
 -   Statistical Critique 1 revisions are due tonight
 -   Midterm Projects will be graded by Friday
--   Next week you will work on your second statistical critique 
+-   Next week you will work on your second statistical critique
 
-:::{.callout-caution}
+::: callout-caution
 # Don't forget reflections!
 
-If your reflections are not present by the deadline for revisions, your revisions **are not** eligible to be regraded. Please don't forget your reflections! 
+If your reflections are not present by the deadline for revisions, your revisions **are not** eligible to be regraded. Please don't forget your reflections!
 :::
 
 # What if I only have one sample?
@@ -59,14 +61,10 @@ A Bootstrap Resample
 . . .
 
 ::: {style="font-size: 1em; color: #0F4C81;"}
-We can use the statistics from these bootstrap samples to approximate the true sampling distribution!
+We can use the statistics from these bootstrap resamples to approximate the true sampling distribution!
 :::
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 5em; color: #000000;"}
-Why???
-:::
+# Why do we want a sampling distribution?
 
 ## 
 
@@ -86,11 +84,7 @@ Estimating a population parameter
 
 -   This helps us estimate what values are more or less likely for the population parameter to have.
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Confidence Intervals
-:::
+# Confidence Intervals
 
 . . .
 
@@ -105,12 +99,20 @@ Confidence Intervals
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Using bootstrap resamples to generate a confidence interval
+How do I get this plausible range of values?
 :::
 
 . . .
 
-From your original sample, resample with replacement the same number of times as your original sample.
+<center>
+
+::: {style="font-size: 2em; color: #0F4C81;"}
+Bootstrapping!
+:::
+
+. . .
+
+1. From your original sample, resample with replacement the same number of times as your original sample.
 
 . . .
 
@@ -124,11 +126,11 @@ This is your bootstrap resample.
 
 . . .
 
-Repeat this process many, many times.
+2. Repeat this process many, many times.
 
 . . .
 
-Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.
+3. Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.
 
 <center>
 
@@ -146,7 +148,7 @@ Bootstrap Distribution
 
 . . .
 
-> *definition*: a distribution of the **bootstrap statistics** from every **bootstrap resample**
+> a distribution of the **bootstrap statistics** from every **bootstrap resample**
 
 . . .
 
@@ -160,47 +162,7 @@ Displays the variability in the statistic that could have happened with repeated
 Approximates the true sampling distribution!
 :::
 
-##  {background-color="#B6CADA"}
-
-```{r bootstraps}
-boot1 <- penguins %>%
-  specify(response = bill_length_mm, 
-          explanatory = body_mass_g) %>% 
-  generate(reps = 500, type = "bootstrap") %>% 
-  calculate(stat = "slope") 
-
-boot1_CI <- get_confidence_interval(boot1, 
-                                    level = 0.95, 
-                                    type = "percentile") 
-```
-
-::: {style="font-size: 3em; color: #000000;"}
-Confidence Interval
-:::
-
-**Goal**: Capture a range of plausible values for the population parameter.
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-How do I get this plausible range of values?
-:::
-
-. . .
-
-</br>
-
-<center>
-
-::: {style="font-size: 2em; color: #0F4C81;"}
-Bootstrapping!
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Penguins!
-:::
+# Penguins!
 
 ::: columns
 ::: {.column width="45%"}
@@ -215,11 +177,19 @@ Penguins!
 :::
 :::
 
-## 
+## Statistic: $\beta_1$
 
-::: {style="font-size: 2em; color: #000000;"}
-Statistic: $\beta_1$
-:::
+```{r bootstraps}
+boot1 <- penguins %>%
+  specify(response = bill_length_mm, 
+          explanatory = body_mass_g) %>% 
+  generate(reps = 500, type = "bootstrap") %>% 
+  calculate(stat = "slope") 
+
+boot1_CI <- get_confidence_interval(boot1, 
+                                    level = 0.95, 
+                                    type = "percentile") 
+```
 
 ::: columns
 ::: {.column width="70%"}
@@ -249,13 +219,41 @@ The relationship between penguin's bill length and body mass for **all** penguin
 :::
 :::
 
+
+## In this sample of `r nrow(penguins)` penguins...
+
+```{r}
+penguin_lm <- lm(bill_length_mm ~ body_mass_g, data = penguins) %>% 
+  broom::tidy()
+
+intercept <- penguin_lm %>% 
+  filter(term == "(Intercept)") %>% 
+  select(estimate) 
+
+slope <- penguin_lm %>% 
+  filter(term == "body_mass_g") %>% 
+  select(estimate)
+```
+
+$$\widehat{\text{bill length}} = `r round(intercept, digits = 3)` + `r round(slope, digits = 3)` \times \text{body mass}$$
+
+. . .
+
+</br>
+
+::: {style="font-size: 1.5em;"}
+What slope could have happened in a different sample of penguins?
+:::
+
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Generating a bootstrap resample
+Generating bootstrap resamples and calculating bootstrap statistics
 :::
 
 . . .
+
+</br>
 
 **Step 1:** `specify()` your response and explanatory variables
 
@@ -270,7 +268,7 @@ Generating a bootstrap resample
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Declare your variables!
+Step 1: Specify your variables!
 :::
 
 ![](images/specify_scatterplot.jpg)
@@ -278,16 +276,17 @@ Declare your variables!
 ```{r specify}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "|2"
+#| code-line-numbers: "|2,3"
 
 penguins %>% 
-  specify(response = bill_length_mm, explanatory = body_mass_g)
+  specify(response = bill_length_mm, 
+          explanatory = body_mass_g)
 ```
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Generate your resamples!
+Step 2: Generate your resamples!
 :::
 
 ```{r generate, echo = FALSE, eval = FALSE}
@@ -305,6 +304,8 @@ penguins %>%
 . . .
 
 `reps` -- the number of resamples you want to generate
+
+</br>
 
 `"bootstrap"` -- the method that should be used to generate the new samples
 
@@ -327,7 +328,7 @@ When we resample with replacement from our original sample what are we assuming 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Calculate your statistics!
+Step 3: Calculate your statistics!
 :::
 
 ```{r calculate}
@@ -337,7 +338,7 @@ Calculate your statistics!
 penguins %>% 
   specify(response = bill_length_mm, 
           explanatory = body_mass_g) %>% 
-  generate(reps = 500, 
+  generate(reps = 1000, 
            type = "bootstrap") %>% 
   calculate(stat = "slope")
 ```
@@ -354,34 +355,52 @@ penguins %>%
 The final product
 :::
 
-```{r bootstrap-viz}
-#| fig-align: center
+```{r}
 #| echo: true
+#| code-line-numbers: false
+#| eval: false
+#| label: bootstrap-viz-code
 
 visualize(boot1) + 
-  labs(title = "Bootstrap Distribution of 500 reps", 
-       x = "Slope Statistic")
+  labs(title = "Distribution of 1,000 Bootstrap Resamples", 
+       x = "Slope Statistic", 
+       y = "")
 ```
 
-. . .
+```{r}
+#| fig-align: center
+#| label: bootstrap-viz
+#| echo: false
 
-What does one dot / point on a bootstrap distribution represent?
+visualize(boot1) + 
+  labs(title = "Bootstrap Distribution of 1,000 reps", 
+       x = "Slope Statistic") +
+  theme(plot.title = element_text(size = 24), 
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 12), 
+        axis.text.y = element_text(size = 12)
+        )
+```
+
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-A plausible range of values for: $\beta_1$
+A plausible range of values for $\beta_1$
 :::
 
 ```{r ci-viz}
 #| echo: true
+#| code-line-numbers: false
 #| output-location: slide
 
 visualise(boot1) +
   shade_confidence_interval(endpoints = boot1_CI, 
                             color = "red", fill = "pink") +  
-  labs(title = "Bootstrap Distribution of 500 reps", 
-       x = "Slope Statistic")
+  labs(title = "Distribution of 1,000 Bootstrap Resamples", 
+       x = "Slope Statistic", 
+       y = "")
 ```
 
 ## 
@@ -429,6 +448,14 @@ How do we interpret this interval?
 
 . . .
 
+</br>
+
+> "For every 1 gram increase in a penguin's body mass, we are 95% confident the length of the penguin's bill will increase between 0.00355 and 0.00453mm. 
+
+. . .
+
+</br>
+
 **What does it mean to be 95% confident?**
 
 ##  {background-color="#B6CADA"}
@@ -448,3 +475,10 @@ Classic interpretation mistakes
 . . .
 
 > "We are 95% confident the sample statistic is in our interval."
+
+# Scaling to Multiple Linear Regression
+
+## Incorporating Penguin Sex
+
+## Incorporating Penguin Bill Length
+
