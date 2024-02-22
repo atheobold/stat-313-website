@@ -12,6 +12,9 @@ library(infer)
 library(scales)
 library(stringr)
 library(palmerpenguins)
+library(RColorBrewer)
+
+options(scipen = 999)
 ```
 
 ## Course Updates
@@ -355,6 +358,7 @@ penguins %>%
 The final product
 :::
 
+::: {style="font-size: 0.85em;"}
 ```{r}
 #| echo: true
 #| code-line-numbers: false
@@ -366,6 +370,7 @@ visualize(boot1) +
        x = "Slope Statistic", 
        y = "")
 ```
+:::
 
 ```{r}
 #| fig-align: center
@@ -390,6 +395,7 @@ visualize(boot1) +
 A plausible range of values for $\beta_1$
 :::
 
+::: {style="font-size: 0.75em;"}
 ```{r ci-viz}
 #| echo: true
 #| code-line-numbers: false
@@ -397,11 +403,13 @@ A plausible range of values for $\beta_1$
 
 visualise(boot1) +
   shade_confidence_interval(endpoints = boot1_CI, 
-                            color = "red", fill = "pink") +  
+                            color = "red", 
+                            fill = "pink") +  
   labs(title = "Distribution of 1,000 Bootstrap Resamples", 
        x = "Slope Statistic", 
        y = "")
 ```
+:::
 
 ## 
 
@@ -412,6 +420,7 @@ The 95% confidence interval is...
 ```{r ci}
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
 get_confidence_interval(boot1, 
                         level = 0.95, 
                         type = "percentile")
@@ -480,5 +489,121 @@ Classic interpretation mistakes
 
 ## Incorporating Penguin Sex
 
+```{r}
+penguins %>% 
+  drop_na(sex) %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = sex)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Bill Length (mm)", 
+       y = "Body Mass (g)", 
+       color = "Sex") +
+  scale_color_brewer(palette = "Dark2")
+```
+
+## What changes?
+
+The original sample of `r nrow(penguins)` penguins were broken down into the following groups: 
+
+```{r}
+penguins %>% 
+  drop_na(sex) %>% 
+  count(sex) %>% 
+  knitr::kable(col.names = c("Sex", "Sample Size")) %>% 
+  kableExtra::kable_styling()
+```
+
+. . .
+
+Before we resampled with replacement `r nrow(penguins)` times. 
+
+> If we use that same procedure, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?
+
+## Getting our Observed Statistic 
+
+**Step 1: Fitting our Model**
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| echo: true
+#| code-line-numbers: "|2|3"
+
+observed_fit <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g*sex) %>%
+  fit()
+```
+:::
+
+:::{.callout-tip}
+# Syntax changes
+
+When we have **multiple** explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. We also use the `fit()` function instead of the `calculate()` function. 
+:::
+
+## Getting our Observed Statistic 
+
+**Step 2: Finding our Statistic**
+
+```{r}
+#| echo: false
+#| code-line-numbers: false
+observed_fit %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling()
+```
+
+::: {style="font-size: 1.5em; color: #ed8402;"}
+What is our observed statistic for this investigation?
+:::
+
+## Generating Bootstrap Fits
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| cache: true
+#| echo: true
+#| code-line-numbers: "|3"
+
+bootstrap_fits <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g*sex) %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  fit()
+```
+:::
+
+## Obtaining a Bootstrap Confidence Interval
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| echo: true
+#| code-line-numbers: "|2"
+
+get_confidence_interval(bootstrap_fits,
+                        point_estimate = observed_fit,
+                        level = 0.90, 
+                        type = "percentile")
+
+```
+:::
+
+## How do we interpret this interval?
+
+```{r}
+get_confidence_interval(bootstrap_fits,
+                        point_estimate = observed_fit,
+                        level = 0.90, 
+                        type = "percentile") %>% 
+  filter(term == "body_mass_g:sexmale") %>% 
+  select(lower_ci, upper_ci) %>% 
+  knitr::kable(col.names = c("Lower Bound", "Upper Bound")) %>% 
+  kableExtra::kable_styling()
+```
+
+. . .
+
+> We are 90% confident that the for every 1 gram increase in a penguin's body mass, the length of a **male** penguin's bill is between 0.0000368 and 0.00191mm shorter than a **female** penguin's bill. 
+
 ## Incorporating Penguin Bill Length
+
+
 
