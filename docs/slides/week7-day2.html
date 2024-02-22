@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>STAT 313 / 513 - Winter 2024 - Confidence Intervals – Real Life Sampling Distributions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -402,8 +402,8 @@
 <h2>Course Updates</h2>
 <ul>
 <li>Statistical Critique 1 revisions are due tonight</li>
-<li>Midterm Projects will be graded by Friday</li>
-<li>Next week you will work on your second statistical critique</li>
+<li>Midterm Projects will be graded by Sunday</li>
+<li>Lab 6 revisions will be due next Thursday</li>
 </ul>
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
@@ -506,33 +506,41 @@
 </div>
 <div class="fragment">
 <center>
-<div style="font-size: 2em; color: #0F4C81;">
+<div style="font-size: 1.25em; color: #0F4C81;">
 <p>Bootstrapping!</p>
 </div>
 </center></div>
 <div class="fragment">
+<div class="small">
 <ol type="1">
 <li>From your original sample, resample with replacement the same number of times as your original sample.</li>
 </ol>
 </div>
+</div>
 <div class="fragment">
 <center>
-<div style="font-size: 1em; color: #0F4C81;">
+<div style="font-size: 0.75em; color: #0F4C81;">
 <p>This is your bootstrap resample.</p>
 </div>
 </center>
 </div>
 <div class="fragment">
+<div class="small">
 <ol start="2" type="1">
 <li>Repeat this process many, many times.</li>
 </ol>
 </div>
+</div>
 <div class="fragment">
+<div class="small">
 <ol start="3" type="1">
 <li>Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.</li>
 </ol>
+</div>
+</div>
+<div class="fragment">
 <center>
-<div style="font-size: 1em; color: #0F4C81;">
+<div style="font-size: 0.75em; color: #0F4C81;">
 <p>These are your bootstrap statistics</p>
 </div>
 </center>
@@ -740,8 +748,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.00352</td>
-<td style="text-align: right;">0.00453</td>
+<td style="text-align: right;">0.00355</td>
+<td style="text-align: right;">0.00455</td>
 </tr>
 </tbody>
 </table>
@@ -750,7 +758,6 @@
 </div>
 </div>
 <div class="fragment">
-<p><br></p>
 <p><strong>What do we hope is captured by this interval?</strong></p>
 </div>
 </section>
@@ -760,19 +767,19 @@
 <p>How do we interpret this interval?</p>
 </div>
 <div class="fragment">
+<div class="small">
 <blockquote>
 <p>“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453</p>
 </blockquote>
 </div>
+</div>
 <div class="fragment">
 <p><br></p>
+<div class="small">
 <blockquote>
 <p>“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.</p>
 </blockquote>
 </div>
-<div class="fragment">
-<p><br></p>
-<p><strong>What does it mean to be 95% confident?</strong></p>
 </div>
 </section>
 <section id="section-14" class="slide level2" data-background-color="#B6CADA">
@@ -798,13 +805,13 @@
 <h1>Scaling to Multiple Linear Regression</h1>
 
 </section>
-<section id="incorporating-penguin-sex" class="slide level2">
-<h2>Incorporating Penguin Sex</h2>
+<section id="how-does-the-relationship-between-bill-length-and-body-mass-change-based-on-a-penguins-sex" class="slide level2">
+<h2>How does the relationship between bill length and body mass change based on a penguin’s sex?</h2>
 
 <img data-src="week7-day2_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="what-changes" class="slide level2">
 <h2>What changes?</h2>
-<p>The original sample of 344 penguins were broken down into the following groups:</p>
+<p>The original sample of 344 penguins were broken down into the following groups (plus 11 <code>NA</code> values):</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -832,7 +839,7 @@
 <div class="fragment">
 <p>Before we resampled with replacement 344 times.</p>
 <blockquote>
-<p>If we use that same procedure, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?</p>
+<p>If we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?</p>
 </blockquote>
 </div>
 </section>
@@ -842,7 +849,7 @@
 <div style="font-size: 0.75em;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>observed_fit <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g<span class="sc">*</span>sex) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">*</span> sex) <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -904,7 +911,7 @@
 <div style="font-size: 0.75em;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>bootstrap_fits <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g<span class="sc">*</span>sex) <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">*</span> sex) <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb8-4"><a></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -922,10 +929,10 @@
 <pre><code># A tibble: 4 × 3
   term                lower_ci   upper_ci
   &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;
-1 body_mass_g          0.00363  0.00490  
-2 body_mass_g:sexmale -0.00191 -0.0000368
-3 intercept           23.0     28.4      
-4 sexmale              0.669    9.70     </code></pre>
+1 body_mass_g          0.00365  0.00487  
+2 body_mass_g:sexmale -0.00202 -0.0000684
+3 intercept           22.9     28.3      
+4 sexmale              0.995   10.2      </code></pre>
 </div>
 </div>
 </div>
@@ -943,8 +950,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">-0.0019055</td>
-<td style="text-align: right;">-0.0000368</td>
+<td style="text-align: right;">-0.0020159</td>
+<td style="text-align: right;">-0.0000684</td>
 </tr>
 </tbody>
 </table>
@@ -954,19 +961,89 @@
 </div>
 <div class="fragment">
 <blockquote>
-<p>We are 90% confident that the for every 1 gram increase in a penguin’s body mass, the length of a <strong>male</strong> penguin’s bill is between 0.0000368 and 0.00191mm shorter than a <strong>female</strong> penguin’s bill.</p>
+<p>We are 90% confident that the for every 100 gram increase in a penguin’s body mass (~0.25lbs), the length of a <strong>male</strong> penguin’s bill is between 0.068 and 2.02mm shorter than a <strong>female</strong> penguin’s bill.</p>
 </blockquote>
 </div>
 </section>
-<section id="incorporating-penguin-bill-length" class="slide level2">
-<h2>Incorporating Penguin Bill Length</h2>
+<section id="how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" class="slide level2">
+<h2>How do body mass and flipper length influence a penguin’s bill length?</h2>
+<div class="fragment">
+<div style="font-size: 0.75em;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>observed_fit <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>bootstrap_fits <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-bootstrap-distributions" class="slide level2">
+<h2>Visualizing Bootstrap Distributions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">visualise</span>(bootstrap_fits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="quarto-auto-generated-content">
+</div>
+<img data-src="week7-day2_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="obtaining-and-interpreting-confidence-intervals" class="slide level2">
+<h2>Obtaining and Interpreting Confidence Intervals</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Lower Bound</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Upper Bound</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: right;">-0.0002028</td>
+<td style="text-align: right;">0.0015676</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">0.1728445</td>
+<td style="text-align: right;">0.2663523</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">intercept</td>
+<td style="text-align: right;">-9.4472566</td>
+<td style="text-align: right;">3.5454740</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="fragment">
+<p>How would you interpret the confidence interval for <code>flipper_length_mm</code>? For <code>body_mass_g</code>?</p>
+</div>
+</section>
+<section id="holding-the-other-variables-constant" class="slide level2">
+<h2>Holding the Other Variable(s) Constant</h2>
+<blockquote>
+<p>Holding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin’s bill length.</p>
+</blockquote>
+<div class="fragment">
+<blockquote>
+<p>Holding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin’s bill length.</p>
+</blockquote>
+
+
+</div>
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="The names of your group members here!">
-<meta name="dcterms.date" content="2023-05-18">
+<meta name="dcterms.date" content="2024-02-22">
 
 <title>STAT 313 / 513 - Winter 2024 - Lab 7: Confidence Intervals for Water Temperature and Latitude</title>
 <style>
@@ -337,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the Data</a></li>
   <li><a href="#visualizing-relationships" id="toc-visualizing-relationships" class="nav-link" data-scroll-target="#visualizing-relationships">Visualizing Relationships</a>
   <ul class="collapse">
-  <li><a href="#summarizing-the-relationships" id="toc-summarizing-the-relationships" class="nav-link" data-scroll-target="#summarizing-the-relationships">Summarizing the Relationships</a></li>
+  <li><a href="#summarizing-the-relationship" id="toc-summarizing-the-relationship" class="nav-link" data-scroll-target="#summarizing-the-relationship">Summarizing the Relationship</a></li>
   </ul></li>
   <li><a href="#bootstrap-distribution" id="toc-bootstrap-distribution" class="nav-link" data-scroll-target="#bootstrap-distribution">Bootstrap Distribution</a></li>
   <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
@@ -367,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 18, 2023</p>
+      <p class="date">February 22, 2024</p>
     </div>
   </div>
   
@@ -384,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Today we will explore the <code>pie_crab</code> dataset contained in the <strong>lterdatasampler</strong> R package. The data is from a study by Johnson et al.&nbsp;at the Plum Island Ecosystem Long Term Ecological Research site, studying the relationship between the size (carapace width) of a Fiddler Crab and the geographical location of its habitat. These data can be used to investigate if Bergmann’s Rule applies to Fiddler Crabs, or specifically that the size of a crab increases as the distance from the equator increases.</p>
 <section id="motivation" class="level3">
 <h3 class="anchored" data-anchor-id="motivation">Motivation</h3>
-<p>The students who investigated this relationship for their midterm project found that when <em>both</em> latitude <em>and</em> water temperature are included as explanatory variables in the multiple regression model, the coefficient associated with water temperature doesn’t make sense. Namely, the model suggests warmer water temperatures are associated with larger crab sizes. However, we know that the water is warmer near the equator, which is where the crab sizes should be <strong>smaller</strong>. Rather perplexing!</p>
+<p>The students who investigated this relationship for their Midterm Project found that when <em>both</em> latitude <em>and</em> water temperature are included as explanatory variables in the multiple regression model, the coefficient associated with water temperature doesn’t make sense. Namely, the model suggests warmer water temperatures are associated with larger crab sizes. However, we know that the water is warmer near the equator, which is where the crab sizes should be <strong>smaller</strong>. Rather perplexing!</p>
 <p>The moral of the story is that water temperature and latitude are high correlated with each other, so including them both as explanatory variables leads to <em>multicollinearity</em> – something we <strong>do not</strong> want in our multiple linear regression.</p>
 </section>
 <section id="our-investigation" class="level3">
@@ -394,34 +394,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="cleaning-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-the-data">Cleaning the Data</h2>
-<p>The data contains information on at total of 392 Fiddler Crabs caught at 13 marshes on the Atlantic coast of the United States in summer 2016. However, at each marsh, there is only <strong>one</strong> recorded water temperature. Meaning, we need to collapse our dataset to have only <strong>one</strong> observation per latitude (marsh).</p>
-<p><strong>1. Fill in the code below to create a new dataset called <code>pie_crab_clean</code> which has 13 observations – one per latitude / marsh.</strong></p>
+<p>The data contains information on at total of 392 Fiddler Crabs caught at 13 marshes on the Atlantic coast of the United States in summer 2016. However, at each marsh, there is only <strong>one</strong> recorded water temperature. Meaning, we need to collapse our dataset to have only <strong>one</strong> observation per marsh.</p>
+<p><strong>1. Fill in the code below to create a new dataset called <code>marsh_info</code> which has 13 observations – one per marsh.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pie_crab_clean <span class="ot">&lt;-</span> pie_crab <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>marsh_info <span class="ot">&lt;-</span> pie_crab <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(____) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>From this point forward, you should use the <code>pie_crab_clean</code> dataset for EVERY problem.</strong> Keep in mind that you are no longer analyzing data on crabs! The dataset you have is on marshes along the Atlantic coast!</p>
+<p><strong>From this point forward, you should use the <code>marsh_info</code> dataset for EVERY problem.</strong> Keep in mind that you are no longer analyzing data on crabs! The dataset you have is on marshes along the Atlantic coast!</p>
 </section>
 <section id="visualizing-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-relationships">Visualizing Relationships</h2>
-<p><strong>2. Create a scatterplot modeling the relationship between latitude (explanatory) and water temperature (response) for these 13 marshes.</strong></p>
-<p><em>Don’t forget to add descriptive axis labels!</em></p>
+<p><strong>2. Create a scatterplot modeling the relationship between latitude (explanatory) and water temperature (response) for these 13 marshes.</strong> <em>Don’t forget to add descriptive axis labels!</em></p>
 <p><strong>3. Describe the relationship you see in the scatterplot. Be sure to address the four aspects we discussed in class: form, direction, strength, and unusual points!</strong> Keep in mind that you are no longer analyzing data on crabs! The dataset you have is on marshes along the Atlantic coast!</p>
-<section id="summarizing-the-relationships" class="level3">
-<h3 class="anchored" data-anchor-id="summarizing-the-relationships">Summarizing the Relationships</h3>
-<p>Now that you’ve visualized the relationship, let’s summarize this relationship with some statistics. As we discussed in Week 4, there are two statistics you can use to summarize a linear relationship:</p>
-<ol type="1">
-<li>the correlation</li>
-<li>the slope</li>
-</ol>
-<p>Let’s calculate both!</p>
-<p><strong>4. Use the <code>get_correlation()</code> function to calculate the correlation between the water temperature and latitude for these 13 marshes.</strong></p>
-<p><strong>5. Fill in the code below to calculate the observed slope for the relationship between the water temperature (response) and latitude (explanatory).</strong></p>
+<section id="summarizing-the-relationship" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-the-relationship">Summarizing the Relationship</h3>
+<p>Now that you’ve visualized the relationship, let’s summarize this relationship with a statistic. Specifically, we are interested in the slope statistic, as it captures the relationship between latitude and water temperature.</p>
+<p><strong>4. Fill in the code below to calculate the observed slope for the relationship between the water temperature (response) and latitude (explanatory).</strong></p>
 <p><em>Note: Nothing will be output when you run this code!</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>obs_slope <span class="ot">&lt;-</span> pie_crab_clean <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>obs_slope <span class="ot">&lt;-</span> marsh_info <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> ____, </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">explanatory =</span> ____) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> ____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -436,18 +429,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Step 2: <code>generate()</code> lots of bootstrap resamples</p>
 <p>Step 3: <code>calculate()</code> for each of the <code>generated()</code> samples, calculate the statistic you are interested in</p>
 <p>Let’s give this a try!</p>
-<p><strong>6. Fill in the code to generate 500 bootstrap slope statistics (from 500 bootstrap resamples).</strong></p>
+<p><strong>5. Fill in the code to generate 500 bootstrap slope statistics (from 500 bootstrap resamples).</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bootstrap <span class="ot">&lt;-</span> pie_crab_clean <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bootstrap <span class="ot">&lt;-</span> marsh_info <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> ____, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">explanatory =</span> ____) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> ____, </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">type =</span> ____) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> ____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Alright, now that we have the bootstrap slope statistics, let’s see what it looks like! Let’s use the <code>visualize()</code> function (not <code>ggplot()</code>!) to make a quick visualization of the statistics you calculated above.</p>
-<p><strong>7. Use the <code>visualize()</code> function to create a simple histogram of your 500 bootstrap statistics.</strong></p>
-<p><em>It would be nice to change the x-axis label to describe what statistic is being plotted!</em></p>
+<p>Alright, now that we have the bootstrap slope statistics, let’s see how it looks! Let’s use the <code>visualize()</code> function (not <code>ggplot()</code>!) to make a quick visualization of the statistics you calculated above.</p>
+<p><strong>6. Use the <code>visualize()</code> function to create a simple histogram of your 500 bootstrap statistics.</strong> <em>It would be nice to change the x-axis label to describe what statistic is being plotted!</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to visualize bootstrap statistics</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -456,24 +448,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
 <p>The next step to obtain our confidence interval! First we need to determine what percentage of statistics we want to keep in the confidence interval. 90%? 95%? 99%? 80%?</p>
 <p>This seems like a study where we care a bit less about our interval capturing the true value, at least compared to something like a medical study. So, I think this could be a great instance to use an 85% confidence interval.</p>
-<p><strong>8. Use the <code>get_confidence_interval()</code> function to find the 85% confidence interval from your bootstrap distribution, using the percentile method!</strong></p>
+<p><strong>7. Use the <code>get_confidence_interval()</code> function to find the 90% confidence interval from your bootstrap distribution, using the percentile method!</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to obtain a 85% PERCENTILE based confidence interval</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to obtain a 90% PERCENTILE based confidence interval</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>9. Interpret the confidence interval you obtained in #8. Make sure to include the context of the data and the population of interest!</strong></p>
+<p><strong>8. Interpret the confidence interval you obtained in #7. Make sure to include the context of the data and the population of interest!</strong></p>
 <p>Just for fun, let’s compare the confidence we obtained using a percentile method with an interval found using the SE method.</p>
-<p><strong>10. Use the <code>get_confidence_interval()</code> function to find the 85% confidence interval from your bootstrap distribution, using the SE method!</strong></p>
-<p><em>Remember – with the SE method, you need to specify the point estimate!</em></p>
+<p><strong>9. Use the <code>get_confidence_interval()</code> function to find the 90% confidence interval from your bootstrap distribution, using the SE method!</strong> <em>Remember – with the SE method, you need to specify the point estimate!</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to obtain a 85% SE based confidence interval</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to obtain a 90% SE based confidence interval</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>11. How do your confidence intervals compare? Based on the shape of the bootstrap distribution, would you expect for these methods to yield similar results?</strong></p>
+<p><strong>10. How do your confidence intervals compare? Based on the shape of the bootstrap distribution, would you expect for these methods to yield similar results?</strong></p>
 <p><em>Hint: Think about the conditions for using the SE method to obtain a confidence interval!</em></p>
 </section>
 <section id="bootstrap-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="bootstrap-assumptions">Bootstrap Assumptions</h2>
 <p>A bootstrap distribution aims to simulate the variability we’d get from other samples from our population. However, the accuracy of these samples relies on the quality of our original sample.</p>
-<p><strong>12. Based on the information given, how do you feel about the assumption a bootstrap distribution makes about the original sample? What issues do you believe might prevent this assumption being appropriate?</strong></p>
+<p><strong>11. Based on the information given, how do you feel about the assumption a bootstrap distribution makes about the original sample? What issues do you believe might prevent this assumption being appropriate?</strong></p>
 
 
 </section>

@@ -718,7 +718,7 @@
     "href": "slides/week7-day2.html#section-3",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do I get this plausible range of values?\n\n\n\n\nBootstrapping!\n\n\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\nThese are your bootstrap statistics"
+    "text": "How do I get this plausible range of values?\n\n\n\n\nBootstrapping!\n\n\n\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\n\n\n\nThese are your bootstrap statistics"
   },
   {
     "objectID": "slides/week7-day2.html#section-4",
@@ -781,14 +781,14 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00352\n0.00453\n\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00455\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
     "href": "slides/week7-day2.html#section-13",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do we interpret this interval?\n\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm.\n\n\n\n\nWhat does it mean to be 95% confident?"
+    "text": "How do we interpret this interval?\n\n\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n\n\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm."
   },
   {
     "objectID": "slides/week7-day2.html#section-14",
@@ -1992,7 +1992,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5  Lab 4 Feedback\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\nFormatting Your Data (STAT 513)\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻  Due February 19  Lab 6 Feedback\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n📋\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, January 7\nWelcome to Stat 313 / 513 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nTue, January 9\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 11 (class held asynchronously)\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nTue, January 16 (no class)\n\n📖\n\n\n\n\n\n\n\n\nThu, January 18\nVisualizing & Summarizing Numerical Variables\n\n🖥\n📋\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nTue, January 23 (class held asynchronously)\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nThu, January 25\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n4\nTue, January 30\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 1\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5  Lab 4 Feedback\n\n\n\n\n\nMon, February 5\nMidterm Project Proposal & Statistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n📁 STAT 313\n📁 STAT 513\n\n\n5\nTue, February 6\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\nFormatting Your Data (STAT 513)\n\n\n\nThu, February 8\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, February 11\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nTue, February 13\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 15\nMachine Learning\n\n🖥\n\n💻  Due February 19  Lab 6 Feedback\n\n\n\n\n\nSun, February 18\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nTue, February 20\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nThu, February 22\nConfidence Intervals\n\n🖥\n\n💻  Due February 26\n\n\n\n\n8\nTue, February 27\np-values & Hypothesis Tests\n📖\n🖥\n\n\n\n\n\n\n\nThu, February 29\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4\n\n\n\n\n\nMon, March 4\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nTue, March 5\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nThur, March 7\nInference for OWA & Model Selection\n\n\nSelecting a OWA Model: 📋\n\n\n\n\n\n\nSun, March 10\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nTue, March 12\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nSelecting a TWA Model: 📋\n\n\n\n\n\n\nThu, March 14\nLast Day of STAT 313\n\n🖥\nAssessing Independence: 📋\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, March 17\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nTues, March 19\n4:10-7:00pm\nSTAT 313-02\n\n\n\n\n\n\n\n\n\nThur, March 21\n10:10am-1:00pm\nSTAT 513-01\n\n\n\n\n\n\n\n\n\nThur, March 21\n1:10-4:00pm\nSTAT 313-01",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -6946,7 +6946,7 @@
     "href": "slides/week7-day2.html#course-updates",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Course Updates",
-    "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Friday\nNext week you will work on your second statistical critique\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+    "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Sunday\nLab 6 revisions will be due next Thursday\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
   },
   {
     "objectID": "slides/week7-day2.html",
@@ -7009,7 +7009,7 @@
     "href": "slides/week7-day2.html#what-changes",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "What changes?",
-    "text": "What changes?\nThe original sample of 344 penguins were broken down into the following groups:\n\n\n\n\n\nSex\nSample Size\n\n\n\n\nfemale\n165\n\n\nmale\n168\n\n\n\n\n\n\n\n\nBefore we resampled with replacement 344 times.\n\nIf we use that same procedure, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?"
+    "text": "What changes?\nThe original sample of 344 penguins were broken down into the following groups (plus 11 NA values):\n\n\n\n\n\nSex\nSample Size\n\n\n\n\nfemale\n165\n\n\nmale\n168\n\n\n\n\n\n\n\n\nBefore we resampled with replacement 344 times.\n\nIf we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?"
   },
   {
     "objectID": "slides/week7-day2.html#fitting-our-model",
@@ -7023,14 +7023,14 @@
     "href": "slides/week7-day2.html#generating-bootstrap-fits",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Generating Bootstrap Fits",
-    "text": "Generating Bootstrap Fits\n\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g*sex) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
+    "text": "Generating Bootstrap Fits\n\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g * sex) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
   },
   {
     "objectID": "slides/week7-day2.html#getting-our-observed-statistic",
     "href": "slides/week7-day2.html#getting-our-observed-statistic",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Getting our Observed Statistic",
-    "text": "Getting our Observed Statistic\nStep 1: Fitting our Model\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g*sex) %&gt;%\n  fit()\n\n\n\n\n\n\n\n\nSyntax changes\n\n\nWhen we have multiple explanatory variables, we need to use the “tilde” (~) syntax to specify our model. We also use the fit() function instead of the calculate() function."
+    "text": "Getting our Observed Statistic\nStep 1: Fitting our Model\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g * sex) %&gt;%\n  fit()\n\n\n\n\n\n\n\n\nSyntax changes\n\n\nWhen we have multiple explanatory variables, we need to use the “tilde” (~) syntax to specify our model. We also use the fit() function instead of the calculate() function."
   },
   {
     "objectID": "slides/week7-day2.html#getting-our-observed-statistic---step-1",
@@ -7051,7 +7051,7 @@
     "href": "slides/week7-day2.html#obtaining-a-bootstrap-confidence-interval",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Obtaining a Bootstrap Confidence Interval",
-    "text": "Obtaining a Bootstrap Confidence Interval\n\n\nget_confidence_interval(bootstrap_fits,\n                        point_estimate = observed_fit,\n                        level = 0.90, \n                        type = \"percentile\")\n\n# A tibble: 4 × 3\n  term                lower_ci   upper_ci\n  &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;\n1 body_mass_g          0.00363  0.00490  \n2 body_mass_g:sexmale -0.00191 -0.0000368\n3 intercept           23.0     28.4      \n4 sexmale              0.669    9.70"
+    "text": "Obtaining a Bootstrap Confidence Interval\n\n\nget_confidence_interval(bootstrap_fits,\n                        point_estimate = observed_fit,\n                        level = 0.90, \n                        type = \"percentile\")\n\n# A tibble: 4 × 3\n  term                lower_ci   upper_ci\n  &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;\n1 body_mass_g          0.00365  0.00487  \n2 body_mass_g:sexmale -0.00202 -0.0000684\n3 intercept           22.9     28.3      \n4 sexmale              0.995   10.2"
   },
   {
     "objectID": "slides/week7-day2.html#getting-our-observed-statistic-1",
@@ -7065,6 +7065,48 @@
     "href": "slides/week7-day2.html#how-do-we-interpret-this-interval",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "How do we interpret this interval?",
-    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0019055\n-0.0000368\n\n\n\n\n\n\n\n\n\nWe are 90% confident that the for every 1 gram increase in a penguin’s body mass, the length of a male penguin’s bill is between 0.0000368 and 0.00191mm shorter than a female penguin’s bill."
+    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0020159\n-0.0000684\n\n\n\n\n\n\n\n\n\nWe are 90% confident that the for every 100 gram increase in a penguin’s body mass (~0.25lbs), the length of a male penguin’s bill is between 0.068 and 2.02mm shorter than a female penguin’s bill."
+  },
+  {
+    "objectID": "slides/week7-day2.html#incorporating-penguin-flipper-length",
+    "href": "slides/week7-day2.html#incorporating-penguin-flipper-length",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Incorporating Penguin Flipper Length",
+    "text": "Incorporating Penguin Flipper Length\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  fit()\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
+  },
+  {
+    "objectID": "slides/week7-day2.html#obtaining-and-interpreting-confidence-intervals",
+    "href": "slides/week7-day2.html#obtaining-and-interpreting-confidence-intervals",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Obtaining and Interpreting Confidence Intervals",
+    "text": "Obtaining and Interpreting Confidence Intervals\n\n\n\n\n\nterm\nLower Bound\nUpper Bound\n\n\n\n\nbody_mass_g\n-0.0002028\n0.0015676\n\n\nflipper_length_mm\n0.1728445\n0.2663523\n\n\nintercept\n-9.4472566\n3.5454740\n\n\n\n\n\n\n\n\nHow would you interpret the confidence interval for flipper_length_mm? For body_mass_g?"
+  },
+  {
+    "objectID": "slides/week7-day2.html#holding-the-other-variables-constant",
+    "href": "slides/week7-day2.html#holding-the-other-variables-constant",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Holding the Other Variable(s) Constant",
+    "text": "Holding the Other Variable(s) Constant\n\nHolding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin’s bill length.\n\n\n\nHolding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin’s bill length."
+  },
+  {
+    "objectID": "slides/week7-day2.html#how-does-the-relationship-between-bill-length-and-body-mass-change-based-on-a-penguins-sex",
+    "href": "slides/week7-day2.html#how-does-the-relationship-between-bill-length-and-body-mass-change-based-on-a-penguins-sex",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "How does the relationship between bill length and body mass change based on a penguin’s sex?",
+    "text": "How does the relationship between bill length and body mass change based on a penguin’s sex?"
+  },
+  {
+    "objectID": "slides/week7-day2.html#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length",
+    "href": "slides/week7-day2.html#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "How do body mass and flipper length influence a penguin’s bill length?",
+    "text": "How do body mass and flipper length influence a penguin’s bill length?\n\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  fit()\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
+  },
+  {
+    "objectID": "slides/week7-day2.html#visualizing-bootstrap-distributions",
+    "href": "slides/week7-day2.html#visualizing-bootstrap-distributions",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Visualizing Bootstrap Distributions",
+    "text": "Visualizing Bootstrap Distributions\n\nvisualise(bootstrap_fits)"
   }
 ]

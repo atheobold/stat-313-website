@@ -20,8 +20,8 @@ options(scipen = 999)
 ## Course Updates
 
 -   Statistical Critique 1 revisions are due tonight
--   Midterm Projects will be graded by Friday
--   Next week you will work on your second statistical critique
+-   Midterm Projects will be graded by Sunday
+-   Lab 6 revisions will be due next Thursday
 
 ::: callout-caution
 # Don't forget reflections!
@@ -109,19 +109,21 @@ How do I get this plausible range of values?
 
 <center>
 
-::: {style="font-size: 2em; color: #0F4C81;"}
+::: {style="font-size: 1.25em; color: #0F4C81;"}
 Bootstrapping!
 :::
 
 . . .
 
+:::{.small}
 1. From your original sample, resample with replacement the same number of times as your original sample.
+:::
 
 . . .
 
 <center>
 
-::: {style="font-size: 1em; color: #0F4C81;"}
+::: {style="font-size: 0.75em; color: #0F4C81;"}
 This is your bootstrap resample.
 :::
 
@@ -129,15 +131,21 @@ This is your bootstrap resample.
 
 . . .
 
+::: {.small}
 2. Repeat this process many, many times.
+:::
 
 . . .
 
+::: {.small}
 3. Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.
+:::
+
+. . .
 
 <center>
 
-::: {style="font-size: 1em; color: #0F4C81;"}
+::: {style="font-size: 0.75em; color: #0F4C81;"}
 These are your bootstrap statistics
 :::
 
@@ -441,8 +449,6 @@ get_confidence_interval(boot1,
 
 . . .
 
-</br>
-
 **What do we hope is captured by this interval?**
 
 ## 
@@ -453,19 +459,17 @@ How do we interpret this interval?
 
 . . .
 
+:::{.small}
 > "We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453
+:::
 
 . . .
 
 </br>
 
+:::{.small}
 > "For every 1 gram increase in a penguin's body mass, we are 95% confident the length of the penguin's bill will increase between 0.00355 and 0.00453mm. 
-
-. . .
-
-</br>
-
-**What does it mean to be 95% confident?**
+:::
 
 ##  {background-color="#B6CADA"}
 
@@ -487,7 +491,7 @@ Classic interpretation mistakes
 
 # Scaling to Multiple Linear Regression
 
-## Incorporating Penguin Sex
+## How does the relationship between bill length and body mass change based on a penguin's sex?
 
 ```{r}
 penguins %>% 
@@ -495,15 +499,15 @@ penguins %>%
   ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = sex)) +
   geom_point() + 
   geom_smooth(method = "lm") +
-  labs(x = "Bill Length (mm)", 
-       y = "Body Mass (g)", 
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)", 
        color = "Sex") +
   scale_color_brewer(palette = "Dark2")
 ```
 
 ## What changes?
 
-The original sample of `r nrow(penguins)` penguins were broken down into the following groups: 
+The original sample of `r nrow(penguins)` penguins were broken down into the following groups (plus 11 `NA` values): 
 
 ```{r}
 penguins %>% 
@@ -517,7 +521,7 @@ penguins %>%
 
 Before we resampled with replacement `r nrow(penguins)` times. 
 
-> If we use that same procedure, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?
+> If we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?
 
 ## Getting our Observed Statistic 
 
@@ -529,7 +533,7 @@ Before we resampled with replacement `r nrow(penguins)` times.
 #| code-line-numbers: "|2|3"
 
 observed_fit <- penguins %>%
-  specify(bill_length_mm ~ body_mass_g*sex) %>%
+  specify(bill_length_mm ~ body_mass_g * sex) %>%
   fit()
 ```
 :::
@@ -565,7 +569,7 @@ What is our observed statistic for this investigation?
 #| code-line-numbers: "|3"
 
 bootstrap_fits <- penguins %>%
-  specify(bill_length_mm ~ body_mass_g*sex) %>%
+  specify(bill_length_mm ~ body_mass_g * sex) %>%
   generate(reps = 1000, type = "bootstrap") %>%
   fit()
 ```
@@ -601,9 +605,64 @@ get_confidence_interval(bootstrap_fits,
 
 . . .
 
-> We are 90% confident that the for every 1 gram increase in a penguin's body mass, the length of a **male** penguin's bill is between 0.0000368 and 0.00191mm shorter than a **female** penguin's bill. 
+> We are 90% confident that the for every 100 gram increase in a penguin's body mass (~0.25lbs), the length of a **male** penguin's bill is between 0.068 and 2.02mm shorter than a **female** penguin's bill. 
 
-## Incorporating Penguin Bill Length
+## How do body mass and flipper length influence a penguin's bill length?
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+#| cache: true
+
+observed_fit <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
+  fit()
+
+bootstrap_fits <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  fit()
+```
+:::
+
+## Visualizing Bootstrap Distributions
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+visualise(bootstrap_fits)
+```
+
+## Obtaining and Interpreting Confidence Intervals
+
+```{r}
+get_confidence_interval(bootstrap_fits,
+                        point_estimate = observed_fit,
+                        level = 0.90, 
+                        type = "percentile") %>% 
+  knitr::kable(col.names = c("term", "Lower Bound", "Upper Bound")) %>% 
+  kableExtra::kable_styling()
+```
+
+. . .
+
+How would you interpret the confidence interval for `flipper_length_mm`? For `body_mass_g`?
+
+## Holding the Other Variable(s) Constant
+
+> Holding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin's bill length. 
+
+. . .
+
+> Holding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin's bill length. 
+
+
+
+
 
 
 
