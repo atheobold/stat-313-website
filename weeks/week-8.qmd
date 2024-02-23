@@ -87,7 +87,7 @@ hypothesis tests
 -   The probability of a Type II error stays the same.
 -   The probability of a Type II error goes up.
 
-**8. If you obtained a small p-value (e.g., 0.02), what could you say about your confidence interval?**
+**8. If you obtained a small p-value (e.g., 0.02), what could you say about what you would expect if you constructed a 95% confidence interval?**
 
 -   It would contain the null hypothesized value.
 -   It would not contain the null hypothesized value.
