@@ -126,7 +126,7 @@ Alright, now that we have the bootstrap slope statistics, let's see how it looks
 
 The next step to obtain our confidence interval! First we need to determine what percentage of statistics we want to keep in the confidence interval. 90%? 95%? 99%? 80%?
 
-This seems like a study where we care a bit less about our interval capturing the true value, at least compared to something like a medical study. So, I think this could be a great instance to use an 85% confidence interval.
+This seems like a study where we care a bit less about our interval capturing the true value, at least compared to something like a medical study. So, I think this could be a great instance to use a 90% confidence interval.
 
 **7. Use the `get_confidence_interval()` function to find the 90% confidence interval from your bootstrap distribution, using the percentile method!**
 
