@@ -1,4 +1,4 @@
-# Website for STAT 313 at Cal Poly (Spring 2023)
+# Website for STAT 313 at Cal Poly
 
 🔗 https://atheobold.github.io/stat-313-website/
 
