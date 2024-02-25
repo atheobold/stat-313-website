@@ -1,0 +1,474 @@
+---
+title: "Week 8 -- Extending to Multiple Linear Regression"
+format: 
+  html:
+    table-of-contents: true
+    number-sections: true
+    number-depth: 2
+editor: visual
+bibliography: references.bib
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+#| include: false
+#| label: set-up
+
+library(tidyverse)
+library(infer)
+library(scales)
+library(stringr)
+library(palmerpenguins)
+library(RColorBrewer)
+library(moderndive)
+library(broom)
+
+options(scipen = 999)
+set.seed(1234)
+
+my_theme <- theme(axis.title.x = element_text(size = 18), 
+                  axis.title.y = element_text(size = 18), 
+                  axis.text.x = element_text(size = 14), 
+                  axis.text.y = element_text(size = 14), 
+                  
+                  )
+
+penguins_clean <- penguins %>% 
+  drop_na(sex)
+
+sex_sample_size <- penguins_clean %>% 
+  count(sex) 
+
+shuffled_sex <- penguins_clean %>% 
+  mutate(shuffled_sex = sample(sex, 
+                               size = nrow(penguins_clean), 
+                               replace = FALSE
+                               )
+         ) %>% 
+  select(bill_length_mm, body_mass_g, sex, shuffled_sex)
+```
+
+## Hypothesis Testing Refresher
+
+Recall, the goal of a hypothesis test is to compare what we observed in our data to what we would have expected to occur if the null hypothesis was true. In the case of simple / basic regression, our null hypothesis assumes that there is **no** linear relationship between our explanatory variable and our response variable. In your first reading, you learned methods for generating statistics that could have happened if the null hypothesis was true, which we can compare our observed statistic with.
+
+Why did we generate these statistics that could have happened if the null hypothesis was true? Well, this comes back to the idea of *sampling distributions*. If you remember, a sampling distribution is a distribution of statistics from taking repeated samples from the population. When we first learned about sampling distributions in Week 7, our sampling distribution made no assumptions about the samples that were being drawn (other than being representative). However, this week our sampling distributions take on a slightly different flavor, they assume the null hypothesis is true. So, our repeated samples are from an alternative universe where the null hypothesis is true.
+
+<!-- TODO put flowchart of how distributions are related to each other -->
+
+# Extending to Multiple Linear Regression
+
+Similar to bootstrapping with a multiple linear regression, we can create **multiple** permutation distributions, one for every coefficient in our model.
+
+## How does the relationship between bill length and body mass change based on a penguin's sex?
+
+This research question involves one numerical explanatory variable (body mass) and one categorical explanatory variable (penguin sex). Notice the research question asks how the relationship between body mass and bill length changes for male versus female penguins, which is addressed with a different slopes (interaction) multiple linear regression.
+
+```{r}
+#| label: fig-original-scatterplot-sex
+
+
+penguins_clean %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = sex)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)", 
+       color = "Sex") +
+  scale_color_brewer(palette = "Dark2")
+```
+
+Based on the scatterplot above, it appears the slopes for female penguins and male penguins are different. Let's investigate this with a hypothesis test!
+
+## Simulation-based Methods (Permutation Distribution)
+
+For this question, I am interested in testing if the relationship between body mass and bill length (slope) is different for male versus female penguins. If I were to write my hypotheses down, they would be:
+
+$H_0$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is the same** regardless of their sex
+
+$H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for male and female penguins
+
+### Using Cards
+
+When generating new datasets that could have happened if the null hypothesis was true, it helps me to think about what actions I am taking with my dataset. As you've seen before, I like to think about this using cards.
+
+-   Suppose I have `r nrow(penguins_clean)` cards, one card per penguin.
+    -   On each card, I write the penguin's (`bill_length_mm`, `body_mass_g`, `sex`).
+-   If I think the relationship between a penguin's body mass and their bill length is the same regardless of the penguin's sex (the null hypothesis), then I tear the `sex` label off each card.
+    -   This leaves me with `r nrow(penguins_clean)` cards with (`bill_length_mm`, `body_mass_g`) measurements and `r nrow(penguins_clean)` cards with different `sex` labels. Technically, I would have `r filter(sex_sample_size, sex == "female")$n` cards saying `female` and `r filter(sex_sample_size, sex == "male")$n` cards saying `male`.
+-   I would then randomly draw one card from the (`bill_length_mm`, `body_mass_g`) pile and one card from the `sex` pile and staple them together.
+    -   I would continue this process until every (`bill_length_mm`, `body_mass_g`) card had a new value for `sex`.
+
+My resulting dataset would look something like this:
+
+```{r}
+#| label: shuffle-sex
+
+ shuffled_sex %>% 
+  slice_sample(n = 10) %>% 
+  gt::gt()
+```
+
+Now we can visualize the relationship between body mass and bill length for our shuffled dataset. Notice how the slopes for male and female penguins in the plot below are much more similar than the original plot? Why do you think that is? It's because we assumed these relationships were the same (the null hypothesis) when we generated this permuted dataset!
+
+```{r}
+#| label: shuffled-scatterplot
+
+shuffled_sex %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = shuffled_sex)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)", 
+       color = "Sex") +
+  scale_color_brewer(palette = "Dark2")
+```
+
+### Translating into the `infer` pipeline
+
+To generate **lots** of these permuted datasets, we are going to use the `infer` package. The process for using these tools for a multiple linear regression are similar, but slightly different from what you saw with a simple linear regression. Namely, we `specify()` our model in a slightly different way, and we use the `fit()` function instead of the `calculate()` function.
+
+### Step 1: Fitting our Model
+
+Similar to a basic regression, in our first step we need to obtain our observed statistic. To do this, we `specify()` the model we are interested in, and then tell `infer` to `fit()` this model. The code below does exactly that!
+
+```{r}
+#| echo: true
+#| label: obs-fit
+
+observed_fit <- penguins_clean %>%
+  specify(bill_length_mm ~ body_mass_g * sex) %>%
+  fit()
+```
+
+::: callout-tip
+# Specifying Your Model
+
+When we have **multiple** explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. Keep in mind, we are interested in a different slopes multiple regression, so we are using a `*` to separate our two explanatory variables. If we were interested in a parallel slopes regression, we would us a `+` instead!
+:::
+
+### Step 2: Finding our Observed Statistic
+
+Now that we've fit our model, we need to figure out which of these coefficients is our observed statistic. Which do you think it is?
+
+```{r}
+#| label: obs-fit-table
+observed_fit %>% 
+  gt::gt()
+```
+
+Since we're interested in how the slope between body mass and bill length differs between male and female penguins, our statistic is associated with the `body_mass_g:sexmale` row of this table.
+
+### Step 3: Generating Permuted Fits
+
+Now that we have our observed statistic, we need to generate datasets that could have happened if the null hypothesis was true. Similar to basic regression, we obtain these permuted datasets by adding two steps:
+
+1.  we tell `infer` our `hypothesise()` -- the relationship between a penguin's body mass and bill length is `"independent"` of its sex
+
+2.  we stipulate how many of these new datasets we want (`reps`) and the method `infer` should use when generating these datasets (`"permute"`)
+
+```{r}
+#| cache: true
+#| echo: true
+
+null_fits <- penguins_clean %>%
+  specify(bill_length_mm ~ body_mass_g * sex) %>%
+  hypothesise(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>%
+  fit()
+```
+
+### Step 4: Visualizing our Null Distribution
+
+We've used the `visualize()` function before, to obtain a histogram of our permuted statistics. With a multiple linear regression, the `visualize()` function generates a histogram for **every** coefficient. Since we are only interested in the `body_mass_g:sexmale` coefficient, I've pulled that one out:
+
+```{r}
+#| echo: true
+
+obs_offset <- observed_fit %>% 
+  filter(term == "body_mass_g:sexmale") %>% 
+  pull(estimate)
+
+null_fits %>% 
+  filter(term == "body_mass_g:sexmale") %>% 
+  ggplot(mapping = aes(x = estimate)) +
+  geom_histogram(color = "white", binwidth = 0.0005) +
+  geom_vline(xintercept = obs_offset, color = "red", lwd = 2)
+```
+
+Once again, our null distribution is centered at 0. In this context, 0 represents the offset when going from female penguins to male penguins, meaning the relationship between bill length and body mass **does not change** when going from female penguins (the baseline group) to male penguins.
+
+Our observed statistic (`r obs_offset`) is noted in red. The statistic falls somewhat on the edge of the distribution, but not far into the tail. This location suggests our observed statistic could happen somewhat frequently if the null hypothesis was true.
+
+### Step 4: Calculating our p-value
+
+Our final coding step is to calculate our p-value. To do this, we need three pieces of information:
+
+1.  statistics that would have happened if the null was true
+2.  our observed statistic
+3.  the direction(s) that should be used when calculating the p-value
+
+The `direction` of the hypothesis test is determined by the alternative hypothesis. For our research question, we are testing if there is a difference in the relationship between bill length and body mass, which aligns with a `"two-sided"` alternative hypothesis.
+
+```{r}
+#| echo: true
+#| label: p-value-code
+#| eval: false
+
+get_p_value(null_fits,
+            obs_stat = observed_fit,
+            direction = "two-sided") 
+
+```
+
+```{r}
+#| label: p-value-table
+
+get_p_value(null_fits,
+            obs_stat = observed_fit,
+            direction = "two-sided") %>% 
+  gt::gt()
+
+```
+
+Once again, our statistic of interest is `body_mass_g:sexmale`. The p-value for this statistic is 0.22, telling us that 220 permuted statistics (out of 1,000) were as large or larger than what we observed in our data.
+
+### Step 5: Make a Decision & Reaching a Conclusion
+
+For an $\alpha$ of 0.1 (or 0.05 or 0.01), we would decide to fail to reject the null hypothesis (that he relationship between a penguin's body mass and their bill length is the same regardless of their sex).
+
+Therefore, our data provided insufficient evidence that the relationship between a penguin's body mass and their bill length differs based on the sex of the penguin.
+
+## Theory-based Methods (t-distribution)
+
+Similar to what you saw for a simple linear regression, if our data / model do not violate certain conditions, a $t$-distribution can be used as a reasonable approximation for the permutation distribution we just found. These conditions are:
+
+-   **L**inear relationship between our explanatory and response variable
+-   **I**ndependence of observations
+-   **N**ormality of residuals
+-   **E**qual variance of residuals
+
+Based on what we saw in @fig-original-scatterplot-sex, it appears that there is a moderate linear relationship between body mass and bill length. From the description of how the data were collected [@lter2020], it doesn't seem like the same penguin could be captured multiple times. I also know that a penguin could only belong to one of these two groups (male, female). However, it is possible penguins who were captured could be genetically related (from the same family), so there could be possible relationships between the observations. 
+
+Conditions three and four involve the residuals of the regression model, visualized in the two plots below. In @fig-residual-plots-1 we see that the distribution of residuals is unimodal and fairly symmetric. While it does appear that there is a slight right skew, I am not super concerned as there are very few observations in the right tail. In @fig-residual-plots-2 we see that the vertical spread of the residuals (on the y-axis) appears similar across the fitted / predicted values of bill length, with most of the residuals falling between +10 and -10.  
+
+```{r}
+#| label: fig-residual-plots-sex
+#| fig-cap: "Plots" 
+#| fig-subcap:
+#|   - "Distribution of residuals"
+#|   - "Scatterplot of residuals versus fitted / predicted values" 
+#| layout-ncol: 2
+
+sex_lm <- lm(bill_length_mm ~ body_mass_g * sex, 
+             data = penguins_clean)
+
+augment(sex_lm) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram(color = "white", binwidth = 2.5) +
+  labs(x = "Residuals")
+
+augment(sex_lm) %>% 
+  ggplot(mapping = aes(y = .resid, x = .fitted)) +
+  geom_point() +
+  labs(x = "Fitted / Predicted Bill Length", 
+       y = "Residuals") +
+  geom_hline(yintercept = 0, color = "red", lwd = 2)
+```
+
+As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution. 
+
+### Using the $t$-distribution
+
+If you continue along in your R adventures, you will find that the majority of functions built-in to R use parametric / theory-based methods to obtain p-values and confidence intervals. In fact, our familiar friend the `get_regression_table()` function does just that!
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: regression-table-code-sex
+
+sex_lm <- lm(bill_length_mm ~ body_mass_g * sex, 
+             data = penguins_clean)
+
+get_regression_table(sex_lm)
+```
+
+```{r}
+#| label: regression-table-output-sex
+
+get_regression_table(sex_lm) %>% 
+  gt::gt()
+```
+
+Remember, for this research question we are interested in the `body_mass_g:sexmale` coefficient. Looking at the row of the regression table associated with `body_mass_g:sexmale`, we first see two things we've seen before (1) our observed statistic of `r obs_offset`, and (2) an estimate of the variability of that statistic (standard error). The next two columns are new! 
+
+The `statistic` column represents the value of the $t$-statistic. This statistic is calculated as $\frac{\text{estimate}}{\text{SE of the estimate}}$. In general, you can think of a $t$-statistic as a way to standardize how "surprising" an estimate is, if the null hypothesis was true. In most cases, values larger than 2 are thought to indicate statistics that would be very "unusual" if the null hypothesis was true. 
+
+Finally, the `p_value` column finds where the $4$-statistic falls on the $t$-distribution and calculates its resulting p-value. By default, the p-value is calculated using both sides (similar to using `"two-sided"` before). The $t$-distribution returns a p-value of 0.126. While this p-value leads to a similar decision and conclusion as the p-value we obtained from the permutation distribution, it is about 0.1 **lower** than our previous p-value. Why do you think that is?  
+
+## How does the relationship between bill length and body mass change based on a penguin’s species?
+
+Let's change our investigation of the relationship between a penguin's bill length and body mass to focus on differences between species of penguins. 
+
+```{r}
+#| label: fig-original-scatterplot-species
+
+penguins_clean %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = species)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)", 
+       color = "Sex") +
+  scale_color_brewer(palette = "Dark2")
+```
+
+We've outlined two tools we can use to carry out this analysis, (1) a permutation distribution, and (2) a $t$-distribution. Since it is easier (less coding) to use a $t$-distribution, I generally start by inspecting my regression conditions to see if this would be a reasonable approach. 
+
+Looking at @fig-original-scatterplot-species, it appears that all three species have a linear relationship between body mass and bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don't have evidence that the independence condition is violated. 
+
+So, we turn to our residual analysis. In @fig-residual-plots-species-1, we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, @fig-residual-plots-species-2 suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -5 to +5. 
+
+```{r}
+#| label: fig-residual-plots-species
+#| fig-cap: "Plots" 
+#| fig-subcap:
+#|   - "Distribution of residuals"
+#|   - "Scatterplot of residuals versus fitted / predicted values" 
+#| layout-ncol: 2
+
+sex_lm <- lm(bill_length_mm ~ body_mass_g * species, 
+             data = penguins_clean)
+
+augment(sex_lm) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram(color = "white", binwidth = 2.5) +
+  labs(x = "Residuals")
+
+augment(sex_lm) %>% 
+  ggplot(mapping = aes(y = .resid, x = .fitted)) +
+  geom_point() +
+  labs(x = "Fitted / Predicted Bill Length", 
+       y = "Residuals") +
+  geom_hline(yintercept = 0, color = "red", lwd = 2)
+```
+
+As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution. 
+
+### Obtaining our p-value
+
+Alrighty, let's use the `get_regression_table()` to get our p-value for this test!
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: regression-table-code-species
+
+species_lm <- lm(bill_length_mm ~ body_mass_g * species, 
+             data = penguins_clean)
+
+get_regression_table(species_lm)
+```
+
+```{r}
+#| label: regression-table-output-species
+
+species_lm <- lm(bill_length_mm ~ body_mass_g * species, 
+             data = penguins_clean)
+
+get_regression_table(species_lm) %>% 
+  gt::gt()
+```
+
+Hmmm...🤔. Last time we had **one** line that we were interested in (`body_mass_g:sexmale`), but now we have two lines. What gives?
+
+### Multiple Hypothesis Tests
+
+Technically, each of these lines is testing if that group has a different slope than the baseline group. Meaning, the `body_mass_g:speciesChinstrap` line is running the following hypothesis test:
+
+$H_0$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is the same** for Adelie and Chinstrap penguins
+
+$H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for Adelie and Chinstrap penguins
+
+Similarly, the `body_mass_g:speciesGentoo` line is testing:
+
+$H_0$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is the same** for Adelie and Gentoo penguins
+
+$H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for Adelie and Gentoo penguins
+
+This doesn't quite seem like what I want. I want to test if **all** of the species have the same relationship! 
+
+### Testing 3+ Groups
+
+When I'm in the scenario where I have three or more groups, a $t$-distribution isn't the best tool for the job since it only allows us to test each group relative to the baseline. An ANOVA (analysis of variance), however, can test for differences among three or more groups! 
+
+If you've never encountered an ANOVA before, it has a large number of similarities to what we saw with the $t$-distribution. There are, however, two main differences. First, an ANOVA has slightly different hypotheses. Since we have three or more groups, our hypotheses are no longer in terms of comparing one group with another. Instead, our hypotheses test for similarities / differences among **all** of the groups. Specifically, we have the following hypotheses:
+
+$H_0$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is the same** regardless of their species
+
+$H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for at least one species
+
+:::{.callout-tip}
+# Mathematical Negation 
+
+An alternative hypothesis is always the negation of the null hypothesis. In an ANOVA, the null hypothesis says "every group is the same." The negation of "every group is the same" **is not** "every group is different." The negation of "every group is the same" is "at least one group is different." 
+:::
+
+### ANOVA
+
+To carry out an ANOVA, we use the `anova()` function in R. The output of the `anova()` function is messy, so I'm piping the result into the `tidy()` function (from the **broom** package) to clean it up a bit! 
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: anova-species-code
+
+anova(species_lm) %>% 
+  tidy()
+```
+
+```{r}
+#| label: anova-species-table
+
+anova(species_lm) %>% 
+  tidy() %>% 
+  mutate(p.value = round(p.value, digits = 8)) %>% 
+  gt::gt()
+```
+
+In the ANOVA table, we are interested in the `body_mass_g:species` line. Specifically, we are interested in the `statistic` and `p.value` columns. We will learn more about the `statistic` column when we dive deeper into ANOVA next week, so for right now know that it is a measure of how much **additional** variation in bill length is being explained by having different slopes for each species. 
+
+Based on the `p.value` column, it doesn't seem like there is evidence that the relationship between a penguin's body mass and their bill length is different for at least one species. 
+
+## How do body mass and flipper length influence a penguin's bill length?
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+#| cache: true
+
+observed_fit <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
+  fit()
+
+bootstrap_fits <- penguins %>%
+  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  fit()
+```
+:::
+
+## Visualizing Bootstrap Distributions
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+visualise(bootstrap_fits)
+```
