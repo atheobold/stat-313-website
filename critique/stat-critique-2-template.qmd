@@ -1,0 +1,55 @@
+---
+title: "Statistical Critique 2: Exploring p-values"
+---
+
+```{r}
+#| label: data-load
+
+# This is where you will load in your data! 
+# Reference the R package you data live inside, since you will need to load that package in!
+
+library(tidyverse)
+library(moderndive)
+
+# Package for your data:
+
+```
+
+# Part One: Revisiting the Midterm Project 
+
+For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. 
+
+## Visualizations
+
+**In the code chunk below, copy-and-paste the plots you created in your Midterm Project.**
+
+```{r}
+#| label: project-plots
+
+
+```
+
+## Model Justification
+
+**Justify (in 2-3 sentences) why you chose this model!**
+
+# Part Two: Using a p-value Instead
+
+```{r}
+#| label: obtain-p-values
+# Step 1: fit the most complex regression model
+# Step 2: run an ANOVA to obtain p-values
+
+```
+
+**Based on the p-value(s) you obtained, what model is the "best" model?**
+
+
+# Part Three: Learning More about the Backlash Against $p$-values
+
+**Type out what you find about your journal's publication criteria or simply copy-and-paste the criteria you find listed on their website.**
+
+
+## Part Four: Lessons Learned
+
+

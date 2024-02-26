@@ -14,22 +14,39 @@ editor: visual
 
 ## Assignment Details
 
-In your second statistical critique, you will focus on critiquing another key aspect of any statistical argument---statistical significance. No doubt you have seen $p$-values in a previous statistical course and / or disciplinary course, and this week you're adding to that knowledge. For this critique you read about common misinterpretations and misuses of $p$-values, and critique the statistical argumentation used in the article you selected.
+In your second statistical critique, you will focus on critiquing another key aspect of any statistical argument---statistical significance. No doubt you have seen $p$-values in a previous statistical course and / or disciplinary course, and this week you're adding to that knowledge. For this critique you will compare the model you selected in your Midterm Project with what model you would have chosen based on a statistical test. 
 
-# Part One: Locating Your Article's Statistical Arguments
+# Part One: Revisiting the Midterm Project 
 
-The focus of this assignment is to critique the statistical argument(s) included in the article you selected. So, you need to first locate these arguments. To do this I recommend the following:
+For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. You need to copy-and-paste the code you wrote in your Midterm Project to create your 2-3 visualizations. After these visualizations, you should write a 2-3 sentence justification as to *why* you chose the model you did in your Midterm Project.  
 
--   go to the Results / Findings section
--   skim through the section to see where p-values are referenced
+# Part Two: Using p-values Instead
 
-::: callout-tip
-It is possible the article might not explicitly say the word "p-value", but they could reference $p$ or even just reference an $\alpha$ threshold (likely 0.05).
+For this second part, you are tasked with testing what regression model you would have chosen if you had used p-values to make your decision. Regardless of the model you chose for your Midterm Project, you will fit the **most complex** regression model. If you used two numerical explanatory variables, the most complex model has **both** variables included. If you used one numerical and one categorical explanatory variable, the most complex model is the different slopes (interaction) model. 
+
+::: columns
+::: {.column width="47%"}
+**For two numerical explanatory variables**
+
+1. fit a multiple linear regression with **both** variables included (e.g., `my_model <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, data = penguins)`)
+
+2. run an ANOVA to test if each variable should be included (e.g., `anova(my_model)`)
 :::
 
-For Part One, you are required to included the statistical argument(s) from your paper in your critique. To do this you will need to copy-and-paste or type out the statistical argument from your paper. Be sure to use proper citation, to indicate where the excerpt(s) you selected came from.
+::: {.column width="3%"}
+:::
 
-# Part Two: Learning More about Misuses of $p$-values
+::: {.column width="47%"}
+**For one numerical and one categorical explanatory variable**
+
+1. fit a different slopes multiple linear regression (e.g., `my_model <- lm(bill_length_mm ~ flipper_length_mm * species, data = penguins)`)
+
+2. run an ANOVA to test for different slopes (e.g., `anova(my_model)`)
+:::
+:::
+
+
+# Part Three: Learning More about Misuses of $p$-values
 
 > "The p-value was never intended to be a substitute for scientific reasoning." Ron Wasserstein, Executive Director of the American Statistical Association
 
@@ -54,7 +71,7 @@ Note, you are required to *justify* why you believe the selected misinterpretati
 >
 > Jessica Utts, President of the American Statistical Association
 
-For Part Two, you are going to inspect what the publication requirements are for journal the article you selected was published in.
+For Part Three, you are going to inspect what the publication requirements are for journal the article you selected was published in.
 
 In March of 2019, Valentin Amrhein, Sander Greenland, Blake McShane and more than 800 signatories published an article in Nature [calling for an end to "statistical significance"](https://www.nature.com/articles/d41586-019-00857-9). The article details how, on top of the many common misunderstandings about hypothesis testing and $p$-values, there is an incentive for researchers to "cherry pick" only the results that are "statistically significant" while dismissing those that aren't. There are two problems with this system:
 
@@ -63,20 +80,11 @@ In March of 2019, Valentin Amrhein, Sander Greenland, Blake McShane and more tha
 
 First, go to the website for the journal where your article was published. Now, find their criteria for publication. If you are having a difficult time finding these criteria, it may be simpler to Google "*title of journal* publication criteria," substituting the name of your journal.
 
-Search through the criteria and see if there are requirements for (1) the "significance" of the findings and (2) the availability of the data and / or analyses. Describe what you find!
+Search through the criteria and see what the requirements are for (1) the "significance" of the findings and (2) the availability of the data and / or analyses. Describe what you find!
 
 ::: callout-tip
 Feel free to type out what you find while searching the journal or simply copy-and-paste the criteria you find listed on their website.
 :::
 
-# Part Four: Improving Statistical Arguments
+## Part Four: Lessons Learned
 
-> "The use of 'significance' in reporting statistical results is fraught with problems---but they could be solved with a simple change in practice." Megan Higgs
-
-More and more journals are retiring the use of statistical significance as a requirement for publication, but, sadly, we still see many researchers using the term "statistically significant" in their argumentation.
-
-For this section you are required to :
-
--   read [*Do We Really Need the S-Word?*](https://www.americanscientist.org/article/do-we-really-need-the-s-word) by Dr. Megan Higgs
--   name **at least one** aspect of the interpretation from your article you believe is clear / understandable
--   name **at least one** aspect of the interpretation from your article could be improved to be more clear / understandable
