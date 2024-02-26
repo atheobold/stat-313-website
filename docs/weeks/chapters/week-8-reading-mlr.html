@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -174,7 +174,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -402,8 +402,12 @@ window.Quarto = {
   <li><a href="#testing-3-groups" id="toc-testing-3-groups" class="nav-link" data-scroll-target="#testing-3-groups">Testing 3+ Groups</a></li>
   <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
   </ul></li>
-  <li><a href="#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" id="toc-how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" class="nav-link" data-scroll-target="#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length"><span class="header-section-number">1.5</span> How do body mass and flipper length influence a penguin’s bill length?</a></li>
-  <li><a href="#visualizing-bootstrap-distributions" id="toc-visualizing-bootstrap-distributions" class="nav-link" data-scroll-target="#visualizing-bootstrap-distributions"><span class="header-section-number">1.6</span> Visualizing Bootstrap Distributions</a></li>
+  <li><a href="#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" id="toc-how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" class="nav-link" data-scroll-target="#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length"><span class="header-section-number">1.5</span> How do body mass and flipper length influence a penguin’s bill length?</a>
+  <ul class="collapse">
+  <li><a href="#which-method" id="toc-which-method" class="nav-link" data-scroll-target="#which-method">Which method?</a></li>
+  <li><a href="#obtaining-our-p-value-1" id="toc-obtaining-our-p-value-1" class="nav-link" data-scroll-target="#obtaining-our-p-value-1">Obtaining our p-value</a></li>
+  <li><a href="#multiple-hypothesis-tests-1" id="toc-multiple-hypothesis-tests-1" class="nav-link" data-scroll-target="#multiple-hypothesis-tests-1">Multiple Hypothesis Tests</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -2059,13 +2063,13 @@ Specifying Your Model
 <li><strong>E</strong>qual variance of residuals</li>
 </ul>
 <p>Based on what we saw in <a href="#fig-original-scatterplot-sex" class="quarto-xref">Figure&nbsp;1</a>, it appears that there is a moderate linear relationship between body mass and bill length. From the description of how the data were collected <span class="citation" data-cites="lter2020">(<a href="#ref-lter2020" role="doc-biblioref">LTER and Gorman 2020</a>)</span>, it doesn’t seem like the same penguin could be captured multiple times. I also know that a penguin could only belong to one of these two groups (male, female). However, it is possible penguins who were captured could be genetically related (from the same family), so there could be possible relationships between the observations.</p>
-<p>Conditions three and four involve the residuals of the regression model, visualized in the two plots below. In <strong>?@fig-residual-plots-1</strong> we see that the distribution of residuals is unimodal and fairly symmetric. While it does appear that there is a slight right skew, I am not super concerned as there are very few observations in the right tail. In <strong>?@fig-residual-plots-2</strong> we see that the vertical spread of the residuals (on the y-axis) appears similar across the fitted / predicted values of bill length, with most of the residuals falling between +10 and -10.</p>
+<p>Conditions three and four involve the residuals of the regression model, visualized in the two plots below. In <a href="#fig-residual-plots-sex-1" class="quarto-xref">Figure&nbsp;2 (a)</a> we see that the distribution of residuals is unimodal and fairly symmetric. While it does appear that there is a slight right skew, I am not super concerned as there are very few observations in the right tail. In <a href="#fig-residual-plots-sex-2" class="quarto-xref">Figure&nbsp;2 (b)</a> we see that the vertical spread of the residuals (on the y-axis) appears similar across the fitted / predicted values of bill length, with most of the residuals falling between +10 and -10.</p>
 <div id="fig-residual-plots-sex" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residual-plots-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-sex" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
-<div id="fig-residual-plots-sex-1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-sex" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-sex-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-residual-plots-sex-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-sex-1.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-sex" width="672">
@@ -2076,8 +2080,8 @@ Specifying Your Model
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-sex" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
-<div id="fig-residual-plots-sex-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-sex" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-sex-2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-residual-plots-sex-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-sex-2.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-sex" width="672">
@@ -2091,7 +2095,7 @@ Specifying Your Model
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residual-plots-sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Plots
+Figure&nbsp;2: Figures
 </figcaption>
 </figure>
 </div>
@@ -2632,8 +2636,8 @@ Figure&nbsp;3
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residual-plots-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-species" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
-<div id="fig-residual-plots-species-1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-species" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-species-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-residual-plots-species-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-species-1.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-species" width="672">
@@ -2644,8 +2648,8 @@ Figure&nbsp;3
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-species" style="flex-basis: 50.0%;justify-content: flex-start;display: flex;">
-<div id="fig-residual-plots-species-2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-species" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-species-2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-residual-plots-species-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-species-2.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-species" width="672">
@@ -2659,7 +2663,7 @@ Figure&nbsp;3
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residual-plots-species-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Plots
+Figure&nbsp;4: Figures
 </figcaption>
 </figure>
 </div>
@@ -3727,35 +3731,608 @@ Mathematical Negation
 </section>
 <section id="how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length"><span class="header-section-number">1.5</span> How do body mass and flipper length influence a penguin’s bill length?</h2>
-<p>. . .</p>
-<div style="font-size: 0.75em;">
+<p>Our multiple linear regressions take take on a variety of flavors, including models with multiple numerical explanatory variables. An example of this type of model is adding flipper length as a second explanatory variable (in addition to body mass) when explaining the length of a penguin’s bill. This type of investigation is similar to what many of you did for your Midterm Project, where you decided if there was evidence that <strong>both</strong> explanatory variables have a relationship with the response.</p>
+<p>Based on the scatterplot below, it does seem that both body mass and flipper length have a relationship with a penguin’s bill length. As the color of the points gets darker (longer flippers), a penguin’s bill length also increases.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>observed_fit <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm) <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>bootstrap_fits <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm) <span class="sc">%&gt;%</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="visualizing-bootstrap-distributions" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="visualizing-bootstrap-distributions"><span class="header-section-number">1.6</span> Visualizing Bootstrap Distributions</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualise</span>(bootstrap_fits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week-8-reading-mlr_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-scatterplot-bill-flipper" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatterplot-bill-flipper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week-8-reading-mlr_files/figure-html/fig-scatterplot-bill-flipper-1.png" id="fig-scatterplot-bill-flipper" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-scatterplot-bill-flipper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<section id="which-method" class="level3">
+<h3 class="anchored" data-anchor-id="which-method">Which method?</h3>
+<p>As said before, we have two tools we can use (1) a permutation distribution, and (2) a <span class="math inline">\(t\)</span>-distribution. Let’s see which tool seems like the best option.</p>
+<div id="fig-dual-slr" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dual-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dual-slr" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dual-slr-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dual-slr-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week-8-reading-mlr_files/figure-html/fig-dual-slr-1.png" class="img-fluid figure-img" data-ref-parent="fig-dual-slr" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dual-slr-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Distribution of residuals
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dual-slr" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dual-slr-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dual-slr-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week-8-reading-mlr_files/figure-html/fig-dual-slr-2.png" class="img-fluid figure-img" data-ref-parent="fig-dual-slr" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dual-slr-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Scatterplot of residuals versus fitted / predicted values
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dual-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Figures
+</figcaption>
+</figure>
+</div>
+<p>Looking at <a href="#fig-dual-slr-1" class="quarto-xref">Figure&nbsp;6 (a)</a> and <a href="#fig-dual-slr-2" class="quarto-xref">Figure&nbsp;6 (b)</a>, it appears that both variables have a linear relationship with bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don’t have evidence that the independence condition is violated.</p>
+<p>So, we turn to our residual analysis. In <a href="#fig-residual-plots-mlr-1" class="quarto-xref">Figure&nbsp;7 (a)</a>, we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, <a href="#fig-residual-plots-mlr-2" class="quarto-xref">Figure&nbsp;7 (b)</a> suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -10 to +10.</p>
+<div id="fig-residual-plots-mlr" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-residual-plots-mlr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-mlr" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-mlr-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-residual-plots-mlr-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-mlr-1.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-mlr" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-residual-plots-mlr-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Distribution of residuals
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-residual-plots-mlr" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-residual-plots-mlr-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-residual-plots-mlr-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week-8-reading-mlr_files/figure-html/fig-residual-plots-mlr-2.png" class="img-fluid figure-img" data-ref-parent="fig-residual-plots-mlr" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-residual-plots-mlr-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Scatterplot of residuals versus fitted / predicted values
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residual-plots-mlr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Figures
+</figcaption>
+</figure>
+</div>
+<p>As I did not find that any of these conditions were violated, it seems reasonable to use theory-based methods as an approximation for the permutation distribution.</p>
+</section>
+<section id="obtaining-our-p-value-1" class="level3">
+<h3 class="anchored" data-anchor-id="obtaining-our-p-value-1">Obtaining our p-value</h3>
+<p>Unfortunately, when testing for a relationship between each explanatory variable and the response, the <code>get_regression_table()</code> function does not do what we want. What we want is for the p-value for each variable to be <em>conditional</em> on the other variable(s) in the model, but the p-values for variables output from <code>get_regression_table()</code> are tested in the order they are listed. Meaning, if <code>body_mass_g</code> is the first variable listed in the model, then the p-value output <strong>is not</strong> conditional on <code>flipper_length_mm</code> also being included in the model.</p>
+<p>But we have a tool that will give us what we want! An ANOVA!!!</p>
+</section>
+<section id="multiple-hypothesis-tests-1" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-hypothesis-tests-1">Multiple Hypothesis Tests</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mlr_anova <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> penguins_clean)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mlr_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="zpgikbziru" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zpgikbziru table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zpgikbziru thead, #zpgikbziru tbody, #zpgikbziru tfoot, #zpgikbziru tr, #zpgikbziru td, #zpgikbziru th {
+  border-style: none;
+}
+
+#zpgikbziru p {
+  margin: 0;
+  padding: 0;
+}
+
+#zpgikbziru .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zpgikbziru .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zpgikbziru .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zpgikbziru .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zpgikbziru .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zpgikbziru .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zpgikbziru .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zpgikbziru .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zpgikbziru .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zpgikbziru .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zpgikbziru .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zpgikbziru .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zpgikbziru .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zpgikbziru .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zpgikbziru .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zpgikbziru .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zpgikbziru .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zpgikbziru .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zpgikbziru .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zpgikbziru .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zpgikbziru .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zpgikbziru .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zpgikbziru .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zpgikbziru .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zpgikbziru .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zpgikbziru .gt_left {
+  text-align: left;
+}
+
+#zpgikbziru .gt_center {
+  text-align: center;
+}
+
+#zpgikbziru .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zpgikbziru .gt_font_normal {
+  font-weight: normal;
+}
+
+#zpgikbziru .gt_font_bold {
+  font-weight: bold;
+}
+
+#zpgikbziru .gt_font_italic {
+  font-style: italic;
+}
+
+#zpgikbziru .gt_super {
+  font-size: 65%;
+}
+
+#zpgikbziru .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zpgikbziru .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zpgikbziru .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zpgikbziru .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zpgikbziru .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zpgikbziru .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zpgikbziru .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
+<th id="df" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">df</th>
+<th id="sumsq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">sumsq</th>
+<th id="meansq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">meansq</th>
+<th id="statistic" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">statistic</th>
+<th id="p.value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">p.value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">body_mass_g</td>
+<td class="gt_row gt_right" headers="df">1</td>
+<td class="gt_row gt_right" headers="sumsq">3449.8232</td>
+<td class="gt_row gt_right" headers="meansq">3449.82317</td>
+<td class="gt_row gt_right" headers="statistic">200.48905</td>
+<td class="gt_row gt_right" headers="p.value">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">flipper_length_mm</td>
+<td class="gt_row gt_right" headers="df">1</td>
+<td class="gt_row gt_right" headers="sumsq">800.7561</td>
+<td class="gt_row gt_right" headers="meansq">800.75612</td>
+<td class="gt_row gt_right" headers="statistic">46.53654</td>
+<td class="gt_row gt_right" headers="p.value">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">Residuals</td>
+<td class="gt_row gt_right" headers="df">330</td>
+<td class="gt_row gt_right" headers="sumsq">5678.3234</td>
+<td class="gt_row gt_right" headers="meansq">17.20704</td>
+<td class="gt_row gt_right" headers="statistic">NA</td>
+<td class="gt_row gt_right" headers="p.value">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Technically, each of these lines is testing if there is a relationship between the explanatory variable and the response, controlling for the other variable(s) in the model. Meaning, the <code>flipper_length_mm</code> line is running the following hypothesis test:</p>
+<p><span class="math inline">\(H_0\)</span>: For penguins in the Palmer Archipelago, controlling for a penguin’s body mass there <strong>is no</strong> relationship between a penguin’s flipper length and their bill length</p>
+<p><span class="math inline">\(H_A\)</span>: For penguins in the Palmer Archipelago, controlling for a penguin’s body mass there <strong>is</strong> a relationship between a penguin’s flipper length and their bill length</p>
+<p>Similarly, the <code>body_mass_g</code> line is testing:</p>
+<p><span class="math inline">\(H_0\)</span>: For penguins in the Palmer Archipelago, controlling for a penguin’s flipper length there <strong>is no</strong> relationship between a penguin’s body mass and their bill length</p>
+<p><span class="math inline">\(H_A\)</span>: For penguins in the Palmer Archipelago, controlling for a penguin’s flipper length there <strong>is</strong> a relationship between a penguin’s body mass and their bill length</p>
+<p>Given the p-values output from the table, it appears that after controlling for a penguin’s flipper length, there is a relationship between a penguin’s body mass and bill length (p-value &lt; 0.0001). Similarly, there is also evidence that (after controlling for a penguin’s body mass) there is a relationship between the length of a penguin’s flipper and its bill length (p-value &lt; 0.0001).</p>
 
 
 
+</section>
 </section>
 </section>
 
@@ -3925,7 +4502,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

@@ -25,6 +25,7 @@ library(palmerpenguins)
 library(RColorBrewer)
 library(moderndive)
 library(broom)
+library(viridis)
 
 options(scipen = 999)
 set.seed(1234)
@@ -251,13 +252,13 @@ Similar to what you saw for a simple linear regression, if our data / model do n
 -   **N**ormality of residuals
 -   **E**qual variance of residuals
 
-Based on what we saw in @fig-original-scatterplot-sex, it appears that there is a moderate linear relationship between body mass and bill length. From the description of how the data were collected [@lter2020], it doesn't seem like the same penguin could be captured multiple times. I also know that a penguin could only belong to one of these two groups (male, female). However, it is possible penguins who were captured could be genetically related (from the same family), so there could be possible relationships between the observations. 
+Based on what we saw in @fig-original-scatterplot-sex, it appears that there is a moderate linear relationship between body mass and bill length. From the description of how the data were collected [@lter2020], it doesn't seem like the same penguin could be captured multiple times. I also know that a penguin could only belong to one of these two groups (male, female). However, it is possible penguins who were captured could be genetically related (from the same family), so there could be possible relationships between the observations.
 
-Conditions three and four involve the residuals of the regression model, visualized in the two plots below. In @fig-residual-plots-1 we see that the distribution of residuals is unimodal and fairly symmetric. While it does appear that there is a slight right skew, I am not super concerned as there are very few observations in the right tail. In @fig-residual-plots-2 we see that the vertical spread of the residuals (on the y-axis) appears similar across the fitted / predicted values of bill length, with most of the residuals falling between +10 and -10.  
+Conditions three and four involve the residuals of the regression model, visualized in the two plots below. In @fig-residual-plots-sex-1 we see that the distribution of residuals is unimodal and fairly symmetric. While it does appear that there is a slight right skew, I am not super concerned as there are very few observations in the right tail. In @fig-residual-plots-sex-2 we see that the vertical spread of the residuals (on the y-axis) appears similar across the fitted / predicted values of bill length, with most of the residuals falling between +10 and -10.
 
 ```{r}
 #| label: fig-residual-plots-sex
-#| fig-cap: "Plots" 
+#| fig-cap: "Figures" 
 #| fig-subcap:
 #|   - "Distribution of residuals"
 #|   - "Scatterplot of residuals versus fitted / predicted values" 
@@ -279,7 +280,7 @@ augment(sex_lm) %>%
   geom_hline(yintercept = 0, color = "red", lwd = 2)
 ```
 
-As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution. 
+As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution.
 
 ### Using the $t$-distribution
 
@@ -303,15 +304,15 @@ get_regression_table(sex_lm) %>%
   gt::gt()
 ```
 
-Remember, for this research question we are interested in the `body_mass_g:sexmale` coefficient. Looking at the row of the regression table associated with `body_mass_g:sexmale`, we first see two things we've seen before (1) our observed statistic of `r obs_offset`, and (2) an estimate of the variability of that statistic (standard error). The next two columns are new! 
+Remember, for this research question we are interested in the `body_mass_g:sexmale` coefficient. Looking at the row of the regression table associated with `body_mass_g:sexmale`, we first see two things we've seen before (1) our observed statistic of `r obs_offset`, and (2) an estimate of the variability of that statistic (standard error). The next two columns are new!
 
-The `statistic` column represents the value of the $t$-statistic. This statistic is calculated as $\frac{\text{estimate}}{\text{SE of the estimate}}$. In general, you can think of a $t$-statistic as a way to standardize how "surprising" an estimate is, if the null hypothesis was true. In most cases, values larger than 2 are thought to indicate statistics that would be very "unusual" if the null hypothesis was true. 
+The `statistic` column represents the value of the $t$-statistic. This statistic is calculated as $\frac{\text{estimate}}{\text{SE of the estimate}}$. In general, you can think of a $t$-statistic as a way to standardize how "surprising" an estimate is, if the null hypothesis was true. In most cases, values larger than 2 are thought to indicate statistics that would be very "unusual" if the null hypothesis was true.
 
-Finally, the `p_value` column finds where the $4$-statistic falls on the $t$-distribution and calculates its resulting p-value. By default, the p-value is calculated using both sides (similar to using `"two-sided"` before). The $t$-distribution returns a p-value of 0.126. While this p-value leads to a similar decision and conclusion as the p-value we obtained from the permutation distribution, it is about 0.1 **lower** than our previous p-value. Why do you think that is?  
+Finally, the `p_value` column finds where the $4$-statistic falls on the $t$-distribution and calculates its resulting p-value. By default, the p-value is calculated using both sides (similar to using `"two-sided"` before). The $t$-distribution returns a p-value of 0.126. While this p-value leads to a similar decision and conclusion as the p-value we obtained from the permutation distribution, it is about 0.1 **lower** than our previous p-value. Why do you think that is?
 
 ## How does the relationship between bill length and body mass change based on a penguin’s species?
 
-Let's change our investigation of the relationship between a penguin's bill length and body mass to focus on differences between species of penguins. 
+Let's change our investigation of the relationship between a penguin's bill length and body mass to focus on differences between species of penguins.
 
 ```{r}
 #| label: fig-original-scatterplot-species
@@ -326,15 +327,15 @@ penguins_clean %>%
   scale_color_brewer(palette = "Dark2")
 ```
 
-We've outlined two tools we can use to carry out this analysis, (1) a permutation distribution, and (2) a $t$-distribution. Since it is easier (less coding) to use a $t$-distribution, I generally start by inspecting my regression conditions to see if this would be a reasonable approach. 
+We've outlined two tools we can use to carry out this analysis, (1) a permutation distribution, and (2) a $t$-distribution. Since it is easier (less coding) to use a $t$-distribution, I generally start by inspecting my regression conditions to see if this would be a reasonable approach.
 
-Looking at @fig-original-scatterplot-species, it appears that all three species have a linear relationship between body mass and bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don't have evidence that the independence condition is violated. 
+Looking at @fig-original-scatterplot-species, it appears that all three species have a linear relationship between body mass and bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don't have evidence that the independence condition is violated.
 
-So, we turn to our residual analysis. In @fig-residual-plots-species-1, we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, @fig-residual-plots-species-2 suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -5 to +5. 
+So, we turn to our residual analysis. In @fig-residual-plots-species-1, we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, @fig-residual-plots-species-2 suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -5 to +5.
 
 ```{r}
 #| label: fig-residual-plots-species
-#| fig-cap: "Plots" 
+#| fig-cap: "Figures" 
 #| fig-subcap:
 #|   - "Distribution of residuals"
 #|   - "Scatterplot of residuals versus fitted / predicted values" 
@@ -356,7 +357,7 @@ augment(sex_lm) %>%
   geom_hline(yintercept = 0, color = "red", lwd = 2)
 ```
 
-As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution. 
+As I did not find that any of these conditions were violated, it seems reasonable to use the $t$-distribution as an approximation for the permutation distribution.
 
 ### Obtaining our p-value
 
@@ -399,11 +400,11 @@ $H_0$: For penguins in the Palmer Archipelago, the relationship between a pengui
 
 $H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for Adelie and Gentoo penguins
 
-This doesn't quite seem like what I want. I want to test if **all** of the species have the same relationship! 
+This doesn't quite seem like what I want. I want to test if **all** of the species have the same relationship!
 
 ### Testing 3+ Groups
 
-When I'm in the scenario where I have three or more groups, a $t$-distribution isn't the best tool for the job since it only allows us to test each group relative to the baseline. An ANOVA (analysis of variance), however, can test for differences among three or more groups! 
+When I'm in the scenario where I have three or more groups, a $t$-distribution isn't the best tool for the job since it only allows us to test each group relative to the baseline. An ANOVA (analysis of variance), however, can test for differences among three or more groups!
 
 If you've never encountered an ANOVA before, it has a large number of similarities to what we saw with the $t$-distribution. There are, however, two main differences. First, an ANOVA has slightly different hypotheses. Since we have three or more groups, our hypotheses are no longer in terms of comparing one group with another. Instead, our hypotheses test for similarities / differences among **all** of the groups. Specifically, we have the following hypotheses:
 
@@ -411,15 +412,15 @@ $H_0$: For penguins in the Palmer Archipelago, the relationship between a pengui
 
 $H_A$: For penguins in the Palmer Archipelago, the relationship between a penguin's body mass and their bill length **is different** for at least one species
 
-:::{.callout-tip}
-# Mathematical Negation 
+::: callout-tip
+# Mathematical Negation
 
-An alternative hypothesis is always the negation of the null hypothesis. In an ANOVA, the null hypothesis says "every group is the same." The negation of "every group is the same" **is not** "every group is different." The negation of "every group is the same" is "at least one group is different." 
+An alternative hypothesis is always the negation of the null hypothesis. In an ANOVA, the null hypothesis says "every group is the same." The negation of "every group is the same" **is not** "every group is different." The negation of "every group is the same" is "at least one group is different."
 :::
 
 ### ANOVA
 
-To carry out an ANOVA, we use the `anova()` function in R. The output of the `anova()` function is messy, so I'm piping the result into the `tidy()` function (from the **broom** package) to clean it up a bit! 
+To carry out an ANOVA, we use the `anova()` function in R. The output of the `anova()` function is messy, so I'm piping the result into the `tidy()` function (from the **broom** package) to clean it up a bit!
 
 ```{r}
 #| echo: true
@@ -439,36 +440,131 @@ anova(species_lm) %>%
   gt::gt()
 ```
 
-In the ANOVA table, we are interested in the `body_mass_g:species` line. Specifically, we are interested in the `statistic` and `p.value` columns. We will learn more about the `statistic` column when we dive deeper into ANOVA next week, so for right now know that it is a measure of how much **additional** variation in bill length is being explained by having different slopes for each species. 
+In the ANOVA table, we are interested in the `body_mass_g:species` line. Specifically, we are interested in the `statistic` and `p.value` columns. We will learn more about the `statistic` column when we dive deeper into ANOVA next week, so for right now know that it is a measure of how much **additional** variation in bill length is being explained by having different slopes for each species.
 
-Based on the `p.value` column, it doesn't seem like there is evidence that the relationship between a penguin's body mass and their bill length is different for at least one species. 
+Based on the `p.value` column, it doesn't seem like there is evidence that the relationship between a penguin's body mass and their bill length is different for at least one species.
 
 ## How do body mass and flipper length influence a penguin's bill length?
 
-. . .
+Our multiple linear regressions take take on a variety of flavors, including models with multiple numerical explanatory variables. An example of this type of model is adding flipper length as a second explanatory variable (in addition to body mass) when explaining the length of a penguin's bill. This type of investigation is similar to what many of you did for your Midterm Project, where you decided if there was evidence that **both** explanatory variables have a relationship with the response. 
 
-::: {style="font-size: 0.75em;"}
-```{r}
-#| echo: true
-#| code-line-numbers: false
-#| cache: true
-
-observed_fit <- penguins %>%
-  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
-  fit()
-
-bootstrap_fits <- penguins %>%
-  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %>%
-  generate(reps = 1000, type = "bootstrap") %>%
-  fit()
-```
-:::
-
-## Visualizing Bootstrap Distributions
+Based on the scatterplot below, it does seem that both body mass and flipper length have a relationship with a penguin's bill length. As the color of the points gets darker (longer flippers), a penguin's bill length also increases. 
 
 ```{r}
-#| echo: true
-#| code-line-numbers: false
+#| label: fig-scatterplot-bill-flipper
 
-visualise(bootstrap_fits)
+penguins_clean %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm, color = flipper_length_mm)) +
+  geom_point() + 
+  geom_smooth(method = "lm", color = "black") +
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)", 
+       color = "Flipper Length (mm)") +
+  scale_color_viridis_c(option = "magma", direction = -1)
 ```
+
+### Which method?
+
+As said before, we have two tools we can use (1) a permutation distribution, and (2) a $t$-distribution. Let's see which tool seems like the best option. 
+
+```{r}
+#| label: fig-dual-slr
+#| fig-cap: "Figures" 
+#| fig-subcap:
+#|   - "Distribution of residuals"
+#|   - "Scatterplot of residuals versus fitted / predicted values" 
+#| layout-ncol: 2
+
+penguins_clean %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = bill_length_mm)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(y = "Bill Length (mm)", 
+       x = "Body Mass (g)"
+       )
+
+penguins_clean %>% 
+  ggplot(mapping = aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(y = "Bill Length (mm)", 
+       x = "Flipper Length (mm)"
+       )
+```
+
+Looking at @fig-dual-slr-1 and @fig-dual-slr-2, it appears that both variables have a linear relationship with bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don't have evidence that the independence condition is violated.
+
+So, we turn to our residual analysis. In @fig-residual-plots-mlr-1, we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, @fig-residual-plots-mlr-2 suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -10 to +10.
+
+```{r}
+#| label: fig-residual-plots-mlr
+#| fig-cap: "Figures" 
+#| fig-subcap:
+#|   - "Distribution of residuals"
+#|   - "Scatterplot of residuals versus fitted / predicted values" 
+#| layout-ncol: 2
+
+mlr_lm <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, 
+             data = penguins_clean)
+
+augment(mlr_lm) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram(color = "white", binwidth = 2.5) +
+  labs(x = "Residuals")
+
+augment(mlr_lm) %>% 
+  ggplot(mapping = aes(y = .resid, x = .fitted)) +
+  geom_point() +
+  labs(x = "Fitted / Predicted Bill Length", 
+       y = "Residuals") +
+  geom_hline(yintercept = 0, color = "red", lwd = 2)
+```
+
+As I did not find that any of these conditions were violated, it seems reasonable to use theory-based methods as an approximation for the permutation distribution.
+
+### Obtaining our p-value
+
+Unfortunately, when testing for a relationship between each explanatory variable and the response, the `get_regression_table()` function does not do what we want. What we want is for the p-value for each variable to be *conditional* on the other variable(s) in the model, but the p-values for variables output from `get_regression_table()` are tested in the order they are listed. Meaning, if `body_mass_g` is the first variable listed in the model, then the p-value output **is not** conditional on `flipper_length_mm` also being included in the model. 
+
+But we have a tool that will give us what we want! An ANOVA!!!
+
+### Multiple Hypothesis Tests
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: regression-table-code-mlr
+
+mlr_anova <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, 
+                   data = penguins_clean)
+
+anova(mlr_lm)
+```
+
+```{r}
+#| label: regression-table-output-mlr
+
+mlr_lm <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, 
+             data = penguins_clean)
+
+anova(mlr_lm) %>% 
+  tidy() %>% 
+  mutate(
+    p.value = round(p.value, digits = 6)
+         ) %>% 
+  gt::gt()
+```
+
+Technically, each of these lines is testing if there is a relationship between the explanatory variable and the response, controlling for the other variable(s) in the model. Meaning, the `flipper_length_mm` line is running the following hypothesis test:
+
+$H_0$: For penguins in the Palmer Archipelago, controlling for a penguin's body mass there **is no** relationship between a penguin's flipper length and their bill length
+
+$H_A$: For penguins in the Palmer Archipelago, controlling for a penguin's body mass there **is** a relationship between a penguin's flipper length and their bill length
+
+Similarly, the `body_mass_g` line is testing:
+
+$H_0$: For penguins in the Palmer Archipelago, controlling for a penguin's flipper length there **is no** relationship between a penguin's body mass and their bill length
+
+$H_A$: For penguins in the Palmer Archipelago, controlling for a penguin's flipper length there **is** a relationship between a penguin's body mass and their bill length
+
+Given the p-values output from the table, it appears that after controlling for a penguin's flipper length, there is a relationship between a penguin's body mass and bill length (p-value < 0.0001). Similarly, there is also evidence that (after controlling for a penguin's body mass) there is a relationship between the length of a penguin's flipper and its bill length (p-value < 0.0001). 
