@@ -159,7 +159,7 @@ births14 %>%
 
 Again, such random shuffling of the `mage` label only makes sense in our hypothesized universe where there is no relationship between the birth weight of a baby and a mother's age. How could we extend this shuffling of the `mage` variable to all 1,000 birth records by hand?
 
-One way would be writing the 1,000 `weight`s and `mage`s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 `weight` cards in one hat and 1,000 `mage` cards in a *different* hat. You could then draw one card out of the `weight` hat and one card out of the `mage` hat and staple them together to make a new (`weight`, `mage`) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until
+One way would be writing the 1,000 `weight`s and `mage`s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 `weight` cards in one hat and 1,000 `mage` cards in a *different* hat. You could then draw one card out of the `weight` hat and one card out of the `mage` hat and staple them together to make a new (`weight`, `mage`) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until we had paired each `mage` card with a new `weight` card.
 
 I've done one such reshuffling and plotted the original dataset and the shuffled dataset side-by-side in @fig-original-shuffle-comparison. It appears that the slope of the regression line for the shuffled data is much less steep (closer to horizontal) than in the original data.
 
@@ -638,7 +638,7 @@ se_ci <- get_confidence_interval(bootstrap_distribution,
 se_ci
 ```
 
-Let's visualize `bootstrap_distribution` again, but now the standard error based 95% confidence interval for $\beta_1$ in @fig-bootstrap-distribution-se. Again, notice how the value 0 is not included in our confidence interval, again suggesting that there is a relationship between a baby's birth weight and a mother's age!
+Let's visualize `bootstrap_distribution` again, but now the standard error based 95% confidence interval for $\beta_1$ in @fig-bootstrap-distribution-se. Notice how the value 0 **is** included in our confidence interval, suggesting that there is not sufficient evidence to say there is a relationship between a baby's birth weight and a mother's age. This is the same conclusion we reached with our p-value!
 
 ```{r se-interval}
 #| label: fig-bootstrap-distribution-se
@@ -648,13 +648,13 @@ visualize(bootstrap_distribution) +
   shade_confidence_interval(endpoints = se_ci)
 ```
 
-## Statistical versus practical significance
+<!-- ## Statistical versus practical significance -->
 
-You might be wondering, how could we have rejected the null hypothesis that $\beta_1 = 0$, when the lower bound of our confidence interval is **really** close to 0. That's a great question! This question gets at the heart of the difference between statistical and practical significance.
+<!-- You might be wondering, how could we have rejected the null hypothesis that $\beta_1 = 0$, when the lower bound of our confidence interval is **really** close to 0. That's a great question! This question gets at the heart of the difference between statistical and practical significance. -->
 
-Statistical significance is defined by a $p$-value being smaller than some predetermined $\alpha$ threshold. However, the size of a p-value is not synonymous with the "effect size". By this I mean, a study can obtain a small $p$-value but have the estimated effect of the variable(s) be so small they would not be practically meaningful. In the context of the `births14` data, our hypothesis test concluded that there is a relationship between baby birth weights and mother's ages. Yet, based on the confidence interval, the estimated increase in birth weight for a 10-year increase in age is at most 0.2 lbs. I would not believe that the medical profession needs to provide medical interventions for younger mothers whose babies would have lower birth weights.
+<!-- Statistical significance is defined by a $p$-value being smaller than some predetermined $\alpha$ threshold. However, the size of a p-value is not synonymous with the "effect size". By this I mean, a study can obtain a small $p$-value but have the estimated effect of the variable(s) be so small they would not be practically meaningful. In the context of the `births14` data, our hypothesis test concluded that there is a relationship between baby birth weights and mother's ages. Yet, based on the confidence interval, the estimated increase in birth weight for a 10-year increase in age is at most 0.2 lbs. I would not believe that the medical profession needs to provide medical interventions for younger mothers whose babies would have lower birth weights. -->
 
-This is why I frequently favor confidence intervals over hypothesis tests, as they allow for you to assess *both* the statistical significance--by checking if the null hypothesized value is included in the interval---**and** the practical significance--by assessing the size of the estimated effect.
+<!-- This is why I frequently favor confidence intervals over hypothesis tests, as they allow for you to assess *both* the statistical significance--by checking if the null hypothesized value is included in the interval---**and** the practical significance--by assessing the size of the estimated effect. -->
 
 <!-- For example, suppose Cal Poly administrators are interested in studying the relationship between a student's GPA and the number of sporting events they attend. The administrators fit the regression model^[Well, likely their statistician or data scientist does. 😆] and find that there is a relationship between going to one a -->
 

@@ -411,10 +411,7 @@ window.Quarto = {
   <li><a href="#sec-errors" id="toc-sec-errors" class="nav-link" data-scroll-target="#sec-errors"><span class="header-section-number">4.2</span> Types of errors</a></li>
   <li><a href="#sec-choosing-alpha" id="toc-sec-choosing-alpha" class="nav-link" data-scroll-target="#sec-choosing-alpha"><span class="header-section-number">4.3</span> How do we choose alpha?</a></li>
   </ul></li>
-  <li><a href="#comparing-infer-workflows" id="toc-comparing-infer-workflows" class="nav-link" data-scroll-target="#comparing-infer-workflows"><span class="header-section-number">5</span> Comparison with confidence intervals</a>
-  <ul class="collapse">
-  <li><a href="#statistical-versus-practical-significance" id="toc-statistical-versus-practical-significance" class="nav-link" data-scroll-target="#statistical-versus-practical-significance"><span class="header-section-number">5.1</span> Statistical versus practical significance</a></li>
-  </ul></li>
+  <li><a href="#comparing-infer-workflows" id="toc-comparing-infer-workflows" class="nav-link" data-scroll-target="#comparing-infer-workflows"><span class="header-section-number">5</span> Comparison with confidence intervals</a></li>
   <li><a href="#theory-based-hypothesis-tests-confidence-intervals" id="toc-theory-based-hypothesis-tests-confidence-intervals" class="nav-link" data-scroll-target="#theory-based-hypothesis-tests-confidence-intervals"><span class="header-section-number">6</span> Theory-based hypothesis tests &amp; confidence intervals</a>
   <ul class="collapse">
   <li><a href="#regression-interp" id="toc-regression-interp" class="nav-link" data-scroll-target="#regression-interp"><span class="header-section-number">6.1</span> Interpreting regression tables</a>
@@ -636,7 +633,7 @@ Table&nbsp;2: One example of shuffling mage variable.
 </div>
 </div>
 <p>Again, such random shuffling of the <code>mage</code> label only makes sense in our hypothesized universe where there is no relationship between the birth weight of a baby and a mother’s age. How could we extend this shuffling of the <code>mage</code> variable to all 1,000 birth records by hand?</p>
-<p>One way would be writing the 1,000 <code>weight</code>s and <code>mage</code>s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 <code>weight</code> cards in one hat and 1,000 <code>mage</code> cards in a <em>different</em> hat. You could then draw one card out of the <code>weight</code> hat and one card out of the <code>mage</code> hat and staple them together to make a new (<code>weight</code>, <code>mage</code>) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until</p>
+<p>One way would be writing the 1,000 <code>weight</code>s and <code>mage</code>s on a set of 1,000 cards. We would then rip each card in half, as we are assuming there is no relationship between these variables. We would then be left with 1,000 <code>weight</code> cards in one hat and 1,000 <code>mage</code> cards in a <em>different</em> hat. You could then draw one card out of the <code>weight</code> hat and one card out of the <code>mage</code> hat and staple them together to make a new (<code>weight</code>, <code>mage</code>) ordered pair. This process of drawing one card out of each hat and stapling them together would be repeated until we had paired each <code>mage</code> card with a new <code>weight</code> card.</p>
 <p>I’ve done one such reshuffling and plotted the original dataset and the shuffled dataset side-by-side in <a href="#fig-original-shuffle-comparison" class="quarto-xref">Figure&nbsp;2</a>. It appears that the slope of the regression line for the shuffled data is much less steep (closer to horizontal) than in the original data.</p>
 <div class="cell" data-layout-nrow="1">
 <div id="fig-original-shuffle-comparison" class="quarto-layout-panel">
@@ -1271,7 +1268,7 @@ Tip
 1 -0.000150   0.0281</code></pre>
 </div>
 </div>
-<p>Let’s visualize <code>bootstrap_distribution</code> again, but now the standard error based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-se" class="quarto-xref">Figure&nbsp;12</a>. Again, notice how the value 0 is not included in our confidence interval, again suggesting that there is a relationship between a baby’s birth weight and a mother’s age!</p>
+<p>Let’s visualize <code>bootstrap_distribution</code> again, but now the standard error based 95% confidence interval for <span class="math inline">\(\beta_1\)</span> in <a href="#fig-bootstrap-distribution-se" class="quarto-xref">Figure&nbsp;12</a>. Notice how the value 0 <strong>is</strong> included in our confidence interval, suggesting that there is not sufficient evidence to say there is a relationship between a baby’s birth weight and a mother’s age. This is the same conclusion we reached with our p-value!</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bootstrap-distribution-se" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -1286,13 +1283,11 @@ Figure&nbsp;12: Standard error-based 95% confidence interval.
 </div>
 </div>
 </div>
-<section id="statistical-versus-practical-significance" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="statistical-versus-practical-significance"><span class="header-section-number">5.1</span> Statistical versus practical significance</h2>
-<p>You might be wondering, how could we have rejected the null hypothesis that <span class="math inline">\(\beta_1 = 0\)</span>, when the lower bound of our confidence interval is <strong>really</strong> close to 0. That’s a great question! This question gets at the heart of the difference between statistical and practical significance.</p>
-<p>Statistical significance is defined by a <span class="math inline">\(p\)</span>-value being smaller than some predetermined <span class="math inline">\(\alpha\)</span> threshold. However, the size of a p-value is not synonymous with the “effect size”. By this I mean, a study can obtain a small <span class="math inline">\(p\)</span>-value but have the estimated effect of the variable(s) be so small they would not be practically meaningful. In the context of the <code>births14</code> data, our hypothesis test concluded that there is a relationship between baby birth weights and mother’s ages. Yet, based on the confidence interval, the estimated increase in birth weight for a 10-year increase in age is at most 0.2 lbs. I would not believe that the medical profession needs to provide medical interventions for younger mothers whose babies would have lower birth weights.</p>
-<p>This is why I frequently favor confidence intervals over hypothesis tests, as they allow for you to assess <em>both</em> the statistical significance–by checking if the null hypothesized value is included in the interval—<strong>and</strong> the practical significance–by assessing the size of the estimated effect.</p>
+<!-- ## Statistical versus practical significance -->
+<!-- You might be wondering, how could we have rejected the null hypothesis that $\beta_1 = 0$, when the lower bound of our confidence interval is **really** close to 0. That's a great question! This question gets at the heart of the difference between statistical and practical significance. -->
+<!-- Statistical significance is defined by a $p$-value being smaller than some predetermined $\alpha$ threshold. However, the size of a p-value is not synonymous with the "effect size". By this I mean, a study can obtain a small $p$-value but have the estimated effect of the variable(s) be so small they would not be practically meaningful. In the context of the `births14` data, our hypothesis test concluded that there is a relationship between baby birth weights and mother's ages. Yet, based on the confidence interval, the estimated increase in birth weight for a 10-year increase in age is at most 0.2 lbs. I would not believe that the medical profession needs to provide medical interventions for younger mothers whose babies would have lower birth weights. -->
+<!-- This is why I frequently favor confidence intervals over hypothesis tests, as they allow for you to assess *both* the statistical significance--by checking if the null hypothesized value is included in the interval---**and** the practical significance--by assessing the size of the estimated effect. -->
 <!-- For example, suppose Cal Poly administrators are interested in studying the relationship between a student's GPA and the number of sporting events they attend. The administrators fit the regression model^[Well, likely their statistician or data scientist does. 😆] and find that there is a relationship between going to one a -->
-</section>
 </section>
 <section id="theory-based-hypothesis-tests-confidence-intervals" class="level1 page-columns page-full" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Theory-based hypothesis tests &amp; confidence intervals</h1>
