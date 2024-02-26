@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>includes either <code>site</code> or <code>name</code> inside of <code>group_by()</code></li>
 </ul>
-<p><em>If uses another variable (e.g., <code>latitude</code>):</em></p>
+<p><em>If uses another variable (e.g., <code>latitude</code>, <code>water_temp</code>):</em></p>
 <blockquote class="blockquote">
 <p>Your approach works, since there was only one measurement per site. But what if there wasn’t? This variable doesn’t uniquely define the location of each marsh! What variable(s) do?</p>
 </blockquote>
@@ -399,6 +399,10 @@ Note
 <p><em>If they don’t have axis labels with the units</em>:</p>
 <blockquote class="blockquote">
 <p>It is important to include an axis label stating what the units of each variable are! If you are wondering what the units of water temperature are, you can look up the help file (using ?pie_crab)</p>
+</blockquote>
+<p><em>If they only put temperature on their y-axis:</em></p>
+<blockquote class="blockquote">
+<p>What specific variable is being plotted on the y-axis? Air temperature? Ground temperature? Water temperature? Be specific!</p>
 </blockquote>
 </section>
 <section id="question-3" class="level2">
@@ -453,13 +457,17 @@ Note
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"&lt;SOME AXIS LABEL&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Their axis label <strong>must</strong> describe what is being plotted (e.g., slope statistics, sample slope, etc.)</p>
-<p><em>If they did not include an axis label</em>:</p>
+<p><em>If they did not include an x-axis label</em>:</p>
 <blockquote class="blockquote">
-<p>It is important to include an axis label stating what is being plotted! What statistics are being plotted on this bootstrap distribution?</p>
+<p>It is important to include an axis label stating what is being plotted! What statistics are being plotted on this bootstrap distribution? Your axis label should tell the reader what statistics you are plotting!</p>
 </blockquote>
-<p><strong>If their axis label is not about the slope statistic:</strong></p>
+<p><strong>If their x-axis label is not about the slope statistic:</strong></p>
 <blockquote class="blockquote">
 <p>What is being plotted in this distribution? What is it a distribution of? What statistics did you calculate in the previous step that are being plotted here?</p>
+</blockquote>
+<p><em>If their y-axis label is something other than number of resamples:</em></p>
+<blockquote class="blockquote">
+<p>Careful! This is a histogram of the bootstrap statistics that you found in #5. Think back to when we learned about histograms, what do the numbers (e.g., 25, 50, 75) represent? Hint: this is not a variable in the dataset!</p>
 </blockquote>
 </section>
 <section id="question-7" class="level2">
@@ -598,7 +606,7 @@ Note
 </blockquote>
 <p><em>If their justification is not reasonable</em>:</p>
 <blockquote class="blockquote">
-<p>Where were these 13 marshes located geographically? Do you believe that these 13 marshes are representative of the broader population they were sampled from?</p>
+<p>Bootstrapping assumes that the original sample is representative of the population from which the observations were sampled. Where were these 13 marshes located geographically? Do you believe that these 13 marshes are representative of the broader population they were sampled from?</p>
 </blockquote>
 <p><em>If their justification is about the shape of the bootstrap distribution</em>:</p>
 <blockquote class="blockquote">
