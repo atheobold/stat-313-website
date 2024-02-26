@@ -1,5 +1,9 @@
 ---
 title: "Statistical Critique 2: Exploring p-values"
+author: "Your name here!"
+format: html
+self-contained: true
+editor: visual
 ---
 
 ```{r}
@@ -52,4 +56,5 @@ For the first part of this critique, you are going to revisit the model you sele
 
 ## Part Four: Lessons Learned
 
+Now that you have explored the use of p-values for model selection and publication criteria, write down **two** things you have learned that you will take with you. 
 

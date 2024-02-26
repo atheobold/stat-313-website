@@ -355,14 +355,19 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#part-one-revisiting-the-midterm-project" id="toc-part-one-revisiting-the-midterm-project" class="nav-link active" data-scroll-target="#part-one-revisiting-the-midterm-project">Part One: Revisiting the Midterm Project</a>
   <ul class="collapse">
-  <li><a href="#assignment-details" id="toc-assignment-details" class="nav-link active" data-scroll-target="#assignment-details">Assignment Details</a></li>
-  <li><a href="#part-one-revisiting-the-midterm-project" id="toc-part-one-revisiting-the-midterm-project" class="nav-link" data-scroll-target="#part-one-revisiting-the-midterm-project"><span class="header-section-number">1</span> Part One: Revisiting the Midterm Project</a></li>
-  <li><a href="#part-two-using-p-values-instead" id="toc-part-two-using-p-values-instead" class="nav-link" data-scroll-target="#part-two-using-p-values-instead"><span class="header-section-number">2</span> Part Two: Using p-values Instead</a></li>
-  <li><a href="#part-three-learning-more-about-the-backlash-against-p-values" id="toc-part-three-learning-more-about-the-backlash-against-p-values" class="nav-link" data-scroll-target="#part-three-learning-more-about-the-backlash-against-p-values"><span class="header-section-number">3</span> Part Three: Learning More about the Backlash Against <span class="math inline">\(p\)</span>-values</a></li>
-  <li><a href="#part-four-lessons-learned" id="toc-part-four-lessons-learned" class="nav-link" data-scroll-target="#part-four-lessons-learned"><span class="header-section-number">4</span> Part Four: Lessons Learned</a></li>
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
+  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification">Model Justification</a></li>
+  </ul></li>
+  <li><a href="#part-two-using-a-p-value-instead" id="toc-part-two-using-a-p-value-instead" class="nav-link" data-scroll-target="#part-two-using-a-p-value-instead">Part Two: Using a p-value Instead</a></li>
+  <li><a href="#part-three-learning-more-about-the-backlash-against-p-values" id="toc-part-three-learning-more-about-the-backlash-against-p-values" class="nav-link" data-scroll-target="#part-three-learning-more-about-the-backlash-against-p-values">Part Three: Learning More about the Backlash Against <span class="math inline">\(p\)</span>-values</a>
+  <ul class="collapse">
+  <li><a href="#part-four-lessons-learned" id="toc-part-four-lessons-learned" class="nav-link" data-scroll-target="#part-four-lessons-learned">Part Four: Lessons Learned</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -370,7 +375,6 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Statistical Critique 2: Exploring p-values</h1>
-<p class="subtitle lead">Due March 4, 2024 by 5pm</p>
 </div>
 
 
@@ -387,105 +391,59 @@ window.Quarto = {
 </header>
 
 
-<p><img src="images/significant.jpeg" class="img-fluid"></p>
-<section id="assignment-details" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-details">Assignment Details</h2>
-<p>In your second statistical critique, you will focus on critiquing another key aspect of any statistical argument—statistical significance. No doubt you have seen <span class="math inline">\(p\)</span>-values in a previous statistical course and / or disciplinary course, and this week you’re adding to that knowledge. For this critique you will compare the model you selected in your Midterm Project with what model you would have chosen based on a statistical test.</p>
-<p>This critique involves coding! You can find a template for critique on <a href="https://posit.cloud/">Posit Cloud</a>.</p>
-</section>
-<section id="part-one-revisiting-the-midterm-project" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Part One: Revisiting the Midterm Project</h1>
-<p>For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. You need to copy-and-paste the code you wrote in your Midterm Project to create your 2-3 visualizations. After these visualizations, you should write a 2-3 sentence justification as to <em>why</em> you chose the model you did in your Midterm Project.</p>
-</section>
-<section id="part-two-using-p-values-instead" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Part Two: Using p-values Instead</h1>
-<p>For this second part, you are tasked with testing what regression model you would have chosen if you had used p-values to make your decision. Regardless of the model you chose for your Midterm Project, you will fit the <strong>most complex</strong> regression model. If you used two numerical explanatory variables, the most complex model has <strong>both</strong> variables included. If you used one numerical and one categorical explanatory variable, the most complex model is the different slopes (interaction) model.</p>
-<section id="for-two-numerical-explanatory-variables" class="level3">
-<h3 class="anchored" data-anchor-id="for-two-numerical-explanatory-variables">For two numerical explanatory variables</h3>
-<ol type="1">
-<li>fit a multiple linear regression with <strong>both</strong> variables included:</li>
-</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> flipper_length_mm, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is where you will load in your data! </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Reference the R package you data live inside, since you will need to load that package in!</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<ol start="2" type="1">
-<li>run an ANOVA to test if each variable should be included:</li>
-</ol>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Package for your data:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="part-one-revisiting-the-midterm-project" class="level1">
+<h1>Part One: Revisiting the Midterm Project</h1>
+<p>For the first part of this critique, you are going to revisit the model you selected for your Midterm Project.</p>
+<section id="visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="visualizations">Visualizations</h2>
+<p><strong>In the code chunk below, copy-and-paste the plots you created in your Midterm Project.</strong></p>
+</section>
+<section id="model-justification" class="level2">
+<h2 class="anchored" data-anchor-id="model-justification">Model Justification</h2>
+<p><strong>Justify (in 2-3 sentences) why you chose this model!</strong></p>
+</section>
+</section>
+<section id="part-two-using-a-p-value-instead" class="level1">
+<h1>Part Two: Using a p-value Instead</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(my_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: fit the most complex regression model</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: run an ANOVA to obtain p-values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Based on the p-value(s) you obtained, what model is the “best” model?</strong></p>
 </section>
-<section id="for-one-numerical-and-one-categorical-explanatory-variable" class="level3">
-<h3 class="anchored" data-anchor-id="for-one-numerical-and-one-categorical-explanatory-variable">For one numerical and one categorical explanatory variable</h3>
-<ol type="1">
-<li>fit a different slopes multiple linear regression:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> flipper_length_mm <span class="sc">*</span> species, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="2" type="1">
-<li>run an ANOVA to test for different slopes</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(my_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- # Part Three: Learning More about Misuses of $p$-values -->
-<!-- For this section, you are required to: -->
-<!-- 1.  read the American Statistical Association's statement on $p$-values and statistical significance -->
-<!-- 2.  note what misinterpretations you believe apply your excerpt (from Part One) **and** why -->
-<!-- ::: callout-tip -->
-<!-- # Justification -->
-<!-- Note, you are required to *justify* why you believe the selected misinterpretations apply to your article's statistical argument(s). -->
-<!-- ::: -->
-</section>
-</section>
-<section id="part-three-learning-more-about-the-backlash-against-p-values" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Part Three: Learning More about the Backlash Against <span class="math inline">\(p\)</span>-values</h1>
-<blockquote class="blockquote">
-<p>“The p-value was never intended to be a substitute for scientific reasoning.” Ron Wasserstein, Executive Director of the American Statistical Association</p>
-</blockquote>
-<p>Issues with the use of <span class="math inline">\(p\)</span>-values had gotten so problematic that the American Statistical Association (ASA)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> put out a statement in 2016 titled, <a href="https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf">“The ASA Statement on Statistical Significance and <span class="math inline">\(p\)</span>-Values”</a>. This statement includes six principles which address misconceptions and misuse of the <span class="math inline">\(p\)</span>-value.</p>
-<p>In March of 2019, Valentin Amrhein, Sander Greenland, Blake McShane and more than 800 signatories published an article in Nature <a href="https://www.nature.com/articles/d41586-019-00857-9">calling for an end to “statistical significance”</a>. The article details how, on top of the many common misunderstandings about hypothesis testing and <span class="math inline">\(p\)</span>-values, there is an incentive for researchers to “cherry pick” only the results that are “statistically significant” while dismissing those that aren’t. There are two problems with this system:</p>
-<ol type="1">
-<li>it incentivizes researchers to do whatever it takes to obtain “significant” p-values, even through dishonest means</li>
-<li>it dismisses the importance of results where no “significant” effects are found</li>
-</ol>
-<!-- > "Over time it appears the p-value has become a gatekeeper for whether work is publishable. This apparent editorial bias leads to the 'file-drawer effect,' in which research with statistically significant outcomes are much more likely to get published, while other work that might well be just as important scientifically is never seen in print. It also leads to practices called by such names as 'p-hacking' and 'data dredging' that emphasize the search for small p-values over other statistical and scientific reasoning." -->
-<!-- > -->
-<!-- > Jessica Utts, President of the American Statistical Association -->
-<p>For Part Three, you are going to inspect what the publication requirements are for journal the article you selected was published in.</p>
-<p>First, go to the website for the journal where your article was published. Now, find their criteria for publication. If you are having a difficult time finding these criteria, it may be simpler to Google “<em>title of journal</em> publication criteria,” substituting the name of your journal.</p>
-<p>Search through the criteria and see what the requirements are for (1) the “significance” of the findings and (2) the availability of the data and / or analyses. Describe what you find!</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Feel free to type out what you find while searching the journal or simply copy-and-paste the criteria you find listed on their website.</p>
-</div>
-</div>
-</section>
-<section id="part-four-lessons-learned" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Part Four: Lessons Learned</h1>
+<section id="part-three-learning-more-about-the-backlash-against-p-values" class="level1">
+<h1>Part Three: Learning More about the Backlash Against <span class="math inline">\(p\)</span>-values</h1>
+<p><strong>Type out what you find about your journal’s publication criteria or simply copy-and-paste the criteria you find listed on their website.</strong></p>
+<section id="part-four-lessons-learned" class="level2">
+<h2 class="anchored" data-anchor-id="part-four-lessons-learned">Part Four: Lessons Learned</h2>
 <p>Now that you have explored the use of p-values for model selection and publication criteria, write down <strong>two</strong> things you have learned that you will take with you.</p>
 
 
 </section>
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>This is my professional organization.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

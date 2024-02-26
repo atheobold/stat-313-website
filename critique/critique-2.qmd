@@ -1,6 +1,6 @@
 ---
-title: "Statistical Critique 2: Statistical Argumentation"
-subtitle: "Due May 28, 2023 by midnight"
+title: "Statistical Critique 2: Exploring p-values"
+subtitle: "Due March 4, 2024 by 5pm"
 format: 
   html:
     table-of-contents: true
@@ -16,6 +16,8 @@ editor: visual
 
 In your second statistical critique, you will focus on critiquing another key aspect of any statistical argument---statistical significance. No doubt you have seen $p$-values in a previous statistical course and / or disciplinary course, and this week you're adding to that knowledge. For this critique you will compare the model you selected in your Midterm Project with what model you would have chosen based on a statistical test. 
 
+This critique involves coding! You can find a template for critique on [Posit Cloud](https://posit.cloud/). 
+
 # Part One: Revisiting the Midterm Project 
 
 For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. You need to copy-and-paste the code you wrote in your Midterm Project to create your 2-3 visualizations. After these visualizations, you should write a 2-3 sentence justification as to *why* you chose the model you did in your Midterm Project.  
@@ -24,59 +26,71 @@ For the first part of this critique, you are going to revisit the model you sele
 
 For this second part, you are tasked with testing what regression model you would have chosen if you had used p-values to make your decision. Regardless of the model you chose for your Midterm Project, you will fit the **most complex** regression model. If you used two numerical explanatory variables, the most complex model has **both** variables included. If you used one numerical and one categorical explanatory variable, the most complex model is the different slopes (interaction) model. 
 
-::: columns
-::: {.column width="47%"}
-**For two numerical explanatory variables**
+### For two numerical explanatory variables
 
-1. fit a multiple linear regression with **both** variables included (e.g., `my_model <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, data = penguins)`)
+1. fit a multiple linear regression with **both** variables included:
 
-2. run an ANOVA to test if each variable should be included (e.g., `anova(my_model)`)
-:::
+```{r}
+#| eval: false
+my_model <- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, 
+               data = penguins)
+```
 
-::: {.column width="3%"}
-:::
+2. run an ANOVA to test if each variable should be included: 
 
-::: {.column width="47%"}
-**For one numerical and one categorical explanatory variable**
+```{r}
+#| eval: false
+anova(my_model)
+```
 
-1. fit a different slopes multiple linear regression (e.g., `my_model <- lm(bill_length_mm ~ flipper_length_mm * species, data = penguins)`)
+### For one numerical and one categorical explanatory variable
 
-2. run an ANOVA to test for different slopes (e.g., `anova(my_model)`)
-:::
-:::
+1. fit a different slopes multiple linear regression:
 
+```{r}
+#| eval: false
+my_model <- lm(bill_length_mm ~ flipper_length_mm * species, 
+               data = penguins)
+```
 
-# Part Three: Learning More about Misuses of $p$-values
+2. run an ANOVA to test for different slopes 
 
-> "The p-value was never intended to be a substitute for scientific reasoning." Ron Wasserstein, Executive Director of the American Statistical Association
+```{r}
+#| eval: false
+anova(my_model)
+```
 
-Issues with the use of $p$-values had gotten so problematic that the American Statistical Association (ASA)[^1] put out a statement in 2016 titled, ["The ASA Statement on Statistical Significance and $p$-Values"](https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf). This statement includes six principles which address misconceptions and misuse of the $p$-value.
+<!-- # Part Three: Learning More about Misuses of $p$-values -->
 
-[^1]: This is my professional organization.
+<!-- For this section, you are required to: -->
 
-For this section, you are required to:
+<!-- 1.  read the American Statistical Association's statement on $p$-values and statistical significance -->
+<!-- 2.  note what misinterpretations you believe apply your excerpt (from Part One) **and** why -->
 
-1.  read the American Statistical Association's statement on $p$-values and statistical significance
-2.  note what misinterpretations you believe apply your excerpt (from Part One) **and** why
+<!-- ::: callout-tip -->
+<!-- # Justification -->
 
-::: callout-tip
-# Justification
-
-Note, you are required to *justify* why you believe the selected misinterpretations apply to your article's statistical argument(s).
-:::
+<!-- Note, you are required to *justify* why you believe the selected misinterpretations apply to your article's statistical argument(s). -->
+<!-- ::: -->
 
 # Part Three: Learning More about the Backlash Against $p$-values
 
-> "Over time it appears the p-value has become a gatekeeper for whether work is publishable. This apparent editorial bias leads to the 'file-drawer effect,' in which research with statistically significant outcomes are much more likely to get published, while other work that might well be just as important scientifically is never seen in print. It also leads to practices called by such names as 'p-hacking' and 'data dredging' that emphasize the search for small p-values over other statistical and scientific reasoning."
->
-> Jessica Utts, President of the American Statistical Association
+> "The p-value was never intended to be a substitute for scientific reasoning." Ron Wasserstein, Executive Director of the American Statistical Association
 
-For Part Three, you are going to inspect what the publication requirements are for journal the article you selected was published in.
+Issues with the use of $p$-values had gotten so problematic that the American Statistical Association (ASA)[^1] put out a statement in 2016 titled, ["The ASA Statement on Statistical Significance and $p$-Values"](https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf). This statement includes six principles which address misconceptions and misuse of the $p$-value. 
+
+[^1]: This is my professional organization.
 
 In March of 2019, Valentin Amrhein, Sander Greenland, Blake McShane and more than 800 signatories published an article in Nature [calling for an end to "statistical significance"](https://www.nature.com/articles/d41586-019-00857-9). The article details how, on top of the many common misunderstandings about hypothesis testing and $p$-values, there is an incentive for researchers to "cherry pick" only the results that are "statistically significant" while dismissing those that aren't. There are two problems with this system:
 
 1.  it incentivizes researchers to do whatever it takes to obtain "significant" p-values, even through dishonest means
 2.  it dismisses the importance of results where no "significant" effects are found
+
+<!-- > "Over time it appears the p-value has become a gatekeeper for whether work is publishable. This apparent editorial bias leads to the 'file-drawer effect,' in which research with statistically significant outcomes are much more likely to get published, while other work that might well be just as important scientifically is never seen in print. It also leads to practices called by such names as 'p-hacking' and 'data dredging' that emphasize the search for small p-values over other statistical and scientific reasoning." -->
+<!-- > -->
+<!-- > Jessica Utts, President of the American Statistical Association -->
+
+For Part Three, you are going to inspect what the publication requirements are for journal the article you selected was published in. 
 
 First, go to the website for the journal where your article was published. Now, find their criteria for publication. If you are having a difficult time finding these criteria, it may be simpler to Google "*title of journal* publication criteria," substituting the name of your journal.
 
@@ -86,5 +100,6 @@ Search through the criteria and see what the requirements are for (1) the "signi
 Feel free to type out what you find while searching the journal or simply copy-and-paste the criteria you find listed on their website.
 :::
 
-## Part Four: Lessons Learned
+# Part Four: Lessons Learned
 
+Now that you have explored the use of p-values for model selection and publication criteria, write down **two** things you have learned that you will take with you. 

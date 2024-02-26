@@ -5301,14 +5301,14 @@
   {
     "objectID": "critique/critique-2.html#assignment-details",
     "href": "critique/critique-2.html#assignment-details",
-    "title": "Statistical Critique 2: Statistical Argumentation",
+    "title": "Statistical Critique 2: Exploring p-values",
     "section": "Assignment Details",
-    "text": "Assignment Details\nIn your second statistical critique, you will focus on critiquing another key aspect of any statistical argument—statistical significance. No doubt you have seen \\(p\\)-values in a previous statistical course and / or disciplinary course, and this week you’re adding to that knowledge. For this critique you read about common misinterpretations and misuses of \\(p\\)-values, and critique the statistical argumentation used in the article you selected."
+    "text": "Assignment Details\nIn your second statistical critique, you will focus on critiquing another key aspect of any statistical argument—statistical significance. No doubt you have seen \\(p\\)-values in a previous statistical course and / or disciplinary course, and this week you’re adding to that knowledge. For this critique you will compare the model you selected in your Midterm Project with what model you would have chosen based on a statistical test.\nThis critique involves coding! You can find a template for critique on Posit Cloud."
   },
   {
     "objectID": "critique/critique-2.html#footnotes",
     "href": "critique/critique-2.html#footnotes",
-    "title": "Statistical Critique 2: Statistical Argumentation",
+    "title": "Statistical Critique 2: Exploring p-values",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is my professional organization.↩︎"
   },
@@ -7241,5 +7241,40 @@
     "title": "Week 8 – Extending to Multiple Linear Regression",
     "section": "1.5 How do body mass and flipper length influence a penguin’s bill length?",
     "text": "1.5 How do body mass and flipper length influence a penguin’s bill length?\nOur multiple linear regressions take take on a variety of flavors, including models with multiple numerical explanatory variables. An example of this type of model is adding flipper length as a second explanatory variable (in addition to body mass) when explaining the length of a penguin’s bill. This type of investigation is similar to what many of you did for your Midterm Project, where you decided if there was evidence that both explanatory variables have a relationship with the response.\nBased on the scatterplot below, it does seem that both body mass and flipper length have a relationship with a penguin’s bill length. As the color of the points gets darker (longer flippers), a penguin’s bill length also increases.\n\n\n\n\n\n\n\n\nFigure 5\n\n\n\n\n\n\nWhich method?\nAs said before, we have two tools we can use (1) a permutation distribution, and (2) a \\(t\\)-distribution. Let’s see which tool seems like the best option.\n\n\n\n\n\n\n\n\n\n\n\n(a) Distribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n(b) Scatterplot of residuals versus fitted / predicted values\n\n\n\n\n\n\n\nFigure 6: Figures\n\n\n\nLooking at Figure 6 (a) and Figure 6 (b), it appears that both variables have a linear relationship with bill length. Similar to our previous discussion, without knowing more about the possibility of sampling penguins who are genetically related, we don’t have evidence that the independence condition is violated.\nSo, we turn to our residual analysis. In Figure 7 (a), we see that the distribution of residuals is unimodal and symmetric, so the normality condition is not violated. Finally, Figure 7 (b) suggests the variance in the residuals is fairly similar across the predicted bill lengths, going from about -10 to +10.\n\n\n\n\n\n\n\n\n\n\n\n(a) Distribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n(b) Scatterplot of residuals versus fitted / predicted values\n\n\n\n\n\n\n\nFigure 7: Figures\n\n\n\nAs I did not find that any of these conditions were violated, it seems reasonable to use theory-based methods as an approximation for the permutation distribution.\n\n\nObtaining our p-value\nUnfortunately, when testing for a relationship between each explanatory variable and the response, the get_regression_table() function does not do what we want. What we want is for the p-value for each variable to be conditional on the other variable(s) in the model, but the p-values for variables output from get_regression_table() are tested in the order they are listed. Meaning, if body_mass_g is the first variable listed in the model, then the p-value output is not conditional on flipper_length_mm also being included in the model.\nBut we have a tool that will give us what we want! An ANOVA!!!\n\n\nMultiple Hypothesis Tests\n\nmlr_anova &lt;- lm(bill_length_mm ~ body_mass_g + flipper_length_mm, \n                   data = penguins_clean)\n\nanova(mlr_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbody_mass_g\n1\n3449.8232\n3449.82317\n200.48905\n0\n\n\nflipper_length_mm\n1\n800.7561\n800.75612\n46.53654\n0\n\n\nResiduals\n330\n5678.3234\n17.20704\nNA\nNA\n\n\n\n\n\n\n\nTechnically, each of these lines is testing if there is a relationship between the explanatory variable and the response, controlling for the other variable(s) in the model. Meaning, the flipper_length_mm line is running the following hypothesis test:\n\\(H_0\\): For penguins in the Palmer Archipelago, controlling for a penguin’s body mass there is no relationship between a penguin’s flipper length and their bill length\n\\(H_A\\): For penguins in the Palmer Archipelago, controlling for a penguin’s body mass there is a relationship between a penguin’s flipper length and their bill length\nSimilarly, the body_mass_g line is testing:\n\\(H_0\\): For penguins in the Palmer Archipelago, controlling for a penguin’s flipper length there is no relationship between a penguin’s body mass and their bill length\n\\(H_A\\): For penguins in the Palmer Archipelago, controlling for a penguin’s flipper length there is a relationship between a penguin’s body mass and their bill length\nGiven the p-values output from the table, it appears that after controlling for a penguin’s flipper length, there is a relationship between a penguin’s body mass and bill length (p-value &lt; 0.0001). Similarly, there is also evidence that (after controlling for a penguin’s body mass) there is a relationship between the length of a penguin’s flipper and its bill length (p-value &lt; 0.0001)."
+  },
+  {
+    "objectID": "critique/critique-2.html#part-four-lessons-learned",
+    "href": "critique/critique-2.html#part-four-lessons-learned",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Part Four: Lessons Learned",
+    "text": "Part Four: Lessons Learned\nNow that you have explored the use of p-values for model selection and publication criteria, write down two things you have learned that you will take with you."
+  },
+  {
+    "objectID": "critique/stat-critique-2-template.html",
+    "href": "critique/stat-critique-2-template.html",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "",
+    "text": "# This is where you will load in your data! \n# Reference the R package you data live inside, since you will need to load that package in!\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(moderndive)\n\n# Package for your data:"
+  },
+  {
+    "objectID": "critique/stat-critique-2-template.html#visualizations",
+    "href": "critique/stat-critique-2-template.html#visualizations",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Visualizations",
+    "text": "Visualizations\nIn the code chunk below, copy-and-paste the plots you created in your Midterm Project."
+  },
+  {
+    "objectID": "critique/stat-critique-2-template.html#model-justification",
+    "href": "critique/stat-critique-2-template.html#model-justification",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Model Justification",
+    "text": "Model Justification\nJustify (in 2-3 sentences) why you chose this model!"
+  },
+  {
+    "objectID": "critique/stat-critique-2-template.html#part-four-lessons-learned",
+    "href": "critique/stat-critique-2-template.html#part-four-lessons-learned",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Part Four: Lessons Learned",
+    "text": "Part Four: Lessons Learned\nNow that you have explored the use of p-values for model selection and publication criteria, write down two things you have learned that you will take with you."
   }
 ]
