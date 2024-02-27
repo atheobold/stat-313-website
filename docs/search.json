@@ -1824,154 +1824,154 @@
     "href": "slides/week8-day2.html#section",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Plan for Week 9\n\n\n\nAsynchronous class on Tuesday and Thursday\nTypical deadlines for reading (Tuesday) and tutorial (Thursday)\n“Checkpoints” for Final Project incorporated throughout the week\n\nIntroduction – Due Wednesday\nMethods – Due Friday\nFindings & Scope of Inference – Due Sunday"
+    "text": "What did we do on Tuesday?"
   },
   {
     "objectID": "slides/week8-day2.html#section-1",
     "href": "slides/week8-day2.html#section-1",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Some advice on the your Final Project…"
+    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\nggplot(data = evals, \n       mapping = aes(x = bty_avg, y = score)) +\n  geom_jitter() + \n  geom_smooth(method = \"lm\") +\n  labs(x = \"Average Beauty Score\", \n       y = \"Course Evaluation Score\") +\n  my_theme\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
   },
   {
     "objectID": "slides/week8-day2.html#section-2",
     "href": "slides/week8-day2.html#section-2",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What did we do on Tuesday?"
+    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")\n\n. . .\n\n\nWhat is happening in the generate() step?"
   },
   {
     "objectID": "slides/week8-day2.html#section-3",
     "href": "slides/week8-day2.html#section-3",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
+    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\nvisualise(null_dist) +\n  shade_p_value(obs_stat = obs_slope, direction = \"two-sided\") +\n  labs(x = \"Permuted Slope Statistic\")\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
   },
   {
     "objectID": "slides/week8-day2.html#section-4",
     "href": "slides/week8-day2.html#section-4",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n\nWhat is happening in the generate() step?"
+    "text": "And calculated the p-value\n\n\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\n\n  What would you decide for your hypothesis test?"
   },
   {
     "objectID": "slides/week8-day2.html#section-5",
     "href": "slides/week8-day2.html#section-5",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
+    "text": "How would this process have changed if we used theory-based methods instead?"
   },
   {
     "objectID": "slides/week8-day2.html#section-6",
     "href": "slides/week8-day2.html#section-6",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And calculated the p-value\n\n\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\n\n  What would you decide for your hypothesis test?"
+    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated.\n\n\n\n\nplot(c(-5, 5),\n     c(0, dnorm(0)),\n      type = \"n\", \n     ylab = \"\", \n     xlab = \"\",\n     axes = FALSE\n     )\n\nat &lt;- seq(-10, 10, 2)\naxis(1, at)\naxis(1, at - 1, rep(\"\", length(at)), tcl = -0.1)\nabline(h = 0)\nCOL. &lt;- openintro::fadeColor(openintro::IMSCOL[\"blue\", \"full\"], c(\"FF\", \"89\", \"68\", \"4C\", \"33\"))\nCOLt &lt;- openintro::fadeColor(openintro::IMSCOL[\"blue\", \"full\"], c(\"FF\", \"AA\", \"85\", \"60\", \"45\"))\nDF &lt;- c(\"normal\", 8, 4, 2, 1)\nX &lt;- seq(-10, 10, 0.02)\nY &lt;- dnorm(X)\nlines(X, Y, col = COL.[1])\nfor (i in 2:5) {\n  Y &lt;- dt(X, as.numeric(DF[i]))\n  lines(X, Y, col = COL.[i], lwd = 1.5)\n}\nlegend(2.5, 0.4,\n  legend = c(\n    DF[1],\n    paste(\"t, df = \", DF[2:5], sep = \"\")\n  ),\n  col = COL.,\n  text.col = COLt,\n  lty = rep(1, 5),\n  lwd = 1.5\n)"
   },
   {
     "objectID": "slides/week8-day2.html#section-7",
     "href": "slides/week8-day2.html#section-7",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How would this process have changed if we used theory-based methods instead?"
+    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\nobs_slope\n\nResponse: score (numeric)\nExplanatory: bty_avg (numeric)\n# A tibble: 1 × 1\n    stat\n   &lt;dbl&gt;\n1 0.0666\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
   },
   {
     "objectID": "slides/week8-day2.html#section-8",
     "href": "slides/week8-day2.html#section-8",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
+    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\nse_num &lt;- ( sd(evals$score) / sd(evals$bty_avg) ) * \n  sqrt(\n    1 - cor(evals$score, evals$bty_avg)\n    ) \n\nse_denom &lt;- sqrt(nrow(evals) - 2)\n\nse &lt;- se_num / se_denom\n\nse\n\n[1] 0.01495204\n\n\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}}\\)\n\n\n\n\nt &lt;- pull(obs_slope) / se\n\nt\n\nbty_avg \n4.45672 \n\n\n\n\n\n\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
   },
   {
     "objectID": "slides/week8-day2.html#section-9",
     "href": "slides/week8-day2.html#section-9",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\nResponse: score (numeric)\nExplanatory: bty_avg (numeric)\n# A tibble: 1 × 1\n    stat\n   &lt;dbl&gt;\n1 0.0666\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+    "text": "How does R calculate the p-value?\n\n. . .\n\nggplot(data = tibble(x = c(-5, 5)), \n       mapping = aes(x)) +\n  stat_function(fun = dt, \n                args = list(df = nrow(evals) - 2), \n                color = \"blue\", \n                linewidth = 1.5) +\n  ylab(\"\") +\n  scale_y_continuous(breaks = NULL) +\n  geom_vline(xintercept = t, color = \"red\", linewidth = 1.5)\n\n\n\n\n\n\n\n\n. . .\nHow many degrees of freedom does this \\(t\\)-distribution have?"
   },
   {
     "objectID": "slides/week8-day2.html#section-10",
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}}\\)\n\n\n\n\n\nbty_avg \n4.45672 \n\n\n\n\n\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+    "text": "Did we get similar results between these methods?"
   },
   {
     "objectID": "slides/week8-day2.html#section-11",
     "href": "slides/week8-day2.html#section-11",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How does R calculate the p-value?\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow many degrees of freedom does this \\(t\\)-distribution have?"
+    "text": "Why not always use theoretical methods?\n\n. . .\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
   },
   {
     "objectID": "slides/week8-day2.html#section-12",
     "href": "slides/week8-day2.html#section-12",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Did we get similar results between these methods?"
+    "text": "What are these “conditions”?\n\n. . .\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-13",
     "href": "slides/week8-day2.html#section-13",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
+    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\nand_vertebrates %&gt;%\n  filter(species != \"Cascade torrent salamander\") %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = species)) +\n  geom_point() + \n  labs(x = \"Length (mm)\", \n       y = \"Weight (g)\") +\n  my_theme\n\nWarning: Removed 13270 rows containing missing values (`geom_point()`).\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-14",
     "href": "slides/week8-day2.html#section-14",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What are these “conditions”?\n\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+    "text": "Variable transformation!\n\n\nand_vertebrates %&gt;%\n  filter(species != \"Cascade torrent salamander\") %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = species)) +\n  geom_point() + \n  labs(x = \"Log Transformed Length (mm)\", \n       y = \"Log Transformed Weight (g)\") +\n  scale_x_log10() +\n  scale_y_log10() +\n  my_theme\n\nWarning: Removed 13270 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "slides/week8-day2.html#section-15",
     "href": "slides/week8-day2.html#section-15",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\nWhat should we do?"
+    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
   },
   {
     "objectID": "slides/week8-day2.html#section-16",
     "href": "slides/week8-day2.html#section-16",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "Normality of residuals\n\n\nfish &lt;- and_vertebrates %&gt;%\n  filter(!species %in% c(\"Cascade torrent salamander\", \"Coastal giant salamander\")) \n\ncurved_lm &lt;- lm(weight_g ~ length_1_mm, data = fish)\n\nget_regression_points(curved_lm) %&gt;% \n  ggplot(mapping = aes(x = residual)) + \n  geom_histogram() + \n  labs(x = \"Residual\") +\n  my_theme\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-17",
     "href": "slides/week8-day2.html#section-17",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
+    "text": "Variable transformation!\n\n\nfish &lt;- and_vertebrates %&gt;%\n  filter(!species %in% c(\"Cascade torrent salamander\", \"Coastal giant salamander\"))\n\nnot_curved_lm &lt;- lm(log(weight_g) ~ log(length_1_mm), data = fish)\n\nbroom::augment(not_curved_lm) %&gt;% \n  mutate(.resid = `log(weight_g)` - `.fitted`) %&gt;% \n  ggplot(mapping = aes(x = .resid)) + \n  geom_histogram(binwidth = 0.1) + \n  labs(x = \"Residual\") +\n  xlim(c(-0.5, 0.5)) +\n  my_theme\n\nWarning: Removed 73 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 2 rows containing missing values (`geom_bar()`)."
   },
   {
     "objectID": "slides/week8-day2.html#section-18",
     "href": "slides/week8-day2.html#section-18",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Normality of residuals\n\n\n\nWhat should we do?"
+    "text": "Equal variance of residuals\n\n\nggplot(data = hbr_maples, \n       mapping = aes(x = stem_length, y = stem_dry_mass)\n       ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Stem Length (mm)\",\n    y = \"Stem Dry Mass (g)\",\n    title = \"Sugar Maple Seedlings in Hubbard Brook LTER\"\n  ) +\n  theme_minimal() + \n  my_theme\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-19",
     "href": "slides/week8-day2.html#section-19",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "Variable transformation!\n\n\nggplot(data = hbr_maples, \n       mapping = aes(x = stem_length, y = stem_dry_mass)\n       ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Stem Length (mm)\",\n    y = \"Log Transformed Stem Dry Mass (g)\",\n    title = \"Sugar Maple Seedlings in Hubbard Brook LTER\"\n  ) +\n  theme_minimal() + \n  scale_y_log10() +\n  my_theme\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week8-day2.html#section-20",
     "href": "slides/week8-day2.html#section-20",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
+    "text": "Are these conditions required for both methods?\n\n. . .\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-21",
     "href": "slides/week8-day2.html#section-21",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "What happens if the conditions are violated?\n\n. . .\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution."
   },
   {
     "objectID": "slides/week8-day2.html#section-22",
@@ -4221,7 +4221,7 @@
     "href": "slides/week8-day1.html#section-1",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What if I want to know if the population parameter differs from a specific value?\n\n\n\n\nHypothesis test!"
+    "text": "What if I want to know if the population parameter differs from a specific value?\n\n. . .\n\n\nHypothesis test!"
   },
   {
     "objectID": "slides/week8-day1.html#section-2",
@@ -4235,49 +4235,49 @@
     "href": "slides/week8-day1.html#section-3",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Permutation Distribution\n\n\n\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n\n\nWe can use the statistics from these samples to approximate the true sampling distribution under the null!"
+    "text": "Permutation Distribution\n\n. . .\n\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n. . .\n\nWe can use the statistics from these samples to approximate the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#section-4",
     "href": "slides/week8-day1.html#section-4",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What could have happened if the null was true?\n\n\n\nLike before, we are interested in knowing how a statistic varies from sample to sample.\n\n\n\n\nAgain, knowing a statistic’s behavior helps us make better / more informed decisions!\n\n\n\n\nThis helps us know what statistics are more or less likely to occur if the null hypothesis is true."
+    "text": "What could have happened if the null was true?\n\n. . .\n\nLike before, we are interested in knowing how a statistic varies from sample to sample.\n\n. . .\n\nAgain, knowing a statistic’s behavior helps us make better / more informed decisions!\n\n. . .\n\nThis helps us know what statistics are more or less likely to occur if the null hypothesis is true."
   },
   {
     "objectID": "slides/week8-day1.html#section-5",
     "href": "slides/week8-day1.html#section-5",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "p-values\n\n\n\nQuantify how “surprising” what we saw in our data is, if the null hypothesis was true"
+    "text": "p-values\n\n. . .\n\nQuantify how “surprising” what we saw in our data is, if the null hypothesis was true"
   },
   {
     "objectID": "slides/week8-day1.html#section-6",
     "href": "slides/week8-day1.html#section-6",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Permutation Resamples\n\n\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\n\n\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n\n\n\n\nThis is your permuted resample!"
+    "text": "Permutation Resamples\n\n. . .\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\n. . .\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n. . .\n\n\nThis is your permuted resample!"
   },
   {
     "objectID": "slides/week8-day1.html#section-7",
     "href": "slides/week8-day1.html#section-7",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Permuted Statistics\n\nRepeat this process many, many times.\n\nCalculate a numerical summary (e.g., mean, median) for each permuted resample.\n\n\n\n\nThese are your permuted statistics!"
+    "text": "Permuted Statistics\n\nRepeat this process many, many times.\n. . .\nCalculate a numerical summary (e.g., mean, median) for each permuted resample.\n. . .\n\n\nThese are your permuted statistics!"
   },
   {
     "objectID": "slides/week8-day1.html#section-8",
     "href": "slides/week8-day1.html#section-8",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Permutation Distribution\n\n\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n\n\n\nApproximates the true sampling distribution under the null!"
+    "text": "Permutation Distribution\n\n. . .\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n. . .\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n. . .\n\nApproximates the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#section-9",
     "href": "slides/week8-day1.html#section-9",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "How do I get my p-value?\n\n\n\nWe compare the observed statistic with the statistics produced assuming the null hypothesis was true.\n\n\n\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
+    "text": "How do I get my p-value?\n\n. . .\n\nWe compare the observed statistic with the statistics produced assuming the null hypothesis was true.\n\n. . .\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
   },
   {
     "objectID": "slides/week8-day1.html#section-10",
@@ -4298,7 +4298,7 @@
     "href": "slides/week8-day1.html#section-12",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What condition do we need to be worried about?"
+    "text": ". . .\n\nWhat condition do we need to be worried about?"
   },
   {
     "objectID": "slides/week8-day1.html#section-13",
@@ -4312,14 +4312,14 @@
     "href": "slides/week8-day1.html#section-14",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "How do I know what is likely to happen if the null is true?\n\n\n\n\nPermuting!"
+    "text": "How do I know what is likely to happen if the null is true?\n\n. . .\n\n\nPermuting!"
   },
   {
     "objectID": "slides/week8-day1.html#section-15",
     "href": "slides/week8-day1.html#section-15",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Generating a permuted resample\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: hypothesize() what would happen under the null\n\n\nStep 3: generate() permuted resamples\n\n\nStep 4: calculate() the statistic of interest"
+    "text": "Generating a permuted resample\n\n. . .\nStep 1: specify() your response and explanatory variables\n. . .\nStep 2: hypothesize() what would happen under the null\n. . .\nStep 3: generate() permuted resamples\n. . .\nStep 4: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week8-day1.html#section-16",
@@ -4333,14 +4333,14 @@
     "href": "slides/week8-day1.html#section-17",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "State your hypothesis!\n\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n\n\n\n\n\n\n\n\nIndependence of variables\n\n\nNote! This is different from assuming your observations are independent!"
+    "text": "State your hypothesis!\n\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n. . .\n\n\n\n\n\n\n\nIndependence of variables\n\n\n\nNote! This is different from assuming your observations are independent!"
   },
   {
     "objectID": "slides/week8-day1.html#section-18",
     "href": "slides/week8-day1.html#section-18",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Generate your resamples!\n\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
+    "text": "Generate your resamples!\n\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n. . .\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week8-day1.html#section-19",
@@ -4375,7 +4375,7 @@
     "href": "slides/week8-day1.html#section-23",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Is our observed statistic unlikely under the null?\n\n\n\n\nStep 1: Calculate observed statistic\nStep 2: Find observed statistic on permutation distribution"
+    "text": "Is our observed statistic unlikely under the null?\n\n\n. . .\n\nStep 1: Calculate observed statistic\nStep 2: Find observed statistic on permutation distribution"
   },
   {
     "objectID": "slides/week8-day1.html#section-24",
@@ -4389,21 +4389,21 @@
     "href": "slides/week8-day1.html#section-25",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "visualise(null_dist) +\n  shade_p_value(obs_stat = obs_slope, direction = \"two-sided\") +\n  labs(x = \"Permuted Slope Statistic for Linear Relationship between \\nStem Length and Stem Dry Mass\")\n\n\n\n\nIs our observed statistic unlikely to have happened if the null hypothesis was true?"
+    "text": "visualise(null_dist) +\n  shade_p_value(obs_stat = obs_slope, direction = \"two-sided\") +\n  labs(x = \"Permuted Slope Statistic for Linear Relationship between \\nStem Length and Stem Dry Mass\")\n\n\n\n\n\n\n\n\n. . .\n\nIs our observed statistic unlikely to have happened if the null hypothesis was true?"
   },
   {
     "objectID": "slides/week8-day1.html#section-26",
     "href": "slides/week8-day1.html#section-26",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "The p-value is…\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\nWhy did we get a warning?"
+    "text": "The p-value is…\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n. . .\n\n\nWhy did we get a warning?"
   },
   {
     "objectID": "slides/week8-day1.html#section-27",
     "href": "slides/week8-day1.html#section-27",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "How do we interpret a p-value?\n\n\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n\n\n\n“The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
+    "text": "How do we interpret a p-value?\n\n. . .\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n. . .\n\n“The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
   },
   {
     "objectID": "slides/week8-day1.html#section-28",
@@ -7281,8 +7281,8 @@
     "objectID": "slides/week8-day1.html#weeks-8-9-10",
     "href": "slides/week8-day1.html#weeks-8-9-10",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "Weeks 8, 9, & 10",
-    "text": "Weeks 8, 9, & 10\n\n\n\nWeek 8\n\nLearn about hypothesis testing for SLR & MLR\nCritique use of p-values for statistical arguments\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
+    "section": "",
+    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCritique use of p-values for statistical arguments\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
   },
   {
     "objectID": "slides/week8-day1.html#midterm-project-grades",
@@ -7290,5 +7290,26 @@
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Midterm Project Grades",
     "text": "Midterm Project Grades\n\n\nExcellent\nAt most one section marked “Satisfactory”\n\\(\\geq\\) 4.5\n\n\n\nSatisfactory\nAt most two sections marked “Satisfactory”\n\\(\\geq\\) 4.5\n\n\n\nProgressing\nAt most one section marked “Satisfactory”\n\\(\\geq\\) 4.5"
+  },
+  {
+    "objectID": "slides/week8-day2.html",
+    "href": "slides/week8-day2.html",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(infer)\nlibrary(moderndive)\nlibrary(lterdatasampler)\n\nmy_theme &lt;- theme(axis.title.x = element_text(size = 18), \n                  axis.title.y = element_text(size = 18), \n                  axis.text.x = element_text(size = 12), \n                  axis.text.y = element_text(size = 12))\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")"
+  },
+  {
+    "objectID": "slides/week8-day2.html#common-mistakes",
+    "href": "slides/week8-day2.html#common-mistakes",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Common Mistakes",
+    "text": "Common Mistakes\n\nQuestion 8 (Interpret Confidence Interval): A lot of groups either did not include the population or they stated the population was the 13 marshes and not all marshes on the East coast. For this question, only one or two groups said the population was about crabs!\nQuestion 11 (Bootstrap Assumptions): A lot of groups did not talk about marshes and instead mentioned resampling. Some also mentioned that the population was crabs :("
+  },
+  {
+    "objectID": "slides/week8-day1.html",
+    "href": "slides/week8-day1.html",
+    "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
+    "section": "",
+    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCritique use of p-values for statistical arguments\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
   }
 ]
