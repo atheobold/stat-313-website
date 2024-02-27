@@ -4329,21 +4329,21 @@
     "href": "slides/week8-day1.html#section-1",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What if I want to know if the population parameter differs from a specific value?\n\n. . .\n\n\nHypothesis test!"
+    "text": "What if I want to know if the population parameter differs from a specific value?\n\n\n\n\nHypothesis test!"
   },
   {
     "objectID": "slides/week8-day1.html#section-2",
     "href": "slides/week8-day1.html#section-2",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Hypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n. . .\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true"
+    "text": "Hypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true"
   },
   {
     "objectID": "slides/week8-day1.html#section-3",
     "href": "slides/week8-day1.html#section-3",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "How do I get my p-value?\n\n. . .\nCompare the observed statistic with the statistics produced assuming the null hypothesis was true.\n. . .\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
+    "text": "How do I get my p-value?\n\n\nCompare the observed statistic with the statistics produced assuming the null hypothesis was true.\n\n\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
   },
   {
     "objectID": "slides/week8-day1.html#section-4",
@@ -4357,7 +4357,7 @@
     "href": "slides/week8-day1.html#section-5",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": ". . .\n\nWhat condition do we need to be worried about?"
+    "text": "What condition do we need to be worried about?"
   },
   {
     "objectID": "slides/week8-day1.html#section-6",
@@ -7389,8 +7389,8 @@
     "objectID": "slides/week8-day1.html#weeks-8-9-10",
     "href": "slides/week8-day1.html#weeks-8-9-10",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "",
-    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
+    "section": "Weeks 8, 9, & 10",
+    "text": "Weeks 8, 9, & 10\n\n\n\nWeek 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
   },
   {
     "objectID": "slides/week8-day1.html#midterm-project-grades",
@@ -7424,8 +7424,8 @@
     "objectID": "slides/week8-day1.html#upcoming-deadlines",
     "href": "slides/week8-day1.html#upcoming-deadlines",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "",
-    "text": "Lab 6 revisions are due on Thursday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions."
+    "section": "Upcoming Deadlines",
+    "text": "Upcoming Deadlines\n\nLab 6 revisions are due on Thursday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions."
   },
   {
     "objectID": "slides/week8-day1.html#how-do-we-know-what-could-have-happened-if-the-null-was-true",
@@ -7439,21 +7439,21 @@
     "href": "slides/week8-day1.html#permutation-distribution",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Permutation Distribution",
-    "text": "Permutation Distribution\n. . .\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n. . .\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n. . .\n\nApproximates the true sampling distribution under the null!"
+    "text": "Permutation Distribution\n\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n\n\n\nApproximates the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#how-can-we-approximate-what-could-have-happened-if-the-null-was-true",
     "href": "slides/week8-day1.html#how-can-we-approximate-what-could-have-happened-if-the-null-was-true",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "",
-    "text": ". . .\n\nPermutation!"
+    "section": "How can we approximate what could have happened if the null was true?",
+    "text": "How can we approximate what could have happened if the null was true?\n\n\nPermutation!"
   },
   {
     "objectID": "slides/week8-day1.html#a-permutation-resample",
     "href": "slides/week8-day1.html#a-permutation-resample",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "",
-    "text": "Assumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n. . .\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
+    "section": "A Permutation Resample",
+    "text": "A Permutation Resample\n\n\nAssumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#testing-a-population-parameter",
@@ -7467,7 +7467,7 @@
     "href": "slides/week8-day1.html#how-do-i-get-a-p-value",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "How do I get a p-value?",
-    "text": "How do I get a p-value?\n. . .\n\n\nPermuting!\n\n. . .\n\n\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n\n\n. . .\n\n\nThis is your permuted resample.\n\n\n. . .\n\n\nRepeat this process many, many times.\n\n\n. . .\n\n\nCalculate a numerical summary (e.g., slope) for each permutation resample.\n\n\n. . .\n\n\nThese are your permuted statistics."
+    "text": "How do I get a p-value?\n\n\n\nPermuting!\n\n\n\n\n\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n\n\n\n\n\n\nThis is your permuted resample.\n\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\n\n\nCalculate a numerical summary (e.g., slope) for each permutation resample.\n\n\n\n\n\n\nThese are your permuted statistics."
   },
   {
     "objectID": "slides/week8-day1.html#exploring-the-hbr_maples-dataset",
@@ -7481,14 +7481,14 @@
     "href": "slides/week8-day1.html#in-this-sample-of-359-sugar-maples",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "In this sample of 359 sugar maples…",
-    "text": "In this sample of 359 sugar maples…\n\\[\\widehat{\\text{stem dry mass}} = -0.043 + 0.001 \\times \\text{stem length}\\]\n. . .\n\n\nWhat slope could have happened if there was no relationship between stem length and stem dry mass?"
+    "text": "In this sample of 359 sugar maples…\n\\[\\widehat{\\text{stem dry mass}} = -0.043 + 0.001 \\times \\text{stem length}\\]\n\n\n\nWhat slope could have happened if there was no relationship between stem length and stem dry mass?"
   },
   {
     "objectID": "slides/week8-day1.html#generating-a-permuted-resample-and-calculating-permuted-statistics",
     "href": "slides/week8-day1.html#generating-a-permuted-resample-and-calculating-permuted-statistics",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Generating a permuted resample and calculating permuted statistics",
-    "text": "Generating a permuted resample and calculating permuted statistics\n\n. . .\nStep 1: specify() your response and explanatory variables\n. . .\nStep 2: hypothesize() what would happen under the null\n. . .\nStep 3: generate() permuted resamples\n. . .\nStep 4: calculate() the statistic of interest"
+    "text": "Generating a permuted resample and calculating permuted statistics\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: hypothesize() what would happen under the null\n\n\nStep 3: generate() permuted resamples\n\n\nStep 4: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week8-day1.html#step-1-specify-your-variables",
@@ -7502,7 +7502,7 @@
     "href": "slides/week8-day1.html#step-2-state-your-hypothesis",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Step 2: State your hypothesis!",
-    "text": "Step 2: State your hypothesis!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n. . .\n\n\n\n\n\n\nIndependence of variables\n\n\n\nNote! This is different from assuming your observations are independent!"
+    "text": "Step 2: State your hypothesis!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n\n\n\n\n\n\n\nIndependence of variables\n\n\nNote! This is different from assuming your observations are independent!"
   },
   {
     "objectID": "slides/week8-day1.html#generate-your-resamples",
@@ -7523,7 +7523,7 @@
     "href": "slides/week8-day1.html#step-3-generate-your-resamples",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Step 3: Generate your resamples!",
-    "text": "Step 3: Generate your resamples!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n. . .\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
+    "text": "Step 3: Generate your resamples!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week8-day1.html#step-4-calculate-your-statistics",
@@ -7565,28 +7565,28 @@
     "href": "slides/week8-day1.html#the-p-value-is",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "The p-value is…",
-    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n. . .\n\n\nWhy did we get a warning?"
+    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\nWhy did we get a warning?"
   },
   {
     "objectID": "slides/week8-day1.html#how-do-we-interpret-a-p-value",
     "href": "slides/week8-day1.html#how-do-we-interpret-a-p-value",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "How do we interpret a p-value?",
-    "text": "How do we interpret a p-value?\n. . .\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n. . .\n\nThe probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
+    "text": "How do we interpret a p-value?\n\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n\n\n\nThe probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
   },
   {
     "objectID": "slides/week8-day1.html#classic-interpretation-mistakes",
     "href": "slides/week8-day1.html#classic-interpretation-mistakes",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Classic interpretation mistakes",
-    "text": "Classic interpretation mistakes\n\n\n“The probability that the null hypothesis is true is about 0%.”\n\n. . .\n\nYou assume the null is true when you calculate a p-value!"
+    "text": "Classic interpretation mistakes\n\n\n“The probability that the null hypothesis is true is about 0%.”\n\n\n\nYou assume the null is true when you calculate a p-value!"
   },
   {
     "objectID": "slides/week8-day1.html#midterm-projects-study-limitations",
     "href": "slides/week8-day1.html#midterm-projects-study-limitations",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Midterm Projects – Study Limitations",
-    "text": "Midterm Projects – Study Limitations\n\nYou must justify why you believe you can infer onto a population larger than your sample!\n. . .\n\nCausal statements do not come from random / representative samples!"
+    "text": "Midterm Projects – Study Limitations\n\nYou must justify why you believe you can infer onto a population larger than your sample!\n\n\nCausal statements do not come from random / representative samples!"
   },
   {
     "objectID": "slides/week8-day1.html#grade-check-in-1",
