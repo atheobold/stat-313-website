@@ -20,6 +20,8 @@ null_dist <- hbr_maples %>%
   calculate(stat = "slope") 
 ```
 
+# Plan for the rest of the quarter
+
 ## Weeks 8, 9, & 10
 
 ::: columns
@@ -28,7 +30,7 @@ null_dist <- hbr_maples %>%
 **Week 8**
 
 -   Learn about hypothesis testing for SLR & MLR
--   Critique use of p-values for statistical arguments
+-   Compare "visual" model selection with p-value model selection
 :::
 :::
 
@@ -51,13 +53,25 @@ null_dist <- hbr_maples %>%
 :::
 :::
 
+## Upcoming Deadlines
+
+-   Lab 6 revisions are due on Thursday (by midnight)
+-   Statistical Critique 2 is due next Monday (at 5pm)
+-   Final revisions on **all** assignments will be accepted until Sunday, March 17
+
+::: callout-note
+# Revision Deadlines
+
+If you did not submit revisions by the deadline (or forgot to include your reflections), your assignment **is not** eligible for additional revisions.
+:::
+
 ## 
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 you...
 :::
 
-::: {style="font-size: 1.25em; color: #FFFFFF;"}
+::: {style="font-size: 1.25em; color: #000000;"}
 -   understand the importance of sampling variability
 -   know about using confidence intervals to estimate a range of plausible values for the population parameter
 -   want to know how p-values fit in
@@ -81,119 +95,113 @@ Hypothesis test!
 
 ## 
 
-::: {style="font-size: 3em; color: #FFFFFF;"}
-Goal:
-:::
-
-::: {style="font-size: 1.5em; color: #FFFFFF;"}
-Assess how different what we saw in our data is from what could have happened if the null hypothesis was true
-:::
-
-##  {background-color="#B6CADA"}
-
 ::: {style="font-size: 3em; color: #000000;"}
-Permutation Distribution
+Hypothesis test goal:
+:::
+
+::: {style="font-size: 1.5em; color: #000000;"}
+Assess how different what we saw in our data is from what could have happened if the null hypothesis was true*
 :::
 
 . . .
 
-::: {style="font-size: 1.25em; color: #000000;"}
-Uses the original sample to generate new samples that might have occurred if the null hypothesis was true.
+::: {style="font-size: 0.75em;"}
+*For hypothesis tests, we live in an alternative universe where $H_0$ is true
+:::
+
+## How can we approximate what could have happened if the null was true?
+
+. . .
+
+::: {style="font-size: 2em; color: #ed8402;"}
+Permutation!
+:::
+
+## A Permutation Resample
+
+:::{.incremental}
+- Assumes the original sample is "representative" of observations in the population
+
+- Uses the original sample to generate new samples that might have occurred if the null hypothesis was true.
 :::
 
 . . .
 
-::: {style="font-size: 1.25em; color: #0F4C81;"}
-We can use the statistics from these samples to approximate the true sampling distribution under the null!
+::: {style="color: #34605f;"}
+We can use statistics from these resamples to approximate the true sampling distribution under the null!
 :::
 
-## 
+# Why do we want a sampling distribution?
 
-::: {style="font-size: 2.5em; color: #FFFFFF;"}
-**What could have happened if the null was true?**
+## Testing a Population Parameter
+
+:::{.incremental}
+- Like before, we are interested in knowing how a statistic varies from sample to sample.
+
+- Knowing a statistic's behavior helps us make better / more informed decisions!
+
+- This helps us know what statistics are more or less likely to occur [if the null hypothesis is true]{style="color: #e28743"}.
 :::
 
-. . .
-
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-Like before, we are interested in knowing how a statistic varies from sample to sample.
-:::
-
-. . .
-
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-Again, knowing a statistic's behavior helps us make better / more informed decisions!
-:::
-
-. . .
-
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-This helps us know what statistics are more or less likely to occur [if the null hypothesis is true]{style="color: #e28743"}.
-:::
-
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 4em; color: #000000;"}
-p-values
-:::
+# p-values
 
 . . .
 
 ::: {style="font-size: 1.5em; color: #000000;"}
-Quantify how "surprising" what we saw in our data is, if the null hypothesis was true
+> Quantify how "surprising" what we saw in our data is, if the null hypothesis was true
 :::
 
-## 
-
-::: {style="font-size: 3em; color: #FFFFFF;"}
-**Permutation Resamples**
-:::
-
-. . .
-
-From your original sample, separate the $x$ values from the $y$ values.
-
-. . .
-
-Create new ordered pairs by randomly pairing $x$ values with $y$ values (permuting the labels).
+## How do I get a p-value?
 
 . . .
 
 <center>
 
-::: {style="font-size: 1.5em; color: #76b5c5;"}
-**This is your *permuted resample*!**
+::: {style="font-size: 2em; color: #ed8402;"}
+Permuting!
 :::
-
-</center>
-
-## 
-
-::: {style="font-size: 3em; color: #FFFFFF;"}
-**Permuted Statistics**
-:::
-
-Repeat this process many, many times.
 
 . . .
 
-Calculate a numerical summary (e.g., mean, median) for each permuted resample.
+::: small
+1.  From your original sample, separate the $x$ values from the $y$ values.
+
+2. Create new ordered pairs by randomly pairing $x$ values with $y$ values (permuting the labels).
+:::
 
 . . .
 
 <center>
 
-::: {style="font-size: 1.5em; color: #76b5c5;"}
-**These are your *permuted statistics*!**
+::: {style="font-size: 0.75em; color: #ed8402;"}
+This is your permuted resample.
 :::
 
 </center>
 
-##  {background-color="#B6CADA"}
+. . .
 
-::: {style="font-size: 3em; color: #000000;"}
-Permutation Distribution
+::: small
+3.  Repeat this process many, many times.
 :::
+
+. . .
+
+::: small
+4.  Calculate a numerical summary (e.g., slope) for each permutation resample.
+:::
+
+. . .
+
+<center>
+
+::: {style="font-size: 0.75em; color: #ed8402;"}
+These are your permuted statistics.
+:::
+
+</center>
+
+##  Permutation Distribution
 
 . . .
 
@@ -211,15 +219,13 @@ Approximates the true sampling distribution under the null!
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 How do I get my p-value?
 :::
 
 . . .
 
-::: {style="font-size: 1.25em; color: #e28743;"}
-We compare the observed statistic with the statistics produced assuming the null hypothesis was true.
-:::
+Compare the observed statistic with the statistics produced assuming the null hypothesis was true.
 
 . . .
 
@@ -231,11 +237,11 @@ A p-value summarizes the [**probability**]{style="color: #76b5c5;"} of obtaining
 
 ## 
 
-::: {style="font-size: 3em; color: #FFFFFF;"}
+::: {style="font-size: 3em; color: #000000;"}
 Your turn!
 :::
 
-::: {style="font-size: 1.5em; color: #FFFFFF;"}
+::: {style="font-size: 1.5em; color: #000000;"}
 **What is one similarity and one difference between**
 :::
 
@@ -256,11 +262,7 @@ a bootstrap distribution
 :::
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Exploring the `hbr_maples` dataset!
-:::
+## Exploring the `hbr_maples` dataset!
 
 ::: columns
 ::: {.column width="40%"}
@@ -309,54 +311,35 @@ ggplot(data = hbr_maples,
 **What condition do we need to be worried about?**
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Modeling the relationship between stem length and stem dry mass
-:::
-
-```{r lm-code}
-#| echo: true
-#| eval: false
-
-length_mass_lm <- lm(stem_dry_mass ~ stem_length, data = hbr_maples)
-
-get_regression_table(length_mass_lm)
-
-```
-
-</br>
+## In this sample of `r nrow(hbr_maples)` sugar maples...
 
 ```{r lm-table}
 length_mass_lm <- lm(stem_dry_mass ~ stem_length, data = hbr_maples)
 
-get_regression_table(length_mass_lm) %>% 
-  knitr::kable() %>% 
-  kableExtra::kable_styling()
+regression_table <- get_regression_table(length_mass_lm) 
+
+intercept <- filter(regression_table, term == "intercept") %>% 
+  pull(estimate)
+
+slope <- filter(regression_table, term == "stem_length") %>% 
+  pull(estimate)
 
 ```
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 3em; color: #000000;"}
-How do I know what is likely to happen if the null is true?
-:::
+$$\widehat{\text{stem dry mass}} = `r round(intercept, digits = 3)` + `r round(slope, digits = 3)` \times \text{stem length}$$
 
 . . .
 
-<center>
+</br>
 
-::: {style="font-size: 3em; color: #0F4C81;"}
-Permuting!
+::: {style="font-size: 1.5em;"}
+What slope could have happened if there was **no** relationship between stem length and stem dry mass?
 :::
 
-</center>
 
-## 
+## Generating a permuted resample and calculating permuted statistics
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-**Generating a permuted resample**
-:::
+</br>
 
 . . .
 
@@ -374,14 +357,11 @@ Permuting!
 
 **Step 4:** `calculate()` the statistic of interest
 
-## 
+## Step 1: Specify your variables!
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Declare your variables!
-:::
-
-```{r specify}
+```{r}
 #| eval: false
+#| label: specify
 #| echo: true
 
 hbr_maples %>% 
@@ -389,14 +369,11 @@ hbr_maples %>%
           explanatory = stem_length)
 ```
 
-## 
+## Step 2: State your hypothesis!
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-State your hypothesis!
-:::
-
-```{r hypothesize}
+```{r}
 #| eval: false
+#| label: hypothesize
 #| echo: true
 
 hbr_maples %>% 
@@ -411,19 +388,13 @@ hbr_maples %>%
 
 . . .
 
-</br>
-
 ::: callout-tip
 # Independence of variables
 
 Note! This is different from assuming your observations are independent!
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Generate your resamples!
-:::
+## Step 3: Generate your resamples!
 
 ```{r generate}
 #| echo: true
@@ -453,11 +424,9 @@ hbr_maples %>%
 :::
 :::
 
-## 
+## Don't worry,
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
 `infer` will let you know if you missed something!
-:::
 
 ```{r permute-error}
 #| eval: false
@@ -477,11 +446,7 @@ You have given `type = "permute"`, but `type` is expected to be `"bootstrap"`.
 This workflow is untested and the results may not mean what you think they mean. 
 ```
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Calculate your statistics!
-:::
+## Step 4: Calculate your statistics!
 
 ```{r calculate}
 #| eval: false
@@ -495,55 +460,28 @@ hbr_maples %>%
   calculate(stat = "slope") 
 ```
 
-##  {background-color="#B6CADA"}
+##  Your turn!
 
-::: {style="font-size: 3em; color: #000000;"}
-Your turn!
-:::
+Why is the `hypothesize()` function used to make a null distribution but not for a bootstrap distribution?
 
--   Why is the `hypothesize()` function used to make a null distribution but not for a bootstrap distribution?
+</br>
 
--   What does the `null = "independence"` input in `hypothesize()` mean? What is it assuming about the variables declared in the `specify()` step?
+What does the `null = "independence"` input in `hypothesize()` mean? What is it assuming about the variables declared in the `specify()` step?
 
-## 
+## The final product
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
-The final product
-:::
 
 ```{r null-dist}
 #| out-width: 70%
 #| echo: true
 visualise(null_dist) + 
-  labs(x = "Permuted Slope Statistic for Linear Relationship between \nStem Length and Stem Dry Mass")
+  labs(x = "Permuted Slope Statistic")
 ```
 
-## 
+## Is our observed statistic unlikely if the null hypothesis was true?
 
-::: {style="font-size: 2.5em; color: #FFFFFF;"}
-Is our observed statistic unlikely under the null?
-:::
-
-</br>
-
-. . .
-
-::: {style="font-size: 1.5em; color: #FFFFFF;"}
-**Step 1:** Calculate observed statistic
-
-**Step 2:** Find observed statistic on permutation distribution
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Finding the observed statistic
-:::
-
-</br>
-
-```{r obs-stat}
-#| echo: true
+```{r}
+#| label: obs-slope
 
 obs_slope <- hbr_maples %>% 
   specify(response = stem_dry_mass,
@@ -551,31 +489,21 @@ obs_slope <- hbr_maples %>%
   calculate(stat = "slope") 
 ```
 
-## 
-
-```{r null-dist-with-obs-slope}
+```{r}
 #| echo: true
-#| out-width: 90%
+#| label: null-dist-with-obs-slope
 
 visualise(null_dist) +
-  shade_p_value(obs_stat = obs_slope, direction = "two-sided") +
-  labs(x = "Permuted Slope Statistic for Linear Relationship between \nStem Length and Stem Dry Mass")
+  shade_p_value(obs_stat = obs_slope, 
+                direction = "two-sided") +
+  labs(x = "Permuted Slope Statistic")
 ```
 
-. . .
+##  The p-value is...
 
-::: {style="font-size: 1em; color: #e28743;"}
-**Is our observed statistic unlikely to have happened if the null hypothesis was true?**
-:::
-
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-The p-value is...
-:::
-
-```{r p-value}
+```{r}
 #| echo: true
+#| label: p-value
 #| message: true
 #| warning: true
 get_p_value(null_dist, 
@@ -591,11 +519,7 @@ get_p_value(null_dist,
 Why did we get a warning?
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-How do we interpret a p-value?
-:::
+## How do we interpret a p-value?
 
 . . .
 
@@ -606,38 +530,18 @@ Need:
 
 . . .
 
-> ["The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple's stem length and stem dry mass.]{style="color: #D4D4D4;"}
+> The probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple's stem length and stem dry mass.
 
-## 
-
-::: {style="font-size: 2em; color: #FFFFFF;"}
-Classic interpretation mistakes
-:::
+## Classic interpretation mistakes
 
 </br>
 
 > "The probability that the null hypothesis is true is about 0%."
 
-</br>
+. . .
 
-</br>
-
-> "The probability that the data were produced by random chance alone is about 0%."
-
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 3em; color: #000000;"}
-Exit ticket
-:::
-
-::: {style="font-size: 1.5em; color: #000000;"}
-Suppose we had obtained a p-value of 0.6 for the relationship between stem length and stem dry mass.
-:::
-
-</br>
-
-::: {style="font-size: 1.5em; color: #0F4C81;"}
-How would you interpret this value?
+::: {style="font-size: 1.25em; color: #ed8402;"}
+You assume the null is true when you calculate a p-value!
 :::
 
 # Grade Check-in
@@ -646,32 +550,32 @@ How would you interpret this value?
 
 ::: columns
 ::: {.column width="30%"}
-**Excellent** 
+**Excellent**
 
 At most one section marked "Satisfactory"
 
-$\geq$ 4.5
-:::
-
-::: {.column width="33%"}
-:::
-
-::: {.column width="30%"}
-**Satisfactory** 
-
-At most two sections marked "Satisfactory"
-
-$\geq$ 4.5
+score $\geq$ 4.5
 :::
 
 ::: {.column width="3%"}
 :::
 
 ::: {.column width="30%"}
-**Progressing** 
+**Satisfactory**
+
+At most two sections marked "Satisfactory"
+
+score $\geq$ 4.5
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+**Progressing**
 
 At most one section marked "Satisfactory"
 
-$\geq$ 4.5
+score $\geq$ 4.5
 :::
 :::
