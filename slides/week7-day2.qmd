@@ -115,8 +115,8 @@ Bootstrapping!
 
 . . .
 
-:::{.small}
-1. From your original sample, resample with replacement the same number of times as your original sample.
+::: small
+1.  From your original sample, resample with replacement the same number of times as your original sample.
 :::
 
 . . .
@@ -131,14 +131,14 @@ This is your bootstrap resample.
 
 . . .
 
-::: {.small}
-2. Repeat this process many, many times.
+::: small
+2.  Repeat this process many, many times.
 :::
 
 . . .
 
-::: {.small}
-3. Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.
+::: small
+3.  Calculate a numerical summary (e.g., mean, median) for each bootstrap resample.
 :::
 
 . . .
@@ -229,7 +229,6 @@ ggplot(data = penguins,
 The relationship between penguin's bill length and body mass for **all** penguins in the Palmer Archipelago
 :::
 :::
-
 
 ## In this sample of `r nrow(penguins)` penguins...
 
@@ -396,7 +395,6 @@ visualize(boot1) +
         )
 ```
 
-
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
@@ -459,7 +457,7 @@ How do we interpret this interval?
 
 . . .
 
-:::{.small}
+::: small
 > "We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453
 :::
 
@@ -467,8 +465,8 @@ How do we interpret this interval?
 
 </br>
 
-:::{.small}
-> "For every 1 gram increase in a penguin's body mass, we are 95% confident the length of the penguin's bill will increase between 0.00355 and 0.00453mm. 
+::: small
+> "For every 1 gram increase in a penguin's body mass, we are 95% confident the length of the penguin's bill will increase between 0.00355 and 0.00453mm.
 :::
 
 ##  {background-color="#B6CADA"}
@@ -507,7 +505,7 @@ penguins %>%
 
 ## What changes?
 
-The original sample of `r nrow(penguins)` penguins were broken down into the following groups (plus 11 `NA` values): 
+The original sample of `r nrow(penguins)` penguins were broken down into the following groups (plus 11 `NA` values):
 
 ```{r}
 penguins %>% 
@@ -519,11 +517,11 @@ penguins %>%
 
 . . .
 
-Before we resampled with replacement `r nrow(penguins)` times. 
+Before we resampled with replacement `r nrow(penguins)` times.
 
 > If we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?
 
-## Getting our Observed Statistic 
+## Getting our Observed Statistic
 
 **Step 1: Fitting our Model**
 
@@ -538,13 +536,13 @@ observed_fit <- penguins %>%
 ```
 :::
 
-:::{.callout-tip}
+::: callout-tip
 # Syntax changes
 
-When we have **multiple** explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. We also use the `fit()` function instead of the `calculate()` function. 
+When we have **multiple** explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. We also use the `fit()` function instead of the `calculate()` function.
 :::
 
-## Getting our Observed Statistic 
+## Getting our Observed Statistic
 
 **Step 2: Finding our Statistic**
 
@@ -605,7 +603,7 @@ get_confidence_interval(bootstrap_fits,
 
 . . .
 
-> We are 90% confident that the for every 100 gram increase in a penguin's body mass (~0.25lbs), the length of a **male** penguin's bill is between 0.068 and 2.02mm shorter than a **female** penguin's bill. 
+> We are 90% confident that the for every 100 gram increase in a penguin's body mass (\~0.25lbs), the length of a **male** penguin's bill is between 0.068 and 2.02mm shorter than a **female** penguin's bill.
 
 ## How do body mass and flipper length influence a penguin's bill length?
 
@@ -654,15 +652,8 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 
 ## Holding the Other Variable(s) Constant
 
-> Holding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin's bill length. 
+> Holding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin's bill length.
 
 . . .
 
-> Holding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin's bill length. 
-
-
-
-
-
-
-
+> Holding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin's bill length.
