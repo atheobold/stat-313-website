@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -345,6 +345,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="student-hours" class="level2">
 <h2 class="anchored" data-anchor-id="student-hours">Student Hours</h2>
 <table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 69%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Day</th>
@@ -353,16 +357,13 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesdays</td>
-<td>10:10 pm – 11:00 am (in-person)</td>
+<td>Mondays</td>
+<td>2:10 pm – 4:00 pm (in-person)</td>
 </tr>
 <tr class="even">
 <td>Wednesdays</td>
-<td>2:10 pm - 3:00 pm (individual appointments)</td>
-</tr>
-<tr class="odd">
-<td>Thursdays</td>
-<td>10:10 am – 11:00 am (in-person)</td>
+<td><p>2:10 pm - 3:00 pm (in-person)</p>
+<p>3:10 - 4:00 (individual appointments over Zoom)</p></td>
 </tr>
 </tbody>
 </table>
@@ -587,7 +588,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
