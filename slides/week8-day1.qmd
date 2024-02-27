@@ -100,13 +100,13 @@ Hypothesis test goal:
 :::
 
 ::: {style="font-size: 1.5em; color: #000000;"}
-Assess how different what we saw in our data is from what could have happened if the null hypothesis was true*
+Assess how different what we saw in our data is from what could have happened if the null hypothesis was true\*
 :::
 
 . . .
 
 ::: {style="font-size: 0.75em;"}
-*For hypothesis tests, we live in an alternative universe where $H_0$ is true
+\*For hypothesis tests, we live in an alternative universe where $H_0$ is true
 :::
 
 ## How can we approximate what could have happened if the null was true?
@@ -119,10 +119,10 @@ Permutation!
 
 ## A Permutation Resample
 
-:::{.incremental}
-- Assumes the original sample is "representative" of observations in the population
+::: incremental
+-   Assumes the original sample is "representative" of observations in the population
 
-- Uses the original sample to generate new samples that might have occurred if the null hypothesis was true.
+-   Uses the original sample to generate new samples that might have occurred if the null hypothesis was true.
 :::
 
 . . .
@@ -135,12 +135,12 @@ We can use statistics from these resamples to approximate the true sampling dist
 
 ## Testing a Population Parameter
 
-:::{.incremental}
-- Like before, we are interested in knowing how a statistic varies from sample to sample.
+::: incremental
+-   Like before, we are interested in knowing how a statistic varies from sample to sample.
 
-- Knowing a statistic's behavior helps us make better / more informed decisions!
+-   Knowing a statistic's behavior helps us make better / more informed decisions!
 
-- This helps us know what statistics are more or less likely to occur [if the null hypothesis is true]{style="color: #e28743"}.
+-   This helps us know what statistics are more or less likely to occur [if the null hypothesis is true]{style="color: #e28743"}.
 :::
 
 # p-values
@@ -166,7 +166,7 @@ Permuting!
 ::: small
 1.  From your original sample, separate the $x$ values from the $y$ values.
 
-2. Create new ordered pairs by randomly pairing $x$ values with $y$ values (permuting the labels).
+2.  Create new ordered pairs by randomly pairing $x$ values with $y$ values (permuting the labels).
 :::
 
 . . .
@@ -201,7 +201,7 @@ These are your permuted statistics.
 
 </center>
 
-##  Permutation Distribution
+## Permutation Distribution
 
 . . .
 
@@ -336,7 +336,6 @@ $$\widehat{\text{stem dry mass}} = `r round(intercept, digits = 3)` + `r round(s
 What slope could have happened if there was **no** relationship between stem length and stem dry mass?
 :::
 
-
 ## Generating a permuted resample and calculating permuted statistics
 
 </br>
@@ -460,7 +459,7 @@ hbr_maples %>%
   calculate(stat = "slope") 
 ```
 
-##  Your turn!
+## Your turn!
 
 Why is the `hypothesize()` function used to make a null distribution but not for a bootstrap distribution?
 
@@ -469,7 +468,6 @@ Why is the `hypothesize()` function used to make a null distribution but not for
 What does the `null = "independence"` input in `hypothesize()` mean? What is it assuming about the variables declared in the `specify()` step?
 
 ## The final product
-
 
 ```{r null-dist}
 #| out-width: 70%
@@ -499,7 +497,7 @@ visualise(null_dist) +
   labs(x = "Permuted Slope Statistic")
 ```
 
-##  The p-value is...
+## The p-value is...
 
 ```{r}
 #| echo: true
@@ -546,6 +544,18 @@ You assume the null is true when you calculate a p-value!
 
 # Grade Check-in
 
+## Midterm Projects -- Study Limitations
+
+</br>
+
+You must **justify** why you believe you can infer onto a population larger than your sample!
+
+. . .
+
+</br>
+
+Causal statements **do not** come from random / representative samples!
+
 ## Midterm Project Grades
 
 ::: columns
@@ -579,3 +589,5 @@ At most one section marked "Satisfactory"
 score $\geq$ 4.5
 :::
 :::
+
+# [Grade Check-in Activity](../activity/week-8-grade-check.qmd "Grade Check-in Activity")
