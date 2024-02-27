@@ -2,7 +2,7 @@
 title: "🧑🏽‍🔬 P-values & Hypothesis Tests"
 format: 
   revealjs:
-    theme: dark
+    theme: style.scss
 editor: visual
 ---
 
@@ -20,16 +20,14 @@ null_dist <- hbr_maples %>%
   calculate(stat = "slope") 
 ```
 
-::: {style="font-size: 3em; color: #FFFFFF;"}
-Weeks 8, 9, & 10
-:::
+## Weeks 8, 9, & 10
 
 ::: columns
 ::: {.column width="30%"}
 ::: fragment
 **Week 8**
 
--   Learn about hypothesis testing for slope
+-   Learn about hypothesis testing for SLR & MLR
 -   Critique use of p-values for statistical arguments
 :::
 :::
@@ -643,3 +641,37 @@ How would you interpret this value?
 :::
 
 # Grade Check-in
+
+## Midterm Project Grades
+
+::: columns
+::: {.column width="30%"}
+**Excellent** 
+
+At most one section marked "Satisfactory"
+
+$\geq$ 4.5
+:::
+
+::: {.column width="33%"}
+:::
+
+::: {.column width="30%"}
+**Satisfactory** 
+
+At most two sections marked "Satisfactory"
+
+$\geq$ 4.5
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+**Progressing** 
+
+At most one section marked "Satisfactory"
+
+$\geq$ 4.5
+:::
+:::
