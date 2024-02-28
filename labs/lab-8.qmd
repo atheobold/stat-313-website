@@ -1,9 +1,10 @@
 ---
 title: "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests"
 author: "Your group's names here!"
-date: "May 25, 2023"
+date: "March 1, 2024"
 format: html
 editor: visual
+embed-resources: true
 execute: 
   echo: true
   eval: false
