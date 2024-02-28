@@ -235,6 +235,8 @@ Compare the observed statistic with the statistics produced assuming the null hy
 A p-value summarizes the [**probability**]{style="color: #76b5c5;"} of obtaining a sample statistic [as or more extreme than what we observed]{.underline}, [**if the null hypothesis was true**]{style="color: #76b5c5;"}.
 :::
 
+<!-- add slides about HT decisions -->
+
 ## 
 
 ::: {style="font-size: 3em; color: #000000;"}
@@ -542,6 +544,12 @@ Need:
 You assume the null is true when you calculate a p-value!
 :::
 
+<!-- add slide about HT decision / conclusion -->
+
+<!-- add slide about why we choose 0.05 versus 0.01 -->
+
+<!-- add slide about why we use != instead of > or < -->
+
 # Grade Check-in
 
 ## Midterm Projects -- Study Limitations
@@ -558,12 +566,10 @@ Causal statements **do not** come from random / representative samples!
 
 ## Midterm Project Grades
 
-:::{.small}
-+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+::: small
 | **Excellent Project**                                                             | **Satisfactory Project**                                                                           | **Progressing Project**                                                               | **No Credit**                                                                                      |
-+===================================================================================+====================================================================================================+=======================================================================================+====================================================================================================+
+|-----------------|-------------------|-----------------|-------------------|
 | At most one section is marked "Satisfactory" the remainder are marked "Excellent" | At most one section is marked "Progressing" the remainder are marked "Satisfactory" or "Excellent" | At most two sections are marked "Progressing" the remainder are marked "Satisfactory" | At most one section is marked "Satisfactory" or "Excellent" the remainder are marked "Progressing" |
-+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 :::
 
 # [Grade Check-in Activity](../activity/week-8-grade-check.qmd "Grade Check-in Activity")
