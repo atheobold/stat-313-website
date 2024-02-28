@@ -1932,154 +1932,154 @@
     "href": "slides/week8-day2.html#section",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What did we do on Tuesday?"
+    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
   },
   {
     "objectID": "slides/week8-day2.html#section-1",
     "href": "slides/week8-day2.html#section-1",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\nggplot(data = evals, \n       mapping = aes(x = bty_avg, y = score)) +\n  geom_jitter() + \n  geom_smooth(method = \"lm\") +\n  labs(x = \"Average Beauty Score\", \n       y = \"Course Evaluation Score\") +\n  my_theme\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
+    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")"
   },
   {
     "objectID": "slides/week8-day2.html#section-2",
     "href": "slides/week8-day2.html#section-2",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")\n\n. . .\n\n\nWhat is happening in the generate() step?"
+    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
   },
   {
     "objectID": "slides/week8-day2.html#section-3",
     "href": "slides/week8-day2.html#section-3",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\nvisualise(null_dist) +\n  shade_p_value(obs_stat = obs_slope, direction = \"two-sided\") +\n  labs(x = \"Permuted Slope Statistic\")\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
+    "text": "And calculated the p-value\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\nWhat would you decide for this hypothesis test? What conclusion would you reach about these hypotheses?"
   },
   {
     "objectID": "slides/week8-day2.html#section-4",
     "href": "slides/week8-day2.html#section-4",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And calculated the p-value\n\n\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\n\n  What would you decide for your hypothesis test?"
+    "text": "How would this process have changed if we used theory-based methods instead?"
   },
   {
     "objectID": "slides/week8-day2.html#section-5",
     "href": "slides/week8-day2.html#section-5",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How would this process have changed if we used theory-based methods instead?"
+    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
   },
   {
     "objectID": "slides/week8-day2.html#section-6",
     "href": "slides/week8-day2.html#section-6",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated.\n\n\n\n\nplot(c(-5, 5),\n     c(0, dnorm(0)),\n      type = \"n\", \n     ylab = \"\", \n     xlab = \"\",\n     axes = FALSE\n     )\n\nat &lt;- seq(-10, 10, 2)\naxis(1, at)\naxis(1, at - 1, rep(\"\", length(at)), tcl = -0.1)\nabline(h = 0)\nCOL. &lt;- openintro::fadeColor(openintro::IMSCOL[\"blue\", \"full\"], c(\"FF\", \"89\", \"68\", \"4C\", \"33\"))\nCOLt &lt;- openintro::fadeColor(openintro::IMSCOL[\"blue\", \"full\"], c(\"FF\", \"AA\", \"85\", \"60\", \"45\"))\nDF &lt;- c(\"normal\", 8, 4, 2, 1)\nX &lt;- seq(-10, 10, 0.02)\nY &lt;- dnorm(X)\nlines(X, Y, col = COL.[1])\nfor (i in 2:5) {\n  Y &lt;- dt(X, as.numeric(DF[i]))\n  lines(X, Y, col = COL.[i], lwd = 1.5)\n}\nlegend(2.5, 0.4,\n  legend = c(\n    DF[1],\n    paste(\"t, df = \", DF[2:5], sep = \"\")\n  ),\n  col = COL.,\n  text.col = COLt,\n  lty = rep(1, 5),\n  lwd = 1.5\n)"
+    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
   },
   {
     "objectID": "slides/week8-day2.html#section-7",
     "href": "slides/week8-day2.html#section-7",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\nobs_slope\n\nResponse: score (numeric)\nExplanatory: bty_avg (numeric)\n# A tibble: 1 × 1\n    stat\n   &lt;dbl&gt;\n1 0.0666\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}}\\)\n\n\n\n\n\nbty_avg \n4.45672 \n\n\n\n\n\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
   },
   {
     "objectID": "slides/week8-day2.html#section-8",
     "href": "slides/week8-day2.html#section-8",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\nse_num &lt;- ( sd(evals$score) / sd(evals$bty_avg) ) * \n  sqrt(\n    1 - cor(evals$score, evals$bty_avg)\n    ) \n\nse_denom &lt;- sqrt(nrow(evals) - 2)\n\nse &lt;- se_num / se_denom\n\nse\n\n[1] 0.01495204\n\n\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}}\\)\n\n\n\n\nt &lt;- pull(obs_slope) / se\n\nt\n\nbty_avg \n4.45672 \n\n\n\n\n\n\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+    "text": "How does R calculate the p-value?"
   },
   {
     "objectID": "slides/week8-day2.html#section-9",
     "href": "slides/week8-day2.html#section-9",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How does R calculate the p-value?\n\n. . .\n\nggplot(data = tibble(x = c(-5, 5)), \n       mapping = aes(x)) +\n  stat_function(fun = dt, \n                args = list(df = nrow(evals) - 2), \n                color = \"blue\", \n                linewidth = 1.5) +\n  ylab(\"\") +\n  scale_y_continuous(breaks = NULL) +\n  geom_vline(xintercept = t, color = \"red\", linewidth = 1.5)\n\n\n\n\n\n\n\n\n. . .\nHow many degrees of freedom does this \\(t\\)-distribution have?"
+    "text": "Did we get similar results between these methods?"
   },
   {
     "objectID": "slides/week8-day2.html#section-10",
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Did we get similar results between these methods?"
+    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
   },
   {
     "objectID": "slides/week8-day2.html#section-11",
     "href": "slides/week8-day2.html#section-11",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Why not always use theoretical methods?\n\n. . .\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
+    "text": "What are these “conditions”?\n\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-12",
     "href": "slides/week8-day2.html#section-12",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What are these “conditions”?\n\n. . .\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-13",
     "href": "slides/week8-day2.html#section-13",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\nand_vertebrates %&gt;%\n  filter(species != \"Cascade torrent salamander\") %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = species)) +\n  geom_point() + \n  labs(x = \"Length (mm)\", \n       y = \"Weight (g)\") +\n  my_theme\n\nWarning: Removed 13270 rows containing missing values (`geom_point()`).\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
+    "text": "Variable transformation!"
   },
   {
     "objectID": "slides/week8-day2.html#section-14",
     "href": "slides/week8-day2.html#section-14",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!\n\n\nand_vertebrates %&gt;%\n  filter(species != \"Cascade torrent salamander\") %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = species)) +\n  geom_point() + \n  labs(x = \"Log Transformed Length (mm)\", \n       y = \"Log Transformed Weight (g)\") +\n  scale_x_log10() +\n  scale_y_log10() +\n  my_theme\n\nWarning: Removed 13270 rows containing missing values (`geom_point()`)."
+    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
   },
   {
     "objectID": "slides/week8-day2.html#section-15",
     "href": "slides/week8-day2.html#section-15",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
+    "text": "Normality of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-16",
     "href": "slides/week8-day2.html#section-16",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Normality of residuals\n\n\nfish &lt;- and_vertebrates %&gt;%\n  filter(!species %in% c(\"Cascade torrent salamander\", \"Coastal giant salamander\")) \n\ncurved_lm &lt;- lm(weight_g ~ length_1_mm, data = fish)\n\nget_regression_points(curved_lm) %&gt;% \n  ggplot(mapping = aes(x = residual)) + \n  geom_histogram() + \n  labs(x = \"Residual\") +\n  my_theme\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
+    "text": "Variable transformation!"
   },
   {
     "objectID": "slides/week8-day2.html#section-17",
     "href": "slides/week8-day2.html#section-17",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!\n\n\nfish &lt;- and_vertebrates %&gt;%\n  filter(!species %in% c(\"Cascade torrent salamander\", \"Coastal giant salamander\"))\n\nnot_curved_lm &lt;- lm(log(weight_g) ~ log(length_1_mm), data = fish)\n\nbroom::augment(not_curved_lm) %&gt;% \n  mutate(.resid = `log(weight_g)` - `.fitted`) %&gt;% \n  ggplot(mapping = aes(x = .resid)) + \n  geom_histogram(binwidth = 0.1) + \n  labs(x = \"Residual\") +\n  xlim(c(-0.5, 0.5)) +\n  my_theme\n\nWarning: Removed 73 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 2 rows containing missing values (`geom_bar()`)."
+    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-18",
     "href": "slides/week8-day2.html#section-18",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Equal variance of residuals\n\n\nggplot(data = hbr_maples, \n       mapping = aes(x = stem_length, y = stem_dry_mass)\n       ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Stem Length (mm)\",\n    y = \"Stem Dry Mass (g)\",\n    title = \"Sugar Maple Seedlings in Hubbard Brook LTER\"\n  ) +\n  theme_minimal() + \n  my_theme\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
+    "text": "Variable transformation!"
   },
   {
     "objectID": "slides/week8-day2.html#section-19",
     "href": "slides/week8-day2.html#section-19",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!\n\n\nggplot(data = hbr_maples, \n       mapping = aes(x = stem_length, y = stem_dry_mass)\n       ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Stem Length (mm)\",\n    y = \"Log Transformed Stem Dry Mass (g)\",\n    title = \"Sugar Maple Seedlings in Hubbard Brook LTER\"\n  ) +\n  theme_minimal() + \n  scale_y_log10() +\n  my_theme\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-20",
     "href": "slides/week8-day2.html#section-20",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Are these conditions required for both methods?\n\n. . .\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
+    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
   },
   {
     "objectID": "slides/week8-day2.html#section-21",
     "href": "slides/week8-day2.html#section-21",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What happens if the conditions are violated?\n\n. . .\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution."
+    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
   },
   {
     "objectID": "slides/week8-day2.html#section-22",
