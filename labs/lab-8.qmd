@@ -12,7 +12,9 @@ execute:
   warning: false
 ---
 
-```{r setup}
+```{r}
+#| label: setup-packages
+
 library(tidyverse)
 library(gapminder)
 library(infer)
@@ -41,7 +43,9 @@ The objective of this data analysis is to answer the question:
 
 Let's load the `gapminder` data into our workspace and start exploring!
 
-```{r load-data}
+```{r}
+#| label: load-data
+
 data(gapminder)
 ```
 
@@ -51,7 +55,8 @@ data(gapminder)
 
 *Remember to include nice axis labels (with units!).*
 
-```{r scatter-plot}
+```{r}
+#| label: scatterplot
 
 ```
 
@@ -60,8 +65,11 @@ What you see should make you concerned about using a linear regression! So, let'
 You can explore if a log-transformation of the y-variable would make the relationship more linear by adding a `scale_y_log10()` layer to your plot, like so:
 
 ```{r}
+#| label: example-log-transformation
 lterdatasampler::hbr_maples %>% 
-  ggplot(mapping = aes(x = stem_length, y = stem_dry_mass)) +
+  ggplot(mapping = aes(x = stem_length, 
+                       y = stem_dry_mass)
+         ) +
   geom_point() + 
   scale_y_log10()
 ```
@@ -72,7 +80,9 @@ Similarly, you can a log-transformation of the x-variable would be helpful by ad
 
 *Remember to include nice axis labels (with any transformed units!).*
 
-```{r log-transformed-plot}
+```{r}
+#| label:  log-transformed-plot
+
 
 ```
 
@@ -82,7 +92,9 @@ Similarly, you can a log-transformation of the x-variable would be helpful by ad
 
 *To include a variable with a log transformation in your model, you input the `variable` as `log(variable)` inside the `lm()` function (e.g., `lm(log(stem_dry_mass) ~ stem_length, data = hbr_maples)`.*
 
-```{r chosen-slr}
+```{r}
+#| label:  chosen-slr
+
 gapminder_lm <- lm(____ ~ ____, data = gapminder)
 ```
 
@@ -102,10 +114,13 @@ Each row of the `gapminder` dataset is an observation for one country for one ye
 
 I've provided code to visualize the residuals from the model you fit in #3 below.
 
-```{r normality}
+```{r}
+#| label: visualize-residuals
+#| warning: false
+
 broom::augment(gapminder_lm) %>% 
   ggplot(mapping = aes(x = .resid)) +
-  geom_histogram(binwidth = 5) +
+  geom_histogram() +
   labs(x = "Residual")
 ```
 
@@ -115,7 +130,9 @@ broom::augment(gapminder_lm) %>%
 
 I've provided code to visualize the residuals versus fitted values from the model you fit in #3 below. With this plot, we want to assess if the variability (spread) of the residuals changes based on the values of the explanatory variable.
 
-```{r equal-variance}
+```{r}
+#| label: visualize-equal-variance
+
 broom::augment(gapminder_lm) %>% 
   ggplot(mapping = aes(y = .resid, x = `log(gdpPercap)`)) +
   geom_point() + 
@@ -147,7 +164,9 @@ Next, we will work through creating a permutation distribution using tools from 
 
 *Keep in mind, if you log-transformed y, you need to use log(y) as your response variable!*
 
-```{r obs-slope}
+```{r}
+#| label: calculate-obs-slope
+
 obs_slope <-  gapminder %>%
   specify(response = ____, explanatory = ____) %>%
   calculate(stat = "slope")
@@ -157,7 +176,8 @@ After you have calculated your observed statistic, you need to create a permutat
 
 **9. Generate 500 permuted statistics for the permutation distribution and save these statistics in an object named `null_dist`.**
 
-```{r null-dist}
+```{r}
+#| label: get-permutation-statistics
 
 null_dist <- 
 
@@ -166,41 +186,40 @@ null_dist <-
 We can visualize this null distribution with the following code:
 
 ```{r}
+#| label: visualize-null-dist
+ 
 visualise(null_dist) 
 ```
 
-**10. Use the `shade_p_value()` function to add (`+`) a vertical red line to the plot above, demonstrating where the observed slope statistic (`obs_slope`) falls on the distribution.**
-
-*Add your code to the plot above!*
-
 Now that you have calculated the observed statistic and generated a permutation distribution, you can calculate the p-value for your hypothesis test using the function `get_p_value()` from the infer package.
 
-**11. Fill in the code below to calculate the p-value for the hypothesis test you stated in #7.**
+**10. Fill in the code below to calculate the p-value for the hypothesis test you stated in #7.**
 
-```{r p-value}
+```{r}
+#| label: get-p-value
+
 get_p_value(null_dist, 
             obs_stat = ____, 
             direction = ____)
 ```
 
-**12. Based on your p-value and an** $\alpha = 0.1$, **what decision would you reach regarding the hypotheses you stated in #7?**
+**11. Based on your p-value and an** $\alpha = 0.1$, **what decision would you reach regarding the hypotheses you stated in #7?**
 
 ## Obtaining a p-value Using Theory
 
 As we saw in the reading this week, the output from the `get_regression_table()` function provides us with theory-based estimates of our standard error, $t$-statistic, and p-value.
 
-**13. Use the `get_regression_table()` function to obtain the theory-based p-value for your hypothesis test.**
+**12. Use the `get_regression_table()` function to obtain the theory-based p-value for your hypothesis test.**
 
 *Hint: You'll want to use the model you fit in #3.*
 
-```{r t-test}
+```{r}
+#| label: t-test
 
 ```
 
-**14. How does this p-value compare to what you obtained in #11?**
+**13. How does this p-value compare to what you obtained in #11?**
 
-**15. Why do you believe these p-values were similar or different?**
+**14. Why do you believe these p-values were similar or different?**
 
-**16. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?**
-
-*Note: If you believe neither are reliable, say so and state why.*
+**15. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?** *Note: If you believe neither are reliable, say so and state why.*
