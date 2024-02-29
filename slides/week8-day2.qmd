@@ -11,6 +11,7 @@ library(tidyverse)
 library(infer)
 library(moderndive)
 library(lterdatasampler)
+library(palmerpenguins)
 
 my_theme <- theme(axis.title.x = element_text(size = 18), 
                   axis.title.y = element_text(size = 18), 
@@ -27,13 +28,124 @@ obs_slope <- evals %>%
 
 ## Common Mistakes
 
-2)  Question 8 (Interpret Confidence Interval): A lot of groups either did not include the population or they stated the population was the 13 marshes and not all marshes on the East coast. For this question, only one or two groups said the population was about crabs!
+**Question 8** (Interpret Confidence Interval): 
 
-3)  Question 11 (Bootstrap Assumptions): A lot of groups did not talk about marshes and instead mentioned resampling. Some also mentioned that the population was crabs :(
+- Did not include population in interpretation
+- Stated interval was about crabs not marshes
+
+</br>
+
+**Question 11** (Bootstrap Assumptions): 
+
+- Did not talk about the sample of marshes 
+- Stated population was crabs
 
 # Statistical Critique 2
 
-<!-- What they can / should work on to start -->
+## First Steps
+
+1. Open the directions! 
+2. Copy the Statistical Critique template on Posit Cloud
+3. Copy-and-paste code from your Midterm Project
+4. Copy-and-paste your justification for why you chose the model you chose
+
+## Next Steps
+
+4. Fit the most complex model
+5. Obtain an ANOVA table of your model
+6. Use the p-values in the ANOVA table to decide what model is best
+
+## What is the "most complex" model?
+
+**For 1 numerical & 1 categorical explanatory variables**
+
+- Fit the **different slopes** (interaction) model
+
+```{r}
+#| label: diff-slopes-fit
+#| echo: true
+#| code-line-numbers: false
+
+species_lm <- lm(bill_length_mm ~ bill_depth_mm * species, 
+                  data = penguins)
+```
+
+. . .
+
+</br>
+
+**For 2 numerical explanatory variables**
+
+- Fit the model with **both** variables included:
+
+```{r}
+#| label: mlr-fit
+#| echo: true
+#| code-line-numbers: false
+
+bill_lm <- lm(bill_length_mm ~ body_mass_g + bill_depth_mm, 
+                  data = penguins)
+```
+
+## How do I know what model is "best" from the ANOVA table?
+
+**For 1 numerical & 1 categorical explanatory variables**
+
+- Look at the interaction line (e.g., `bill_depth_mm:species`), it is testing if the slopes are different! 
+
+```{r}
+#| label: diff-slopes-anova
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+anova(species_lm)
+```
+
+```{r}
+anova(species_lm) %>% 
+  broom::tidy() %>% 
+  gt::gt()
+```
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+`bill_depth_mm:species`: With a p-value of 0.0000189, I would conclude there is evidence that the slopes are different!
+:::
+
+## How do I know what model is "best" from the ANOVA table?
+
+**For 2 numerical explanatory variables**
+
+- Look at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!
+
+```{r}
+#| label: mlr-anova
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+anova(bill_lm)
+```
+
+```{r}
+anova(bill_lm) %>% 
+  broom::tidy() %>% 
+  gt::gt()
+```
+
+##
+
+::: {style="font-size: 1.25em; color: #000000;"}
+`body_mass_g`: With a p-value of approximately 0, I would conclude there is a relationship between body mass and bill length (after accounting for bill depth)!
+:::
+
+</br>
+
+::: {style="font-size: 1.25em; color: #000000;"}
+`bill_depth_mm`: With a p-value of 0.234, I would conclude there is not a relationship between bill depth and bill length (after accounting for body mass)!
+:::
 
 # 15-minute Work Session
 
@@ -240,8 +352,13 @@ evals_lm <- lm(score ~ bty_avg,
 
 coef_table <- get_regression_table(evals_lm)
 
-filter(coef_table, term == "bty_avg") %>% 
-  select( statistic)
+t_stat <- filter(coef_table, term == "bty_avg") %>% 
+  select(statistic)
+
+slope_stat <- filter(coef_table, term == "bty_avg") %>% 
+  select(estimate)
+
+t_stat
 ```
 
 :::
@@ -281,28 +398,14 @@ se
 
 ## Step 2: t-statistic
 
-::: columns
-::: {.column width="40%"}
-$t = \frac{b_1}{SE_{b_1}}$
-:::
+$t = \frac{b_1}{SE_{b_1}} = \frac{`r slope_stat`}{`r se`} = `r slope_stat / se`$
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-```{r}
-t <- pull(obs_slope) / se
-
-t
-```
-:::
-:::
 
 ## Proof!
 
 ```{r}
-filter(coef_table, term == "bty_avg") %>% 
-  select( statistic)
+get_regression_table(evals_lm) %>% 
+  gt::gt()
 ```
 :::
 
@@ -326,7 +429,7 @@ ggplot(data = tibble(x = c(-5, 5)),
                 linewidth = 1.5) +
   ylab("") +
   scale_y_continuous(breaks = NULL) +
-  geom_vline(xintercept = t, color = "red", linewidth = 1.5)
+  geom_vline(xintercept = pull(t_stat), color = "red", linewidth = 1.5)
 
 ```
 

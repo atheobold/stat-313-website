@@ -1932,126 +1932,126 @@
     "href": "slides/week8-day2.html#section",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
+    "text": "bill_depth_mm:species: With a p-value of 0.0000189, I would conclude there is evidence that the slopes are different!"
   },
   {
     "objectID": "slides/week8-day2.html#section-1",
     "href": "slides/week8-day2.html#section-1",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")"
+    "text": "body_mass_g: With a p-value of approximately 0, I would conclude there is a relationship between body mass and bill length (after accounting for bill depth)!\n\n\n\nbill_depth_mm: With a p-value of 0.234, I would conclude there is not a relationship between bill depth and bill length (after accounting for body mass)!"
   },
   {
     "objectID": "slides/week8-day2.html#section-2",
     "href": "slides/week8-day2.html#section-2",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
+    "text": "We carried out a hypothesis test!\n\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
   },
   {
     "objectID": "slides/week8-day2.html#section-3",
     "href": "slides/week8-day2.html#section-3",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "And calculated the p-value\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\nWhat would you decide for this hypothesis test? What conclusion would you reach about these hypotheses?"
+    "text": "By creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")"
   },
   {
     "objectID": "slides/week8-day2.html#section-4",
     "href": "slides/week8-day2.html#section-4",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How would this process have changed if we used theory-based methods instead?"
+    "text": "And visualizing where our observed statistic fell on the distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would you estimate the p-value to be?"
   },
   {
     "objectID": "slides/week8-day2.html#section-5",
     "href": "slides/week8-day2.html#section-5",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
+    "text": "And calculated the p-value\n\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\nWhat would you decide for this hypothesis test? What conclusion would you reach about these hypotheses?"
   },
   {
     "objectID": "slides/week8-day2.html#section-6",
     "href": "slides/week8-day2.html#section-6",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
+    "text": "How would this process have changed if we used theory-based methods instead?"
   },
   {
     "objectID": "slides/week8-day2.html#section-7",
     "href": "slides/week8-day2.html#section-7",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}}\\)\n\n\n\n\n\nbty_avg \n4.45672 \n\n\n\n\n\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
+    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
   },
   {
     "objectID": "slides/week8-day2.html#section-8",
     "href": "slides/week8-day2.html#section-8",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How does R calculate the p-value?"
+    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
   },
   {
     "objectID": "slides/week8-day2.html#section-9",
     "href": "slides/week8-day2.html#section-9",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Did we get similar results between these methods?"
+    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}} = \\frac{0.067}{0.014952} = 4.4809947\\)\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n3.880\n0.076\n50.961\n0\n3.731\n4.030\n\n\nbty_avg\n0.067\n0.016\n4.090\n0\n0.035\n0.099"
   },
   {
     "objectID": "slides/week8-day2.html#section-10",
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
+    "text": "How does R calculate the p-value?"
   },
   {
     "objectID": "slides/week8-day2.html#section-11",
     "href": "slides/week8-day2.html#section-11",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What are these “conditions”?\n\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+    "text": "Did we get similar results between these methods?"
   },
   {
     "objectID": "slides/week8-day2.html#section-12",
     "href": "slides/week8-day2.html#section-12",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\nWhat should we do?"
+    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
   },
   {
     "objectID": "slides/week8-day2.html#section-13",
     "href": "slides/week8-day2.html#section-13",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "What are these “conditions”?\n\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-14",
     "href": "slides/week8-day2.html#section-14",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
+    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-15",
     "href": "slides/week8-day2.html#section-15",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Normality of residuals\n\n\n\nWhat should we do?"
+    "text": "Variable transformation!"
   },
   {
     "objectID": "slides/week8-day2.html#section-16",
     "href": "slides/week8-day2.html#section-16",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
   },
   {
     "objectID": "slides/week8-day2.html#section-17",
     "href": "slides/week8-day2.html#section-17",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
+    "text": "Normality of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-18",
@@ -2065,28 +2065,28 @@
     "href": "slides/week8-day2.html#section-19",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
+    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-20",
     "href": "slides/week8-day2.html#section-20",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
+    "text": "Variable transformation!"
   },
   {
     "objectID": "slides/week8-day2.html#section-21",
     "href": "slides/week8-day2.html#section-21",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
+    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
   },
   {
     "objectID": "slides/week8-day2.html#section-22",
     "href": "slides/week8-day2.html#section-22",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
+    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
   },
   {
     "objectID": "slides/week8-day2.html#section-23",
@@ -7411,7 +7411,7 @@
     "href": "slides/week8-day2.html#common-mistakes",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\nQuestion 8 (Interpret Confidence Interval): A lot of groups either did not include the population or they stated the population was the 13 marshes and not all marshes on the East coast. For this question, only one or two groups said the population was about crabs!\nQuestion 11 (Bootstrap Assumptions): A lot of groups did not talk about marshes and instead mentioned resampling. Some also mentioned that the population was crabs :("
+    "text": "Common Mistakes\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about crabs not marshes\n\n\nQuestion 11 (Bootstrap Assumptions):\n\nDid not talk about the sample of marshes\nStated population was crabs"
   },
   {
     "objectID": "slides/week8-day1.html",
@@ -7594,5 +7594,40 @@
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Grade Check-in",
     "text": "Grade Check-in\nGrade Check-in Activity"
+  },
+  {
+    "objectID": "slides/week8-day2.html#first-steps",
+    "href": "slides/week8-day2.html#first-steps",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "First Steps",
+    "text": "First Steps\n\nOpen the directions!\nCopy the Statistical Critique template on Posit Cloud\nCopy-and-paste code from your Midterm Project\nCopy-and-paste your justification for why you chose the model you chose"
+  },
+  {
+    "objectID": "slides/week8-day2.html#next-steps",
+    "href": "slides/week8-day2.html#next-steps",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nFit the most complex model\nObtain an ANOVA table of your model\nUse the p-values in the ANOVA table to decide what model is best"
+  },
+  {
+    "objectID": "slides/week8-day2.html#what-is-the-most-complex-model",
+    "href": "slides/week8-day2.html#what-is-the-most-complex-model",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "What is the “most complex” model?",
+    "text": "What is the “most complex” model?\nFor 1 numerical & 1 categorical explanatory variables\n\nFit the different slopes (interaction) model\n\n\nspecies_lm &lt;- lm(bill_length_mm ~ bill_depth_mm * species, \n                  data = penguins)\n\n\n\nFor 2 numerical explanatory variables\n\nFit the model with both variables included:\n\n\nbill_lm &lt;- lm(bill_length_mm ~ body_mass_g + bill_depth_mm, \n                  data = penguins)"
+  },
+  {
+    "objectID": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table",
+    "href": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How do I know what model is “best” from the ANOVA table?",
+    "text": "How do I know what model is “best” from the ANOVA table?\nFor 1 numerical & 1 categorical explanatory variables\n\nLook at the interaction line (e.g., bill_depth_mm:species), it is testing if the slopes are different!\n\n\nanova(species_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbill_depth_mm\n1\n561.5708\n561.570850\n93.96508\n9.384795e-20\n\n\nspecies\n2\n7460.3201\n3730.160057\n624.15060\n7.116342e-114\n\n\nbill_depth_mm:species\n2\n134.2515\n67.125732\n11.23184\n1.897629e-05\n\n\nResiduals\n336\n2008.0631\n5.976378\nNA\nNA"
+  },
+  {
+    "objectID": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table-1",
+    "href": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table-1",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How do I know what model is “best” from the ANOVA table?",
+    "text": "How do I know what model is “best” from the ANOVA table?\nFor 2 numerical explanatory variables\n\nLook at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!\n\n\nanova(bill_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbody_mass_g\n1\n3599.71136\n3599.71136\n186.673943\n3.685224e-34\n\n\nbill_depth_mm\n1\n27.41605\n27.41605\n1.421742\n2.339508e-01\n\n\nResiduals\n339\n6537.07813\n19.28342\nNA\nNA"
   }
 ]
