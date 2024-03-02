@@ -28,38 +28,38 @@ obs_slope <- evals %>%
 
 ## Common Mistakes
 
-**Question 8** (Interpret Confidence Interval): 
+**Question 8** (Interpret Confidence Interval):
 
-- Did not include population in interpretation
-- Stated interval was about crabs not marshes
+-   Did not include population in interpretation
+-   Stated interval was about crabs not marshes
 
 </br>
 
-**Question 11** (Bootstrap Assumptions): 
+**Question 11** (Bootstrap Assumptions):
 
-- Did not talk about the sample of marshes 
-- Stated population was crabs
+-   Did not talk about the sample of marshes
+-   Stated population was crabs
 
 # Statistical Critique 2
 
 ## First Steps
 
-1. Open the directions! 
-2. Copy the Statistical Critique template on Posit Cloud
-3. Copy-and-paste code from your Midterm Project
-4. Copy-and-paste your justification for why you chose the model you chose
+1.  Open the directions!
+2.  Copy the Statistical Critique template on Posit Cloud
+3.  Copy-and-paste code from your Midterm Project
+4.  Copy-and-paste your justification for why you chose the model you chose
 
 ## Next Steps
 
-4. Fit the most complex model
-5. Obtain an ANOVA table of your model
-6. Use the p-values in the ANOVA table to decide what model is best
+4.  Fit the most complex model
+5.  Obtain an ANOVA table of your model
+6.  Use the p-values in the ANOVA table to decide what model is best
 
 ## What is the "most complex" model?
 
 **For 1 numerical & 1 categorical explanatory variables**
 
-- Fit the **different slopes** (interaction) model
+-   Fit the **different slopes** (interaction) model
 
 ```{r}
 #| label: diff-slopes-fit
@@ -76,7 +76,7 @@ species_lm <- lm(bill_length_mm ~ bill_depth_mm * species,
 
 **For 2 numerical explanatory variables**
 
-- Fit the model with **both** variables included:
+-   Fit the model with **both** variables included:
 
 ```{r}
 #| label: mlr-fit
@@ -91,7 +91,7 @@ bill_lm <- lm(bill_length_mm ~ body_mass_g + bill_depth_mm,
 
 **For 1 numerical & 1 categorical explanatory variables**
 
-- Look at the interaction line (e.g., `bill_depth_mm:species`), it is testing if the slopes are different! 
+-   Look at the interaction line (e.g., `bill_depth_mm:species`), it is testing if the slopes are different!
 
 ```{r}
 #| label: diff-slopes-anova
@@ -118,7 +118,7 @@ anova(species_lm) %>%
 
 **For 2 numerical explanatory variables**
 
-- Look at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!
+-   Look at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!
 
 ```{r}
 #| label: mlr-anova
@@ -135,7 +135,7 @@ anova(bill_lm) %>%
   gt::gt()
 ```
 
-##
+## 
 
 ::: {style="font-size: 1.25em; color: #000000;"}
 `body_mass_g`: With a p-value of approximately 0, I would conclude there is a relationship between body mass and bill length (after accounting for bill depth)!
@@ -244,7 +244,7 @@ get_p_value(null_dist,
 
 . . .
 
-</br> 
+</br>
 
 What would you decide for this hypothesis test? What conclusion would you reach about these hypotheses?
 
@@ -360,7 +360,6 @@ slope_stat <- filter(coef_table, term == "bty_avg") %>%
 
 t_stat
 ```
-
 :::
 
 ## 
@@ -399,7 +398,6 @@ se
 ## Step 2: t-statistic
 
 $t = \frac{b_1}{SE_{b_1}} = \frac{`r slope_stat`}{`r se`} = `r slope_stat / se`$
-
 
 ## Proof!
 
@@ -456,7 +454,7 @@ Theory-based methods only hold if the sampling distribution is normally shaped.
 :::
 
 ::: {.column width="45%"}
-:::{.fragment}
+::: fragment
 The normality of a sampling distribution depends **heavily** on model conditions.
 :::
 :::
@@ -561,7 +559,7 @@ The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, 
 :::
 
 ::: {.column width="55%"}
-:::{.fragment}
+::: fragment
 **Best** -- use a random effects model
 
 **Reasonable** -- collapse the multiple scores into a single score
@@ -720,9 +718,9 @@ In general, when the conditions associated with these methods are violated, the 
 
 . . .
 
-- Our p-values will be **too** small!
-- Our confidence intervals will be **too** narrow!
-- We will make more Type I errors than we expect!
+-   Our p-values will be **too** small!
+-   Our confidence intervals will be **too** narrow!
+-   We will make more Type I errors than we expect!
 
 # Lab 8
 
