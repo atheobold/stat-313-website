@@ -5,6 +5,7 @@ format:
   html:
     code-tools: true
 editor: visual
+embed-resources: true
 execute: 
   echo: false
   message: false
@@ -13,11 +14,12 @@ execute:
 
 ```{r data}
 library(tidyverse)
+library(moderndive)
+library(readxl)
 library(broom)
 library(ggridges)
 
 # This is where you will load in your data! 
-# Reference the R package you data live in, since you will need to load that package in!
 
 
 ```
@@ -78,15 +80,46 @@ library(ggridges)
 
 ```
 
-## Interaction Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>
+## Model Validity
 
-```{r two-way-anova-interaction}
-## Code to fit your two-way ANOVA interaction model
+```{r}
+#| label: distribution-of-residuals
+#| layout-nrow: 1
 
-## Code to get your (tidy) ANOVA table
+# Residuals of first one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")
 
+# Residuals of second one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")
 ```
 
-## Model Conclusions
+```{r}
+#| label: residuals-versus-fitted
+#| layout-nrow: 1
 
-# Scope of Inference
+# Residuals versus fitted for first one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
+  geom_jitter() + 
+  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
+  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
+       y = "Residuals")
+
+# Residuals versus fitted for second one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
+  geom_jitter() + 
+  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
+  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
+       y = "Residuals")
+```
+
+# Study Limitations
+
+# Conclusions

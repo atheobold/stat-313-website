@@ -1,0 +1,123 @@
+---
+title: "Your Title Goes Here! Make it fun!"
+author: "Your Name Here!"
+format: 
+  html:
+    code-tools: true
+editor: visual
+embed-resources: true
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r data}
+library(tidyverse)
+library(broom)
+library(ggridges)
+
+# This is where you will load in your data! 
+# Reference the R package you data live in, since you will need to load that package in!
+
+
+```
+
+# Introduction
+
+## Data Description
+
+## Research Question(s)
+
+# Methods
+
+## Variables
+
+## Data Visualizations
+
+```{r density-plots}
+#| fig-align: center
+#| layout-nrow: 2
+
+## Code to make your density ridge plots goes here! 
+## You should have three total plots!
+## Don't forget to choose nice axis labels!
+
+
+```
+
+## Description of Relationships
+
+# Findings
+
+## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>
+
+```{r one-way-anova-var1}
+## Code to fit your one-way ANOVA model for variable 1
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>
+
+```{r one-way-anova-var2}
+## Code to fit your one-way ANOVA model for variable 2
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## Additive Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>
+
+```{r two-way-anova-additive}
+## Code to fit your two-way ANOVA additive model
+
+## Code to get your (tidy) ANOVA table
+
+```
+
+## Model Validity
+
+```{r}
+#| label: distribution-of-residuals
+#| layout-nrow: 1
+
+# Residuals of first one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")
+
+# Residuals of second one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")
+```
+
+```{r}
+#| label: residuals-versus-fitted
+#| layout-nrow: 1
+
+# Residuals versus fitted for first one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
+  geom_jitter() + 
+  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
+  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
+       y = "Residuals")
+
+# Residuals versus fitted for second one-way ANOVA 
+broom::augment(my_model) %>% 
+  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
+  geom_jitter() + 
+  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
+  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
+       y = "Residuals")
+```
+
+
+# Study Limitations
+
+# Conclusions

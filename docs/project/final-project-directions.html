@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -122,7 +122,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -333,11 +333,12 @@ window.Quarto = {
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a></li>
   <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">3</span> Findings</a>
   <ul class="collapse">
-  <li><a href="#one-way-anova-model" id="toc-one-way-anova-model" class="nav-link" data-scroll-target="#one-way-anova-model"><span class="header-section-number">3.1</span> One-Way ANOVA Model</a></li>
+  <li><a href="#one-way-anova-models" id="toc-one-way-anova-models" class="nav-link" data-scroll-target="#one-way-anova-models"><span class="header-section-number">3.1</span> One-Way ANOVA Models</a></li>
   <li><a href="#two-way-anova-additive-model" id="toc-two-way-anova-additive-model" class="nav-link" data-scroll-target="#two-way-anova-additive-model"><span class="header-section-number">3.2</span> Two-Way ANOVA Additive Model</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">3.3</span> Conclusions</a></li>
+  <li><a href="#model-validity" id="toc-model-validity" class="nav-link" data-scroll-target="#model-validity"><span class="header-section-number">3.3</span> Model Validity</a></li>
   </ul></li>
-  <li><a href="#scope-of-inference" id="toc-scope-of-inference" class="nav-link" data-scroll-target="#scope-of-inference"><span class="header-section-number">4</span> Scope of Inference</a></li>
+  <li><a href="#study-limitations" id="toc-study-limitations" class="nav-link" data-scroll-target="#study-limitations"><span class="header-section-number">4</span> Study Limitations</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">5</span> Conclusions</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -366,18 +367,18 @@ window.Quarto = {
 <section id="your-task" class="level2" data-number="0.1">
 <h2 data-number="0.1" class="anchored" data-anchor-id="your-task"><span class="header-section-number">0.1</span> Your Task</h2>
 <p>For this project, you are expected to use a two-way ANOVA to investigate the relationship between <strong>one</strong> <u>numerical</u> response variable and <strong>two</strong> <u>categorical</u> explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Discretizing numerical variables
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in <code>R</code> as <code>R</code> assumes all variables with numbers should be numerical.</p>
-<p>You will need Dr.&nbsp;Theobold’s help to perform this task. Dr.&nbsp;Theobold will work with you to convert your variable as long as you request help <strong>before</strong> Friday at 4pm.</p>
+<p>You will need Dr.&nbsp;Theobold’s help to perform this task. Dr.&nbsp;Theobold will work with you to convert your variable as long as you request help <strong>before</strong> <strong>Thursday, March 7 at 4pm.</strong></p>
 </div>
 </div>
 </section>
@@ -414,8 +415,23 @@ Multiple research questions
 <h1 data-number="2"><span class="header-section-number">2</span> Methods</h1>
 <p>This section should lay out the steps, decisions, and logic leading to the statistical model you will use to answer the research question of interest.</p>
 <ul>
-<li><p>Describe the response and explanatory variables, how they were measured and their associated units. For categorical variables, describe the levels of the categorical variable.</p></li>
-<li><p>Produce data visualizations exploring the relationship(s) you are interested in investigating, contrasting the need for a second explanatory variable. For your project everyone will have <strong>three</strong> visualizations:</p>
+<li>Describe the response and explanatory variables, <strong>how they were measured</strong>, and their associated units. For categorical variables, describe the levels of the categorical variable.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the levels of your variable are abbreviations, you are expected to state exactly what each abbreviation means (e.g., <code>CC</code> represents the “clear cut” section of the forest).</p>
+</div>
+</div>
+<ul>
+<li><p>Produce data visualizations exploring the relationship(s) you are interested in investigating. For your project everyone will have <strong>three</strong> visualizations:</p>
 <ul>
 <li>a visualization of the relationship between your response variable and <strong>explanatory variable 1</strong></li>
 <li>a visualization of the relationship between your response variable and <strong>explanatory variable 2</strong></li>
@@ -428,19 +444,18 @@ Multiple research questions
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Visualizations with categorical variables
+Ridge plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. <strong>For your project you are required to use density ridge plots.</strong> If you are unsure how to accomplish this task, look back over Lab 3 and the <a href="../resources/week3.docx">Week 3 R resources</a>.</p>
-<p>Every visualization should have nicely formatted axis labels!</p>
+<p>In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. <strong>For your project you are required to use density ridge plots</strong>, boxplots will not be accepted. If you are unsure how to accomplish this task, look back over Lab 3 and the <a href="../resources/week3.docx">Week 3 R resources</a>.</p>
+<p>Keep in mind, every visualization should have nicely formatted axis labels (with units)!</p>
 </div>
 </div>
 <ul>
-<li><p>Describe what you see in the visualizations, making direct references to the plots!</p></li>
-<li><p>Outline the statistical model you will use to answer the question(s) of interest that you stated previously.</p></li>
+<li>Describe what you see in the visualizations, making direct references to the plots!</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -450,23 +465,7 @@ Not visually selecting a model
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Unlike the Midterm Project, you <strong>will not</strong> be choosing what statistical model to fit based on the visualizations. Everyone will be starting with <strong>two</strong> one-way ANOVA models to analyze their data!</p>
-</div>
-</div>
-<ul>
-<li>Evaluate the conditions of the statistical model you propose to use</li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Condition violations
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, <strong>email Dr.&nbsp;Theobold</strong>!</p>
+<p>Unlike the Midterm Project, you <strong>will not</strong> be choosing what statistical model to fit based on the visualizations.</p>
 </div>
 </div>
 </section>
@@ -479,21 +478,21 @@ Condition violations
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+<span class="math inline">\(\alpha\)</span> threshold
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You must state what <span class="math inline">\(\alpha\)</span> threshold was used when reaching your hypothesis test decisions.</p>
+<p><strong>At the beginning of your analysis</strong>, you must state what <span class="math inline">\(\alpha\)</span> threshold was used to make decisions regarding your hypothesis tests.</p>
 </div>
 </div>
-<section id="one-way-anova-model" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="one-way-anova-model"><span class="header-section-number">3.1</span> One-Way ANOVA Model</h2>
+<section id="one-way-anova-models" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="one-way-anova-models"><span class="header-section-number">3.1</span> One-Way ANOVA Models</h2>
 <p>Everyone starts here! In this section, you need to do the following:</p>
 <ul>
 <li>Fit <strong>two</strong> one-way ANOVA models – one model for each categorical explanatory variable</li>
 <li>Obtain the ANOVA table for the model</li>
-<li>Based on the ANOVA table, state what decision was reached for the hypothesis in the one-way ANOVA model</li>
-<li>Based on the decision you made, state what you can conclude regarding the relationship between your variables</li>
+<li>Based on the ANOVA table, <strong>state what decision was reached</strong> for the hypothesis in the one-way ANOVA model</li>
+<li>Based on the decision you made, <strong>state what you can conclude</strong> regarding the relationship between your variables</li>
 </ul>
 </section>
 <section id="two-way-anova-additive-model" class="level2" data-number="3.2">
@@ -518,14 +517,31 @@ When to proceed
 <li><p>Based on the decision you made, state what you can conclude regarding the relationship between your variables.</p></li>
 </ul>
 </section>
-<section id="conclusions" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">3.3</span> Conclusions</h2>
-<p>Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made.</p>
-<p>In this section you should also describe whether you believe the tests you performed are “reliable”. Meaning, did you violate any of the conditions required of a one-way ANOVA model?</p>
+<section id="model-validity" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="model-validity"><span class="header-section-number">3.3</span> Model Validity</h2>
+<ul>
+<li>Evaluate the LINE conditions of both one-way ANOVA models</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Condition violations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr.&nbsp;Theobold <strong>before</strong> <strong>Thursday, March 7 at 4pm</strong>!</p>
+</div>
+</div>
+<ul>
+<li>Based on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”</li>
+</ul>
 </section>
 </section>
-<section id="scope-of-inference" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Scope of Inference</h1>
+<section id="study-limitations" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Study Limitations</h1>
 <p>Write a 6-8 sentence statement on what can be inferred from the design of the study and the results of your statistical analysis. Specifically, answer these two questions and comment on their implications:</p>
 <ul>
 <li>Based on the sampling method used, what larger population can you infer the results or your analysis onto?</li>
@@ -541,6 +557,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>Your statement needs to include a description of (1) how the data were collected, and (2) the population to whom the results can be applied. You must justify your reasoning for #2 using information from the design of the study.</p>
+<p>Generic statements (e.g., “these observations were representative so we can infer onto the entire population”) are not sufficient. Your description should include a description of <em>why</em> the sample is / is not representative of the population and <em>how</em> that influences the population you can infer the results onto.</p>
 </div>
 </div>
 <ul>
@@ -556,9 +573,14 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your statement needs to include a description of (1) how the study was designed, and (2) what statements can be made about the relationship between the variables. You must justify your reasoning for #2 by making direct reference to the variables included in the study. General statements about “this was an observational study” are insufficient.</p>
+<p>Your statement needs to include a description of (1) how the study was designed, and (2) what statements can be made about the relationship between the variables. You must justify your reasoning for #2 by making direct reference to the variables included in the study.</p>
+<p>Generic statements (e.g., “this was an observational study so we can’t make causal statements”) are not sufficient. Your description should include a description of <em>why</em> the study was observational and <em>why</em> you cannot make causal statements for observational studies.</p>
 </div>
 </div>
+</section>
+<section id="conclusions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Conclusions</h1>
+<p>Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.</p>
 
 
 </section>
@@ -725,7 +747,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
