@@ -2199,7 +2199,7 @@
     "href": "weeks/week-9.html#textbook-reading",
     "title": "Week 9: Inference for Many Means (ANOVA)",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Inference for Comparing Many Means\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document"
+    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Inference for Comparing Many Means\n\nReading Guide – Due Tuesday by the beginning of class\nDownload the Word Document"
   },
   {
     "objectID": "weeks/week-9.html#concept-quiz-due-tuesday-by-noon",
@@ -7629,5 +7629,19 @@
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "How do I know what model is “best” from the ANOVA table?",
     "text": "How do I know what model is “best” from the ANOVA table?\nFor 2 numerical explanatory variables\n\nLook at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!\n\n\nanova(bill_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbody_mass_g\n1\n3599.71136\n3599.71136\n186.673943\n3.685224e-34\n\n\nbill_depth_mm\n1\n27.41605\n27.41605\n1.421742\n2.339508e-01\n\n\nResiduals\n339\n6537.07813\n19.28342\nNA\nNA"
+  },
+  {
+    "objectID": "weeks/week-9.html#concept-quiz-due-tuesday-by-the-beginning-of-class",
+    "href": "weeks/week-9.html#concept-quiz-due-tuesday-by-the-beginning-of-class",
+    "title": "Week 9: Inference for Many Means (ANOVA)",
+    "section": "1.2 Concept Quiz – Due Tuesday by the beginning of class",
+    "text": "1.2 Concept Quiz – Due Tuesday by the beginning of class\n\nWhich of the following are true about the mean squares between groups? (Select all that apply)\n\n\nit is a standardized measure of the variability in responses between groups\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of squares between groups by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of squares between groups by the sample size minus the number of groups (\\(n - k\\))\n\n\nWhich of the following are true about the mean square errors? (Select all that apply)\n\n\nit is a standardized measure of the variability in responses within each group\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of square errors by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of square errors by the sample size minus the number of groups (\\(n - k\\))\n\n\nAn F-statistic uses which formula?\n\n\n\\(\\frac{MSG}{MSE}\\)\n\\(\\frac{SSG}{SSE}\\)\n\\(\\frac{MSE}{MSG}\\)\n\\(\\frac{SSE}{SSG}\\)\n\n\nIdeally, in an ANOVA we’d like to see… (select all that apply)\n\n\nlarge variability in the means of the groups\nsmall variability in the means of the groups\nlarge variability in the observations within each group\nsmall variability in the observations within each group\n\n\nIf the null hypothesis that the means of four groups are all the same is rejected using ANOVA at a 5% significance level, then… (select all that apply)\n\n\nwe can then conclude that all the means are different from one another.\nthe variability between groups is higher than the variability within groups.\nthe pairwise analysis will identify at least one pair of means that are significantly different.\nan appropriate \\(\\alpha\\) to be used in pairwise comparisons is \\(\\frac{0.05}{4} = 0.0125\\) since there are four groups.\n\n\nTrue or false, as the total sample size increases, the degrees of freedom for the residuals increases.\nTrue or false, the constant variance condition can be somewhat relaxed when the sample sizes are large.\nTrue or false, the independence assumption can be relaxed when the total sample size is large.\nTrue or false, the normality condition is very important when the sample sizes of each group are small."
+  },
+  {
+    "objectID": "weeks/week-9.html#r-tutorial-due-thursday-by-the-beginning-of-class",
+    "href": "weeks/week-9.html#r-tutorial-due-thursday-by-the-beginning-of-class",
+    "title": "Week 9: Inference for Many Means (ANOVA)",
+    "section": "1.3 R Tutorial – Due Thursday by the beginning of class",
+    "text": "1.3 R Tutorial – Due Thursday by the beginning of class\nRequired Tutorial: Comparing many means with ANOVA"
   }
 ]

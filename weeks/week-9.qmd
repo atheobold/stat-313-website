@@ -76,13 +76,13 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Inference for Comparing Many Means](https://openintro-ims.netlify.app/inference-many-means.html)
 
-### Reading Guide -- Due Tuesday by noon
+### Reading Guide -- Due Tuesday by the beginning of class
 
 [Download the Word Document](reading-guide/week9-reading.docx)
 
-## Concept Quiz -- Due Tuesday by noon
+## Concept Quiz -- Due Tuesday by the beginning of class
 
-1.  Which of the following are true about the mean squares between groups?
+1.  Which of the following are true about the mean squares between groups? (Select all that apply)
 
 -   it is a standardized measure of the variability in responses between groups
 -   it compares the mean of each group to the overall mean across all groups
@@ -92,7 +92,7 @@ knitr::include_graphics(here::here("images",
 -   it is found by dividing the sum of squares between groups by the number of groups minus 1 ($k$ - 1)
 -   it is found by dividing the sum of squares between groups by the sample size minus the number of groups ($n - k$)
 
-2.  Which of the following are true about the mean square errors?
+2.  Which of the following are true about the mean square errors? (Select all that apply)
 
 -   it is a standardized measure of the variability in responses within each group
 -   it compares the mean of each group to the overall mean across all groups
@@ -129,14 +129,14 @@ knitr::include_graphics(here::here("images",
 
 -   an appropriate $\alpha$ to be used in pairwise comparisons is $\frac{0.05}{4} = 0.0125$ since there are four groups.
 
-6.  As the total sample size increases, the degrees of freedom for the residuals increases.
+6.  True or false, as the total sample size increases, the degrees of freedom for the residuals increases.
 
-7.  The constant variance condition can be somewhat relaxed when the sample sizes are large.
+7.  True or false, the constant variance condition can be somewhat relaxed when the sample sizes are large.
 
-8.  The independence assumption can be relaxed when the total sample size is large.
+8.  True or false, the independence assumption can be relaxed when the total sample size is large.
 
-9.  The normality condition is very important when the sample sizes of each group are small.
+9.  True or false, the normality condition is very important when the sample sizes of each group are small.
 
-## R Tutorial -- Due Thursday by noon
+## R Tutorial -- Due Thursday by the beginning of class
 
 [**Required Tutorial:** Comparing many means with ANOVA](https://openintro.shinyapps.io/ims-05-infer-08/)
