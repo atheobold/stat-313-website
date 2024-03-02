@@ -48,8 +48,6 @@ library(ggridges)
 
 ## Description of Relationships
 
-## Model Conditions
-
 # Findings
 
 ## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>
