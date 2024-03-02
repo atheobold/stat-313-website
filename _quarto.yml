@@ -6,8 +6,8 @@ project:
 
 website:
   page-navigation: true
-  title: "STAT 313 / 513 - Winter 2024"
-  description: "Homepage for STAT 313 / 513 - Applied Experimental Design and Regression Models at Cal Poly, Winter 2024."
+  title: "STAT 313 / 513"
+  description: "Homepage for STAT 313 / 513 - Applied Experimental Design and Regression Models at Cal Poly"
   site-url: "https://atheobold.github.io/stat-313-website"
   repo-url: https://github.com/atheobold/stat-313-website
   repo-actions: [issue]
@@ -27,7 +27,7 @@ website:
         href: https://github.com/atheobold/stat-313-website
         text: "GitHub organization"
       - icon: cloud-fill
-        href: https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo
+        href: https://posit.cloud/
         aria-label: RStudio Cloud
       - icon: person-fill
         href: https://canvas.calpoly.edu

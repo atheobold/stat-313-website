@@ -1,0 +1,15 @@
+{
+  "hash": "794423df19ecd1238ae6f9244b1c5fce",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Your Title Goes Here! Make it fun!\"\nauthor: \"Your Name Here!\"\nformat: \n  html:\n    code-tools: true\neditor: visual\nembed-resources: true\nexecute: \n  echo: false\n  eval: false\n  message: false\n  warning: false\n---\n\n::: {.cell}\n\n:::\n\n\n# Introduction\n\n## Data Description\n\n## Research Question(s)\n\n# Methods\n\n## Variables\n\n## Data Visualizations\n\n\n::: {.cell layout-nrow=\"2\" layout-align=\"center\"}\n\n:::\n\n\n## Description of Relationships\n\n# Findings\n\n## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## One-Way ANOVA of <RESPONSE VARIABLE> and <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## Additive Two-Way ANOVA of <RESPONSE VARIABLE>, <EXPLANATORY VARIABLE>, AND <EXPLANATORY VARIABLE>\n\n\n::: {.cell}\n\n:::\n\n\n## Model Validity\n\n\n::: {.cell layout-nrow=\"1\"}\n\n:::\n\n::: {.cell layout-nrow=\"1\"}\n\n:::\n\n\n# Study Limitations\n\n# Conclusions\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

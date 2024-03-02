@@ -12,6 +12,8 @@ editor: visual
 -   GDP per capita on the x-axis
 -   axis labels for both axes, including units
 
+**Growing:**
+
 *If they swap* $x$ and $y$:
 
 > Careful! What variable should be the response variable (located on the y-axis)?
@@ -23,9 +25,11 @@ editor: visual
 -   takes log of GDP (using `scale_x_log10()`)
 -   renames x-axis label to indicate log GDP (or log \$) is what is being plotted
 
+**Growing:**
+
 *If they log transform life expectancy (y)*:
 
-> Similar to Occam's Razor, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notibly better?
+> Similar to the Principle of Parsimony, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notably better?
 
 *If their x-axis doesn't indicate the log was taken*:
 
@@ -41,6 +45,8 @@ editor: visual
 gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 ```
 
+**Growing:**
+
 *If they swap `lifeExp` and `gdpPercap`*:
 
 > Careful! What variable comes first in the lm() function? The response or explanatory variable?
@@ -53,7 +59,7 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 **To earn a Success**:
 
--   Says "no", it is not reasonable to assume the observations are independent
+-   Says it **is not** reasonable to assume the observations are independent
 
 -   Describes how observations are not independent citing **at least one** of the following:
 
@@ -61,13 +67,15 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
     -   observations for each country are related in time
     -   countries of close geographical proximity may share information
 
+**Growing:**
+
 *If their justification doesn't talk about the context of the data (e.g., temporal relationships between observations)*:
 
 > Your justification needs to make direct reference to the context of the data.
 
 *If their reasoning doesn't include any of the above justifications*:
 
-> How many observations are their for each country? Are these observations related in some way? If so, how? Are the observations between countries related? If so, how?
+> How many observations are their for each country? Are these observations related in some way? If so, how?
 
 ## Question 5
 
@@ -88,35 +96,41 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 :::
 :::
 
+**Growing:**
+
 *If their justification is insufficient*:
 
-> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.
+> When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.
 
 ## Question 6
 
 **To earn a Success**:
 
 -   Says the condition is violated
--   Justifies with the decreased variability in larger values of log(GDP)
+-   References how the residuals change / decrease for larger values of log(GDP)
+
+**Growing:**
 
 *If they say the condition is not violated*:
 
-> Equal variance requires that the variability of the residuals (vertical distance) says the same for ALL values of the explanatory variable. Is that the case? Why or why not?
+> Equal variance requires that the variability of the residuals (vertical distance) says the same (e.g., from -20 to +20) for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
-*If they say the condition is violated but reference the spread around the line*:
+*If they say the condition is violated but reference the number of observations above and below the line*:
 
-> Equal variance is not about having equal spread of points above and below the line -- it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+> Equal variance is not about having equal spread of points above and below the line -- it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
 *If they say the condition is violated but have insufficient justification as to why*:
 
-> When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.
+> When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. Specifically, we are evaluating if the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
 ## Question 7
 
 **To earn a Success**:
 
--   $H_0$ there is no linear relationship between log GDP per capita and life expectancy
--   $H_A$ there is a linear relationship between log GDP per capita and life expectancy
+-   $H_0$: there is no linear relationship between log GDP per capita and life expectancy
+-   $H_A$: there is a linear relationship between log GDP per capita and life expectancy
+
+**Growing:**
 
 *If they say GDP instead of log GDP*:
 
@@ -137,6 +151,8 @@ obs_slope <-  gapminder %>%
   specify(response = lifeExp, explanatory = log(gdpPercap)) %>%
   calculate(stat = "slope")
 ```
+
+**Growing:**
 
 *If they swap `lifeExp` and `gdpPercap`*:
 
@@ -160,6 +176,8 @@ null_dist <- gapminder %>%
   calculate(stat = "slope")
 ```
 
+**Growing:**
+
 *If they also don't use the log in this step:*
 
 > Update your code to use the same variable transformation that you use in #8.
@@ -171,10 +189,12 @@ null_dist <- gapminder %>%
 ```{r}
 #| eval: false
 #| echo: true
-visualise(null_dist)  +
-  shade_p_value(obs_stat = obs_slope, 
-                direction = "two-sided")
+get_p_value(null_dist, 
+            obs_stat = obs_slope, 
+            direction = "two-sided")
 ```
+
+**Growing:**
 
 *If they don't use `"two-sided"` for their alternative*:
 
@@ -182,23 +202,9 @@ visualise(null_dist)  +
 
 ## Question 11
 
-**To earn a Success**: Code should look like the following:
-
-```{r}
-#| eval: false
-#| echo: true
-get_p_value(null_dist, 
-            obs_stat = obs_slope, 
-            direction = "two-sided")
-```
-
-*If they don't use `"two-sided"` for their alternative*:
-
-> How many tails are there in the hypotheses stated in #7?
-
-## Question 12
-
 **To earn a Success**: States they reject $H_0$ because the p-value is less than 0.1
+
+**Growing:**
 
 *If they don't say why they rejected:*
 
@@ -208,32 +214,40 @@ get_p_value(null_dist,
 
 > You were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?
 
-## Question 13
+## Question 12
 
 **To earn a Success**: Code should look like the following:
 
 ```{r}
 #| eval: false
 #| echo: true
-get_regression_table(gapminder_lm, conf.level = 0.95)
+get_regression_table(gapminder_lm, conf.level = 0.9)
 ```
 
-## Question 14
+::: callout-tip
+# It's okay if their `conf.level` isn't 0.9
+
+This doesn't need to be consistent, since we aren't making a confidence interval!
+:::
+
+## Question 13
 
 **To earn a Success**: States that the p-value is essentially the same
 
-## Question 15
+## Question 14
 
 **To earn a Success**:
 
 -   states that the permutation distribution is approximately Normal
 -   states that a t-distribution is a reasonable approximation
 
+**Growing:**
+
 *If they don't reference the permutation distribution*:
 
 > Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?
 
-## Question 16
+## Question 15
 
 **To earn a Success**: Answer must agree with what they said in #4-6
 
@@ -246,16 +260,18 @@ If they said equal variance and / or independence was violated, they must say th
 :::
 
 ::: {.column width="30%"}
-If they said normality was violated but equal variance was not violated, they must say that the **simulation-based** p-value is more reliable.
+If they said normality **was** violated but equal variance and independence **were not** violated, they must say that the **simulation-based** p-value is more reliable.
 :::
 
 ::: {.column width="2%"}
 :::
 
 ::: {.column width="30%"}
-If they said neither equal variance or normality were violated, they must say that **both** p-values are reliable.
+If they said none of the conditions were violated, they must say that **both** p-values are reliable.
 :::
 :::
+
+**Growing:**
 
 *If they choose the wrong method*:
 

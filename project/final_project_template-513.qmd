@@ -8,6 +8,7 @@ editor: visual
 embed-resources: true
 execute: 
   echo: false
+  eval: false
   message: false
   warning: false
 ---

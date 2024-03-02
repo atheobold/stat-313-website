@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Lab 8 Grading Guide</title>
+<title>STAT 313 / 513 - Lab 8 Grading Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,7 +160,7 @@ window.Quarto = {
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -371,7 +371,6 @@ window.Quarto = {
   <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
   <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
   <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
-  <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16">Question 16</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -405,6 +404,7 @@ window.Quarto = {
 <li>GDP per capita on the x-axis</li>
 <li>axis labels for both axes, including units</li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If they swap</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>:</p>
 <blockquote class="blockquote">
 <p>Careful! What variable should be the response variable (located on the y-axis)?</p>
@@ -417,9 +417,10 @@ window.Quarto = {
 <li>takes log of GDP (using <code>scale_x_log10()</code>)</li>
 <li>renames x-axis label to indicate log GDP (or log $) is what is being plotted</li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If they log transform life expectancy (y)</em>:</p>
 <blockquote class="blockquote">
-<p>Similar to Occam’s Razor, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notibly better?</p>
+<p>Similar to the Principle of Parsimony, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notably better?</p>
 </blockquote>
 <p><em>If their x-axis doesn’t indicate the log was taken</em>:</p>
 <blockquote class="blockquote">
@@ -432,6 +433,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gapminder_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> <span class="fu">log</span>(gdpPercap), <span class="at">data =</span> gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If they swap <code>lifeExp</code> and <code>gdpPercap</code></em>:</p>
 <blockquote class="blockquote">
 <p>Careful! What variable comes first in the lm() function? The response or explanatory variable?</p>
@@ -445,7 +447,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p><strong>To earn a Success</strong>:</p>
 <ul>
-<li><p>Says “no”, it is not reasonable to assume the observations are independent</p></li>
+<li><p>Says it <strong>is not</strong> reasonable to assume the observations are independent</p></li>
 <li><p>Describes how observations are not independent citing <strong>at least one</strong> of the following:</p>
 <ul>
 <li>each country has repeated observations</li>
@@ -453,13 +455,14 @@ window.Quarto = {
 <li>countries of close geographical proximity may share information</li>
 </ul></li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If their justification doesn’t talk about the context of the data (e.g., temporal relationships between observations)</em>:</p>
 <blockquote class="blockquote">
 <p>Your justification needs to make direct reference to the context of the data.</p>
 </blockquote>
 <p><em>If their reasoning doesn’t include any of the above justifications</em>:</p>
 <blockquote class="blockquote">
-<p>How many observations are their for each country? Are these observations related in some way? If so, how? Are the observations between countries related? If so, how?</p>
+<p>How many observations are their for each country? Are these observations related in some way? If so, how?</p>
 </blockquote>
 </section>
 <section id="question-5" class="level2">
@@ -480,9 +483,10 @@ window.Quarto = {
 </ul>
 </div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If their justification is insufficient</em>:</p>
 <blockquote class="blockquote">
-<p>When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.</p>
+<p>When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.</p>
 </blockquote>
 </section>
 <section id="question-6" class="level2">
@@ -490,28 +494,30 @@ window.Quarto = {
 <p><strong>To earn a Success</strong>:</p>
 <ul>
 <li>Says the condition is violated</li>
-<li>Justifies with the decreased variability in larger values of log(GDP)</li>
+<li>References how the residuals change / decrease for larger values of log(GDP)</li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If they say the condition is not violated</em>:</p>
 <blockquote class="blockquote">
-<p>Equal variance requires that the variability of the residuals (vertical distance) says the same for ALL values of the explanatory variable. Is that the case? Why or why not?</p>
+<p>Equal variance requires that the variability of the residuals (vertical distance) says the same (e.g., from -20 to +20) for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
-<p><em>If they say the condition is violated but reference the spread around the line</em>:</p>
+<p><em>If they say the condition is violated but reference the number of observations above and below the line</em>:</p>
 <blockquote class="blockquote">
-<p>Equal variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
+<p>Equal variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
 <p><em>If they say the condition is violated but have insufficient justification as to why</em>:</p>
 <blockquote class="blockquote">
-<p>When evaluting conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals.</p>
+<p>When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. Specifically, we are evaluating if the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p><strong>To earn a Success</strong>:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span> there is no linear relationship between log GDP per capita and life expectancy</li>
-<li><span class="math inline">\(H_A\)</span> there is a linear relationship between log GDP per capita and life expectancy</li>
+<li><span class="math inline">\(H_0\)</span>: there is no linear relationship between log GDP per capita and life expectancy</li>
+<li><span class="math inline">\(H_A\)</span>: there is a linear relationship between log GDP per capita and life expectancy</li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If they say GDP instead of log GDP</em>:</p>
 <blockquote class="blockquote">
 <p>Careful! How did you transform your variable(s) in #2? What variables are you looking at the linear relationship between?</p>
@@ -529,6 +535,7 @@ window.Quarto = {
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> lifeExp, <span class="at">explanatory =</span> <span class="fu">log</span>(gdpPercap)) <span class="sc">%&gt;%</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If they swap <code>lifeExp</code> and <code>gdpPercap</code></em>:</p>
 <blockquote class="blockquote">
 <p>Careful! What variable is your response variable?</p>
@@ -548,6 +555,7 @@ window.Quarto = {
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"slope"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If they also don’t use the log in this step:</em></p>
 <blockquote class="blockquote">
 <p>Update your code to use the same variable transformation that you use in #8.</p>
@@ -557,10 +565,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <p><strong>To earn a Success</strong>: Code should look like the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualise</span>(null_dist)  <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_slope, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_p_value</span>(null_dist, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">obs_stat =</span> obs_slope, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If they don’t use <code>"two-sided"</code> for their alternative</em>:</p>
 <blockquote class="blockquote">
 <p>How many tails are there in the hypotheses stated in #7?</p>
@@ -568,20 +577,8 @@ window.Quarto = {
 </section>
 <section id="question-11" class="level2">
 <h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
-<p><strong>To earn a Success</strong>: Code should look like the following:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_p_value</span>(null_dist, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">obs_stat =</span> obs_slope, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>If they don’t use <code>"two-sided"</code> for their alternative</em>:</p>
-<blockquote class="blockquote">
-<p>How many tails are there in the hypotheses stated in #7?</p>
-</blockquote>
-</section>
-<section id="question-12" class="level2">
-<h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
 <p><strong>To earn a Success</strong>: States they reject <span class="math inline">\(H_0\)</span> because the p-value is less than 0.1</p>
+<p><strong>Growing:</strong></p>
 <p><em>If they don’t say why they rejected:</em></p>
 <blockquote class="blockquote">
 <p>Careful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?</p>
@@ -591,31 +588,45 @@ window.Quarto = {
 <p>You were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?</p>
 </blockquote>
 </section>
-<section id="question-13" class="level2">
-<h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<section id="question-12" class="level2">
+<h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
 <p><strong>To earn a Success</strong>: Code should look like the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(gapminder_lm, <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(gapminder_lm, <span class="at">conf.level =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+It’s okay if their <code>conf.level</code> isn’t 0.9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This doesn’t need to be consistent, since we aren’t making a confidence interval!</p>
+</div>
+</div>
+</section>
+<section id="question-13" class="level2">
+<h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<p><strong>To earn a Success</strong>: States that the p-value is essentially the same</p>
 </section>
 <section id="question-14" class="level2">
 <h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
-<p><strong>To earn a Success</strong>: States that the p-value is essentially the same</p>
-</section>
-<section id="question-15" class="level2">
-<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
 <p><strong>To earn a Success</strong>:</p>
 <ul>
 <li>states that the permutation distribution is approximately Normal</li>
 <li>states that a t-distribution is a reasonable approximation</li>
 </ul>
+<p><strong>Growing:</strong></p>
 <p><em>If they don’t reference the permutation distribution</em>:</p>
 <blockquote class="blockquote">
 <p>Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?</p>
 </blockquote>
 </section>
-<section id="question-16" class="level2">
-<h2 class="anchored" data-anchor-id="question-16">Question 16</h2>
+<section id="question-15" class="level2">
+<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
 <p><strong>To earn a Success</strong>: Answer must agree with what they said in #4-6</p>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -623,13 +634,14 @@ window.Quarto = {
 </div><div class="column" style="width:2%;">
 
 </div><div class="column" style="width:30%;">
-<p>If they said normality was violated but equal variance was not violated, they must say that the <strong>simulation-based</strong> p-value is more reliable.</p>
+<p>If they said normality <strong>was</strong> violated but equal variance and independence <strong>were not</strong> violated, they must say that the <strong>simulation-based</strong> p-value is more reliable.</p>
 </div><div class="column" style="width:2%;">
 
 </div><div class="column" style="width:30%;">
-<p>If they said neither equal variance or normality were violated, they must say that <strong>both</strong> p-values are reliable.</p>
+<p>If they said none of the conditions were violated, they must say that <strong>both</strong> p-values are reliable.</p>
 </div>
 </div>
+<p><strong>Growing:</strong></p>
 <p><em>If they choose the wrong method</em>:</p>
 <blockquote class="blockquote">
 <p>Look back at the conditions required for each of these methods. Which conditions did you say were violated? What does that imply for the method(s) which give you the most reliable p-value?</p>

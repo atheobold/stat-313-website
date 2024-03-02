@@ -8,6 +8,7 @@ editor: visual
 embed-resources: true
 execute: 
   echo: false
+  eval: false
   message: false
   warning: false
 ---
@@ -116,7 +117,6 @@ broom::augment(my_model) %>%
   labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
        y = "Residuals")
 ```
-
 
 # Study Limitations
 
