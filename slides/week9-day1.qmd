@@ -30,41 +30,79 @@ evals_small <- moderndive::evals %>%
   distinct(prof_ID, .keep_all = TRUE) 
 ```
 
-::: {style="font-size: 4em; color: #000000;"}
+# Week 9
+
+## Final Project First Draft
+
+**Step 1** - Due by Wednesday 
+
+:::{.small}
+- Introduction (Data description, research questions)
+:::
+. . .
+
+**Step 2** - Due by Friday
+
+:::{.small}
+- Methods (Data visualizations)
+- Findings (Data analysis)
+:::
+
+. . .
+
+**Step 3** - Due by Sunday
+
+:::{.small}
+- Study Limitations
+- Conclusion
+:::
+
+# One-Way ANOVA
+
+##
+
+::: {style="font-size: 2.5em; color: #000000;"}
 Before...
 :::
 
-```{r slr}
+```{r}
 #| echo: false
+#| label: slr
 
 ggplot(data = evals_small, 
        mapping = aes(x = age, y = min_eval)) + 
   geom_jitter() + 
-  labs(x = "Professor's Age", 
-       y = "Minimum Evaluation Score") +
-  theme(axis.title = element_text(size = 18), 
+  geom_smooth(method = "lm") +
+  labs(x = "", 
+       y = "", 
+       title = "Relationship between faculty's age and their minimum evaluation score") +
+  theme(axis.title = element_text(size = 72), 
         axis.text.y = element_text(size = 16), 
         axis.text.x = element_text(size = 14))
 ```
 
 ## 
 
-::: {style="font-size: 4em; color: #000000;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 Now...
 :::
 
-```{r age-cat}
+```{r}
 #| echo: false
-#| out-width: 70%
+#| label: age-cat
+
 ggplot(data = evals_small, 
        mapping = aes(x = age_cat, y = min_eval)) + 
   geom_jitter(width = 0.1) + 
-  labs(x = "Professor's Age", 
-       y = "Minimum Evaluation Score") +
-  theme(axis.title = element_text(size = 18), 
+  labs(x = "", 
+       y = "", 
+       title = "Minimum Evaluation Scores for Faculty of Different Age Groups") +
+  theme(axis.title = element_text(size = 72), 
         axis.text.y = element_text(size = 16), 
         axis.text.x = element_text(size = 14))
 ```
+
+# Why?
 
 ##  {background-color="#B6CADA"}
 
@@ -84,9 +122,11 @@ Analysis of variance (ANOVA) compares the means of three of more groups to detec
 -   Scale the differences relative to the variability of the groups
 -   Summarize the differences with one number
 
+# Visualizations for an ANOVA
+
 ## 
 
-::: {style="font-size: 3.5em; color: #000000;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 Visualizing Group Differences
 :::
 
@@ -106,24 +146,33 @@ We want visualizations that allow for us to easily compare:
 ggplot(data = evals_small, 
        mapping = aes(y = age_cat, x = min_eval)) + 
   geom_density_ridges() + 
-  labs(y = "Professor's Age", 
-       x = "Minimum Evaluation Score") +
-  theme(axis.title = element_text(size = 18), 
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  theme(axis.title = element_text(size = 72), 
         axis.text.y = element_text(size = 16), 
-        axis.text.x = element_text(size = 14))
+        axis.text.x = element_text(size = 14)
+        )
 ```
 
-::: {style="font-size: 1.25em; color: #B6CADA;"}
-What can you say about the differences between the groups?
+. . .
 
-What can you say about the variability within the groups?
+::: {style="color: #34605f;"}
+::: columns
+::: {.column width="47%"}
+What can you say about the differences *between* the age groups?
 :::
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 4em; color: #0F4C81;"}
-Carrying out an ANOVA
+::: {.column width="3%"}
 :::
+
+::: {.column width="47%"}
+What can you say about the variability *within* the age groups?
+:::
+:::
+:::
+
+# Carrying out an ANOVA
 
 ## 
 
@@ -141,7 +190,9 @@ Step 2: Find the overall mean
 
 ![](images/overall_mean.png)
 
-::: {style="font-size: 1.5em; color: #B6CADA;"}
+. . .
+
+::: {style="font-size: 1.5em; color: #ed8402;"}
 This ignores the groups and finds [one]{.underline} mean for every observation!
 :::
 
@@ -169,13 +220,9 @@ Step 5: Calculate the F-statistic
 
 ![](images/f_stat.png)
 
-. . .
-
-</br>
-
-::: {style="color: #B6CADA;"}
-Can an F-statistic be negative?
-:::
+<!-- ::: {style="color: #B6CADA;"} -->
+<!-- Can an F-statistic be negative? -->
+<!-- ::: -->
 
 ## 
 
@@ -331,6 +378,8 @@ Another Permutation Distribution
 
 ```{r null-dist}
 #| echo: true
+#| cache: true
+
 null_dist <- evals_small %>% 
   specify(response = min_eval, 
           explanatory = age_cat) %>% 
@@ -442,11 +491,11 @@ What would you conclude regarding the mean minimum evaluation score and differen
 Did the two methods yield different results?
 :::
 
-## 
+# How does this connect with the ANOVA we did in the Statistical Critique?
 
-::: {style="font-size: 4em; color: #000000;"}
-Next week...
-:::
+# Where are we headed next week? 
+
+## 
 
 ```{r age-two-cat}
 #| echo: false

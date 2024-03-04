@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -154,7 +154,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -409,6 +409,10 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Careful! What variable should be the response variable (located on the y-axis)?</p>
 </blockquote>
+<p><em>If they don’t include axis labels</em>:</p>
+<blockquote class="blockquote">
+<p>Careful! Your axis labels should also include the unit each variable was measured in! If you are unsure what unit a variable was measured in, you can consult the data documentation using ?gapminder. :)</p>
+</blockquote>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
@@ -424,7 +428,7 @@ window.Quarto = {
 </blockquote>
 <p><em>If their x-axis doesn’t indicate the log was taken</em>:</p>
 <blockquote class="blockquote">
-<p>Careful! You axis label needs to indicate how the variable was transformed!</p>
+<p>Careful! You axis label needs to indicate how the original variable was transformed!</p>
 </blockquote>
 </section>
 <section id="question-3" class="level2">
@@ -451,8 +455,8 @@ window.Quarto = {
 <li><p>Describes how observations are not independent citing <strong>at least one</strong> of the following:</p>
 <ul>
 <li>each country has repeated observations</li>
-<li>observations for each country are related in time</li>
-<li>countries of close geographical proximity may share information</li>
+<li>observations for each country are related in time (temporal correlation)</li>
+<li>countries of close geographical proximity may share information (spatial correlation)</li>
 </ul></li>
 </ul>
 <p><strong>Growing:</strong></p>
@@ -499,15 +503,15 @@ window.Quarto = {
 <p><strong>Growing:</strong></p>
 <p><em>If they say the condition is not violated</em>:</p>
 <blockquote class="blockquote">
-<p>Equal variance requires that the variability of the residuals (vertical distance) says the same (e.g., from -20 to +20) for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
+<p>Equal variance requires that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
-<p><em>If they say the condition is violated but reference the number of observations above and below the line</em>:</p>
+<p><em>If they say the condition is / is not violated but reference the number of observations above and below the line</em>:</p>
 <blockquote class="blockquote">
-<p>Equal variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
+<p>Equal variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
 <p><em>If they say the condition is violated but have insufficient justification as to why</em>:</p>
 <blockquote class="blockquote">
-<p>When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. Specifically, we are evaluating if the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
+<p>When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the plot of the residuals versus fitted values. Specifically, we are evaluating if the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?</p>
 </blockquote>
 </section>
 <section id="question-7" class="level2">
@@ -569,8 +573,21 @@ window.Quarto = {
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">obs_stat =</span> obs_slope, </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consistent with alternative hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If they said the relationship was positive in the alternative, then their <code>direction</code> should be <code>"greater"</code>.</p>
+</div>
+</div>
 <p><strong>Growing:</strong></p>
-<p><em>If they don’t use <code>"two-sided"</code> for their alternative</em>:</p>
+<p>*If they don’t use a direction that is consistent with what they said in their alternative (<code>"two-sided"</code> or <code>"greater"</code>):</p>
 <blockquote class="blockquote">
 <p>How many tails are there in the hypotheses stated in #7?</p>
 </blockquote>
@@ -579,7 +596,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
 <p><strong>To earn a Success</strong>: States they reject <span class="math inline">\(H_0\)</span> because the p-value is less than 0.1</p>
 <p><strong>Growing:</strong></p>
-<p><em>If they don’t say why they rejected:</em></p>
+<p><em>If they don’t reference their significance level:</em></p>
 <blockquote class="blockquote">
 <p>Careful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?</p>
 </blockquote>
@@ -812,7 +829,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

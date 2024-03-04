@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.4.549">
 
   <title>STAT 313 / 513 - ANalysis Of VAriance</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,28 +396,70 @@
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="week-9" class="title-slide slide level1 center">
+<h1>Week 9</h1>
 
-<div style="font-size: 4em; color: #000000;">
+</section>
+<section id="final-project-first-draft" class="slide level2">
+<h2>Final Project First Draft</h2>
+<p><strong>Step 1</strong> - Due by Wednesday</p>
+<div class="small">
+<ul>
+<li>Introduction (Data description, research questions)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Step 2</strong> - Due by Friday</p>
+<div class="small">
+<ul>
+<li>Methods (Data visualizations)</li>
+<li>Findings (Data analysis)</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Step 3</strong> - Due by Sunday</p>
+<div class="small">
+<ul>
+<li>Study Limitations</li>
+<li>Conclusion</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="one-way-anova" class="title-slide slide level1 center">
+<h1>One-Way ANOVA</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div style="font-size: 2.5em; color: #000000;">
 <p>Before…</p>
 </div>
 
 <img data-src="week9-day1_files/figure-revealjs/slr-1.png" width="960" class="r-stretch"></section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
-<div style="font-size: 4em; color: #000000;">
+<div style="font-size: 2.5em; color: #000000;">
 <p>Now…</p>
 </div>
 
-<img data-src="week9-day1_files/figure-revealjs/age-cat-1.png" style="width:70.0%" class="r-stretch"></section>
-<section id="section-1" class="slide level2" data-background-color="#B6CADA">
+<img data-src="week9-day1_files/figure-revealjs/age-cat-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="why" class="title-slide slide level1 center">
+<h1>Why?</h1>
+
+</section>
+<section id="section-2" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 4em; color: #000000;">
 <p>Goal of an ANOVA</p>
 </div>
 <p>Analysis of variance (ANOVA) compares the means of three of more groups to detect if the means of the groups are different.</p>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div style="font-size: 4em; color: #B6CADA;">
 <p><strong>How???</strong></p>
@@ -427,10 +469,15 @@
 <li>Scale the differences relative to the variability of the groups</li>
 <li>Summarize the differences with one number</li>
 </ul>
+</section></section>
+<section>
+<section id="visualizations-for-an-anova" class="title-slide slide level1 center">
+<h1>Visualizations for an ANOVA</h1>
+
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
-<div style="font-size: 3.5em; color: #000000;">
+<div style="font-size: 2.5em; color: #000000;">
 <p>Visualizing Group Differences</p>
 </div>
 <p><br></p>
@@ -440,19 +487,27 @@
 <li>the spread (variability) of the groups</li>
 </ul>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 
-<img data-src="week9-day1_files/figure-revealjs/age-cat-density-1.png" style="width:70.0%" class="r-stretch"><div style="font-size: 1.25em; color: #B6CADA;">
-<p>What can you say about the differences between the groups?</p>
-<p>What can you say about the variability within the groups?</p>
+<img data-src="week9-day1_files/figure-revealjs/age-cat-density-1.png" style="width:70.0%" class="r-stretch"><div class="fragment">
+<div style="color: #34605f;">
+<div class="columns">
+<div class="column" style="width:47%;">
+<p>What can you say about the differences <em>between</em> the age groups?</p>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:47%;">
+<p>What can you say about the variability <em>within</em> the age groups?</p>
 </div>
-</section>
-<section id="section-5" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 4em; color: #0F4C81;">
-<p>Carrying out an ANOVA</p>
 </div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="carrying-out-an-anova" class="title-slide slide level1 center">
+<h1>Carrying out an ANOVA</h1>
+
 </section>
 <section id="section-6" class="slide level2">
 <h2></h2>
@@ -467,8 +522,10 @@
 <p>Step 2: Find the overall mean</p>
 </div>
 
-<img data-src="images/overall_mean.png" class="r-stretch"><div style="font-size: 1.5em; color: #B6CADA;">
+<img data-src="images/overall_mean.png" class="r-stretch"><div class="fragment">
+<div style="font-size: 1.5em; color: #ed8402;">
 <p>This ignores the groups and finds <u>one</u> mean for every observation!</p>
+</div>
 </div>
 </section>
 <section id="section-8" class="slide level2">
@@ -491,13 +548,10 @@
 <p>Step 5: Calculate the F-statistic</p>
 </div>
 
-<img data-src="images/f_stat.png" class="r-stretch"><div class="fragment">
-<p><br></p>
-<div style="color: #B6CADA;">
-<p>Can an F-statistic be negative?</p>
-</div>
-</div>
-</section>
+<!-- ::: {style="color: #B6CADA;"} -->
+<!-- Can an F-statistic be negative? -->
+<!-- ::: -->
+<img data-src="images/f_stat.png" class="r-stretch"></section>
 <section id="section-11" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
@@ -649,7 +703,7 @@ Explanatory: age_cat (factor)
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:50.0%;height:50.0%"></p>
+<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%;height:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -674,7 +728,7 @@ Explanatory: age_cat (factor)
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%;height:50.0%"></p>
+<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:50.0%;height:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -731,21 +785,28 @@ Explanatory: age_cat (factor)
 <div style="font-size: 3em; color: #0F4C81;">
 <p>Did the two methods yield different results?</p>
 </div>
+</section></section>
+<section id="how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="title-slide slide level1 center">
+<h1>How does this connect with the ANOVA we did in the Statistical Critique?</h1>
+
+</section>
+
+<section>
+<section id="where-are-we-headed-next-week" class="title-slide slide level1 center">
+<h1>Where are we headed next week?</h1>
+
 </section>
 <section id="section-26" class="slide level2">
 <h2></h2>
-<div style="font-size: 4em; color: #000000;">
-<p>Next week…</p>
-</div>
 
 
-
-<img data-src="week9-day1_files/figure-revealjs/age-two-cat-1.png" style="width:70.0%" class="r-stretch"></section>
-    <div class="quarto-auto-generated-content">
+<img data-src="week9-day1_files/figure-revealjs/age-two-cat-1.png" style="width:70.0%" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</div>
+</section></section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>

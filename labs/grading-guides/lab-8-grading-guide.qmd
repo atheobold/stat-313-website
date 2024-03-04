@@ -18,6 +18,10 @@ editor: visual
 
 > Careful! What variable should be the response variable (located on the y-axis)?
 
+*If they don't include axis labels*:
+
+> Careful! Your axis labels should also include the unit each variable was measured in! If you are unsure what unit a variable was measured in, you can consult the data documentation using ?gapminder. :)
+
 ## Question 2
 
 **To earn a Success**:
@@ -33,7 +37,7 @@ editor: visual
 
 *If their x-axis doesn't indicate the log was taken*:
 
-> Careful! You axis label needs to indicate how the variable was transformed!
+> Careful! You axis label needs to indicate how the original variable was transformed!
 
 ## Question 3
 
@@ -64,8 +68,8 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 -   Describes how observations are not independent citing **at least one** of the following:
 
     -   each country has repeated observations
-    -   observations for each country are related in time
-    -   countries of close geographical proximity may share information
+    -   observations for each country are related in time (temporal correlation)
+    -   countries of close geographical proximity may share information (spatial correlation)
 
 **Growing:**
 
@@ -113,15 +117,15 @@ gapminder_lm <- lm(lifeExp ~ log(gdpPercap), data = gapminder)
 
 *If they say the condition is not violated*:
 
-> Equal variance requires that the variability of the residuals (vertical distance) says the same (e.g., from -20 to +20) for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+> Equal variance requires that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
-*If they say the condition is violated but reference the number of observations above and below the line*:
+*If they say the condition is / is not violated but reference the number of observations above and below the line*:
 
-> Equal variance is not about having equal spread of points above and below the line -- it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+> Equal variance is not about having equal spread of points above and below the line -- it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
 *If they say the condition is violated but have insufficient justification as to why*:
 
-> When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. Specifically, we are evaluating if the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
+> When evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the plot of the residuals versus fitted values. Specifically, we are evaluating if the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?
 
 ## Question 7
 
@@ -194,9 +198,15 @@ get_p_value(null_dist,
             direction = "two-sided")
 ```
 
+:::{.callout-note}
+# Consistent with alternative hypothesis
+
+If they said the relationship was positive in the alternative, then their `direction` should be `"greater"`. 
+:::
+
 **Growing:**
 
-*If they don't use `"two-sided"` for their alternative*:
+*If they don't use a direction that is consistent with what they said in their alternative (`"two-sided"` or `"greater"`):
 
 > How many tails are there in the hypotheses stated in #7?
 
@@ -206,7 +216,7 @@ get_p_value(null_dist,
 
 **Growing:**
 
-*If they don't say why they rejected:*
+*If they don't reference their significance level:*
 
 > Careful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?
 

@@ -1596,42 +1596,42 @@
     "href": "slides/week9-day1.html#section",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Now…"
+    "text": "Before…"
   },
   {
     "objectID": "slides/week9-day1.html#section-1",
     "href": "slides/week9-day1.html#section-1",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Goal of an ANOVA\n\nAnalysis of variance (ANOVA) compares the means of three of more groups to detect if the means of the groups are different."
+    "text": "Now…"
   },
   {
     "objectID": "slides/week9-day1.html#section-2",
     "href": "slides/week9-day1.html#section-2",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "How???\n\n\nCompare how different a group of means are\nScale the differences relative to the variability of the groups\nSummarize the differences with one number"
+    "text": "Goal of an ANOVA\n\nAnalysis of variance (ANOVA) compares the means of three of more groups to detect if the means of the groups are different."
   },
   {
     "objectID": "slides/week9-day1.html#section-3",
     "href": "slides/week9-day1.html#section-3",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Visualizing Group Differences\n\n\nWe want visualizations that allow for us to easily compare:\n\nthe center (mean) of the groups\nthe spread (variability) of the groups"
+    "text": "How???\n\n\nCompare how different a group of means are\nScale the differences relative to the variability of the groups\nSummarize the differences with one number"
   },
   {
     "objectID": "slides/week9-day1.html#section-4",
     "href": "slides/week9-day1.html#section-4",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "What can you say about the differences between the groups?\nWhat can you say about the variability within the groups?"
+    "text": "Visualizing Group Differences\n\n\nWe want visualizations that allow for us to easily compare:\n\nthe center (mean) of the groups\nthe spread (variability) of the groups"
   },
   {
     "objectID": "slides/week9-day1.html#section-5",
     "href": "slides/week9-day1.html#section-5",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Carrying out an ANOVA"
+    "text": "What can you say about the differences between the age groups?\n\n\n\nWhat can you say about the variability within the age groups?"
   },
   {
     "objectID": "slides/week9-day1.html#section-6",
@@ -1645,7 +1645,7 @@
     "href": "slides/week9-day1.html#section-7",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 2: Find the overall mean\n\n\n\nThis ignores the groups and finds one mean for every observation!"
+    "text": "Step 2: Find the overall mean\n\n\n\n\nThis ignores the groups and finds one mean for every observation!"
   },
   {
     "objectID": "slides/week9-day1.html#section-8",
@@ -1666,7 +1666,7 @@
     "href": "slides/week9-day1.html#section-10",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 5: Calculate the F-statistic\n\n\n\n\n\nCan an F-statistic be negative?"
+    "text": "Step 5: Calculate the F-statistic"
   },
   {
     "objectID": "slides/week9-day1.html#section-11",
@@ -1778,7 +1778,7 @@
     "href": "slides/week9-day1.html#section-26",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Next week…"
+    "text": "Did the two methods yield different results?"
   },
   {
     "objectID": "slides/week3-day1.html#section",
@@ -3254,21 +3254,21 @@
     "href": "labs/grading-guides/lab-8-grading-guide.html",
     "title": "Lab 8 Grading Guide",
     "section": "",
-    "text": "To earn a Success: Creates a scatterplot with the following qualities:\n\nlife expectancy on y-axis\nGDP per capita on the x-axis\naxis labels for both axes, including units\n\nGrowing:\nIf they swap \\(x\\) and \\(y\\):\n\nCareful! What variable should be the response variable (located on the y-axis)?"
+    "text": "To earn a Success: Creates a scatterplot with the following qualities:\n\nlife expectancy on y-axis\nGDP per capita on the x-axis\naxis labels for both axes, including units\n\nGrowing:\nIf they swap \\(x\\) and \\(y\\):\n\nCareful! What variable should be the response variable (located on the y-axis)?\n\nIf they don’t include axis labels:\n\nCareful! Your axis labels should also include the unit each variable was measured in! If you are unsure what unit a variable was measured in, you can consult the data documentation using ?gapminder. :)"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-1",
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-1",
     "title": "Lab 8 Grading Guide",
     "section": "",
-    "text": "To earn a Success: Creates a scatterplot with the following qualities:\n\nlife expectancy on y-axis\nGDP per capita on the x-axis\naxis labels for both axes, including units\n\nGrowing:\nIf they swap \\(x\\) and \\(y\\):\n\nCareful! What variable should be the response variable (located on the y-axis)?"
+    "text": "To earn a Success: Creates a scatterplot with the following qualities:\n\nlife expectancy on y-axis\nGDP per capita on the x-axis\naxis labels for both axes, including units\n\nGrowing:\nIf they swap \\(x\\) and \\(y\\):\n\nCareful! What variable should be the response variable (located on the y-axis)?\n\nIf they don’t include axis labels:\n\nCareful! Your axis labels should also include the unit each variable was measured in! If you are unsure what unit a variable was measured in, you can consult the data documentation using ?gapminder. :)"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-2",
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-2",
     "title": "Lab 8 Grading Guide",
     "section": "Question 2",
-    "text": "Question 2\nTo earn a Success:\n\ntakes log of GDP (using scale_x_log10())\nrenames x-axis label to indicate log GDP (or log $) is what is being plotted\n\nGrowing:\nIf they log transform life expectancy (y):\n\nSimilar to the Principle of Parsimony, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notably better?\n\nIf their x-axis doesn’t indicate the log was taken:\n\nCareful! You axis label needs to indicate how the variable was transformed!"
+    "text": "Question 2\nTo earn a Success:\n\ntakes log of GDP (using scale_x_log10())\nrenames x-axis label to indicate log GDP (or log $) is what is being plotted\n\nGrowing:\nIf they log transform life expectancy (y):\n\nSimilar to the Principle of Parsimony, we want to transform as few variables as is necessary. Look back at the plot with just x log transformed. Is log transforming y and x notably better?\n\nIf their x-axis doesn’t indicate the log was taken:\n\nCareful! You axis label needs to indicate how the original variable was transformed!"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-3",
@@ -3282,7 +3282,7 @@
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-4",
     "title": "Lab 8 Grading Guide",
     "section": "Question 4",
-    "text": "Question 4\nTo earn a Success:\n\nSays it is not reasonable to assume the observations are independent\nDescribes how observations are not independent citing at least one of the following:\n\neach country has repeated observations\nobservations for each country are related in time\ncountries of close geographical proximity may share information\n\n\nGrowing:\nIf their justification doesn’t talk about the context of the data (e.g., temporal relationships between observations):\n\nYour justification needs to make direct reference to the context of the data.\n\nIf their reasoning doesn’t include any of the above justifications:\n\nHow many observations are their for each country? Are these observations related in some way? If so, how?"
+    "text": "Question 4\nTo earn a Success:\n\nSays it is not reasonable to assume the observations are independent\nDescribes how observations are not independent citing at least one of the following:\n\neach country has repeated observations\nobservations for each country are related in time (temporal correlation)\ncountries of close geographical proximity may share information (spatial correlation)\n\n\nGrowing:\nIf their justification doesn’t talk about the context of the data (e.g., temporal relationships between observations):\n\nYour justification needs to make direct reference to the context of the data.\n\nIf their reasoning doesn’t include any of the above justifications:\n\nHow many observations are their for each country? Are these observations related in some way? If so, how?"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-5",
@@ -3296,7 +3296,7 @@
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-6",
     "title": "Lab 8 Grading Guide",
     "section": "Question 6",
-    "text": "Question 6\nTo earn a Success:\n\nSays the condition is violated\nReferences how the residuals change / decrease for larger values of log(GDP)\n\nGrowing:\nIf they say the condition is not violated:\n\nEqual variance requires that the variability of the residuals (vertical distance) says the same (e.g., from -20 to +20) for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?\n\nIf they say the condition is violated but reference the number of observations above and below the line:\n\nEqual variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?\n\nIf they say the condition is violated but have insufficient justification as to why:\n\nWhen evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the distribution of residuals. Specifically, we are evaluating if the spread of residuals (e.g., from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?"
+    "text": "Question 6\nTo earn a Success:\n\nSays the condition is violated\nReferences how the residuals change / decrease for larger values of log(GDP)\n\nGrowing:\nIf they say the condition is not violated:\n\nEqual variance requires that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?\n\nIf they say the condition is / is not violated but reference the number of observations above and below the line:\n\nEqual variance is not about having equal spread of points above and below the line – it is okay for there to be more residuals below the line compared to above the line. They key is that the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?\n\nIf they say the condition is violated but have insufficient justification as to why:\n\nWhen evaluating conditions the choices are subjective, so it is necessary for you to justify WHY you made the decision you did. Your justification should make direct reference to characteristics of the plot of the residuals versus fitted values. Specifically, we are evaluating if the spread of residuals / the vertical width (e.g., going from -20 to +20) stays the same for ALL values of the explanatory variable (across the x-axis). Is that the case? Why or why not?"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-7",
@@ -3324,14 +3324,14 @@
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-10",
     "title": "Lab 8 Grading Guide",
     "section": "Question 10",
-    "text": "Question 10\nTo earn a Success: Code should look like the following:\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\nGrowing:\nIf they don’t use \"two-sided\" for their alternative:\n\nHow many tails are there in the hypotheses stated in #7?"
+    "text": "Question 10\nTo earn a Success: Code should look like the following:\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\")\n\n\n\n\n\n\n\nConsistent with alternative hypothesis\n\n\n\nIf they said the relationship was positive in the alternative, then their direction should be \"greater\".\n\n\nGrowing:\n*If they don’t use a direction that is consistent with what they said in their alternative (\"two-sided\" or \"greater\"):\n\nHow many tails are there in the hypotheses stated in #7?"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-11",
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-11",
     "title": "Lab 8 Grading Guide",
     "section": "Question 11",
-    "text": "Question 11\nTo earn a Success: States they reject \\(H_0\\) because the p-value is less than 0.1\nGrowing:\nIf they don’t say why they rejected:\n\nCareful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?\n\nIf they do not make a decision:\n\nYou were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?"
+    "text": "Question 11\nTo earn a Success: States they reject \\(H_0\\) because the p-value is less than 0.1\nGrowing:\nIf they don’t reference their significance level:\n\nCareful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?\n\nIf they do not make a decision:\n\nYou were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-12",
@@ -7763,5 +7763,19 @@
     "title": "Your Title Goes Here! Make it fun!",
     "section": "Model Validity",
     "text": "Model Validity"
+  },
+  {
+    "objectID": "slides/week9-day1.html#final-project-first-draft",
+    "href": "slides/week9-day1.html#final-project-first-draft",
+    "title": "ANalysis Of VAriance",
+    "section": "Final Project First Draft",
+    "text": "Final Project First Draft\nStep 1 - Due by Wednesday\n\n\nIntroduction (Data description, research questions)\n\n\n\nStep 2 - Due by Friday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n\n\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
+  },
+  {
+    "objectID": "slides/week9-day1.html#section-27",
+    "href": "slides/week9-day1.html#section-27",
+    "title": "ANalysis Of VAriance",
+    "section": "",
+    "text": "Next week…"
   }
 ]
