@@ -7,10 +7,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 / 513 - Winter 2024 - ANalysis Of VAriance</title>
+  <title>STAT 313 / 513 - ANalysis Of VAriance</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -55,44 +55,44 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
+        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
     div.sourceCode
-      { color: #f8f8f2;  }
+      { color: #003b4f; background-color: #f1f3f5; }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #f8f8f2; } /* Normal */
-    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
-    code span.an { color: #d4d0ab; } /* Annotation */
-    code span.at { color: #00e0e0; } /* Attribute */
-    code span.bn { color: #d4d0ab; } /* BaseN */
-    code span.bu { color: #abe338; } /* BuiltIn */
-    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #abe338; } /* Char */
-    code span.cn { color: #ffd700; } /* Constant */
-    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
-    code span.cv { color: #ffd700; } /* CommentVar */
-    code span.do { color: #f8f8f2; } /* Documentation */
-    code span.dt { color: #ffa07a; } /* DataType */
-    code span.dv { color: #d4d0ab; } /* DecVal */
-    code span.er { color: #f07178; text-decoration: underline; } /* Error */
-    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
-    code span.fl { color: #d4d0ab; } /* Float */
-    code span.fu { color: #ffa07a; } /* Function */
-    code span.im { color: #abe338; } /* Import */
-    code span.in { color: #d4d0ab; } /* Information */
-    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
-    code span.op { color: #ffa07a; } /* Operator */
-    code span.ot { color: #00e0e0; } /* Other */
-    code span.pp { color: #dcc6e0; } /* Preprocessor */
-    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
-    code span.sc { color: #abe338; } /* SpecialChar */
-    code span.ss { color: #abe338; } /* SpecialString */
-    code span.st { color: #abe338; } /* String */
-    code span.va { color: #00e0e0; } /* Variable */
-    code span.vs { color: #abe338; } /* VerbatimString */
-    code span.wa { color: #dcc6e0; } /* Warning */
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -385,7 +385,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -398,14 +398,14 @@
 </section>
 <section class="slide level2">
 
-<div style="font-size: 4em; color: #FFFFFF;">
+<div style="font-size: 4em; color: #000000;">
 <p>Before…</p>
 </div>
 
 <img data-src="week9-day1_files/figure-revealjs/slr-1.png" width="960" class="r-stretch"></section>
 <section id="section" class="slide level2">
 <h2></h2>
-<div style="font-size: 4em; color: #FFFFFF;">
+<div style="font-size: 4em; color: #000000;">
 <p>Now…</p>
 </div>
 
@@ -430,7 +430,7 @@
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<div style="font-size: 3.5em; color: #FFFFFF;">
+<div style="font-size: 3.5em; color: #000000;">
 <p>Visualizing Group Differences</p>
 </div>
 <p><br></p>
@@ -456,14 +456,14 @@
 </section>
 <section id="section-6" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 1: Compare your groups</p>
 </div>
 
 <img data-src="images/groups.png" class="r-stretch"></section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 2: Find the overall mean</p>
 </div>
 
@@ -473,21 +473,21 @@
 </section>
 <section id="section-8" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 3: Find the group means</p>
 </div>
 
 <img data-src="images/group_means.png" class="r-stretch"></section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 4: Calculate the sum of squares</p>
 </div>
 
 <img data-src="images/sum_of_squares.png" class="r-stretch"></section>
 <section id="section-10" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 5: Calculate the F-statistic</p>
 </div>
 
@@ -500,14 +500,14 @@
 </section>
 <section id="section-11" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 6: Find the p-value</p>
 </div>
 
 <img data-src="images/f_dist.png" class="r-stretch"></section>
 <section id="section-12" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p><strong>F-distribution</strong></p>
 </div>
 <p>An <span class="math inline">\(F\)</span>-distribution is a variant of the <span class="math inline">\(t\)</span>-distribution, and is also defined by degrees of freedom.</p>
@@ -522,7 +522,7 @@
 </section>
 <section id="section-13" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Two degrees of freedom!</p>
 </div>
 <p><br></p>
@@ -553,7 +553,7 @@
 </section>
 <section id="section-15" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p><strong>Conditions of an ANOVA</strong></p>
 </div>
 <ul>
@@ -594,7 +594,7 @@
 </section>
 <section id="section-18" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 1: Calculating the Observed F-statistic</p>
 </div>
 <div class="cell">
@@ -616,7 +616,7 @@ Explanatory: age_cat (factor)
 </section>
 <section id="section-19" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Step 2: Simulating what could have happened under <span class="math inline">\(H_0\)</span></p>
 </div>
 <div class="fragment">
@@ -628,7 +628,7 @@ Explanatory: age_cat (factor)
 </section>
 <section id="section-20" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Another Permutation Distribution</p>
 </div>
 <div class="cell">
@@ -642,7 +642,7 @@ Explanatory: age_cat (factor)
 </section>
 <section id="section-21" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Another Permutation Distribution</p>
 </div>
 <div class="cell">
@@ -662,7 +662,7 @@ Explanatory: age_cat (factor)
 </section>
 <section id="section-22" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #FFFFFF;">
+<div style="font-size: 2em; color: #000000;">
 <p>Visualizing the p-value</p>
 </div>
 <div class="cell">
@@ -734,7 +734,7 @@ Explanatory: age_cat (factor)
 </section>
 <section id="section-26" class="slide level2">
 <h2></h2>
-<div style="font-size: 4em; color: #FFFFFF;">
+<div style="font-size: 4em; color: #000000;">
 <p>Next week…</p>
 </div>
 

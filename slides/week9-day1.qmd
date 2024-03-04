@@ -2,7 +2,7 @@
 title: "**AN**alysis **O**f **VA**riance"
 format: 
   revealjs:
-    theme: dark
+    theme: style.scss
 editor: source
 ---
 
@@ -30,7 +30,7 @@ evals_small <- moderndive::evals %>%
   distinct(prof_ID, .keep_all = TRUE) 
 ```
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Before...
 :::
 
@@ -49,7 +49,7 @@ ggplot(data = evals_small,
 
 ## 
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Now...
 :::
 
@@ -86,7 +86,7 @@ Analysis of variance (ANOVA) compares the means of three of more groups to detec
 
 ## 
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
+::: {style="font-size: 3.5em; color: #000000;"}
 Visualizing Group Differences
 :::
 
@@ -127,7 +127,7 @@ Carrying out an ANOVA
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 1: Compare your groups
 :::
 
@@ -135,7 +135,7 @@ Step 1: Compare your groups
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 2: Find the overall mean
 :::
 
@@ -147,7 +147,7 @@ This ignores the groups and finds [one]{.underline} mean for every observation!
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 3: Find the group means
 :::
 
@@ -155,7 +155,7 @@ Step 3: Find the group means
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 4: Calculate the sum of squares
 :::
 
@@ -163,7 +163,7 @@ Step 4: Calculate the sum of squares
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 5: Calculate the F-statistic
 :::
 
@@ -179,7 +179,7 @@ Can an F-statistic be negative?
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 6: Find the p-value
 :::
 
@@ -187,7 +187,7 @@ Step 6: Find the p-value
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 **F-distribution**
 :::
 
@@ -204,7 +204,7 @@ This distribution is defined by **two** different degrees of freedom:
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Two degrees of freedom!
 :::
 
@@ -245,7 +245,7 @@ NO!
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 **Conditions of an ANOVA**
 :::
 
@@ -293,7 +293,7 @@ Simulation-based Methods
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 1: Calculating the Observed F-statistic
 :::
 
@@ -311,7 +311,7 @@ obs_F
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Step 2: Simulating what could have happened under $H_0$
 :::
 
@@ -325,7 +325,7 @@ How could we use cards to simulate what minimum evaluation score a professor wou
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Another Permutation Distribution
 :::
 
@@ -341,7 +341,7 @@ null_dist <- evals_small %>%
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Another Permutation Distribution
 :::
 
@@ -359,7 +359,7 @@ Why doesn't the distribution have negative numbers?
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Visualizing the p-value
 :::
 
@@ -444,7 +444,7 @@ Did the two methods yield different results?
 
 ## 
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Next week...
 :::
 
