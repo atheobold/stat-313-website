@@ -1,11 +1,12 @@
 ---
-title: "Welcome to Posit Cloud!"
+title: "Lab 1: Welcome to Posit Cloud!"
 author: "Your Name Here!"
 date: "January 9, 2024"
 format: html
 editor: visual
 execute: 
   echo: true
+  eval: false
 ---
 
 # Quarto

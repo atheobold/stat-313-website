@@ -1,0 +1,17 @@
+{
+  "hash": "998fbacec62f7dd7e929a0d00346fab7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Connecting ANOVA with Multiple Linear Regression\"\nformat: \n  revealjs:\n    theme: style.scss\neditor: source\n---\n\n\n\n\n\n# How does this connect with the ANOVA we did in the Statistical Critique?\n\n# \n\n# Where are we headed next week? \n\n## \n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n\n```\nPicking joint bandwidth of 0.25\n```\n\n\n:::\n\n::: {.cell-output-display}\n![](week-9-day-2_files/figure-html/age-two-cat-1.png){width=70%}\n:::\n:::",
+    "supporting": [
+      "week-9-day-2_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

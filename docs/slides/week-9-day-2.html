@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name Here!">
-<meta name="dcterms.date" content="2024-01-09">
 
-<title>STAT 313 / 513 - Lab 1: Welcome to Posit Cloud!</title>
+<title>STAT 313 / 513 - Connecting ANOVA with Multiple Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -114,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Welcome to Posit Cloud!</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Connecting ANOVA with Multiple Linear Regression</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -329,42 +293,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a>
+  <li><a href="#how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" id="toc-how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="nav-link active" data-scroll-target="#how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique">How does this connect with the ANOVA we did in the Statistical Critique?</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#where-are-we-headed-next-week" id="toc-where-are-we-headed-next-week" class="nav-link" data-scroll-target="#where-are-we-headed-next-week">Where are we headed next week?</a>
   <ul class="collapse">
-  <li><a href="#formatting-your-document" id="toc-formatting-your-document" class="nav-link" data-scroll-target="#formatting-your-document">Formatting your Document</a></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code">R Code</a></li>
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
-  <li><a href="#including-code-output" id="toc-including-code-output" class="nav-link" data-scroll-target="#including-code-output">Including Code Output</a></li>
-  <li><a href="#including-plots" id="toc-including-plots" class="nav-link" data-scroll-target="#including-plots">Including Plots</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week-9-day-2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Welcome to Posit Cloud!</h1>
+<h1 class="title">Connecting ANOVA with Multiple Linear Regression</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name Here! </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 9, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -374,51 +324,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="quarto" class="level1">
-<h1>Quarto</h1>
-<p>This is a Quarto document!</p>
-<p>Quarto is a software that allows you to interweave text and R code to create HTML, PDF, and Microsoft Word documents</p>
-<p>There are two ways to view a Quarto document, (1) as the “Source” file, or (2) as the “Visual” file. We will <strong>only</strong> use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word.</p>
-<section id="formatting-your-document" class="level2">
-<h2 class="anchored" data-anchor-id="formatting-your-document">Formatting your Document</h2>
-<p>Similar to a Word Doc, there are a variety of ways you can spice up a Quarto document! Let’s explore a few.</p>
-<p><strong>Question 1:</strong> Using the formatting options, make a numbered list of your top three favorite animals.</p>
-<p><strong>Question 2:</strong> Using the formatting options, insert an image of your favorite animal.</p>
-<p><strong>Question 3:</strong> Now, change the “Formatting your Document” section name to the name of your favorite animal. Make sure your header is a level 1 – use the Header 1 formatting option!</p>
+<section id="how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="level1">
+<h1>How does this connect with the ANOVA we did in the Statistical Critique?</h1>
 </section>
-<section id="r-code" class="level2">
-<h2 class="anchored" data-anchor-id="r-code">R Code</h2>
-<p>You can differentiate the R code within a Quarto file from the body of the document, based on the gray boxes that start with an <code>{r}.</code></p>
-<p>Here is an example of an R code chunk:</p>
-<p>Notice in the line after the <code>{r}</code> there are two lines that start with <code>#|</code> – this is the symbol that declares options for a code chunk. The <code>#| label:</code> allows us to specify a name for a code chunk, I typically choose a name that tells me what the code chunk does (e.g., load-packages, clean-data). The <code>#| include: false</code> option at the beginning of the code chunk controls how the code output looks in our final rendered document.</p>
-<p>This code chunk has two things we want to pay attention to:</p>
-<ol type="1">
-<li><p>The <code>library(tidyverse)</code> code loads in an R package called the “tidyverse”. This is code you will have in <strong>every</strong> lab assignment for this class!</p></li>
-<li><p>Code comments which are denoted by a <code>#</code> symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.</p></li>
-</ol>
+<section id="section" class="level1">
+<h1></h1>
 </section>
-<section id="rendering" class="level2">
-<h2 class="anchored" data-anchor-id="rendering">Rendering</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.</p>
-<p><strong>Question 4:</strong> Do you see the above code chunk when you knit the document? Why do you think this is the case?</p>
-</section>
-<section id="including-code-output" class="level2">
-<h2 class="anchored" data-anchor-id="including-code-output">Including Code Output</h2>
-<p>You can include code output in your knitted document:</p>
+<section id="where-are-we-headed-next-week" class="level1">
+<h1>Where are we headed next week?</h1>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Picking joint bandwidth of 0.25</code></pre>
 </div>
-<p><strong>Question 5:</strong> What do you think the above code does? What type of output does it give you?<br>
-<em>Hint: You have saw this type of output on Tuesday!<br>
-</em></p>
-</section>
-<section id="including-plots" class="level2">
-<h2 class="anchored" data-anchor-id="including-plots">Including Plots</h2>
-<p>You can also embed plots in the rendered document.</p>
-<p>Here is an example of a plot.</p>
-<p><strong>Question 6</strong>: What do you think the <code>echo: false</code> option does in the above code chunk?</p>
-<p><strong>Question 7:</strong> What do you think the <code>mapping = aes(y = manufacturer, x = hwy))</code> code does?</p>
-<p><strong>Question 8:</strong> What do you think the <code>labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")</code> code does?</p>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-9-day-2_files/figure-html/age-two-cat-1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

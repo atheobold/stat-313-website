@@ -6,6 +6,31 @@ format:
 editor: source
 ---
 
+```{r}
+#| include: false
+#| label: set-up
+
+library(tidyverse)
+library(palmerpenguins)
+library(broom)
+library(ggridges)
+library(infer)
+
+evals_small <- moderndive::evals %>% 
+  group_by(prof_ID) %>% 
+  mutate(min_eval = min(score), 
+         age_cat = case_when(age < 37 ~ "young faculty",
+                             age >= 37 & age < 45 ~ "middle age", 
+                             age >= 45 & age < 60 ~ "older faculty", 
+                             age >= 60 ~ "nearly retired"),
+         age_cat = factor(age_cat, 
+                          levels = c("young faculty", "middle age",
+                                     "older faculty", "nearly retired")
+                          )
+         ) %>% 
+  distinct(prof_ID, .keep_all = TRUE) 
+```
+
 # How does this connect with the ANOVA we did in the Statistical Critique?
 
 # 
