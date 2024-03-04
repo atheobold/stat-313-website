@@ -1,0 +1,30 @@
+---
+title: "Connecting ANOVA with Multiple Linear Regression"
+format: 
+  revealjs:
+    theme: style.scss
+editor: source
+---
+
+# How does this connect with the ANOVA we did in the Statistical Critique?
+
+# 
+
+# Where are we headed next week? 
+
+## 
+
+```{r age-two-cat}
+#| echo: false
+#| out-width: 70%
+
+ggplot(data = evals_small, 
+       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + 
+  geom_density_ridges(alpha = 0.5) + 
+  labs(y = "Professor's Age", 
+       x = "Minimum Evaluation Score", 
+       fill = "Professor's Sex") +
+  theme(axis.title = element_text(size = 18), 
+        axis.text.y = element_text(size = 16), 
+        axis.text.x = element_text(size = 14))
+```

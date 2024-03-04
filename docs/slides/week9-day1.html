@@ -592,7 +592,7 @@
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2" data-background-color="#B6CADA">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div style="font-size: 3em; color: #000000;">
 <p>Do you always use an F-distribution to get the p-value?</p>
@@ -605,58 +605,79 @@
 </center>
 </div>
 </section>
-<section id="section-15" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p><strong>Conditions of an ANOVA</strong></p>
-</div>
+<section id="conditions-of-an-anova" class="slide level2">
+<h2>Conditions of an ANOVA</h2>
 <ul>
-<li>Independence
-<ul>
-<li>Within groups</li>
-<li>Between groups</li>
-</ul></li>
-<li>Normality of the responses
-<ul>
-<li>The distribution of each group is approximately normal</li>
-</ul></li>
-<li>Equal variability of the groups
-<ul>
-<li>The spread of the distributions are similar across groups</li>
-</ul></li>
+<li>Independence of observations</li>
 </ul>
-</section>
-<section id="section-16" class="slide level2">
-<h2></h2>
-
-<img data-src="week9-day1_files/figure-revealjs/conditions-1.png" style="width:70.0%" class="r-stretch"><div class="fragment">
-<div style="font-size: 1em; color: #B6CADA;">
-<p>What do you think?</p>
+<div class="small">
+<blockquote>
+<p>Observations are independent <em>within</em> groups <strong>and</strong> <em>between</em> groups</p>
+</blockquote>
+</div>
+<div class="fragment">
+<ul>
+<li>Normality of the residuals</li>
+</ul>
+<div class="small">
+<blockquote>
+<p>The distribution of residuals for each group is approximately normal</p>
+</blockquote>
 </div>
 </div>
 <div class="fragment">
-<div style="font-size: 1em; color: #B6CADA;">
-<p>If the normality condition is violated what type of method should we use?</p>
+<ul>
+<li>Equal variability of the groups</li>
+</ul>
+<div class="small">
+<blockquote>
+<p>The spread of the distributions are similar across groups</p>
+</blockquote>
 </div>
 </div>
 </section>
-<section id="section-17" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 4em; color: #0F4C81;">
-<p>Simulation-based Methods</p>
+<section id="choosing-a-method" class="slide level2">
+<h2>Choosing a Method</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:47%;">
+<div style="font-size: 1.25em; color: #000000;">
+<p>Which condition(s) are required to use “theory-based” methods?</p>
+</div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:47%;">
+<div class="fragment">
+<div style="font-size: 1.25em; color: #000000;">
+<p>Which condition(s) are required to use “simulation-based” methods?</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 1: Calculating the Observed F-statistic</p>
+
+<img data-src="week9-day1_files/figure-revealjs/conditions-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
+<div style="font-size: 1.5em; color: #34605f;">
+<p>What do you think?</p>
 </div>
+</div>
+</section></section>
+<section>
+<section id="simulation-based-methods" class="title-slide slide level1 center">
+<h1>Simulation-based Methods</h1>
+
+</section>
+<section id="step-1-calculating-the-observed-f-statistic" class="slide level2">
+<h2>Step 1: Calculating the Observed F-statistic</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>obs_F <span class="ot">&lt;-</span> evals_small <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> min_eval, </span>
 <span id="cb1-3"><a></a>          <span class="at">explanatory =</span> age_cat) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-4"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Response: min_eval (numeric)
@@ -668,86 +689,68 @@ Explanatory: age_cat (factor)
 </div>
 </div>
 </section>
-<section id="section-19" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 2: Simulating what could have happened under <span class="math inline">\(H_0\)</span></p>
-</div>
+<section id="step-2-simulating-what-could-have-happened-under-h_0" class="slide level2">
+<h2>Step 2: Simulating what could have happened under <span class="math inline">\(H_0\)</span></h2>
 <div class="fragment">
 <p><br></p>
-<div style="font-size: 1.5em; color: #B6CADA;">
+<div style="font-size: 1.25em; color: #34605f;">
 <p>How could we use cards to simulate what minimum evaluation score a professor would have gotten, if their score was independent from their age?</p>
 </div>
 </div>
 </section>
-<section id="section-20" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Another Permutation Distribution</p>
-</div>
+<section id="another-permutation-distribution" class="slide level2">
+<h2>Another Permutation Distribution</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>null_dist <span class="ot">&lt;-</span> evals_small <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> min_eval, </span>
 <span id="cb3-3"><a></a>          <span class="at">explanatory =</span> age_cat) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-4"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">2000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-6"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-21" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Another Permutation Distribution</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%;height:50.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div style="font-size: 1.25em; color: #B6CADA;">
+<section id="another-permutation-distribution-1" class="slide level2">
+<h2>Another Permutation Distribution</h2>
+
+<img data-src="week9-day1_files/figure-revealjs/visualize-null-dist-1.png" width="960" class="r-stretch"><div class="fragment">
+<div style="font-size: 1.25em; color: #ed8402;">
 <p>Why doesn’t the distribution have negative numbers?</p>
 </div>
 </div>
 </section>
-<section id="section-22" class="slide level2">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Visualizing the p-value</p>
-</div>
+<section id="visualizing-the-p-value" class="slide level2">
+<h2>Visualizing the p-value</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">visualise</span>(null_dist) <span class="sc">+</span> </span>
-<span id="cb4-2"><a></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_F, <span class="at">direction =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_F, </span>
+<span id="cb4-3"><a></a>                <span class="at">direction =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="week9-day1_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:50.0%;height:50.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="visualizing-the-p-value-1" class="slide level2">
+<h2>Visualizing the p-value</h2>
+
+<img data-src="week9-day1_files/figure-revealjs/p-value-visualization-annotated-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="making-a-decision-reaching-a-conclusion" class="slide level2">
+<h2>Making a Decision &amp; Reaching a Conclusion</h2>
+<div class="columns">
+<div class="column" style="width:47%;">
+<p>For a p-value of 0.238, what decision would you reach regarding your hypothesis test?</p>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:47%;">
 <div class="fragment">
-<div style="color: #B6CADA;">
-<p>What would you conclude regarding the mean minimum evaluation score and different age groups of professors?</p>
+<p>What would you conclude regarding the mean minimum evaluation score for different age groups of faculty?</p>
 </div>
 </div>
+</div>
+</section></section>
+<section>
+<section id="what-if-we-didnt-believe-the-normality-condition-was-violated" class="title-slide slide level1 center">
+<h1>What if we didn’t believe the normality condition was violated?</h1>
+
 </section>
-<section id="section-23" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 4em; color: #000000;">
-<p><strong>Theory-based Methods</strong></p>
-</div>
-</section>
-<section id="section-24" class="slide level2">
-<h2></h2>
-<p>Using <code>aov()</code></p>
+<section id="theory-based-methods" class="slide level2">
+<h2>Theory-based Methods</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">aov</span>(min_eval <span class="sc">~</span> age_cat, </span>
 <span id="cb5-2"><a></a>    <span class="at">data =</span> evals_small)  <span class="sc">%&gt;%</span> </span>
@@ -764,43 +767,113 @@ Explanatory: age_cat (factor)
 </div>
 <div class="fragment">
 <p><br></p>
-<div style="font-size: 1em; color: #B6CADA;">
 <p>How was the <code>statistic</code> calculated?</p>
 </div>
-</div>
 <div class="fragment">
-<div style="font-size: 1em; color: #B6CADA;">
 <p>What distribution was used to calculate the <code>p.value</code>?</p>
 </div>
-</div>
+</section>
+<section id="making-a-decision-reaching-a-conclusion-1" class="slide level2">
+<h2>Making a Decision &amp; Reaching a Conclusion</h2>
+<div class="columns">
+<div class="column" style="width:47%;">
+<p>For a p-value of 0.238, what decision would you reach regarding your hypothesis test?</p>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:47%;">
 <div class="fragment">
-<p><br></p>
-<div style="font-size: 1em; color: #B6CADA;">
-<p>What would you conclude regarding the mean minimum evaluation score and different age groups of professors?</p>
+<p>What would you conclude regarding the mean minimum evaluation score for different age groups of faculty?</p>
+</div>
 </div>
 </div>
 </section>
-<section id="section-25" class="slide level2" data-background-color="#B6CADA">
+<section id="section-16" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <div style="font-size: 3em; color: #0F4C81;">
 <p>Did the two methods yield different results?</p>
 </div>
 </section></section>
-<section id="how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="title-slide slide level1 center">
-<h1>How does this connect with the ANOVA we did in the Statistical Critique?</h1>
-
-</section>
-
 <section>
-<section id="where-are-we-headed-next-week" class="title-slide slide level1 center">
-<h1>Where are we headed next week?</h1>
+<section id="final-project-work-session" class="title-slide slide level1 center">
+<h1>Final Project Work Session</h1>
 
 </section>
-<section id="section-26" class="slide level2">
-<h2></h2>
+<section id="introduction-research-questions" class="slide level2">
+<h2>Introduction &amp; Research Questions</h2>
+<div class="columns">
+<div class="column" style="width:47%;">
+<p>In 4-6 sentences, introduce / describe your data.</p>
+<ul>
+<li>What is the context of the data?</li>
+<li>For what purpose were these data collected?</li>
+</ul>
+</div><div class="column" style="width:3%;">
 
+</div><div class="column" style="width:47%;">
+<div class="fragment">
+<p>Outline the <u><strong>two</strong></u> questions your research seeks to address.</p>
+<ul>
+<li>You will have one question for each one-way ANOVA model</li>
+<li>Your question should be in terms of “group means” not “relationships”</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-silencing-code-templates" class="slide level2">
+<h2>Removing / Silencing Code Templates</h2>
+<div class="small">
+<p>Your <code>final_project.qmd</code> file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8).</p>
+<p>These <u>do not</u> need to be used for your Introduction. So, you need to “turn off” these code chunks to turn in your Introduction!</p>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="small">
+<p>There are two ways to do this:</p>
+<ol type="1">
+<li>In the YAML (at the top of your document) add <code>eval: false</code> to your <code>execute</code> options</li>
+<li>In each code chunk (there are two) add <code>eval: false</code> to your code chunk options</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="yaml-option" class="slide level2">
+<h2>YAML Option</h2>
+<pre><code>---
+title: "Your Title Goes Here! Make it fun!"
+author: "Your Name Here!"
+format:
+  html:
+    code-tools: true
+editor: visual
+embed-resources: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  eval: false
+---</code></pre>
+</section>
+<section id="code-chunk-option" class="slide level2">
+<h2>Code Chunk Option</h2>
+<pre><code>#| label: distribution-of-residuals
+#| layout-nrow: 1
+#| eval: false
+#| echo: fenced
 
-<img data-src="week9-day1_files/figure-revealjs/age-two-cat-1.png" style="width:70.0%" class="r-stretch"><div class="quarto-auto-generated-content">
+# Residuals of first one-way ANOVA 
+broom::augment(my_model) %&gt;% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")
+
+# Residuals of second one-way ANOVA 
+broom::augment(my_model) %&gt;% 
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram() +
+  labs(x = "Residual")</code></pre>
+
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
