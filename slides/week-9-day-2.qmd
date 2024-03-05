@@ -31,6 +31,25 @@ evals_small <- moderndive::evals %>%
   distinct(prof_ID, .keep_all = TRUE) 
 ```
 
+# Lab 8 Recap
+
+## Common Mistakes
+
+# Statistical Critique Recap
+
+## Common Mistakes
+
+## Upcoming Deadlines
+
+-   Lab 7 revisions are due today (by midnight)
+-   Lab 8 revisions are due next Thursday
+-   Statistical Critique 2 revisions are due next Thursday
+-   Final revisions on **all** assignments will be accepted until Sunday, March 17
+
+::: callout-caution
+# Don't forget reflections!
+:::
+
 # How does this connect with the ANOVA we did in the Statistical Critique?
 
 # 

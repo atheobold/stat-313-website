@@ -1,15 +1,19 @@
 {
-  "hash": "998fbacec62f7dd7e929a0d00346fab7",
+  "hash": "106d722688b9407ee8f956784de7da38",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Connecting ANOVA with Multiple Linear Regression\"\nformat: \n  revealjs:\n    theme: style.scss\neditor: source\n---\n\n\n\n\n\n# How does this connect with the ANOVA we did in the Statistical Critique?\n\n# \n\n# Where are we headed next week? \n\n## \n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n\n```\nPicking joint bandwidth of 0.25\n```\n\n\n:::\n\n::: {.cell-output-display}\n![](week-9-day-2_files/figure-html/age-two-cat-1.png){width=70%}\n:::\n:::",
+    "markdown": "---\ntitle: \"Connecting ANOVA with Multiple Linear Regression\"\nformat: \n  revealjs:\n    theme: style.scss\neditor: source\n---\n\n\n\n\n# Lab 8 Recap\n\n## Common Mistakes\n\n# Statistical Critique Recap\n\n## Common Mistakes\n\n## Upcoming Deadlines\n\n-   Lab 7 revisions are due today (by midnight)\n-   Lab 8 revisions are due next Thursday\n-   Statistical Critique 2 revisions are due next Thursday\n-   Final revisions on **all** assignments will be accepted until Sunday, March 17\n\n::: callout-caution\n# Don't forget reflections!\n:::\n\n# How does this connect with the ANOVA we did in the Statistical Critique?\n\n# \n\n# Where are we headed next week? \n\n## \n\n\n::: {.cell}\n::: {.cell-output-display}\n![](week-9-day-2_files/figure-revealjs/age-two-cat-1.png){width=70%}\n:::\n:::",
     "supporting": [
       "week-9-day-2_files"
     ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
-    "includes": {},
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
     "engineDependencies": {},
     "preserve": {},
     "postProcess": true
