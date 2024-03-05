@@ -13,6 +13,7 @@ For this project, you are expected to use a two-way ANOVA to investigate the rel
 
 ::: callout-tip
 # Discretizing numerical variables
+
 If you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in `R` as `R` assumes all variables with numbers should be numerical.
 
 You will need Dr. Theobold's help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help **before** **Thursday, March 7 at 4pm.**
@@ -30,7 +31,7 @@ In 4-6 sentences describe:
 
 ## Questions of Interest
 
-State the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should start with, "What is the relationship between..." and should be as specific as possible. Your *Findings* section should directly address the question(s) you pose here.
+State the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should be phrased in terms of your **alternative hypothesis**, meaning it should start with "Does the mean \_\_\_ differ based on \_\_\_ ...". Your *Findings* section should directly address the question(s) you pose here.
 
 ::: callout-tip
 # Multiple research questions
@@ -44,8 +45,8 @@ This section should lay out the steps, decisions, and logic leading to the stati
 
 -   Describe the response and explanatory variables, **how they were measured**, and their associated units. For categorical variables, describe the levels of the categorical variable.
 
-:::{.callout-tip}
-If the levels of your variable are abbreviations, you are expected to state exactly what each abbreviation means (e.g., `CC` represents the "clear cut" section of the forest). 
+::: callout-tip
+If the levels of your variable are abbreviations, you are expected to state exactly what each abbreviation means (e.g., `CC` represents the "clear cut" section of the forest).
 :::
 
 -   Produce data visualizations exploring the relationship(s) you are interested in investigating. For your project everyone will have **three** visualizations:
@@ -55,7 +56,7 @@ If the levels of your variable are abbreviations, you are expected to state exac
     -   a visualization of the relationship between your response variable and **both** explanatory variables
 
 ::: callout-caution
-# Ridge plots 
+# Ridge plots
 
 In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. **For your project you are required to use density ridge plots**, boxplots will not be accepted. If you are unsure how to accomplish this task, look back over Lab 3 and the [Week 3 R resources](/resources/week3.docx).
 
@@ -76,7 +77,8 @@ In this section you will write up your findings for your question of interest. I
 
 ::: callout-caution
 # $\alpha$ threshold
-**At the beginning of your analysis**, you must state what $\alpha$ threshold was used to make decisions regarding your hypothesis tests. 
+
+**At the beginning of your analysis**, you must state what $\alpha$ threshold was used to make decisions regarding your hypothesis tests.
 :::
 
 ## One-Way ANOVA Models
@@ -114,7 +116,7 @@ If you rejected the null hypothesis for **both** one-way ANOVA models, you can p
 If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold **before** **Thursday, March 7 at 4pm**!
 :::
 
-- Based on your analysis of the conditions, describe whether you believe the tests you performed are "reliable." 
+-   Based on your analysis of the conditions, describe whether you believe the tests you performed are "reliable."
 
 # Study Limitations
 
@@ -131,9 +133,9 @@ Generic statements (e.g., "these observations were representative so we can infe
 -   Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?
 
 ::: callout-tip
-Your statement needs to include a description of (1) how the study was designed, and (2) what statements can be made about the relationship between the variables. You must justify your reasoning for #2 by making direct reference to the variables included in the study. 
+Your statement needs to include a description of (1) how the study was designed, and (2) what statements can be made about the relationship between the variables. You must justify your reasoning for #2 by making direct reference to the variables included in the study.
 
-Generic statements (e.g., "this was an observational study so we can't make causal statements") are not sufficient. Your description should include a description of *why* the study was observational and *why* you cannot make causal statements for observational studies.  
+Generic statements (e.g., "this was an observational study so we can't make causal statements") are not sufficient. Your description should include a description of *why* the study was observational and *why* you cannot make causal statements for observational studies.
 :::
 
 # Conclusions

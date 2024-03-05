@@ -544,7 +544,7 @@
     "href": "project/final-project-directions.html#questions-of-interest",
     "title": "Final Project Guidelines",
     "section": "1.2 Questions of Interest",
-    "text": "1.2 Questions of Interest\nState the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should start with, “What is the relationship between…” and should be as specific as possible. Your Findings section should directly address the question(s) you pose here.\n\n\n\n\n\n\nMultiple research questions\n\n\n\nThis week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10!",
+    "text": "1.2 Questions of Interest\nState the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should be phrased in terms of your alternative hypothesis, meaning it should start with “Does the mean ___ differ based on ___ …”. Your Findings section should directly address the question(s) you pose here.\n\n\n\n\n\n\nMultiple research questions\n\n\n\nThis week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10!",
     "crumbs": [
       "Projects",
       "Final Project Description"
