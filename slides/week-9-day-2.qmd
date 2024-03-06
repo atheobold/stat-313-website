@@ -11,33 +11,25 @@ editor: source
 #| label: set-up
 
 library(tidyverse)
-library(palmerpenguins)
 library(broom)
 library(ggridges)
-library(infer)
+library(RColorBrewer)
+library(lterdatasampler)
 
 evals_small <- moderndive::evals %>% 
   group_by(prof_ID) %>% 
   mutate(min_eval = min(score), 
-         age_cat = case_when(age < 37 ~ "young faculty",
-                             age >= 37 & age < 45 ~ "middle age", 
-                             age >= 45 & age < 60 ~ "older faculty", 
-                             age >= 60 ~ "nearly retired"),
+         age_cat = case_when(age < 37 ~ "Young faculty",
+                             age >= 37 & age < 45 ~ "Middle age", 
+                             age >= 45 & age < 60 ~ "Older faculty", 
+                             age >= 60 ~ "Nearly retired"),
          age_cat = factor(age_cat, 
-                          levels = c("young faculty", "middle age",
-                                     "older faculty", "nearly retired")
+                          levels = c("Young faculty", "Middle age",
+                                     "Older faculty", "Nearly retired")
                           )
          ) %>% 
   distinct(prof_ID, .keep_all = TRUE) 
 ```
-
-# Lab 8 Recap
-
-## Common Mistakes
-
-# Statistical Critique Recap
-
-## Common Mistakes
 
 ## Upcoming Deadlines
 
@@ -50,25 +42,268 @@ evals_small <- moderndive::evals %>%
 # Don't forget reflections!
 :::
 
+# Lab 8 Recap
+
+## Common Mistakes
+
+:::{.small}
+**Questions 1 & 2**
+
+> Your axis labels should contain units and indicate if your variables were transformed! 
+
+:::{.fragment}
+**Question 6**
+
+> Equal variance is not about equal points above and below the line! 
+:::
+
+:::{.fragment}
+**Question 11**
+
+> Your hypothesis test decision should state what $\alpha$ was used!
+:::
+
+:::{.fragment}
+**Question 14**
+
+> The $t$-distribution *approximates* the permutation distribution!
+:::
+
+:::{.fragment}
+**Question 15**
+
+> Both theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions. 
+:::
+:::
+
+# Statistical Critique Recap
+
+## Common Mistakes
+
 # How does this connect with the ANOVA we did in the Statistical Critique?
 
-# 
+. . .
+
+> ANOVA quantifies *how much* each explanatory variable in a statistical model contributes toward explaining the total variation in the response variable 
+
+## Total Variation in a One-way ANOVA 
+
+</br>
+
+```{r}
+#| label: age-cat-anova
+
+age_lm <- lm(score ~ age_cat, data = evals_small) 
+
+age_anova <- anova(age_lm) %>% 
+  tidy() 
+
+age_anova_total <- tibble(term = "Total", 
+                          df = nrow(evals_small) - 1, 
+                          sumsq = sum(age_anova$sumsq)
+                          )
+age_anova_full <- age_anova %>% 
+  bind_rows(age_anova_total) 
+
+age_anova_full %>% 
+  gt::gt()
+```
+
+</br>
+
+The `age_cat` line in the ANOVA table quantifies *how much* of the *total variation* in minimum evaluation scores can be explained based on the age group of a faculty member. 
+
+</br>
+
+. . .
+
+The `Total` row in an ANOVA table tells us the *total variation* in evaluation scores -- how far each faculty member's minimum evaluation score was from the mean of all the evaluation scores
+
+## Connection to $R^2$
+
+Based on the ANOVA table, there is `r filter(age_anova_full, term == "Total")$sumsq %>% round(digits = 4)` total variation in minimum evaluation scores, of which `age_cat` is able to explain `r filter(age_anova_full, term == "age_cat")$sumsq %>% round(digits = 4)`. 
+
+. . .
+
+Proportionally, that means `age_cat` can explain `r filter(age_anova_full, term == "age_cat")$sumsq / filter(age_anova_full, term == "Total")$sumsq * 100  %>% round(digits = 4)`% in the total variation in minimum evaluation scores. 
+
+. . .
+
+Does that sound familiar? 
+
+. . .
+
+</br>
+
+```{r}
+#| label: r-squared
+#| echo: true
+
+glance(age_lm) %>% 
+  select(r.squared) 
+```
+
+## Connecting with Multiple Linear Regression -- Multiple Explanatory Variables
+
+```{r}
+#| label: mlr-crabs
+
+crab_lm <- lm(size ~ latitude + water_temp, data = pie_crab)
+
+crab_anova <- anova(crab_lm) %>% 
+  tidy()
+
+crab_anova_total <- tibble(term = "Total", 
+                          df = nrow(pie_crab) - 1, 
+                          sumsq = sum(crab_anova$sumsq)
+                          )
+crab_anova_full <- crab_anova %>% 
+  bind_rows(crab_anova_total) 
+
+crab_anova_full %>% 
+  gt::gt()
+```
+
+## Connecting with Multiple Linear Regression -- Different Slopes
+
+```{r}
+#| label: mlr-trees
+
+maple_lm <- lm(stem_dry_mass ~ stem_length * watershed, data = hbr_maples)
+
+maple_anova <- anova(maple_lm) %>% 
+  tidy()
+
+maple_anova_total <- tibble(term = "Total", 
+                          df = nrow(hbr_maples) - 1, 
+                          sumsq = sum(maple_anova$sumsq)
+                          )
+maple_anova_full <- maple_anova %>% 
+  bind_rows(maple_anova_total) 
+
+maple_anova_full %>% 
+  gt::gt()
+
+```
+
+# Coding a One-way ANOVA
+
+## Visualizations -- Density Ridges
+
+```{r}
+#| label: density-ridge-template
+#| eval: false
+#| echo: true
+
+ggplot(data = <NAME OF DATASET>, 
+       mapping = aes(x = <NAME OF NUMERICAL VARIABLE>, 
+                     y = <NAME OF CATEGORICAL VARIABLE>)
+       ) + 
+  geom_density_ridges()+
+  labs(x = "<TITLE FOR THE X-AXIS>", 
+       y = “<TITLE FOR THE Y-AXIS>”)
+```
+
+:::{.callout-tip}
+# Revisit the code you wrote for Question 8 of Lab 3 
+:::
+
+## Choosing a Statistical Model
+
+</br>
+
+Everyone will fit **two** one-way ANOVA models --- one model for each explanatory variable!
+
+:::{.incremental}
+- You will need to choose whether to use a theory-based method or a simulation-based method. 
+- Your choice is based on the model conditions --- specifically the normality condition. 
+  * The density ridge plots can be used to check the normality and equal variance condition. 
+  * The study design should be used to check the independence condition. 
+:::
+
+## Theory-based Method
+
+</br>
+
+To fit a theory-based ANOVA, you use the following code:
+
+```{r}
+#| label: owa-template
+#| eval: false
+#| echo: true
+my_model <- aov(<NAME OF RESPONSE VARIABLE> ~ <NAME OF EXPLANATORY VARIABLE>, 
+                data = <NAME OF DATASET>)
+```
+
+## Simulation-based Method
+
+To fit a simulation-based ANOVA, you need to carry out the following steps:
+
+1. find the observed statistic
+2. simulate statistics that could have happened if the null was true
+3. visualize the distribution of simulated statistics (your permutation distribution)
+4. calculate the p-value for your observed statistic
+
+:::{.callout-tip}
+# 2 levels versus 3 levels
+
+If you categorical variable has **two** levels, you need to use a `"diff in means"` statistic, **not** an F-statistic!
+:::
+
+## Model Validity
+
+Delete the code templates I provided!
 
 # Where are we headed next week? 
 
-## 
+## Two-way ANOVA
 
-```{r age-two-cat}
+</br>
+
+```{r}
 #| echo: false
-#| out-width: 70%
+#| label: age-two-cat
 
 ggplot(data = evals_small, 
        mapping = aes(y = age_cat, x = min_eval, fill = gender)) + 
   geom_density_ridges(alpha = 0.5) + 
-  labs(y = "Professor's Age", 
-       x = "Minimum Evaluation Score", 
+  scale_fill_brewer(palette = "PRGn") +
+  labs(y = "",
+       title = "Gaps between male and female faculty evaluation scores become more pronounced with age", 
+       x = "", 
        fill = "Professor's Sex") +
-  theme(axis.title = element_text(size = 18), 
+  theme(axis.title = element_text(size = 24), 
         axis.text.y = element_text(size = 16), 
-        axis.text.x = element_text(size = 14))
+        axis.text.x = element_text(size = 14),
+        legend.position = "top")
 ```
+
+## Code for Plot
+
+```{r}
+#| label: density-ridge-code
+#| eval: false
+#| echo: true
+
+ggplot(data = evals_small, 
+       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + 
+  geom_density_ridges(alpha = 0.5) + 
+  scale_fill_brewer(palette = "PRGn") +
+  labs(y = "",
+       title = "Gaps between male and female faculty evaluation scores become more pronounced with age", 
+       x = "", 
+       fill = "Professor's Sex") +
+  theme(legend.position = "top")
+```
+
+:::{.callout-tip}
+# Legend Positions
+
+There are four options for `legend.position` 
+
+1. `"none"` (removes the legend)
+2. `"left"` (difficult to read with the y-axis label)
+3. `"right"` (the default position)
+4. `"bottom"` (difficult to read with the x-axis label)
+5. `"top"` (generally my preference)
+:::

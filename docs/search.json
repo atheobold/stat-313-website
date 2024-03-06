@@ -3009,14 +3009,14 @@
     "href": "labs/lab-2.html",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#getting-started",
     "href": "labs/lab-2.html#getting-started",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#sfo-dstinations",
@@ -7832,7 +7832,7 @@
     "href": "slides/week9-day1.html#making-a-decision-reaching-a-conclusion",
     "title": "ANalysis Of VAriance",
     "section": "Making a Decision & Reaching a Conclusion",
-    "text": "Making a Decision & Reaching a Conclusion\n\n\nFor a p-value of 0.238, what decision would you reach regarding your hypothesis test?\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score for different age groups of faculty?"
+    "text": "Making a Decision & Reaching a Conclusion\n\n\nFor a p-value of 0.254, what decision would you reach regarding your hypothesis test?\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score for different age groups of faculty?"
   },
   {
     "objectID": "slides/week9-day1.html#visualizing-the-p-value",
@@ -7867,7 +7867,7 @@
     "href": "slides/week9-day1.html#making-a-decision-reaching-a-conclusion-1",
     "title": "ANalysis Of VAriance",
     "section": "Making a Decision & Reaching a Conclusion",
-    "text": "Making a Decision & Reaching a Conclusion\n\n\nFor a p-value of 0.238, what decision would you reach regarding your hypothesis test?\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score for different age groups of faculty?"
+    "text": "Making a Decision & Reaching a Conclusion\n\n\nFor a p-value of 0.244, what decision would you reach regarding your hypothesis test?\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score for different age groups of faculty?"
   },
   {
     "objectID": "slides/week9-day1.html#introduction-research-questions",
@@ -7909,7 +7909,7 @@
     "href": "slides/week-9-day-2.html#common-mistakes",
     "title": "Connecting ANOVA with Multiple Linear Regression",
     "section": "Common Mistakes",
-    "text": "Common Mistakes"
+    "text": "Common Mistakes\n\nQuestions 1 & 2\n\nYour axis labels should contain units and indicate if your variables were transformed!\n\n\nQuestion 6\n\nEqual variance is not about equal points above and below the line!\n\n\n\nQuestion 11\n\nYour hypothesis test decision should state what \\(\\alpha\\) was used!\n\n\n\nQuestion 14\n\nThe \\(t\\)-distribution approximates the permutation distribution!\n\n\n\nQuestion 15\n\nBoth theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions."
   },
   {
     "objectID": "slides/week-9-day-2.html#common-mistakes-1",
@@ -7924,5 +7924,131 @@
     "title": "Connecting ANOVA with Multiple Linear Regression",
     "section": "Upcoming Deadlines",
     "text": "Upcoming Deadlines\n\nLab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 revisions are due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
+  },
+  {
+    "objectID": "slides/week9-day1.html",
+    "href": "slides/week9-day1.html",
+    "title": "ANalysis Of VAriance",
+    "section": "",
+    "text": "Step 1 - Due by Wednesday\n\n\nIntroduction (Data description, research questions)\n\n\n. . .\nStep 2 - Due by Friday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n. . .\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#visualizations",
+    "href": "slides/week-9-day-2.html#visualizations",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Visualizations",
+    "text": "Visualizations"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#statistical-model",
+    "href": "slides/week-9-day-2.html#statistical-model",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Statistical Model",
+    "text": "Statistical Model\nEveryone will fit two one-way ANOVA models – one for each explanatory variable!\n\nYou will need to choose whether to use a theory-based method or a simulation-based method.\nYour choice is based on the model conditions – specifically the normality condition"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#evaluating-conditions",
+    "href": "slides/week-9-day-2.html#evaluating-conditions",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Evaluating Conditions",
+    "text": "Evaluating Conditions"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#two-way-anova",
+    "href": "slides/week-9-day-2.html#two-way-anova",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Two-way ANOVA",
+    "text": "Two-way ANOVA"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#code-for-plot",
+    "href": "slides/week-9-day-2.html#code-for-plot",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Code for Plot",
+    "text": "Code for Plot\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\nLegend Positions\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#one-way-anova-connection-to-r2",
+    "href": "slides/week-9-day-2.html#one-way-anova-connection-to-r2",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "One-way ANOVA Connection to \\(R^2\\)",
+    "text": "One-way ANOVA Connection to \\(R^2\\)\nThe age_cat line in the ANOVA table quantifies how much of the total variation in minimum evaluation scores can be explained based on the age group of a faculty member.\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nage_cat\n3\n0.8903343\n0.2967781\n0.9454526\n0.4221873\n\n\nResiduals\n90\n28.2510487\n0.3139005\nNA\nNA\n\n\nTotal\n93\n29.1413830\nNA\nNA\nNA\n\n\n\n\n\n\n\n\nThe Total row in an ANOVA table tells us the total variation in evaluation scores – how far each observation is from the mean\n\n\n[1] 0.03055223"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#total-variation-in-a-one-way-anova",
+    "href": "slides/week-9-day-2.html#total-variation-in-a-one-way-anova",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Total Variation in a One-way ANOVA",
+    "text": "Total Variation in a One-way ANOVA\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nage_cat\n3\n0.8903343\n0.2967781\n0.9454526\n0.4221873\n\n\nResiduals\n90\n28.2510487\n0.3139005\nNA\nNA\n\n\nTotal\n93\n29.1413830\nNA\nNA\nNA\n\n\n\n\n\n\n\n\nThe age_cat line in the ANOVA table quantifies how much of the total variation in minimum evaluation scores can be explained based on the age group of a faculty member.\n\n\nThe Total row in an ANOVA table tells us the total variation in evaluation scores – how far each faculty member’s minimum evaluation score was from the mean of all the evaluation scores"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#connection-to-r2",
+    "href": "slides/week-9-day-2.html#connection-to-r2",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Connection to \\(R^2\\)",
+    "text": "Connection to \\(R^2\\)\nBased on the ANOVA table, there is 29.1414 total variation in minimum evaluation scores, of which age_cat is able to explain 0.8903.\n\nProportionally, that means age_cat can explain 3.0552231% in the total variation in minimum evaluation scores.\n\n\nDoes that sound familiar?\n\n\n\n\nglance(age_lm) %&gt;% \n  select(r.squared) \n\n# A tibble: 1 × 1\n  r.squared\n      &lt;dbl&gt;\n1    0.0306"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression",
+    "href": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Connecting with Multiple Linear Regression",
+    "text": "Connecting with Multiple Linear Regression\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nlatitude\n1\n1672.0001\n1672.000116\n212.508200\n1.031156e-38\n\n\nwater_temp\n1\n66.1713\n66.171297\n8.410253\n3.942831e-03\n\n\nResiduals\n389\n3060.6256\n7.867932\nNA\nNA\n\n\nTotal\n391\n4798.7970\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-1",
+    "href": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-1",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Connecting with Multiple Linear Regression",
+    "text": "Connecting with Multiple Linear Regression\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nlatitude\n1\n1672.0001\n1672.000116\n212.508200\n1.031156e-38\n\n\nwater_temp\n1\n66.1713\n66.171297\n8.410253\n3.942831e-03\n\n\nResiduals\n389\n3060.6256\n7.867932\nNA\nNA\n\n\nTotal\n391\n4798.7970\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#visualizations-density-ridges",
+    "href": "slides/week-9-day-2.html#visualizations-density-ridges",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Visualizations – Density Ridges",
+    "text": "Visualizations – Density Ridges\n\nggplot(data = &lt;NAME OF DATASET&gt;, \n       mapping = aes(x = &lt;NAME OF NUMERICAL VARIABLE&gt;, \n                     y = &lt;NAME OF CATEGORICAL VARIABLE&gt;)\n       ) + \n  geom_density_ridges()+\n  labs(x = \"&lt;TITLE FOR THE X-AXIS&gt;\", \n       y = “&lt;TITLE FOR THE Y-AXIS&gt;”)\n\n\n\n\n\n\n\nRevisit the code you wrote for Question 8 of Lab 3"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#theory-based-method",
+    "href": "slides/week-9-day-2.html#theory-based-method",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Theory-based Method",
+    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#simulation-based-method",
+    "href": "slides/week-9-day-2.html#simulation-based-method",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Simulation-based Method",
+    "text": "Simulation-based Method\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#model-validity",
+    "href": "slides/week-9-day-2.html#model-validity",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Model Validity",
+    "text": "Model Validity\nDelete the code templates I provided!"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#choosing-a-statistical-model",
+    "href": "slides/week-9-day-2.html#choosing-a-statistical-model",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Choosing a Statistical Model",
+    "text": "Choosing a Statistical Model\n\nEveryone will fit two one-way ANOVA models — one model for each explanatory variable!\n\n\nYou will need to choose whether to use a theory-based method or a simulation-based method.\nYour choice is based on the model conditions — specifically the normality condition.\n\nThe density ridge plots can be used to check the normality and equal variance condition.\nThe study design should be used to check the independence condition."
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-different-slopes",
+    "href": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-different-slopes",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Connecting with Multiple Linear Regression – Different Slopes",
+    "text": "Connecting with Multiple Linear Regression – Different Slopes\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nstem_length\n1\n0.085755323\n0.0857553230\n134.852053\n1.209164e-26\n\n\nwatershed\n1\n0.006172382\n0.0061723817\n9.706200\n1.985998e-03\n\n\nstem_length:watershed\n1\n0.002626976\n0.0026269761\n4.130975\n4.284899e-02\n\n\nResiduals\n355\n0.225752142\n0.0006359215\nNA\nNA\n\n\nTotal\n358\n0.320306822\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-multiple-explanatory-variables",
+    "href": "slides/week-9-day-2.html#connecting-with-multiple-linear-regression-multiple-explanatory-variables",
+    "title": "Connecting ANOVA with Multiple Linear Regression",
+    "section": "Connecting with Multiple Linear Regression – Multiple Explanatory Variables",
+    "text": "Connecting with Multiple Linear Regression – Multiple Explanatory Variables\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nlatitude\n1\n1672.0001\n1672.000116\n212.508200\n1.031156e-38\n\n\nwater_temp\n1\n66.1713\n66.171297\n8.410253\n3.942831e-03\n\n\nResiduals\n389\n3060.6256\n7.867932\nNA\nNA\n\n\nTotal\n391\n4798.7970\nNA\nNA\nNA"
   }
 ]

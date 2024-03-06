@@ -531,7 +531,7 @@ What distribution was used to calculate the `p.value`?
 
 ::: columns
 ::: {.column width="47%"}
-For a p-value of `r p_val`, what decision would you reach regarding your hypothesis test?
+For a p-value of 0.244, what decision would you reach regarding your hypothesis test?
 :::
 
 ::: {.column width="3%"}
