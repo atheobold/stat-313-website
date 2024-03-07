@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - STAT 313: Applied Experimental Design and Regression Models</title>
+<title>STAT 313 / 513 - Evaluating Independence</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,21 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./computing-access.html" rel="next">
-<link href="./course-team.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Evaluating Independence</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -94,8 +92,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -112,40 +110,40 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -162,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
@@ -179,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -196,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Project Description</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/final-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final Project Description</span></a>
   </div>
 </li>
@@ -219,67 +217,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-6.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-7.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-8.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-9.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-10.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
@@ -291,14 +289,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#independence-within-groups" id="toc-independence-within-groups" class="nav-link active" data-scroll-target="#independence-within-groups">Independence Within Groups</a></li>
+  <li><a href="#independence-between-groups" id="toc-independence-between-groups" class="nav-link" data-scroll-target="#independence-between-groups">Independence Between Groups</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">STAT 313: Applied Experimental Design and Regression Models</h1>
+<h1 class="title">Evaluating Independence</h1>
 </div>
 
 
@@ -315,387 +320,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<div class="column-screen-inset-right">
-<table class="table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 10%">
-<col style="width: 35%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th>Date</th>
-<th>Topic</th>
-<th style="text-align: center;">Prepare</th>
-<th style="text-align: center;">Lecture Slides</th>
-<th style="text-align: center;">Activity</th>
-<th style="text-align: center;">Lab</th>
-<th style="text-align: center;">Critique</th>
-<th style="text-align: center;">Project</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="./weeks/week-0.html">0</a></td>
-<td>Sun, January 7</td>
-<td>Welcome to Stat 313 / 513 Course Set-up</td>
-<td style="text-align: center;"><a href="./weeks/week-0.html" title="Course Set-up">📖</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-1.html">1</a></td>
-<td>Tue, January 9</td>
-<td>Course Structure &amp; Statistics Review</td>
-<td style="text-align: center;"><a href="./weeks/week-1.html" title="Week 1 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week1-day1-alt.html" title="Week 1 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thu, January 11 <strong>(<em>class held asynchronously)</em></strong></td>
-<td>Introduction to Data</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="https://www.youtube.com/watch?v=_f3latmOhew" title="Video on How to Work in Quarto">🎥</a></td>
-<td style="text-align: center;"><a href="./activity/week-1-quarto.html" title="Links to video, textbook, and tutorial resources">📋</a></td>
-<td style="text-align: center;"><a href="./labs/lab-1.html" title="Lab 1">💻</a> <br> Due January 15 <br> <a href="./labs/grading-guides/lab1_feedback.html" title="Lab 1 Feedback">Lab 1 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-2.html">2</a></td>
-<td>Tue, January 16 <strong>(no class)</strong></td>
-<td></td>
-<td style="text-align: center;"><a href="./weeks/week-2.html" title="Week 2 Coursework">📖</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thu, January 18</td>
-<td>Visualizing &amp; Summarizing Numerical Variables</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week2-day1.html" title="Week 2 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"><a href="https://bit.ly/week-2-code-along" title="Code Along Activity">📋</a></td>
-<td style="text-align: center;"><a href="./labs/lab-2.html" title="Lab 2">💻</a> <br> Due January 22 <br> <a href="./labs/grading-guides/lab-2-grading-guide.html">Lab 2 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-3.html">3</a></td>
-<td>Tue, January 23 <strong>(<em>class held asynchronously)</em></strong></td>
-<td>Incorporating Categorical Variables</td>
-<td style="text-align: center;"><a href="./weeks/week-3.html" title="Week 3 Courswork">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week3-day1-alt.html" title="Week 3 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thu, January 25</td>
-<td>Ethics &amp; Categorical Variables</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week3-day2-alt.html" title="Week 3 Review Lab Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./labs/lab-3.html" title="Lab 3">💻</a> <br> Due January 29 <br> <a href="./labs/grading-guides/lab-3-grading-guide.html">Lab 3 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-4.html">4</a></td>
-<td>Tue, January 30</td>
-<td>Introduction to Linear Regression</td>
-<td style="text-align: center;"><a href="./weeks/week-4.html" title="Week 4 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week4-day1.html" title="Week 4 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thu, February 1</td>
-<td>The Ugly History of Linear Regression</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week4-day2.html" title="Week 4 Review Lab Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./labs/lab-4.html" title="Lab 4">💻</a> <br> Due February 5 <br> <a href="./labs/grading-guides/lab-4-grading-guide.html">Lab 4 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Mon, February 5</td>
-<td><strong><em>Midterm Project Proposal &amp; Statistical Critique Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><p><a href="./critique/critique-1.html" title="Statistical Critique 1">✍</a></p>
-<p><br></p>
-<p><a href="./critique/grading-guides/critique-1-grading.html" title="Stat Critique 1 Feedback">Stat Critique 1 Feedback</a></p></td>
-<td style="text-align: center;"><p><a href="./project/midterm-proposal-313.html" title="Midterm Project Proposal">📁 STAT 313</a></p>
-<p><a href="./project/midterm-proposal-513.html" title="Midterm Project Proposal">📁 STAT 513</a></p></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="./weeks/week-5.html">5</a></td>
-<td>Tue, February 6</td>
-<td>Introduction to Multiple Linear Regression</td>
-<td style="text-align: center;"><a href="./weeks/week-5.html" title="Week 5 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week5-day1.html" title="Week 5 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"><a href="./activity/week-5-sample-selection.html" title="Sample Selection &amp; Scope of Inference Activity">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./project/data-formatting-513.html" title="Formatting Your Data (STAT 513)">Formatting Your Data (STAT 513)</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Thu, February 8</td>
-<td>Work Day – Coding a Multiple Linear Regression</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week5-day2.html" title="Midterm Project Warm-up Slides">🖥</a></td>
-<td style="text-align: center;"><a href="./activity/week-5-model-justification.html" title="Model Justification Critique">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Sun, February 11</td>
-<td><strong><em>Midterm Project First Draft Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Grading Rubric: <a href="./project/midterm-project-grading-rubric.html" title="Midterm Project Grading Rubric">✅</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-6.html">6</a></td>
-<td>Tue, February 13</td>
-<td>Variable Selection in Multiple Linear Regression</td>
-<td style="text-align: center;"><a href="./weeks/week-6.html" title="Week 6 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week6-day1.html" title="Week 6 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"><a href="./activity/week-6-model-selection.html" title="Model Selection Activity">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thu, February 15</td>
-<td>Machine Learning</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week6-day2.html" title="Week 6 Lab Review Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./labs/lab-6.html" title="Lab 6">💻</a> <br> Due February 19 <br> <a href="./labs/grading-guides/lab-6-grading-guide.html" title="Lab 6 Feedback">Lab 6 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Sun, February 18</td>
-<td><strong><em>Midterm Project Final Version Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Instructions: <a href="./project/midterm-project-directions.html" title="Midterm Project Instructions">📁</a> <br> Grading Rubric: <a href="./project/midterm-project-grading-rubric.html" title="Midterm Project Grading Rubric">✅</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="./weeks/week-7.html">7</a></td>
-<td>Tue, February 20</td>
-<td>Sampling Variability</td>
-<td style="text-align: center;"><a href="./weeks/week-7.html" title="Week 7 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week7-day1.html" title="Week 7 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"><a href="./activity/week-7-sampling-activity.html" title="Exploring Sampling Concepts">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Thu, February 22</td>
-<td>Confidence Intervals</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week7-day2.html" title="Week 7 Lab Review Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./labs/lab-7.html" title="Lab 7">💻</a> <br> Due January 15 <br> <a href="./labs/grading-guides/lab-7-grading-guide.html" title="Lab 7 Feedback">Lab 7 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="./weeks/week-8.html">8</a></td>
-<td>Tue, February 27</td>
-<td>p-values &amp; Hypothesis Tests</td>
-<td style="text-align: center;"><a href="./weeks/week-8.html" title="Week 8 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week8-day1.html" title="Week 8 Review Lecture Slides">🖥</a></td>
-<td style="text-align: center;"><a href="./activity/week-8-grade-check.docx" title="Grade Check-in">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Thu, February 29</td>
-<td>Simulation-based Methods vs.&nbsp;Theory-based Methods</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week8-day2.html" title="Week 8 Lab Review Slides">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./labs/lab-8.html" title="Lab 8">💻</a> <br> Due March 4 <br> <a href="./labs/grading-guides/lab-8-grading-guide.html">Lab 8 Feedback</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Mon, March 4</td>
-<td><strong><em>Statistical Critique 2</em></strong> <strong><em>Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./critique/critique-2.html" title="Statistical Critique 2">✍</a></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="./weeks/week-9.html">9</a></td>
-<td>Tue, March 5</td>
-<td>One-Way Analysis of Variance (OWA)</td>
-<td style="text-align: center;"><a href="./weeks/week-9.html" title="Week 9 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week9-day1.html" title="One-way ANOVA Review">🖥</a></td>
-<td style="text-align: center;"><br>
-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thur, March 7</td>
-<td>Inference for OWA &amp; Model Selection</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="slides/week9-day2.qmd" title="Coding a One-way ANOVA">🖥</a></td>
-<td style="text-align: center;">Assessing Independence: <a href="./project/final-project-help/assess_independence.docx" title="Help on Assessing Independence">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Sun, March 10</td>
-<td><strong><em>Final Project First Draft Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Instructions: <a href="./project/final-project-directions.html" title="Final Project Directions">📁</a> <br> Grading Rubric: <a href="./project/final-project-grading-rubric.html" title="Final Project Grading Rubric">✅</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="./weeks/week-10.html">10</a></td>
-<td>Tue, March 12</td>
-<td>Two-Way ANOVA (TWA) Models</td>
-<td style="text-align: center;"><a href="./weeks/week-10.html" title="Week 10 Coursework">📖</a></td>
-<td style="text-align: center;"><a href="./slides/week10-day1.html" title="Week 10 Review Slides">🖥</a></td>
-<td style="text-align: center;">One-way to Two-way Model Selection Process: <a href="./project/final-project-help/owa-to-twa-model-selection-process.html" title="Model Selection Process for the Final Project">📋</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Thu, March 14</td>
-<td>Last Day of STAT 313</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./slides/week10-day2.html" title="Final Class Debrief">🖥</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">What <strong>should not</strong> be in your project: <a href="./project/final-project-help/no-gos.docx" title="Things that don't belong in your report!">📋</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Sun, March 17</td>
-<td><strong><em>Final Project Final Version Due</em></strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Instructions: <a href="./project/final-project-directions.html" title="Final Project Directions">📁</a> <br> Grading Rubric: <a href="./project/final-project-grading-rubric.html" title="Final Project Grading Rubric">✅</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Finals Week</td>
-<td></td>
-<td>Final Presentations</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Presentation Instructions:<a href="./project/final-presentations/presentation-instructions.html" title="Final Presentation Instructions">📁</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Tues, March 19<br>
-4:10-7:00pm</td>
-<td>STAT 313-02</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>Thur, March 21<br>
-10:10am-1:00pm</td>
-<td>STAT 513-01</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td>Thur, March 21<br>
-1:10-4:00pm</td>
-<td>STAT 313-01</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
+<blockquote class="blockquote">
+<p>Independence is about <strong>observations</strong> and relationships between observations.</p>
+</blockquote>
+<section id="independence-within-groups" class="level2">
+<h2 class="anchored" data-anchor-id="independence-within-groups">Independence Within Groups</h2>
+<ul>
+<li>What are the groups in your analysis?</li>
+<li>Are the observations <em>within</em> those groups related?
+<ul>
+<li>Is an observation included multiple times within a group?</li>
+<li>Are there relationships (e.g., biological, spatial, temporal) between the observations?</li>
+</ul></li>
+</ul>
+</section>
+<section id="independence-between-groups" class="level2">
+<h2 class="anchored" data-anchor-id="independence-between-groups">Independence Between Groups</h2>
+<ul>
+<li>What are the groups in your analysis?</li>
+<li>Are the observations <em>between</em> those groups related?
+<ul>
+<li>Can an observation appear in more than one group?</li>
+</ul></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1080,18 +730,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-team.html" class="pagination-link  aria-label=" teaching="" team"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./computing-access.html" class="pagination-link" aria-label="Access">
-        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1100,7 +738,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

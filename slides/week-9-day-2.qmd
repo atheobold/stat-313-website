@@ -1,5 +1,5 @@
 ---
-title: "Connecting ANOVA with Multiple Linear Regression"
+title: "Coding a One-way ANOVA -- Final Project Work Day"
 format: 
   revealjs:
     theme: style.scss
@@ -35,7 +35,7 @@ evals_small <- moderndive::evals %>%
 
 -   Lab 7 revisions are due today (by midnight)
 -   Lab 8 revisions are due next Thursday
--   Statistical Critique 2 revisions are due next Thursday
+-   Statistical Critique 2 will be graded by Friday, revisions will be due next Thursday
 -   Final revisions on **all** assignments will be accepted until Sunday, March 17
 
 ::: callout-caution
@@ -46,145 +46,35 @@ evals_small <- moderndive::evals %>%
 
 ## Common Mistakes
 
+</br>
+
 :::{.small}
-**Questions 1 & 2**
-
-> Your axis labels should contain units and indicate if your variables were transformed! 
-
-:::{.fragment}
-**Question 6**
-
-> Equal variance is not about equal points above and below the line! 
-:::
-
-:::{.fragment}
-**Question 11**
-
-> Your hypothesis test decision should state what $\alpha$ was used!
-:::
-
-:::{.fragment}
-**Question 14**
-
-> The $t$-distribution *approximates* the permutation distribution!
-:::
-
-:::{.fragment}
-**Question 15**
-
-> Both theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions. 
-:::
-:::
-
-# Statistical Critique Recap
-
-## Common Mistakes
-
-# How does this connect with the ANOVA we did in the Statistical Critique?
-
-. . .
-
-> ANOVA quantifies *how much* each explanatory variable in a statistical model contributes toward explaining the total variation in the response variable 
-
-## Total Variation in a One-way ANOVA 
+**Questions 1 & 2** -- Your axis labels should contain units and indicate if your variables were transformed! 
 
 </br>
 
-```{r}
-#| label: age-cat-anova
-
-age_lm <- lm(score ~ age_cat, data = evals_small) 
-
-age_anova <- anova(age_lm) %>% 
-  tidy() 
-
-age_anova_total <- tibble(term = "Total", 
-                          df = nrow(evals_small) - 1, 
-                          sumsq = sum(age_anova$sumsq)
-                          )
-age_anova_full <- age_anova %>% 
-  bind_rows(age_anova_total) 
-
-age_anova_full %>% 
-  gt::gt()
-```
+:::{.fragment}
+**Question 6** -- Equal variance is not about equal points above and below the line! 
+:::
 
 </br>
 
-The `age_cat` line in the ANOVA table quantifies *how much* of the *total variation* in minimum evaluation scores can be explained based on the age group of a faculty member. 
+:::{.fragment}
+**Question 11** -- Your hypothesis test decision should state what $\alpha$ was used!
+:::
 
 </br>
 
-. . .
-
-The `Total` row in an ANOVA table tells us the *total variation* in evaluation scores -- how far each faculty member's minimum evaluation score was from the mean of all the evaluation scores
-
-## Connection to $R^2$
-
-Based on the ANOVA table, there is `r filter(age_anova_full, term == "Total")$sumsq %>% round(digits = 4)` total variation in minimum evaluation scores, of which `age_cat` is able to explain `r filter(age_anova_full, term == "age_cat")$sumsq %>% round(digits = 4)`. 
-
-. . .
-
-Proportionally, that means `age_cat` can explain `r filter(age_anova_full, term == "age_cat")$sumsq / filter(age_anova_full, term == "Total")$sumsq * 100  %>% round(digits = 4)`% in the total variation in minimum evaluation scores. 
-
-. . .
-
-Does that sound familiar? 
-
-. . .
+:::{.fragment}
+**Question 14** -- The $t$-distribution *approximates* the permutation distribution!
+:::
 
 </br>
 
-```{r}
-#| label: r-squared
-#| echo: true
-
-glance(age_lm) %>% 
-  select(r.squared) 
-```
-
-## Connecting with Multiple Linear Regression -- Multiple Explanatory Variables
-
-```{r}
-#| label: mlr-crabs
-
-crab_lm <- lm(size ~ latitude + water_temp, data = pie_crab)
-
-crab_anova <- anova(crab_lm) %>% 
-  tidy()
-
-crab_anova_total <- tibble(term = "Total", 
-                          df = nrow(pie_crab) - 1, 
-                          sumsq = sum(crab_anova$sumsq)
-                          )
-crab_anova_full <- crab_anova %>% 
-  bind_rows(crab_anova_total) 
-
-crab_anova_full %>% 
-  gt::gt()
-```
-
-## Connecting with Multiple Linear Regression -- Different Slopes
-
-```{r}
-#| label: mlr-trees
-
-maple_lm <- lm(stem_dry_mass ~ stem_length * watershed, data = hbr_maples)
-
-maple_anova <- anova(maple_lm) %>% 
-  tidy()
-
-maple_anova_total <- tibble(term = "Total", 
-                          df = nrow(hbr_maples) - 1, 
-                          sumsq = sum(maple_anova$sumsq)
-                          )
-maple_anova_full <- maple_anova %>% 
-  bind_rows(maple_anova_total) 
-
-maple_anova_full %>% 
-  gt::gt()
-
-```
+:::{.fragment}
+**Question 15** -- Both theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions. 
+:::
+:::
 
 # Coding a One-way ANOVA
 
@@ -194,6 +84,7 @@ maple_anova_full %>%
 #| label: density-ridge-template
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
 
 ggplot(data = <NAME OF DATASET>, 
        mapping = aes(x = <NAME OF NUMERICAL VARIABLE>, 
@@ -201,7 +92,7 @@ ggplot(data = <NAME OF DATASET>,
        ) + 
   geom_density_ridges()+
   labs(x = "<TITLE FOR THE X-AXIS>", 
-       y = “<TITLE FOR THE Y-AXIS>”)
+       y = "<TITLE FOR THE Y-AXIS>")
 ```
 
 :::{.callout-tip}
@@ -215,10 +106,12 @@ ggplot(data = <NAME OF DATASET>,
 Everyone will fit **two** one-way ANOVA models --- one model for each explanatory variable!
 
 :::{.incremental}
+:::{.small}
 - You will need to choose whether to use a theory-based method or a simulation-based method. 
 - Your choice is based on the model conditions --- specifically the normality condition. 
-  * The density ridge plots can be used to check the normality and equal variance condition. 
+  * The density ridge plots can be used to check the normality and equal variance conditions. 
   * The study design should be used to check the independence condition. 
+:::
 :::
 
 ## Theory-based Method
@@ -231,18 +124,32 @@ To fit a theory-based ANOVA, you use the following code:
 #| label: owa-template
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
+
 my_model <- aov(<NAME OF RESPONSE VARIABLE> ~ <NAME OF EXPLANATORY VARIABLE>, 
                 data = <NAME OF DATASET>)
 ```
 
+</br>
+
+. . .
+
+:::{.callout-warning}
+# Only use if normality is not violated!
+
+If you look at your density ridge plots and you believe the normality condition is violated, you **should not** use a theory-based method! 
+:::
+
 ## Simulation-based Method
 
+:::{.small}
 To fit a simulation-based ANOVA, you need to carry out the following steps:
 
 1. find the observed statistic
 2. simulate statistics that could have happened if the null was true
 3. visualize the distribution of simulated statistics (your permutation distribution)
 4. calculate the p-value for your observed statistic
+:::
 
 :::{.callout-tip}
 # 2 levels versus 3 levels
@@ -252,7 +159,13 @@ If you categorical variable has **two** levels, you need to use a `"diff in mean
 
 ## Model Validity
 
-Delete the code templates I provided!
+:::{.callout-important}
+# Delete the code templates I provided!
+:::
+
+</br>
+
+You can assess the normality and equal variance conditions based on the density ridge plots you make!
 
 # Where are we headed next week? 
 
@@ -299,6 +212,7 @@ ggplot(data = evals_small,
 :::{.callout-tip}
 # Legend Positions
 
+:::{.small}
 There are four options for `legend.position` 
 
 1. `"none"` (removes the legend)
@@ -306,4 +220,5 @@ There are four options for `legend.position`
 3. `"right"` (the default position)
 4. `"bottom"` (difficult to read with the x-axis label)
 5. `"top"` (generally my preference)
+:::
 :::

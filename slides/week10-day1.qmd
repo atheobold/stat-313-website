@@ -15,6 +15,21 @@ library(ggridges)
 library(broom)
 library(emo)
 library(gt)
+library(RColorBrewer)
+
+evals_small <- moderndive::evals %>% 
+  group_by(prof_ID) %>% 
+  mutate(min_eval = min(score), 
+         age_cat = case_when(age < 37 ~ "Young faculty",
+                             age >= 37 & age < 45 ~ "Middle age", 
+                             age >= 45 & age < 60 ~ "Older faculty", 
+                             age >= 60 ~ "Nearly retired"),
+         age_cat = factor(age_cat, 
+                          levels = c("Young faculty", "Middle age",
+                                     "Older faculty", "Nearly retired")
+                          )
+         ) %>% 
+  distinct(prof_ID, .keep_all = TRUE) 
 
 movies <- movies_sample %>% 
   mutate(era = case_when(year < 1920 ~ "1910s", 
@@ -38,15 +53,15 @@ Plan for Revisions
 :::
 
 ::: incremental
-- Statistical Critique 2 has been graded
-- Lab 8 will be graded by Friday
-- You are permitted to submit **one** "free" revision this week
-- Additional revisions can be purchased with any tokens you have remaining
-- Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project
-- Revisions will be accepted until Thursday, June 15
+-   Statistical Critique 2 has been graded
+-   Lab 8 will be graded by Friday
+-   You are permitted to submit **one** "free" revision this week
+-   Additional revisions can be purchased with any tokens you have remaining
+-   Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project
+-   Revisions will be accepted until Thursday, June 15
 :::
 
-## You've seen a one-way ANOVA model before! 
+## You've seen a one-way ANOVA model before!
 
 ```{r trout-chanel}
 #| echo: true
@@ -60,12 +75,7 @@ get_regression_table(trout_lm)
 </br>
 
 ::: fragment
-<center>
-
-What do the `estimate`s from each of these lines (e.g., `unittype:IP`) represent?
-
-</center>
-
+<center>What do the `estimate`s from each of these lines (e.g., `unittype:IP`) represent?</center>
 :::
 
 ## One-Way ANOVA -- Testing if at least one chanel type has a different mean weight
@@ -82,8 +92,7 @@ aov(weight_g ~ unittype, data = trout) %>%
 
 </br>
 
-:::{style="text-align: center;"}
-
+::: {style="text-align: center;"}
 What would you decide?
 
 ::: fragment
@@ -116,7 +125,7 @@ How do you feel about the equal variance condition?
 
 ## Comparing Variances
 
-::: {.columns}
+::: columns
 ::: {.column width="50%"}
 **Un-transformed Variances**
 
@@ -132,9 +141,9 @@ trout %>%
 :::
 
 ::: {.column width="50%"}
-
 ::: fragment
 **Log Transformed Variances**
+
 ```{r variance-table-log}
 #| echo: false
 trout %>% 
@@ -144,23 +153,18 @@ trout %>%
   gt()
 ```
 :::
-
 :::
 :::
 
 . . .
 
 </br>
-<center>
 
-What do you think?
-
-</center>
+<center>What do you think?</center>
 
 # Two-Way ANOVA Models
 
-
-##
+## 
 
 ::: {style="font-size: 3em; color: #000000;"}
 Two-way ANOVA
@@ -172,10 +176,9 @@ Two-way ANOVA
 Goal:
 :::
 
-Assess if [multiple]{style="color: #0F4C81"} categorical variables have a relationship with the response. 
+Assess if [multiple]{style="color: #0F4C81"} categorical variables have a relationship with the response.
 
-
-##
+## 
 
 ::: {style="font-size: 3em; color: #000000;"}
 Modeling Options
@@ -187,10 +190,9 @@ Modeling Options
 Additive Model
 :::
 
-:::{.fragment}
-Assess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model. 
+::: fragment
+Assess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.
 :::
-
 :::
 
 ::: {.column width="50%"}
@@ -198,14 +200,13 @@ Assess if each explanatory variable has a meaningful relationship with the respo
 Interaction Model
 :::
 
-:::{.fragment}
-Assess if the relationship between one categorical explanatory variable and the response **differs** based on the values of another categorical variable. 
+::: fragment
+Assess if the relationship between one categorical explanatory variable and the response **differs** based on the values of another categorical variable.
+:::
+:::
 :::
 
-:::
-:::
-
-##
+## 
 
 ::: {style="font-size: 2em; color: #000000;"}
 **What are we looking for?**
@@ -245,7 +246,6 @@ movies %>%
         legend.title = element_text(size = 18))
 ```
 
-
 ## Hypothesis Test Steps
 
 ::: columns
@@ -267,7 +267,7 @@ Step 2: Decide if each explanatory variable has a meaningful relationship with t
 
 ::: fragment
 -   If yes, then go to step 3!
--   If no, then report which variable (if any) has the strongest relationship with the response. 
+-   If no, then report which variable (if any) has the strongest relationship with the response.
 :::
 :::
 :::
@@ -283,7 +283,6 @@ aov(rating ~ era + genre, data = movies) %>%
   tidy()
 ```
 
-
 Why did I use a `+` when fitting the model?
 
 . . .
@@ -297,14 +296,12 @@ aov(rating ~ era + genre, data = movies) %>%
   gt() 
 ```
 
-:::{style="text-align: center;"}
-
+::: {style="text-align: center;"}
 **What is the `era` line testing?**
 
 ::: fragment
 **What would you decide?**
 :::
-
 :::
 
 # Connecting to research questions
@@ -313,10 +310,9 @@ aov(rating ~ era + genre, data = movies) %>%
 
 ### 90-seconds
 
-</br>
-</br>
+</br> </br>
 
-How would you phrase a research question for the one-way ANOVA model we've been investigating? 
+How would you phrase a research question for the one-way ANOVA model we've been investigating?
 
 **Explanatory Variable:** `genre`
 
@@ -326,10 +322,9 @@ How would you phrase a research question for the one-way ANOVA model we've been 
 
 ### 90-seconds
 
-</br>
-</br>
+</br> </br>
 
-How would you phrase a research question for the two-way ANOVA model we've been investigating? 
+How would you phrase a research question for the two-way ANOVA model we've been investigating?
 
 **Explanatory Variables:** `genre` and `era`
 
@@ -338,11 +333,122 @@ How would you phrase a research question for the two-way ANOVA model we've been 
 ## What about two-way ANOVA interaction models?
 
 ::: incremental
-- An interaction model is similar to a different slopes multiple linear regression
+-   An interaction model is similar to a different slopes multiple linear regression
 
-- It assesses if the relationship between two variables differs when a third variable is considered
+-   It assesses if the relationship between two variables differs when a third variable is considered
 
-- Due to time, we we **are not** fitting interaction models for the Final Project 
+-   Due to time, we we **are not** fitting interaction models for the Final Project
 :::
 
+# How does this connect with the ANOVA we did in the Statistical Critique?
 
+. . .
+
+> ANOVA quantifies *how much* each explanatory variable in a statistical model contributes toward explaining the total variation in the response variable
+
+## Total Variation in a One-way ANOVA
+
+</br>
+
+```{r}
+#| label: age-cat-anova
+
+age_lm <- lm(score ~ age_cat, data = evals_small) 
+
+age_anova <- anova(age_lm) %>% 
+  tidy() 
+
+age_anova_total <- tibble(term = "Total", 
+                          df = nrow(evals_small) - 1, 
+                          sumsq = sum(age_anova$sumsq)
+                          )
+age_anova_full <- age_anova %>% 
+  bind_rows(age_anova_total) 
+
+age_anova_full %>% 
+  gt::gt()
+```
+
+</br>
+
+. . .
+
+::: small
+The `age_cat` line in the ANOVA table quantifies *how much* of the **total variation** in minimum evaluation scores can be explained based on the age group of a faculty member.
+
+::: fragment
+The `Total` row in an ANOVA table tells us the **total variation** in evaluation scores -- how far each faculty member's minimum evaluation score was from the mean of all the evaluation scores
+:::
+:::
+
+## Connection to $R^2$
+
+Based on the ANOVA table, there is `r filter(age_anova_full, term == "Total")$sumsq %>% round(digits = 4)` total variation in minimum evaluation scores, of which `age_cat` is able to explain `r filter(age_anova_full, term == "age_cat")$sumsq %>% round(digits = 4)`.
+
+. . .
+
+Proportionally, that means `age_cat` can explain 3.055% in the total variation in minimum evaluation scores.
+
+. . .
+
+Does that sound familiar?
+
+. . .
+
+</br>
+
+```{r}
+#| label: r-squared
+#| echo: false
+#| eval: false
+
+glance(age_lm) %>% 
+  select(r.squared) 
+```
+
+## Connecting with Multiple Linear Regression -- Multiple Explanatory Variables
+
+```{r}
+#| label: mlr-crabs
+
+crab_lm <- lm(size ~ latitude + water_temp, data = pie_crab)
+
+crab_anova <- anova(crab_lm) %>% 
+  tidy()
+
+crab_anova_total <- tibble(term = "Total", 
+                          df = nrow(pie_crab) - 1, 
+                          sumsq = sum(crab_anova$sumsq)
+                          )
+crab_anova_full <- crab_anova %>% 
+  bind_rows(crab_anova_total) 
+
+crab_anova_full %>% 
+  gt::gt()
+```
+
+## Connecting with Multiple Linear Regression -- Different Slopes
+
+```{r}
+#| label: mlr-trees
+
+maple_lm <- lm(stem_dry_mass ~ stem_length * watershed, data = hbr_maples)
+
+maple_anova <- anova(maple_lm) %>% 
+  tidy()
+
+maple_anova_total <- tibble(term = "Total", 
+                          df = nrow(hbr_maples) - 1, 
+                          sumsq = sum(maple_anova$sumsq)
+                          )
+maple_anova_full <- maple_anova %>% 
+  bind_rows(maple_anova_total) 
+
+maple_anova_full %>% 
+  gt::gt()
+
+```
+
+# Statistical Critique Recap
+
+## Common Mistakes
