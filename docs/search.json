@@ -5225,7 +5225,7 @@
     "href": "project/final-project-help/owa-to-twa-model-selection-process.html#plot-the-model",
     "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
     "section": "Plot the model",
-    "text": "Plot the model\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat are we looking for?\nWe are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!\nFor these data we are looking to see if at least one of the genres has a different mean IMDB rating or if at least one of the eras has a different mean movie rating."
+    "text": "Plot the model"
   },
   {
     "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html#fit-the-models",
@@ -5239,7 +5239,7 @@
     "href": "project/final-project-help/owa-to-twa-model-selection-process.html#perform-a-hypothesis-test",
     "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
     "section": "Perform a Hypothesis Test",
-    "text": "Perform a Hypothesis Test\nThe era line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every era\n\\(H_A\\): The mean movie rating is different for at least one era\nWith a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.\nThe genre line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every genre\n\\(H_A\\): The mean movie rating is different for at least one genre\nWith a p-value of 0.015 (from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.\n\n\n\n\n\n\nCategorical variables with two levels\n\n\n\nTechnically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This is not the case if your variable has more than two levels!"
+    "text": "Perform a Hypothesis Test\nThe era and genre lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including both variables in the same model, each of these tests are now conditional on the other variable(s) in the model.\nThe era line is testing if the mean movie rating is different for at least one era, conditional on the genre of the movie. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every era, given the genre of the movie\n\\(H_A\\): The mean movie rating is different for at least one era, given the genre of the movie\nWith a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.\nThe genre line is testing if the mean movie rating is different for at least one era, conditional on the era of the movie. It has the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every genre, given the era of the movie\n\\(H_A\\): The mean movie rating is different for at least one genre, given the era of the movie\nWith a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre."
   },
   {
     "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html#plot-the-model-1",
@@ -8113,5 +8113,19 @@
     "title": "Evaluating Independence",
     "section": "Independence Between Groups",
     "text": "Independence Between Groups\n\nWhat are the groups in your analysis?\nAre the observations between those groups related?\n\nCan an observation appear in more than one group?"
+  },
+  {
+    "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html#testing-era",
+    "href": "project/final-project-help/owa-to-twa-model-selection-process.html#testing-era",
+    "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
+    "section": "Testing era",
+    "text": "Testing era\n\naov(rating ~ era, data = movies) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df  sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 era           3   4.59   1.53     0.669   0.575\n2 Residuals    52 119.     2.28    NA      NA    \n\n\nWith a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.\n\n\n\n\n\n\nHypotheses\n\n\n\nThe era line of the ANOVA table is testing the following hypotheses:\n\\(H_0\\): The mean movie rating is the same for every era\n\\(H_A\\): The mean movie rating is different for at least one era"
+  },
+  {
+    "objectID": "project/final-project-help/owa-to-twa-model-selection-process.html#testing-genre",
+    "href": "project/final-project-help/owa-to-twa-model-selection-process.html#testing-genre",
+    "title": "One-Way ANOVA to Two-Way ANOVA Model Selection Process",
+    "section": "Testing genre",
+    "text": "Testing genre\n\n\n\n\n\n\nTwo groups\n\n\n\nNote that genre has only two levels—action and romance. So, when using simulation-based methods, we need to use a \"diff in means\" statistic instead of an \"F\" statistic.\n\n\n\nobs_diff &lt;- movies %&gt;% \n  specify(response = rating, \n          explanatory = genre) %&gt;% \n  calculate(stat = \"diff in means\", \n            order = c(\"Action\", \"Romance\")\n            )\n\npermutation_dist &lt;- movies %&gt;% \n  specify(response = rating, \n          explanatory = genre) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"diff in means\", \n            order = c(\"Action\", \"Romance\")\n            )\n\nvisualise(permutation_dist) +\n  labs(x = \"Simulated Difference in Mean IMDB Rating (Action - Romance)\")\n\n\n\n\n\n\n\nget_p_value(permutation_dist, \n            obs_stat = obs_diff, \n            direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.184\n\n\nWith a p-value of 0.184 from an observed difference in means of -0.578 at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating of action movie is different from romance movies.\n\n\n\n\n\n\nHypotheses\n\n\n\nFor our hypothesis test, we are testing if the mean movie rating is different for at least genre, but technically there are two genres (action, romance). So, we are actually testing following hypotheses:\n\\(H_0\\): The mean movie rating is the same for romance and action movies\n\\(H_A\\): The mean movie rating is different for romance and action movies"
   }
 ]

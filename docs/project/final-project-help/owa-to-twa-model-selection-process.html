@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - One-Way ANOVA to Two-Way ANOVA Model Selection Process</title>
+<title>STAT 313 / 513 - One-Way ANOVA to Two-Way ANOVA Model Selection Process</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,13 +154,13 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -334,7 +334,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -356,19 +356,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable" id="toc-step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="nav-link active" data-scroll-target="#step-1-fit-an-one-way-anova-model-for-each-categorical-variable">Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</a>
+  <li><a href="#step-1-visualize-each-model" id="toc-step-1-visualize-each-model" class="nav-link active" data-scroll-target="#step-1-visualize-each-model">Step 1 – Visualize each model</a></li>
+  <li><a href="#step-2-decide-what-method-should-be-used" id="toc-step-2-decide-what-method-should-be-used" class="nav-link" data-scroll-target="#step-2-decide-what-method-should-be-used">Step 2 – Decide what method should be used</a></li>
+  <li><a href="#step-3-fit-the-models" id="toc-step-3-fit-the-models" class="nav-link" data-scroll-target="#step-3-fit-the-models">Step 3 – Fit the model(s)</a>
   <ul class="collapse">
-  <li><a href="#plot-the-model" id="toc-plot-the-model" class="nav-link" data-scroll-target="#plot-the-model">Plot the model</a></li>
-  <li><a href="#fit-the-models" id="toc-fit-the-models" class="nav-link" data-scroll-target="#fit-the-models">Fit the model(s)</a></li>
-  <li><a href="#perform-a-hypothesis-test" id="toc-perform-a-hypothesis-test" class="nav-link" data-scroll-target="#perform-a-hypothesis-test">Perform a Hypothesis Test</a></li>
+  <li><a href="#testing-era" id="toc-testing-era" class="nav-link" data-scroll-target="#testing-era">Testing <code>era</code></a></li>
+  <li><a href="#testing-genre" id="toc-testing-genre" class="nav-link" data-scroll-target="#testing-genre">Testing <code>genre</code></a></li>
   </ul></li>
-  <li><a href="#step-3-decide-how-to-proceed" id="toc-step-3-decide-how-to-proceed" class="nav-link" data-scroll-target="#step-3-decide-how-to-proceed">Step 3: Decide How to Proceed</a></li>
-  <li><a href="#step-2-fit-an-additive-two-way-anova" id="toc-step-2-fit-an-additive-two-way-anova" class="nav-link" data-scroll-target="#step-2-fit-an-additive-two-way-anova">Step 2: Fit an Additive Two-Way ANOVA</a>
-  <ul class="collapse">
-  <li><a href="#plot-the-model-1" id="toc-plot-the-model-1" class="nav-link" data-scroll-target="#plot-the-model-1">Plot the model</a></li>
-  <li><a href="#fit-the-model" id="toc-fit-the-model" class="nav-link" data-scroll-target="#fit-the-model">Fit the Model</a></li>
-  <li><a href="#perform-a-hypothesis-test-1" id="toc-perform-a-hypothesis-test-1" class="nav-link" data-scroll-target="#perform-a-hypothesis-test-1">Perform a Hypothesis Test</a></li>
-  </ul></li>
+  <li><a href="#step-4-decide-how-to-proceed" id="toc-step-4-decide-how-to-proceed" class="nav-link" data-scroll-target="#step-4-decide-how-to-proceed">Step 4: Decide How to Proceed</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -395,23 +390,21 @@ window.Quarto = {
 
 
 <p>We will be using a “forward” selection process for deciding on the “best” ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn’t “worth it.”</p>
-<section id="step-1-fit-an-one-way-anova-model-for-each-categorical-variable" class="level1">
-<h1>Step 1 – Fit an One-Way ANOVA Model for Each Categorical Variable</h1>
-<section id="plot-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="plot-the-model">Plot the model</h2>
+<section id="step-1-visualize-each-model" class="level1">
+<h1>Step 1 – Visualize each model</h1>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-nrow="1">
+<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-align="center">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;display: flex;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="owa-to-twa-model-selection-process_files/figure-html/owa-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;display: flex;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="owa-to-twa-model-selection-process_files/figure-html/owa-plot-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
@@ -420,12 +413,25 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><strong>What are we looking for?</strong></p>
-<p>We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!</p>
-<p>For these data we are looking to see if at least one of the genres has a different mean IMDB rating <strong>or</strong> if at least one of the eras has a different mean movie rating.</p>
+<p><strong>Are the groups different?</strong></p>
+<p>We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). Based on these visualizations, it doesn’t seem like the mean IMDB rating differs based on the era or the genre of the movie.</p>
 </section>
-<section id="fit-the-models" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-models">Fit the model(s)</h2>
+<section id="step-2-decide-what-method-should-be-used" class="level1">
+<h1>Step 2 – Decide what method should be used</h1>
+<p>We have two methods to choose from when performing a one-way ANOVA — theory-based or simulation-based. The decision for which method to use is decided by the conditions of our analysis. Specifically, the normality condition is what dictates which method we use.</p>
+<ul>
+<li><p>Based on the density ridge plots, it appears that both genres have about the same spread. For the eras, it looks like movies from the 2000s have the largest spread, but it is not much greater than the 1970s. So, I would say the equal variance condition is not violated.</p></li>
+<li><p>Most of these density plots are unimodal and fairly symmetric. The most problematic distribution is the romance movies, with three different modes.</p>
+<ul>
+<li>Since the romance group is 1/2 of the genre groups, I don’t feel great using theory-based methods for this one-way ANOVA.</li>
+<li>I do, however, think using theory-based methods for testing the eras would be okay!</li>
+</ul></li>
+</ul>
+</section>
+<section id="step-3-fit-the-models" class="level1">
+<h1>Step 3 – Fit the model(s)</h1>
+<section id="testing-era" class="level2">
+<h2 class="anchored" data-anchor-id="testing-era">Testing <code>era</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -436,44 +442,95 @@ window.Quarto = {
 1 era           3   4.59   1.53     0.669   0.575
 2 Residuals    52 119.     2.28    NA      NA    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 genre         1   4.68   4.68      2.13   0.150
-2 Residuals    54 119.     2.20     NA     NA    </code></pre>
 </div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test">Perform a Hypothesis Test</h2>
-<p>The <code>era</code> line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era</p>
 <p>With a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.</p>
-<p>The <code>genre</code> line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> genre</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> genre</p>
-<p>With a p-value of 0.015 (from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Categorical variables with two levels
+Hypotheses
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This <strong>is not</strong> the case if your variable has more than two levels!</p>
+<p>The <code>era</code> line of the ANOVA table is testing the following hypotheses:</p>
+<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era</p>
+<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era</p>
+</div>
+</div>
+</section>
+<section id="testing-genre" class="level2">
+<h2 class="anchored" data-anchor-id="testing-genre">Testing <code>genre</code></h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two groups
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <code>genre</code> has only two levels—action and romance. So, when using simulation-based methods, we need to use a <code>"diff in means"</code> statistic instead of an <code>"F"</code> statistic.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> rating, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">explanatory =</span> genre) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Action"</span>, <span class="st">"Romance"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>permutation_dist <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> rating, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">explanatory =</span> genre) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesise</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Action"</span>, <span class="st">"Romance"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">visualise</span>(permutation_dist) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Simulated Difference in Mean IMDB Rating (Action - Romance)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="owa-to-twa-model-selection-process_files/figure-html/genre-test-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_p_value</span>(permutation_dist, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">obs_stat =</span> obs_diff, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.184</code></pre>
+</div>
+</div>
+<p>With a p-value of 0.184 from an observed difference in means of -0.578 at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating of action movie is different from romance movies.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hypotheses
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For our hypothesis test, we are testing if the mean movie rating is different for at least genre, but technically there are two genres (action, romance). So, we are actually testing following hypotheses:</p>
+<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for romance and action movies</p>
+<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for romance and action movies</p>
 </div>
 </div>
 </section>
 </section>
-<section id="step-3-decide-how-to-proceed" class="level1">
-<h1>Step 3: Decide How to Proceed</h1>
+<section id="step-4-decide-how-to-proceed" class="level1">
+<h1>Step 4: Decide How to Proceed</h1>
 <p>You will decide what model to fit next depending on the results of your one-way ANOVA models.</p>
 <ul>
 <li>If you failed to reject the null hypothesis for <strong>either</strong> one-way ANOVA models…
@@ -498,65 +555,44 @@ Additive two-way ANOVA
 <p>In Week 10 we will learn about additive and interaction two-way ANOVA models, so you will have the tools to fit these additional models then!</p>
 </div>
 </div>
-</section>
-<section id="step-2-fit-an-additive-two-way-anova" class="level1">
-<h1>Step 2: Fit an Additive Two-Way ANOVA</h1>
-<p>We are looking to see if the mean of <span class="math inline">\(y\)</span> differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of <span class="math inline">\(y\)</span> for each group and the slope is the estimated relationship between the explanatory variable and the mean of <span class="math inline">\(y\)</span>.</p>
-<p>For these data we are looking to see if the genres have differences in the mean movie ratings <strong>and</strong> if the eras have differences in the mean movie rating.</p>
-<section id="plot-the-model-1" class="level2">
-<h2 class="anchored" data-anchor-id="plot-the-model-1">Plot the model</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="owa-to-twa-model-selection-process_files/figure-html/twa-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="fit-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="fit-the-model">Fit the Model</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Notice I’m using a <code>+</code> for an interaction model!</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 6
-  term         df  sumsq meansq statistic p.value
-  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 era           3   4.59   1.53     0.680   0.568
-2 genre         1   4.19   4.19     1.86    0.178
-3 Residuals    51 115.     2.25    NA      NA    </code></pre>
-</div>
-</div>
-</section>
-<section id="perform-a-hypothesis-test-1" class="level2">
-<h2 class="anchored" data-anchor-id="perform-a-hypothesis-test-1">Perform a Hypothesis Test</h2>
-<p>The <code>era</code> and <code>genre</code> lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including <strong>both</strong> variables in the <strong>same</strong> model, each of these tests are now conditional on the other variable(s) in the model.</p>
-<p>The <code>era</code> line is testing if the mean movie rating is different for at least one era, conditional on the <code>genre</code> of the movie. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> era, given the <code>genre</code> of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> era, given the <code>genre</code> of the movie</p>
-<p>With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.</p>
-<p>The <code>genre</code> line is testing if the mean movie rating is different for at least one era, conditional on the <code>era</code> of the movie. It has the following hypotheses:</p>
-<p><span class="math inline">\(H_0\)</span>: The mean movie rating is the same for <strong>every</strong> genre, given the <code>era</code> of the movie</p>
-<p><span class="math inline">\(H_A\)</span>: The mean movie rating is different for <strong>at least one</strong> genre, given the <code>era</code> of the movie</p>
-<p>With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.</p>
+<!-- # Step 5: Fit an Additive Two-Way ANOVA -->
+<!-- We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$. -->
+<!-- For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating. -->
+<!-- ## Plot the model -->
+<!-- ```{r twa-plot} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
+<!-- movies %>% -->
+<!--   ggplot(aes(y = era, x = rating, fill = genre)) + -->
+<!--   geom_density_ridges(alpha = 0.5, scale = 1) + -->
+<!--   labs(y = "Era", -->
+<!--        x = "IMDB Rating", -->
+<!--        fill = "Genre") + -->
+<!--   theme(axis.title = element_text(size = 18), -->
+<!--         axis.text = element_text(size = 16), -->
+<!--         legend.text = element_text(size = 16), -->
+<!--         legend.title = element_text(size = 18)) -->
+<!-- ``` -->
+<!-- ## Fit the Model -->
+<!-- ::: callout-tip -->
+<!-- Notice I'm using a `+` for an interaction model! -->
+<!-- ::: -->
+<!-- ```{r twa-model} -->
+<!-- aov(rating ~ era + genre, data = movies) %>% -->
+<!--   tidy() -->
+<!-- ``` -->
+<!-- ## Perform a Hypothesis Test -->
+<!-- The `era` and `genre` lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including **both** variables in the **same** model, each of these tests are now conditional on the other variable(s) in the model. -->
+<!-- The `era` line is testing if the mean movie rating is different for at least one era, conditional on the `genre` of the movie. It has the following hypotheses: -->
+<!-- $H_0$: The mean movie rating is the same for **every** era, given the `genre` of the movie -->
+<!-- $H_A$: The mean movie rating is different for **at least one** era, given the `genre` of the movie -->
+<!-- With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era. -->
+<!-- The `genre` line is testing if the mean movie rating is different for at least one era, conditional on the `era` of the movie. It has the following hypotheses: -->
+<!-- $H_0$: The mean movie rating is the same for **every** genre, given the `era` of the movie -->
+<!-- $H_A$: The mean movie rating is different for **at least one** genre, given the `era` of the movie -->
+<!-- With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre. -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -721,12 +757,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

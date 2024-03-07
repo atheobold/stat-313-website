@@ -7,12 +7,15 @@ execute:
   message: false
 ---
 
-```{r set-up}
+```{r}
 #| include: false
+#| label: set-up
+
 library(tidyverse)
 library(moderndive)
 library(broom)
 library(ggridges)
+library(infer)
 
 movies <- movies_sample %>% 
   mutate(era = case_when(year < 1920 ~ "1910s", 
@@ -30,9 +33,7 @@ movies <- movies_sample %>%
 
 We will be using a "forward" selection process for deciding on the "best" ANOVA model. Meaning, we will start with a simple model and keep adding complexity until it seems like the complexity isn't "worth it."
 
-# Step 1 -- Fit an One-Way ANOVA Model for Each Categorical Variable
-
-## Plot the model
+# Step 1 -- Visualize each model
 
 ```{r owa-plot}
 #| echo: false
@@ -60,47 +61,92 @@ movies %>%
         legend.title = element_text(size = 18))
 ```
 
-**What are we looking for?**
+**Are the groups different?**
 
-We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). This is akin to looking for evidence that the slope of the regression line is not 0!
+We are looking to see if the mean of the response variable (IMDB rating) differs between the explanatory variable groups (genre or era). Based on these visualizations, it doesn't seem like the mean IMDB rating differs based on the era or the genre of the movie. 
 
-For these data we are looking to see if at least one of the genres has a different mean IMDB rating **or** if at least one of the eras has a different mean movie rating.
+# Step 2 -- Decide what method should be used
 
-## Fit the model(s)
+We have two methods to choose from when performing a one-way ANOVA --- theory-based or simulation-based. The decision for which method to use is decided by the conditions of our analysis. Specifically, the normality condition is what dictates which method we use. 
 
-```{r owa-model}
+- Based on the density ridge plots, it appears that both genres have about the same spread. For the eras, it looks like movies from the 2000s have the largest spread, but it is not much greater than the 1970s. So, I would say the equal variance condition is not violated. 
+
+- Most of these density plots are unimodal and fairly symmetric. The most problematic distribution is the romance movies, with three different modes. 
+  * Since the romance group is 1/2 of the genre groups, I don't feel great using theory-based methods for this one-way ANOVA. 
+  * I do, however, think using theory-based methods for testing the eras would be okay!
+
+# Step 3 -- Fit the model(s)
+
+## Testing `era` 
+
+```{r}
+#| label: era-test
 aov(rating ~ era, data = movies) %>% 
-  tidy()
-
-aov(rating ~ genre, data = movies) %>% 
   tidy()
 ```
 
-## Perform a Hypothesis Test
+With a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.
 
-The `era` line of the ANOVA table is testing if the mean movie rating is different for at least one era. It has the following hypotheses:
+:::{.callout-tip}
+# Hypotheses
+
+The `era` line of the ANOVA table is testing the following hypotheses:
 
 $H_0$: The mean movie rating is the same for **every** era
 
 $H_A$: The mean movie rating is different for **at least one** era
-
-With a p-value of 0.575 (from an F-statistic of 0.669 with 3 and 52 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.
-
-The `genre` line of the ANOVA table is testing if the mean movie rating is different for at least genre. It has the following hypotheses:
-
-$H_0$: The mean movie rating is the same for **every** genre
-
-$H_A$: The mean movie rating is different for **at least one** genre
-
-With a p-value of 0.015 (from an F-statistic of 2.127 with 1 and 54 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.
-
-::: callout-tip
-# Categorical variables with two levels
-
-Technically, if your categorical variable has only two levels, your alternative hypothesis is testing if there is a difference between the levels. But! This **is not** the case if your variable has more than two levels!
 :::
 
-# Step 3: Decide How to Proceed
+## Testing `genre` 
+
+:::{.callout-note}
+# Two groups
+Note that `genre` has only two levels---action and romance. So, when using simulation-based methods, we need to use a `"diff in means"` statistic instead of an `"F"` statistic. 
+:::
+
+```{r}
+#| label: genre-test
+#| cache: true
+
+obs_diff <- movies %>% 
+  specify(response = rating, 
+          explanatory = genre) %>% 
+  calculate(stat = "diff in means", 
+            order = c("Action", "Romance")
+            )
+
+permutation_dist <- movies %>% 
+  specify(response = rating, 
+          explanatory = genre) %>% 
+  hypothesise(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "diff in means", 
+            order = c("Action", "Romance")
+            )
+
+visualise(permutation_dist) +
+  labs(x = "Simulated Difference in Mean IMDB Rating (Action - Romance)")
+
+get_p_value(permutation_dist, 
+            obs_stat = obs_diff, 
+            direction = "two-sided")
+```
+
+
+
+With a p-value of 0.184 from an observed difference in means of -0.578 at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating of action movie is different from romance movies. 
+
+::: callout-tip
+# Hypotheses
+
+For our hypothesis test, we are testing if the mean movie rating is different for at least genre, but technically there are two genres (action, romance). So, we are actually testing following hypotheses:
+
+$H_0$: The mean movie rating is the same for romance and action movies
+
+$H_A$: The mean movie rating is different for romance and action movies
+:::
+
+# Step 4: Decide How to Proceed
 
 You will decide what model to fit next depending on the results of your one-way ANOVA models.
 
@@ -115,59 +161,59 @@ You will decide what model to fit next depending on the results of your one-way 
 In Week 10 we will learn about additive and interaction two-way ANOVA models, so you will have the tools to fit these additional models then!
 :::
 
-# Step 2: Fit an Additive Two-Way ANOVA
+<!-- # Step 5: Fit an Additive Two-Way ANOVA -->
 
-We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$.
+<!-- We are looking to see if the mean of $y$ differs across the values of explanatory variable 1 and / or explanatory variable 2. This is akin to fitting a parallel slopes model in a multiple linear regression, where the y-intercept is the estimated change in the mean of $y$ for each group and the slope is the estimated relationship between the explanatory variable and the mean of $y$. -->
 
-For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating.
+<!-- For these data we are looking to see if the genres have differences in the mean movie ratings **and** if the eras have differences in the mean movie rating. -->
 
-## Plot the model
+<!-- ## Plot the model -->
 
-```{r twa-plot}
-#| echo: false
-#| fig-align: center
+<!-- ```{r twa-plot} -->
+<!-- #| echo: false -->
+<!-- #| fig-align: center -->
 
-movies %>%
-  ggplot(aes(y = era, x = rating, fill = genre)) +
-  geom_density_ridges(alpha = 0.5, scale = 1) +
-  labs(y = "Era",
-       x = "IMDB Rating",
-       fill = "Genre") +
-  theme(axis.title = element_text(size = 18),
-        axis.text = element_text(size = 16),
-        legend.text = element_text(size = 16),
-        legend.title = element_text(size = 18))
+<!-- movies %>% -->
+<!--   ggplot(aes(y = era, x = rating, fill = genre)) + -->
+<!--   geom_density_ridges(alpha = 0.5, scale = 1) + -->
+<!--   labs(y = "Era", -->
+<!--        x = "IMDB Rating", -->
+<!--        fill = "Genre") + -->
+<!--   theme(axis.title = element_text(size = 18), -->
+<!--         axis.text = element_text(size = 16), -->
+<!--         legend.text = element_text(size = 16), -->
+<!--         legend.title = element_text(size = 18)) -->
 
-```
+<!-- ``` -->
 
-## Fit the Model
+<!-- ## Fit the Model -->
 
-::: callout-tip
-Notice I'm using a `+` for an interaction model!
-:::
+<!-- ::: callout-tip -->
+<!-- Notice I'm using a `+` for an interaction model! -->
+<!-- ::: -->
 
-```{r twa-model}
-aov(rating ~ era + genre, data = movies) %>%
-  tidy()
+<!-- ```{r twa-model} -->
+<!-- aov(rating ~ era + genre, data = movies) %>% -->
+<!--   tidy() -->
 
-```
+<!-- ``` -->
 
-## Perform a Hypothesis Test
+<!-- ## Perform a Hypothesis Test -->
 
-The `era` and `genre` lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including **both** variables in the **same** model, each of these tests are now conditional on the other variable(s) in the model.
+<!-- The `era` and `genre` lines of the two-way ANOVA table perform similar tests to the separate one-way ANOVA models. However, by including **both** variables in the **same** model, each of these tests are now conditional on the other variable(s) in the model. -->
 
-The `era` line is testing if the mean movie rating is different for at least one era, conditional on the `genre` of the movie. It has the following hypotheses:
+<!-- The `era` line is testing if the mean movie rating is different for at least one era, conditional on the `genre` of the movie. It has the following hypotheses: -->
 
-$H_0$: The mean movie rating is the same for **every** era, given the `genre` of the movie
+<!-- $H_0$: The mean movie rating is the same for **every** era, given the `genre` of the movie -->
 
-$H_A$: The mean movie rating is different for **at least one** era, given the `genre` of the movie
+<!-- $H_A$: The mean movie rating is different for **at least one** era, given the `genre` of the movie -->
 
-With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era.
+<!-- With a p-value of 0.568 (from an F-statistic of 0.680 with 3 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one era. -->
 
-The `genre` line is testing if the mean movie rating is different for at least one era, conditional on the `era` of the movie. It has the following hypotheses:
+<!-- The `genre` line is testing if the mean movie rating is different for at least one era, conditional on the `era` of the movie. It has the following hypotheses: -->
 
-$H_0$: The mean movie rating is the same for **every** genre, given the `era` of the movie
+<!-- $H_0$: The mean movie rating is the same for **every** genre, given the `era` of the movie -->
 
-$H_A$: The mean movie rating is different for **at least one** genre, given the `era` of the movie
+<!-- $H_A$: The mean movie rating is different for **at least one** genre, given the `era` of the movie -->
 
-With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre.
+<!-- With a p-value of 0.078 (from an F-statistic of 1.86 with 1 and 51 degrees of freedom) at a significance level of 0.1, I fail to reject the null hypothesis. Thus, the data have unconvincing evidence that the mean movie rating differs for at least one genre. -->
