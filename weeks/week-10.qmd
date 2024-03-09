@@ -27,28 +27,28 @@ This week we explore one final area of ANOVA, a situation where we have multiple
 
 ## Textbook Reading
 
-To be honest, I didn't have the energy this week to write another chapter on two-way ANOVA. So, instead we will be reading a couple of sections out of another statistics textbook. I've uploaded the PDFs of these sections to OneDrive, so you should be able to read them online or download them. 
+To be honest, I didn't have the energy this week to write another chapter on two-way ANOVA. So, instead we will be reading a couple of sections out of another statistics textbook. I've uploaded the PDFs of these sections to OneDrive, so you should be able to read them online or download them.
 
 ### Section 1 -- [Introduction to Two-Way ANOVA](https://cpslo-my.sharepoint.com/:b:/g/personal/atheobol_calpoly_edu/EdX8FHcfU01KtG0882va4P0BUw20MAg6c8opXMmbJvZfDg?e=pFuVM5)
 
-:::{.callout-tip}
+::: callout-tip
 # Read through "Step 6" on page 222
 :::
 
-:::{.callout-warning}
+::: callout-warning
 # Example 3.1 -- Problematic Undertones
 
-I want to point out that the context of example 3.1 in this section has some major problematic undertones. The example focuses on "the effects of corporate and endorser credibility" on how likely someone is to buy shoes. For no clear reason, the example only considers "female" college students, which implicitly sends two problematic messages, (1) sex and gender are the same, and (2) women are more easily swayed by advertising. 
+I want to point out that the context of example 3.1 in this section has some major problematic undertones. The example focuses on "the effects of corporate and endorser credibility" on how likely someone is to buy shoes. For no clear reason, the example only considers "female" college students, which implicitly sends two problematic messages, (1) sex and gender are the same, and (2) women are more easily swayed by advertising.
 
-In addition, the example uses Roseanne Barr as one of the celebrity endorsers---an actress who has [written deplorable remarks about transgender people](https://www.advocate.com/people/2018/4/17/dont-forget-roseannes-transphobia). 
+In addition, the example uses Roseanne Barr as one of the celebrity endorsers---an actress who has [written deplorable remarks about transgender people](https://www.advocate.com/people/2018/4/17/dont-forget-roseannes-transphobia).
 :::
 
 ### Section 2 -- [Two-Way ANOVA Interaction Models](https://cpslo-my.sharepoint.com/:b:/g/personal/atheobol_calpoly_edu/EbRUJgkN1wdCryI6ZlQjKrEBvo1EkIRxd0ugwbE4Xt8wDg?e=CS5U5X)
 
-:::{.callout-tip}
+::: callout-tip
 # Read through "Follow-up Confidence Intervals" on page 239
 :::
- 
+
 ### Reading Guide -- Due Tuesday by the Start of Class
 
 [Download the Word Document](reading-guide/week10-reading.docx)
@@ -107,8 +107,11 @@ parallel slopes
 <!-- **3. If there is evidence of an interaction when visualizing a two-way ANOVA model we will see...** -->
 
 <!-- -   differences in the centers of the distributions -->
+
 <!-- -   differences in the spreads of the distributions -->
+
 <!-- -   similar profiles of the distributions across the facets -->
+
 <!-- -   differences in the profiles of the distributions across the facets -->
 
 <!-- </br> -->
@@ -142,7 +145,7 @@ parallel slopes
 
 <!-- </br> -->
 
-**5. [True or False] When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is [conditional / independent] on the other explanatory variable(s) in the model.**
+**5. \[True or False\] When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is \[conditional / independent\] on the other explanatory variable(s) in the model.**
 
 </br>
 
@@ -158,12 +161,12 @@ parallel slopes
 
 ## R Tutorial -- Due Thursday by the Start of Class
 
-This week's R tutorial is a short guide stepping you through model selection starting with a two-way ANOVA interaction model. 
+This week's R tutorial is a short guide stepping you through model selection starting with a two-way ANOVA interaction model.
 
-[Click here to access this week's R tutorial](https://rstudio.csm.calpoly.edu/two-way-anova/#section-two-way-anova)
+[Click here to access this week's R tutorial](https://rstudio.csm.calpoly.edu/twa/)
 
 ::: callout-note
 # Submission
 
-Submit a screenshot of the completion page at the end of the tutorial. 
+Submit a screenshot of the completion page at the end of the tutorial.
 :::

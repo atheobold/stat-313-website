@@ -4,10 +4,10 @@ username: atheobold
 account: atheobold
 server: rstudio.csm.calpoly.edu
 hostUrl: https://rstudio.csm.calpoly.edu/__api__
-appId: 540
-bundleId: 1239
-url: https://rstudio.csm.calpoly.edu/content/e243dae4-910d-4864-b8bf-652798558680/
+appId: 542
+bundleId: 1241
+url: https://rstudio.csm.calpoly.edu/content/5ab3cd77-94d4-44c6-b48b-297ca1f65fdc/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: data/coach_salaries.csv|data/cu_csu_coaches.csv|data/salaries_wrangling.R.txt|infer-CI-tutorial_data/data_chunks_index.txt|infer-CI-tutorial_data/data.RData|infer-CI-tutorial.Rmd|week-10_files/figure-html/unnamed-chunk-1-1.png|week-10_files/figure-html/unnamed-chunk-3-1.png|week-10.html|images
+ignoredFiles: data/coach_salaries.csv|data/cu_csu_coaches.csv|data/salaries_wrangling.R.txt|infer-CI-tutorial_data/data_chunks_index.txt|infer-CI-tutorial_data/data.RData|infer-CI-tutorial.Rmd
