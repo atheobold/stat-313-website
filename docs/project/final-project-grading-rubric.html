@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Final Project Rubric</title>
+<title>STAT 313 / 513 - Final Project Rubric</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -271,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -322,10 +322,11 @@ ul.task-list li input[type="checkbox"] {
 <table class="table">
 <colgroup>
 <col style="width: 2%">
+<col style="width: 12%">
 <col style="width: 18%">
-<col style="width: 21%">
-<col style="width: 31%">
 <col style="width: 24%">
+<col style="width: 20%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -333,77 +334,118 @@ ul.task-list li input[type="checkbox"] {
 <th>Introduction</th>
 <th>Methods</th>
 <th>Findings</th>
-<th>Scope of Inference</th>
+<th>Study Limitations</th>
+<th>Conclusions</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Excellent</strong></td>
-<td>Provides robust description of data, collection methods, context.<br>
-<br>
-Well articulated research question(s) correctly phrased for a one-way ANOVA.</td>
-<td><p>Outlines variables considered for analysis, including all relevant regarding their associated units / levels.</p>
-<p>Creates data visualizations requested, axis labels allow visualization to be interpreted independent of additional information.</p>
-<p>Provides robust description of relationships seen in visualization.</p>
-<p>Evaluates conditions of one-way ANOVA model with few if any errors that do not bring into question understanding of the underlying concepts.</p></td>
-<td><p>Correctly fits one-way ANOVA models and obtains ANOVA table.</p>
-<p>Provides well written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with few if any errors that do not bring into question understanding of the underlying concepts.</p>
-<p>Correctly determines if an additive two-way ANOVA model should be fit.</p>
-<p>(If applicable) Provides well written conclusion regarding the hypotheses tested in the two-way ANOVA, with few if any errors that do not bring into question understanding of the underlying concepts.</p>
-<p>Provides well articulated description of how the findings from the statistical model(s) connect to what was seen in visualizations, reaches a conclusion for the research question stated in the <em>Introduction</em>.</p></td>
-<td><p>Clearly articulates sampling methodology used in study, connects methodology to whom the analysis can be inferred onto.</p>
-<p>Clearly articulates the design of the study, connects study design to what relationships can be inferred between the variables.</p>
-<p>Interpretations are all described in the context of the data, not in general terms.</p></td>
+<td><ul>
+<li><p>Provides robust description of data and context.</p></li>
+<li><p>Well articulated research question(s) correctly phrased for a one-way ANOVA.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Outlines variables considered for analysis, describes how variables were collected, including their associated units / levels.</p></li>
+<li><p>Creates data visualizations requested, axis labels allow visualization to be interpreted independent of additional information.</p></li>
+<li><p>Provides robust description of relationships seen in visualization.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Correctly fits one-way ANOVA models and obtains ANOVA table.</p></li>
+<li><p>Provides well written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with few if any errors that do not bring into question understanding of the underlying concepts.</p></li>
+<li><p>Correctly determines if an additive two-way ANOVA model should be fit.</p></li>
+<li><p>(If applicable) Provides well written conclusion regarding the hypotheses tested in the two-way ANOVA, with few if any errors that do not bring into question understanding of the underlying concepts.</p></li>
+<li><p>Evaluates conditions of one-way ANOVA model with few if any errors that do not bring into question understanding of the underlying concepts.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Clearly articulates sampling methodology used in study, connects methodology to whom the analysis can be inferred onto.</p></li>
+<li><p>Clearly articulates the design of the study, connects study design to what relationships can be inferred between the variables.</p></li>
+<li><p>Interpretations are all described in the context of the data, not in general terms.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Provides well articulated description of how the findings from the statistical model(s) connect to what was seen in visualizations.</p></li>
+<li><p>Reaches a conclusion for the research question stated in the <em>Introduction</em>.</p></li>
+</ul></td>
 </tr>
 <tr class="even">
 <td><strong>Satisfactory</strong></td>
-<td><p>Provides satisfactory description of data, but description lacks some details regarding the collection methods, context.</p>
-<p>Research question(s) articulated but contain instances of incorrect language for a one-way ANOVA.</p></td>
-<td><p>Outlines variables considered for analysis, omitting some details regarding their associated units / levels.</p>
-<p>Creates data visualizations requested, some additional information is needed to supplement axis labels.</p>
-<p>Provides satisfactor description of relationships seen in visualization,where some details have been omitted.</p>
-<p>Evaluates conditions of one-way ANOVA model with some errors that bring into question understanding of underlying concepts.</p></td>
-<td><p>Correctly fits one-way ANOVA models and obtains ANOVA table.</p>
-<p>Provides well written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with some errors that bring into question understanding of underlying concepts.</p>
-<p>Correctly determines if an additive two-way ANOVA model should be fit.</p>
-<p>(If applicable) Provides well written conclusion regarding the hypotheses tested in the two-way ANOVA, with some errors that bring into question understanding of underlying concepts.</p>
-<p>Description of connection between model findings and visualizations are mostly clear, but connections to the research question stated in the <em>Introduction</em> are at times unclear.</p></td>
-<td><p>Describes sampling methodology used in study and states whom the analysis can be inferred onto, but connections between methods and inference are at times unclear.</p>
-<p>Statement regarding what relationships can be inferred between the variables is mostly clear, with connections to the design of the study.</p>
-<p>Interpretations are all described in the context of the study.</p></td>
+<td><ul>
+<li><p>Provides satisfactory description of data, but description lacks some details regarding the context.</p></li>
+<li><p>Research question(s) articulated but contain instances of incorrect language for a one-way ANOVA.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Outlines variables considered for analysis, omitting some details regarding how the variables were collected and / or their associated units / levels.</p></li>
+<li><p>Creates data visualizations requested, some additional information is needed to supplement axis labels.</p></li>
+<li><p>Provides satisfactory description of relationships seen in visualization, where some details have been omitted.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Correctly fits one-way ANOVA models and obtains ANOVA table.</p></li>
+<li><p>Provides well written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with some errors that bring into question understanding of underlying concepts.</p></li>
+<li><p>Correctly determines if an additive two-way ANOVA model should be fit.</p></li>
+<li><p>(If applicable) Provides well written conclusion regarding the hypotheses tested in the two-way ANOVA, with some errors that bring into question understanding of underlying concepts.</p></li>
+<li><p>Evaluates conditions of one-way ANOVA model with some errors that bring into question understanding of underlying concepts.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Describes sampling methodology used in study and states whom the analysis can be inferred onto, but connections between methods and inference are at times unclear.</p></li>
+<li><p>Statement regarding what relationships can be inferred between the variables is mostly clear, with connections to the design of the study.</p></li>
+<li><p>Interpretations are all described in the context of the study.</p></li>
+</ul></td>
+<td><ul>
+<li>Description of connection between model findings and visualizations are mostly clear, but connections to the research question stated in the <em>Introduction</em> are at times unclear.</li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td><strong>Progressing</strong></td>
-<td><p>Provides poor description of data, where description lacks multiple details regarding the collection methods, context.</p>
-<p>Research question(s) poorly articulated, with little to no general connection to a one-way ANOVA.</p></td>
-<td><p>Outlines variables considered for analysis, with very few details regarding their associated units / levels.</p>
-<p>Creates data visualizations requested, axis labels require additional information to understand the context.</p>
-<p>Provides poor description of relationships seen in visualization.</p>
-<p>Evaluates conditions of one-way ANOVA model with many errors that bring into question understanding of underlying concepts.</p></td>
-<td><p>Does not correctly fit one-way ANOVA models and obtains ANOVA table.</p>
-<p>Provides written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with many errors that bring into question understanding of underlying concepts.</p>
-<p>Does not correctly determine if an additive two-way ANOVA model should be fit.</p>
-<p>(If applicable) Provides written conclusion regarding the hypotheses tested in the both two-way ANOVA, with many errors that bring into question understanding of underlying concepts.</p>
-<p>Description of connection between model findings and visualization is unclear with little to no connection to the research question stated in the <em>Introduction</em>.</p></td>
-<td><p>Statement regarding who the analysis can be inferred to is mostly unclear, with few if any connections to the sampling methodology used.</p>
-<p>Statement regarding what relationships can be inferred between the variables is mostly unclear, with few if any connections to the design of the study.</p>
-<p>Interpretations are done in general statements, not in the context of the study.</p></td>
+<td><ul>
+<li><p>Provides poor description of data, where description lacks multiple details regarding the context.</p></li>
+<li><p>Research question(s) poorly articulated, with little to no general connection to a one-way ANOVA.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Outlines variables considered for analysis, with very few details regarding how they were collected and / or their associated units / levels.</p></li>
+<li><p>Creates data visualizations requested, axis labels require additional information to understand the context.</p></li>
+<li><p>Provides poor description of relationships seen in visualization.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Does not correctly fit one-way ANOVA models and obtains ANOVA table.</p></li>
+<li><p>Provides written conclusion regarding the hypotheses tested in the both one-way ANOVAs, with many errors that bring into question understanding of underlying concepts.</p></li>
+<li><p>Does not correctly determine if an additive two-way ANOVA model should be fit.</p></li>
+<li><p>(If applicable) Provides written conclusion regarding the hypotheses tested in the both two-way ANOVA, with many errors that bring into question understanding of underlying concepts.</p></li>
+<li><p>Evaluates conditions of one-way ANOVA model with many errors that bring into question understanding of underlying concepts.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Statement regarding who the analysis can be inferred to is mostly unclear, with few if any connections to the sampling methodology used.</p></li>
+<li><p>Statement regarding what relationships can be inferred between the variables is mostly unclear, with few if any connections to the design of the study.</p></li>
+<li><p>Interpretations are done in general statements, not in the context of the study.</p></li>
+</ul></td>
+<td><ul>
+<li>Description of connection between model findings and visualization is unclear with little to no connection to the research question stated in the <em>Introduction</em>.</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td><strong>No Credit</strong></td>
-<td><p>Provides little to no description of data.</p>
-<p>Research question(s) not articulated.</p></td>
-<td><p>Outlines variables considered for analysis, with no details regarding their associated units / levels.</p>
-<p>Creates data visualizations requested, axis labels are not changed.</p>
-<p>Provides little to no description of relationships seen in visualization.</p>
-<p>Evaluation of model conditions bring into question any understanding of the underlying concepts.</p></td>
-<td><p>Does not fit one-way ANOVA models and obtains ANOVA table.</p>
-<p>Interpretations of one-way ANOVA contain multiple errors that demonstrate little to no understanding of the underlying concepts.</p>
-<p>Does not correctly determine if an additive two-way ANOVA model should be fit.</p>
-<p>Little to no description of connection between models fit and visualization, no connection to the research question stated in the <em>Introduction</em>.</p></td>
-<td><p>Statement regarding who the analysis can be inferred to is mostly unclear, with no connections to the sampling methodology used.</p>
-<p>Statement regarding what relationships can be inferred between the variables is mostly unclear, with no connections to the design of the study.</p>
-<p>Interpretations are done in general statements, not in the context of the study.</p></td>
+<td><ul>
+<li><p>Provides little to no description of data.</p></li>
+<li><p>Research question(s) not articulated.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Outlines variables considered for analysis, with no details regarding their associated units / levels.</p></li>
+<li><p>Creates data visualizations requested, axis labels are not changed.</p></li>
+<li><p>Provides little to no description of relationships seen in visualization.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Does not fit one-way ANOVA models and obtains ANOVA table.</p></li>
+<li><p>Interpretations of one-way ANOVA contain multiple errors that demonstrate little to no understanding of the underlying concepts.</p></li>
+<li><p>Does not correctly determine if an additive two-way ANOVA model should be fit.</p></li>
+<li><p>Evaluation of model conditions bring into question any understanding of the underlying concepts.</p></li>
+</ul></td>
+<td><ul>
+<li><p>Statement regarding who the analysis can be inferred to is mostly unclear, with no connections to the sampling methodology used.</p></li>
+<li><p>Statement regarding what relationships can be inferred between the variables is mostly unclear, with no connections to the design of the study.</p></li>
+<li><p>Interpretations are done in general statements, not in the context of the study.</p></li>
+</ul></td>
+<td><ul>
+<li>Little to no description of connection between models fit and visualization, no connection to the research question stated in the <em>Introduction</em>.</li>
+</ul></td>
 </tr>
 </tbody>
 </table>
@@ -435,9 +477,8 @@ Presentation is completed</td>
 Presentation is completed</td>
 <td>At most two sections are marked “Progressing” the remainder are marked “Satisfactory”<br>
 <br>
-<br>
 Presentation is not completed</td>
-<td>At most one section is marked “Satisfactory” or “Excellent” the remainder are marked “Incomplete”<br>
+<td>At most one section is marked “Satisfactory” or “Excellent” the remainder are marked “Progressing”<br>
 <br>
 Presentation is not completed</td>
 </tr>
