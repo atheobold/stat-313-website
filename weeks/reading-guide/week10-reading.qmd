@@ -1,0 +1,45 @@
+---
+title: "Week 10 -- Two-Way ANOVA"
+format: docx 
+editor: visual
+---
+
+# Section 1 -- Introduction to Two-Way ANOVA
+
+### Example 3.1
+
+1. How many variables are the researchers studying? What are the variables? Are these variables categorical or quantitative? If categorical, what levels does each variable have?
+
+2. What limitations do you see in Study Design #2 (Figure 3.1.2)?
+
+3. What is a "full-factorial design"? 
+
+4. What is a "balanced design"? 
+
+5. Why should there be equal numbers of participants in each group (as seen in Figure 3.1.3)?
+
+6. For testing these four treatment groups, what are the null and alternative hypotheses?
+
+7. Why should the authors use a two-way ANOVA model for these data instead of two one-way ANOVA models?
+
+# Section 2 -- Two-Way ANOVA Interaction Models
+
+### Example 3.2
+
+1. What is the difference between a "blocking variable" and an "experimental factor"?
+
+2. How much variation was there in the peroxide remaining in the pistachios?
+
+3. How much variation in the peroxide remaining was explained by the model?
+
+4. What pattern do you see in the predicted treatment values in Figure 3.2.4?
+
+5. What pattern do you see in the observed (actual) treatment values in Figure 3.2.4?
+
+6. What is the definition of a "statistical interaction"? 
+
+7. Where have you seen statistical interactions before?
+
+8. What are the null and alternative hypotheses for testing for an interaction?
+
+9. How would you use cards to simulate what peroxide value a pistachio would have if there was no interaction (if the null was true)?

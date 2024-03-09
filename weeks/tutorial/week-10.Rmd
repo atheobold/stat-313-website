@@ -127,8 +127,7 @@ knitr::include_graphics(
   )
 ```
 
-Looking at the profiles above, removed from the context of the plot, does it seem that these profiles very similar? Or does it seem that these are different pictures? I didn't think so, since it seems like in all three pictures there is about the same overlap between the three colors. However, we can use a two-way ANOVA interaction model
-to see if my intuition is right.
+Looking at the profiles above, removed from the context of the plot, does it seem that these profiles very similar? Or does it seem that these are different pictures? I didn't think so, since it seems like in all three pictures there is about the same overlap between the three colors. However, we can use a two-way ANOVA interaction model to see if my intuition is right.
 
 ## Conditions of a Two-Way ANOVA Model
 
@@ -266,8 +265,7 @@ aov(body_mass_g ~ species + year_cat, data = penguins) %>%
 question("Based on the ANOVA table above, what would you conclude for the second hypothesis test?",
   correct = "Correct!",
   allow_retry = TRUE,
-  answer("Fail to reject H0, the mean body masss of the years are the same, after accouting for uear of capture.", message = "Careful! Look at the p-value for the `species` line. Is is small? What does that say about whether it seems reasonable to say that the mean body masss are the same for every species?"),
-  
+  answer("Fail to reject H0, the mean body masss of the species are the same, after accouting for year of capture.", message = "Careful! Look at the p-value for the `species` line. Is is small? What does that say about whether it seems reasonable to say that the mean body masss are the same for every species?"),
   answer("There is strong evidence that at least one species has a different mean body mass, after accouting for year of capture.", correct = TRUE), 
   answer("There is strong evidence that each species has a different mean body mass, after accouting for year of capture.", message = "Careful! What is the null hypothesis for an ANOVA? What is the opposite of saying 'everything is equal'?"), 
 answer("There is strong evidence that at least one species has a different mean body mass.", message = "Careful! What is this hypothesis test conditional on?") 
@@ -287,4 +285,4 @@ question("What should your next step be?",
 )
 ```
 
-**Submit a screenshot of the final page of this tutorial to *both* the Week 10 Reading Guide *and* R tutorial assignments!**
+**Submit a screenshot of the final page of this tutorial to the Week 10 R tutorial assignment!**

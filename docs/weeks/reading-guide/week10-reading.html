@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Week 10: Two-Way ANOVA</title>
+<title>STAT 313 / 513 - Week 10 – Two-Way ANOVA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,21 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../weeks/week-9.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-10.html">Week 10</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 10 – Two-Way ANOVA</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -93,8 +92,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -120,31 +119,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -161,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
@@ -178,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -195,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Project Description</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final Project Description</span></a>
   </div>
 </li>
@@ -209,76 +208,76 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-7.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-8.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../weeks/week-10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
@@ -290,30 +289,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare"><span class="header-section-number">1</span> Prepare</a>
-  <ul class="collapse">
-  <li><a href="#textbook-reading" id="toc-textbook-reading" class="nav-link" data-scroll-target="#textbook-reading"><span class="header-section-number">1.1</span> Textbook Reading</a>
-  <ul class="collapse">
-  <li><a href="#section-1-introduction-to-two-way-anova" id="toc-section-1-introduction-to-two-way-anova" class="nav-link" data-scroll-target="#section-1-introduction-to-two-way-anova">Section 1 – Introduction to Two-Way ANOVA</a></li>
-  <li><a href="#section-2-two-way-anova-interaction-models" id="toc-section-2-two-way-anova-interaction-models" class="nav-link" data-scroll-target="#section-2-two-way-anova-interaction-models">Section 2 – Two-Way ANOVA Interaction Models</a></li>
-  <li><a href="#reading-guide-due-tuesday-by-the-start-of-class" id="toc-reading-guide-due-tuesday-by-the-start-of-class" class="nav-link" data-scroll-target="#reading-guide-due-tuesday-by-the-start-of-class">Reading Guide – Due Tuesday by the Start of Class</a></li>
-  </ul></li>
-  <li><a href="#concept-quiz-due-tuesday-by-noon" id="toc-concept-quiz-due-tuesday-by-noon" class="nav-link" data-scroll-target="#concept-quiz-due-tuesday-by-noon"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by noon</a></li>
-  <li><a href="#r-tutorial-due-thursday-by-the-start-of-class" id="toc-r-tutorial-due-thursday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Thursday by the Start of Class</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week10-reading.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-10.html">Week 10</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 10: Two-Way ANOVA</h1>
+<h1 class="title">Week 10 – Two-Way ANOVA</h1>
 </div>
 
 
@@ -330,156 +313,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome!</p>
-<p>This week we explore one final area of ANOVA, a situation where we have multiple explanatory variables. This is called a <strong>two-way ANOVA</strong>. A two-way ANOVA extends the one-way ANOVA to situations with two categorical explanatory variables. This new methods allows researchers to simultaneously study two variables that might explain variability in the responses and explore whether the impacts of one explanatory variable change depending on the level of the other explanatory variable.</p>
-<section id="prepare" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Prepare</h1>
-<section id="textbook-reading" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="textbook-reading"><span class="header-section-number">1.1</span> Textbook Reading</h2>
-<p>To be honest, I didn’t have the energy this week to write another chapter on two-way ANOVA. So, instead we will be reading a couple of sections out of another statistics textbook. I’ve uploaded the PDFs of these sections to OneDrive, so you should be able to read them online or download them.</p>
-<section id="section-1-introduction-to-two-way-anova" class="level3">
-<h3 class="anchored" data-anchor-id="section-1-introduction-to-two-way-anova">Section 1 – <a href="https://cpslo-my.sharepoint.com/:b:/g/personal/atheobol_calpoly_edu/EdX8FHcfU01KtG0882va4P0BUw20MAg6c8opXMmbJvZfDg?e=pFuVM5">Introduction to Two-Way ANOVA</a></h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read through “Step 6” on page 222
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example 3.1 – Problematic Undertones
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I want to point out that the context of example 3.1 in this section has some major problematic undertones. The example focuses on “the effects of corporate and endorser credibility” on how likely someone is to buy shoes. For no clear reason, the example only considers “female” college students, which implicitly sends two problematic messages, (1) sex and gender are the same, and (2) women are more easily swayed by advertising.</p>
-<p>In addition, the example uses Roseanne Barr as one of the celebrity endorsers—an actress who has <a href="https://www.advocate.com/people/2018/4/17/dont-forget-roseannes-transphobia">written deplorable remarks about transgender people</a>.</p>
-</div>
-</div>
-</section>
-<section id="section-2-two-way-anova-interaction-models" class="level3">
-<h3 class="anchored" data-anchor-id="section-2-two-way-anova-interaction-models">Section 2 – <a href="https://cpslo-my.sharepoint.com/:b:/g/personal/atheobol_calpoly_edu/EbRUJgkN1wdCryI6ZlQjKrEBvo1EkIRxd0ugwbE4Xt8wDg?e=CS5U5X">Two-Way ANOVA Interaction Models</a></h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read through “Follow-up Confidence Intervals” on page 239
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</section>
-<section id="reading-guide-due-tuesday-by-the-start-of-class" class="level3">
-<h3 class="anchored" data-anchor-id="reading-guide-due-tuesday-by-the-start-of-class">Reading Guide – Due Tuesday by the Start of Class</h3>
-<p><a href="reading-guide/week10-reading.docx">Download the Word Document</a></p>
-</section>
-</section>
-<section id="concept-quiz-due-tuesday-by-noon" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="concept-quiz-due-tuesday-by-noon"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by noon</h2>
-<p><strong>1. Match each two-way ANOVA model to its correct description.</strong></p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><br></p>
-<p><strong>additive model</strong></p>
-<p><br> <br> <br></p>
-<p><strong>interaction model</strong></p>
-</div><div class="column" style="width:60%;">
-<p>The relationship between one factor and the response changes depending on the level of another factor.</p>
-<p><br></p>
-<p>The relationship between one factor and the response remains the same across all levels of another factor.</p>
-<p><br></p>
-<p>There is a significant relationship between each factor and the response.</p>
-</div>
-</div>
-<p><br></p>
-<p><strong>2. Match each two-way ANOVA model to its multiple linear regression counterpart.</strong></p>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><strong>additive model</strong></p>
-<p><strong>interaction model</strong></p>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:45%;">
-<p>different slopes</p>
-<p>parallel slopes</p>
-</div>
-</div>
-<p><br></p>
-<!-- **3. If there is evidence of an interaction when visualizing a two-way ANOVA model we will see...** -->
-<!-- -   differences in the centers of the distributions -->
-<!-- -   differences in the spreads of the distributions -->
-<!-- -   similar profiles of the distributions across the facets -->
-<!-- -   differences in the profiles of the distributions across the facets -->
-<!-- </br> -->
-<p><strong>3. Which of the following are conditions of a two-way ANOVA model?</strong> (Select all that apply)</p>
-<ul>
-<li>independence of observations between the groups</li>
-<li>independence of observations within each group</li>
-<li>independence of variables</li>
-<li>normally distributed responses within each group</li>
-<li>normally distributed residuals</li>
-<li>linear relationship between the explanatory and response variables</li>
-<li>equal variance of residuals</li>
-<li>equal variance of responses within each group</li>
-</ul>
-<p><br></p>
-<p><strong>4. Which of the following is important to consider when assessing independence?</strong> (Select all that apply)</p>
-<ul>
-<li><p>If the same observational unit (e.g., person, penguin, tree) could be sampled multiple times</p></li>
-<li><p>If observations could be biologically related (e.g., parents, siblings, etc.)</p></li>
-<li><p>If observations could be spatially related (e.g., countries that border each other)</p></li>
-<li><p>If there is a relationship between the observations and the response variable</p></li>
-</ul>
-<p><br></p>
-<!-- **6. An \[additive / interaction\] model is fit using a `*` symbol between the explanatory variables.** -->
-<!-- </br> -->
-<p><strong>5. [True or False] When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is [conditional / independent] on the other explanatory variable(s) in the model.</strong></p>
-<p><br></p>
-<p><strong>6. If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?</strong></p>
-<ul>
-<li>separate one-way ANOVA models</li>
-<li>a one-way ANOVA model containing the variable with the smallest p-value (from the additive two-way ANOVA)</li>
-<li>a mean only model</li>
-<li>an interaction two-way ANOVA model</li>
-<li>a simple linear regression</li>
-</ul>
-<p><br></p>
-</section>
-<section id="r-tutorial-due-thursday-by-the-start-of-class" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Thursday by the Start of Class</h2>
-<p>This week’s R tutorial is a short guide stepping you through model selection starting with a two-way ANOVA interaction model.</p>
-<p><a href="https://rstudio.csm.calpoly.edu/two-way-anova/#section-two-way-anova">Click here to access this week’s R tutorial</a></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Submission
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Submit a screenshot of the completion page at the end of the tutorial.</p>
-</div>
-</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,15 +699,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-9.html" class="pagination-link  aria-label=" week="" 9"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 9</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -881,7 +707,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
