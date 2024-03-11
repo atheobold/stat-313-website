@@ -4,7 +4,9 @@ title-slide-attributes:
     data-background-image: images/sad_cat.jpeg
     data-background-size: cover
     data-background-opacity: "0.5"
-format: revealjs
+format: 
+  revealjs:
+    theme: style.scss
 editor: visual
 ---
 
