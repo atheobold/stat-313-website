@@ -4565,91 +4565,91 @@
   {
     "objectID": "slides/week10-day1.html#youve-seen-a-one-way-anova-model-before",
     "href": "slides/week10-day1.html#youve-seen-a-one-way-anova-model-before",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "You’ve seen a one-way ANOVA model before!",
     "text": "You’ve seen a one-way ANOVA model before!\n\ntrout_lm &lt;- lm(weight_g ~ unittype, data = trout)\n\nget_regression_table(trout_lm)\n\n# A tibble: 7 × 7\n  term         estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept       8.07      0.113    71.6     0         7.85    8.29 \n2 unittype: I     1.74      1.98      0.878   0.38     -2.14    5.62 \n3 unittype: IP   -6.68      1        -6.68    0        -8.64   -4.72 \n4 unittype: P     3.79      0.208    18.2     0         3.38    4.20 \n5 unittype: R    -0.991     0.537    -1.85    0.065    -2.04    0.061\n6 unittype: S    -3.73      3.58     -1.04    0.298   -10.8     3.29 \n7 unittype: SC   -3.06      0.266   -11.5     0        -3.58   -2.54 \n\n\n\n\n\nWhat do the estimates from each of these lines (e.g., unittype:IP) represent?"
   },
   {
     "objectID": "slides/week10-day1.html#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight",
     "href": "slides/week10-day1.html#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "One-Way ANOVA – Testing if at least one chanel type has a different mean weight",
-    "text": "One-Way ANOVA – Testing if at least one chanel type has a different mean weight\n\naov(weight_g ~ unittype, data = trout) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df    sumsq meansq statistic    p.value\n  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 unittype      6   58579. 9763.       109.  5.65e-134\n2 Residuals 11977 1075510.   89.8       NA  NA        \n\n\n. . .\n\n\nWhat would you decide?\n\nWhat conditions need to be checked to know if this p-value is reliable?"
+    "text": "One-Way ANOVA – Testing if at least one chanel type has a different mean weight\n\naov(weight_g ~ unittype, data = trout) %&gt;% \n  tidy()\n\n# A tibble: 2 × 6\n  term         df    sumsq meansq statistic    p.value\n  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 unittype      6   58579. 9763.       109.  5.65e-134\n2 Residuals 11977 1075510.   89.8       NA  NA        \n\n\n\n\n\nWhat would you decide?\n\nWhat conditions need to be checked to know if this p-value is reliable?"
   },
   {
     "objectID": "slides/week10-day1.html#checking-conditions",
     "href": "slides/week10-day1.html#checking-conditions",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Checking Conditions",
-    "text": "Checking Conditions\n\n\nPicking joint bandwidth of 1.69\n\n\nWarning: Removed 7839 rows containing non-finite values\n(`stat_density_ridges()`).\n\n\n\n\n\n\n\n\n\nHow do you feel about the normality condition?\n. . .\nHow do you feel about the equal variance condition?"
+    "text": "Checking Conditions\n\nHow do you feel about the normality condition?\n\nHow do you feel about the equal variance condition?"
   },
   {
     "objectID": "slides/week10-day1.html#comparing-variances",
     "href": "slides/week10-day1.html#comparing-variances",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Comparing Variances",
-    "text": "Comparing Variances\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n. . .\n\n\nWhat do you think?"
+    "text": "Comparing Variances\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think?"
   },
   {
     "objectID": "slides/week10-day1.html#section",
     "href": "slides/week10-day1.html#section",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "",
     "text": "Two-way ANOVA\n\n\n\nGoal:\n\nAssess if multiple categorical variables have a relationship with the response."
   },
   {
     "objectID": "slides/week10-day1.html#section-1",
     "href": "slides/week10-day1.html#section-1",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "",
     "text": "Modeling Options\n\n\n\n\nAdditive Model\n\n\nAssess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.\n\n\n\nInteraction Model\n\n\nAssess if the relationship between one categorical explanatory variable and the response differs based on the values of another categorical variable."
   },
   {
     "objectID": "slides/week10-day1.html#section-2",
     "href": "slides/week10-day1.html#section-2",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "",
-    "text": "What are we looking for?\n\n\n\nPicking joint bandwidth of 0.838"
+    "text": "What are we looking for?"
   },
   {
     "objectID": "slides/week10-day1.html#another-way-to-think-about-it",
     "href": "slides/week10-day1.html#another-way-to-think-about-it",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Another way to think about it…",
-    "text": "Another way to think about it…\n\n\nPicking joint bandwidth of 0.789\n\n\nPicking joint bandwidth of 0.887"
+    "text": "Another way to think about it…"
   },
   {
     "objectID": "slides/week10-day1.html#hypothesis-test-steps",
     "href": "slides/week10-day1.html#hypothesis-test-steps",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Hypothesis Test Steps",
     "text": "Hypothesis Test Steps\n\n\n\nStep 1: Fit a one-way ANOVA model for each categorical variable\n\n\n\n\n\n\nStep 2: Decide if each explanatory variable has a meaningful relationship with the response variable\n\n\n\n\nIf yes, then go to step 3!\nIf no, then report which variable (if any) has the strongest relationship with the response."
   },
   {
     "objectID": "slides/week10-day1.html#additive-two-way-anova",
     "href": "slides/week10-day1.html#additive-two-way-anova",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Additive Two-Way ANOVA",
-    "text": "Additive Two-Way ANOVA\n\n\naov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\nWhy did I use a + when fitting the model?\n. . .\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nera\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n\n\ngenre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n\n\nResiduals\n51\n114.614663\n2.247346\nNA\nNA\n\n\n\n\n\n\n\n\nWhat is the era line testing?\n\nWhat would you decide?"
+    "text": "Additive Two-Way ANOVA\n\n\naov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\nWhy did I use a + when fitting the model?\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nera\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n\n\ngenre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n\n\nResiduals\n51\n114.614663\n2.247346\nNA\nNA\n\n\n\n\n\n\n\n\nWhat is the era line testing?\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#one-way-anova-research-question",
     "href": "slides/week10-day1.html#one-way-anova-research-question",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "One-way ANOVA Research Question",
-    "text": "One-way ANOVA Research Question\n\n90-seconds\n \nHow would you phrase a research question for the one-way ANOVA model we’ve been investigating?\nExplanatory Variable: genre\nResponse Variable: rating"
+    "text": "One-way ANOVA Research Question\n90-seconds\n \nHow would you phrase a research question for the one-way ANOVA model we’ve been investigating?\nExplanatory Variable: genre\nResponse Variable: rating"
   },
   {
     "objectID": "slides/week10-day1.html#two-way-anova-research-question",
     "href": "slides/week10-day1.html#two-way-anova-research-question",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Two-way ANOVA Research Question",
-    "text": "Two-way ANOVA Research Question\n\n90-seconds\n \nHow would you phrase a research question for the two-way ANOVA model we’ve been investigating?\nExplanatory Variables: genre and era\nResponse Variable: rating"
+    "text": "Two-way ANOVA Research Question\n90-seconds\n \nHow would you phrase a research question for the two-way ANOVA model we’ve been investigating?\nExplanatory Variables: genre and era\nResponse Variable: rating"
   },
   {
     "objectID": "slides/week10-day1.html#what-about-two-way-anova-interaction-models",
     "href": "slides/week10-day1.html#what-about-two-way-anova-interaction-models",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "What about two-way ANOVA interaction models?",
     "text": "What about two-way ANOVA interaction models?\n\n\nAn interaction model is similar to a different slopes multiple linear regression\nIt assesses if the relationship between two variables differs when a third variable is considered\nDue to time, we we are not fitting interaction models for the Final Project"
   },
@@ -8061,35 +8061,35 @@
   {
     "objectID": "slides/week10-day1.html#total-variation-in-a-one-way-anova",
     "href": "slides/week10-day1.html#total-variation-in-a-one-way-anova",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Total Variation in a One-way ANOVA",
-    "text": "Total Variation in a One-way ANOVA\n\n\nage_lm &lt;- lm(score ~ age_cat, data = evals_small) \n\nage_anova &lt;- anova(age_lm) %&gt;% \n  tidy() \n\nage_anova_total &lt;- tibble(term = \"Total\", \n                          df = nrow(evals_small) - 1, \n                          sumsq = sum(age_anova$sumsq)\n                          )\nage_anova_full &lt;- age_anova %&gt;% \n  bind_rows(age_anova_total) \n\nage_anova_full %&gt;% \n  gt::gt()\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nage_cat\n3\n0.8903343\n0.2967781\n0.9454526\n0.4221873\n\n\nResiduals\n90\n28.2510487\n0.3139005\nNA\nNA\n\n\nTotal\n93\n29.1413830\nNA\nNA\nNA\n\n\n\n\n\n\n\n\n. . .\n\nThe age_cat line in the ANOVA table quantifies how much of the total variation in minimum evaluation scores can be explained based on the age group of a faculty member.\n\nThe Total row in an ANOVA table tells us the total variation in evaluation scores – how far each faculty member’s minimum evaluation score was from the mean of all the evaluation scores"
+    "text": "Total Variation in a One-way ANOVA\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nage_cat\n3\n0.8903343\n0.2967781\n0.9454526\n0.4221873\n\n\nResiduals\n90\n28.2510487\n0.3139005\nNA\nNA\n\n\nTotal\n93\n29.1413830\nNA\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nThe age_cat line in the ANOVA table quantifies how much of the total variation in minimum evaluation scores can be explained based on the age group of a faculty member.\n\nThe Total row in an ANOVA table tells us the total variation in evaluation scores – how far each faculty member’s minimum evaluation score was from the mean of all the evaluation scores"
   },
   {
     "objectID": "slides/week10-day1.html#connection-to-r2",
     "href": "slides/week10-day1.html#connection-to-r2",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Connection to \\(R^2\\)",
-    "text": "Connection to \\(R^2\\)\nBased on the ANOVA table, there is 29.1414 total variation in minimum evaluation scores, of which age_cat is able to explain 0.8903.\n. . .\nProportionally, that means age_cat can explain 3.055% in the total variation in minimum evaluation scores.\n. . .\nDoes that sound familiar?\n. . ."
+    "text": "Connection to \\(R^2\\)\nBased on the ANOVA table, there is 29.1414 total variation in minimum evaluation scores, of which age_cat is able to explain 0.8903.\n\nProportionally, that means age_cat can explain 3.055% in the total variation in minimum evaluation scores.\n\n\nDoes that sound familiar?"
   },
   {
     "objectID": "slides/week10-day1.html#connecting-with-multiple-linear-regression-multiple-explanatory-variables",
     "href": "slides/week10-day1.html#connecting-with-multiple-linear-regression-multiple-explanatory-variables",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Connecting with Multiple Linear Regression – Multiple Explanatory Variables",
-    "text": "Connecting with Multiple Linear Regression – Multiple Explanatory Variables\n\ncrab_lm &lt;- lm(size ~ latitude + water_temp, data = pie_crab)\n\ncrab_anova &lt;- anova(crab_lm) %&gt;% \n  tidy()\n\ncrab_anova_total &lt;- tibble(term = \"Total\", \n                          df = nrow(pie_crab) - 1, \n                          sumsq = sum(crab_anova$sumsq)\n                          )\ncrab_anova_full &lt;- crab_anova %&gt;% \n  bind_rows(crab_anova_total) \n\ncrab_anova_full %&gt;% \n  gt::gt()\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nlatitude\n1\n1672.0001\n1672.000116\n212.508200\n1.031156e-38\n\n\nwater_temp\n1\n66.1713\n66.171297\n8.410253\n3.942831e-03\n\n\nResiduals\n389\n3060.6256\n7.867932\nNA\nNA\n\n\nTotal\n391\n4798.7970\nNA\nNA\nNA"
+    "text": "Connecting with Multiple Linear Regression – Multiple Explanatory Variables\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nlatitude\n1\n1672.0001\n1672.000116\n212.508200\n1.031156e-38\n\n\nwater_temp\n1\n66.1713\n66.171297\n8.410253\n3.942831e-03\n\n\nResiduals\n389\n3060.6256\n7.867932\nNA\nNA\n\n\nTotal\n391\n4798.7970\nNA\nNA\nNA"
   },
   {
     "objectID": "slides/week10-day1.html#connecting-with-multiple-linear-regression-different-slopes",
     "href": "slides/week10-day1.html#connecting-with-multiple-linear-regression-different-slopes",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Connecting with Multiple Linear Regression – Different Slopes",
-    "text": "Connecting with Multiple Linear Regression – Different Slopes\n\nmaple_lm &lt;- lm(stem_dry_mass ~ stem_length * watershed, data = hbr_maples)\n\nmaple_anova &lt;- anova(maple_lm) %&gt;% \n  tidy()\n\nmaple_anova_total &lt;- tibble(term = \"Total\", \n                          df = nrow(hbr_maples) - 1, \n                          sumsq = sum(maple_anova$sumsq)\n                          )\nmaple_anova_full &lt;- maple_anova %&gt;% \n  bind_rows(maple_anova_total) \n\nmaple_anova_full %&gt;% \n  gt::gt()\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nstem_length\n1\n0.085755323\n0.0857553230\n134.852053\n1.209164e-26\n\n\nwatershed\n1\n0.006172382\n0.0061723817\n9.706200\n1.985998e-03\n\n\nstem_length:watershed\n1\n0.002626976\n0.0026269761\n4.130975\n4.284899e-02\n\n\nResiduals\n355\n0.225752142\n0.0006359215\nNA\nNA\n\n\nTotal\n358\n0.320306822\nNA\nNA\nNA"
+    "text": "Connecting with Multiple Linear Regression – Different Slopes\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nstem_length\n1\n0.085755323\n0.0857553230\n134.852053\n1.209164e-26\n\n\nwatershed\n1\n0.006172382\n0.0061723817\n9.706200\n1.985998e-03\n\n\nstem_length:watershed\n1\n0.002626976\n0.0026269761\n4.130975\n4.284899e-02\n\n\nResiduals\n355\n0.225752142\n0.0006359215\nNA\nNA\n\n\nTotal\n358\n0.320306822\nNA\nNA\nNA"
   },
   {
     "objectID": "slides/week10-day1.html#common-mistakes",
     "href": "slides/week10-day1.html#common-mistakes",
-    "title": "One-Way ANOVA Review",
+    "title": "Two-way ANOVA",
     "section": "Common Mistakes",
     "text": "Common Mistakes"
   },
@@ -8264,5 +8264,19 @@
       "Weekly materials",
       "Week 10"
     ]
+  },
+  {
+    "objectID": "slides/week10-day2.html#do-you-have-really-skewed-data",
+    "href": "slides/week10-day2.html#do-you-have-really-skewed-data",
+    "title": "STAT 313 Last Day",
+    "section": "Do you have really skewed data?",
+    "text": "Do you have really skewed data?"
+  },
+  {
+    "objectID": "slides/week10-day2.html#try-using-a-log-transformation",
+    "href": "slides/week10-day2.html#try-using-a-log-transformation",
+    "title": "STAT 313 Last Day",
+    "section": "Try using a log transformation!",
+    "text": "Try using a log transformation!\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think?"
   }
 ]

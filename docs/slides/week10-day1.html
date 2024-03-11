@@ -1,1504 +1,424 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>STAT 313 / 513 - One-Way ANOVA Review</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<html lang="en"><head>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <title>STAT 313 / 513 - Two-way ANOVA</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
   }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-sidebar docked">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Two-way ANOVA</h1>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">One-Way ANOVA Review</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
-    <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
-</div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Support</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching team</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Computing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Access</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">R Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course_resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Projects</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Midterm Project Description</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Final Project Description</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 0</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#youve-seen-a-one-way-anova-model-before" id="toc-youve-seen-a-one-way-anova-model-before" class="nav-link active" data-scroll-target="#youve-seen-a-one-way-anova-model-before">You’ve seen a one-way ANOVA model before!</a></li>
-  <li><a href="#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight" id="toc-one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight" class="nav-link" data-scroll-target="#one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight">One-Way ANOVA – Testing if at least one chanel type has a different mean weight</a></li>
-  <li><a href="#checking-conditions" id="toc-checking-conditions" class="nav-link" data-scroll-target="#checking-conditions">Checking Conditions</a></li>
-  <li><a href="#comparing-variances" id="toc-comparing-variances" class="nav-link" data-scroll-target="#comparing-variances">Comparing Variances</a></li>
-  <li><a href="#two-way-anova-models" id="toc-two-way-anova-models" class="nav-link" data-scroll-target="#two-way-anova-models">Two-Way ANOVA Models</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
-  <li><a href="#another-way-to-think-about-it" id="toc-another-way-to-think-about-it" class="nav-link" data-scroll-target="#another-way-to-think-about-it">Another way to think about it…</a></li>
-  <li><a href="#hypothesis-test-steps" id="toc-hypothesis-test-steps" class="nav-link" data-scroll-target="#hypothesis-test-steps">Hypothesis Test Steps</a></li>
-  <li><a href="#additive-two-way-anova" id="toc-additive-two-way-anova" class="nav-link" data-scroll-target="#additive-two-way-anova">Additive Two-Way ANOVA</a></li>
-  </ul></li>
-  <li><a href="#connecting-to-research-questions" id="toc-connecting-to-research-questions" class="nav-link" data-scroll-target="#connecting-to-research-questions">Connecting to research questions</a>
-  <ul class="collapse">
-  <li><a href="#one-way-anova-research-question" id="toc-one-way-anova-research-question" class="nav-link" data-scroll-target="#one-way-anova-research-question">One-way ANOVA Research Question</a>
-  <ul class="collapse">
-  <li><a href="#seconds" id="toc-seconds" class="nav-link" data-scroll-target="#seconds">90-seconds</a></li>
-  </ul></li>
-  <li><a href="#two-way-anova-research-question" id="toc-two-way-anova-research-question" class="nav-link" data-scroll-target="#two-way-anova-research-question">Two-way ANOVA Research Question</a>
-  <ul class="collapse">
-  <li><a href="#seconds-1" id="toc-seconds-1" class="nav-link" data-scroll-target="#seconds-1">90-seconds</a></li>
-  </ul></li>
-  <li><a href="#what-about-two-way-anova-interaction-models" id="toc-what-about-two-way-anova-interaction-models" class="nav-link" data-scroll-target="#what-about-two-way-anova-interaction-models">What about two-way ANOVA interaction models?</a></li>
-  </ul></li>
-  <li><a href="#how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" id="toc-how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="nav-link" data-scroll-target="#how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique">How does this connect with the ANOVA we did in the Statistical Critique?</a>
-  <ul class="collapse">
-  <li><a href="#total-variation-in-a-one-way-anova" id="toc-total-variation-in-a-one-way-anova" class="nav-link" data-scroll-target="#total-variation-in-a-one-way-anova">Total Variation in a One-way ANOVA</a></li>
-  <li><a href="#connection-to-r2" id="toc-connection-to-r2" class="nav-link" data-scroll-target="#connection-to-r2">Connection to <span class="math inline">\(R^2\)</span></a></li>
-  <li><a href="#connecting-with-multiple-linear-regression-multiple-explanatory-variables" id="toc-connecting-with-multiple-linear-regression-multiple-explanatory-variables" class="nav-link" data-scroll-target="#connecting-with-multiple-linear-regression-multiple-explanatory-variables">Connecting with Multiple Linear Regression – Multiple Explanatory Variables</a></li>
-  <li><a href="#connecting-with-multiple-linear-regression-different-slopes" id="toc-connecting-with-multiple-linear-regression-different-slopes" class="nav-link" data-scroll-target="#connecting-with-multiple-linear-regression-different-slopes">Connecting with Multiple Linear Regression – Different Slopes</a></li>
-  </ul></li>
-  <li><a href="#statistical-critique-recap" id="toc-statistical-critique-recap" class="nav-link" data-scroll-target="#statistical-critique-recap">Statistical Critique Recap</a>
-  <ul class="collapse">
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week10-day1.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">One-Way ANOVA Review</h1>
+<div class="quarto-title-authors">
 </div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
+</section>
+<section class="slide level2">
 
 <div style="font-size: 2em; color: #000000;">
 <p>Plan for Revisions</p>
 </div>
-<div class="incremental">
-<ul class="incremental">
-<li>Statistical Critique 2 has been graded</li>
-<li>Lab 8 will be graded by Friday</li>
-<li>You are permitted to submit <strong>one</strong> “free” revision this week</li>
-<li>Additional revisions can be purchased with any tokens you have remaining</li>
-<li>Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project</li>
-<li>Revisions will be accepted until Thursday, June 15</li>
+<div>
+<ul>
+<li class="fragment">Statistical Critique 2 has been graded</li>
+<li class="fragment">Lab 8 will be graded by Friday</li>
+<li class="fragment">You are permitted to submit <strong>one</strong> “free” revision this week</li>
+<li class="fragment">Additional revisions can be purchased with any tokens you have remaining</li>
+<li class="fragment">Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project</li>
+<li class="fragment">Revisions will be accepted until Thursday, June 15</li>
 </ul>
 </div>
-<section id="youve-seen-a-one-way-anova-model-before" class="level2">
-<h2 class="anchored" data-anchor-id="youve-seen-a-one-way-anova-model-before">You’ve seen a one-way ANOVA model before!</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>trout_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(trout_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 7
-  term         estimate std_error statistic p_value lower_ci upper_ci
-  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-1 intercept       8.07      0.113    71.6     0         7.85    8.29 
-2 unittype: I     1.74      1.98      0.878   0.38     -2.14    5.62 
-3 unittype: IP   -6.68      1        -6.68    0        -8.64   -4.72 
-4 unittype: P     3.79      0.208    18.2     0         3.38    4.20 
-5 unittype: R    -0.991     0.537    -1.85    0.065    -2.04    0.061
-6 unittype: S    -3.73      3.58     -1.04    0.298   -10.8     3.29 
-7 unittype: SC   -3.06      0.266   -11.5     0        -3.58   -2.54 </code></pre>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<center>
-What do the <code>estimate</code>s from each of these lines (e.g., <code>unittype:IP</code>) represent?
-</center>
-</div>
 </section>
-<section id="one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight" class="level2">
-<h2 class="anchored" data-anchor-id="one-way-anova-testing-if-at-least-one-chanel-type-has-a-different-mean-weight">One-Way ANOVA – Testing if at least one chanel type has a different mean weight</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(weight_g <span class="sc">~</span> unittype, <span class="at">data =</span> trout) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 6
-  term         df    sumsq meansq statistic    p.value
-  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 unittype      6   58579. 9763.       109.  5.65e-134
-2 Residuals 11977 1075510.   89.8       NA  NA        </code></pre>
-</div>
-</div>
-<p>. . .</p>
-<p><br></p>
-<div style="text-align: center;">
-<p>What would you decide?</p>
-<div class="fragment">
-<p>What conditions need to be checked to know if this p-value is reliable?</p>
-</div>
-</div>
-</section>
-<section id="checking-conditions" class="level2">
-<h2 class="anchored" data-anchor-id="checking-conditions">Checking Conditions</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 1.69</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 7839 rows containing non-finite values
-(`stat_density_ridges()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week10-day1_files/figure-html/channel--1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How do you feel about the normality condition?</p>
-<p>. . .</p>
-<p>How do you feel about the equal variance condition?</p>
-</section>
-<section id="comparing-variances" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-variances">Comparing Variances</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Un-transformed Variances</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="xzxsvtllmx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xzxsvtllmx table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#xzxsvtllmx thead, #xzxsvtllmx tbody, #xzxsvtllmx tfoot, #xzxsvtllmx tr, #xzxsvtllmx td, #xzxsvtllmx th {
-  border-style: none;
-}
-
-#xzxsvtllmx p {
-  margin: 0;
-  padding: 0;
-}
-
-#xzxsvtllmx .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#xzxsvtllmx .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#xzxsvtllmx .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#xzxsvtllmx .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#xzxsvtllmx .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#xzxsvtllmx .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#xzxsvtllmx .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#xzxsvtllmx .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#xzxsvtllmx .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#xzxsvtllmx .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#xzxsvtllmx .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#xzxsvtllmx .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#xzxsvtllmx .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#xzxsvtllmx .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#xzxsvtllmx .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xzxsvtllmx .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#xzxsvtllmx .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#xzxsvtllmx .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#xzxsvtllmx .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xzxsvtllmx .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#xzxsvtllmx .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xzxsvtllmx .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#xzxsvtllmx .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xzxsvtllmx .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xzxsvtllmx .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xzxsvtllmx .gt_left {
-  text-align: left;
-}
-
-#xzxsvtllmx .gt_center {
-  text-align: center;
-}
-
-#xzxsvtllmx .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#xzxsvtllmx .gt_font_normal {
-  font-weight: normal;
-}
-
-#xzxsvtllmx .gt_font_bold {
-  font-weight: bold;
-}
-
-#xzxsvtllmx .gt_font_italic {
-  font-style: italic;
-}
-
-#xzxsvtllmx .gt_super {
-  font-size: 65%;
-}
-
-#xzxsvtllmx .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#xzxsvtllmx .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#xzxsvtllmx .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#xzxsvtllmx .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#xzxsvtllmx .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#xzxsvtllmx .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#xzxsvtllmx .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="header gt_col_headings">
-<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
-<th id="var" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">var</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">C</td>
-<td class="gt_row gt_right" headers="var">84.826493</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">I</td>
-<td class="gt_row gt_right" headers="var">80.783024</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">IP</td>
-<td class="gt_row gt_right" headers="var">5.729663</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">P</td>
-<td class="gt_row gt_right" headers="var">129.138547</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">R</td>
-<td class="gt_row gt_right" headers="var">59.096925</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">S</td>
-<td class="gt_row gt_right" headers="var">49.280157</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">SC</td>
-<td class="gt_row gt_right" headers="var">49.923399</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">NA</td>
-<td class="gt_row gt_right" headers="var">112.284569</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<p><strong>Log Transformed Variances</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="ojhamqrwjg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ojhamqrwjg table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ojhamqrwjg thead, #ojhamqrwjg tbody, #ojhamqrwjg tfoot, #ojhamqrwjg tr, #ojhamqrwjg td, #ojhamqrwjg th {
-  border-style: none;
-}
-
-#ojhamqrwjg p {
-  margin: 0;
-  padding: 0;
-}
-
-#ojhamqrwjg .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ojhamqrwjg .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ojhamqrwjg .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ojhamqrwjg .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ojhamqrwjg .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ojhamqrwjg .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ojhamqrwjg .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ojhamqrwjg .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ojhamqrwjg .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ojhamqrwjg .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ojhamqrwjg .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ojhamqrwjg .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ojhamqrwjg .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ojhamqrwjg .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ojhamqrwjg .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ojhamqrwjg .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ojhamqrwjg .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ojhamqrwjg .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ojhamqrwjg .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ojhamqrwjg .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ojhamqrwjg .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ojhamqrwjg .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ojhamqrwjg .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ojhamqrwjg .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ojhamqrwjg .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ojhamqrwjg .gt_left {
-  text-align: left;
-}
-
-#ojhamqrwjg .gt_center {
-  text-align: center;
-}
-
-#ojhamqrwjg .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ojhamqrwjg .gt_font_normal {
-  font-weight: normal;
-}
-
-#ojhamqrwjg .gt_font_bold {
-  font-weight: bold;
-}
-
-#ojhamqrwjg .gt_font_italic {
-  font-style: italic;
-}
-
-#ojhamqrwjg .gt_super {
-  font-size: 65%;
-}
-
-#ojhamqrwjg .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ojhamqrwjg .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ojhamqrwjg .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ojhamqrwjg .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ojhamqrwjg .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ojhamqrwjg .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ojhamqrwjg .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="header gt_col_headings">
-<th id="unittype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unittype</th>
-<th id="var" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">var</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">C</td>
-<td class="gt_row gt_right" headers="var">1.6978424</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">I</td>
-<td class="gt_row gt_right" headers="var">0.8788463</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">IP</td>
-<td class="gt_row gt_right" headers="var">0.8990321</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">P</td>
-<td class="gt_row gt_right" headers="var">1.5659500</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">R</td>
-<td class="gt_row gt_right" headers="var">1.3621461</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">S</td>
-<td class="gt_row gt_right" headers="var">2.1770549</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="unittype">SC</td>
-<td class="gt_row gt_right" headers="var">1.6514917</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="unittype">NA</td>
-<td class="gt_row gt_right" headers="var">0.7591942</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>. . .</p>
-<p><br></p>
-<center>
-What do you think?
-</center>
-</section>
-<section id="two-way-anova-models" class="level1">
+<section>
+<section id="two-way-anova-models" class="title-slide slide level1 center">
 <h1>Two-Way ANOVA Models</h1>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div style="font-size: 3em; color: #000000;">
 <p>Two-way ANOVA</p>
 </div>
@@ -1508,8 +428,8 @@ What do you think?
 </div>
 <p>Assess if <span style="color: #0F4C81">multiple</span> categorical variables have a relationship with the response.</p>
 </section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1"></h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div style="font-size: 3em; color: #000000;">
 <p>Modeling Options</p>
 </div>
@@ -1531,44 +451,19 @@ What do you think?
 </div>
 </div>
 </section>
-<section id="section-2" class="level2">
-<h2 class="anchored" data-anchor-id="section-2"></h2>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p><strong>What are we looking for?</strong></p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.838</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week10-day1_files/figure-html/twa-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="another-way-to-think-about-it" class="level2">
-<h2 class="anchored" data-anchor-id="another-way-to-think-about-it">Another way to think about it…</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.789</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.887</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="week10-day1_files/figure-html/twa-plot-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="hypothesis-test-steps" class="level2">
-<h2 class="anchored" data-anchor-id="hypothesis-test-steps">Hypothesis Test Steps</h2>
+
+<img data-src="week10-day1_files/figure-revealjs/twa-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="another-way-to-think-about-it" class="slide level2">
+<h2>Another way to think about it…</h2>
+
+<img data-src="week10-day1_files/figure-revealjs/twa-plot-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="hypothesis-test-steps" class="slide level2">
+<h2>Hypothesis Test Steps</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
 <div style="font-size: 1.5em; color: #0F4C81;">
@@ -1591,35 +486,35 @@ What do you think?
 </div>
 </div>
 </section>
-<section id="additive-two-way-anova" class="level2">
-<h2 class="anchored" data-anchor-id="additive-two-way-anova">Additive Two-Way ANOVA</h2>
+<section id="additive-two-way-anova" class="slide level2">
+<h2>Additive Two-Way ANOVA</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">aov</span>(rating <span class="sc">~</span> era <span class="sc">+</span> genre, <span class="at">data =</span> movies) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Why did I use a <code>+</code> when fitting the model?</p>
-<p>. . .</p>
+<div class="fragment">
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="zmxezovnta" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zmxezovnta table {
+<div id="vuecbbmhqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vuecbbmhqg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zmxezovnta thead, #zmxezovnta tbody, #zmxezovnta tfoot, #zmxezovnta tr, #zmxezovnta td, #zmxezovnta th {
+#vuecbbmhqg thead, #vuecbbmhqg tbody, #vuecbbmhqg tfoot, #vuecbbmhqg tr, #vuecbbmhqg td, #vuecbbmhqg th {
   border-style: none;
 }
 
-#zmxezovnta p {
+#vuecbbmhqg p {
   margin: 0;
   padding: 0;
 }
 
-#zmxezovnta .gt_table {
+#vuecbbmhqg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1645,12 +540,12 @@ What do you think?
   border-left-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_caption {
+#vuecbbmhqg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zmxezovnta .gt_title {
+#vuecbbmhqg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1662,7 +557,7 @@ What do you think?
   border-bottom-width: 0;
 }
 
-#zmxezovnta .gt_subtitle {
+#vuecbbmhqg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1674,7 +569,7 @@ What do you think?
   border-top-width: 0;
 }
 
-#zmxezovnta .gt_heading {
+#vuecbbmhqg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1686,13 +581,13 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_bottom_border {
+#vuecbbmhqg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_col_headings {
+#vuecbbmhqg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1707,7 +602,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_col_heading {
+#vuecbbmhqg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1727,7 +622,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#zmxezovnta .gt_column_spanner_outer {
+#vuecbbmhqg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1739,15 +634,15 @@ What do you think?
   padding-right: 4px;
 }
 
-#zmxezovnta .gt_column_spanner_outer:first-child {
+#vuecbbmhqg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zmxezovnta .gt_column_spanner_outer:last-child {
+#vuecbbmhqg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zmxezovnta .gt_column_spanner {
+#vuecbbmhqg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1759,11 +654,11 @@ What do you think?
   width: 100%;
 }
 
-#zmxezovnta .gt_spanner_row {
+#vuecbbmhqg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zmxezovnta .gt_group_heading {
+#vuecbbmhqg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1789,7 +684,7 @@ What do you think?
   text-align: left;
 }
 
-#zmxezovnta .gt_empty_group_heading {
+#vuecbbmhqg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1804,15 +699,15 @@ What do you think?
   vertical-align: middle;
 }
 
-#zmxezovnta .gt_from_md > :first-child {
+#vuecbbmhqg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zmxezovnta .gt_from_md > :last-child {
+#vuecbbmhqg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zmxezovnta .gt_row {
+#vuecbbmhqg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1831,7 +726,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#zmxezovnta .gt_stub {
+#vuecbbmhqg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1844,7 +739,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#zmxezovnta .gt_stub_row_group {
+#vuecbbmhqg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1858,15 +753,15 @@ What do you think?
   vertical-align: top;
 }
 
-#zmxezovnta .gt_row_group_first td {
+#vuecbbmhqg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zmxezovnta .gt_row_group_first th {
+#vuecbbmhqg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zmxezovnta .gt_summary_row {
+#vuecbbmhqg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1876,16 +771,16 @@ What do you think?
   padding-right: 5px;
 }
 
-#zmxezovnta .gt_first_summary_row {
+#vuecbbmhqg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_first_summary_row.thick {
+#vuecbbmhqg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zmxezovnta .gt_last_summary_row {
+#vuecbbmhqg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1895,7 +790,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_grand_summary_row {
+#vuecbbmhqg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1905,7 +800,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#zmxezovnta .gt_first_grand_summary_row {
+#vuecbbmhqg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1915,7 +810,7 @@ What do you think?
   border-top-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_last_grand_summary_row_top {
+#vuecbbmhqg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1925,11 +820,11 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_striped {
+#vuecbbmhqg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zmxezovnta .gt_table_body {
+#vuecbbmhqg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1938,7 +833,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_footnotes {
+#vuecbbmhqg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1952,7 +847,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_footnote {
+#vuecbbmhqg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1961,7 +856,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#zmxezovnta .gt_sourcenotes {
+#vuecbbmhqg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1975,7 +870,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#zmxezovnta .gt_sourcenote {
+#vuecbbmhqg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1983,68 +878,68 @@ What do you think?
   padding-right: 5px;
 }
 
-#zmxezovnta .gt_left {
+#vuecbbmhqg .gt_left {
   text-align: left;
 }
 
-#zmxezovnta .gt_center {
+#vuecbbmhqg .gt_center {
   text-align: center;
 }
 
-#zmxezovnta .gt_right {
+#vuecbbmhqg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zmxezovnta .gt_font_normal {
+#vuecbbmhqg .gt_font_normal {
   font-weight: normal;
 }
 
-#zmxezovnta .gt_font_bold {
+#vuecbbmhqg .gt_font_bold {
   font-weight: bold;
 }
 
-#zmxezovnta .gt_font_italic {
+#vuecbbmhqg .gt_font_italic {
   font-style: italic;
 }
 
-#zmxezovnta .gt_super {
+#vuecbbmhqg .gt_super {
   font-size: 65%;
 }
 
-#zmxezovnta .gt_footnote_marks {
+#vuecbbmhqg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zmxezovnta .gt_asterisk {
+#vuecbbmhqg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zmxezovnta .gt_indent_1 {
+#vuecbbmhqg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zmxezovnta .gt_indent_2 {
+#vuecbbmhqg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zmxezovnta .gt_indent_3 {
+#vuecbbmhqg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zmxezovnta .gt_indent_4 {
+#vuecbbmhqg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zmxezovnta .gt_indent_5 {
+#vuecbbmhqg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
@@ -2092,83 +987,70 @@ What do you think?
 <p><strong>What would you decide?</strong></p>
 </div>
 </div>
-</section>
-</section>
-<section id="connecting-to-research-questions" class="level1">
+</div>
+</section></section>
+<section>
+<section id="connecting-to-research-questions" class="title-slide slide level1 center">
 <h1>Connecting to research questions</h1>
-<section id="one-way-anova-research-question" class="level2">
-<h2 class="anchored" data-anchor-id="one-way-anova-research-question">One-way ANOVA Research Question</h2>
-<section id="seconds" class="level3">
-<h3 class="anchored" data-anchor-id="seconds">90-seconds</h3>
+
+</section>
+<section id="one-way-anova-research-question" class="slide level2">
+<h2>One-way ANOVA Research Question</h2>
+<h3 id="seconds">90-seconds</h3>
 <p><br> <br></p>
 <p>How would you phrase a research question for the one-way ANOVA model we’ve been investigating?</p>
 <p><strong>Explanatory Variable:</strong> <code>genre</code></p>
 <p><strong>Response Variable:</strong> <code>rating</code></p>
 </section>
-</section>
-<section id="two-way-anova-research-question" class="level2">
-<h2 class="anchored" data-anchor-id="two-way-anova-research-question">Two-way ANOVA Research Question</h2>
-<section id="seconds-1" class="level3">
-<h3 class="anchored" data-anchor-id="seconds-1">90-seconds</h3>
+<section id="two-way-anova-research-question" class="slide level2">
+<h2>Two-way ANOVA Research Question</h2>
+<h3 id="seconds-1">90-seconds</h3>
 <p><br> <br></p>
 <p>How would you phrase a research question for the two-way ANOVA model we’ve been investigating?</p>
 <p><strong>Explanatory Variables:</strong> <code>genre</code> and <code>era</code></p>
 <p><strong>Response Variable:</strong> <code>rating</code></p>
 </section>
-</section>
-<section id="what-about-two-way-anova-interaction-models" class="level2">
-<h2 class="anchored" data-anchor-id="what-about-two-way-anova-interaction-models">What about two-way ANOVA interaction models?</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>An interaction model is similar to a different slopes multiple linear regression</p></li>
-<li><p>It assesses if the relationship between two variables differs when a third variable is considered</p></li>
-<li><p>Due to time, we we <strong>are not</strong> fitting interaction models for the Final Project</p></li>
+<section id="what-about-two-way-anova-interaction-models" class="slide level2">
+<h2>What about two-way ANOVA interaction models?</h2>
+<div>
+<ul>
+<li class="fragment"><p>An interaction model is similar to a different slopes multiple linear regression</p></li>
+<li class="fragment"><p>It assesses if the relationship between two variables differs when a third variable is considered</p></li>
+<li class="fragment"><p>Due to time, we we <strong>are not</strong> fitting interaction models for the Final Project</p></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="level1">
+</section></section>
+<section>
+<section id="how-does-this-connect-with-the-anova-we-did-in-the-statistical-critique" class="title-slide slide level1 center">
 <h1>How does this connect with the ANOVA we did in the Statistical Critique?</h1>
-<p>. . .</p>
-<blockquote class="blockquote">
+<div class="fragment">
+<blockquote>
 <p>ANOVA quantifies <em>how much</em> each explanatory variable in a statistical model contributes toward explaining the total variation in the response variable</p>
 </blockquote>
-<section id="total-variation-in-a-one-way-anova" class="level2">
-<h2 class="anchored" data-anchor-id="total-variation-in-a-one-way-anova">Total Variation in a One-way ANOVA</h2>
+</div>
+</section>
+<section id="total-variation-in-a-one-way-anova" class="slide level2">
+<h2>Total Variation in a One-way ANOVA</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>age_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> age_cat, <span class="at">data =</span> evals_small) </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>age_anova <span class="ot">&lt;-</span> <span class="fu">anova</span>(age_lm) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>() </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>age_anova_total <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">term =</span> <span class="st">"Total"</span>, </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">df =</span> <span class="fu">nrow</span>(evals_small) <span class="sc">-</span> <span class="dv">1</span>, </span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">sumsq =</span> <span class="fu">sum</span>(age_anova<span class="sc">$</span>sumsq)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                          )</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>age_anova_full <span class="ot">&lt;-</span> age_anova <span class="sc">%&gt;%</span> </span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(age_anova_total) </span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>age_anova_full <span class="sc">%&gt;%</span> </span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="pszgrvwkgu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pszgrvwkgu table {
+<div id="psxkzdfqgy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#psxkzdfqgy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pszgrvwkgu thead, #pszgrvwkgu tbody, #pszgrvwkgu tfoot, #pszgrvwkgu tr, #pszgrvwkgu td, #pszgrvwkgu th {
+#psxkzdfqgy thead, #psxkzdfqgy tbody, #psxkzdfqgy tfoot, #psxkzdfqgy tr, #psxkzdfqgy td, #psxkzdfqgy th {
   border-style: none;
 }
 
-#pszgrvwkgu p {
+#psxkzdfqgy p {
   margin: 0;
   padding: 0;
 }
 
-#pszgrvwkgu .gt_table {
+#psxkzdfqgy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2194,12 +1076,12 @@ What do you think?
   border-left-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_caption {
+#psxkzdfqgy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pszgrvwkgu .gt_title {
+#psxkzdfqgy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2211,7 +1093,7 @@ What do you think?
   border-bottom-width: 0;
 }
 
-#pszgrvwkgu .gt_subtitle {
+#psxkzdfqgy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2223,7 +1105,7 @@ What do you think?
   border-top-width: 0;
 }
 
-#pszgrvwkgu .gt_heading {
+#psxkzdfqgy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2235,13 +1117,13 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_bottom_border {
+#psxkzdfqgy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_col_headings {
+#psxkzdfqgy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2256,7 +1138,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_col_heading {
+#psxkzdfqgy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2276,7 +1158,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#pszgrvwkgu .gt_column_spanner_outer {
+#psxkzdfqgy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2288,15 +1170,15 @@ What do you think?
   padding-right: 4px;
 }
 
-#pszgrvwkgu .gt_column_spanner_outer:first-child {
+#psxkzdfqgy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pszgrvwkgu .gt_column_spanner_outer:last-child {
+#psxkzdfqgy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pszgrvwkgu .gt_column_spanner {
+#psxkzdfqgy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2308,11 +1190,11 @@ What do you think?
   width: 100%;
 }
 
-#pszgrvwkgu .gt_spanner_row {
+#psxkzdfqgy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pszgrvwkgu .gt_group_heading {
+#psxkzdfqgy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2338,7 +1220,7 @@ What do you think?
   text-align: left;
 }
 
-#pszgrvwkgu .gt_empty_group_heading {
+#psxkzdfqgy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2353,15 +1235,15 @@ What do you think?
   vertical-align: middle;
 }
 
-#pszgrvwkgu .gt_from_md > :first-child {
+#psxkzdfqgy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pszgrvwkgu .gt_from_md > :last-child {
+#psxkzdfqgy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pszgrvwkgu .gt_row {
+#psxkzdfqgy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2380,7 +1262,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#pszgrvwkgu .gt_stub {
+#psxkzdfqgy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2393,7 +1275,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#pszgrvwkgu .gt_stub_row_group {
+#psxkzdfqgy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2407,15 +1289,15 @@ What do you think?
   vertical-align: top;
 }
 
-#pszgrvwkgu .gt_row_group_first td {
+#psxkzdfqgy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pszgrvwkgu .gt_row_group_first th {
+#psxkzdfqgy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pszgrvwkgu .gt_summary_row {
+#psxkzdfqgy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2425,16 +1307,16 @@ What do you think?
   padding-right: 5px;
 }
 
-#pszgrvwkgu .gt_first_summary_row {
+#psxkzdfqgy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_first_summary_row.thick {
+#psxkzdfqgy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pszgrvwkgu .gt_last_summary_row {
+#psxkzdfqgy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2444,7 +1326,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_grand_summary_row {
+#psxkzdfqgy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2454,7 +1336,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#pszgrvwkgu .gt_first_grand_summary_row {
+#psxkzdfqgy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2464,7 +1346,7 @@ What do you think?
   border-top-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_last_grand_summary_row_top {
+#psxkzdfqgy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2474,11 +1356,11 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_striped {
+#psxkzdfqgy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pszgrvwkgu .gt_table_body {
+#psxkzdfqgy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2487,7 +1369,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_footnotes {
+#psxkzdfqgy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2501,7 +1383,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_footnote {
+#psxkzdfqgy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2510,7 +1392,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#pszgrvwkgu .gt_sourcenotes {
+#psxkzdfqgy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2524,7 +1406,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#pszgrvwkgu .gt_sourcenote {
+#psxkzdfqgy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2532,68 +1414,68 @@ What do you think?
   padding-right: 5px;
 }
 
-#pszgrvwkgu .gt_left {
+#psxkzdfqgy .gt_left {
   text-align: left;
 }
 
-#pszgrvwkgu .gt_center {
+#psxkzdfqgy .gt_center {
   text-align: center;
 }
 
-#pszgrvwkgu .gt_right {
+#psxkzdfqgy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pszgrvwkgu .gt_font_normal {
+#psxkzdfqgy .gt_font_normal {
   font-weight: normal;
 }
 
-#pszgrvwkgu .gt_font_bold {
+#psxkzdfqgy .gt_font_bold {
   font-weight: bold;
 }
 
-#pszgrvwkgu .gt_font_italic {
+#psxkzdfqgy .gt_font_italic {
   font-style: italic;
 }
 
-#pszgrvwkgu .gt_super {
+#psxkzdfqgy .gt_super {
   font-size: 65%;
 }
 
-#pszgrvwkgu .gt_footnote_marks {
+#psxkzdfqgy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pszgrvwkgu .gt_asterisk {
+#psxkzdfqgy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pszgrvwkgu .gt_indent_1 {
+#psxkzdfqgy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pszgrvwkgu .gt_indent_2 {
+#psxkzdfqgy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pszgrvwkgu .gt_indent_3 {
+#psxkzdfqgy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pszgrvwkgu .gt_indent_4 {
+#psxkzdfqgy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pszgrvwkgu .gt_indent_5 {
+#psxkzdfqgy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
@@ -2636,59 +1518,49 @@ What do you think?
 </div>
 </div>
 <p><br></p>
-<p>. . .</p>
+<div class="fragment">
 <div class="small">
 <p>The <code>age_cat</code> line in the ANOVA table quantifies <em>how much</em> of the <strong>total variation</strong> in minimum evaluation scores can be explained based on the age group of a faculty member.</p>
 <div class="fragment">
 <p>The <code>Total</code> row in an ANOVA table tells us the <strong>total variation</strong> in evaluation scores – how far each faculty member’s minimum evaluation score was from the mean of all the evaluation scores</p>
 </div>
 </div>
+</div>
 </section>
-<section id="connection-to-r2" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-r2">Connection to <span class="math inline">\(R^2\)</span></h2>
+<section id="connection-to-r2" class="slide level2">
+<h2>Connection to <span class="math inline">\(R^2\)</span></h2>
 <p>Based on the ANOVA table, there is 29.1414 total variation in minimum evaluation scores, of which <code>age_cat</code> is able to explain 0.8903.</p>
-<p>. . .</p>
+<div class="fragment">
 <p>Proportionally, that means <code>age_cat</code> can explain 3.055% in the total variation in minimum evaluation scores.</p>
-<p>. . .</p>
+</div>
+<div class="fragment">
 <p>Does that sound familiar?</p>
-<p>. . .</p>
+</div>
+<div class="fragment">
 <p><br></p>
+</div>
 </section>
-<section id="connecting-with-multiple-linear-regression-multiple-explanatory-variables" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-with-multiple-linear-regression-multiple-explanatory-variables">Connecting with Multiple Linear Regression – Multiple Explanatory Variables</h2>
+<section id="connecting-with-multiple-linear-regression-multiple-explanatory-variables" class="slide level2">
+<h2>Connecting with Multiple Linear Regression – Multiple Explanatory Variables</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>crab_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(size <span class="sc">~</span> latitude <span class="sc">+</span> water_temp, <span class="at">data =</span> pie_crab)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>crab_anova <span class="ot">&lt;-</span> <span class="fu">anova</span>(crab_lm) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>crab_anova_total <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">term =</span> <span class="st">"Total"</span>, </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">df =</span> <span class="fu">nrow</span>(pie_crab) <span class="sc">-</span> <span class="dv">1</span>, </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">sumsq =</span> <span class="fu">sum</span>(crab_anova<span class="sc">$</span>sumsq)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                          )</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>crab_anova_full <span class="ot">&lt;-</span> crab_anova <span class="sc">%&gt;%</span> </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(crab_anova_total) </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>crab_anova_full <span class="sc">%&gt;%</span> </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="jiaczcacys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jiaczcacys table {
+<div id="yvvblpjwlc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yvvblpjwlc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jiaczcacys thead, #jiaczcacys tbody, #jiaczcacys tfoot, #jiaczcacys tr, #jiaczcacys td, #jiaczcacys th {
+#yvvblpjwlc thead, #yvvblpjwlc tbody, #yvvblpjwlc tfoot, #yvvblpjwlc tr, #yvvblpjwlc td, #yvvblpjwlc th {
   border-style: none;
 }
 
-#jiaczcacys p {
+#yvvblpjwlc p {
   margin: 0;
   padding: 0;
 }
 
-#jiaczcacys .gt_table {
+#yvvblpjwlc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2714,12 +1586,12 @@ What do you think?
   border-left-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_caption {
+#yvvblpjwlc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jiaczcacys .gt_title {
+#yvvblpjwlc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2731,7 +1603,7 @@ What do you think?
   border-bottom-width: 0;
 }
 
-#jiaczcacys .gt_subtitle {
+#yvvblpjwlc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2743,7 +1615,7 @@ What do you think?
   border-top-width: 0;
 }
 
-#jiaczcacys .gt_heading {
+#yvvblpjwlc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2755,13 +1627,13 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_bottom_border {
+#yvvblpjwlc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_col_headings {
+#yvvblpjwlc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2776,7 +1648,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_col_heading {
+#yvvblpjwlc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2796,7 +1668,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#jiaczcacys .gt_column_spanner_outer {
+#yvvblpjwlc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2808,15 +1680,15 @@ What do you think?
   padding-right: 4px;
 }
 
-#jiaczcacys .gt_column_spanner_outer:first-child {
+#yvvblpjwlc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jiaczcacys .gt_column_spanner_outer:last-child {
+#yvvblpjwlc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jiaczcacys .gt_column_spanner {
+#yvvblpjwlc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2828,11 +1700,11 @@ What do you think?
   width: 100%;
 }
 
-#jiaczcacys .gt_spanner_row {
+#yvvblpjwlc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jiaczcacys .gt_group_heading {
+#yvvblpjwlc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2858,7 +1730,7 @@ What do you think?
   text-align: left;
 }
 
-#jiaczcacys .gt_empty_group_heading {
+#yvvblpjwlc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2873,15 +1745,15 @@ What do you think?
   vertical-align: middle;
 }
 
-#jiaczcacys .gt_from_md > :first-child {
+#yvvblpjwlc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jiaczcacys .gt_from_md > :last-child {
+#yvvblpjwlc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jiaczcacys .gt_row {
+#yvvblpjwlc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2900,7 +1772,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#jiaczcacys .gt_stub {
+#yvvblpjwlc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2913,7 +1785,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#jiaczcacys .gt_stub_row_group {
+#yvvblpjwlc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2927,15 +1799,15 @@ What do you think?
   vertical-align: top;
 }
 
-#jiaczcacys .gt_row_group_first td {
+#yvvblpjwlc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jiaczcacys .gt_row_group_first th {
+#yvvblpjwlc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jiaczcacys .gt_summary_row {
+#yvvblpjwlc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2945,16 +1817,16 @@ What do you think?
   padding-right: 5px;
 }
 
-#jiaczcacys .gt_first_summary_row {
+#yvvblpjwlc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_first_summary_row.thick {
+#yvvblpjwlc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jiaczcacys .gt_last_summary_row {
+#yvvblpjwlc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2964,7 +1836,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_grand_summary_row {
+#yvvblpjwlc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2974,7 +1846,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#jiaczcacys .gt_first_grand_summary_row {
+#yvvblpjwlc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2984,7 +1856,7 @@ What do you think?
   border-top-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_last_grand_summary_row_top {
+#yvvblpjwlc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2994,11 +1866,11 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_striped {
+#yvvblpjwlc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jiaczcacys .gt_table_body {
+#yvvblpjwlc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3007,7 +1879,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_footnotes {
+#yvvblpjwlc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3021,7 +1893,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_footnote {
+#yvvblpjwlc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3030,7 +1902,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#jiaczcacys .gt_sourcenotes {
+#yvvblpjwlc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3044,7 +1916,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#jiaczcacys .gt_sourcenote {
+#yvvblpjwlc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3052,68 +1924,68 @@ What do you think?
   padding-right: 5px;
 }
 
-#jiaczcacys .gt_left {
+#yvvblpjwlc .gt_left {
   text-align: left;
 }
 
-#jiaczcacys .gt_center {
+#yvvblpjwlc .gt_center {
   text-align: center;
 }
 
-#jiaczcacys .gt_right {
+#yvvblpjwlc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jiaczcacys .gt_font_normal {
+#yvvblpjwlc .gt_font_normal {
   font-weight: normal;
 }
 
-#jiaczcacys .gt_font_bold {
+#yvvblpjwlc .gt_font_bold {
   font-weight: bold;
 }
 
-#jiaczcacys .gt_font_italic {
+#yvvblpjwlc .gt_font_italic {
   font-style: italic;
 }
 
-#jiaczcacys .gt_super {
+#yvvblpjwlc .gt_super {
   font-size: 65%;
 }
 
-#jiaczcacys .gt_footnote_marks {
+#yvvblpjwlc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jiaczcacys .gt_asterisk {
+#yvvblpjwlc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jiaczcacys .gt_indent_1 {
+#yvvblpjwlc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jiaczcacys .gt_indent_2 {
+#yvvblpjwlc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jiaczcacys .gt_indent_3 {
+#yvvblpjwlc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jiaczcacys .gt_indent_4 {
+#yvvblpjwlc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jiaczcacys .gt_indent_5 {
+#yvvblpjwlc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
@@ -3164,41 +2036,27 @@ What do you think?
 </div>
 </div>
 </section>
-<section id="connecting-with-multiple-linear-regression-different-slopes" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-with-multiple-linear-regression-different-slopes">Connecting with Multiple Linear Regression – Different Slopes</h2>
+<section id="connecting-with-multiple-linear-regression-different-slopes" class="slide level2">
+<h2>Connecting with Multiple Linear Regression – Different Slopes</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>maple_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(stem_dry_mass <span class="sc">~</span> stem_length <span class="sc">*</span> watershed, <span class="at">data =</span> hbr_maples)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>maple_anova <span class="ot">&lt;-</span> <span class="fu">anova</span>(maple_lm) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>maple_anova_total <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">term =</span> <span class="st">"Total"</span>, </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">df =</span> <span class="fu">nrow</span>(hbr_maples) <span class="sc">-</span> <span class="dv">1</span>, </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">sumsq =</span> <span class="fu">sum</span>(maple_anova<span class="sc">$</span>sumsq)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                          )</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>maple_anova_full <span class="ot">&lt;-</span> maple_anova <span class="sc">%&gt;%</span> </span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(maple_anova_total) </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>maple_anova_full <span class="sc">%&gt;%</span> </span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="mviwgvkngc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mviwgvkngc table {
+<div id="xqqhvobhqz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xqqhvobhqz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mviwgvkngc thead, #mviwgvkngc tbody, #mviwgvkngc tfoot, #mviwgvkngc tr, #mviwgvkngc td, #mviwgvkngc th {
+#xqqhvobhqz thead, #xqqhvobhqz tbody, #xqqhvobhqz tfoot, #xqqhvobhqz tr, #xqqhvobhqz td, #xqqhvobhqz th {
   border-style: none;
 }
 
-#mviwgvkngc p {
+#xqqhvobhqz p {
   margin: 0;
   padding: 0;
 }
 
-#mviwgvkngc .gt_table {
+#xqqhvobhqz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3224,12 +2082,12 @@ What do you think?
   border-left-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_caption {
+#xqqhvobhqz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mviwgvkngc .gt_title {
+#xqqhvobhqz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3241,7 +2099,7 @@ What do you think?
   border-bottom-width: 0;
 }
 
-#mviwgvkngc .gt_subtitle {
+#xqqhvobhqz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3253,7 +2111,7 @@ What do you think?
   border-top-width: 0;
 }
 
-#mviwgvkngc .gt_heading {
+#xqqhvobhqz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3265,13 +2123,13 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_bottom_border {
+#xqqhvobhqz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_col_headings {
+#xqqhvobhqz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3286,7 +2144,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_col_heading {
+#xqqhvobhqz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3306,7 +2164,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#mviwgvkngc .gt_column_spanner_outer {
+#xqqhvobhqz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3318,15 +2176,15 @@ What do you think?
   padding-right: 4px;
 }
 
-#mviwgvkngc .gt_column_spanner_outer:first-child {
+#xqqhvobhqz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mviwgvkngc .gt_column_spanner_outer:last-child {
+#xqqhvobhqz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mviwgvkngc .gt_column_spanner {
+#xqqhvobhqz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3338,11 +2196,11 @@ What do you think?
   width: 100%;
 }
 
-#mviwgvkngc .gt_spanner_row {
+#xqqhvobhqz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mviwgvkngc .gt_group_heading {
+#xqqhvobhqz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3368,7 +2226,7 @@ What do you think?
   text-align: left;
 }
 
-#mviwgvkngc .gt_empty_group_heading {
+#xqqhvobhqz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3383,15 +2241,15 @@ What do you think?
   vertical-align: middle;
 }
 
-#mviwgvkngc .gt_from_md > :first-child {
+#xqqhvobhqz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mviwgvkngc .gt_from_md > :last-child {
+#xqqhvobhqz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mviwgvkngc .gt_row {
+#xqqhvobhqz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3410,7 +2268,7 @@ What do you think?
   overflow-x: hidden;
 }
 
-#mviwgvkngc .gt_stub {
+#xqqhvobhqz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3423,7 +2281,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#mviwgvkngc .gt_stub_row_group {
+#xqqhvobhqz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3437,15 +2295,15 @@ What do you think?
   vertical-align: top;
 }
 
-#mviwgvkngc .gt_row_group_first td {
+#xqqhvobhqz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mviwgvkngc .gt_row_group_first th {
+#xqqhvobhqz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mviwgvkngc .gt_summary_row {
+#xqqhvobhqz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3455,16 +2313,16 @@ What do you think?
   padding-right: 5px;
 }
 
-#mviwgvkngc .gt_first_summary_row {
+#xqqhvobhqz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_first_summary_row.thick {
+#xqqhvobhqz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mviwgvkngc .gt_last_summary_row {
+#xqqhvobhqz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3474,7 +2332,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_grand_summary_row {
+#xqqhvobhqz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3484,7 +2342,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#mviwgvkngc .gt_first_grand_summary_row {
+#xqqhvobhqz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3494,7 +2352,7 @@ What do you think?
   border-top-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_last_grand_summary_row_top {
+#xqqhvobhqz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3504,11 +2362,11 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_striped {
+#xqqhvobhqz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mviwgvkngc .gt_table_body {
+#xqqhvobhqz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3517,7 +2375,7 @@ What do you think?
   border-bottom-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_footnotes {
+#xqqhvobhqz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3531,7 +2389,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_footnote {
+#xqqhvobhqz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3540,7 +2398,7 @@ What do you think?
   padding-right: 5px;
 }
 
-#mviwgvkngc .gt_sourcenotes {
+#xqqhvobhqz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3554,7 +2412,7 @@ What do you think?
   border-right-color: #D3D3D3;
 }
 
-#mviwgvkngc .gt_sourcenote {
+#xqqhvobhqz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3562,68 +2420,68 @@ What do you think?
   padding-right: 5px;
 }
 
-#mviwgvkngc .gt_left {
+#xqqhvobhqz .gt_left {
   text-align: left;
 }
 
-#mviwgvkngc .gt_center {
+#xqqhvobhqz .gt_center {
   text-align: center;
 }
 
-#mviwgvkngc .gt_right {
+#xqqhvobhqz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mviwgvkngc .gt_font_normal {
+#xqqhvobhqz .gt_font_normal {
   font-weight: normal;
 }
 
-#mviwgvkngc .gt_font_bold {
+#xqqhvobhqz .gt_font_bold {
   font-weight: bold;
 }
 
-#mviwgvkngc .gt_font_italic {
+#xqqhvobhqz .gt_font_italic {
   font-style: italic;
 }
 
-#mviwgvkngc .gt_super {
+#xqqhvobhqz .gt_super {
   font-size: 65%;
 }
 
-#mviwgvkngc .gt_footnote_marks {
+#xqqhvobhqz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mviwgvkngc .gt_asterisk {
+#xqqhvobhqz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mviwgvkngc .gt_indent_1 {
+#xqqhvobhqz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mviwgvkngc .gt_indent_2 {
+#xqqhvobhqz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mviwgvkngc .gt_indent_3 {
+#xqqhvobhqz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mviwgvkngc .gt_indent_4 {
+#xqqhvobhqz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mviwgvkngc .gt_indent_5 {
+#xqqhvobhqz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">term</th>
@@ -3681,416 +2539,423 @@ What do you think?
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="statistical-critique-recap" class="level1">
+</section></section>
+<section>
+<section id="statistical-critique-recap" class="title-slide slide level1 center">
 <h1>Statistical Critique Recap</h1>
-<section id="common-mistakes" class="level2">
-<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
-
 
 </section>
-</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common Mistakes</h2>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
         }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
       }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
       });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© Copyright 2023, Allison Theobold</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
-    <div class="nav-footer-right">
-<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
-</div>
-  </div>
-</footer>
-
-
-
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
 
 </body></html>

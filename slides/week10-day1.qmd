@@ -1,11 +1,15 @@
 ---
-title: "One-Way ANOVA Review"
-format: revealjs
+title: "Two-way ANOVA"
+format: 
+  revealjs:
+    theme: style.scss
 editor: visual
 ---
 
-```{r set-up}
+```{r}
 #| include: false
+#| label: set-up
+
 library(tidyverse)
 library(lterdatasampler)
 library(openintro)
@@ -48,6 +52,10 @@ trout <- filter(and_vertebrates,
                 species == "Cutthroat trout")
 ```
 
+# Statistical Critique Recap
+
+## Common Mistakes
+
 ::: {style="font-size: 2em; color: #000000;"}
 Plan for Revisions
 :::
@@ -60,107 +68,6 @@ Plan for Revisions
 -   Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project
 -   Revisions will be accepted until Thursday, June 15
 :::
-
-## You've seen a one-way ANOVA model before!
-
-```{r trout-chanel}
-#| echo: true
-#| code-line-numbers: false
-
-trout_lm <- lm(weight_g ~ unittype, data = trout)
-
-get_regression_table(trout_lm)
-```
-
-</br>
-
-::: fragment
-<center>What do the `estimate`s from each of these lines (e.g., `unittype:IP`) represent?</center>
-:::
-
-## One-Way ANOVA -- Testing if at least one chanel type has a different mean weight
-
-```{r chanel-anova}
-#| echo: true
-#| code-line-numbers: false
-
-aov(weight_g ~ unittype, data = trout) %>% 
-  tidy()
-```
-
-. . .
-
-</br>
-
-::: {style="text-align: center;"}
-What would you decide?
-
-::: fragment
-What conditions need to be checked to know if this p-value is reliable?
-:::
-:::
-
-## Checking Conditions
-
-```{r channel-}
-#| echo: false
-#| fig-align: center
-
-trout %>% 
-  ggplot(aes(y = unittype, x = weight_g)) + 
-  geom_density_ridges(alpha = 0.5, scale = 1) +
-  labs(y = "Channel Type", 
-       x = "Weight (g)") + 
-  theme(axis.title = element_text(size = 18), 
-        axis.text = element_text(size = 16), 
-        legend.text = element_text(size = 16),
-        legend.title = element_text(size = 18))
-```
-
-How do you feel about the normality condition?
-
-. . .
-
-How do you feel about the equal variance condition?
-
-## Comparing Variances
-
-::: columns
-::: {.column width="50%"}
-**Un-transformed Variances**
-
-```{r variance-table}
-#| echo: false
-
-trout %>% 
-  drop_na(weight_g) %>% 
-  group_by(unittype) %>% 
-  summarize(var = var(weight_g)) %>% 
-  gt()
-```
-:::
-
-::: {.column width="50%"}
-::: fragment
-**Log Transformed Variances**
-
-```{r variance-table-log}
-#| echo: false
-trout %>% 
-  drop_na(weight_g) %>% 
-  group_by(unittype) %>% 
-  summarize(var = var(log(weight_g))) %>% 
-  gt()
-```
-:::
-:::
-:::
-
-. . .
-
-</br>
-
-<center>What do you think?</center>
 
 # Two-Way ANOVA Models
 
@@ -448,7 +355,3 @@ maple_anova_full %>%
   gt::gt()
 
 ```
-
-# Statistical Critique Recap
-
-## Common Mistakes

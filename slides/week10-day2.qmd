@@ -8,6 +8,83 @@ format: revealjs
 editor: visual
 ---
 
+```{r}
+#| include: false
+#| label: set-up
+
+library(tidyverse)
+library(lterdatasampler)
+library(openintro)
+library(moderndive)
+library(infer)
+library(ggridges)
+library(broom)
+library(emo)
+library(gt)
+library(RColorBrewer)
+
+trout <- filter(and_vertebrates, 
+                species == "Cutthroat trout")
+```
+
+# Remedying Condition Violations
+
+## Do you have really skewed data?
+
+```{r channel-}
+#| echo: false
+#| fig-align: center
+
+trout %>% 
+  ggplot(aes(y = unittype, x = weight_g)) + 
+  geom_density_ridges(alpha = 0.5, scale = 1) +
+  labs(y = "Channel Type", 
+       x = "Weight (g)") + 
+  theme(axis.title = element_text(size = 18), 
+        axis.text = element_text(size = 16), 
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18))
+```
+
+## Try using a log transformation!
+
+::: columns
+::: {.column width="50%"}
+**Un-transformed Variances**
+
+```{r variance-table}
+#| echo: false
+
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(weight_g)) %>% 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+**Log Transformed Variances**
+
+```{r variance-table-log}
+#| echo: false
+trout %>% 
+  drop_na(weight_g) %>% 
+  group_by(unittype) %>% 
+  summarize(var = var(log(weight_g))) %>% 
+  gt()
+```
+:::
+:::
+:::
+
+. . .
+
+</br>
+
+<center>What do you think?</center>
+
 ##  {background-color="#abdbe3"}
 
 ::: {style="font-size: 4em; color: #000000;"}
