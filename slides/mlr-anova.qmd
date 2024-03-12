@@ -1,0 +1,114 @@
+---
+title: "Future MLR ANOVA Slides"
+format: revealjs
+---
+
+# How does this connect with the ANOVA we did in the Statistical Critique?
+
+<!-- . . . -->
+
+<!-- > ANOVA quantifies *how much* each explanatory variable in a statistical model contributes toward explaining the total variation in the response variable -->
+
+<!-- ## Total Variation in a One-way ANOVA -->
+
+<!-- </br> -->
+
+<!-- ```{r} -->
+<!-- #| label: age-cat-anova -->
+
+<!-- age_lm <- lm(score ~ age_cat, data = evals_small)  -->
+
+<!-- age_anova <- anova(age_lm) %>%  -->
+<!--   tidy()  -->
+
+<!-- age_anova_total <- tibble(term = "Total",  -->
+<!--                           df = nrow(evals_small) - 1,  -->
+<!--                           sumsq = sum(age_anova$sumsq) -->
+<!--                           ) -->
+<!-- age_anova_full <- age_anova %>%  -->
+<!--   bind_rows(age_anova_total)  -->
+
+<!-- age_anova_full %>%  -->
+<!--   gt::gt() -->
+<!-- ``` -->
+
+<!-- </br> -->
+
+<!-- . . . -->
+
+<!-- ::: small -->
+<!-- The `age_cat` line in the ANOVA table quantifies *how much* of the **total variation** in minimum evaluation scores can be explained based on the age group of a faculty member. -->
+
+<!-- ::: fragment -->
+<!-- The `Total` row in an ANOVA table tells us the **total variation** in evaluation scores -- how far each faculty member's minimum evaluation score was from the mean of all the evaluation scores -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Connection to $R^2$ -->
+
+<!-- Based on the ANOVA table, there is `r filter(age_anova_full, term == "Total")$sumsq %>% round(digits = 4)` total variation in minimum evaluation scores, of which `age_cat` is able to explain `r filter(age_anova_full, term == "age_cat")$sumsq %>% round(digits = 4)`. -->
+
+<!-- . . . -->
+
+<!-- Proportionally, that means `age_cat` can explain 3.055% in the total variation in minimum evaluation scores. -->
+
+<!-- . . . -->
+
+<!-- Does that sound familiar? -->
+
+<!-- . . . -->
+
+<!-- </br> -->
+
+<!-- ```{r} -->
+<!-- #| label: r-squared -->
+<!-- #| echo: false -->
+<!-- #| eval: false -->
+
+<!-- glance(age_lm) %>%  -->
+<!--   select(r.squared)  -->
+<!-- ``` -->
+
+<!-- ## Connecting with Multiple Linear Regression -- Multiple Explanatory Variables -->
+
+<!-- ```{r} -->
+<!-- #| label: mlr-crabs -->
+
+<!-- crab_lm <- lm(size ~ latitude + water_temp, data = pie_crab) -->
+
+<!-- crab_anova <- anova(crab_lm) %>%  -->
+<!--   tidy() -->
+
+<!-- crab_anova_total <- tibble(term = "Total",  -->
+<!--                           df = nrow(pie_crab) - 1,  -->
+<!--                           sumsq = sum(crab_anova$sumsq) -->
+<!--                           ) -->
+<!-- crab_anova_full <- crab_anova %>%  -->
+<!--   bind_rows(crab_anova_total)  -->
+
+<!-- crab_anova_full %>%  -->
+<!--   gt::gt() -->
+<!-- ``` -->
+
+
+<!-- ## Connecting with Multiple Linear Regression -- Different Slopes -->
+
+<!-- ```{r} -->
+<!-- #| label: mlr-trees -->
+
+<!-- maple_lm <- lm(stem_dry_mass ~ stem_length * watershed, data = hbr_maples) -->
+
+<!-- maple_anova <- anova(maple_lm) %>%  -->
+<!--   tidy() -->
+
+<!-- maple_anova_total <- tibble(term = "Total",  -->
+<!--                           df = nrow(hbr_maples) - 1,  -->
+<!--                           sumsq = sum(maple_anova$sumsq) -->
+<!--                           ) -->
+<!-- maple_anova_full <- maple_anova %>%  -->
+<!--   bind_rows(maple_anova_total)  -->
+
+<!-- maple_anova_full %>%  -->
+<!--   gt::gt() -->
+
+<!-- ``` -->

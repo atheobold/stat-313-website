@@ -4602,7 +4602,7 @@
     "href": "slides/week10-day1.html#section-1",
     "title": "Two-way ANOVA",
     "section": "",
-    "text": "Modeling Options\n\n\n\n\nAdditive Model\n\n\nAssess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.\n\n\n\nInteraction Model\n\n\nAssess if the relationship between one categorical explanatory variable and the response differs based on the values of another categorical variable."
+    "text": "aov(rating ~ era + genre, data = movies) %&gt;% \n  tidy()\n\nWhy did I use a + when fitting the model?\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nera\n3\n4.585917\n1.528639\n0.6801973\n0.5682209\n\n\ngenre\n1\n4.190670\n4.190670\n1.8647194\n0.1780739\n\n\nResiduals\n51\n114.614663\n2.247346\nNA\nNA\n\n\n\n\n\n\n\n\nWhat is the era line testing?\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#section-2",
@@ -8091,7 +8091,7 @@
     "href": "slides/week10-day1.html#common-mistakes",
     "title": "Two-way ANOVA",
     "section": "Common Mistakes",
-    "text": "Common Mistakes"
+    "text": "Common Mistakes\n\nPlan for Revisions\n\n\n\nStatistical Critique 2 has been graded\nLab 8 will be graded by Friday\nYou are permitted to submit one “free” revision this week\nAdditional revisions can be purchased with any tokens you have remaining\nKeep your revisions in mind, if you wish to purchase a 2-day extension on the final project\nRevisions will be accepted until Thursday, June 15"
   },
   {
     "objectID": "project/final-project-help/assess_independence.html",
@@ -8278,5 +8278,145 @@
     "title": "STAT 313 Last Day",
     "section": "Try using a log transformation!",
     "text": "Try using a log transformation!\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova",
+    "href": "slides/week10-day1.html#do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova",
+    "title": "Two-way ANOVA",
+    "section": "Do you always expect your main effects to be “significant” in a two-way ANOVA?",
+    "text": "Do you always expect your main effects to be “significant” in a two-way ANOVA?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#research-question",
+    "href": "slides/week10-day1.html#research-question",
+    "title": "Two-way ANOVA",
+    "section": "Research Question",
+    "text": "Research Question\n\nDoes the relationship between stem dry mass and calcium treatment for sugar maples differ based on the year the treatment was applied?\n\n\n\nOr, because the study was an experiment…\n\nDoes the effect of calcium treatment on the stem dry mass of sugar maples differ based on the year of the treatment?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#modeling-options",
+    "href": "slides/week10-day1.html#modeling-options",
+    "title": "Two-way ANOVA",
+    "section": "Modeling Options",
+    "text": "Modeling Options\n\n\n\nAdditive Model\n\n\nAssess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.\n\n\n\nInteraction Model\n\n\nAssess if the relationship between one categorical explanatory variable and the response differs based on the values of another categorical variable."
+  },
+  {
+    "objectID": "slides/week10-day1.html#what-are-we-looking-for",
+    "href": "slides/week10-day1.html#what-are-we-looking-for",
+    "title": "Two-way ANOVA",
+    "section": "What are we looking for?",
+    "text": "What are we looking for?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#conditions",
+    "href": "slides/week10-day1.html#conditions",
+    "title": "Two-way ANOVA",
+    "section": "Conditions",
+    "text": "Conditions\n\nIndependence of observations\n\n\n\nObservations are independent within groups and between groups\n\n\n\n\nNormality of the residuals\n\n\n\nThe distribution of residuals for each group is approximately normal\n\n\n\n\n\nEqual variability of the groups\n\n\n\nThe spread of the distributions are similar across groups"
+  },
+  {
+    "objectID": "slides/week10-day1.html#theory-based-two-way-anova",
+    "href": "slides/week10-day1.html#theory-based-two-way-anova",
+    "title": "Two-way ANOVA",
+    "section": "Theory-based Two-Way ANOVA",
+    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.009047815\n0.0090478152\n45.39776\n1.376268e-10\n\n\nyear_cat\n1\n0.112142446\n0.1121424462\n562.67904\n1.131101e-62\n\n\nwatershed:year_cat\n1\n0.003005371\n0.0030053705\n15.07956\n1.361572e-04\n\n\nResiduals\n221\n0.044045502\n0.0001993009\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#how-are-those-p-values-calculated",
+    "href": "slides/week10-day1.html#how-are-those-p-values-calculated",
+    "title": "Two-way ANOVA",
+    "section": "How are those p-values calculated?",
+    "text": "How are those p-values calculated?\nThe p-values in the previous table use Type I sums of squares. Type I sums of squares are “sequential,” meaning variables are tested in the order they are listed.\n\n\nSo, the p-value for watershed:year_cat is conditional on including watershed and year_cat as explanatory variables.\n\n\n\nIs that what we want????"
+  },
+  {
+    "objectID": "slides/week10-day1.html#testing-main-effects-in-the-presence-of-an-interaction",
+    "href": "slides/week10-day1.html#testing-main-effects-in-the-presence-of-an-interaction",
+    "title": "Two-way ANOVA",
+    "section": "Testing “main effects” in the presence of an interaction",
+    "text": "Testing “main effects” in the presence of an interaction\nIf there is evidence of an interaction, we do not test if the main effects are “significant.”\n\nWhy?\n\n\nThe interactions depend on these variables, so they should be included in the model!"
+  },
+  {
+    "objectID": "slides/week10-day1.html#what-if-our-analysis-found-no-evidence-of-an-interaction",
+    "href": "slides/week10-day1.html#what-if-our-analysis-found-no-evidence-of-an-interaction",
+    "title": "Two-way ANOVA",
+    "section": "What if our analysis found no evidence of an interaction?",
+    "text": "What if our analysis found no evidence of an interaction?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
+    "href": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
+    "title": "Two-way ANOVA",
+    "section": "Testing for a relationship for each variable",
+    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0002207478\n2.207478e-04\n4.619142\n3.323197e-02\n\n\nwatershed\n1\n0.0031464922\n3.146492e-03\n65.840262\n1.678437e-13\n\n\nResiduals\n149\n0.0071206784\n4.778979e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#lets-see",
+    "href": "slides/week10-day1.html#lets-see",
+    "title": "Two-way ANOVA",
+    "section": "Let’s see…",
+    "text": "Let’s see…\n\naov(stem_dry_mass ~ watershed + elevation, \n    data = hbr_maples) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.0065062507\n6.506251e-03\n86.658504\n9.073535e-18\n\n\nelevation\n1\n0.0005821935\n5.821935e-04\n7.754392\n5.791052e-03\n\n\nResiduals\n237\n0.0177937692\n7.507919e-05\nNA\nNA\n\n\n\n\n\n\n\n\nDid we get the same p-values as before?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#anova",
+    "href": "slides/week10-day1.html#anova",
+    "title": "Two-way ANOVA",
+    "section": "Anova()",
+    "text": "Anova()\n\nlibrary(car)\n\nwater_elev_lm &lt;- lm(stem_dry_mass ~ watershed + elevation, \n    data = hbr_maples_small) \n\nAnova(water_elev_lm, type = \"III\")\n\n\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0347596587\n1\n762.940095\n2.067423e-59\n\n\nwatershed\n0.0026898272\n1\n59.039044\n2.185836e-12\n\n\nelevation\n0.0002963513\n1\n6.504618\n1.180438e-02\n\n\nResiduals\n0.0065606604\n144\nNA\nNA"
+  },
+  {
+    "objectID": "slides/week10-day1.html#sequential-versus-partial-sums-of-squares",
+    "href": "slides/week10-day1.html#sequential-versus-partial-sums-of-squares",
+    "title": "Two-way ANOVA",
+    "section": "Sequential Versus Partial Sums of Squares",
+    "text": "Sequential Versus Partial Sums of Squares"
+  },
+  {
+    "objectID": "slides/week10-day1.html#an-new-function-anova",
+    "href": "slides/week10-day1.html#an-new-function-anova",
+    "title": "Two-way ANOVA",
+    "section": "An new function – Anova()",
+    "text": "An new function – Anova()\n\nlibrary(car)\n\nwater_elev_lm &lt;- lm(stem_dry_mass ~ watershed + elevation, \n    data = hbr_maples_small) \n\nAnova(water_elev_lm, type = \"III\")\n\n\n\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0356126747\n1\n745.194242\n7.487365e-60\n\n\nwatershed\n0.0031464922\n1\n65.840262\n1.678437e-13\n\n\nelevation\n0.0003049383\n1\n6.380826\n1.258081e-02\n\n\nResiduals\n0.0071206784\n149\nNA\nNA\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
+  },
+  {
+    "objectID": "slides/week10-day1.html#interpreting-main-effects-in-the-presence-of-an-interaction",
+    "href": "slides/week10-day1.html#interpreting-main-effects-in-the-presence-of-an-interaction",
+    "title": "Two-way ANOVA",
+    "section": "Interpreting “main effects” in the presence of an interaction",
+    "text": "Interpreting “main effects” in the presence of an interaction\nWhen interaction effects are present, the interpretation of the main effects is incomplete or misleading"
+  },
+  {
+    "objectID": "slides/week10-day1.html#testing-main-effects",
+    "href": "slides/week10-day1.html#testing-main-effects",
+    "title": "Two-way ANOVA",
+    "section": "Testing “main effects”",
+    "text": "Testing “main effects”\nIf there is evidence of an interaction, we do not test if the main effects are “significant.”\n\n\nWhy?\n\n\n\nThe interactions depend on these variables, so they should be included in the model!"
+  },
+  {
+    "objectID": "slides/week10-day1.html#interpreting-main-effects",
+    "href": "slides/week10-day1.html#interpreting-main-effects",
+    "title": "Two-way ANOVA",
+    "section": "Interpreting “main effects”",
+    "text": "Interpreting “main effects”\nWhen interaction effects are present, the interpretation of the main effects is incomplete or misleading"
+  },
+  {
+    "objectID": "slides/week10-day1.html#keeping-non-significant-variables",
+    "href": "slides/week10-day1.html#keeping-non-significant-variables",
+    "title": "Two-way ANOVA",
+    "section": "Keeping “non-significant” Variables",
+    "text": "Keeping “non-significant” Variables"
+  },
+  {
+    "objectID": "slides/week10-day1.html#step-3-fit-an-additive-two-way-anova",
+    "href": "slides/week10-day1.html#step-3-fit-an-additive-two-way-anova",
+    "title": "Two-way ANOVA",
+    "section": "Step 3 – Fit an Additive Two-way ANOVA",
+    "text": "Step 3 – Fit an Additive Two-way ANOVA"
+  },
+  {
+    "objectID": "slides/week10-day1.html#what-about-interaction-models",
+    "href": "slides/week10-day1.html#what-about-interaction-models",
+    "title": "Two-way ANOVA",
+    "section": "What about interaction models?",
+    "text": "What about interaction models?"
   }
 ]
