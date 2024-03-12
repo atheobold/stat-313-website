@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>STAT 313 / 513 - Two-way ANOVA</title>
+  <title>STAT 313 / 513 - Week 10: Two-way ANOVA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,28 +390,42 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Two-way ANOVA</h1>
+  <h1 class="title">Week 10: Two-way ANOVA</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="week-10" class="title-slide slide level1 center">
+<h1>Week 10</h1>
 
-<!-- # Statistical Critique Recap -->
-<!-- ## Common Mistakes -->
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-<!-- Plan for Revisions -->
-<!-- ::: -->
-<!-- ::: incremental -->
-<!-- -   Statistical Critique 2 has been graded -->
-<!-- -   Lab 8 will be graded by Friday -->
-<!-- -   You are permitted to submit **one** "free" revision this week -->
-<!-- -   Additional revisions can be purchased with any tokens you have remaining -->
-<!-- -   Keep your revisions in mind, if you wish to purchase a 2-day extension on the final project -->
-<!-- -   Revisions will be accepted until Thursday, June 15 -->
-<!-- ::: -->
 </section>
+<section id="wrapping-up" class="slide level2">
+<h2>Wrapping Up</h2>
+<div>
+<ul>
+<li class="fragment">Statistical Critique 2 revisions are due by Thursday</li>
+<li class="fragment">Lab 8 revisions are due by Thursday</li>
+<li class="fragment">Final revisions on <strong>all</strong> assignments will be accepted until this Sunday, March 17</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>One round of revisions</strong></p>
+</div>
+<div class="callout-content">
+<p>You will only have time for <em>one</em> round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="two-way-anova-models" class="title-slide slide level1 center">
 <h1>Two-Way ANOVA Models</h1>
@@ -508,29 +522,29 @@
 <section id="theory-based-two-way-anova" class="slide level2">
 <h2>Theory-based Two-Way ANOVA</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">*</span> year_cat, </span>
-<span id="cb1-2"><a></a>    <span class="at">data =</span> hbr_maples_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">*</span> year_cat, </span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> hbr_maples_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="glmrcsyxwv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#glmrcsyxwv table {
+<div id="dqhglhgzfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dqhglhgzfi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#glmrcsyxwv thead, #glmrcsyxwv tbody, #glmrcsyxwv tfoot, #glmrcsyxwv tr, #glmrcsyxwv td, #glmrcsyxwv th {
+#dqhglhgzfi thead, #dqhglhgzfi tbody, #dqhglhgzfi tfoot, #dqhglhgzfi tr, #dqhglhgzfi td, #dqhglhgzfi th {
   border-style: none;
 }
 
-#glmrcsyxwv p {
+#dqhglhgzfi p {
   margin: 0;
   padding: 0;
 }
 
-#glmrcsyxwv .gt_table {
+#dqhglhgzfi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -556,12 +570,12 @@
   border-left-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_caption {
+#dqhglhgzfi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#glmrcsyxwv .gt_title {
+#dqhglhgzfi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -573,7 +587,7 @@
   border-bottom-width: 0;
 }
 
-#glmrcsyxwv .gt_subtitle {
+#dqhglhgzfi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -585,7 +599,7 @@
   border-top-width: 0;
 }
 
-#glmrcsyxwv .gt_heading {
+#dqhglhgzfi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -597,13 +611,13 @@
   border-right-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_bottom_border {
+#dqhglhgzfi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_col_headings {
+#dqhglhgzfi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -618,7 +632,7 @@
   border-right-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_col_heading {
+#dqhglhgzfi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -638,7 +652,7 @@
   overflow-x: hidden;
 }
 
-#glmrcsyxwv .gt_column_spanner_outer {
+#dqhglhgzfi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -650,15 +664,15 @@
   padding-right: 4px;
 }
 
-#glmrcsyxwv .gt_column_spanner_outer:first-child {
+#dqhglhgzfi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#glmrcsyxwv .gt_column_spanner_outer:last-child {
+#dqhglhgzfi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#glmrcsyxwv .gt_column_spanner {
+#dqhglhgzfi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -670,11 +684,11 @@
   width: 100%;
 }
 
-#glmrcsyxwv .gt_spanner_row {
+#dqhglhgzfi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#glmrcsyxwv .gt_group_heading {
+#dqhglhgzfi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +714,7 @@
   text-align: left;
 }
 
-#glmrcsyxwv .gt_empty_group_heading {
+#dqhglhgzfi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -715,15 +729,15 @@
   vertical-align: middle;
 }
 
-#glmrcsyxwv .gt_from_md > :first-child {
+#dqhglhgzfi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#glmrcsyxwv .gt_from_md > :last-child {
+#dqhglhgzfi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#glmrcsyxwv .gt_row {
+#dqhglhgzfi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -742,7 +756,7 @@
   overflow-x: hidden;
 }
 
-#glmrcsyxwv .gt_stub {
+#dqhglhgzfi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -755,7 +769,7 @@
   padding-right: 5px;
 }
 
-#glmrcsyxwv .gt_stub_row_group {
+#dqhglhgzfi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -769,15 +783,15 @@
   vertical-align: top;
 }
 
-#glmrcsyxwv .gt_row_group_first td {
+#dqhglhgzfi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#glmrcsyxwv .gt_row_group_first th {
+#dqhglhgzfi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#glmrcsyxwv .gt_summary_row {
+#dqhglhgzfi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -787,16 +801,16 @@
   padding-right: 5px;
 }
 
-#glmrcsyxwv .gt_first_summary_row {
+#dqhglhgzfi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_first_summary_row.thick {
+#dqhglhgzfi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#glmrcsyxwv .gt_last_summary_row {
+#dqhglhgzfi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -806,7 +820,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_grand_summary_row {
+#dqhglhgzfi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -816,7 +830,7 @@
   padding-right: 5px;
 }
 
-#glmrcsyxwv .gt_first_grand_summary_row {
+#dqhglhgzfi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -826,7 +840,7 @@
   border-top-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_last_grand_summary_row_top {
+#dqhglhgzfi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -836,11 +850,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_striped {
+#dqhglhgzfi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#glmrcsyxwv .gt_table_body {
+#dqhglhgzfi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -849,7 +863,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_footnotes {
+#dqhglhgzfi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -863,7 +877,7 @@
   border-right-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_footnote {
+#dqhglhgzfi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -872,7 +886,7 @@
   padding-right: 5px;
 }
 
-#glmrcsyxwv .gt_sourcenotes {
+#dqhglhgzfi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -886,7 +900,7 @@
   border-right-color: #D3D3D3;
 }
 
-#glmrcsyxwv .gt_sourcenote {
+#dqhglhgzfi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -894,63 +908,63 @@
   padding-right: 5px;
 }
 
-#glmrcsyxwv .gt_left {
+#dqhglhgzfi .gt_left {
   text-align: left;
 }
 
-#glmrcsyxwv .gt_center {
+#dqhglhgzfi .gt_center {
   text-align: center;
 }
 
-#glmrcsyxwv .gt_right {
+#dqhglhgzfi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#glmrcsyxwv .gt_font_normal {
+#dqhglhgzfi .gt_font_normal {
   font-weight: normal;
 }
 
-#glmrcsyxwv .gt_font_bold {
+#dqhglhgzfi .gt_font_bold {
   font-weight: bold;
 }
 
-#glmrcsyxwv .gt_font_italic {
+#dqhglhgzfi .gt_font_italic {
   font-style: italic;
 }
 
-#glmrcsyxwv .gt_super {
+#dqhglhgzfi .gt_super {
   font-size: 65%;
 }
 
-#glmrcsyxwv .gt_footnote_marks {
+#dqhglhgzfi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#glmrcsyxwv .gt_asterisk {
+#dqhglhgzfi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#glmrcsyxwv .gt_indent_1 {
+#dqhglhgzfi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#glmrcsyxwv .gt_indent_2 {
+#dqhglhgzfi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#glmrcsyxwv .gt_indent_3 {
+#dqhglhgzfi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#glmrcsyxwv .gt_indent_4 {
+#dqhglhgzfi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#glmrcsyxwv .gt_indent_5 {
+#dqhglhgzfi .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -970,32 +984,32 @@
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">watershed</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="sumsq">0.009047815</td>
-<td class="gt_row gt_right" headers="meansq">0.0090478152</td>
-<td class="gt_row gt_right" headers="statistic">45.39776</td>
-<td class="gt_row gt_right" headers="p.value">1.376268e-10</td>
+<td class="gt_row gt_right" headers="sumsq">0.012317174</td>
+<td class="gt_row gt_right" headers="meansq">0.0123171744</td>
+<td class="gt_row gt_right" headers="statistic">50.82532</td>
+<td class="gt_row gt_right" headers="p.value">1.417670e-11</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">year_cat</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="sumsq">0.112142446</td>
-<td class="gt_row gt_right" headers="meansq">0.1121424462</td>
-<td class="gt_row gt_right" headers="statistic">562.67904</td>
-<td class="gt_row gt_right" headers="p.value">1.131101e-62</td>
+<td class="gt_row gt_right" headers="sumsq">0.131907857</td>
+<td class="gt_row gt_right" headers="meansq">0.1319078571</td>
+<td class="gt_row gt_right" headers="statistic">544.30169</td>
+<td class="gt_row gt_right" headers="p.value">1.564219e-61</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">watershed:year_cat</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="sumsq">0.003005371</td>
-<td class="gt_row gt_right" headers="meansq">0.0030053705</td>
-<td class="gt_row gt_right" headers="statistic">15.07956</td>
-<td class="gt_row gt_right" headers="p.value">1.361572e-04</td>
+<td class="gt_row gt_right" headers="sumsq">0.005062766</td>
+<td class="gt_row gt_right" headers="meansq">0.0050627660</td>
+<td class="gt_row gt_right" headers="statistic">20.89089</td>
+<td class="gt_row gt_right" headers="p.value">8.088462e-06</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">Residuals</td>
 <td class="gt_row gt_right" headers="df">221</td>
-<td class="gt_row gt_right" headers="sumsq">0.044045502</td>
-<td class="gt_row gt_right" headers="meansq">0.0001993009</td>
+<td class="gt_row gt_right" headers="sumsq">0.053557864</td>
+<td class="gt_row gt_right" headers="meansq">0.0002423433</td>
 <td class="gt_row gt_right" headers="statistic">NA</td>
 <td class="gt_row gt_right" headers="p.value">NA</td>
 </tr>
@@ -1011,7 +1025,7 @@
 </div>
 </div>
 <div class="fragment">
-<br>
+<p><br></p>
 <center>
 Does it?
 </center>
@@ -1019,7 +1033,10 @@ Does it?
 </section>
 <section id="how-are-those-p-values-calculated" class="slide level2">
 <h2>How are those p-values calculated?</h2>
-<p>The p-values in the previous table use <strong>Type I</strong> sums of squares. Type I sums of squares are “sequential,” meaning variables are tested in the order they are listed.</p>
+<p>The p-values in the previous table use <strong>Type I</strong> sums of squares.</p>
+<blockquote>
+<p>Type I sums of squares are “sequential,” meaning variables are tested in the order they are listed.</p>
+</blockquote>
 <div class="fragment">
 <p><br></p>
 <p>So, the p-value for <code>watershed:year_cat</code> is <strong>conditional</strong> on including <code>watershed</code> and <code>year_cat</code> as explanatory variables.</p>
@@ -1060,30 +1077,30 @@ Does it?
 <section id="testing-for-a-relationship-for-each-variable" class="slide level2">
 <h2>Testing for a relationship for each variable</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> elevation <span class="sc">+</span> watershed, </span>
-<span id="cb2-2"><a></a>    <span class="at">data =</span> hbr_maples_small) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> elevation <span class="sc">+</span> watershed, </span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> hbr_maples_small) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="gblyjdprnc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gblyjdprnc table {
+<div id="jyzvpkdshw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jyzvpkdshw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gblyjdprnc thead, #gblyjdprnc tbody, #gblyjdprnc tfoot, #gblyjdprnc tr, #gblyjdprnc td, #gblyjdprnc th {
+#jyzvpkdshw thead, #jyzvpkdshw tbody, #jyzvpkdshw tfoot, #jyzvpkdshw tr, #jyzvpkdshw td, #jyzvpkdshw th {
   border-style: none;
 }
 
-#gblyjdprnc p {
+#jyzvpkdshw p {
   margin: 0;
   padding: 0;
 }
 
-#gblyjdprnc .gt_table {
+#jyzvpkdshw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1109,12 +1126,12 @@ Does it?
   border-left-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_caption {
+#jyzvpkdshw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gblyjdprnc .gt_title {
+#jyzvpkdshw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1126,7 +1143,7 @@ Does it?
   border-bottom-width: 0;
 }
 
-#gblyjdprnc .gt_subtitle {
+#jyzvpkdshw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1138,7 +1155,7 @@ Does it?
   border-top-width: 0;
 }
 
-#gblyjdprnc .gt_heading {
+#jyzvpkdshw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1150,13 +1167,13 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_bottom_border {
+#jyzvpkdshw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_col_headings {
+#jyzvpkdshw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1171,7 +1188,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_col_heading {
+#jyzvpkdshw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1191,7 +1208,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#gblyjdprnc .gt_column_spanner_outer {
+#jyzvpkdshw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1203,15 +1220,15 @@ Does it?
   padding-right: 4px;
 }
 
-#gblyjdprnc .gt_column_spanner_outer:first-child {
+#jyzvpkdshw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gblyjdprnc .gt_column_spanner_outer:last-child {
+#jyzvpkdshw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gblyjdprnc .gt_column_spanner {
+#jyzvpkdshw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1223,11 +1240,11 @@ Does it?
   width: 100%;
 }
 
-#gblyjdprnc .gt_spanner_row {
+#jyzvpkdshw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gblyjdprnc .gt_group_heading {
+#jyzvpkdshw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1253,7 +1270,7 @@ Does it?
   text-align: left;
 }
 
-#gblyjdprnc .gt_empty_group_heading {
+#jyzvpkdshw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1268,15 +1285,15 @@ Does it?
   vertical-align: middle;
 }
 
-#gblyjdprnc .gt_from_md > :first-child {
+#jyzvpkdshw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gblyjdprnc .gt_from_md > :last-child {
+#jyzvpkdshw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gblyjdprnc .gt_row {
+#jyzvpkdshw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1295,7 +1312,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#gblyjdprnc .gt_stub {
+#jyzvpkdshw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1308,7 +1325,7 @@ Does it?
   padding-right: 5px;
 }
 
-#gblyjdprnc .gt_stub_row_group {
+#jyzvpkdshw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1322,15 +1339,15 @@ Does it?
   vertical-align: top;
 }
 
-#gblyjdprnc .gt_row_group_first td {
+#jyzvpkdshw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gblyjdprnc .gt_row_group_first th {
+#jyzvpkdshw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gblyjdprnc .gt_summary_row {
+#jyzvpkdshw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1340,16 +1357,16 @@ Does it?
   padding-right: 5px;
 }
 
-#gblyjdprnc .gt_first_summary_row {
+#jyzvpkdshw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_first_summary_row.thick {
+#jyzvpkdshw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gblyjdprnc .gt_last_summary_row {
+#jyzvpkdshw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1359,7 +1376,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_grand_summary_row {
+#jyzvpkdshw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1369,7 +1386,7 @@ Does it?
   padding-right: 5px;
 }
 
-#gblyjdprnc .gt_first_grand_summary_row {
+#jyzvpkdshw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1379,7 +1396,7 @@ Does it?
   border-top-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_last_grand_summary_row_top {
+#jyzvpkdshw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1389,11 +1406,11 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_striped {
+#jyzvpkdshw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gblyjdprnc .gt_table_body {
+#jyzvpkdshw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1402,7 +1419,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_footnotes {
+#jyzvpkdshw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1416,7 +1433,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_footnote {
+#jyzvpkdshw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1425,7 +1442,7 @@ Does it?
   padding-right: 5px;
 }
 
-#gblyjdprnc .gt_sourcenotes {
+#jyzvpkdshw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1439,7 +1456,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#gblyjdprnc .gt_sourcenote {
+#jyzvpkdshw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1447,63 +1464,63 @@ Does it?
   padding-right: 5px;
 }
 
-#gblyjdprnc .gt_left {
+#jyzvpkdshw .gt_left {
   text-align: left;
 }
 
-#gblyjdprnc .gt_center {
+#jyzvpkdshw .gt_center {
   text-align: center;
 }
 
-#gblyjdprnc .gt_right {
+#jyzvpkdshw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gblyjdprnc .gt_font_normal {
+#jyzvpkdshw .gt_font_normal {
   font-weight: normal;
 }
 
-#gblyjdprnc .gt_font_bold {
+#jyzvpkdshw .gt_font_bold {
   font-weight: bold;
 }
 
-#gblyjdprnc .gt_font_italic {
+#jyzvpkdshw .gt_font_italic {
   font-style: italic;
 }
 
-#gblyjdprnc .gt_super {
+#jyzvpkdshw .gt_super {
   font-size: 65%;
 }
 
-#gblyjdprnc .gt_footnote_marks {
+#jyzvpkdshw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gblyjdprnc .gt_asterisk {
+#jyzvpkdshw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gblyjdprnc .gt_indent_1 {
+#jyzvpkdshw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gblyjdprnc .gt_indent_2 {
+#jyzvpkdshw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gblyjdprnc .gt_indent_3 {
+#jyzvpkdshw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gblyjdprnc .gt_indent_4 {
+#jyzvpkdshw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gblyjdprnc .gt_indent_5 {
+#jyzvpkdshw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1523,24 +1540,24 @@ Does it?
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">elevation</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="sumsq">0.0002207478</td>
-<td class="gt_row gt_right" headers="meansq">2.207478e-04</td>
-<td class="gt_row gt_right" headers="statistic">4.619142</td>
-<td class="gt_row gt_right" headers="p.value">3.323197e-02</td>
+<td class="gt_row gt_right" headers="sumsq">0.0003430721</td>
+<td class="gt_row gt_right" headers="meansq">3.430721e-04</td>
+<td class="gt_row gt_right" headers="statistic">7.064961</td>
+<td class="gt_row gt_right" headers="p.value">8.736811e-03</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">watershed</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="sumsq">0.0031464922</td>
-<td class="gt_row gt_right" headers="meansq">3.146492e-03</td>
-<td class="gt_row gt_right" headers="statistic">65.840262</td>
-<td class="gt_row gt_right" headers="p.value">1.678437e-13</td>
+<td class="gt_row gt_right" headers="sumsq">0.0020984834</td>
+<td class="gt_row gt_right" headers="meansq">2.098483e-03</td>
+<td class="gt_row gt_right" headers="statistic">43.214540</td>
+<td class="gt_row gt_right" headers="p.value">8.134891e-10</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">Residuals</td>
-<td class="gt_row gt_right" headers="df">149</td>
-<td class="gt_row gt_right" headers="sumsq">0.0071206784</td>
-<td class="gt_row gt_right" headers="meansq">4.778979e-05</td>
+<td class="gt_row gt_right" headers="df">146</td>
+<td class="gt_row gt_right" headers="sumsq">0.0070897103</td>
+<td class="gt_row gt_right" headers="meansq">4.855966e-05</td>
 <td class="gt_row gt_right" headers="statistic">NA</td>
 <td class="gt_row gt_right" headers="p.value">NA</td>
 </tr>
@@ -1560,30 +1577,30 @@ Does it?
 <section id="lets-see" class="slide level2">
 <h2>Let’s see…</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">+</span> elevation, </span>
-<span id="cb3-2"><a></a>    <span class="at">data =</span> hbr_maples) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">+</span> elevation, </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> hbr_maples) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="xrcepzjadu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xrcepzjadu table {
+<div id="euigoovpsw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#euigoovpsw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xrcepzjadu thead, #xrcepzjadu tbody, #xrcepzjadu tfoot, #xrcepzjadu tr, #xrcepzjadu td, #xrcepzjadu th {
+#euigoovpsw thead, #euigoovpsw tbody, #euigoovpsw tfoot, #euigoovpsw tr, #euigoovpsw td, #euigoovpsw th {
   border-style: none;
 }
 
-#xrcepzjadu p {
+#euigoovpsw p {
   margin: 0;
   padding: 0;
 }
 
-#xrcepzjadu .gt_table {
+#euigoovpsw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1609,12 +1626,12 @@ Does it?
   border-left-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_caption {
+#euigoovpsw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xrcepzjadu .gt_title {
+#euigoovpsw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1626,7 +1643,7 @@ Does it?
   border-bottom-width: 0;
 }
 
-#xrcepzjadu .gt_subtitle {
+#euigoovpsw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1638,7 +1655,7 @@ Does it?
   border-top-width: 0;
 }
 
-#xrcepzjadu .gt_heading {
+#euigoovpsw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1650,13 +1667,13 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_bottom_border {
+#euigoovpsw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_col_headings {
+#euigoovpsw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1671,7 +1688,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_col_heading {
+#euigoovpsw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1691,7 +1708,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#xrcepzjadu .gt_column_spanner_outer {
+#euigoovpsw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1703,15 +1720,15 @@ Does it?
   padding-right: 4px;
 }
 
-#xrcepzjadu .gt_column_spanner_outer:first-child {
+#euigoovpsw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xrcepzjadu .gt_column_spanner_outer:last-child {
+#euigoovpsw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xrcepzjadu .gt_column_spanner {
+#euigoovpsw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1723,11 +1740,11 @@ Does it?
   width: 100%;
 }
 
-#xrcepzjadu .gt_spanner_row {
+#euigoovpsw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xrcepzjadu .gt_group_heading {
+#euigoovpsw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1753,7 +1770,7 @@ Does it?
   text-align: left;
 }
 
-#xrcepzjadu .gt_empty_group_heading {
+#euigoovpsw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1768,15 +1785,15 @@ Does it?
   vertical-align: middle;
 }
 
-#xrcepzjadu .gt_from_md > :first-child {
+#euigoovpsw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xrcepzjadu .gt_from_md > :last-child {
+#euigoovpsw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xrcepzjadu .gt_row {
+#euigoovpsw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1795,7 +1812,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#xrcepzjadu .gt_stub {
+#euigoovpsw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1808,7 +1825,7 @@ Does it?
   padding-right: 5px;
 }
 
-#xrcepzjadu .gt_stub_row_group {
+#euigoovpsw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1822,15 +1839,15 @@ Does it?
   vertical-align: top;
 }
 
-#xrcepzjadu .gt_row_group_first td {
+#euigoovpsw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xrcepzjadu .gt_row_group_first th {
+#euigoovpsw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xrcepzjadu .gt_summary_row {
+#euigoovpsw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1840,16 +1857,16 @@ Does it?
   padding-right: 5px;
 }
 
-#xrcepzjadu .gt_first_summary_row {
+#euigoovpsw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_first_summary_row.thick {
+#euigoovpsw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xrcepzjadu .gt_last_summary_row {
+#euigoovpsw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1859,7 +1876,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_grand_summary_row {
+#euigoovpsw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1869,7 +1886,7 @@ Does it?
   padding-right: 5px;
 }
 
-#xrcepzjadu .gt_first_grand_summary_row {
+#euigoovpsw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1879,7 +1896,7 @@ Does it?
   border-top-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_last_grand_summary_row_top {
+#euigoovpsw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1889,11 +1906,11 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_striped {
+#euigoovpsw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xrcepzjadu .gt_table_body {
+#euigoovpsw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1902,7 +1919,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_footnotes {
+#euigoovpsw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1916,7 +1933,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_footnote {
+#euigoovpsw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1925,7 +1942,7 @@ Does it?
   padding-right: 5px;
 }
 
-#xrcepzjadu .gt_sourcenotes {
+#euigoovpsw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1939,7 +1956,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#xrcepzjadu .gt_sourcenote {
+#euigoovpsw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1947,63 +1964,63 @@ Does it?
   padding-right: 5px;
 }
 
-#xrcepzjadu .gt_left {
+#euigoovpsw .gt_left {
   text-align: left;
 }
 
-#xrcepzjadu .gt_center {
+#euigoovpsw .gt_center {
   text-align: center;
 }
 
-#xrcepzjadu .gt_right {
+#euigoovpsw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xrcepzjadu .gt_font_normal {
+#euigoovpsw .gt_font_normal {
   font-weight: normal;
 }
 
-#xrcepzjadu .gt_font_bold {
+#euigoovpsw .gt_font_bold {
   font-weight: bold;
 }
 
-#xrcepzjadu .gt_font_italic {
+#euigoovpsw .gt_font_italic {
   font-style: italic;
 }
 
-#xrcepzjadu .gt_super {
+#euigoovpsw .gt_super {
   font-size: 65%;
 }
 
-#xrcepzjadu .gt_footnote_marks {
+#euigoovpsw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xrcepzjadu .gt_asterisk {
+#euigoovpsw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xrcepzjadu .gt_indent_1 {
+#euigoovpsw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xrcepzjadu .gt_indent_2 {
+#euigoovpsw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xrcepzjadu .gt_indent_3 {
+#euigoovpsw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xrcepzjadu .gt_indent_4 {
+#euigoovpsw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xrcepzjadu .gt_indent_5 {
+#euigoovpsw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2055,38 +2072,96 @@ Does it?
 </section>
 <section id="sequential-versus-partial-sums-of-squares" class="slide level2">
 <h2>Sequential Versus Partial Sums of Squares</h2>
-</section>
-<section id="an-new-function-anova" class="slide level2">
-<h2>An new function – <code>Anova()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(car)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>water_elev_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">+</span> elevation, </span>
-<span id="cb4-4"><a></a>    <span class="at">data =</span> hbr_maples_small) </span>
-<span id="cb4-5"><a></a></span>
-<span id="cb4-6"><a></a><span class="fu">Anova</span>(water_elev_lm, <span class="at">type =</span> <span class="st">"III"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similar to before, the p-values in the ANOVA table use Type I (sequential) sums of squares.</p>
+<div>
+<div class="small">
+<ul>
+<li class="fragment">The p-value for each variable is conditional on the variable(s) that came <em>before</em> it.</li>
+<li class="fragment">The p-value for <code>elevation</code> is conditional on <code>watershed</code> being included in the model</li>
+<li class="fragment">The p-value for <code>watershed</code> is conditional on…nothing.</li>
+</ul>
 </div>
-<p><br></p>
+</div>
 <div class="fragment">
+<div class="small">
+<p>If we want the p-value for each explanatory variable to be conditional on <strong>every</strong> variable included in the model, then we need to use a different type of sums of squares!</p>
+</div>
+</div>
+</section>
+<section id="partial-sums-of-squares" class="slide level2">
+<h2>Partial Sums of Squares</h2>
+<blockquote>
+<p>Type III sums of squares are “partial,” meaning every term in the model is tested in light of the other terms in the model.</p>
+</blockquote>
+<div class="fragment">
+<div class="small">
+<ul>
+<li>The p-value for <code>elevation</code> is conditional on <code>watershed</code> being included in the model</li>
+<li>The p-value for <code>watershed</code> is conditional on <code>elevation</code> being included in the model</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Only different for variables that <em>were not</em> first</strong></p>
+</div>
+<div class="callout-content">
+<p>We could have used Type III sums of squares for the interaction model and would have gotten the same p-value!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="getting-the-conditional-tests-for-every-variable" class="slide level2">
+<h2>Getting the Conditional Tests for Every Variable</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>water_elev_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(stem_dry_mass <span class="sc">~</span> watershed <span class="sc">+</span> elevation, </span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> hbr_maples_small) </span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(water_elev_lm, <span class="at">type =</span> <span class="st">"III"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Load in the <code>car</code> package!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="additive-model-hypothesis-tests" class="slide level2">
+<h2>Additive Model Hypothesis Tests</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="wjvtqbhwyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wjvtqbhwyc table {
+<div id="curvwqraue" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#curvwqraue table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wjvtqbhwyc thead, #wjvtqbhwyc tbody, #wjvtqbhwyc tfoot, #wjvtqbhwyc tr, #wjvtqbhwyc td, #wjvtqbhwyc th {
+#curvwqraue thead, #curvwqraue tbody, #curvwqraue tfoot, #curvwqraue tr, #curvwqraue td, #curvwqraue th {
   border-style: none;
 }
 
-#wjvtqbhwyc p {
+#curvwqraue p {
   margin: 0;
   padding: 0;
 }
 
-#wjvtqbhwyc .gt_table {
+#curvwqraue .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2112,12 +2187,12 @@ Does it?
   border-left-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_caption {
+#curvwqraue .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wjvtqbhwyc .gt_title {
+#curvwqraue .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2129,7 +2204,7 @@ Does it?
   border-bottom-width: 0;
 }
 
-#wjvtqbhwyc .gt_subtitle {
+#curvwqraue .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2141,7 +2216,7 @@ Does it?
   border-top-width: 0;
 }
 
-#wjvtqbhwyc .gt_heading {
+#curvwqraue .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2153,13 +2228,13 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_bottom_border {
+#curvwqraue .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_col_headings {
+#curvwqraue .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2174,7 +2249,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_col_heading {
+#curvwqraue .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2194,7 +2269,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#wjvtqbhwyc .gt_column_spanner_outer {
+#curvwqraue .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2206,15 +2281,15 @@ Does it?
   padding-right: 4px;
 }
 
-#wjvtqbhwyc .gt_column_spanner_outer:first-child {
+#curvwqraue .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wjvtqbhwyc .gt_column_spanner_outer:last-child {
+#curvwqraue .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wjvtqbhwyc .gt_column_spanner {
+#curvwqraue .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2226,11 +2301,11 @@ Does it?
   width: 100%;
 }
 
-#wjvtqbhwyc .gt_spanner_row {
+#curvwqraue .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wjvtqbhwyc .gt_group_heading {
+#curvwqraue .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2256,7 +2331,7 @@ Does it?
   text-align: left;
 }
 
-#wjvtqbhwyc .gt_empty_group_heading {
+#curvwqraue .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2271,15 +2346,15 @@ Does it?
   vertical-align: middle;
 }
 
-#wjvtqbhwyc .gt_from_md > :first-child {
+#curvwqraue .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wjvtqbhwyc .gt_from_md > :last-child {
+#curvwqraue .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wjvtqbhwyc .gt_row {
+#curvwqraue .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2298,7 +2373,7 @@ Does it?
   overflow-x: hidden;
 }
 
-#wjvtqbhwyc .gt_stub {
+#curvwqraue .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2311,7 +2386,7 @@ Does it?
   padding-right: 5px;
 }
 
-#wjvtqbhwyc .gt_stub_row_group {
+#curvwqraue .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2325,15 +2400,15 @@ Does it?
   vertical-align: top;
 }
 
-#wjvtqbhwyc .gt_row_group_first td {
+#curvwqraue .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wjvtqbhwyc .gt_row_group_first th {
+#curvwqraue .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wjvtqbhwyc .gt_summary_row {
+#curvwqraue .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2343,16 +2418,16 @@ Does it?
   padding-right: 5px;
 }
 
-#wjvtqbhwyc .gt_first_summary_row {
+#curvwqraue .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_first_summary_row.thick {
+#curvwqraue .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wjvtqbhwyc .gt_last_summary_row {
+#curvwqraue .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2362,7 +2437,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_grand_summary_row {
+#curvwqraue .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2372,7 +2447,7 @@ Does it?
   padding-right: 5px;
 }
 
-#wjvtqbhwyc .gt_first_grand_summary_row {
+#curvwqraue .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2382,7 +2457,7 @@ Does it?
   border-top-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_last_grand_summary_row_top {
+#curvwqraue .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2392,11 +2467,11 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_striped {
+#curvwqraue .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wjvtqbhwyc .gt_table_body {
+#curvwqraue .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2405,7 +2480,7 @@ Does it?
   border-bottom-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_footnotes {
+#curvwqraue .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2419,7 +2494,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_footnote {
+#curvwqraue .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2428,7 +2503,7 @@ Does it?
   padding-right: 5px;
 }
 
-#wjvtqbhwyc .gt_sourcenotes {
+#curvwqraue .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2442,7 +2517,7 @@ Does it?
   border-right-color: #D3D3D3;
 }
 
-#wjvtqbhwyc .gt_sourcenote {
+#curvwqraue .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2450,63 +2525,63 @@ Does it?
   padding-right: 5px;
 }
 
-#wjvtqbhwyc .gt_left {
+#curvwqraue .gt_left {
   text-align: left;
 }
 
-#wjvtqbhwyc .gt_center {
+#curvwqraue .gt_center {
   text-align: center;
 }
 
-#wjvtqbhwyc .gt_right {
+#curvwqraue .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wjvtqbhwyc .gt_font_normal {
+#curvwqraue .gt_font_normal {
   font-weight: normal;
 }
 
-#wjvtqbhwyc .gt_font_bold {
+#curvwqraue .gt_font_bold {
   font-weight: bold;
 }
 
-#wjvtqbhwyc .gt_font_italic {
+#curvwqraue .gt_font_italic {
   font-style: italic;
 }
 
-#wjvtqbhwyc .gt_super {
+#curvwqraue .gt_super {
   font-size: 65%;
 }
 
-#wjvtqbhwyc .gt_footnote_marks {
+#curvwqraue .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wjvtqbhwyc .gt_asterisk {
+#curvwqraue .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wjvtqbhwyc .gt_indent_1 {
+#curvwqraue .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wjvtqbhwyc .gt_indent_2 {
+#curvwqraue .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wjvtqbhwyc .gt_indent_3 {
+#curvwqraue .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wjvtqbhwyc .gt_indent_4 {
+#curvwqraue .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wjvtqbhwyc .gt_indent_5 {
+#curvwqraue .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2524,29 +2599,29 @@ Does it?
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">(Intercept)</td>
-<td class="gt_row gt_right" headers="sumsq">0.0356126747</td>
+<td class="gt_row gt_right" headers="sumsq">0.0383477478</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="statistic">745.194242</td>
-<td class="gt_row gt_right" headers="p.value">7.487365e-60</td>
+<td class="gt_row gt_right" headers="statistic">789.703802</td>
+<td class="gt_row gt_right" headers="p.value">9.119519e-61</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">watershed</td>
-<td class="gt_row gt_right" headers="sumsq">0.0031464922</td>
+<td class="gt_row gt_right" headers="sumsq">0.0020984834</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="statistic">65.840262</td>
-<td class="gt_row gt_right" headers="p.value">1.678437e-13</td>
+<td class="gt_row gt_right" headers="statistic">43.214540</td>
+<td class="gt_row gt_right" headers="p.value">8.134891e-10</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">elevation</td>
-<td class="gt_row gt_right" headers="sumsq">0.0003049383</td>
+<td class="gt_row gt_right" headers="sumsq">0.0004638795</td>
 <td class="gt_row gt_right" headers="df">1</td>
-<td class="gt_row gt_right" headers="statistic">6.380826</td>
-<td class="gt_row gt_right" headers="p.value">1.258081e-02</td>
+<td class="gt_row gt_right" headers="statistic">9.552776</td>
+<td class="gt_row gt_right" headers="p.value">2.391522e-03</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">Residuals</td>
-<td class="gt_row gt_right" headers="sumsq">0.0071206784</td>
-<td class="gt_row gt_right" headers="df">149</td>
+<td class="gt_row gt_right" headers="sumsq">0.0070897103</td>
+<td class="gt_row gt_right" headers="df">146</td>
 <td class="gt_row gt_right" headers="statistic">NA</td>
 <td class="gt_row gt_right" headers="p.value">NA</td>
 </tr>
@@ -2556,16 +2631,23 @@ Does it?
 </div>
 </div>
 </div>
+<p><br></p>
 <div style="text-align: center;">
 <p><strong>What do you think the is the <code>elevation</code> line testing?</strong></p>
 <div class="fragment">
 <p><strong>What would you decide?</strong></p>
 </div>
 </div>
-</div>
 </section>
 <section id="keeping-non-significant-variables" class="slide level2">
-<h2>Keeping “non-significant” Variables</h2>
+<h2>Keeping “Non-significant” Variables</h2>
+<p><br></p>
+<p>Should you always remove variables with “large” p-values from an ANOVA?</p>
+<div class="fragment">
+<p><br></p>
+<p>No!</p>
+<p>Even “non-significant” variables explain some amount of the variation in the response. Which makes your estimates of a treatment effect more precise!</p>
+</div>
 </section></section>
 <section>
 <section id="steps-for-final-project" class="title-slide slide level1 center">
@@ -2576,20 +2658,20 @@ Does it?
 <h2>Hypothesis Test Steps</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div style="font-size: 1.5em; color: #0F4C81;">
+<div style="font-size: 1.5em;">
 <p>Step 1: Fit a one-way ANOVA model for each categorical variable</p>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:60%;">
 <div class="fragment">
-<div style="font-size: 1.5em; color: #687244;">
+<div style="font-size: 1.5em; color: #0F4C81;">
 <p>Step 2: Decide if each explanatory variable has a meaningful relationship with the response variable</p>
 </div>
 </div>
 <div class="fragment">
 <ul>
-<li>If yes, then go to step 3!</li>
+<li>If yes, then go to Step 3!</li>
 <li>If no, then report which variable (if any) has the strongest relationship with the response.</li>
 </ul>
 </div>
@@ -2598,22 +2680,60 @@ Does it?
 </section>
 <section id="step-3-fit-an-additive-two-way-anova" class="slide level2">
 <h2>Step 3 – Fit an Additive Two-way ANOVA</h2>
+<p>If there is evidence that <strong>both</strong> variables have a relationship with the response variable, then you fit an <em>additive</em> two-way ANOVA.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car) </span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="sc">&lt;</span>NAME OF RESPONSE VARIABLE<span class="sc">&gt;</span> <span class="er">~</span> <span class="er">&lt;</span>NAME OF EXPLANATORY VARIABLE <span class="dv">1</span><span class="sc">&gt;</span> <span class="sc">+</span> <span class="er">&lt;</span>NAME OF EXPLANATORY VARIABLE <span class="dv">2</span><span class="sc">&gt;</span>,</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> <span class="sc">&lt;</span>NAME OF DATASET<span class="sc">&gt;</span>) </span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(my_model, <span class="at">type =</span> “III”) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Don’t forget to load in the <code>car</code> package!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 </section>
 <section id="what-about-interaction-models" class="slide level2">
 <h2>What about interaction models?</h2>
-</section>
-<section id="do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova" class="slide level2">
-<h2>Do you always expect your main effects to be “significant” in a two-way ANOVA?</h2>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+<p><br> <br></p>
+<p>For the sake of time, we <strong>are not</strong> fitting interaction models for the Final Project.</p>
+</section></section>
+<section id="do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova" class="title-slide slide level1 center">
+<h1>Do you always expect your main effects to be “significant” in a two-way ANOVA?</h1>
 
-<div class="quarto-auto-generated-content">
+</section>
+
+<section>
+<section id="work-session" class="title-slide slide level1 center">
+<h1>Work Session</h1>
+
+</section>
+<section id="your-options" class="slide level2">
+<h2>Your Options</h2>
+<ol type="1">
+<li>Complete your revisions on Lab 8</li>
+<li>Complete your revisions on Statistical Critique 2</li>
+<li>Fit your two-way ANOVA model for your Final Project and interpret the results</li>
+<li>Finish any remaining revisions on lab or statistical critiques</li>
+</ol>
+
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 
