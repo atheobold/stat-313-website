@@ -36,7 +36,7 @@ hbr_maples_small <- bind_rows(hbr_maples_w1,
          ) 
 ```
 
-# Week 10 
+# Week 10
 
 ## Wrapping Up
 
@@ -51,7 +51,7 @@ hbr_maples_small <- bind_rows(hbr_maples_w1,
 ::: callout-caution
 # One round of revisions
 
-You will only have time for *one* round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions. 
+You will only have time for *one* round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.
 :::
 
 # Two-Way ANOVA Models
@@ -211,7 +211,7 @@ The `watershed:year_cat` line is testing if the relationship between the calcium
 
 ## How are those p-values calculated?
 
-The p-values in the previous table use **Type I** sums of squares. 
+The p-values in the previous table use **Type I** sums of squares.
 
 > Type I sums of squares are "sequential," meaning variables are tested in the order they are listed.
 
@@ -332,19 +332,19 @@ Did we get the same p-values as before?
 
 ## Sequential Versus Partial Sums of Squares
 
-Similar to before, the p-values in the ANOVA table use Type I (sequential) sums of squares. 
+Similar to before, the p-values in the ANOVA table use Type I (sequential) sums of squares.
 
-:::{.incremental}
-:::{.small}
-- The p-value for each variable is conditional on the variable(s) that came *before* it.
-- The p-value for `elevation` is conditional on `watershed` being included in the model
-- The p-value for `watershed` is conditional on...nothing. 
+::: incremental
+::: small
+-   The p-value for each variable is conditional on the variable(s) that came *before* it.
+-   The p-value for `elevation` is conditional on `watershed` being included in the model
+-   The p-value for `watershed` is conditional on...nothing.
 :::
 :::
 
 . . .
 
-:::{.small}
+::: small
 If we want the p-value for each explanatory variable to be conditional on **every** variable included in the model, then we need to use a different type of sums of squares!
 :::
 
@@ -354,14 +354,14 @@ If we want the p-value for each explanatory variable to be conditional on **ever
 
 . . .
 
-:::{.small}
-- The p-value for `elevation` is conditional on `watershed` being included in the model
-- The p-value for `watershed` is conditional on `elevation` being included in the model
+::: small
+-   The p-value for `elevation` is conditional on `watershed` being included in the model
+-   The p-value for `watershed` is conditional on `elevation` being included in the model
 :::
 
 . . .
 
-:::{.callout-tip}
+::: callout-tip
 # Only different for variables that *were not* first
 
 We could have used Type III sums of squares for the interaction model and would have gotten the same p-value!
@@ -383,7 +383,7 @@ water_elev_lm <- lm(stem_dry_mass ~ watershed + elevation,
 Anova(water_elev_lm, type = "III")
 ```
 
-:::{.callout-tip}
+::: callout-tip
 # Load in the `car` package!
 :::
 
@@ -419,7 +419,7 @@ Should you always remove variables with "large" p-values from an ANOVA?
 
 . . .
 
-</br> 
+</br>
 
 No!
 
@@ -455,7 +455,7 @@ Step 2: Decide if each explanatory variable has a meaningful relationship with t
 
 ## Step 3 -- Fit an Additive Two-way ANOVA
 
-If there is evidence that **both** variables have a relationship with the response variable, then you fit an *additive* two-way ANOVA. 
+If there is evidence that **both** variables have a relationship with the response variable, then you fit an *additive* two-way ANOVA.
 
 ```{r}
 #| label: twa-additive-template
@@ -473,16 +473,15 @@ Anova(my_model, type = “III”) %>%
 
 ```
 
-:::{.callout-tip}
+::: callout-tip
 # Don't forget to load in the `car` package!
 :::
 
 ## What about interaction models?
 
-</br>
-</br>
+</br> </br>
 
-For the sake of time, we **are not** fitting interaction models for the Final Project. 
+For the sake of time, we **are not** fitting interaction models for the Final Project.
 
 # Do you always expect your main effects to be "significant" in a two-way ANOVA?
 
@@ -490,7 +489,7 @@ For the sake of time, we **are not** fitting interaction models for the Final Pr
 
 ## Your Options
 
-1. Complete your revisions on Lab 8
-2. Complete your revisions on Statistical Critique 2
-3. Fit your two-way ANOVA model for your Final Project and interpret the results
-4. Finish any remaining revisions on lab or statistical critiques
+1.  Complete your revisions on Lab 8
+2.  Complete your revisions on Statistical Critique 2
+3.  Fit your two-way ANOVA model for your Final Project and interpret the results
+4.  Finish any remaining revisions on lab or statistical critiques
