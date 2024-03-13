@@ -33,20 +33,20 @@ trout <- filter(and_vertebrates,
 
 . . .
 
-:::{.incremental}
-- Lab 8 revisions due tonight 
-- Statistical Critique revisions due tonight
-- All other final revisions are due by Sunday
-- Final Project is due by Sunday
+::: incremental
+-   Lab 8 revisions due tonight
+-   Statistical Critique revisions due tonight
+-   All other final revisions are due by Sunday
+-   Final Project is due by Sunday
 :::
 
-# Peer Review Session
+# Peer Review Session (45-minutes)
 
-# Structure of Final Projects 
+# Structure of Final Projects
 
 ## Findings
 
-The results of each hypothesis test go **directly below** the test. 
+The results of each hypothesis test go **directly below** the test.
 
 </br>
 
@@ -92,77 +92,77 @@ Then you have insufficient evidence that at least one group has a different mean
 
 ## Model Validity
 
-> In this section you discuss the **reliability** of the p-values you obtained based on the model conditions. 
+> In this section you discuss the **reliability** of the p-values you obtained based on the model conditions.
 
-:::{.small}
-- Independence 
-  * *within* groups
-  * *between* groups
+::: small
+-   Independence
 
-- Normality of the distributions for each group
+    -   *within* groups
+    -   *between* groups
 
-- Equal variance of the distributions for each group
+-   Normality of the distributions for each group
+
+-   Equal variance of the distributions for each group
 :::
 
-:::{.callout-caution}
+::: callout-caution
 # Conditions for Each Test
 
-Each one-way ANOVA test considers different groups. So, your conditions should be evaluated for each test separately. 
+Each one-way ANOVA test considers different groups. So, your conditions should be evaluated for each test separately.
 :::
 
-## Conditions are never met! 
+## Conditions are never met!
 
 $H_0$: the condition is met
 
 $H_A$: the condition is violated
 
-</br> 
+</br>
 
 . . .
 
-Just like we never say "I accept the null hypothesis," we never say the condition is "met." Instead, we say there is no evidence that the condition is violated. 
+Just like we never say "I accept the null hypothesis," we never say a condition is "met." Instead, we say there is no evidence that the condition is violated.
 
-## Study Limitations 
+## Study Limitations
 
-This section summarizes your understanding of the foundational aspects of experimental design. 
+This section summarizes your understanding of the foundational aspects of experimental design.
 
 ::: columns
 ::: {.column width="40%"}
-:::{.small}
+::: small
 > Based on the sampling method used, what larger population can you infer the results or your analysis onto?
 
-- What were the inclusion criteria of the observations?
-- How does that influence the population you can infer your findings onto?
+-   What were the inclusion criteria of the observations?
+  * How does that influence the population you can infer your findings onto?
 :::
 :::
 
-::: {.column width="5%"}
+::: {.column width="3%"}
 :::
 
 ::: {.column width="55%"}
-:::{.small}
+::: small
 > Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?
 
-- Were the explanatory variables randomly assigned to control for confounding variables?
-  * If no, how does that influence what you can say about the relationships between the variables?
-  * If yes, how does that influence what you can say about the relationships between the variables?
-
+-   Were the explanatory variables randomly assigned to control for confounding variables?
+    * How does that influence what you can and cannot say about the relationships between the variables?
 :::
 :::
 :::
-
 
 ## Overall Conclusions
 
-:::{.small}
+::: small
 > Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.
 :::
 
 </br>
 
+. . .
+
 ::: columns
 ::: {.column width="30%"}
-:::{.small}
+::: small
 Did you distributions look similar but your hypothesis test said at least one group was different?
 
 Think about how sample size effects p-values!
@@ -173,14 +173,26 @@ Think about how sample size effects p-values!
 :::
 
 ::: {.column width="30%"}
-Did you 
+::: small
+::: {.fragment}
+Did you reject the null hypothesis for your one-way ANOVA?
+
+Look back at your visualizations -- which group(s) look the most different?
+:::
+:::
 :::
 
 ::: {.column width="3%"}
 :::
 
 ::: {.column width="30%"}
+::: small
+::: {.fragment}
+Did you fail to reject the null hypothesis for your one-way ANOVA?
 
+Look back at your visualizations -- do all of the groups look the same?
+:::
+:::
 :::
 :::
 
@@ -240,16 +252,38 @@ trout %>%
 
 </br>
 
-<center>What do you think?</center>
+<center>What do you think? Did it work? </center>
 
 # Final Presentations
 
 ## Presentation Structure
 
+> You will give a 3-minute presentation on **one** aspect of your final project you found the most interesting. Notice, you need to pick one aspect, since your presentation is so short.
+
+. . .
+
+Here are some examples of what you could choose:
+
+-   The relationships you saw in the visualizations
+-   The design of the study
+-   The model you found best represents the relationships between variables you selected
+
 ## Presentation Slides
 
-# Some Closing Thoughts...
+For your presentation you are allowed to make **two** slides:
 
+1.  A title slide (make it fun!) with your name
+2.  A content slide
+
+Your slides **must be submitted as a PDF**.
+
+:::{.callout-warning}
+# Deadline for slides
+
+Slides are due by [5pm the night before your final exam timeslot]{.underline}. If you do not submit slides by the deadline, you will not be allowed to present.
+:::
+
+# Some Closing Thoughts...
 
 ## I hope you leave this class understanding...
 
@@ -272,16 +306,20 @@ trout %>%
 -   Ronald Fisher
 
 <!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
 <!-- **Eugenics & Statistics** -->
+
 <!-- ::: -->
 
 <!-- ::: {style="font-size: 0.75em;"} -->
+
 <!-- > *Ideally, statisticians would like to divorce these tools from the lives and times of the people who created them. It would be convenient if statistics existed outside of history, but that's not the case. Statistics, as a lens through which scientists investigate real-world questions, has always been smudged by the fingerprints of the people holding the lens. Statistical thinking and eugenicist thinking are, in fact, deeply intertwined, and many of the theoretical problems with methods like significance testing---first developed to identify racial differences---are remnants of their original purpose, to support eugenics.* -->
+
 <!-- ::: -->
 
 <!-- [How Eugenics Shaped Statistics](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics) -->
 
-## Statistical Significance** -- The "S" Word
+## Statistical Significance -- The "S" Word
 
 ::: {style="font-size: 0.75em;"}
 > "Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science."

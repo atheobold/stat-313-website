@@ -441,7 +441,7 @@
     "href": "project/final-presentations/presentation-instructions.html#slides",
     "title": "Final Project Presentations",
     "section": "Slides",
-    "text": "Slides\nFor your presentation you are allowed to make two slides:\n\nA title slide (make it fun!) with your name\nA content slide\n\nSlides are due by 5pm the night before your final exam timeslot. If you do not submit slides by the deadline, you will not be allowed to present.\n\nSTAT 313-02 – slides are due by Monday (March ) by 5pm\nSTAT 313-01 – lides are due by Wednesday (March ) by 5pm\nSTAT 513-01 – slides are due by Wednesday (March ) by 5pm\n\n\n\n\n\n\n\nCaution\n\n\n\nYour slides must be submitted as a PDF. Make sure they are saved in the correct orientation! I do not have the time to open PowerPoint slides and convert them to a PDF. So, if you do not submit your slides as a PDF, you will not be allowed to present."
+    "text": "Slides\nFor your presentation you are allowed to make two slides:\n\nA title slide (make it fun!) with your name\nA content slide\n\nSlides are due by 5pm the night before your final exam timeslot. If you do not submit slides by the deadline, you will not be allowed to present.\n\nSTAT 313-02 – slides are due by Monday (March 18) by 5pm\nSTAT 313-01 – slides are due by Wednesday (March 20) by 5pm\nSTAT 513-01 – slides are due by Wednesday (March 20) by 5pm\n\n\n\n\n\n\n\nCaution\n\n\n\nYour slides must be submitted as a PDF. Make sure they are saved in the correct orientation! I do not have the time to open PowerPoint slides and convert them to a PDF. So, if you do not submit your slides as a PDF, you will not be allowed to present."
   },
   {
     "objectID": "project/final-presentations/presentation-instructions.html#presentations",
@@ -1631,7 +1631,7 @@
     "href": "slides/week9-day1.html#section-5",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "What can you say about the differences between the age groups?\n\n\n\nWhat can you say about the variability within the age groups?"
+    "text": ". . .\n\n\n\nWhat can you say about the differences between the age groups?\n\n\n\nWhat can you say about the variability within the age groups?"
   },
   {
     "objectID": "slides/week9-day1.html#section-6",
@@ -1645,7 +1645,7 @@
     "href": "slides/week9-day1.html#section-7",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 2: Find the overall mean\n\n\n\n\nThis ignores the groups and finds one mean for every observation!"
+    "text": "Step 2: Find the overall mean\n\n\n. . .\n\nThis ignores the groups and finds one mean for every observation!"
   },
   {
     "objectID": "slides/week9-day1.html#section-8",
@@ -1680,7 +1680,7 @@
     "href": "slides/week9-day1.html#section-12",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "F-distribution\n\nAn \\(F\\)-distribution is a variant of the \\(t\\)-distribution, and is also defined by degrees of freedom.\n\n\nThis distribution is defined by two different degrees of freedom:\n\nfrom the numerator (MSG) : \\(k - 1\\)\nfrom the denominator (MSE) : \\(n - k\\)"
+    "text": "F-distribution\n\nAn \\(F\\)-distribution is a variant of the \\(t\\)-distribution, and is also defined by degrees of freedom.\n. . .\n\nThis distribution is defined by two different degrees of freedom:\n\nfrom the numerator (MSG) : \\(k - 1\\)\nfrom the denominator (MSE) : \\(n - k\\)"
   },
   {
     "objectID": "slides/week9-day1.html#section-13",
@@ -1694,14 +1694,14 @@
     "href": "slides/week9-day1.html#section-14",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Do you always use an F-distribution to get the p-value?\n\n\n\n\nNO!"
+    "text": "Do you always use an F-distribution to get the p-value?\n\n. . .\n\n\nNO!"
   },
   {
     "objectID": "slides/week9-day1.html#section-15",
     "href": "slides/week9-day1.html#section-15",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "What do you think?"
+    "text": ". . .\n\nWhat do you think?"
   },
   {
     "objectID": "slides/week9-day1.html#section-16",
@@ -7768,8 +7768,8 @@
     "objectID": "slides/week9-day1.html#final-project-first-draft",
     "href": "slides/week9-day1.html#final-project-first-draft",
     "title": "ANalysis Of VAriance",
-    "section": "Final Project First Draft",
-    "text": "Final Project First Draft\nStep 1 - Due by Wednesday\n\n\nIntroduction (Data description, research questions)\n\n\n\nStep 2 - Due by Friday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n\n\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
+    "section": "",
+    "text": "Step 1 - Due by Wednesday\n\n\nIntroduction (Data description, research questions)\n\n\n. . .\nStep 2 - Due by Friday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n. . .\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
   },
   {
     "objectID": "slides/week9-day1.html#section-27",
@@ -7783,7 +7783,7 @@
     "href": "slides/week9-day1.html#conditions-of-an-anova",
     "title": "ANalysis Of VAriance",
     "section": "Conditions of an ANOVA",
-    "text": "Conditions of an ANOVA\n\nIndependence of observations\n\n\n\nObservations are independent within groups and between groups\n\n\n\n\nNormality of the residuals\n\n\n\nThe distribution of residuals for each group is approximately normal\n\n\n\n\n\nEqual variability of the groups\n\n\n\nThe spread of the distributions are similar across groups"
+    "text": "Conditions of an ANOVA\n\nIndependence of observations\n\n\n\nObservations are independent within groups and between groups\n\n\n. . .\n\nNormality of the residuals\n\n\n\nThe distribution of residuals for each group is approximately normal\n\n\n. . .\n\nEqual variability of the groups\n\n\n\nThe spread of the distributions are similar across groups"
   },
   {
     "objectID": "slides/week9-day1.html#do-you-always-use-an-f-distribution-to-get-the-p-value",
@@ -7811,7 +7811,7 @@
     "href": "slides/week9-day1.html#step-2-simulating-what-could-have-happened-under-h_0",
     "title": "ANalysis Of VAriance",
     "section": "Step 2: Simulating what could have happened under \\(H_0\\)",
-    "text": "Step 2: Simulating what could have happened under \\(H_0\\)\n\n\n\nHow could we use cards to simulate what minimum evaluation score a professor would have gotten, if their score was independent from their age?"
+    "text": "Step 2: Simulating what could have happened under \\(H_0\\)\n. . .\n\n\nHow could we use cards to simulate what minimum evaluation score a professor would have gotten, if their score was independent from their age?"
   },
   {
     "objectID": "slides/week9-day1.html#another-permutation-distribution",
@@ -7825,7 +7825,7 @@
     "href": "slides/week9-day1.html#another-permutation-distribution-1",
     "title": "ANalysis Of VAriance",
     "section": "Another Permutation Distribution",
-    "text": "Another Permutation Distribution\n\n\n\nWhy doesn’t the distribution have negative numbers?"
+    "text": "Another Permutation Distribution\n\n\n\n\n\n\n\n\n\n. . .\n\nWhy doesn’t the distribution have negative numbers?"
   },
   {
     "objectID": "slides/week9-day1.html#making-a-decision-reaching-a-conclusion",
@@ -7853,7 +7853,7 @@
     "href": "slides/week9-day1.html#theory-based-methods",
     "title": "ANalysis Of VAriance",
     "section": "Theory-based Methods",
-    "text": "Theory-based Methods\n\naov(min_eval ~ age_cat, \n    data = evals_small)  %&gt;% \n  tidy()\n\n\n\n# A tibble: 2 × 6\n  term         df sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 age_cat       3  1.24  0.414      1.41   0.244\n2 Residuals    90 26.4   0.293     NA     NA    \n\n\n\n\nHow was the statistic calculated?\n\n\nWhat distribution was used to calculate the p.value?"
+    "text": "Theory-based Methods\n\naov(min_eval ~ age_cat, \n    data = evals_small)  %&gt;% \n  tidy()\n\n\n\n# A tibble: 2 × 6\n  term         df sumsq meansq statistic p.value\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 age_cat       3  1.24  0.414      1.41   0.244\n2 Residuals    90 26.4   0.293     NA     NA    \n\n\n. . .\n\nHow was the statistic calculated?\n. . .\nWhat distribution was used to calculate the p.value?\n. . ."
   },
   {
     "objectID": "slides/week9-day1.html#using-aov",
@@ -7881,7 +7881,7 @@
     "href": "slides/week9-day1.html#removing-silencing-code-templates",
     "title": "ANalysis Of VAriance",
     "section": "Removing / Silencing Code Templates",
-    "text": "Removing / Silencing Code Templates\n\nYour final_project.qmd file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8).\nThese do not need to be used for your Introduction. So, you need to “turn off” these code chunks to turn in your Introduction!\n\n\n\n\nThere are two ways to do this:\n\nIn the YAML (at the top of your document) add eval: false to your execute options\nIn each code chunk (there are two) add eval: false to your code chunk options"
+    "text": "Removing / Silencing Code Templates\n\nYour final_project.qmd file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8).\nThese do not need to be used for your Introduction. So, you need to “turn off” these code chunks to turn in your Introduction!\n\n. . .\n\n\nThere are two ways to do this:\n\nIn the YAML (at the top of your document) add eval: false to your execute options\nIn each code chunk (there are two) add eval: false to your code chunk options"
   },
   {
     "objectID": "slides/week9-day1.html#yaml-option",
@@ -8195,8 +8195,8 @@
     "objectID": "slides/week9-day2.html#upcoming-deadlines",
     "href": "slides/week9-day2.html#upcoming-deadlines",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
-    "section": "Upcoming Deadlines",
-    "text": "Upcoming Deadlines\n\nLab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
+    "section": "",
+    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
   },
   {
     "objectID": "slides/week9-day2.html#common-mistakes",
@@ -8224,14 +8224,14 @@
     "href": "slides/week9-day2.html#theory-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Theory-based Method",
-    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
+    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n. . .\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
   },
   {
     "objectID": "slides/week9-day2.html#simulation-based-method",
     "href": "slides/week9-day2.html#simulation-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Simulation-based Method",
-    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
+    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
   },
   {
     "objectID": "slides/week9-day2.html#model-validity",
@@ -8252,7 +8252,7 @@
     "href": "slides/week9-day2.html#code-for-plot",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Code for Plot",
-    "text": "Code for Plot\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\nLegend Positions\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
+    "text": "Code for Plot\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\nLegend Positions\n\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
   },
   {
     "objectID": "weeks/week-10.html#r-tutorial-due-thursday-by-the-start-of-class",
@@ -8277,7 +8277,7 @@
     "href": "slides/week10-day2.html#try-using-a-log-transformation",
     "title": "STAT 313 Last Day",
     "section": "Try using a log transformation!",
-    "text": "Try using a log transformation!\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think?"
+    "text": "Try using a log transformation!\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think? Did it work?"
   },
   {
     "objectID": "slides/week10-day1.html#do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova",
@@ -8501,14 +8501,14 @@
     "href": "slides/week10-day2.html#presentation-structure",
     "title": "STAT 313 Last Day",
     "section": "Presentation Structure",
-    "text": "Presentation Structure"
+    "text": "Presentation Structure\n\nYou will give a 3-minute presentation on one aspect of your final project you found the most interesting. Notice, you need to pick one aspect, since your presentation is so short.\n\n\nHere are some examples of what you could choose:\n\nThe relationships you saw in the visualizations\nThe design of the study\nThe model you found best represents the relationships between variables you selected"
   },
   {
     "objectID": "slides/week10-day2.html#presentation-slides",
     "href": "slides/week10-day2.html#presentation-slides",
     "title": "STAT 313 Last Day",
     "section": "Presentation Slides",
-    "text": "Presentation Slides"
+    "text": "Presentation Slides\nFor your presentation you are allowed to make two slides:\n\nA title slide (make it fun!) with your name\nA content slide\n\nYour slides must be submitted as a PDF.\n\n\n\n\n\n\nDeadline for slides\n\n\nSlides are due by 5pm the night before your final exam timeslot. If you do not submit slides by the deadline, you will not be allowed to present."
   },
   {
     "objectID": "slides/week10-day2.html#i-hope-you-leave-this-class-understanding",
@@ -8535,8 +8535,8 @@
     "objectID": "slides/week10-day2.html#statistical-significance-the-s-word",
     "href": "slides/week10-day2.html#statistical-significance-the-s-word",
     "title": "STAT 313 Last Day",
-    "section": "Statistical Significance** – The “S” Word",
-    "text": "Statistical Significance** – The “S” Word\n\n\n“Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science.”\n\n\n\n\n\n“When used in statistics, significant does not mean important or meaningful, as it does in everyday speech.”\n\n\n\n\n\n\n“I advocate a simple solution: Replace the s-word with words describing what you actually mean by it.”"
+    "section": "Statistical Significance – The “S” Word",
+    "text": "Statistical Significance – The “S” Word\n\n\n“Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science.”\n\n\n\n\n\n“When used in statistics, significant does not mean important or meaningful, as it does in everyday speech.”\n\n\n\n\n\n\n“I advocate a simple solution: Replace the s-word with words describing what you actually mean by it.”"
   },
   {
     "objectID": "slides/week10-day2.html#model-validity",
@@ -8557,20 +8557,34 @@
     "href": "slides/week10-day2.html#study-limitations",
     "title": "STAT 313 Last Day",
     "section": "Study Limitations",
-    "text": "Study Limitations\nThis section summarizes your understanding of the foundational aspects of experimental design.\n\n\n\n\nBased on the sampling method used, what larger population can you infer the results or your analysis onto?\n\n\nWhat were the inclusion criteria of the observations?\nHow does that influence the population you can infer your findings onto?\n\n\n\n\n\n\n\nBased on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?\n\n\nWere the explanatory variables randomly assigned to control for confounding variables?\n\nIf no, how does that influence what you can say about the relationships between the variables?\nIf yes, how does that influence what you can say about the relationships between the variables?"
+    "text": "Study Limitations\nThis section summarizes your understanding of the foundational aspects of experimental design.\n\n\n\n\nBased on the sampling method used, what larger population can you infer the results or your analysis onto?\n\n\nWhat were the inclusion criteria of the observations?\nHow does that influence the population you can infer your findings onto?\n\n\n\n\n\n\n\nBased on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?\n\n\nWere the explanatory variables randomly assigned to control for confounding variables?\n\nHow does that influence what you can and cannot say about the relationships between the variables?"
   },
   {
     "objectID": "slides/week10-day2.html#overall-conclusions",
     "href": "slides/week10-day2.html#overall-conclusions",
     "title": "STAT 313 Last Day",
     "section": "Overall Conclusions",
-    "text": "Overall Conclusions\n\n\nBased on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.\n\n\n\n\n\n\nDid you distributions look similar but your hypothesis test said at least one group was different?\nThink about how sample size effects p-values!\n\n\n\n\nDid you"
+    "text": "Overall Conclusions\n\n\nBased on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.\n\n\n\n\n\n\n\nDid you distributions look similar but your hypothesis test said at least one group was different?\nThink about how sample size effects p-values!\n\n\n\n\n\n\nDid you reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – which group(s) look the most different?\n\n\n\n\n\n\n\nDid you fail to reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – do all of the groups look the same?"
   },
   {
     "objectID": "slides/week10-day2.html#conditions-are-never-met",
     "href": "slides/week10-day2.html#conditions-are-never-met",
     "title": "STAT 313 Last Day",
     "section": "Conditions are never met!",
-    "text": "Conditions are never met!\n\\(H_0\\): the condition is met\n\\(H_A\\): the condition is violated\n\n\nJust like we never say “I accept the null hypothesis,” we never say the condition is “met.” Instead, we say there is no evidence that the condition is violated."
+    "text": "Conditions are never met!\n\\(H_0\\): the condition is met\n\\(H_A\\): the condition is violated\n\n\nJust like we never say “I accept the null hypothesis,” we never say a condition is “met.” Instead, we say there is no evidence that the condition is violated."
+  },
+  {
+    "objectID": "slides/week9-day2.html",
+    "href": "slides/week9-day2.html",
+    "title": "Coding a One-way ANOVA – Final Project Work Day",
+    "section": "",
+    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
+  },
+  {
+    "objectID": "weeks/reading-guide/week10-reading.html",
+    "href": "weeks/reading-guide/week10-reading.html",
+    "title": "Week 10 – Two-Way ANOVA",
+    "section": "",
+    "text": "Section 1 – Introduction to Two-Way ANOVA\n\nExample 3.1\n\nHow many variables are the researchers studying? What are the variables? Are these variables categorical or quantitative? If categorical, what levels does each variable have?\nWhat limitations do you see in Study Design #2 (Figure 3.1.2)?\nWhat is a “full-factorial design”?\nWhat is a “balanced design”?\nWhy should there be equal numbers of participants in each group (as seen in Figure 3.1.3)?\nFor testing these four treatment groups, what are the null and alternative hypotheses?\nWhy should the authors use a two-way ANOVA model for these data instead of two one-way ANOVA models?\n\n\n\n\nSection 2 – Two-Way ANOVA Interaction Models\n\nExample 3.2\n\nWhat is the difference between a “blocking variable” and an “experimental factor”?\nHow much variation was there in the peroxide remaining in the pistachios?\nHow much variation in the peroxide remaining was explained by the model?\nWhat pattern do you see in the predicted treatment values in Figure 3.2.4?\nWhat pattern do you see in the observed (actual) treatment values in Figure 3.2.4?\nWhat is the definition of a “statistical interaction”?\nWhere have you seen statistical interactions before?\nWhat are the null and alternative hypotheses for testing for an interaction?\nHow would you use cards to simulate what peroxide value a pistachio would have if there was no interaction (if the null was true)?"
   }
 ]
