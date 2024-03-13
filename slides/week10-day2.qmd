@@ -86,7 +86,7 @@ Then you have evidence that at least one group has a different mean!
 ::: {.column width="45%"}
 **Did you fail to reject the null hypothesis?**
 
-Then you have insufficient evidence that at least one group has a different mean!
+Then you have [insufficient evidence](https://critical-inference.com/the-problem-with-no-evidence-and-is-it-enough-to-bust-a-myth/) that at least one group has a different mean!
 :::
 :::
 
@@ -111,7 +111,7 @@ Then you have insufficient evidence that at least one group has a different mean
 Each one-way ANOVA test considers different groups. So, your conditions should be evaluated for each test separately.
 :::
 
-## Conditions are never met!
+## [Conditions are never met!](https://critical-inference.com/assumptions-are-not-met-period/)
 
 $H_0$: the condition is met
 
@@ -297,7 +297,19 @@ Slides are due by [5pm the night before your final exam timeslot]{.underline}. I
 
 ## The Discipline of Statistics
 
-> The field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines.
+The field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines.
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+> "Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science." [(Higgs, 2013)](https://www.americanscientist.org/article/do-we-really-need-the-s-word)
+:::
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+> "I advocate a simple solution: Replace the s-word with words describing what you actually mean by it."
+:::
 
 ## Foundational ideas taught in statistics courses were invented by:
 
@@ -318,24 +330,6 @@ Slides are due by [5pm the night before your final exam timeslot]{.underline}. I
 <!-- ::: -->
 
 <!-- [How Eugenics Shaped Statistics](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics) -->
-
-## Statistical Significance -- The "S" Word
-
-::: {style="font-size: 0.75em;"}
-> "Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science."
-:::
-
-. . .
-
-::: {style="font-size: 0.75em;"}
-> "When used in statistics, significant does not mean important or meaningful, as it does in everyday speech."
-:::
-
-. . .
-
-::: {style="font-size: 0.75em;"}
-> "I advocate a simple solution: Replace the s-word with words describing what you actually mean by it."
-:::
 
 ## 
 
