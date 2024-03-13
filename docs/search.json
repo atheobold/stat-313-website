@@ -8319,7 +8319,7 @@
     "href": "slides/week10-day1.html#theory-based-two-way-anova",
     "title": "Week 10: Two-way ANOVA",
     "section": "Theory-based Two-Way ANOVA",
-    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.011237004\n0.011237004\n58.93738\n5.196172e-13\n\n\nyear_cat\n1\n0.121109252\n0.121109252\n635.21046\n6.289363e-67\n\n\nwatershed:year_cat\n1\n0.005381204\n0.005381204\n28.22408\n2.631973e-07\n\n\nResiduals\n221\n0.042135869\n0.000190660\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
+    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.007440373\n0.0074403734\n35.19849\n1.138783e-08\n\n\nyear_cat\n1\n0.113983757\n0.1139837569\n539.22776\n3.266695e-61\n\n\nwatershed:year_cat\n1\n0.004334297\n0.0043342969\n20.50444\n9.727113e-06\n\n\nResiduals\n221\n0.046715715\n0.0002113833\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
   },
   {
     "objectID": "slides/week10-day1.html#how-are-those-p-values-calculated",
@@ -8347,7 +8347,7 @@
     "href": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
     "title": "Week 10: Two-way ANOVA",
     "section": "Testing for a relationship for each variable",
-    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0001934847\n1.934847e-04\n3.471034\n6.442084e-02\n\n\nwatershed\n1\n0.0037239288\n3.723929e-03\n66.805714\n1.196008e-13\n\n\nResiduals\n149\n0.0083056576\n5.574267e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
+    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0001395335\n1.395335e-04\n2.601759\n1.088612e-01\n\n\nwatershed\n1\n0.0030229669\n3.022967e-03\n56.366605\n5.093045e-12\n\n\nResiduals\n149\n0.0079909385\n5.363046e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
   },
   {
     "objectID": "slides/week10-day1.html#lets-see",
@@ -8431,7 +8431,7 @@
     "href": "slides/week10-day1.html#additive-model-hypothesis-tests",
     "title": "Week 10: Two-way ANOVA",
     "section": "Additive Model Hypothesis Tests",
-    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0332111837\n1\n595.794655\n6.280956e-54\n\n\nwatershed\n0.0037239288\n1\n66.805714\n1.196008e-13\n\n\nelevation\n0.0002006396\n1\n3.599389\n5.973557e-02\n\n\nResiduals\n0.0083056576\n149\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
+    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0350076203\n1\n652.756301\n2.569386e-56\n\n\nwatershed\n0.0030229669\n1\n56.366605\n5.093045e-12\n\n\nelevation\n0.0001549772\n1\n2.889723\n9.123277e-02\n\n\nResiduals\n0.0079909385\n149\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#wrapping-up",
