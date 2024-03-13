@@ -166,18 +166,18 @@ Or, because the study was an experiment...
 
 . . .
 
--   Normality of the residuals
-
-::: small
-> The distribution of residuals for each group is approximately normal
-:::
-
-. . .
-
 -   Equal variability of the groups
 
 ::: small
 > The spread of the distributions are similar across groups
+:::
+
+. . .
+
+-   Normality of the residuals
+
+::: small
+> The distribution of residuals for each group is approximately normal
 :::
 
 ## Theory-based Two-Way ANOVA
