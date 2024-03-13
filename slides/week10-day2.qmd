@@ -29,6 +29,161 @@ trout <- filter(and_vertebrates,
                 species == "Cutthroat trout")
 ```
 
+# Deadlines
+
+. . .
+
+:::{.incremental}
+- Lab 8 revisions due tonight 
+- Statistical Critique revisions due tonight
+- All other final revisions are due by Sunday
+- Final Project is due by Sunday
+:::
+
+# Peer Review Session
+
+# Structure of Final Projects 
+
+## Findings
+
+The results of each hypothesis test go **directly below** the test. 
+
+</br>
+
+::: columns
+::: {.column width="47%"}
+[**Theory-based Methods**]{.underline}
+
+Your decision & conclusion for your hypothesis test *go directly below your ANOVA table*.
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+[**Simulation-based Methods**]{.underline}
+
+Your decision & conclusion for your hypothesis test *go directly below your permutation distribution and p-value*.
+:::
+:::
+
+## Hypothesis Test Conclusions
+
+> Conclusions should be written in terms of the alternative hypothesis
+
+</br>
+
+::: columns
+::: {.column width="45%"}
+**Did you reject the null hypothesis?**
+
+Then you have evidence that at least one group has a different mean!
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+**Did you fail to reject the null hypothesis?**
+
+Then you have insufficient evidence that at least one group has a different mean!
+:::
+:::
+
+## Model Validity
+
+> In this section you discuss the **reliability** of the p-values you obtained based on the model conditions. 
+
+:::{.small}
+- Independence 
+  * *within* groups
+  * *between* groups
+
+- Normality of the distributions for each group
+
+- Equal variance of the distributions for each group
+:::
+
+:::{.callout-caution}
+# Conditions for Each Test
+
+Each one-way ANOVA test considers different groups. So, your conditions should be evaluated for each test separately. 
+:::
+
+## Conditions are never met! 
+
+$H_0$: the condition is met
+
+$H_A$: the condition is violated
+
+</br> 
+
+. . .
+
+Just like we never say "I accept the null hypothesis," we never say the condition is "met." Instead, we say there is no evidence that the condition is violated. 
+
+## Study Limitations 
+
+This section summarizes your understanding of the foundational aspects of experimental design. 
+
+::: columns
+::: {.column width="40%"}
+:::{.small}
+> Based on the sampling method used, what larger population can you infer the results or your analysis onto?
+
+- What were the inclusion criteria of the observations?
+- How does that influence the population you can infer your findings onto?
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+:::{.small}
+> Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?
+
+- Were the explanatory variables randomly assigned to control for confounding variables?
+  * If no, how does that influence what you can say about the relationships between the variables?
+  * If yes, how does that influence what you can say about the relationships between the variables?
+
+:::
+:::
+:::
+
+
+## Overall Conclusions
+
+:::{.small}
+> Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.
+:::
+
+</br>
+
+::: columns
+::: {.column width="30%"}
+:::{.small}
+Did you distributions look similar but your hypothesis test said at least one group was different?
+
+Think about how sample size effects p-values!
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+Did you 
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+
+:::
+:::
+
 # Remedying Condition Violations
 
 ## Do you have really skewed data?
@@ -87,17 +242,16 @@ trout %>%
 
 <center>What do you think?</center>
 
-##  {background-color="#abdbe3"}
+# Final Presentations
 
-::: {style="font-size: 4em; color: #000000;"}
-Some Closing Thoughts...
-:::
+## Presentation Structure
 
-## 
+## Presentation Slides
 
-::: {style="font-size: 2em; color: #000000;"}
-I hope you leave this class understanding...
-:::
+# Some Closing Thoughts...
+
+
+## I hope you leave this class understanding...
 
 -   Reproducibility is a foundational aspect to scientific research.
 
@@ -107,41 +261,27 @@ I hope you leave this class understanding...
 
 -   A well thought out study is more powerful than any statistical analysis.
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-The Discipline of Statistics
-:::
+## The Discipline of Statistics
 
 > The field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines.
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**Foundational ideas taught in statistics courses were invented by:**
-:::
+## Foundational ideas taught in statistics courses were invented by:
 
 -   Francis Galton
 -   Karl Pearson
 -   Ronald Fisher
 
-## 
+<!-- ::: {style="font-size: 2em; color: #000000;"} -->
+<!-- **Eugenics & Statistics** -->
+<!-- ::: -->
 
-::: {style="font-size: 2em; color: #000000;"}
-**Eugenics & Statistics**
-:::
+<!-- ::: {style="font-size: 0.75em;"} -->
+<!-- > *Ideally, statisticians would like to divorce these tools from the lives and times of the people who created them. It would be convenient if statistics existed outside of history, but that's not the case. Statistics, as a lens through which scientists investigate real-world questions, has always been smudged by the fingerprints of the people holding the lens. Statistical thinking and eugenicist thinking are, in fact, deeply intertwined, and many of the theoretical problems with methods like significance testing---first developed to identify racial differences---are remnants of their original purpose, to support eugenics.* -->
+<!-- ::: -->
 
-::: {style="font-size: 0.75em;"}
-> *Ideally, statisticians would like to divorce these tools from the lives and times of the people who created them. It would be convenient if statistics existed outside of history, but that's not the case. Statistics, as a lens through which scientists investigate real-world questions, has always been smudged by the fingerprints of the people holding the lens. Statistical thinking and eugenicist thinking are, in fact, deeply intertwined, and many of the theoretical problems with methods like significance testing---first developed to identify racial differences---are remnants of their original purpose, to support eugenics.*
-:::
+<!-- [How Eugenics Shaped Statistics](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics) -->
 
-[How Eugenics Shaped Statistics](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**Statistical Significance** -- The New "S" Word
-:::
+## Statistical Significance** -- The "S" Word
 
 ::: {style="font-size: 0.75em;"}
 > "Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science."
@@ -170,7 +310,7 @@ The Discipline of Statistics
 :::
 
 ::: {.column width="45%"}
-::: {style="font-size: 3em; color: #000000;"}
+::: {style="font-size: 2.75em; color: #000000;"}
 Remember to give yourself praise!
 :::
 :::
