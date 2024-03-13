@@ -4658,7 +4658,7 @@
     "href": "slides/week10-day2.html#section",
     "title": "STAT 313 Last Day",
     "section": "",
-    "text": "Some Closing Thoughts…"
+    "text": "Remember to give yourself praise!"
   },
   {
     "objectID": "slides/week10-day2.html#section-1",
@@ -8276,8 +8276,8 @@
     "objectID": "slides/week10-day2.html#try-using-a-log-transformation",
     "href": "slides/week10-day2.html#try-using-a-log-transformation",
     "title": "STAT 313 Last Day",
-    "section": "",
-    "text": "Un-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n. . .\n\n\nWhat do you think?"
+    "section": "Try using a log transformation!",
+    "text": "Try using a log transformation!\n\n\nUn-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do you think?"
   },
   {
     "objectID": "slides/week10-day1.html#do-you-always-expect-your-main-effects-to-be-significant-in-a-two-way-anova",
@@ -8488,5 +8488,89 @@
     "title": "Week 10: Two-way ANOVA",
     "section": "Final Project",
     "text": "Final Project\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Thursday\n\nPrint your report!"
+  },
+  {
+    "objectID": "slides/week10-day2.html#findings",
+    "href": "slides/week10-day2.html#findings",
+    "title": "STAT 313 Last Day",
+    "section": "Findings",
+    "text": "Findings\nThe results of each hypothesis test go directly below the test.\n\n\n\nTheory-based Methods\nYour decision & conclusion for your hypothesis test go directly below your ANOVA table.\n\n\n\nSimulation-based Methods\nYour decision & conclusion for your hypothesis test go directly below your permutation distribution and p-value."
+  },
+  {
+    "objectID": "slides/week10-day2.html#presentation-structure",
+    "href": "slides/week10-day2.html#presentation-structure",
+    "title": "STAT 313 Last Day",
+    "section": "Presentation Structure",
+    "text": "Presentation Structure"
+  },
+  {
+    "objectID": "slides/week10-day2.html#presentation-slides",
+    "href": "slides/week10-day2.html#presentation-slides",
+    "title": "STAT 313 Last Day",
+    "section": "Presentation Slides",
+    "text": "Presentation Slides"
+  },
+  {
+    "objectID": "slides/week10-day2.html#i-hope-you-leave-this-class-understanding",
+    "href": "slides/week10-day2.html#i-hope-you-leave-this-class-understanding",
+    "title": "STAT 313 Last Day",
+    "section": "I hope you leave this class understanding…",
+    "text": "I hope you leave this class understanding…\n\nReproducibility is a foundational aspect to scientific research.\nData visualizations tell you a story, where statistical tests only tell you a summary.\nMultiple regression and ANOVA are powerful tools to explore multivariate relationships.\nA well thought out study is more powerful than any statistical analysis."
+  },
+  {
+    "objectID": "slides/week10-day2.html#the-discipline-of-statistics",
+    "href": "slides/week10-day2.html#the-discipline-of-statistics",
+    "title": "STAT 313 Last Day",
+    "section": "The Discipline of Statistics",
+    "text": "The Discipline of Statistics\n\nThe field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines."
+  },
+  {
+    "objectID": "slides/week10-day2.html#foundational-ideas-taught-in-statistics-courses-were-invented-by",
+    "href": "slides/week10-day2.html#foundational-ideas-taught-in-statistics-courses-were-invented-by",
+    "title": "STAT 313 Last Day",
+    "section": "Foundational ideas taught in statistics courses were invented by:",
+    "text": "Foundational ideas taught in statistics courses were invented by:\n\nFrancis Galton\nKarl Pearson\nRonald Fisher"
+  },
+  {
+    "objectID": "slides/week10-day2.html#statistical-significance-the-s-word",
+    "href": "slides/week10-day2.html#statistical-significance-the-s-word",
+    "title": "STAT 313 Last Day",
+    "section": "Statistical Significance** – The “S” Word",
+    "text": "Statistical Significance** – The “S” Word\n\n\n“Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science.”\n\n\n\n\n\n“When used in statistics, significant does not mean important or meaningful, as it does in everyday speech.”\n\n\n\n\n\n\n“I advocate a simple solution: Replace the s-word with words describing what you actually mean by it.”"
+  },
+  {
+    "objectID": "slides/week10-day2.html#model-validity",
+    "href": "slides/week10-day2.html#model-validity",
+    "title": "STAT 313 Last Day",
+    "section": "Model Validity",
+    "text": "Model Validity\n\nIn this section you discuss the reliability of the p-values you obtained based on the model conditions.\n\n\n\nIndependence\n\nwithin groups\nbetween groups\n\nNormality of the distributions for each group\nEqual variance of the distributions for each group\n\n\n\n\n\n\n\n\nConditions for Each Test\n\n\nEach one-way ANOVA test considers different groups. So, your conditions should be evaluated for each test separately."
+  },
+  {
+    "objectID": "slides/week10-day2.html#hypothesis-test-conclusions",
+    "href": "slides/week10-day2.html#hypothesis-test-conclusions",
+    "title": "STAT 313 Last Day",
+    "section": "Hypothesis Test Conclusions",
+    "text": "Hypothesis Test Conclusions\n\nConclusions should be written in terms of the alternative hypothesis\n\n\n\n\nDid you reject the null hypothesis?\nThen you have evidence that at least one group has a different mean!\n\n\n\nDid you fail to reject the null hypothesis?\nThen you have insufficient evidence that at least one group has a different mean!"
+  },
+  {
+    "objectID": "slides/week10-day2.html#study-limitations",
+    "href": "slides/week10-day2.html#study-limitations",
+    "title": "STAT 313 Last Day",
+    "section": "Study Limitations",
+    "text": "Study Limitations\nThis section summarizes your understanding of the foundational aspects of experimental design.\n\n\n\n\nBased on the sampling method used, what larger population can you infer the results or your analysis onto?\n\n\nWhat were the inclusion criteria of the observations?\nHow does that influence the population you can infer your findings onto?\n\n\n\n\n\n\n\nBased on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?\n\n\nWere the explanatory variables randomly assigned to control for confounding variables?\n\nIf no, how does that influence what you can say about the relationships between the variables?\nIf yes, how does that influence what you can say about the relationships between the variables?"
+  },
+  {
+    "objectID": "slides/week10-day2.html#overall-conclusions",
+    "href": "slides/week10-day2.html#overall-conclusions",
+    "title": "STAT 313 Last Day",
+    "section": "Overall Conclusions",
+    "text": "Overall Conclusions\n\n\nBased on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.\n\n\n\n\n\n\nDid you distributions look similar but your hypothesis test said at least one group was different?\nThink about how sample size effects p-values!\n\n\n\n\nDid you"
+  },
+  {
+    "objectID": "slides/week10-day2.html#conditions-are-never-met",
+    "href": "slides/week10-day2.html#conditions-are-never-met",
+    "title": "STAT 313 Last Day",
+    "section": "Conditions are never met!",
+    "text": "Conditions are never met!\n\\(H_0\\): the condition is met\n\\(H_A\\): the condition is violated\n\n\nJust like we never say “I accept the null hypothesis,” we never say the condition is “met.” Instead, we say there is no evidence that the condition is violated."
   }
 ]
