@@ -1,6 +1,6 @@
 ---
-title: 'STAT 313 / 513: Applied Experimental Design and Regression Models'
-subtitle: "Winter 2024"
+title: 'STAT 313: Applied Experimental Design and Regression Models'
+subtitle: "Spring 2024"
 format: 
   html: 
     self-contained: true
@@ -33,9 +33,8 @@ I value diversity, inclusion and equity in this (and every) class. I hold the fu
 
 **Times:**
 
--   Stat 513, Section 01: 9:10-11:00am
 -   Stat 313, Section 01: 12:10-2:00pm
--   Stat 313, Section 02: 2:10-4:00pm
+-   Stat 313, Section 02: 4:10-6:00pm
 
 ### How to contact me
 
@@ -61,10 +60,15 @@ Another use for student hours is to talk with me about your interests, your own 
 
 This quarter I will be holding student hours on Mondays and Wednesdays at the following times:
 
-| Day        | Time                         |
-|------------|------------------------------|
-| Mondays    | 2:10pm -- 4:00pm (in-person) |
-| Wednesdays | 2:10pm -- 3:00pm (in-person) |
++-------------------+---------------------------------------------------+
+| Day               | Time                                              |
++===================+===================================================+
+| Mondays           | 3:10pm -- 4:00pm (in-person)                      |
++-------------------+---------------------------------------------------+
+| Wednesdays        | 2:10 pm - 3:00 pm (individual meetings via Zoom)  |
+|                   |                                                   |
+|                   | 3:10 - 4:00 (in-person)                           |
++-------------------+---------------------------------------------------+
 
 I will typically hold student hours in my office (25-105), but may choose to move to the outside vestibule between wings of the building (where all the whiteboards are) or the Statistics department conference room. If we're meeting somewhere other than my office, I will leave a sign on the door indicating where we're meeting!
 
@@ -212,27 +216,27 @@ For this course we will be using one main textbook, accompanied by additional re
 
 # Grade Breakdown {#sec-grades}
 
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-|                                | A-level                     | B-level                 | C-level                 | D-level                 |
-+================================+=============================+=========================+=========================+=========================+
-| **Reading Guides (12 total)**  | at least 11 completed       | at least 10 completed   | at least 8 completed    | 7 or fewer completed    |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Concept Quizzes\             | at least 10 completed       | at least 9 completed   | at least 8 completed    | 7 or fewer completed    |
-| (11 total)**                   |                             |                         |                         |                         |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Tutorials\                   | at least 13 completed       | at least 11 completed   | at least 10 completed   | 8 or fewer completed    |
-| (14 total)**                   |                             |                         |                         |                         |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Critiques & Lab Assignments\ | at least 8 Satisfactory[^2] | at least 7 Satisfactory | at least 6 Satisfactory | 5 or fewer Satisfactory |
-| (9 total)**                    |                             |                         |                         |                         |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Peer Evaluations\            | 3 completed                 | at least 2 completed    | at least 2 completed    | at least 1 completed    |
-| (3 total)**                    |                             |                         |                         |                         |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Midterm Project**            | Excellent                   | Satisfactory            | Progressing             | Not Completed           |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
-| **Final Project**              | Excellent                   | Satisfactory            | Progressing             | Not Completed           |
-+--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+|                                | A-level                     | B-level                                                                       | C-level                 | D-level                 |
++================================+=============================+===============================================================================+=========================+=========================+
+| **Reading Guides (12 total)**  | at least 11 completed       | at least 10 completed                                                         | at least 8 completed    | 7 or fewer completed    |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Concept Quizzes\             | at least 10 completed       | at least 9 completed \| at least 8 completed \| 7 or fewer completed \| \| \| |                         |                         |
+| (11 total)**                   |                             |                                                                               |                         |                         |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Tutorials\                   | at least 13 completed       | at least 11 completed                                                         | at least 10 completed   | 8 or fewer completed    |
+| (14 total)**                   |                             |                                                                               |                         |                         |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Critiques & Lab Assignments\ | at least 8 Satisfactory[^2] | at least 7 Satisfactory                                                       | at least 6 Satisfactory | 5 or fewer Satisfactory |
+| (9 total)**                    |                             |                                                                               |                         |                         |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Peer Evaluations\            | 3 completed                 | at least 2 completed                                                          | at least 2 completed    | at least 1 completed    |
+| (3 total)**                    |                             |                                                                               |                         |                         |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Midterm Project**            | Excellent                   | Satisfactory                                                                  | Progressing             | Not Completed           |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
+| **Final Project**              | Excellent                   | Satisfactory                                                                  | Progressing             | Not Completed           |
++--------------------------------+-----------------------------+-------------------------------------------------------------------------------+-------------------------+-------------------------+
 
 [^2]: A "Satisfactory" lab or critique occurs when **every** problem has been marked *Satisfactory.*
 
@@ -371,14 +375,14 @@ Assignments are expected to be submitted on time. However, every student will be
 
 When you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. **Your new deadline must be within 3-days of the original deadline.**
 
-**All** deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations. 
+**All** deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations.
 
 Any late work is required to have a deadline extension request, meaning if you do not complete a deadline extension request for an assignment you **are not** permitted to turn it in late.
 
 -   STAT 313 deadline extension form: <https://forms.gle/HTL2DrwZwR29EwVT9>
 -   STAT 513 deadline extension form: <https://forms.gle/2iw6mC2f2uvibUkb8>
 
-:::{.callout-warning}
+::: callout-warning
 # Deadline extensions are not permitted for the "final version" of the Midterm Project and Final Project
 :::
 
