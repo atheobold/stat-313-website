@@ -2185,21 +2185,33 @@
     "href": "weeks/week-9.html",
     "title": "Week 9: Inference for Many Means (ANOVA)",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are transitioning into our last topic of the quarter—comparing multiple means. These comparisons have a specific name, ANalysis of VAriance (ANOVA).\nWe are going to use all of the simulation-based methods we learned previously for this new context. An ANOVA relies on a new statistic, the \\(F\\)-statistic, to summarize how different 3 or more means are from each other.\nThe primary focus of an ANOVA is to detect if the means of 3 or more groups are different. Because of this we focus on hypothesis tests for a difference in the group means and do not use confidence intervals. We will generate permutation distributions of \\(F\\)-statistics that we could have observed if the null hypothesis was true (there is no difference in the group means)."
+    "text": "Welcome!\nIn this week’s coursework we are transitioning into our last topic of the quarter—comparing multiple means. These comparisons have a specific name, ANalysis of VAriance (ANOVA).\nWe are going to use all of the simulation-based methods we learned previously for this new context. An ANOVA relies on a new statistic, the \\(F\\)-statistic, to summarize how different 3 or more means are from each other.\nThe primary focus of an ANOVA is to detect if the means of 3 or more groups are different. Because of this we focus on hypothesis tests for a difference in the group means and do not use confidence intervals. We will generate permutation distributions of \\(F\\)-statistics that we could have observed if the null hypothesis was true (there is no difference in the group means).",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
   },
   {
     "objectID": "weeks/week-9.html#learning-outcomes",
     "href": "weeks/week-9.html#learning-outcomes",
     "title": "Week 9: Inference for Many Means (ANOVA)",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what an ANOVA tests for\nuse a visualization to outline how the following are calculated:\n\ntotal sum of squares\ngroup sum of squares\nresidual sum of squares\n\ndescribe why the mean squares of groups is called the “between group variability”\ndescribe why the mean square error is called the “within group variability”\noutline how an F-statistic is calculated\nexplain what a “large” or a “small” F-statistic indicates\ndescribe the conditions for performing an ANOVA procedure\noutline when it is appropriate to use an \\(F\\)-distribution in an ANOVA\nexplain the similarities and differences between parametric (\\(F\\)-based) methods and non-parametric (simulation-based) methods\nuse R to:\n\ngenerate a permutation distribution for F-statistics\nvisualize the permutation distribution\ncalculate the observed F-statistic statistic\ncalculate a p-value for a hypothesis test"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what an ANOVA tests for\nuse a visualization to outline how the following are calculated:\n\ntotal sum of squares\ngroup sum of squares\nresidual sum of squares\n\ndescribe why the mean squares of groups is called the “between group variability”\ndescribe why the mean square error is called the “within group variability”\noutline how an F-statistic is calculated\nexplain what a “large” or a “small” F-statistic indicates\ndescribe the conditions for performing an ANOVA procedure\noutline when it is appropriate to use an \\(F\\)-distribution in an ANOVA\nexplain the similarities and differences between parametric (\\(F\\)-based) methods and non-parametric (simulation-based) methods\nuse R to:\n\ngenerate a permutation distribution for F-statistics\nvisualize the permutation distribution\ncalculate the observed F-statistic statistic\ncalculate a p-value for a hypothesis test",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
   },
   {
     "objectID": "weeks/week-9.html#textbook-reading",
     "href": "weeks/week-9.html#textbook-reading",
     "title": "Week 9: Inference for Many Means (ANOVA)",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Inference for Comparing Many Means\n\nReading Guide – Due Tuesday by the beginning of class\nDownload the Word Document"
+    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Inference for Comparing Many Means\n\nReading Guide – Due Monday by the start of class\nDownload the Word Document",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
   },
   {
     "objectID": "weeks/week-9.html#concept-quiz-due-tuesday-by-noon",
@@ -2220,35 +2232,55 @@
     "href": "weeks/week-2.html",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to continuing exploring data, through data summaries and visualizations, focusing specifically on numerical variables. We will be using the dplyr package in R to wrangle our data and the ggplot2 package to created data visualizations."
+    "text": "Welcome!\nIn this week’s coursework we are going to continuing exploring data, through data summaries and visualizations, focusing specifically on numerical variables. We will be using the dplyr package in R to wrangle our data and the ggplot2 package to created data visualizations.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "weeks/week-2.html#learning-outcomes",
     "href": "weeks/week-2.html#learning-outcomes",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\noutline the differences between numerical and categorical variables\ndescribe what type of summary statistic is appropriate for a given distribution of a numerical variable\ndiscuss when it is / is not appropriate to summarize a variable with a mean\ncreate visualizations of one and two numerical variables\ndiscuss the benefits and shortcomings of different visualizations"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\noutline the differences between numerical and categorical variables\ndescribe what type of summary statistic is appropriate for a given distribution of a numerical variable\ndiscuss when it is / is not appropriate to summarize a variable with a mean\ncreate visualizations of one and two numerical variables\ndiscuss the benefits and shortcomings of different visualizations",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "weeks/week-2.html#textbook-reading-part-1",
     "href": "weeks/week-2.html#textbook-reading-part-1",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.1 Textbook Reading – Part 1",
-    "text": "1.1 Textbook Reading – Part 1\n\n\n\n\n\n\n\nRequired Reading: Exploring Numerical Data\n\nReading Guide – Due Thursday by the Beginning of Class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
+    "text": "1.1 Textbook Reading – Part 1\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Exploring Numerical Data\n\nReading Guide – Due Tuesday by the start of class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "weeks/week-2.html#concept-quiz",
     "href": "weeks/week-2.html#concept-quiz",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.2 Concept Quiz",
-    "text": "1.2 Concept Quiz\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nSuppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?\n\n\nright skew\nleft skew\nbimodal\nmutimodal\nuniform\n\nHint: Think about how you would “typically” expect flight delays to behave.\n\nTo better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the distribution of departure delays. What type of visualizations could we make? Select all that apply!\n\n\nboxplot\nhistogram\nbarplot\ndensity plot\nscatterplot"
+    "text": "1.2 Concept Quiz\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nSuppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?\n\n\nright skew\nleft skew\nbimodal\nmutimodal\nuniform\n\nHint: Think about how you would “typically” expect flight delays to behave.\n\nTo better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the distribution of departure delays. What type of visualizations could we make? Select all that apply!\n\n\nboxplot\nhistogram\nbarplot\ndensity plot\nscatterplot",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "weeks/week-2.html#textbook-reading-part-2",
     "href": "weeks/week-2.html#textbook-reading-part-2",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.3 Textbook Reading – Part 2",
-    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Data Visualization\n\n\n\n\n\n\n\n\nReading Guide – Due Thursday by the Beginning of Class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
+    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\nReading Guide – Due Wednesday by the start of class\nDownload the Word Document\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "weeks/week-2.html#concept-quiz-due-tuesday-by-noon",
@@ -2262,21 +2294,33 @@
     "href": "weeks/week-1.html",
     "title": "Week One: Foundations of Statistics",
     "section": "",
-    "text": "Welcome!\nIn this coursework, you’ll get a refresher on the foundational components of statistics and data, investigate how statistics is used in your major, and think critically about the philosophy of statistical inference."
+    "text": "Welcome!\nIn this coursework, you’ll get a refresher on the foundational components of statistics and data, investigate how statistics is used in your major, and think critically about the philosophy of statistical inference.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-1.html#learning-outcomes",
     "href": "weeks/week-1.html#learning-outcomes",
     "title": "Week One: Foundations of Statistics",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe observations, variables, and data matrices\nexplain the different types of variables a study can have\nillustrate the difference between explanatory and response variables\ndelineate the difference between a population and a sample\ncompare and contrast different sampling methods\noutline what is necessary to make an experiment an “experiment”\ncharacterize the differences between observational studies and experiments"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe observations, variables, and data matrices\nexplain the different types of variables a study can have\nillustrate the difference between explanatory and response variables\ndelineate the difference between a population and a sample\ncompare and contrast different sampling methods\noutline what is necessary to make an experiment an “experiment”\ncharacterize the differences between observational studies and experiments",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-1.html#textbook-reading",
     "href": "weeks/week-1.html#textbook-reading",
     "title": "Week One: Foundations of Statistics",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\n📖 Required Reading: Introduction to Modern Statistics – Hello Data\n📖 Required Reading: Introduction to Modern Statistics – Study Design\n\nReading Guide – Due Tuesday by noon\nDownload the Word Document\nNote: There is one combined reading guide for both chapters.\n\n\n\n\n\n\nSubmission (Due Tuesday, January 9 by the start of class)\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!"
+    "text": "1.1 Textbook Reading\n📖 Required Reading: Introduction to Modern Statistics – Hello Data\n📖 Required Reading: Introduction to Modern Statistics – Study Design\n\nReading Guide – Due Wednesday by noon\nDownload the Word Document\nNote: There is one combined reading guide for both chapters.\n\n\n\n\n\n\nSubmission (Due Wednesday, April 3 by the start of class)\n\n\n\nSubmit your completed reading guide to the Canvas assignment portal!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-1.html#concept-quiz-due-tuesday-by-the-start-of-class",
@@ -2297,21 +2341,33 @@
     "href": "weeks/week-4.html",
     "title": "Week Four: Simple Linear Regression (Basic Regression)",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to start exploring statistical methods—linear regression. We will start with the “basic” case or simple linear regression, with a single quantitative explanatory variable and a quantitative response. We will review the concepts behind linear regression, learn how to visualize regression models, and practice obtaining the estimated regression lines in R."
+    "text": "Welcome!\nIn this week’s coursework we are going to start exploring statistical methods—linear regression. We will start with the “basic” case or simple linear regression, with a single quantitative explanatory variable and a quantitative response. We will review the concepts behind linear regression, learn how to visualize regression models, and practice obtaining the estimated regression lines in R.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
   },
   {
     "objectID": "weeks/week-4.html#learning-outcomes",
     "href": "weeks/week-4.html#learning-outcomes",
     "title": "Week Four: Simple Linear Regression (Basic Regression)",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe the difference between explanatory and predictive modeling\nproduce data visualizations for a simple linear regression\ndescribe how R decides on the “best” regression line\nfit a simple linear regression in R\nwrite out an estimated regression line\ninterpret the slope of an estimated regression line\ninterpret the intercept of an estimated regression line\ndescribe what an “offset” is in a simple linear regression\ninterpret the offsets of an estimated regression line\ncalculate a residual for an observation"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe the difference between explanatory and predictive modeling\nproduce data visualizations for a simple linear regression\ndescribe how R decides on the “best” regression line\nfit a simple linear regression in R\nwrite out an estimated regression line\ninterpret the slope of an estimated regression line\ninterpret the intercept of an estimated regression line\ndescribe what an “offset” is in a simple linear regression\ninterpret the offsets of an estimated regression line\ncalculate a residual for an observation",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
   },
   {
     "objectID": "weeks/week-4.html#textbook-reading",
     "href": "weeks/week-4.html#textbook-reading",
     "title": "Week Four: Simple Linear Regression (Basic Regression)",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\nChapter 5 (https://moderndive.com/5-regression.html)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nDon’t worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.\n\n\n\nReading Guide\nDownload the Word Document\n\n\n\n\n\n\nDifferent colored answers\n\n\n\nPlease use a different color for your answers to the reading guide, so it is easier to find your responses! 😊"
+    "text": "1.1 Textbook Reading\nChapter 5 (https://moderndive.com/5-regression.html)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nDon’t worry about Section 5.3.3, it goes a bit too in the weeds for what we are interested in.\n\n\n\nReading Guide\nDownload the Word Document\n\n\n\n\n\n\nDifferent colored answers\n\n\n\nPlease use a different color for your answers to the reading guide, so it is easier to find your responses! 😊",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
   },
   {
     "objectID": "weeks/week-4.html#concept-quiz-due-tuesday-by-noon",
@@ -2340,7 +2396,7 @@
     "href": "weeks/week-7.html",
     "title": "Week 7 – Inference for Regression",
     "section": "",
-    "text": "1 Textbook Reading – Part 1\nRequired Reading: Exploring Sampling Variability\n\n\n\n\n\n\nReading Guide – Due Tuesday by the beginning of class\n\n\n\nDownload the Word Document\n\n\n\n\n2 Textbook Reading – Part 2\nRequired Reading: Confidence Intervals for the Slope\n\n\n\n\n\n\nReading Guide – Due Thursday by the beginning of class (note the new time!)\n\n\n\nDownload the Word Document\n\n\n\n\n3 Concept Quiz – Due Thursday by the beginning of class (note the new time!)\n1. Match each item to it’s respective analogy:\n\n\npoint estimate\nconfidence interval\n\n\n\nfishing with a net\nfishing with a spear\n\n\n2. To create a 95% confidence interval using the percentile method, what percentiles of the bootstrap distribution do you need to calculate?\n\n0th\n2.5th\n5th\n90th\n95th\n97.5th\n\n3. To create a 95% confidence interval using the standard error method, what standard error do you use?\n\nthe sample standard deviation\nthe bootstrap distribution standard deviation\na resample standard deviation\n1.96\n\n4. We almost never know if our confidence interval captured the true population parameter.\n\nTrue\nFalse\n\n5. What percentage of 99% confidence intervals do you expect to capture the true population parameter?\n6. The word “confident” in a confidence interval interpretation corresponds to what aspect of the interval?\n\nthe accuracy of the original sample\nthe reliability of the procedure for constructing confidence intervals\nthe precision of the bootstrap samples\n\n7. Which of the following are true?\n\nSmaller sample sizes tend to produce narrower confidence intervals.\nSmaller sample sizes tend to produce wider confidence intervals.\nLower confidence levels tend to produce wider confidence intervals.\nLower confidence levels tend to produce narrower confidence intervals.\n\n8. In a regression table, what does the “std_error” value associated with the slope represent?\n\nthe standard deviation of the sample\nthe standard deviation of the bootstrap distribution\nthe estimated standard deviation of the sampling distribution\nthe standard error of the sample\n\n9. In a regression table, how is the “std_error” value calculated?\n\na mathematical formula\nthe standard deviation of the sample\nthe standard deviation of the bootstrap distribution\n\n10. What percentage confidence interval is output in a regression table?\n\n99%\n95%\n90%\n\n\n\n4 R Tutorial – Due Thursday by the beginning of class\nRequired Tutorial: Practice the infer Workflow",
+    "text": "1 Textbook Reading – Part 1\nRequired Reading: Exploring Sampling Variability\n\n\n\n\n\n\nReading Guide – Due Monday by the beginning of class\n\n\n\nDownload the Word Document\n\n\n\n\n2 Textbook Reading – Part 2\nRequired Reading: Confidence Intervals for the Slope\n\n\n\n\n\n\nReading Guide – Due Wednesday by the beginning of class (note the new time!)\n\n\n\nDownload the Word Document\n\n\n\n\n3 Concept Quiz – Due Wednesday by the beginning of class (note the new time!)\n1. Match each item to it’s respective analogy:\n\n\npoint estimate\nconfidence interval\n\n\n\nfishing with a net\nfishing with a spear\n\n\n2. To create a 95% confidence interval using the percentile method, what percentiles of the bootstrap distribution do you need to calculate?\n\n0th\n2.5th\n5th\n90th\n95th\n97.5th\n\n3. To create a 95% confidence interval using the standard error method, what standard error do you use?\n\nthe sample standard deviation\nthe bootstrap distribution standard deviation\na resample standard deviation\n1.96\n\n4. We almost never know if our confidence interval captured the true population parameter.\n\nTrue\nFalse\n\n5. What percentage of 99% confidence intervals do you expect to capture the true population parameter?\n6. The word “confident” in a confidence interval interpretation corresponds to what aspect of the interval?\n\nthe accuracy of the original sample\nthe reliability of the procedure for constructing confidence intervals\nthe precision of the bootstrap samples\n\n7. Which of the following are true?\n\nSmaller sample sizes tend to produce narrower confidence intervals.\nSmaller sample sizes tend to produce wider confidence intervals.\nLower confidence levels tend to produce wider confidence intervals.\nLower confidence levels tend to produce narrower confidence intervals.\n\n8. In a regression table, what does the “std_error” value associated with the slope represent?\n\nthe standard deviation of the sample\nthe standard deviation of the bootstrap distribution\nthe estimated standard deviation of the sampling distribution\nthe standard error of the sample\n\n9. In a regression table, how is the “std_error” value calculated?\n\na mathematical formula\nthe standard deviation of the sample\nthe standard deviation of the bootstrap distribution\n\n10. What percentage confidence interval is output in a regression table?\n\n99%\n95%\n90%\n\n\n\n4 R Tutorial – Due Wednesday by the beginning of class\nRequired Tutorial: Practice the infer Workflow",
     "crumbs": [
       "Weekly materials",
       "Week 7"
@@ -3843,7 +3899,7 @@
     "href": "weeks/week-5.html#textbook-reading",
     "title": "Week Five: Multiple Linear Regression",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Chapter 6 (https://moderndive.com/6-multiple-regression.html)\n\n\n\nReading Guide – Due Tuesday by the start of class\nDownload the Word Document",
+    "text": "1.1 Textbook Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Chapter 6 (https://moderndive.com/6-multiple-regression.html)\n\n\n\nReading Guide – Due Monday by the start of class\nDownload the Word Document",
     "crumbs": [
       "Weekly materials",
       "Week 5"
@@ -3930,7 +3986,7 @@
     "href": "weeks/week-0.html#week-1-concept-quiz-course-set-up",
     "title": "Course Setup and Structure",
     "section": "2.2 ✅ Week 1 Concept Quiz: Course Set-up",
-    "text": "2.2 ✅ Week 1 Concept Quiz: Course Set-up\nQuestion 1: Where are student hours held?\n\nIn person\nDiscord\nZoom by appointment\nCanvas\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the student hours section of the course syllabus!\n\n\nQuestion 2: What materials and technology are required for this course? Select all that apply!\n\nIntroduction to Modern Statistics\nRStudio Cloud – the application for working in R\nCanvas\nDiscord\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the required materials section of the course syllabus!\n\n\nQuestion 3: In this course, Reading Guides are due by ____, Concept Quizzes are due by ____, and Tutorials are due by ____.\nQuestion 4: If you have a question about the course content, what is the best first step?\n\nPost your question on Discord in the appropriate channel\nSend Dr. Theobold an email\nGo to Dr. Theobold’s office hours on Tuesday\nGoogle it\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the getting help section of the course syllabus!\n\n\nQuestion 5: You are permitted to submit up to ___ assignments late.\n\n\n\n\n\n\nTip\n\n\n\nLook at the late work policy section of the course syllabus!\n\n\nQuestion 6: If you need to submit an assignment late, you must do which of the following?\n\nemail Dr. Theobold to request a deadline extension\nsubmit a deadline extension request to the Google Form linked in the syllabus (and on Canvas)\nrequest an extension before the deadline\ncomplete the assignment no later than 3-days after the original deadline\n\nQuestion 7: If you receive a “Growing” on a Lab Assignment or a Critique, what should you do?\n\nread the comments and complete revisions on the problems receiving a “Growing”\nread the comments and complete revisions on the entire assignment\ncomplete revisions on the problems receiving a “Growing”\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the lab section of the course syllabus!\n\n\nQuestion 8: For revisions on Lab Assignments and Critiques to be considered that week they need to be turned in with:\n\nreflections on how your learning progressed from your initial attempt\nyour new answers\nyour original answers\nnothing\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the revisions section of the course syllabus!\n\n\nQuestion 9: You and a friend have been working on Critique 1 together. You finish up and want to go to bed, but they are still a little confused. You email them your file, and say, “Don’t copy this, just look how I did it so you can figure it out.” Have you violated Academic Honesty policies?\nQuestion 10: You have been working on making a visualization for your Midterm Project for what feels like forever and it seems like you are making little to no progress. You find an example analysis on the internet with the visualization you were hoping to make. You copy-and-paste the code used to make the visualization into your Midterm Project and do not reference that you used an outside source. You have violated the Academic Honesty policy.\nQuestion 11: Upload a picture of you introducing yourself in the “Introductions” channel of the STAT 313 (or 513) Discord Server.",
+    "text": "2.2 ✅ Week 1 Concept Quiz: Course Set-up\nQuestion 1: Where are student hours held?\n\nIn person\nDiscord\nZoom by appointment\nCanvas\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the student hours section of the course syllabus!\n\n\nQuestion 2: What materials and technology are required for this course? Select all that apply!\n\nIntroduction to Modern Statistics\nRStudio Cloud – the application for working in R\nCanvas\nDiscord\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the required materials section of the course syllabus!\n\n\nQuestion 3: In this course, Reading Guides are due by ____, Concept Quizzes are due by ____, and Tutorials are due by ____.\nQuestion 4: If you have a question about the course content, what is the best first step?\n\nPost your question on Discord in the appropriate channel\nSend Dr. Theobold an email\nGo to Dr. Theobold’s office hours on Tuesday\nGoogle it\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the getting help section of the course syllabus!\n\n\nQuestion 5: You are permitted to submit up to ___ assignments late.\n\n\n\n\n\n\nTip\n\n\n\nLook at the late work policy section of the course syllabus!\n\n\nQuestion 6: If you need to submit an assignment late, you must do which of the following?\n\nemail Dr. Theobold to request a deadline extension\nsubmit a deadline extension request to the Google Form linked in the syllabus (and on Canvas)\nrequest an extension before the deadline\ncomplete the assignment no later than 3-days after the original deadline\n\nQuestion 7: If you receive a “Growing” on a Lab Assignment or a Critique, what should you do?\n\nread the comments and complete revisions on the problems receiving a “Growing”\nread the comments and complete revisions on the entire assignment\ncomplete revisions on the problems receiving a “Growing”\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the lab section of the course syllabus!\n\n\nQuestion 8: For revisions on Lab Assignments and Critiques to be considered that week they need to be turned in with:\n\nreflections on how your learning progressed from your initial attempt\nyour new answers\nyour original answers\nnothing\n\n\n\n\n\n\n\nTip\n\n\n\nLook at the revisions section of the course syllabus!\n\n\nQuestion 9: You and a friend have been working on Critique 1 together. You finish up and want to go to bed, but they are still a little confused. You email them your file, and say, “Don’t copy this, just look how I did it so you can figure it out.” Have you violated Academic Honesty policies?\nQuestion 10: You have been working on making a visualization for your Midterm Project for what feels like forever and it seems like you are making little to no progress. You find an example analysis on the internet with the visualization you were hoping to make. You copy-and-paste the code used to make the visualization into your Midterm Project and do not reference that you used an outside source. You have violated the Academic Honesty policy.\nQuestion 11: Upload a picture of you introducing yourself in the “Introductions” channel of the STAT 313 Discord Server.",
     "crumbs": [
       "Weekly materials",
       "Week 0"
@@ -3941,14 +3997,22 @@
     "href": "weeks/week-3.html",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "",
-    "text": "Welcome!\nIn this week’s coursework we are going to dive deeper into exploring data, by incorporating categorical variables. Specifically, we will explore how we can incorporate categorical variables into our visualizations through the use of colors and facets. We will also explore how we can obtain summary statistics for different groups of a categorical variable, making our summaries more specific."
+    "text": "Welcome!\nIn this week’s coursework we are going to dive deeper into exploring data, by incorporating categorical variables. Specifically, we will explore how we can incorporate categorical variables into our visualizations through the use of colors and facets. We will also explore how we can obtain summary statistics for different groups of a categorical variable, making our summaries more specific.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
   },
   {
     "objectID": "weeks/week-3.html#learning-outcomes",
     "href": "weeks/week-3.html#learning-outcomes",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "0.1 Learning Outcomes",
-    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what a categorical variable is and how these types of variables are stored in R\ndetermine whether a variable in a dataset is categorical\nincorporate categorical variables into visualizations of two and three variables\nobtain summary statistics for each level of a categorical variable"
+    "text": "0.1 Learning Outcomes\nBy the end of this coursework you should be able to:\n\ndescribe what a categorical variable is and how these types of variables are stored in R\ndetermine whether a variable in a dataset is categorical\nincorporate categorical variables into visualizations of two and three variables\nobtain summary statistics for each level of a categorical variable",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
   },
   {
     "objectID": "weeks/week-3.html#reading-guide-one-reading-guide-for-both-readings",
@@ -3966,14 +4030,22 @@
     "href": "weeks/week-3.html#textbook-reading-part-1",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.2 Textbook Reading – Part 1",
-    "text": "1.2 Textbook Reading – Part 1\n\n\n\n\n\n\n\nRequired Reading: Incorporating Categorical Variables into Visualizations\n\n\n\n\n\n\nOnly read Section 4.6!"
+    "text": "1.2 Textbook Reading – Part 1\n\n\n\n\n\n\n\n\n\n\n\nRequired Reading: Incorporating Categorical Variables into Visualizations\n\n\n\n\n\n\nOnly read Section 4.6!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
   },
   {
     "objectID": "weeks/week-3.html#textbook-reading-part-2",
     "href": "weeks/week-3.html#textbook-reading-part-2",
     "title": "Week Three: Incorporating Categorical Variables",
     "section": "1.3 Textbook Reading – Part 2",
-    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Incorporating Categorical Variables into Summary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead Sections 3.3 - 3.6!"
+    "text": "1.3 Textbook Reading – Part 2\nRequired Reading: Incorporating Categorical Variables into Summary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead Sections 3.3 - 3.6!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
   },
   {
     "objectID": "weeks/week-3.html#concept-quiz-due-tuesday-by-noon",
@@ -4013,7 +4085,7 @@
     "href": "weeks/week-10.html#textbook-reading",
     "title": "Week 10: Two-Way ANOVA",
     "section": "1.1 Textbook Reading",
-    "text": "1.1 Textbook Reading\nTo be honest, I didn’t have the energy this week to write another chapter on two-way ANOVA. So, instead we will be reading a couple of sections out of another statistics textbook. I’ve uploaded the PDFs of these sections to OneDrive, so you should be able to read them online or download them.\n\nSection 1 – Introduction to Two-Way ANOVA\n\n\n\n\n\n\nRead through “Step 6” on page 222\n\n\n\n\n\n\n\n\n\n\n\n\nExample 3.1 – Problematic Undertones\n\n\n\nI want to point out that the context of example 3.1 in this section has some major problematic undertones. The example focuses on “the effects of corporate and endorser credibility” on how likely someone is to buy shoes. For no clear reason, the example only considers “female” college students, which implicitly sends two problematic messages, (1) sex and gender are the same, and (2) women are more easily swayed by advertising.\nIn addition, the example uses Roseanne Barr as one of the celebrity endorsers—an actress who has written deplorable remarks about transgender people.\n\n\n\n\nSection 2 – Two-Way ANOVA Interaction Models\n\n\n\n\n\n\nRead through “Follow-up Confidence Intervals” on page 239\n\n\n\n\n\n\n\n\nReading Guide – Due Tuesday by the Start of Class\nDownload the Word Document",
+    "text": "1.1 Textbook Reading\nTo be honest, I didn’t have the energy this week to write another chapter on two-way ANOVA. So, instead we will be reading a couple of sections out of another statistics textbook. I’ve uploaded the PDFs of these sections to OneDrive, so you should be able to read them online or download them.\n\nSection 1 – Introduction to Two-Way ANOVA\n\n\n\n\n\n\nRead through “Step 6” on page 222\n\n\n\n\n\n\n\n\n\n\n\n\nExample 3.1 – Problematic Undertones\n\n\n\nI want to point out that the context of example 3.1 in this section has some major problematic undertones. The example focuses on “the effects of corporate and endorser credibility” on how likely someone is to buy shoes. For no clear reason, the example only considers “female” college students, which implicitly sends two problematic messages, (1) sex and gender are the same, and (2) women are more easily swayed by advertising.\nIn addition, the example uses Roseanne Barr as one of the celebrity endorsers—an actress who has written deplorable remarks about transgender people.\n\n\n\n\nSection 2 – Two-Way ANOVA Interaction Models\n\n\n\n\n\n\nRead through “Follow-up Confidence Intervals” on page 239\n\n\n\n\n\n\n\n\nReading Guide – Due Monday by the start of Class\nDownload the Word Document",
     "crumbs": [
       "Weekly materials",
       "Week 10"
@@ -4046,7 +4118,7 @@
     "href": "weeks/week-8.html",
     "title": "Week 8 – Hypothesis Tests for Slope Coefficients & Conditions for Inference",
     "section": "",
-    "text": "1 Textbook Reading\nRequired Reading: Hypothesis Test for Slope & Inference Conditions\n\n\n\n\n\n\nReading Guide – Due Tuesday by noon\n\n\n\nDownload the Word Document\n\n\n\n\n2 Concept Quiz – Due Tuesday by noon\n1. Which of the following are always true for hypothesis statements?\n\nThey are about sample statistics.\nThey are about relationships between variables.\nThey are about population parameters.\nThey are about differences in groups.\n\n2. Which of the following are true about a null distribution? (select all that apply)\n\nIt is a distribution of statistics.\nThe values on the distribution represent what might have happened if the null hypothesis was true.\nThe values on the distribution represent what might have happened if the alternative hypothesis was true.\nIt is a distribution of samples.\n\n3. Which of the following are true about a p-value? (select all that apply)\n\nIt is calculated assuming the null hypothesis is true.\nIt is the probability the null hypothesis is true.\nIt quantifies how “surprising” our data are.\nIt compares the observed statistic to a distribution of values that could have happened if the null was true.\nIt is calculated assuming the alternative hypothesis is true.\nIt is a probability.\n\n4. Which of the following is true about a small p-value?\n\nThe sample statistic is unlikely to have happened by chance.\nThe sample size was large.\nThe sample statistic is unlikely to have happened if the null hypothesis was true.\nThe sample statistic was large.\n\n5. If you obtain a large p-value, what can you conclude about your hypotheses?\n\nWe cannot say the alternative hypothesis is false.\nWe cannot say the null hypothesis is false.\nThe null hypothesis is true.\nThe alternative hypothesis is true.\n\n6. Match each procedure to the question it addresses.\n\n\nconfidence intervals\nhypothesis tests\n\n\n\n\nWhat are plausible values for the population parameter?\nWhat are plausible values for the sample statistic?\nIs the population parameter different from 0?\nIs the value of the parameter different from a specified quantity?\n\n\n\n7. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?\n\nThe probability of a Type II error goes down.\nThe probability of a Type II error stays the same.\nThe probability of a Type II error goes up.\n\n8. If you obtained a small p-value (e.g., 0.02), what could you say about what you would expect if you constructed a 95% confidence interval?\n\nIt would contain the null hypothesized value.\nIt would not contain the null hypothesized value.\nIt would contain the sample statistic.\nIt would contain the true population parameter.\n\n9. In a regression table, what is the “statistic” value associated with the slope?\n\na bootstrap statistic\na z-statistic\nthe sample slope statistic\na t-statistic\n\n10. In a regression table, how is the p-value calculated?\n\nUsing a permutation distribution with 1000 resamples\nUsing a bootstrap distribution with 1000 samples\nUsing a Normal distribution\nUsing a t-distribution\n\n11. What are the required conditions for linear regression? (select all that apply)\n\na random sample was taken\nequal variance of residuals\na large sample was collected\nlinear relationship between x and y\nindependence of observations\nindependence of variables\nnormality of residuals\nnormality of observations\n\n12. Which of the following would violate the condition of independence? (select all that apply)\n\ncollecting a non-random sample\nobservations related geographically (spatially)\nobservations that are related in time (temporally)\nrepeated observations on the same person\nobservations related biologically\n\n\n\n3 R Tutorial – Due Thursday by noon\nRequired Tutorial: Randomization test for the slope\nRequired Tutorial: Evaluating the technical conditions in linear regression",
+    "text": "1 Textbook Reading\nRequired Reading: Hypothesis Test for Slope & Inference Conditions\n\n\n\n\n\n\nReading Guide – Due Monday by the start of class\n\n\n\nDownload the Word Document\n\n\n\n\n2 Concept Quiz – Due Monday by the start of class\n1. Which of the following are always true for hypothesis statements?\n\nThey are about sample statistics.\nThey are about relationships between variables.\nThey are about population parameters.\nThey are about differences in groups.\n\n2. Which of the following are true about a null distribution? (select all that apply)\n\nIt is a distribution of statistics.\nThe values on the distribution represent what might have happened if the null hypothesis was true.\nThe values on the distribution represent what might have happened if the alternative hypothesis was true.\nIt is a distribution of sample observations.\n\n3. Which of the following are true about a p-value? (select all that apply)\n\nIt is calculated assuming the null hypothesis is true.\nIt is the probability the null hypothesis is true.\nIt quantifies how “surprising” our data are.\nIt compares the observed statistic to a distribution of values that could have happened if the null was true.\nIt is calculated assuming the alternative hypothesis is true.\nIt is a probability.\n\n4. Which of the following is true about a small p-value?\n\nThe sample statistic is unlikely to have happened by chance.\nThe sample size was large.\nThe sample statistic is unlikely to have happened if the null hypothesis was true.\nThe sample statistic was large.\n\n5. If you obtain a large p-value, what can you conclude about your hypotheses?\n\nWe cannot say the alternative hypothesis is false.\nWe cannot say the null hypothesis is false.\nThe null hypothesis is true.\nThe alternative hypothesis is true.\n\n6. Match each procedure to the question it addresses.\n\n\nconfidence intervals\nhypothesis tests\n\n\n\n\nWhat are plausible values for the population parameter?\nWhat are plausible values for the sample statistic?\nIs the population parameter different from 0?\nIs the value of the parameter different from a specified quantity?\n\n\n\n7. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?\n\nThe probability of a Type II error goes down.\nThe probability of a Type II error stays the same.\nThe probability of a Type II error goes up.\n\n8. If you obtained a small p-value (e.g., 0.02), what could you say about what you would expect if you constructed a 95% confidence interval?\n\nIt would contain the null hypothesized value.\nIt would not contain the null hypothesized value.\nIt would contain the sample statistic.\nIt would contain the true population parameter.\n\n9. In a regression table, what is the “statistic” value associated with the slope?\n\na bootstrap statistic\na z-statistic\nthe sample slope statistic\na t-statistic\n\n10. In a regression table, how is the p-value calculated?\n\nUsing a permutation distribution with 1000 resamples\nUsing a bootstrap distribution with 1000 samples\nUsing a Normal distribution\nUsing a t-distribution\n\n11. What are the required conditions for linear regression? (select all that apply)\n\na random sample was taken\nequal variance of residuals\na large sample was collected\nlinear relationship between x and y\nindependence of observations\nindependence of variables\nnormality of residuals\nnormality of observations\n\n12. Which of the following would violate the condition of independence? (select all that apply)\n\ncollecting a non-random sample\nobservations related geographically (spatially)\nobservations that are related in time (temporally)\nrepeated observations on the same person\nobservations related biologically\n\n\n\n3 R Tutorial – Due Wednesday by the start of class\nRequired Tutorial: Randomization test for the slope\nRequired Tutorial: Evaluating the technical conditions in linear regression",
     "crumbs": [
       "Weekly materials",
       "Week 8"
@@ -5477,7 +5549,11 @@
     "href": "weeks/week-2.html#concept-quiz-due-thursday-by-the-beginning-of-class",
     "title": "Week Two: Summarizing & Visualizing Numerical Data",
     "section": "1.4 Concept Quiz – Due Thursday by the Beginning of Class",
-    "text": "1.4 Concept Quiz – Due Thursday by the Beginning of Class\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode"
+    "text": "1.4 Concept Quiz – Due Thursday by the Beginning of Class\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
   },
   {
     "objectID": "slides/week2-day1.html#moving-into-lab-2",
@@ -8610,5 +8686,192 @@
     "title": "Week 10 – Two-Way ANOVA",
     "section": "",
     "text": "Section 1 – Introduction to Two-Way ANOVA\n\nExample 3.1\n\nHow many variables are the researchers studying? What are the variables? Are these variables categorical or quantitative? If categorical, what levels does each variable have?\nWhat limitations do you see in Study Design #2 (Figure 3.1.2)?\nWhat is a “full-factorial design”?\nWhat is a “balanced design”?\nWhy should there be equal numbers of participants in each group (as seen in Figure 3.1.3)?\nFor testing these four treatment groups, what are the null and alternative hypotheses?\nWhy should the authors use a two-way ANOVA model for these data instead of two one-way ANOVA models?\n\n\n\n\nSection 2 – Two-Way ANOVA Interaction Models\n\nExample 3.2\n\nWhat is the difference between a “blocking variable” and an “experimental factor”?\nHow much variation was there in the peroxide remaining in the pistachios?\nHow much variation in the peroxide remaining was explained by the model?\nWhat pattern do you see in the predicted treatment values in Figure 3.2.4?\nWhat pattern do you see in the observed (actual) treatment values in Figure 3.2.4?\nWhat is the definition of a “statistical interaction”?\nWhere have you seen statistical interactions before?\nWhat are the null and alternative hypotheses for testing for an interaction?\nHow would you use cards to simulate what peroxide value a pistachio would have if there was no interaction (if the null was true)?"
+  },
+  {
+    "objectID": "weeks/week-1.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-1.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "title": "Week One: Foundations of Statistics",
+    "section": "1.2 Concept Quiz – Due Wednesday by the start of class",
+    "text": "1.2 Concept Quiz – Due Wednesday by the start of class\n1. What are the different types of variables that can appear in a dataset? Select all that apply!\n\ndiscrete numerical\nordinal categorical\nnominal categorical\ncontinuous numerical\ndiscrete categorical\n\n2. Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? Select all that apply!\n\nzip code\nGPA\nheight\nyear in school\n\n3. Which of the following statements are true about observational studies and experiments? Select all that apply!\n\nExperiments randomly assign the explanatory variable\nObservational studies randomly assign the explanatory variable\nObservational studies can make causal statements about the relationship between the explanatory and response variables\nExperiments can make causal statements about the relationship between the explanatory and response variables\n\n4. What are different methods for sampling from a population? Select all that apply!\n\nsimple random sampling\nstratified random sampling\ncluster sampling\nmultistage sampling\nconvenience sampling\n\n5. Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.\n\n\nstratified sampling\ncluster sampling\n\ngroups of observations are created, groups are randomly selected, every observation in the selected group is sampled\ngroups of observations are created, observations within a group are randomly sampled",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1.html#statistical-critique-step-0-due-monday-april-8-by-5pm",
+    "href": "weeks/week-1.html#statistical-critique-step-0-due-monday-april-8-by-5pm",
+    "title": "Week One: Foundations of Statistics",
+    "section": "3.1 Statistical Critique Step 0 – Due Monday, April 8 by 5pm",
+    "text": "3.1 Statistical Critique Step 0 – Due Monday, April 8 by 5pm\nUpload a PDF of your journal article to the Canvas assignment portal.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2.html#concept-quiz-due-tuesday-by-the-start-of-class",
+    "href": "weeks/week-2.html#concept-quiz-due-tuesday-by-the-start-of-class",
+    "title": "Week Two: Summarizing & Visualizing Numerical Data",
+    "section": "1.2 Concept Quiz – Due Tuesday by the start of class",
+    "text": "1.2 Concept Quiz – Due Tuesday by the start of class\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nSuppose we have data on the departure delays of flights flying out of New York. What shape would you expect the distribution of departure delays to have?\n\n\nright skew\nleft skew\nbimodal\nmutimodal\nuniform\n\nHint: Think about how you would “typically” expect flight delays to behave.\n\nTo better decide what summary statistic we should use to summarize the departure delays it would be best to create a data visualization of the distribution of departure delays. What type of visualizations could we make? Select all that apply!\n\n\nboxplot\nhistogram\nbarplot\ndensity plot\nscatterplot",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-2.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "title": "Week Two: Summarizing & Visualizing Numerical Data",
+    "section": "1.4 Concept Quiz – Due Wednesday by the start of class",
+    "text": "1.4 Concept Quiz – Due Wednesday by the start of class\n\n\n\n\n\n\nNote\n\n\n\nThe two concept quizzes from each chapter have been combined into one concept quiz on Canvas.\n\n\n\nWhat aesthetics are being used in the following plot?\n\nHint: Think about what goes inside of the aes() function and what does not.\n\n\n\n\n\n\n\n\n\n\nx axis\ny axis\ncolor\nfacets\npoints\nlines\n\n\nWhat geometric objects are being used in the displayed visualization?\n\nHint: Think about what geoms you would use to make this plot!\n\npoints\nlines / smoothers\ncolors\nfacets\n\n\nWhat aspects of the distribution of departure delays can you see in the histogram that you could not see in the boxplot?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nshape of distribution\nmedian\noutliers\nmode",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#reading-guide-due-monday-by-the-start-of-class",
+    "href": "weeks/week-3.html#reading-guide-due-monday-by-the-start-of-class",
+    "title": "Week Three: Incorporating Categorical Variables",
+    "section": "1.1 Reading Guide – Due Monday by the start of class",
+    "text": "1.1 Reading Guide – Due Monday by the start of class\nDownload the Word Document\n\n\n\n\n\n\nAnswers\n\n\n\nPlease include your answers as a different color! You can pick whatever color you like, but please use a color other than black.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#concept-quiz-due-monday-by-the-start-of-class",
+    "href": "weeks/week-3.html#concept-quiz-due-monday-by-the-start-of-class",
+    "title": "Week Three: Incorporating Categorical Variables",
+    "section": "1.4 Concept Quiz – Due Monday by the start of class",
+    "text": "1.4 Concept Quiz – Due Monday by the start of class\n1. Suppose you’ve run the following code to make side-by-side boxplots of life expectancy:\n\nggplot(data = gapminder_small, \n       mapping = aes(x = country, y = lifeExp)) +\n  geom_boxplot() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Life Expectancy (in Years) by Country\",\n       fill = \"Country\"\n       )\n\nYour resulting plot looks like this:\n\n\n\n\n\n\n\n\n\nWhat should you do?\n\nMove country to the y-axis.\nRemove some countries so the names don’t overlap.\nNothing, it looks great!\n\n2. If you didn’t want to stack your boxplots side-by-side, how else could you separate the groups?\n\n\n\n\n\n\nTip\n\n\n\nThis does not go inside the aes() function!\n\n\n3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?\n\nsummarize()\nmutate()\narrange()\ngroup_by()\nfilter()\n\n4. A categorical variable could be correctly stored as what data types?\n\ninteger\ndouble\ncharacter\nfactor\n\n5. In Lab 2, you worked with the nycflights dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.\n\n\nStep 1 %&gt;%\nStep 2 %&gt;%\nStep 3\n\n\n\nnycflights\ngroup_by(airline)\nfilter(dest == \"SFO\")\nsummarize(mean_dd = mean(dep_delay))\n\n\n6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?\n\nmutate()\nfilter()\nif_else()\ngroup_by()\n\n7. The arrange() function sorts or reorder a data frame’s rows according to the values of the specified variable. By default, what ordering does it use for the rows?\n\nascending (smallest to largest)\ndescending (largest to smallest)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-3.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "title": "Week Three: Incorporating Categorical Variables",
+    "section": "1.5 R Tutorial – Due Wednesday by the start of class",
+    "text": "1.5 R Tutorial – Due Wednesday by the start of class\nIt has come to my attention that Posit Cloud has removed their tutorials in favor of what they are calling “recipes”—short tutorials on how to do specific things in R.\nSo, I’m pivoting to a different tutorial that uses group_by()—the tool you are learning this week—to explore different sampling strategies.\nRequired Tutorial: Sampling Strategies & Experimental Design\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page for each tutorial to the Canvas assignment portal!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-3.html#concept-quiz-due-wednesday-by-the-start-of-class",
+    "title": "Week Three: Incorporating Categorical Variables",
+    "section": "1.4 Concept Quiz – Due Wednesday by the start of class",
+    "text": "1.4 Concept Quiz – Due Wednesday by the start of class\n1. Suppose you’ve run the following code to make side-by-side boxplots of life expectancy:\n\nggplot(data = gapminder_small, \n       mapping = aes(x = country, y = lifeExp)) +\n  geom_boxplot() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Life Expectancy (in Years) by Country\",\n       fill = \"Country\"\n       )\n\nYour resulting plot looks like this:\n\n\n\n\n\n\n\n\n\nWhat should you do?\n\nMove country to the y-axis.\nRemove some countries so the names don’t overlap.\nNothing, it looks great!\n\n2. If you didn’t want to stack your boxplots side-by-side, how else could you separate the groups?\n\n\n\n\n\n\nTip\n\n\n\nThis does not go inside the aes() function!\n\n\n3. What functions are necessary to calculate summary statistics for different groups of a categorical variable?\n\nsummarize()\nmutate()\narrange()\ngroup_by()\nfilter()\n\n4. A categorical variable could be correctly stored as what data types?\n\ninteger\ndouble\ncharacter\nfactor\n\n5. In Lab 2, you worked with the nycflights dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.\n\n\nStep 1 %&gt;%\nStep 2 %&gt;%\nStep 3\n\n\n\nnycflights\ngroup_by(airline)\nfilter(dest == \"SFO\")\nsummarize(mean_dd = mean(dep_delay))\n\n\n6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?\n\nmutate()\nfilter()\nif_else()\ngroup_by()\n\n7. The arrange() function sorts or reorder a data frame’s rows according to the values of the specified variable. By default, what ordering does it use for the rows?\n\nascending (smallest to largest)\ndescending (largest to smallest)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4.html#concept-quiz-due-monday-by-the-start-of-class",
+    "href": "weeks/week-4.html#concept-quiz-due-monday-by-the-start-of-class",
+    "title": "Week Four: Simple Linear Regression (Basic Regression)",
+    "section": "1.2 Concept Quiz – Due Monday by the start of class",
+    "text": "1.2 Concept Quiz – Due Monday by the start of class\n1. What does the correlation coefficient measure?\n\nstrength of a relationship between two variables\nstrength of a linear relationship between two variables\nstrength of a relationship between two numerical variables\nstrength of a linear relationship between two numerical variables\n\n2. How do you interpret a slope coefficient?\n\nFor any increase of \\(x\\), the slope is the expected increase in \\(y\\)\nFor any increase of \\(x\\), the slope is the expected increase in the mean of \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the slope is the expected increase in the mean of \\(y\\)\n\n3. How do you interpret an intercept coefficient?\n\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in \\(y\\)\nFor a 1-unit increase in \\(x\\), the intercept is the expected increase in the mean of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of \\(y\\)\nFor an \\(x\\) value of 0, the intercept is the expected value of the mean of \\(y\\)\n\n4. Match the explanatory and response variables to the correct variables in the lm() function syntax.\nlm(variable1 ~ variable2, data = &lt;NAME OF DATASET&gt;)\n5. What geom_ adds a linear regression line to a scatterplot?\n\ngeom_line()\ngeom_smoother()\ngeom_regression()\ngeom_smooth()",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-4.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "title": "Week Four: Simple Linear Regression (Basic Regression)",
+    "section": "1.3 💻 R Tutorial – Due Wednesday by the start of class",
+    "text": "1.3 💻 R Tutorial – Due Wednesday by the start of class\n\nRegression modeling: Simple linear regression\nRegression modeling: Interpreting regression models",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-5.html#concept-quiz-due-monday-by-the-start-of-class",
+    "href": "weeks/week-5.html#concept-quiz-due-monday-by-the-start-of-class",
+    "title": "Week Five: Multiple Linear Regression",
+    "section": "1.2 Concept Quiz – Due Monday by the start of class",
+    "text": "1.2 Concept Quiz – Due Monday by the start of class\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 – Based on the visualizations above, I believe the [interaction / parallel slopes] model is more appropriate because the slopes between the groups are [very different / very similar].\nQuestion 2 – What type of model does the following code obtain?\n\nminority_lm &lt;- lm(score ~ age * ethnicity, data = evals)\n\n\ninteraction model\nparallel slopes model\nsimple linear regression model\n\n\nThe following is the output from the above regression model (from Question 2):\n\n\n# A tibble: 4 × 7\n  term                    estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;                      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept                  2.61      0.518      5.04   0        1.59     3.63 \n2 age                        0.032     0.011      2.84   0.005    0.01     0.054\n3 ethnicity: not minority    2.00      0.534      3.74   0        0.945    3.04 \n4 age:ethnicitynot minor…   -0.04      0.012     -3.51   0       -0.063   -0.018\n\n\n\nQuestion 3 – The intercept line represents the [evaluation score / mean evaluation score] for [male / female / minority / non-minority] faculty.\n\nQuestion 4 – The age line represents the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 5 – The ethnicity:not minority line represents the [mean / adjustment to the mean] evaluation score for [male / female / minority / non-minority] faculty.\n\nQuestion 6 – The age:ethnicitynot minority line represents the [slope / adjustment to the slope] for the relationship between age and evaluation scores for [male / female / minority / non-minority] faculty.\n\nQuestion 7 – The value of the age:ethnicitynot minority line (-0.004) [does / does not ] match the decision I made in Question 1 as there is [little difference / substantial difference] in the slopes between the minority and non-minority faculty.\n\nQuestion 8 – What type of model does the following code obtain?\n\nbty_lm &lt;- lm(score ~ age + bty_avg, data = evals)\n\n\nmultiple linear regression with two numerical predictors\ninteraction model\nparallel slopes\n\n\nThe following is the output from the above regression model (from Question 8):\n\n\n# A tibble: 3 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    4.06      0.17      23.9    0        3.72     4.39 \n2 age         -0.003     0.003     -1.15   0.251   -0.008    0.002\n3 bty_avg      0.061     0.017      3.55   0        0.027    0.094\n\n\n\nQuestion 9 – The intercept represents the [course evaluation score / mean course evaluation score] for professors whose age is __ and who have a average beauty score of ___.\n\nQuestion 10 – We interpret the value of -0.003 by age as:\nFor every [1 day / 1 year / 1 evaluation] increase in professor’s [evaluation score / age / average beauty] we expect the [course evaluation score / mean course evaluation score] to [increase / decrease] by __, after accounting for [ethnicity / gender / average beauty scores].",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week-5.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-5.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "title": "Week Five: Multiple Linear Regression",
+    "section": "1.3 R Tutorial – Due Wednesday by the start of class",
+    "text": "1.3 R Tutorial – Due Wednesday by the start of class\n\nRegression modeling: Parallel Slopes\nRegression modeling: Evaluating and extending parallel slopes model",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6.html#reading-guide-due-monday-by-the-start-of-class",
+    "href": "weeks/week-6.html#reading-guide-due-monday-by-the-start-of-class",
+    "title": "Model Selection",
+    "section": "",
+    "text": "Download the Word Document",
+    "crumbs": [
+      "Weekly materials",
+      "Week 6"
+    ]
+  },
+  {
+    "objectID": "weeks/week-9.html#concept-quiz-due-monday-by-the-start-of-class",
+    "href": "weeks/week-9.html#concept-quiz-due-monday-by-the-start-of-class",
+    "title": "Week 9: Inference for Many Means (ANOVA)",
+    "section": "1.2 Concept Quiz – Due Monday by the start of class",
+    "text": "1.2 Concept Quiz – Due Monday by the start of class\n\nWhich of the following are true about the mean squares between groups? (Select all that apply)\n\n\nit is a standardized measure of the variability in responses between groups\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of squares between groups by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of squares between groups by the sample size minus the number of groups (\\(n - k\\))\n\n\nWhich of the following are true about the mean square errors? (Select all that apply)\n\n\nit is a standardized measure of the variability in responses within each group\nit compares the mean of each group to the overall mean across all groups\nit compares the observations within each group to the mean of that group\nit is used as the numerator in an F-statistic\nit is used as the denominator in an F-statistic\nit is found by dividing the sum of square errors by the number of groups minus 1 (\\(k\\) - 1)\nit is found by dividing the sum of square errors by the sample size minus the number of groups (\\(n - k\\))\n\n\nAn F-statistic uses which formula?\n\n\n\\(\\frac{MSG}{MSE}\\)\n\\(\\frac{SSG}{SSE}\\)\n\\(\\frac{MSE}{MSG}\\)\n\\(\\frac{SSE}{SSG}\\)\n\n\nIdeally, in an ANOVA we’d like to see… (select all that apply)\n\n\nlarge variability in the means of the groups\nsmall variability in the means of the groups\nlarge variability in the observations within each group\nsmall variability in the observations within each group\n\n\nIf the null hypothesis that the means of four groups are all the same is rejected using ANOVA at a 5% significance level, then… (select all that apply)\n\n\nwe can then conclude that all the means are different from one another.\nthe variability between groups is higher than the variability within groups.\nthe pairwise analysis will identify at least one pair of means that are significantly different.\nan appropriate \\(\\alpha\\) to be used in pairwise comparisons is \\(\\frac{0.05}{4} = 0.0125\\) since there are four groups.\n\n\nTrue or false, as the total sample size increases, the degrees of freedom for the residuals increases.\nTrue or false, the constant variance condition can be somewhat relaxed when the sample sizes are large.\nTrue or false, the independence assumption can be relaxed when the total sample size is large.\nTrue or false, the normality condition is very important when the sample sizes of each group are small.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
+  },
+  {
+    "objectID": "weeks/week-9.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-9.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "title": "Week 9: Inference for Many Means (ANOVA)",
+    "section": "1.3 R Tutorial – Due Wednesday by the start of class",
+    "text": "1.3 R Tutorial – Due Wednesday by the start of class\nRequired Tutorial: Comparing many means with ANOVA",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
+  },
+  {
+    "objectID": "weeks/week-10.html#concept-quiz-due-monday-by-the-start-of-class",
+    "href": "weeks/week-10.html#concept-quiz-due-monday-by-the-start-of-class",
+    "title": "Week 10: Two-Way ANOVA",
+    "section": "1.2 Concept Quiz – Due Monday by the start of class",
+    "text": "1.2 Concept Quiz – Due Monday by the start of class\n1. Match each two-way ANOVA model to its correct description.\n\n\n\nadditive model\n  \ninteraction model\n\nThe relationship between one factor and the response changes depending on the level of another factor.\n\nThe relationship between one factor and the response remains the same across all levels of another factor.\n\nThere is a significant relationship between each factor and the response.\n\n\n\n2. Match each two-way ANOVA model to its multiple linear regression counterpart.\n\n\nadditive model\ninteraction model\n\n\n\ndifferent slopes\nparallel slopes\n\n\n\n\n\n\n\n\n\n3. Which of the following are conditions of a two-way ANOVA model? (Select all that apply)\n\nindependence of observations between the groups\nindependence of observations within each group\nindependence of variables\nnormally distributed responses within each group\nnormally distributed residuals\nlinear relationship between the explanatory and response variables\nequal variance of residuals\nequal variance of responses within each group\n\n\n4. Which of the following is important to consider when assessing independence? (Select all that apply)\n\nIf the same observational unit (e.g., person, penguin, tree) could be sampled multiple times\nIf observations could be biologically related (e.g., parents, siblings, etc.)\nIf observations could be spatially related (e.g., countries that border each other)\nIf there is a relationship between the observations and the response variable\n\n\n\n\n5. [True or False] When an additive model is fit, the interpretation of the p-value associated with each explanatory variable is [conditional / independent] on the other explanatory variable(s) in the model.\n\n6. If the null hypothesis is rejected in an additive two-way ANOVA model, what model should be fit instead?\n\nseparate one-way ANOVA models\na one-way ANOVA model containing the variable with the smallest p-value (from the additive two-way ANOVA)\na mean only model\nan interaction two-way ANOVA model\na simple linear regression",
+    "crumbs": [
+      "Weekly materials",
+      "Week 10"
+    ]
+  },
+  {
+    "objectID": "weeks/week-10.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "href": "weeks/week-10.html#r-tutorial-due-wednesday-by-the-start-of-class",
+    "title": "Week 10: Two-Way ANOVA",
+    "section": "1.3 R Tutorial – Due Wednesday by the start of class",
+    "text": "1.3 R Tutorial – Due Wednesday by the start of class\nThis week’s R tutorial is a short guide stepping you through model selection starting with a two-way ANOVA interaction model.\nClick here to access this week’s R tutorial\n\n\n\n\n\n\nSubmission\n\n\n\nSubmit a screenshot of the completion page at the end of the tutorial.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 10"
+    ]
   }
 ]

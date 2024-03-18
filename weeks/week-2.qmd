@@ -1,6 +1,5 @@
 ---
 title: "Week Two: Summarizing & Visualizing Numerical Data"
-subtitle: Winter 2024
 format:
   html:
     number-sections: true
@@ -58,7 +57,7 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Exploring Numerical Data](https://openintro-ims.netlify.app/explore-numerical.html)
 
-### Reading Guide -- Due Thursday by the Beginning of Class
+### Reading Guide -- Due Tuesday by the start of class
 
 [Download the Word Document](reading-guide/week2-reading2.docx)
 
@@ -68,7 +67,7 @@ knitr::include_graphics(here::here("images",
 Submit your completed reading guide to the Canvas assignment portal!
 :::
 
-## Concept Quiz
+## Concept Quiz – Due Tuesday by the start of class
 
 ::: callout-note
 The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
@@ -108,7 +107,7 @@ knitr::include_graphics(here::here("images",
 ```
 :::
 
-### Reading Guide -- Due Thursday by the Beginning of Class
+### Reading Guide -- Due Wednesday by the start of class
 
 [Download the Word Document](reading-guide/week2-reading1.docx)
 
@@ -118,7 +117,7 @@ knitr::include_graphics(here::here("images",
 Submit your completed reading guide to the Canvas assignment portal!
 :::
 
-## Concept Quiz -- Due Thursday by the Beginning of Class
+## Concept Quiz -- Due Wednesday by the start of class
 
 ::: callout-note
 The two concept quizzes from each chapter have been combined into **one** concept quiz on Canvas.
@@ -213,7 +212,7 @@ nycflights %>%
 -   outliers
 -   mode
 
-# R Tutorial -- Due Thursday by the Beginning of Class
+# R Tutorial -- Due Wednesday by the start of class
 
 `r emo::ji("computer")` [**Required Tutorial:** Exploring Numerical Data](https://openintro.shinyapps.io/ims-02-explore-02/)
 

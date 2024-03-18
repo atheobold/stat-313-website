@@ -54,7 +54,7 @@ By the end of this coursework you should be able to:
 
 # Prepare
 
-## Reading Guide -- Due Tuesday by Midnight
+## Reading Guide -- Due Monday by the start of class
 
 [Download the Word Document](reading-guide/week3-reading.docx)
 
@@ -99,7 +99,7 @@ knitr::include_graphics(here::here("images",
 # Read Sections 3.3 - 3.6!
 :::
 
-## Concept Quiz -- Due Tuesday by Midnight
+## Concept Quiz -- Due Wednesday by the start of class
 
 **1. Suppose you've run the following code to make side-by-side boxplots of life expectancy:**
 
@@ -200,7 +200,7 @@ Step 3
 -   ascending (smallest to largest)
 -   descending (largest to smallest)
 
-## R Tutorial -- Due Thursday by Midnight
+## R Tutorial -- Due Wednesday by the start of class
 
 It has come to my attention that Posit Cloud has removed their tutorials in 
 favor of what they are calling "recipes"---short tutorials on how to do 

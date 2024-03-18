@@ -44,7 +44,6 @@ By the end of this coursework you should be able to:
 
 ::: columns
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 knitr::include_graphics(here::here("images", 
@@ -61,11 +60,11 @@ knitr::include_graphics(here::here("images",
 :::
 :::
 
-### Reading Guide -- Due Tuesday by the start of class
+### Reading Guide -- Due Monday by the start of class
 
 [Download the Word Document](reading-guide/week5-reading.docx)
 
-## Concept Quiz -- Due Tuesday by the start of class
+## Concept Quiz -- Due Monday by the start of class
 
 ```{r}
 #| layout-nrow: 1
@@ -166,7 +165,7 @@ get_regression_table(bty_lm)
 
 For every \[1 day / 1 year / 1 evaluation\] increase in professor's \[evaluation score / age / average beauty\] we expect the \[course evaluation score / mean course evaluation score\] to \[increase / decrease\] by \_\_, after accounting for \[ethnicity / gender / average beauty scores\].
 
-## R Tutorial -- Due Thursday by the start of class
+## R Tutorial -- Due Wednesday by the start of class
 
 1.  [Regression modeling: Parallel Slopes](https://openintro.shinyapps.io/ims-03-model-06/)
 

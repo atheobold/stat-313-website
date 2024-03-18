@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Week Five: Multiple Linear Regression</title>
+<title>STAT 313 / 513 - Week Five: Multiple Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -334,10 +334,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#textbook-reading" id="toc-textbook-reading" class="nav-link" data-scroll-target="#textbook-reading"><span class="header-section-number">1.1</span> Textbook Reading</a>
   <ul class="collapse">
-  <li><a href="#reading-guide-due-tuesday-by-the-start-of-class" id="toc-reading-guide-due-tuesday-by-the-start-of-class" class="nav-link" data-scroll-target="#reading-guide-due-tuesday-by-the-start-of-class">Reading Guide – Due Tuesday by the start of class</a></li>
+  <li><a href="#reading-guide-due-monday-by-the-start-of-class" id="toc-reading-guide-due-monday-by-the-start-of-class" class="nav-link" data-scroll-target="#reading-guide-due-monday-by-the-start-of-class">Reading Guide – Due Monday by the start of class</a></li>
   </ul></li>
-  <li><a href="#concept-quiz-due-tuesday-by-the-start-of-class" id="toc-concept-quiz-due-tuesday-by-the-start-of-class" class="nav-link" data-scroll-target="#concept-quiz-due-tuesday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by the start of class</a></li>
-  <li><a href="#r-tutorial-due-thursday-by-the-start-of-class" id="toc-r-tutorial-due-thursday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Thursday by the start of class</a></li>
+  <li><a href="#concept-quiz-due-monday-by-the-start-of-class" id="toc-concept-quiz-due-monday-by-the-start-of-class" class="nav-link" data-scroll-target="#concept-quiz-due-monday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Monday by the start of class</a></li>
+  <li><a href="#r-tutorial-due-wednesday-by-the-start-of-class" id="toc-r-tutorial-due-wednesday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-wednesday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Wednesday by the start of class</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -402,13 +402,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br> <a href="https://moderndive.com/6-multiple-regression.html">Chapter 6 (https://moderndive.com/6-multiple-regression.html)</a></p>
 </div>
 </div>
-<section id="reading-guide-due-tuesday-by-the-start-of-class" class="level3">
-<h3 class="anchored" data-anchor-id="reading-guide-due-tuesday-by-the-start-of-class">Reading Guide – Due Tuesday by the start of class</h3>
+<section id="reading-guide-due-monday-by-the-start-of-class" class="level3">
+<h3 class="anchored" data-anchor-id="reading-guide-due-monday-by-the-start-of-class">Reading Guide – Due Monday by the start of class</h3>
 <p><a href="reading-guide/week5-reading.docx">Download the Word Document</a></p>
 </section>
 </section>
-<section id="concept-quiz-due-tuesday-by-the-start-of-class" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="concept-quiz-due-tuesday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Tuesday by the start of class</h2>
+<section id="concept-quiz-due-monday-by-the-start-of-class" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="concept-quiz-due-monday-by-the-start-of-class"><span class="header-section-number">1.2</span> Concept Quiz – Due Monday by the start of class</h2>
 <div>
 
 </div>
@@ -483,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Question 10</strong> – We interpret the value of -0.003 by age as:</p>
 <p>For every [1 day / 1 year / 1 evaluation] increase in professor’s [evaluation score / age / average beauty] we expect the [course evaluation score / mean course evaluation score] to [increase / decrease] by __, after accounting for [ethnicity / gender / average beauty scores].</p>
 </section>
-<section id="r-tutorial-due-thursday-by-the-start-of-class" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Thursday by the start of class</h2>
+<section id="r-tutorial-due-wednesday-by-the-start-of-class" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="r-tutorial-due-wednesday-by-the-start-of-class"><span class="header-section-number">1.3</span> R Tutorial – Due Wednesday by the start of class</h2>
 <ol type="1">
 <li><p><a href="https://openintro.shinyapps.io/ims-03-model-06/">Regression modeling: Parallel Slopes</a></p></li>
 <li><p><a href="https://openintro.shinyapps.io/ims-03-model-07/#section-evaluating-and-extending-parallel-slopes-model">Regression modeling: Evaluating and extending parallel slopes model</a></p></li>

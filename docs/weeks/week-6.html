@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Model Selection</title>
+<title>STAT 313 / 513 - Model Selection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -166,7 +166,7 @@ window.Quarto = {
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -340,7 +340,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -362,7 +362,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading-guide-due-tuesday-by-the-start-of-class" id="toc-reading-guide-due-tuesday-by-the-start-of-class" class="nav-link active" data-scroll-target="#reading-guide-due-tuesday-by-the-start-of-class"><span class="header-section-number">0.1</span> Reading Guide – Due Tuesday by the start of class</a></li>
+  <li><a href="#reading-guide-due-monday-by-the-start-of-class" id="toc-reading-guide-due-monday-by-the-start-of-class" class="nav-link active" data-scroll-target="#reading-guide-due-monday-by-the-start-of-class"><span class="header-section-number">0.1</span> Reading Guide – Due Monday by the start of class</a></li>
   <li><a href="#textbook-reading" id="toc-textbook-reading" class="nav-link" data-scroll-target="#textbook-reading"><span class="header-section-number">1</span> Textbook Reading</a>
   <ul class="collapse">
   <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection"><span class="header-section-number">1.1</span> Model Selection</a></li>
@@ -383,8 +383,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#other-model-selection-strategies" id="toc-other-model-selection-strategies" class="nav-link" data-scroll-target="#other-model-selection-strategies"><span class="header-section-number">1.5</span> Other model selection strategies</a></li>
   </ul></li>
-  <li><a href="#concept-quiz-due-tuesday-by-the-start-of-class" id="toc-concept-quiz-due-tuesday-by-the-start-of-class" class="nav-link" data-scroll-target="#concept-quiz-due-tuesday-by-the-start-of-class"><span class="header-section-number">2</span> Concept Quiz – Due Tuesday by the start of class</a></li>
-  <li><a href="#r-tutorial-due-thursday-by-the-start-of-class" id="toc-r-tutorial-due-thursday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-the-start-of-class"><span class="header-section-number">3</span> R Tutorial – Due Thursday by the start of class</a></li>
+  <li><a href="#concept-quiz-due-monday-by-the-start-of-class" id="toc-concept-quiz-due-monday-by-the-start-of-class" class="nav-link" data-scroll-target="#concept-quiz-due-monday-by-the-start-of-class"><span class="header-section-number">2</span> Concept Quiz – Due Monday by the start of class</a></li>
+  <li><a href="#r-tutorial-due-wednesday-by-the-start-of-class" id="toc-r-tutorial-due-wednesday-by-the-start-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-wednesday-by-the-start-of-class"><span class="header-section-number">3</span> R Tutorial – Due Wednesday by the start of class</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -410,8 +410,8 @@ window.Quarto = {
 </header>
 
 
-<section id="reading-guide-due-tuesday-by-the-start-of-class" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="reading-guide-due-tuesday-by-the-start-of-class"><span class="header-section-number">0.1</span> Reading Guide – Due Tuesday by the start of class</h2>
+<section id="reading-guide-due-monday-by-the-start-of-class" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="reading-guide-due-monday-by-the-start-of-class"><span class="header-section-number">0.1</span> Reading Guide – Due Monday by the start of class</h2>
 <p><a href="reading-guide/week6-reading.docx">Download the Word Document</a></p>
 </section>
 <section id="textbook-reading" class="level1" data-number="1">
@@ -438,7 +438,7 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_parallel_slopes</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Percent economically disadvantaged"</span>, <span class="at">y =</span> <span class="st">"Math SAT Score"</span>, </span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"School size"</span>, <span class="at">title =</span> <span class="st">"Parallel slopes model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-nrow="1">
+<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;display: flex;">
 <div class="quarto-figure quarto-figure-center">
@@ -633,7 +633,7 @@ Table&nbsp;2: Parallel slopes model coefficient estimates
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Percent economically disadvantaged"</span>, <span class="at">y =</span> <span class="st">"Math SAT Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-nrow="1">
+<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;display: flex;">
 <div class="img-fluid quarto-figure quarto-figure-center">
@@ -1466,8 +1466,8 @@ Note
 <p>Alternatively, one could choose to include or exclude variables from a model based on expert opinion or due to research focus. In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.</p>
 </section>
 </section>
-<section id="concept-quiz-due-tuesday-by-the-start-of-class" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Concept Quiz – Due Tuesday by the start of class</h1>
+<section id="concept-quiz-due-monday-by-the-start-of-class" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Concept Quiz – Due Monday by the start of class</h1>
 <p><strong>Question 1</strong> – <span class="math inline">\(R^2\)</span> is the [correlation / percent] of variation in the [explanatory / response] variable that is explained by the [response variables / explanatory variables] and the [decided model / best model / linear model].</p>
 <p><strong>Question 2</strong> – Adjusted <span class="math inline">\(R^2\)</span> should be used for [simple / multiple] linear regression and unadjusted <span class="math inline">\(R^2\)</span> should be used for [simple / multiple] linear regression.</p>
 <p><strong>Question 3</strong> – In the adjusted <span class="math inline">\(R^2\)</span> formula <span class="math inline">\(n\)</span> represents the [number of explanatory variables / sample size / response variable] and <span class="math inline">\(k\)</span> represents the [number of explanatory variables / sample size / number of coefficients needed to be calculated].</p>
@@ -1477,8 +1477,8 @@ Note
 <p><strong>Question 7</strong> – Forward selection starts with the model with [no / every] explanatory variable included.</p>
 <p><strong>Question 8</strong> – Forward selection [adds / removes] variables from the model. If the [R-squared / correlation / adjusted R-squared] when the variable is [added / removed] is [smaller / larger], the variable will be [added / removed] from the final model.</p>
 </section>
-<section id="r-tutorial-due-thursday-by-the-start-of-class" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> R Tutorial – Due Thursday by the start of class</h1>
+<section id="r-tutorial-due-wednesday-by-the-start-of-class" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> R Tutorial – Due Wednesday by the start of class</h1>
 <p><a href="https://openintro.shinyapps.io/ims-03-model-05/#section-assessing-model-fit">Assessing Model Fit</a></p>
 
 
