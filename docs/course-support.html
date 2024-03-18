@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Course support</title>
+<title>STAT 313 / 513 - Course support</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,13 +93,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="./weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -346,24 +346,22 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="student-hours">Student Hours</h2>
 <table class="table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 69%">
+<col style="width: 22%">
+<col style="width: 70%">
 </colgroup>
-<thead>
-<tr class="header">
-<th>Day</th>
-<th>Time</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td>Mondays</td>
-<td>2:10 pm – 4:00 pm (in-person)</td>
+<td><h1 id="day">Day</h1></td>
+<td><h1 id="time">Time</h1></td>
 </tr>
 <tr class="even">
+<td>Mondays</td>
+<td>3:10 pm – 4:00 pm (in-person)</td>
+</tr>
+<tr class="odd">
 <td>Wednesdays</td>
-<td><p>2:10 pm - 3:00 pm (in-person)</p>
-<p>3:10 - 4:00 (individual appointments over Zoom)</p></td>
+<td><p>2:10 pm - 3:00 pm (individual meetings via Zoom)</p>
+<p>3:10 - 4:00 (in-person)</p></td>
 </tr>
 </tbody>
 </table>
@@ -588,12 +586,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

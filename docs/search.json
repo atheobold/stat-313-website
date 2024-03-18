@@ -2,7 +2,7 @@
   {
     "objectID": "course-syllabus.html",
     "href": "course-syllabus.html",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
     "text": "Instructor: Dr. Allison Theobold – call me Dr. Theobold or Dr. T! I use they / she pronouns (that is my order of preference).",
     "crumbs": [
@@ -13,7 +13,7 @@
   {
     "objectID": "course-syllabus.html#textbooks",
     "href": "course-syllabus.html#textbooks",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "3.1 Textbooks",
     "text": "3.1 Textbooks\n\n\n\n\n\nÇetinkaya-Rundel and Hardin, Introduction to Modern Statistics. https://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\nIsmay & Kim, Modern Dive: Statistical Inference via Data Science. https://moderndive.com",
     "crumbs": [
@@ -24,7 +24,7 @@
   {
     "objectID": "course-syllabus.html#required-technology",
     "href": "course-syllabus.html#required-technology",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "3.2 Required Technology",
     "text": "3.2 Required Technology\n\n\n\n\n\nR is the statistical software we will be using in this course (https://cran.r-project.org/)\n\n\n\n\n\n\n\n\nRStudio is the most popular way to interact with the R software. We will be interacting with RStudio through Posit Cloud (Posit is the company that owns RStudio). You will join the Stat 313 workspace, and then be able to access the course homework and lab assignments. We will be walking through this in the first week of lab!\n\n\n\n\n\n\n\n\nFor questions of general interest, such as course clarifications or conceptual questions, please use the Class Discord Server. Refer to the Day One Class Setup materials for more information on how to effectively use this server.",
     "crumbs": [
@@ -35,7 +35,7 @@
   {
     "objectID": "course-syllabus.html#my-course-goals",
     "href": "course-syllabus.html#my-course-goals",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "4.1 My course goals",
     "text": "4.1 My course goals\n\n\nData Visualization & Summarization\n\ncreate visualizations for one and two numerical variables\nuse facets and / or color to include additional variables into a visualization\ncalculate numerical summaries of variables\nfind summaries of variables across multiple groups\n\nWorking with Data & Reproducibility\n\nselect necessary columns from a dataset\nfilter rows from a dataset for numerical and categorical variables\nmodify existing numerical and categorical variables and / or create new variables\ncreate professional-looking, reproducible analyses using Posit projects, Quarto documents, and the here package\n\nLinear Models & Model Selection\n\nidentify which linear model is appropriate for a given research question\ndescribe the conditions required to obtain reliable estimates from linear models\nuse visualizations, summary statistics, and critical thinking to evaluate if linear model conditions are violated\nidentify methods to remedy condition violations\nfit additive and interactive linear models in R\ninterpret the coefficient estimates of a linear model\nuse visualizations and model selection techniques to determine if a specific variable should be included in a linear model\n\n\n\n\nStudy Design\n\ndistinguish between an experiment and an observational study\nidentify sources of variation and describe how to account for them\nargue what population a given sample is representative of\n\nFundamentals of Statistical Inference\n\nidentify the parameter of interest for a given linear model and associated research question\noutline the null (\\(H_0\\)) and alternative (\\(H_A\\)) hypotheses for a given research question\ndescribe what a null distribution is and how it is used to obtain a p-value\ninterpret a p-value in the context of a research question\nuse a p-value to make a decision about a hypothesis test and reach a conclusion about a research question\ndistinguish between Type I and Type II errors\ndescribe how sample size and significance level effect Type I and Type II errors\noutline the strengths and weaknesses of significance testing\ndescribe what a bootstrap distribution is and how it is used to obtain a confidence interval\ninterpret a confidence interval in the context of the parameter of interest\ndescribe the connection between confidence intervals and hypothesis testing",
     "crumbs": [
@@ -46,7 +46,7 @@
   {
     "objectID": "course-syllabus.html#what-assessments-will-there-be",
     "href": "course-syllabus.html#what-assessments-will-there-be",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "5.1 What assessments will there be?",
     "text": "5.1 What assessments will there be?\nThe main idea of assessment in this course is communication and feedback. There are several different types of assessments or assignments in this class, but they will all allow you to check your own understanding and progress towards the learning goals, get in-depth feedback from me, and let me know where to spend more time or approach something differently.\nEach one is described briefly here, grouped into categories by course goal. See Section 5 for an explanation of how these contribute to your final grade. Our class schedule with topics is in Section 10.",
     "crumbs": [
@@ -57,7 +57,7 @@
   {
     "objectID": "course-syllabus.html#interpret-and-use-statistical-concepts",
     "href": "course-syllabus.html#interpret-and-use-statistical-concepts",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "5.2 Interpret and use statistical concepts",
     "text": "5.2 Interpret and use statistical concepts\n\nReadings and videos (every week)\nI favor a “flipped classroom,” as it gives you more time to clarify and solidify statistical concepts through hands-on exercises. Each week, you will read the required chapter(s), completing a required reading guide to walk you through the central concepts for each week. You are required to submit your completed reading guides by the start of class on Tuesday.\n\n\nConcept quizzes (every week)\nEach week there will be a short (~10 questions) quiz over the reading and videos from the week. These quizzes are intended to ensure that you grasped the key concepts from the week’s readings. The quizzes are not timed, so you can feel free to check your answers with the textbook and / or videos if you so wish. The quizzes are marked on completion as complete or incomplete. You are required to complete the concept quiz by the start of class on Tuesday.\n\n\nTutorials (every week)\nYou can think of the tutorials as an “interactive” textbook, as they interweave statistical ideas alongside examples of how to work with data in R and hands-on exercises writing the R code necessary to complete a given task. Each exercise has hints available if you get stuck!\nThe tutorials are work at your own pace, so you can complete them all at once or slowly throughout the week. The lab assignments will require for you to put the skills you learned in the tutorials to work, so you are required to complete each week’s tutorial before Thursday’s lab.\nThe tutorials are marked on completion as complete or incomplete. You will submit a screenshot of the completion page at the end of the tutorial to confirm that you completed the tutorial for the week. You are required to complete the tutorial by the start of class on Thursday.",
     "crumbs": [
@@ -68,7 +68,7 @@
   {
     "objectID": "course-syllabus.html#critically-evaluate-the-use-of-statistics",
     "href": "course-syllabus.html#critically-evaluate-the-use-of-statistics",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "5.3 Critically evaluate the use of Statistics",
     "text": "5.3 Critically evaluate the use of Statistics\n\nStatistical critiques (every 4-weeks)\nThese assignments are case studies in which you will evaluate a data visualization or statistical analysis, determining how well-performed and presented the analysis was and making recommendations for improving or using the analysis. Critiques are due roughly 1-week after they are assigned and should take 1-2 hours. You will receive feedback and a mark of Success or Growing (elaborated more on later), and you will be able to revise based on that feedback. There will be two total critiques.",
     "crumbs": [
@@ -79,7 +79,7 @@
   {
     "objectID": "course-syllabus.html#perform-statistical-analyses-to-answer-research-questions",
     "href": "course-syllabus.html#perform-statistical-analyses-to-answer-research-questions",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "5.4 Perform statistical analyses to answer research questions",
     "text": "5.4 Perform statistical analyses to answer research questions\n\nLab Assignments (every week)\nLabs will be assigned on Thursday every week, providing the opportunity to explore the course concepts in the context of real data. Lab assignments will require for you to work through the tutorial for the week, thus the tutorials are due before the start of class on Thursday.\nYou will complete the lab assignments in the same teams you collaborate with in class. You will access the lab assignment through Posit Cloud, which you will be walked through during the first lab. Your group will be expected to submit your completed lab on Canvas. You will need to submit only the HTML document (not the Quarto document). The individual assigned as the Report Manager (described below) will submit the team’s completed Lab assignment by Monday at 5pm.\n\nSuccess / Growing Grading\nI expect that you will approach each lab assignment seriously, investing the necessary time and energy to prepare your responses. Different from what you may have experienced, lab assignments are graded for “proficiency” of specific learning targets, which describe what you should be able to do after taking this course. You’ll receive a score for each problem on an assignment according to the Success / Not Yet rubric below, as well as feedback to help you improve.\n\n\n\n\n\n\n\nScore\nJustification\n\n\n\n\nSuccess\nThe solution to the problem is correct, legible, and easy to follow, with all reasoning provided. Any error does not bring into question your understanding of the topic.\n\n\nGrowing\nThe solution shows growth toward mastering the topic; however, elements of the solution bring into question your understanding of the topic, and thus further attention is needed.\n\n\n\n\n\nCompleting Revisions\nEvery week, your Lab assignment and / or Statistical Critique from the previous week will be graded and returned to you no later than Thursday at 9am. Meaning, Lab 2 (completed in Week 2) will be graded and returned to you by Thursday of Week 3. After the first submission of your Lab or Critique you will have the option to retry any problems for which you scored a Growing (G). A written reflection on how your understanding of the problem changed will accompany any revision.\nRevisions for a Lab or Critique are due on Thursdays at 5pm, one week from when they were returned. If you do not complete your revision within one week of when it was returned, you are no longer permitted to submit a revision. If you don’t earn a Success by your second revision, you are expected to make an appointment with me to meet during my office hours (or another agreed-upon time) to create a reassessment strategy.\n\n\nReflections on Your Learning\nRevisions must include a reflection describing how you revised your thinking when completing your revision. It’s not enough to say “[x] was wrong, so I fixed it”—you have to talk about why you got [x] wrong in the first place and what you learned that changed your mind. What do you know now that you didn’t know before? Who or what helped you learn?\n\nIf your revision does not include reflections, I’ll ask you to add them.\nSee some examples of really good reflections here – they’re (mostly) from an introductory statistics class, but I think you’ll get the idea.\n\nSubmit your revision to the same assignment box on Canvas as your original. This helps me keep track of who has outstanding revisions.",
     "crumbs": [
@@ -90,7 +90,7 @@
   {
     "objectID": "course-syllabus.html#synthesize-statistical-ideas",
     "href": "course-syllabus.html#synthesize-statistical-ideas",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "5.5 Synthesize statistical ideas",
     "text": "5.5 Synthesize statistical ideas\n\nMidterm & Final Projects\nThere will be two projects throughout the quarter, where you will be asked to synthesize the statistical concepts you have learned in a formal statistical report. Your critiques will help guide you toward how you do / don’t want your report to look. Each project will be done independently, and requires you to submit a project proposal and draft report before the final deadline. You are encouraged to use the feedback received on these assignments to improve your final report. The final reports will be graded as Excellent, Satisfactory, Progressing, or No Credit based on a rubric that will be shared with the initial assignment.",
     "crumbs": [
@@ -101,7 +101,7 @@
   {
     "objectID": "course-syllabus.html#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning",
     "href": "course-syllabus.html#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "7.1 What if I have accommodations or feel that accommodations would be beneficial to my learning?",
     "text": "7.1 What if I have accommodations or feel that accommodations would be beneficial to my learning?\nI enthusiastically support the mission of Disability Resource Center to make education accessible to all. I design all my courses with accessibility at the forefront of my thinking, but if you have any suggestions for ways I can make things more accessible, please let me know. Come talk to me if you need accommodation for your disabilities. I honor self-diagnosis: let’s talk to each other about how we can make the course as accessible as possible. See also the standard syllabus statements, which include more information about formal processes.",
     "crumbs": [
@@ -112,7 +112,7 @@
   {
     "objectID": "course-syllabus.html#im-having-difficulty-paying-for-food-and-rent-what-can-i-do",
     "href": "course-syllabus.html#im-having-difficulty-paying-for-food-and-rent-what-can-i-do",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "7.2 I’m having difficulty paying for food and rent, what can I do?",
     "text": "7.2 I’m having difficulty paying for food and rent, what can I do?\nIf you have difficulty affording groceries or accessing sufficient food to eat every day, or if you lack a safe and stable place to live, and you believe this may affect your performance in the course, I urge you to contact the Dean of Students for support. Furthermore, please notify me if you are comfortable in doing so. This will enable me to advocate for you and to connect you with other campus resources.",
     "crumbs": [
@@ -123,7 +123,7 @@
   {
     "objectID": "course-syllabus.html#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do",
     "href": "course-syllabus.html#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "7.3 My mental health is impairing my ability to engage in my classes, what should I do?",
     "text": "7.3 My mental health is impairing my ability to engage in my classes, what should I do?\nNational surveys of college students have consistently found that stress, sleep problems, anxiety, depression, interpersonal concerns, death of a significant other and alcohol use are among the top ten health impediments to academic performance. If you are experiencing any mental health issues, I and Cal Poly are here to help you. Cal Poly’s Counseling Services (805-756-2511) is a free and confidential resource for assistance, support and advocacy.",
     "crumbs": [
@@ -134,7 +134,7 @@
   {
     "objectID": "course-syllabus.html#someone-is-threatening-me-what-can-i-do",
     "href": "course-syllabus.html#someone-is-threatening-me-what-can-i-do",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "7.4 Someone is threatening me, what can I do?",
     "text": "7.4 Someone is threatening me, what can I do?\nI will listen and believe you if someone is threatening you. I will help you get the help you need. I commit to changing campus culture that responds poorly to dating violence and stalking.",
     "crumbs": [
@@ -145,7 +145,7 @@
   {
     "objectID": "course-syllabus.html#what-if-i-cant-arrange-for-childcare",
     "href": "course-syllabus.html#what-if-i-cant-arrange-for-childcare",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "7.5 What if I can’t arrange for childcare?",
     "text": "7.5 What if I can’t arrange for childcare?\nIf you are responsible for childcare on short notice, you are welcome to bring children to class with you. If you are a lactating parent, you many take breaks to feed your infant or express milk as needed. If I can support yo in navigating parenting, coursework, and other obligations in any way, please let me know.",
     "crumbs": [
@@ -156,7 +156,7 @@
   {
     "objectID": "course-syllabus.html#what-if-i-need-to-miss-class",
     "href": "course-syllabus.html#what-if-i-need-to-miss-class",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "8.1 What if I need to miss class?",
     "text": "8.1 What if I need to miss class?\nI encourage you to attend every class session, but policies are for narcs. I put a great deal of time into making each class session engaging and worth your time. Attendance in this course is not explicitly required, but it degrades your team’s trust in you when they don’t see you in class.\nHere’s what you should do if you do miss a class:\n\nTalk to a classmate to figure out what information you missed\nCheck Canvas for any necessary handouts or changes to assignments\nEmail me with any questions you have after reviewing notes and handouts\n\nIf you miss a bunch of classes, please come talk to me. I’m working from the assumption that you care and are trying, but something is getting in your way (health issues? depression / anxiety? college stress?); let’s figure out what that is and how I can help.",
     "crumbs": [
@@ -167,7 +167,7 @@
   {
     "objectID": "course-syllabus.html#what-if-i-need-to-turn-something-in-late",
     "href": "course-syllabus.html#what-if-i-need-to-turn-something-in-late",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "8.2 What if I need to turn something in late?",
     "text": "8.2 What if I need to turn something in late?\nAssignments are expected to be submitted on time. However, every student will be permitted to submit up to three individual assignments up to 3-days late, by completing a deadline extension form. Similar to the “real world,” deadline extensions must be requested before an assignment is due.\nWhen you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. Your new deadline must be within 3-days of the original deadline.\nAll deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations.\nAny late work is required to have a deadline extension request, meaning if you do not complete a deadline extension request for an assignment you are not permitted to turn it in late.\n\nSTAT 313 deadline extension form: https://forms.gle/HTL2DrwZwR29EwVT9\nSTAT 513 deadline extension form: https://forms.gle/2iw6mC2f2uvibUkb8\n\n\n\n\n\n\n\nDeadline extensions are not permitted for the “final version” of the Midterm Project and Final Project",
     "crumbs": [
@@ -178,7 +178,7 @@
   {
     "objectID": "course-syllabus.html#do-i-need-to-bring-a-computer-to-class",
     "href": "course-syllabus.html#do-i-need-to-bring-a-computer-to-class",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "8.3 Do I need to bring a computer to class?",
     "text": "8.3 Do I need to bring a computer to class?\nYou are allowed to use technology in the classroom! In fact, we will often do so as part of in-class activities. However, our class is held in a computer laboratory, so bringing a laptop is not required. You are permitted to use the lab computers, but if you would like to take notes on your computer / surface you are welcome to bring it to class.",
     "crumbs": [
@@ -189,7 +189,7 @@
   {
     "objectID": "course-syllabus.html#how-can-i-expect-to-be-treated-in-this-course",
     "href": "course-syllabus.html#how-can-i-expect-to-be-treated-in-this-course",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "9.1 How can I expect to be treated in this course?",
     "text": "9.1 How can I expect to be treated in this course?\nFollowing Ihab Hassan, I strive to teach statistics so that people will stop killing each other. In my classroom, diversity and individual differences are a sources of strength. One of the greatest failures of Statistics, historically and in the present, has been the exclusion of voices from the field. Everyone here can learn from each other, and doing so is vital to the structure of the course. Significant portions of this course involve group work and discussion in class. Some discussions will touch on sensitive topics. So that everyone feels comfortable participating in these activities, we must listen to each other and treat each other with respect. Any attitude or belief that espouses the superiority of one group of people over another is not welcome in my classroom. Such beliefs are directly destructive to the sense of community that we strive to create, and will sabotage our ability to learn from each other (and thus sabotage the entire structure of the course).\nIn summary: Be good to each other.",
     "crumbs": [
@@ -200,7 +200,7 @@
   {
     "objectID": "course-syllabus.html#working-in-teams",
     "href": "course-syllabus.html#working-in-teams",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "9.2 Working in teams",
     "text": "9.2 Working in teams\nWhen completing lab assignments, you will work in a team of three students. In Week 2, you will be assigned to a group and you will work in this same group for three total weeks (Weeks 2 - 4). Then, in Week 5 you will be assigned to a new group of three students, which you will collaborate with for the next three weeks (Weeks 5 - 7). Finally, in Week 8, you will be assigned to one final group which you will collaborate with for the final three weeks of the quarter (Weeks 8 - 10).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearching Group Collaborations\nFor quite some time I have been interested in what we, as your professors, can do to make group collaborations better for every student. This is a substantial area of my research, and, as such, I will be collecting data on your experiences collaborating with your peers in STAT 313. Every week, I will request for your to complete a pre-lab and a post-lab survey, detailing your feelings about your upcoming collaboration and your perceptions for how the collaboration went. Results from this study will provide our research team with a better understanding of (1) the impact of collaborative experiences on student self-perception, and (2) how to facilitate collaborative experiences that are beneficial for every student\nDuring Week 1, you will be asked to complete a form consenting to participate in this study. Your participation in this research will not directly affect your course grade. If you agree to participate, you will complete a weekly surveys regarding your experiences before and after collaborating in your group. Based on the results of your surveys from Weeks 2-8, you may be invited to participate in a 30-minute interview with an undergraduate student researcher, discussing your experiences collaborating with your peers.\nIf you have questions regarding this study or would like to be informed of the results when the study is completed, please contact me (Dr. Theobold) at atheobol@calpoly.edu. If you have concerns regarding the manner in which the study is conducted, you may contact Dr. Michael Black, Chair of the Cal Poly Institutional Review Board, at (805) 756-2894, mblack@calpoly.edu, or Trish Brock, Director of Research Compliance, at (805) 756-1450, pbrock@calpoly.edu.",
     "crumbs": [
@@ -211,7 +211,7 @@
   {
     "objectID": "course-syllabus.html#what-constitutes-plagiarism-in-a-statistics-class",
     "href": "course-syllabus.html#what-constitutes-plagiarism-in-a-statistics-class",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "9.3 What constitutes plagiarism in a statistics class?",
     "text": "9.3 What constitutes plagiarism in a statistics class?\nParaphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.\nEven inadvertent or unintentional misuse or appropriation of another’s work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you are struggling with writing the R code for an assignment, please reach out to me. I would prefer that I get to help you rather than you spending hours Googling things and get nowhere!\nAny incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you an “Incomplete” grade on the assignment and you will not be able to submit revisions for that assignment.\nIf you have any questions about using and citing sources, you are expected to ask for clarification.\nFor more information about what constitutes cheating and plagiarism, please see https://academicprograms.calpoly.edu/content/academicpolicies/Cheating.",
     "crumbs": [
@@ -222,7 +222,7 @@
   {
     "objectID": "course-syllabus.html#unit-1-foundations-of-statistics-week-1",
     "href": "course-syllabus.html#unit-1-foundations-of-statistics-week-1",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.1 Unit 1: Foundations of Statistics (Week 1)",
     "text": "10.1 Unit 1: Foundations of Statistics (Week 1)\nThis introductory unit has three big tasks, (1) review statistical and data oriented concepts you have (likely) seen before, (2) think critically about why statistics is used in science, and (3) think about how (historically) statistics has been used for inference.\nReading: Chapters 1 and 2 in Introduction to Modern Statistics (IMS)",
     "crumbs": [
@@ -233,7 +233,7 @@
   {
     "objectID": "course-syllabus.html#unit-2-exploratory-data-analysis-weeks-2-3",
     "href": "course-syllabus.html#unit-2-exploratory-data-analysis-weeks-2-3",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.2 Unit 2: Exploratory Data Analysis (Weeks 2 & 3)",
     "text": "10.2 Unit 2: Exploratory Data Analysis (Weeks 2 & 3)\nThis unit focuses on building skills for working with and visualizing different types of data. First, we will focus on numerical data–calculating summary statistics, histograms, scatterplots, and linegraphs. Next, we incorporate categorical variables into these summarizes (with groups) and visualizations (with colors and facets)!\nReading: Chapters 4 & 5 in IMS and Chapter 2 in Modern Dive",
     "crumbs": [
@@ -244,7 +244,7 @@
   {
     "objectID": "course-syllabus.html#unit-3-regression-modeling-weeks-4-5",
     "href": "course-syllabus.html#unit-3-regression-modeling-weeks-4-5",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.3 Unit 3: Regression Modeling (Weeks 4 & 5)",
     "text": "10.3 Unit 3: Regression Modeling (Weeks 4 & 5)\nIn this unit we begin exploring formal statistical methods. You will put the tools you learned for wrangling and visualizing to work in the context of linear regression. We will start in a familiar context—linear regression. Once we’ve explored the concepts of “simple” / basic regression we will turn up the heat and add some additional explanatory variables using multiple linear regression.\nReading: Chapters 5 & 6 in Modern Dive",
     "crumbs": [
@@ -255,7 +255,7 @@
   {
     "objectID": "course-syllabus.html#unit-4-model-selection-inference-for-regression-weeks-6-7",
     "href": "course-syllabus.html#unit-4-model-selection-inference-for-regression-weeks-6-7",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.4 Unit 4: Model Selection & Inference for Regression (Weeks 6 & 7)",
     "text": "10.4 Unit 4: Model Selection & Inference for Regression (Weeks 6 & 7)\nThis unit focuses on how we decide what variables should be included in our regression models and what we can say about the final models we obtain. We will explore these ideas using concepts you have seen before: hypothesis tests and confidence intervals. We will visit the ideas of p-values and significance testing, with a emphasis on making (and justifying) sound scientific decisions with the intention of obtaining the best regression model we can.\nReading: Supplementary resources written / compiled by Dr. Theobold",
     "crumbs": [
@@ -266,7 +266,7 @@
   {
     "objectID": "course-syllabus.html#unit-5-condition-violations-week-8",
     "href": "course-syllabus.html#unit-5-condition-violations-week-8",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.5 Unit 5: Condition Violations (Week 8)",
     "text": "10.5 Unit 5: Condition Violations (Week 8)\nThere are occasions where the conditions required for linear regression are violated. Rather than throwing up our hands and saying “Oh, well!”, we can use variable transformations to lessen condition violations. This unit will explore the use of log transformations to remedy non-linear relationships and non-constant variance.\nReading: Supplementary resources written / compiled by Dr. Theobold",
     "crumbs": [
@@ -277,7 +277,7 @@
   {
     "objectID": "course-syllabus.html#unit-6-anova-weeks-9-10",
     "href": "course-syllabus.html#unit-6-anova-weeks-9-10",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "10.6 Unit 6: ANOVA (Weeks 9 & 10)",
     "text": "10.6 Unit 6: ANOVA (Weeks 9 & 10)\nTo wrap up the quarter, we will look at a special case of linear regression–ANOVA. In this special case, our regression will include only categorical variables as explanatory variables. We will first review how we compare the means of two groups and then connect with what we learned about categorical variables in multiple linear to conceptualize how we can compare the means of three or more groups.\nThis unit will explore Chapter 22 in IMS, with supplementary materials created by Dr. Theobold.",
     "crumbs": [
@@ -288,7 +288,7 @@
   {
     "objectID": "course-syllabus.html#footnotes",
     "href": "course-syllabus.html#footnotes",
-    "title": "STAT 313 / 513: Applied Experimental Design and Regression Models",
+    "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nSee Section 6.0.2 for information on what you can expect when you email me.↩︎\nA “Satisfactory” lab or critique occurs when every problem has been marked Satisfactory.↩︎",
     "crumbs": [
@@ -5345,7 +5345,7 @@
     "href": "course-support.html#student-hours",
     "title": "Course support",
     "section": "Student Hours",
-    "text": "Student Hours\n\n\n\n\n\n\n\nDay\nTime\n\n\n\n\nMondays\n2:10 pm – 4:00 pm (in-person)\n\n\nWednesdays\n2:10 pm - 3:00 pm (in-person)\n3:10 - 4:00 (individual appointments over Zoom)\n\n\n\nA lot of questions are most effectively answered in-person, and student hours are the best place to come ask me questions! I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself.\n\nPersonal Meetings\nIf you would like to talk with me individually, I’ve reserved time on Wednesdays from 3:10pm to 4:00pm for individual appointments. You can make appointments through the following link: https://calendly.com/allisontheobold\nI do request that you make appointments at least 1-hour ahead of time, so I don’t miss our meeting!\nIf you need to meet, but none of the student hours work for you please let me know! It is possible we can communicate asynchronously through Discord or email, but I am happy to schedule a meeting during another time if necessary.",
+    "text": "Student Hours\n\n\n\n\n\n\n\nDay\nTime\n\n\nMondays\n3:10 pm – 4:00 pm (in-person)\n\n\nWednesdays\n2:10 pm - 3:00 pm (individual meetings via Zoom)\n3:10 - 4:00 (in-person)\n\n\n\nA lot of questions are most effectively answered in-person, and student hours are the best place to come ask me questions! I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself.\n\nPersonal Meetings\nIf you would like to talk with me individually, I’ve reserved time on Wednesdays from 3:10pm to 4:00pm for individual appointments. You can make appointments through the following link: https://calendly.com/allisontheobold\nI do request that you make appointments at least 1-hour ahead of time, so I don’t miss our meeting!\nIf you need to meet, but none of the student hours work for you please let me know! It is possible we can communicate asynchronously through Discord or email, but I am happy to schedule a meeting during another time if necessary.",
     "crumbs": [
       "Course information",
       "Support"
@@ -8056,7 +8056,7 @@
     "href": "slides/week10-day1.html",
     "title": "Week 10: Two-way ANOVA",
     "section": "",
-    "text": "Statistical Critique 2 revisions are due by Thursday\nLab 8 revisions are due by Thursday\nFinal revisions on all assignments will be accepted until this Sunday, March 17\n\n\n. . .\n\n\n\n\n\n\nOne round of revisions\n\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions."
+    "text": "Statistical Critique 2 revisions are due by Thursday\nLab 8 revisions are due by Thursday\nFinal revisions on all assignments will be accepted until this Sunday, March 17\n\n\n. . .\n\n\n\n\n\n\nOne round of revisions\n\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.\n\n\n\n\n\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Thursday\n\nPrint your report!"
   },
   {
     "objectID": "slides/week10-day1.html#total-variation-in-a-one-way-anova",
@@ -8319,7 +8319,7 @@
     "href": "slides/week10-day1.html#theory-based-two-way-anova",
     "title": "Week 10: Two-way ANOVA",
     "section": "Theory-based Two-Way ANOVA",
-    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.007440373\n0.0074403734\n35.19849\n1.138783e-08\n\n\nyear_cat\n1\n0.113983757\n0.1139837569\n539.22776\n3.266695e-61\n\n\nwatershed:year_cat\n1\n0.004334297\n0.0043342969\n20.50444\n9.727113e-06\n\n\nResiduals\n221\n0.046715715\n0.0002113833\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
+    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.016738401\n0.0167384006\n73.57493\n1.714080e-15\n\n\nyear_cat\n1\n0.109417457\n0.1094174573\n480.95287\n2.232451e-57\n\n\nwatershed:year_cat\n1\n0.004320073\n0.0043200727\n18.98921\n2.013559e-05\n\n\nResiduals\n221\n0.050277812\n0.0002275014\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
   },
   {
     "objectID": "slides/week10-day1.html#how-are-those-p-values-calculated",
@@ -8347,7 +8347,7 @@
     "href": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
     "title": "Week 10: Two-way ANOVA",
     "section": "Testing for a relationship for each variable",
-    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0001395335\n1.395335e-04\n2.601759\n1.088612e-01\n\n\nwatershed\n1\n0.0030229669\n3.022967e-03\n56.366605\n5.093045e-12\n\n\nResiduals\n149\n0.0079909385\n5.363046e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
+    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0001345297\n0.0001345297\n1.82845\n1.783595e-01\n\n\nwatershed\n1\n0.0035733249\n0.0035733249\n48.56658\n9.607445e-11\n\n\nResiduals\n149\n0.0109627935\n0.0000735758\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
   },
   {
     "objectID": "slides/week10-day1.html#lets-see",
@@ -8431,7 +8431,7 @@
     "href": "slides/week10-day1.html#additive-model-hypothesis-tests",
     "title": "Week 10: Two-way ANOVA",
     "section": "Additive Model Hypothesis Tests",
-    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0350076203\n1\n652.756301\n2.569386e-56\n\n\nwatershed\n0.0030229669\n1\n56.366605\n5.093045e-12\n\n\nelevation\n0.0001549772\n1\n2.889723\n9.123277e-02\n\n\nResiduals\n0.0079909385\n149\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
+    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0370595336\n1\n503.691919\n1.193044e-49\n\n\nwatershed\n0.0035733249\n1\n48.566583\n9.607445e-11\n\n\nelevation\n0.0003059393\n1\n4.158151\n4.320201e-02\n\n\nResiduals\n0.0109627935\n149\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#wrapping-up",
@@ -8466,7 +8466,7 @@
     "href": "slides/week10-day2.html",
     "title": "STAT 313 Last Day",
     "section": "",
-    "text": "Un-transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n84.826493\n\n\nI\n80.783024\n\n\nIP\n5.729663\n\n\nP\n129.138547\n\n\nR\n59.096925\n\n\nS\n49.280157\n\n\nSC\n49.923399\n\n\nNA\n112.284569\n\n\n\n\n\n\n\n\n\nLog Transformed Variances\n\n\n\n\n\n\n\n\nunittype\nvar\n\n\n\n\nC\n1.6978424\n\n\nI\n0.8788463\n\n\nIP\n0.8990321\n\n\nP\n1.5659500\n\n\nR\n1.3621461\n\n\nS\n2.1770549\n\n\nSC\n1.6514917\n\n\nNA\n0.7591942\n\n\n\n\n\n\n\n\n\n\n. . .\n\n\nWhat do you think?\n\n\n\n\n\nSome Closing Thoughts…\n\n\n\n\n\nI hope you leave this class understanding…\n\n\nReproducibility is a foundational aspect to scientific research.\nData visualizations tell you a story, where statistical tests only tell you a summary.\nMultiple regression and ANOVA are powerful tools to explore multivariate relationships.\nA well thought out study is more powerful than any statistical analysis.\n\n\n\n\n\nThe Discipline of Statistics\n\n\nThe field of Statistics was developed to evaluate evidence obtained from data. Over the last century, the use of statistics has become embedded as a component of the scientific process for many disciplines.\n\n\n\n\n\nFoundational ideas taught in statistics courses were invented by:\n\n\nFrancis Galton\nKarl Pearson\nRonald Fisher\n\n\n\n\n\nEugenics & Statistics\n\n\n\nIdeally, statisticians would like to divorce these tools from the lives and times of the people who created them. It would be convenient if statistics existed outside of history, but that’s not the case. Statistics, as a lens through which scientists investigate real-world questions, has always been smudged by the fingerprints of the people holding the lens. Statistical thinking and eugenicist thinking are, in fact, deeply intertwined, and many of the theoretical problems with methods like significance testing—first developed to identify racial differences—are remnants of their original purpose, to support eugenics.\n\n\nHow Eugenics Shaped Statistics\n\n\n\n\nStatistical Significance – The New “S” Word\n\n\n\n“Significance, the new s-word, is overused and underdefined in the realm of connecting statistical results to the underlying science.”\n\n\n. . .\n\n\n“When used in statistics, significant does not mean important or meaningful, as it does in everyday speech.”\n\n\n. . .\n\n\n“I advocate a simple solution: Replace the s-word with words describing what you actually mean by it.”\n\n\n\n\n\n\n\n\n\n\n\n\nRemember to give yourself praise!"
+    "text": ". . .\n\n\nLab 8 revisions due tonight\nStatistical Critique revisions due tonight\nAll other final revisions are due by Sunday\nFinal Project is due by Sunday"
   },
   {
     "objectID": "slides/mlr-anova.html",
