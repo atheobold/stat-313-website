@@ -76,11 +76,11 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Inference for Comparing Many Means](https://openintro-ims.netlify.app/inference-many-means.html)
 
-### Reading Guide -- Due Tuesday by the beginning of class
+### Reading Guide -- Due Monday by the start of class
 
 [Download the Word Document](reading-guide/week9-reading.docx)
 
-## Concept Quiz -- Due Tuesday by the beginning of class
+## Concept Quiz -- Due Monday by the start of class
 
 1.  Which of the following are true about the mean squares between groups? (Select all that apply)
 
@@ -114,8 +114,8 @@ knitr::include_graphics(here::here("images",
 
 4.  Ideally, in an ANOVA we'd like to see... (select all that apply)
 
--   large variability in the means of the groups
--   small variability in the means of the groups
+-   large differences in the means of the groups
+-   small differences in the means of the groups
 -   large variability in the observations within each group
 -   small variability in the observations within each group
 
@@ -124,6 +124,8 @@ knitr::include_graphics(here::here("images",
 -   we can then conclude that all the means are different from one another.
 
 -   the variability between groups is higher than the variability within groups.
+
+-   we can then conclude that at least one mean is different from the others.
 
 -   the pairwise analysis will identify at least one pair of means that are significantly different.
 
@@ -137,6 +139,6 @@ knitr::include_graphics(here::here("images",
 
 9.  True or false, the normality condition is very important when the sample sizes of each group are small.
 
-## R Tutorial -- Due Thursday by the beginning of class
+## R Tutorial -- Due Wednesday by the start of class
 
 [**Required Tutorial:** Comparing many means with ANOVA](https://openintro.shinyapps.io/ims-05-infer-08/)

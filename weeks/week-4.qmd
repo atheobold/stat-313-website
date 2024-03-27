@@ -70,7 +70,7 @@ Don't worry about Section 5.3.3, it goes a bit too in the weeds for what we are 
 Please use a different color for your answers to the reading guide, so it is easier to find your responses! 😊
 :::
 
-## Concept Quiz -- Due Tuesday by the start of class
+## Concept Quiz -- Due Monday by the start of class
 
 **1. What does the correlation coefficient measure?**
 
@@ -104,7 +104,7 @@ Please use a different color for your answers to the reading guide, so it is eas
 -   `geom_regression()`
 -   `geom_smooth()`
 
-## `r emo::ji("computer")` R Tutorial -- Due Thursday by the start of class
+## `r emo::ji("computer")` R Tutorial -- Due Wednesday by the start of class
 
 1.  [Regression modeling: Simple linear regression](https://openintro.shinyapps.io/ims-03-model-03/)
 

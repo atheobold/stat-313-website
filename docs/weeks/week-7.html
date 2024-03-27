@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - Winter 2024 - Week 7 – Inference for Regression</title>
+<title>STAT 313 / 513 - Week 7 – Inference for Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,13 +93,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/spaces/352796/join?access_code=1UXvC0avaZPdFlXCzQUZqFAUdLgGFehApPhyVxjo" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
 </div>
       </div>
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.Rmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -297,8 +297,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#textbook-reading-part-1" id="toc-textbook-reading-part-1" class="nav-link active" data-scroll-target="#textbook-reading-part-1"><span class="header-section-number">1</span> Textbook Reading – Part 1</a></li>
   <li><a href="#textbook-reading-part-2" id="toc-textbook-reading-part-2" class="nav-link" data-scroll-target="#textbook-reading-part-2"><span class="header-section-number">2</span> Textbook Reading – Part 2</a></li>
-  <li><a href="#concept-quiz-due-thursday-by-the-beginning-of-class-note-the-new-time" id="toc-concept-quiz-due-thursday-by-the-beginning-of-class-note-the-new-time" class="nav-link" data-scroll-target="#concept-quiz-due-thursday-by-the-beginning-of-class-note-the-new-time"><span class="header-section-number">3</span> Concept Quiz – Due Thursday by the beginning of class (note the new time!)</a></li>
-  <li><a href="#r-tutorial-due-thursday-by-the-beginning-of-class" id="toc-r-tutorial-due-thursday-by-the-beginning-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-thursday-by-the-beginning-of-class"><span class="header-section-number">4</span> R Tutorial – Due Thursday by the beginning of class</a></li>
+  <li><a href="#concept-quiz-due-wednesday-by-the-beginning-of-class-note-the-new-time" id="toc-concept-quiz-due-wednesday-by-the-beginning-of-class-note-the-new-time" class="nav-link" data-scroll-target="#concept-quiz-due-wednesday-by-the-beginning-of-class-note-the-new-time"><span class="header-section-number">3</span> Concept Quiz – Due Wednesday by the beginning of class (note the new time!)</a></li>
+  <li><a href="#r-tutorial-due-wednesday-by-the-beginning-of-class" id="toc-r-tutorial-due-wednesday-by-the-beginning-of-class" class="nav-link" data-scroll-target="#r-tutorial-due-wednesday-by-the-beginning-of-class"><span class="header-section-number">4</span> R Tutorial – Due Wednesday by the beginning of class</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -333,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Reading Guide – Due Tuesday by the beginning of class
+Reading Guide – Due Monday by the beginning of class
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -350,7 +350,7 @@ Reading Guide – Due Tuesday by the beginning of class
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Reading Guide – Due Thursday by the beginning of class (note the new time!)
+Reading Guide – Due Wednesday by the beginning of class (note the new time!)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -358,8 +358,8 @@ Reading Guide – Due Thursday by the beginning of class (note the new time!)
 </div>
 </div>
 </section>
-<section id="concept-quiz-due-thursday-by-the-beginning-of-class-note-the-new-time" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Concept Quiz – Due Thursday by the beginning of class (note the new time!)</h1>
+<section id="concept-quiz-due-wednesday-by-the-beginning-of-class-note-the-new-time" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Concept Quiz – Due Wednesday by the beginning of class (note the new time!)</h1>
 <p><strong>1. Match each item to it’s respective analogy:</strong></p>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -427,8 +427,8 @@ Reading Guide – Due Thursday by the beginning of class (note the new time!)
 <li>90%</li>
 </ul>
 </section>
-<section id="r-tutorial-due-thursday-by-the-beginning-of-class" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> R Tutorial – Due Thursday by the beginning of class</h1>
+<section id="r-tutorial-due-wednesday-by-the-beginning-of-class" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> R Tutorial – Due Wednesday by the beginning of class</h1>
 <p><a href="https://rstudio.csm.calpoly.edu/infer_CI_tutorial/"><strong>Required Tutorial:</strong> Practice the infer Workflow</a></p>
 
 
@@ -596,12 +596,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

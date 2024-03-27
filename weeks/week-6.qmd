@@ -19,7 +19,7 @@ source("_common.R")
 set.seed(1234)
 ```
 
-## Reading Guide -- Due Tuesday by the start of class
+## Reading Guide -- Due Monday by the start of class
 
 [Download the Word Document](reading-guide/week6-reading.docx)
 
@@ -667,7 +667,7 @@ Stepwise selection using adjusted $R^2$ as the decision criteria is one of many 
 
 Alternatively, one could choose to include or exclude variables from a model based on expert opinion or due to research focus. In fact, many statisticians discourage the use of stepwise regression alone for model selection and advocate, instead, for a more thoughtful approach that carefully considers the research focus and features of the data.
 
-# Concept Quiz -- Due Tuesday by the start of class
+# Concept Quiz -- Due Monday by the start of class
 
 **Question 1** -- $R^2$ is the \[correlation / percent\] of variation in the \[explanatory / response\] variable that is explained by the \[response variables / explanatory variables\] and the \[decided model / best model / linear model\].
 
@@ -685,6 +685,6 @@ Alternatively, one could choose to include or exclude variables from a model bas
 
 **Question 8** -- Forward selection \[adds / removes\] variables from the model. If the \[R-squared / correlation / adjusted R-squared\] when the variable is \[added / removed\] is \[smaller / larger\], the variable will be \[added / removed\] from the final model.
 
-# R Tutorial -- Due Thursday by the start of class
+# R Tutorial -- Due Wednesday by the start of class
 
 [Assessing Model Fit](https://openintro.shinyapps.io/ims-03-model-05/#section-assessing-model-fit)

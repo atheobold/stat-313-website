@@ -133,7 +133,7 @@ This section summarizes your understanding of the foundational aspects of experi
 > Based on the sampling method used, what larger population can you infer the results or your analysis onto?
 
 -   What were the inclusion criteria of the observations?
-  * How does that influence the population you can infer your findings onto?
+-   How does that influence the population you can infer your findings onto?
 :::
 :::
 
@@ -145,7 +145,7 @@ This section summarizes your understanding of the foundational aspects of experi
 > Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?
 
 -   Were the explanatory variables randomly assigned to control for confounding variables?
-    * How does that influence what you can and cannot say about the relationships between the variables?
+    -   How does that influence what you can and cannot say about the relationships between the variables?
 :::
 :::
 :::
@@ -174,7 +174,7 @@ Think about how sample size effects p-values!
 
 ::: {.column width="30%"}
 ::: small
-::: {.fragment}
+::: fragment
 Did you reject the null hypothesis for your one-way ANOVA?
 
 Look back at your visualizations -- which group(s) look the most different?
@@ -187,7 +187,7 @@ Look back at your visualizations -- which group(s) look the most different?
 
 ::: {.column width="30%"}
 ::: small
-::: {.fragment}
+::: fragment
 Did you fail to reject the null hypothesis for your one-way ANOVA?
 
 Look back at your visualizations -- do all of the groups look the same?
@@ -252,7 +252,7 @@ trout %>%
 
 </br>
 
-<center>What do you think? Did it work? </center>
+<center>What do you think? Did it work?</center>
 
 # Final Presentations
 
@@ -277,7 +277,7 @@ For your presentation you are allowed to make **two** slides:
 
 Your slides **must be submitted as a PDF**.
 
-:::{.callout-warning}
+::: callout-warning
 # Deadline for slides
 
 Slides are due by [5pm the night before your final exam timeslot]{.underline}. If you do not submit slides by the deadline, you will not be allowed to present.

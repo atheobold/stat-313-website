@@ -17,12 +17,12 @@ execute:
 [**Required Reading:** Hypothesis Test for Slope & Inference Conditions](chapters/week8-reading.html)
 
 ::: callout-note
-## Reading Guide -- Due Tuesday by noon
+## Reading Guide -- Due Monday by the start of class
 
 [Download the Word Document](reading-guide/week8-reading.docx)
 :::
 
-# Concept Quiz -- Due Tuesday by noon
+# Concept Quiz -- Due Monday by the start of class
 
 **1. Which of the following are *always* true for hypothesis statements?**
 
@@ -36,7 +36,7 @@ execute:
 -   It is a distribution of statistics.
 -   The values on the distribution represent what might have happened if the null hypothesis was true.
 -   The values on the distribution represent what might have happened if the alternative hypothesis was true.
--   It is a distribution of samples.
+-   It is a distribution of sample observations.
 
 **3. Which of the following are true about a p-value?** (select all that apply)
 
@@ -127,7 +127,7 @@ hypothesis tests
 -   repeated observations on the same person
 -   observations related biologically
 
-# R Tutorial -- Due Thursday by noon
+# R Tutorial -- Due Wednesday by the start of class
 
 [**Required Tutorial:** Randomization test for the slope](https://openintro.shinyapps.io/ims-06-model-infer-02/#section-simulation-based-inference)
 
