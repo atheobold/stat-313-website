@@ -1,8 +1,8 @@
 ---
 title: "Lab 6: Predicting Professor Evaluation Scores"
 author: "Your group's names here!"
-date: "February 15, 2024"
 format: html
+embed-resources: true
 editor: visual
 execute: 
   eval: false

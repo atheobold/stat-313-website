@@ -1,9 +1,9 @@
 ---
 title: "Lab 1: Welcome to Posit Cloud!"
 author: "Your Name Here!"
-date: "January 9, 2024"
 format: html
 editor: visual
+embed-resources: true
 execute: 
   echo: true
   eval: false

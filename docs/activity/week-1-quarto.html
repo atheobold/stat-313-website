@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -334,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Click on the Posit Cloud link below the “Lab” assignment module on Canvas</p></li>
 <li><p>Create a log-in for Posit Cloud</p></li>
 </ol>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/create-login.png" class="img-fluid figure-img"></p>
 <figcaption>What you will see when you first click on the link to join the Posit Cloud workspace for STAT 313 / 513</figcaption>
@@ -343,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 <ol start="3" type="1">
 <li>Click “Yes” to join the STAT 313 / 513 workspace</li>
 </ol>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/request-to-join.png" class="img-fluid figure-img"></p>
 <figcaption>Prompt you should see after you make an account, asking if you want to join the workspace – you should click “Yes”</figcaption>
@@ -352,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
 <ol start="4" type="1">
 <li>If you successfully joined the workspace, you should see a page that looks like this:</li>
 </ol>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/joined-workspace.png" class="img-fluid figure-img"></p>
 <figcaption>The “Welcome to Stat 313 / 513 Winter 2024” welcome message you should see if you successfully joined the workspace</figcaption>
@@ -374,7 +374,7 @@ Your welcome page should reflect the course you are registered for
 <ol start="5" type="1">
 <li>Once you are in the workspace, you need to access the Content tab, which is where the lab assignments will be listed</li>
 </ol>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/access-content.png" class="img-fluid figure-img"></p>
 <figcaption>What you should see if you click on the “Content” tab in the Stat 313 / 513 workspace</figcaption>
@@ -384,7 +384,7 @@ Your welcome page should reflect the course you are registered for
 <li>Click on the Lab 1 project to open this week’s lab assignment</li>
 </ol>
 <p><img src="images/open-project.png" class="img-fluid" alt="What you should see when you click on the Lab 1 project – it may take a few moments to load the project (be patient)"> 7. Once you are in the Lab 1 project, the final step is to open the Lab 1 Quarto document. To do this, you need to click on the <code>lab-1.qmd</code> document, located in the lower right pane.</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/open-lab.png" class="img-fluid figure-img"></p>
 <figcaption>Where you need to click to open the Lab 1 assignment (<code>lab-1.qmd</code>) and what you should see pop up once you open the document</figcaption>
@@ -611,7 +611,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

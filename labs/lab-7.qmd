@@ -1,8 +1,8 @@
 ---
 title: "Lab 7: Confidence Intervals for Water Temperature and Latitude"
 author: "The names of your group members here!"
-date: "February 22, 2024"
 format: html
+embed-resources: true
 editor: visual
 execute: 
   echo: true
