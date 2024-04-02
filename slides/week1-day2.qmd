@@ -2,8 +2,9 @@
 title: "Working with Data"
 format: 
   revealjs:
-    theme: night
+    theme: style.scss
 editor: visual
+embed-resources: true
 execute: 
   echo: false
 ---

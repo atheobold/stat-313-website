@@ -6,7 +6,7 @@ title-slide-attributes:
     data-background-opacity: "0.75"
 format: 
   revealjs:
-    theme: [night]
+    theme: style.scss
 editor: source
 execute: 
   echo: false
