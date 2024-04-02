@@ -47,11 +47,11 @@ military <- readxl::read_xlsx(here::here("slides",
                 )
 ```
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Warm-up
 :::
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 (90 seconds)
 :::
 
@@ -65,13 +65,15 @@ Why do you believe your discipline requires / expects you to take this course?
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 About Me...
 :::
 
 ```{r}
 #| layout-nrow: 1
 #| label: pictures
+#| fig-alt: "Three images of things related to Dr. Theobold's life. The first image is of Dr. Theobold running across a bridge in a trail race. The second image is of Dr. Theobold's mountain bike at the top of a local hiking trail. The third image is of Dr. Theobold's two cats snuggled in a cat bed together."
+
 knitr::include_graphics(c("images/running.jpg", "images/biking.JPG", "images/kitties.JPG"))
 ```
 
@@ -79,7 +81,7 @@ knitr::include_graphics(c("images/running.jpg", "images/biking.JPG", "images/kit
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 What is Statistics?
 :::
 
@@ -95,7 +97,7 @@ Statistics is the study of how best to collect, analyze, and draw conclusions fr
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 What Statistics Is To Me
 :::
 
@@ -103,11 +105,11 @@ What Statistics Is To Me
 
 <center>
 
-![The data science cycle -- Wickham & Grolemund](images/cycle.png)
+![The data science cycle -- Wickham & Grolemund](images/cycle.png){fig-alt="A figure of the 'data science cycle', with six different stages. The process starts with 'Import' (importing a dataset), then moves to 'Tidy' (tidying the dataset you imported). From there, the diagram has a blue box labeled the 'Explore' cycle, which includes the 'Transform', 'Visualize,' and 'Model' stages. These stages are connected in a circle with arrows between each stage, implying that these stages are a cycle which one can repeat. After the 'Explore' cycle, there in one additional stage labeled 'Communicate,' representing how you communicate the results of your analysis."}
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 What you can expect in STAT 313
 :::
 
@@ -122,7 +124,7 @@ This course will teach you the fundamentals of linear models---*simple linear re
 
 ## 
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Coding 🙀
 :::
 
@@ -139,7 +141,7 @@ Coding is a **huge** part of how doing statistics in the wild looks.
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Course Components
 :::
 
@@ -189,13 +191,7 @@ Course Components
 Specifications Based Grading
 :::
 
-![](images/four_pillars.png)
-
-. . .
-
-::: {style="color: #000000;"}
-Everyone is capable of earning an A!
-:::
+![](images/four_pillars.png){fig-alt="An image of a building with four pillars, labeled clearly defined standards, helpful feedback, marks that indicate progress, and reattempts without penalty. In the roof (at the top of the pillars), the saying 'in feedback loops we trust' is written. These pillars represent the four pillars / principals of specifications-based grading, the grading system used in this course."}
 
 ##  {background-color="#B6CADA"}
 
@@ -232,7 +228,7 @@ How Smart are You?
 
 ##
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Cooperative Learning
 :::
 
@@ -280,7 +276,7 @@ Group Norms
 
 ##
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 How We Learn Together
 :::
 
@@ -323,7 +319,7 @@ Let's talk about data...
 
 ## 
 
-::: {style="font-size: 4em; color: #FFFFFF;"}
+::: {style="font-size: 4em; color: #000000;"}
 Tidy Data
 :::
 
@@ -331,7 +327,7 @@ Tidy Data
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Gender stereotypes in 5-7 year old children
 :::
 
@@ -352,7 +348,7 @@ children_gender_stereo[[2]] %>%
 
 ## 
 
-::: {style="font-size: 1.5em; color: #FFFFFF;"}
+::: {style="font-size: 1.5em; color: #000000;"}
 Body girth and skeletal diameter measurements
 :::
 
@@ -370,7 +366,7 @@ bdims %>%
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 NBA player of the week
 :::
 
@@ -478,27 +474,27 @@ Do these data satisfy the "tidy" principles?
 
 ##  {background-color="#B6CADA"}
 
-![Artwork by [\@allison_horst](https://twitter.com/allison_horst)](images/tidy-data.jpg)
+![Artwork by [\@allison_horst](https://twitter.com/allison_horst)](images/tidy-data.jpg){fig-alt="An image of lots of different datasets. The datasets on the top all look alike, with tidy rows and columns (they are happy). The datasets on the bottom all look different, all having different characteristics that make data untidy. The quote displayed reads 'The standard structure of tidy data means that tidy datasets are all alike, but every messy dataset is messy in its own way.'"}
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Types of Variables
 :::
 
 </br>
 
-![Diagram of types of variables we will analyze!](images/variables.png)
+![Diagram of types of variables we will analyze!](images/variables.png){fig-alt="A tree diagram of the variables we will analyze in this class. The top node says 'all variables'. This top node has two branches, one that leads to 'numerical' and one that leads to 'categorical', representing the two classes of variables we will analyze. From the numerical variable node, there are two additional branches, one that says 'continuous' and one that says 'dicrete', representing the two types of numerical varaibles we will consider. Lastly, from the 'categorical' variable node, there are two branches, one saying 'regular categorical' and one saying 'ordinal', each representing the two classes of categorical variables we will consider."}
 
 ##  {background-color="#B6CADA"}
 
 <center>
-![](images/continuous-discrete.jpeg)
+![](images/continuous-discrete.jpeg){fig-alt="An image of a baby chick and a baby octopus. The baby chick is under the 'continuous' banner, and says the chick is 3.1 inches tall and weighs 34.16 grams, representing two variables that are measured continuously. The octopus is under the 'discrete' banner, and says the octopus has 8 arms and 4 spots, representing two variables that are measured discretely."}
 </center>
 
 ##  {background-color="#B6CADA"}
 
-![](images/nominal_ordinal_binary.png)
+![](images/nominal_ordinal_binary.png){fig-alt="An image of the three different types of categorical variables, nominal, ordinal, and binary. The 'nominal' category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The 'ordinal' category has three bumblebees, one saying 'I am happy,' one saying 'I am oka," and one saying 'I am awesome!!!'. The bumblebees' emotions represent an ordinal variable. Lastly, the 'binary' category references variables that have two mutually exclusive outcomes. The image displayed under 'binary' is a t-rex saying 'I am extinct' and a shark saying 'Ha' (because they are not extinct)."}
 
 ## 
 
@@ -532,7 +528,7 @@ Lab Warm-up
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Data Types in `R`
 :::
 
@@ -543,7 +539,7 @@ births_small <- births14  %>%
   select(-visits, -mature, -marital) 
 ```
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 0.6em;"}
 ```{r}
 #| echo: true
 #| code-line-numbers: false
@@ -572,7 +568,7 @@ How might it differ from `fct`?
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Types of Studies
 :::
 
@@ -598,7 +594,7 @@ Types of Studies
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Relationships Between Variables
 :::
 
@@ -614,7 +610,7 @@ explanatory variable $\rightarrow$ *might affect* $\rightarrow$ response variabl
 
 ## 
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+::: {style="font-size: 2em; color: #000000;"}
 Causal Inference
 :::
 
@@ -628,23 +624,37 @@ association $\neq$ causation
 
 What do you need to say that the explanatory variable [*causes*]{style="color: #e28743;"} a change in the response variable?
 
-# Plan for Thursday
+# Lab 1
 
-## Lab 1
+## Joining the STAT 313 Workspace on Posit Cloud
 
-- Access Posit Cloud from link posted on Canvas
-  * Create an Account
-  * Join the STAT 313 / 513 workspace
-  * Access the Lab 1 Project
-  * Open the Project
+1. Access [Posit Cloud](https://posit.cloud) from link posted on Canvas
+2. Create a [Cloud Student account](https://posit.cloud/plans/student) (using your Cal Poly email)
 
-- A video will be posted guiding you on how to work with Quarto
-  * Ask questions on Discord
-  * Email / text / chat with your group members
+:::{.callout-warning}
+# $5 / month subscription
 
-## 
-
-::: {style="font-size: 4em; color: #FFFFFF;"}
-Find Your Group!
+The Cloud Student account costs $5 / month. You will only need to pay for three (3) months of access, for a total of $15 for the quarter. 
 :::
+
+3. Join the STAT 313 workspace
+
+
+## Accessing Lab 1 
+
+4. Access Lab 1 either through:
+
+- the link posted on Canvas 
+- the Content tab in the STAT 313 workspace
+
+5. Click on Lab 1 to open the Project
+
+## Opening the Lab 1 Document 
+
+6. Click on the `lab-1.qmd` file in the lower right hand corner to open the lab assignment
+
+![](images/open-lab-1.png){fig-alt="A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the "Files" tab, with lab-1.qmd (a Quarto file) higlighted in a purple box.}
+
+7. Start working! 
+
 
