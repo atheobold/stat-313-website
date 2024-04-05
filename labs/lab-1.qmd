@@ -56,11 +56,11 @@ This code chunk has two things we want to pay attention to:
 
 When you click the **Render** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
-**Question 4:** Do you see the above code chunk when you knit the document? Why do you think this is the case?
+**Question 4:** Do you see the above code chunk when you render the document? Why do you think this is the case?
 
 ## Including Code Output
 
-You can include code output in your knitted document:
+You can include code output in your rendered document:
 
 ```{r}
 #| label: mpg-glimpse
