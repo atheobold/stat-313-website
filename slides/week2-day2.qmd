@@ -2,7 +2,7 @@
 title: "The Flaws of Averages"
 format: 
   revealjs:
-    theme: night
+    theme: style.scss
 editor: visual
 execute: 
   echo: false
@@ -143,22 +143,23 @@ Justification for using averages is simply not demanded --- though justification
 Some Rules to Play By
 :::
 
-. . .
-
 </br>
 
 ::: {style="font-size: 0.75em; color: #000000;"}
--   Look at and understand your raw data before aggregating
-:::
-
-. . .
-
-::: {style="font-size:0.75em; color: #000000;"}
+::: incremental
+-   Look at and understand your *raw* data before aggregating
 -   Boxplots (and such) don't count as visualizing the raw data
 :::
-
-. . .
-
-::: {style="font-size: 0.75em; color: #000000;"}
--   We should only average things we are convinced are measuring the same thing
 :::
+
+# Lab 2
+
+## Departure Delays
+
+-   Inspect the `nycflights` dataset
+-   Visualize departure delays
+-   Play with `binwidth`
+-   Filter data to include only certain flights
+-   Calculate summary statistics
+-   Compare summary statistics with a visualization
+
