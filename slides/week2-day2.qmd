@@ -8,7 +8,7 @@ execute:
   echo: false
 ---
 
-##  {background-color="#2b6a6c"}
+##  {background-color="#abdbe3"}
 
 ```{r packages}
 library(tidyverse)
@@ -19,12 +19,13 @@ library(kableExtra)
 Suppose...
 :::
 
-> "Overall this instructor was educationally effective."
+> ["Overall this instructor was educationally effective."]{style="color: #ed8402;"}
 
 . . .
 
-```{r table-of-eval-scores}
+```{r}
 #| echo: false
+#| label:  table-of-eval-scores
 
 evals <- tibble( 
   year = c(rep(2021, 2), rep(2022, 5) ), 
@@ -39,21 +40,21 @@ kable(evals) %>%
   kable_styling(stripe_color = "light blue")
 ```
 
-##  {background-color="#404040"}
+##  
 
 <center>
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
-How were these averages calculated?
+::: {style="font-size: 3.5em; color: #ed8402;"}
+How were those averages calculated?
 :::
 
 </center>
 
-##  {background-color="#404040"}
+##  
 
 <center>
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
+::: {style="font-size: 3.5em; color: #ed8402;"}
 What do these averages mean?
 :::
 
@@ -61,81 +62,73 @@ What do these averages mean?
 
 ## 
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 The Problem
 :::
 
-::: {style="font-size: 2em; color: #FFFFFF;"}
+</br> 
+
 It's incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.
+
+. . .
+
+::: {.small}
+> "I've had many conversations in very different contexts with scientists about what the average calculated from the data (or mean in a model) could reasonably represent and whether that was really what the scientist was after." [Dr. Megan Higgs](https://critical-inference.com/more-on-average/)
 :::
-
-<!-- Beyond “checking” higher level assumptions in a stale and automatic fashion.  -->
-
-<!-- I had many conversations in very different contexts with scientists about what -->
-
-<!-- the average calculated from the data (or mean in a model) could reasonably -->
-
-<!-- represent and whether that was really what the scientist was after.  -->
 
 ## 
 
-::: {style="font-size: 2.5em; color: #FFFFFF;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 Why so much resistance?
 :::
 
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
+</br>
+
+. . .
+
+::: {style="font-size: 0.75em; color: #000000;"}
 Departments hold specific expectations of statistics courses
 
 </br>
 
-These expectations are conditional on the assumption that means represent the magic quantity of interest
+:::{.fragment}
+These expectations are conditional on the assumption that means represent the magic quantity of interest.
+:::
 
 </br>
 
+:::{.fragment}
 I'm then expected to educate you to "play the game" in the scientific culture of averages
+:::
 :::
 
 ## 
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
+::: {style="font-size: 3.5em; color: #000000;"}
 Averagarianism
 :::
 
-::: {style="font-size: 0.75em; color: #FFFFFF;"}
-> "The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight."
+::: {style="font-size: 0.75em; color: #000000;"}
+> "The primary research method of averagarianism is [aggregate, then analyze]{style="color: #ed8402;"}: First, [combine many people together and look for patterns in the group]{style="color: #ed8402;"}. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight."
 >
 > The End of Average by Todd Rose
 :::
 
 ## 
 
-::: {style="font-size: 3.5em; color: #FFFFFF;"}
-What else then?
-:::
-
-::: callout-tip
-# 60-second exercise
-
-If you could not use averages to evaluate, model, and select individuals, well then...what could you use?
-:::
-
-. . .
-
-</br>
-
-The difficulty in responding to this question underscores how averagarianism has endured for so long and become so deeply ingrained throughout society.
-
-## 
-
-::: {style="font-size: 2.5em; color: #FFFFFF;"}
+::: {style="font-size: 2.5em; color: #000000;"}
 "We've always done it this way"
 :::
 
+::: {style="font-size: 0.75em; color: #000000;"}
 Methods based on averages are available, easy, convenient, and take little creativity --- and they are expected in our scientific culture.
 
 </br>
 
+:::{.fragment}
 Justification for using averages is simply not demanded --- though justification for use of anything but averages is incredibly difficult to sell.
+:::
+:::
 
 ##  {background-color="#f48153"}
 
@@ -148,7 +141,7 @@ Some Rules to Play By
 ::: {style="font-size: 0.75em; color: #000000;"}
 ::: incremental
 -   Look at and understand your *raw* data before aggregating
--   Boxplots (and such) don't count as visualizing the raw data
+-   Boxplots (and other plots of aggregated data) don't count as visualizing the *raw* data
 :::
 :::
 
@@ -161,5 +154,9 @@ Some Rules to Play By
 -   Play with `binwidth`
 -   Filter data to include only certain flights
 -   Calculate summary statistics
+-   Make decisions based on summary statistics 
 -   Compare summary statistics with a visualization
 
+## If you chose to participate in the group collaboration research project...
+
+Please fill out the [post-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_4T1tIgzjg6WUlXE)! 

@@ -4,7 +4,7 @@ author: "STAT 313"
 format: 
   revealjs:
     logo: images/ggplot2.png
-    theme: [solarized, style.scss]
+    theme: style.scss
 editor: visual
 execute: 
   warning: false
@@ -60,7 +60,7 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
 ## Completing Revisions
 
 ::: {style="font-size: 1.25em;"}
-Lab 1 revisions are due by Thursday, January 25.
+Lab 1 revisions are due by Wednesday, April 17 (at midnight).
 :::
 
 ::: small
@@ -73,13 +73,13 @@ Lab 1 revisions are due by Thursday, January 25.
 ::: callout-warning
 # Reflections
 
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas.
 :::
 
 ## 
 
 ::: {style="font-size: 3em; color: #ed8402;"}
-10-minutes
+15-minutes
 :::
 
 ::: {style="font-size: 1.5em;"}
@@ -100,9 +100,9 @@ Revisions are required to be accompanied with reflections on what you learned wh
 ::: {.column width="47%"}
 If you [would]{.underline} like to participate
 
--   Complete [consent form](https://bit.ly/collab-consent-form)
--   Complete 6-question [pre-collaboration survey](https://bit.ly/pre-collab-survey)
--   Complete [demographic survey](https://bit.ly/collab-demographic-survey)
+-   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u)
+-   Complete 6-question [pre-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_5hgnkqjNCFeVpxc)
+-   Complete [demographic survey](https://forms.office.com/r/7jDSHSg7B5)
 :::
 
 ::: {.column width="5%"}
@@ -111,54 +111,7 @@ If you [would]{.underline} like to participate
 ::: {.column width="47%"}
 If you [would not]{.underline} like to participate
 
--   Complete [consent form](https://bit.ly/collab-consent-form)
-:::
-:::
-
-# Week 3
-
-## My Plan
-
-::: columns
-::: {.column width="30%"}
-::: {.fragment .fade-in-then-semi-out}
-::: small
-What you can expect from me:
-
--   Post coursework by Friday
--   Post slides from last quarter
--   Extend Lab 2 revision deadline by 1-week
--   Extend Statistical Critique deadline by 1-week
--   Provide 2 additional deadline extensions
-:::
-:::
-:::
-
-::: {.column width="3%"}
-:::
-
-::: {.column width="30%"}
-::: {.fragment .fade-in-then-semi-out}
-::: small
-What I expect from you:
-
--   Complete coursework
--   Review / work through slides as if you were in class
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="30%"}
-::: {.fragment .fade-in-then-semi-out}
-::: small
-What I expect from your group:
-
--   Complete the lab assignment [**as a group**]{.underline}
-:::
-:::
+-   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u)
 :::
 :::
 
@@ -542,29 +495,3 @@ ggplot(data = penguins,
        y = "Bill Length (mm)")
   
 ```
-
-##  {background-color="#f48153"}
-
-::: {style="font-size: 3.5em; color: #000000;"}
-Some Rules to Play By
-:::
-
-</br>
-
-::: {style="font-size: 0.75em; color: #000000;"}
-::: incremental
--   Look at and understand your *raw* data before aggregating
--   Boxplots (and such) don't count as visualizing the raw data
-:::
-:::
-
-# Lab 2
-
-## Departure Delays
-
--   Inspect the `nycflights` dataset
--   Visualize departure delays
--   Play with `binwidth`
--   Filter data to include only certain flights
--   Calculate summary statistics
--   Compare summary statistics with a visualization
