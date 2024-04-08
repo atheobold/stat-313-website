@@ -84,8 +84,7 @@ What `geom`etric object is being plotted?
 ## Today's Layout
 
 1.  Review visualizations for numerical variables
-2.  Discuss the pros / cons of each visualization
-<!-- 3. Practice producing these visualizations -->
+2.  Discuss the pros / cons of each visualization <!-- 3. Practice producing these visualizations -->
 
 . . .
 
@@ -94,7 +93,9 @@ What `geom`etric object is being plotted?
 <!-- Open today's interactive document, so you can be ready to code along with me! -->
 
 <!-- ::: {style="font-size: 1.25em;"} -->
+
 <!-- <https://bit.ly/week-2-code-along> -->
+
 <!-- ::: -->
 
 ##  {background-color="#D4D4D4"}
@@ -131,11 +132,15 @@ ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
 <!-- ##  {background-color="#B6CADA"} -->
 
 <!-- ::: {style="font-size: 4em;"} -->
+
 <!-- Recreate my plot! -->
+
 <!-- ::: -->
 
 <!-- ::: {style="font-size: 1.5em;"} -->
+
 <!-- <https://bit.ly/week-2-code-along> -->
+
 <!-- ::: -->
 
 ## 
@@ -144,7 +149,7 @@ ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
 ::: {.column width="50"}
 ### What are the strengths of a histogram?
 
-:::{.fragment}
+::: fragment
 -   Inspect shape of a distribution (skewed or symmetric)
 -   Identify modes (most common values)
 :::
@@ -153,7 +158,7 @@ ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
 ::: {.column width="50"}
 ### What are the weaknesses of a histogram?
 
-:::{.fragment}
+::: fragment
 -   **Do not** plot raw data, plot summaries (counts) of the data!
 -   Sensitive to the width of the bins (`binwidth`)
 :::
@@ -197,11 +202,15 @@ What calculations are necessary for creating a boxplot?
 <!-- ##  {background-color="#B6CADA"} -->
 
 <!-- ::: {style="font-size: 4em;"} -->
+
 <!-- Recreate my plot! -->
+
 <!-- ::: -->
 
 <!-- ::: {style="font-size: 1.5em"} -->
+
 <!-- <https://bit.ly/week-2-code-along> -->
+
 <!-- ::: -->
 
 ## 
@@ -312,11 +321,15 @@ What are the `geom`etric objects being plotted in a scatterplot?
 <!-- ##  {background-color="#B6CADA"} -->
 
 <!-- ::: {style="font-size: 4em;"} -->
+
 <!-- Recreate my plot! -->
+
 <!-- ::: -->
 
 <!-- ::: {style="font-size: 1.5em;"} -->
+
 <!-- <https://bit.ly/week-2-code-along> -->
+
 <!-- ::: -->
 
 ## 
@@ -402,7 +415,9 @@ ggplot(data = penguins,
 <!-- ##  {background-color="#B6CADA"} -->
 
 <!-- ::: {style="font-size: 4em;"} -->
+
 <!-- Recreate my plot! -->
+
 <!-- ::: -->
 
 ## Colors in Scatterplots -- Categorical Variable
@@ -444,15 +459,15 @@ ggplot(data = penguins,
 
 ## Due by Wednesday
 
-1. Visualizing Numerical Data -- Reading Guide, Part 2
-2. Exploring Numerical Data -- R Tutorial, Part 1
-3. Summarizing with Statistics -- R Tutorial, Part 2
+1.  Visualizing Numerical Data -- Reading Guide, Part 2
+2.  Visualizing & Summarizing Numerical Data – Concept Quiz
+3.  Exploring Numerical Data -- R Tutorial, Part 1
+4.  Summarizing with Statistics -- R Tutorial, Part 2
 
 . . .
 
-:::{.callout-warning}
+::: callout-warning
 # Deadline Policy
 
-If you cannot submit an assignment by the deadline, you are required to submit a deadline extension request **before** the assignment deadline has passed. 
+If you cannot submit an assignment by the deadline, you are required to submit a deadline extension request **before** the assignment deadline has passed.
 :::
-
