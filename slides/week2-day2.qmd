@@ -8,6 +8,118 @@ execute:
   echo: false
 ---
 
+# Lab 1
+
+## Revisions
+
+::: columns
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Complete" = Satisfactory
+:::
+
+-   Your images were included in the document
+-   You provided responses to every question
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+::: {style="font-size: 1.25em;"}
+"Incomplete" = Growing
+:::
+
+-   Your images [were not]{.underline} included in the document
+-   You [did not]{.underline} provide responses to every question
+:::
+:::
+
+## Key - Code Chunk Options
+
+A code chunk option is declared after a `#|`. Here are some options we may want to use:
+
+:::{.small}
+- `#| label: packages` -- creates a label for the code chunk (describing its contents)
+- `#| echo: false` -- tells Quarto not to output the code in the rendered HTML (only the output)
+- `#| include: false` -- tells Quarto not to include the code or the output in the rendered HTML
+:::
+
+## Key - Previewing Your Data
+
+The `glimpse()` function is a great tool to preview the dataset you are working with! It gives you:
+
+- the dimensions of the data (rows and columns)
+- the names of the columns
+- the data type of each column (e.g., `chr`, `dbl`)
+- a preview of the first 10 rows of each column
+
+## Key - Plotting Your Data
+
+Now that we've practiced making some plots, we know...
+
+:::{.small}
+`mapping = aes(y = manufacturer, x = hwy)` declares what variables are plotted on the x- and y-axis. 
+
+:::{.callout-tip}
+The variable names you put insides `aes()` must be [**identical**]{.underline} to the names of the variables in the dataset! 
+:::
+:::
+
+. . .
+
+</br>
+
+:::{.small}
+`labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` declares new x- and y-axis labels for the plot. 
+
+:::{.callout-tip}
+Including nice axis labels (with their units) is a critical part of [**every**]{.underline} visualization we make! 
+:::
+:::
+
+## Completing Revisions
+
+::: {style="font-size: 1.25em;"}
+Lab 1 revisions are due by Wednesday, April 17 (at midnight).
+:::
+
+::: small
+1.  Read comments on Canvas
+2.  Go back into your Lab 1 on Posit Cloud and complete your revisions
+3.  Render your revised Lab 1
+4.  Download your revised HTML
+:::
+
+:::{.small}
+::: callout-warning
+# Reflections
+
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas.
+:::
+:::
+
+## 
+
+::: {style="font-size: 3em; color: #ed8402;"}
+15-minutes
+:::
+
+::: {style="font-size: 1.5em;"}
+-   Review Lab 1 comments
+-   Ask questions
+-   Start revisions
+:::
+
+# Researching Group Collaborations
+
+## Pre- and Post-Collaboration Surveys
+
+If you agreed to participate...
+
+-   Complete 6-question [pre-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_5hgnkqjNCFeVpxc)
+-   Complete [demographic survey](https://forms.office.com/r/7jDSHSg7B5)
+
 ##  {background-color="#abdbe3"}
 
 ```{r packages}
@@ -40,7 +152,7 @@ kable(evals) %>%
   kable_styling(stripe_color = "light blue")
 ```
 
-##  
+## 
 
 <center>
 
@@ -50,7 +162,7 @@ How were those averages calculated?
 
 </center>
 
-##  
+## 
 
 <center>
 
@@ -66,13 +178,13 @@ What do these averages mean?
 The Problem
 :::
 
-</br> 
+</br>
 
 It's incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.
 
 . . .
 
-::: {.small}
+::: small
 > "I've had many conversations in very different contexts with scientists about what the average calculated from the data (or mean in a model) could reasonably represent and whether that was really what the scientist was after." [Dr. Megan Higgs](https://critical-inference.com/more-on-average/)
 :::
 
@@ -91,13 +203,13 @@ Departments hold specific expectations of statistics courses
 
 </br>
 
-:::{.fragment}
+::: fragment
 These expectations are conditional on the assumption that means represent the magic quantity of interest.
 :::
 
 </br>
 
-:::{.fragment}
+::: fragment
 I'm then expected to educate you to "play the game" in the scientific culture of averages
 :::
 :::
@@ -125,7 +237,7 @@ Methods based on averages are available, easy, convenient, and take little creat
 
 </br>
 
-:::{.fragment}
+::: fragment
 Justification for using averages is simply not demanded --- though justification for use of anything but averages is incredibly difficult to sell.
 :::
 :::
@@ -151,12 +263,12 @@ Some Rules to Play By
 
 -   Inspect the `nycflights` dataset
 -   Visualize departure delays
--   Play with `binwidth`
--   Filter data to include only certain flights
--   Calculate summary statistics
--   Make decisions based on summary statistics 
--   Compare summary statistics with a visualization
+-   Play with histogram `binwidth`
+-   `filter()` data to include only certain flights
+-   `calculate()` summary statistics
+-   Make decisions based on summary statistics
+-   Compare summary statistics to a visualization
 
 ## If you chose to participate in the group collaboration research project...
 
-Please fill out the [post-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_4T1tIgzjg6WUlXE)! 
+Please fill out the [post-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_4T1tIgzjg6WUlXE)!

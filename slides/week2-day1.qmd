@@ -30,64 +30,6 @@ my_theme <- theme(axis.title.x = element_text(size = 14),
                   )
 ```
 
-# Lab 1
-
-## Revisions
-
-::: columns
-::: {.column width="47%"}
-::: {style="font-size: 1.25em;"}
-"Complete" = Satisfactory
-:::
-
--   Your images were included in the document
--   You provided responses to every question
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="47%"}
-::: {style="font-size: 1.25em;"}
-"Incomplete" = Growing
-:::
-
--   Your images [were not]{.underline} included in the document
--   You [did not]{.underline} provide responses to every question
-:::
-:::
-
-## Completing Revisions
-
-::: {style="font-size: 1.25em;"}
-Lab 1 revisions are due by Wednesday, April 17 (at midnight).
-:::
-
-::: small
-1.  Read comments on Canvas
-2.  Go back into your Lab 1 on Posit Cloud and complete your revisions
-3.  Render your revised Lab 1
-4.  Download your revised HTML
-:::
-
-::: callout-warning
-# Reflections
-
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas.
-:::
-
-## 
-
-::: {style="font-size: 3em; color: #ed8402;"}
-15-minutes
-:::
-
-::: {style="font-size: 1.5em;"}
--   Review Lab 1 comments
--   Ask questions
--   Start revisions
-:::
-
 # Researching Group Collaborations
 
 ## 
@@ -100,9 +42,7 @@ Revisions are required to be accompanied with reflections on what you learned wh
 ::: {.column width="47%"}
 If you [would]{.underline} like to participate
 
--   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u)
--   Complete 6-question [pre-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_5hgnkqjNCFeVpxc)
--   Complete [demographic survey](https://forms.office.com/r/7jDSHSg7B5)
+-   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u) (say yes)
 :::
 
 ::: {.column width="5%"}
@@ -111,7 +51,7 @@ If you [would]{.underline} like to participate
 ::: {.column width="47%"}
 If you [would not]{.underline} like to participate
 
--   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u)
+-   Complete [consent form](https://forms.office.com/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5wvQIC5qYK9Er5WXQADAGttUMDE0TjZCOUZMSEg3V0JFV1dLU01ENERLVi4u) (say no)
 :::
 :::
 
@@ -144,18 +84,18 @@ What `geom`etric object is being plotted?
 ## Today's Layout
 
 1.  Review visualizations for numerical variables
-2.  Practice producing these visualizations
-3.  Discuss the pros / cons of each visualization
+2.  Discuss the pros / cons of each visualization
+<!-- 3. Practice producing these visualizations -->
 
 . . .
 
 </br>
 
-Open today's interactive document, so you can be ready to code along with me!
+<!-- Open today's interactive document, so you can be ready to code along with me! -->
 
-::: {style="font-size: 1.25em;"}
-<https://bit.ly/week-2-code-along>
-:::
+<!-- ::: {style="font-size: 1.25em;"} -->
+<!-- <https://bit.ly/week-2-code-along> -->
+<!-- ::: -->
 
 ##  {background-color="#D4D4D4"}
 
@@ -188,15 +128,15 @@ ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
 -   How did `ggplot` decide how tall each bar should be?
 :::
 
-##  {background-color="#B6CADA"}
+<!-- ##  {background-color="#B6CADA"} -->
 
-::: {style="font-size: 4em;"}
-Recreate my plot!
-:::
+<!-- ::: {style="font-size: 4em;"} -->
+<!-- Recreate my plot! -->
+<!-- ::: -->
 
-::: {style="font-size: 1.5em;"}
-<https://bit.ly/week-2-code-along>
-:::
+<!-- ::: {style="font-size: 1.5em;"} -->
+<!-- <https://bit.ly/week-2-code-along> -->
+<!-- ::: -->
 
 ## 
 
@@ -204,15 +144,19 @@ Recreate my plot!
 ::: {.column width="50"}
 ### What are the strengths of a histogram?
 
+:::{.fragment}
 -   Inspect shape of a distribution (skewed or symmetric)
 -   Identify modes (most common values)
+:::
 :::
 
 ::: {.column width="50"}
 ### What are the weaknesses of a histogram?
 
+:::{.fragment}
 -   **Do not** plot raw data, plot summaries (counts) of the data!
 -   Sensitive to the width of the bins (`binwidth`)
+:::
 :::
 :::
 
@@ -231,7 +175,8 @@ ggplot(data = penguins,
   my_theme +
   theme(axis.text.y = element_blank(), 
         axis.text.x = element_text(size = 20), 
-        axis.title.x = element_text(size = 24)
+        axis.title.x = element_text(size = 24), 
+        axis.ticks.y = element_blank()
         )
 
 ggplot(data = penguins,
@@ -240,7 +185,8 @@ ggplot(data = penguins,
   labs(y = "Bill Length (mm)") +
   theme(axis.text.x = element_blank(), 
         axis.text.y = element_text(size = 20), 
-        axis.title.y = element_text(size = 24)
+        axis.title.y = element_text(size = 24),         
+        axis.ticks.x = element_blank()
         )
 ```
 
@@ -248,21 +194,21 @@ ggplot(data = penguins,
 
 What calculations are necessary for creating a boxplot?
 
-##  {background-color="#B6CADA"}
+<!-- ##  {background-color="#B6CADA"} -->
 
-::: {style="font-size: 4em;"}
-Recreate my plot!
-:::
+<!-- ::: {style="font-size: 4em;"} -->
+<!-- Recreate my plot! -->
+<!-- ::: -->
 
-::: {style="font-size: 1.5em"}
-<https://bit.ly/week-2-code-along>
-:::
+<!-- ::: {style="font-size: 1.5em"} -->
+<!-- <https://bit.ly/week-2-code-along> -->
+<!-- ::: -->
 
 ## 
 
 ::: columns
 ::: {.column width="50"}
-What are strengths of a boxplot?
+### What are strengths of a boxplot?
 
 ::: fragment
 -   Easy to flag unusual observations
@@ -271,7 +217,7 @@ What are strengths of a boxplot?
 :::
 
 ::: {.column width="50"}
-What are weaknesses of a boxplot?
+### What are weaknesses of a boxplot?
 
 ::: fragment
 -   Don't plot raw data
@@ -307,7 +253,7 @@ ggplot(data = penguins,
 
 ::: columns
 ::: {.column width="50"}
-What are strengths of a density plot?
+### What are strengths of a density plot?
 
 ::: fragment
 -   Inspect shape of a distribution (skewed or symmetric)
@@ -317,7 +263,7 @@ What are strengths of a density plot?
 :::
 
 ::: {.column width="50"}
-What are weaknesses of a density plot?
+### What are weaknesses of a density plot?
 
 ::: fragment
 -   Do not plot raw data, plot summaries (proportions) of the data!
@@ -363,15 +309,15 @@ ggplot(data = penguins,
 
 What are the `geom`etric objects being plotted in a scatterplot?
 
-##  {background-color="#B6CADA"}
+<!-- ##  {background-color="#B6CADA"} -->
 
-::: {style="font-size: 4em;"}
-Recreate my plot!
-:::
+<!-- ::: {style="font-size: 4em;"} -->
+<!-- Recreate my plot! -->
+<!-- ::: -->
 
-::: {style="font-size: 1.5em;"}
-<https://bit.ly/week-2-code-along>
-:::
+<!-- ::: {style="font-size: 1.5em;"} -->
+<!-- <https://bit.ly/week-2-code-along> -->
+<!-- ::: -->
 
 ## 
 
@@ -453,11 +399,11 @@ ggplot(data = penguins,
        color = "Body Mass (g)")
 ```
 
-##  {background-color="#B6CADA"}
+<!-- ##  {background-color="#B6CADA"} -->
 
-::: {style="font-size: 4em;"}
-Recreate my plot!
-:::
+<!-- ::: {style="font-size: 4em;"} -->
+<!-- Recreate my plot! -->
+<!-- ::: -->
 
 ## Colors in Scatterplots -- Categorical Variable
 
@@ -495,3 +441,18 @@ ggplot(data = penguins,
        y = "Bill Length (mm)")
   
 ```
+
+## Due by Wednesday
+
+1. Visualizing Numerical Data -- Reading Guide, Part 2
+2. Exploring Numerical Data -- R Tutorial, Part 1
+3. Summarizing with Statistics -- R Tutorial, Part 2
+
+. . .
+
+:::{.callout-warning}
+# Deadline Policy
+
+If you cannot submit an assignment by the deadline, you are required to submit a deadline extension request **before** the assignment deadline has passed. 
+:::
+

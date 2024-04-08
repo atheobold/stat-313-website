@@ -1929,14 +1929,14 @@
     "href": "slides/week2-day1.html#section",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "15-minutes\n\n\n\nReview Lab 1 comments\nAsk questions\nStart revisions"
+    "text": "5-minutes\n\n\n\nIf you would like to participate\n\nComplete consent form (say yes)\n\n\n\n\nIf you would not like to participate\n\nComplete consent form (say no)"
   },
   {
     "objectID": "slides/week2-day1.html#section-1",
     "href": "slides/week2-day1.html#section-1",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "5-minutes\n\n\n\nIf you would like to participate\n\nComplete consent form\nComplete 6-question pre-collaboration survey\nComplete demographic survey\n\n\n\n\nIf you would not like to participate\n\nComplete consent form"
+    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
   },
   {
     "objectID": "slides/week2-day1.html#my-plan",
@@ -1957,14 +1957,14 @@
     "href": "slides/week2-day1.html#todays-layout",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Today’s Layout",
-    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nPractice producing these visualizations\nDiscuss the pros / cons of each visualization\n\n\n\nOpen today’s interactive document, so you can be ready to code along with me!\n\nhttps://bit.ly/week-2-code-along"
+    "text": "Today’s Layout\n\nReview visualizations for numerical variables\nDiscuss the pros / cons of each visualization"
   },
   {
     "objectID": "slides/week2-day1.html#section-2",
     "href": "slides/week2-day1.html#section-2",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
+    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#histogram",
@@ -1978,14 +1978,14 @@
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
     "href": "slides/week2-day1.html#section-4",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\nWhat are the weaknesses of a histogram?\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
   },
   {
     "objectID": "slides/week2-day1.html#boxplot",
@@ -1999,14 +1999,14 @@
     "href": "slides/week2-day1.html#section-5",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
+    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
   },
   {
     "objectID": "slides/week2-day1.html#section-6",
     "href": "slides/week2-day1.html#section-6",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
+    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots (Week 2)\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
   },
   {
     "objectID": "slides/week2-day1.html#density-plot",
@@ -2020,14 +2020,14 @@
     "href": "slides/week2-day1.html#section-8",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
+    "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\n\nColors\n\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\n\nFacets\n\n\ncreates subplots for every level of a categorical variable\nlabels each sub-plot with the value of the variable"
   },
   {
     "objectID": "slides/week2-day1.html#section-9",
     "href": "slides/week2-day1.html#section-9",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots (Week 2)\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
+    "text": "Recreate my plot!"
   },
   {
     "objectID": "slides/week2-day1.html#scatterplots",
@@ -2041,21 +2041,21 @@
     "href": "slides/week2-day1.html#section-10",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Recreate my plot!\n\n\nhttps://bit.ly/week-2-code-along"
+    "text": "Recreate my plot!"
   },
   {
     "objectID": "slides/week2-day1.html#section-11",
     "href": "slides/week2-day1.html#section-11",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "Recreate my plot!"
   },
   {
     "objectID": "slides/week2-day1.html#section-12",
     "href": "slides/week2-day1.html#section-12",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\n\nColors\n\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\n\nFacets\n\n\ncreates subplots for every level of a categorical variable\nlabels each sub-plot with the value of the variable"
+    "text": "Recreate my plot!"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-numerical-variable",
@@ -4937,63 +4937,63 @@
     "href": "slides/week2-day2.html#section",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Suppose…\n\n\n“Overall this instructor was educationally effective.”\n\n\n\n\n\n\n\nyear\nquarter\naverage\n\n\n\n\n2021\nFall\n4.53\n\n\n2021\nFall\n4.36\n\n\n2022\nWinter\n4.18\n\n\n2022\nWinter\n4.24\n\n\n2022\nSpring\n4.83\n\n\n2022\nSpring\n4.41\n\n\n2022\nSpring\n4.00"
+    "text": "15-minutes\n\n\n\nReview Lab 1 comments\nAsk questions\nStart revisions"
   },
   {
     "objectID": "slides/week2-day2.html#section-1",
     "href": "slides/week2-day2.html#section-1",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "How were those averages calculated?"
+    "text": "Suppose…\n\n\n“Overall this instructor was educationally effective.”\n\n\n\n\n\n\n\nyear\nquarter\naverage\n\n\n\n\n2021\nFall\n4.53\n\n\n2021\nFall\n4.36\n\n\n2022\nWinter\n4.18\n\n\n2022\nWinter\n4.24\n\n\n2022\nSpring\n4.83\n\n\n2022\nSpring\n4.41\n\n\n2022\nSpring\n4.00"
   },
   {
     "objectID": "slides/week2-day2.html#section-2",
     "href": "slides/week2-day2.html#section-2",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "What do these averages mean?"
+    "text": "How were those averages calculated?"
   },
   {
     "objectID": "slides/week2-day2.html#section-3",
     "href": "slides/week2-day2.html#section-3",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "The Problem\n\n\nIt’s incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.\n\n\n\n“I’ve had many conversations in very different contexts with scientists about what the average calculated from the data (or mean in a model) could reasonably represent and whether that was really what the scientist was after.” Dr. Megan Higgs"
+    "text": "What do these averages mean?"
   },
   {
     "objectID": "slides/week2-day2.html#section-4",
     "href": "slides/week2-day2.html#section-4",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Why so much resistance?\n\n\n\n\nDepartments hold specific expectations of statistics courses\n\n\nThese expectations are conditional on the assumption that means represent the magic quantity of interest.\n\n\n\nI’m then expected to educate you to “play the game” in the scientific culture of averages"
+    "text": "The Problem\n\n\nIt’s incredibly rare for scientists, including statisticians, to explicitly think about that conditions underlying their models.\n\n\n\n“I’ve had many conversations in very different contexts with scientists about what the average calculated from the data (or mean in a model) could reasonably represent and whether that was really what the scientist was after.” Dr. Megan Higgs"
   },
   {
     "objectID": "slides/week2-day2.html#section-5",
     "href": "slides/week2-day2.html#section-5",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Averagarianism\n\n\n\n“The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight.”\nThe End of Average by Todd Rose"
+    "text": "Why so much resistance?\n\n\n\n\nDepartments hold specific expectations of statistics courses\n\n\nThese expectations are conditional on the assumption that means represent the magic quantity of interest.\n\n\n\nI’m then expected to educate you to “play the game” in the scientific culture of averages"
   },
   {
     "objectID": "slides/week2-day2.html#section-6",
     "href": "slides/week2-day2.html#section-6",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "“We’ve always done it this way”\n\n\nMethods based on averages are available, easy, convenient, and take little creativity — and they are expected in our scientific culture.\n\n\nJustification for using averages is simply not demanded — though justification for use of anything but averages is incredibly difficult to sell."
+    "text": "Averagarianism\n\n\n\n“The primary research method of averagarianism is aggregate, then analyze: First, combine many people together and look for patterns in the group. Then, use these group patterns (such as averages and other statistics) to analyze and model individuals. The science of the individual instead instructs scientists to analyze, then aggregate: First, look for pattern within each individual. Then, look for ways to combine these individual patterns into collective insight.”\nThe End of Average by Todd Rose"
   },
   {
     "objectID": "slides/week2-day2.html#section-7",
     "href": "slides/week2-day2.html#section-7",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and other plots of aggregated data) don’t count as visualizing the raw data"
+    "text": "“We’ve always done it this way”\n\n\nMethods based on averages are available, easy, convenient, and take little creativity — and they are expected in our scientific culture.\n\n\nJustification for using averages is simply not demanded — though justification for use of anything but averages is incredibly difficult to sell."
   },
   {
     "objectID": "slides/week2-day2.html#section-8",
     "href": "slides/week2-day2.html#section-8",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and such) don’t count as visualizing the raw data"
+    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and other plots of aggregated data) don’t count as visualizing the raw data"
   },
   {
     "objectID": "slides/week10-day2.html#findings",
@@ -6446,7 +6446,7 @@
     "href": "slides/week2-day2.html#departure-delays",
     "title": "The Flaws of Averages",
     "section": "Departure Delays",
-    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with binwidth\nFilter data to include only certain flights\nCalculate summary statistics\nMake decisions based on summary statistics\nCompare summary statistics with a visualization"
+    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with histogram binwidth\nfilter() data to include only certain flights\ncalculate() summary statistics\nMake decisions based on summary statistics\nCompare summary statistics to a visualization"
   },
   {
     "objectID": "slides/week2-day2.html#if-you-chose-to-participate-in-the-group-collaboration-research-project",
@@ -6454,5 +6454,75 @@
     "title": "The Flaws of Averages",
     "section": "If you chose to participate in the group collaboration research project…",
     "text": "If you chose to participate in the group collaboration research project…\nPlease fill out the post-collaboration survey!"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-7",
+    "href": "slides/week2-day1.html#section-7",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+  },
+  {
+    "objectID": "slides/week2-day1.html#due-by-wednesday",
+    "href": "slides/week2-day1.html#due-by-wednesday",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Due by Wednesday",
+    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n\n\n\n\n\n\n\nDeadline Policy\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
+  },
+  {
+    "objectID": "slides/week2-day1.html#deadline-policy-reminder",
+    "href": "slides/week2-day1.html#deadline-policy-reminder",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Deadline Policy Reminder",
+    "text": "Deadline Policy Reminder"
+  },
+  {
+    "objectID": "slides/week2-day2.html#revisions",
+    "href": "slides/week2-day2.html#revisions",
+    "title": "The Flaws of Averages",
+    "section": "Revisions",
+    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key",
+    "href": "slides/week2-day2.html#key",
+    "title": "The Flaws of Averages",
+    "section": "Key",
+    "text": "Key\nA code chunk option is declared after a #|. Here are some options we may want to use:\n\n#| label: packages – creates a label for the code chunk (describing its contents)\n#| echo: false – tells Quarto not to output the code in the rendered HTML (only the output)\n#| include: false – tells Quarto not to include the code or the output in the rendered HTML"
+  },
+  {
+    "objectID": "slides/week2-day2.html#completing-revisions",
+    "href": "slides/week2-day2.html#completing-revisions",
+    "title": "The Flaws of Averages",
+    "section": "Completing Revisions",
+    "text": "Completing Revisions\n\nLab 1 revisions are due by Wednesday, April 17 (at midnight).\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas."
+  },
+  {
+    "objectID": "slides/week2-day2.html#pre--and-post-collaboration-surveys",
+    "href": "slides/week2-day2.html#pre--and-post-collaboration-surveys",
+    "title": "The Flaws of Averages",
+    "section": "Pre- and Post-Collaboration Surveys",
+    "text": "Pre- and Post-Collaboration Surveys\nIf you agreed to participate…\n\nComplete 6-question pre-collaboration survey\nComplete demographic survey"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---code-chunk-options",
+    "href": "slides/week2-day2.html#key---code-chunk-options",
+    "title": "The Flaws of Averages",
+    "section": "Key - Code Chunk Options",
+    "text": "Key - Code Chunk Options\nA code chunk option is declared after a #|. Here are some options we may want to use:\n\n\n#| label: packages – creates a label for the code chunk (describing its contents)\n#| echo: false – tells Quarto not to output the code in the rendered HTML (only the output)\n#| include: false – tells Quarto not to include the code or the output in the rendered HTML"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---previewing-your-data",
+    "href": "slides/week2-day2.html#key---previewing-your-data",
+    "title": "The Flaws of Averages",
+    "section": "Key - Previewing Your Data",
+    "text": "Key - Previewing Your Data\nThe glimpse() function is a great tool to preview the dataset you are working with! It gives you:\n\nthe dimensions of the data (rows and columns)\nthe names of the columns\nthe data type of each column (e.g., chr, dbl)\na preview of the first 10 rows of each column"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---plotting-your-data",
+    "href": "slides/week2-day2.html#key---plotting-your-data",
+    "title": "The Flaws of Averages",
+    "section": "Key - Plotting Your Data",
+    "text": "Key - Plotting Your Data\nNow that we’ve practiced making some plots, we know…\n\nmapping = aes(y = manufacturer, x = hwy) declares what variables are plotted on the x- and y-axis.\n\n\n\n\n\n\nTip\n\n\nThe variable names you put insides aes() must be identical to the names of the variables in the dataset!\n\n\n\n\n\n\n\nlabs(x = \"Highway Miles Per Gallon\", y = \"Car Manufacturer\") declares new x- and y-axis labels for the plot.\n\n\n\n\n\n\nTip\n\n\nIncluding nice axis labels (with their units) is a critical part of every visualization we make!"
   }
 ]
