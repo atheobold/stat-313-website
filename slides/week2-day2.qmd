@@ -39,30 +39,30 @@ execute:
 
 A code chunk option is declared after a `#|`. Here are some options we may want to use:
 
-:::{.small}
-- `#| label: packages` -- creates a label for the code chunk (describing its contents)
-- `#| echo: false` -- tells Quarto not to output the code in the rendered HTML (only the output)
-- `#| include: false` -- tells Quarto not to include the code or the output in the rendered HTML
+::: small
+-   `#| label: packages` -- creates a label for the code chunk (describing its contents)
+-   `#| echo: false` -- tells Quarto not to output the code in the rendered HTML (only the output)
+-   `#| include: false` -- tells Quarto not to include the code or the output in the rendered HTML
 :::
 
 ## Key - Previewing Your Data
 
 The `glimpse()` function is a great tool to preview the dataset you are working with! It gives you:
 
-- the dimensions of the data (rows and columns)
-- the names of the columns
-- the data type of each column (e.g., `chr`, `dbl`)
-- a preview of the first 10 rows of each column
+-   the dimensions of the data (rows and columns)
+-   the names of the columns
+-   the data type of each column (e.g., `chr`, `dbl`)
+-   a preview of the first 10 rows of each column
 
 ## Key - Plotting Your Data
 
 Now that we've practiced making some plots, we know...
 
-:::{.small}
-`mapping = aes(y = manufacturer, x = hwy)` declares what variables are plotted on the x- and y-axis. 
+::: small
+`mapping = aes(y = manufacturer, x = hwy)` declares what variables are plotted on the x- and y-axis.
 
-:::{.callout-tip}
-The variable names you put insides `aes()` must be [**identical**]{.underline} to the names of the variables in the dataset! 
+::: callout-tip
+The variable names you put insides `aes()` must be [**identical**]{.underline} to the names of the variables in the dataset!
 :::
 :::
 
@@ -70,11 +70,11 @@ The variable names you put insides `aes()` must be [**identical**]{.underline} t
 
 </br>
 
-:::{.small}
-`labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` declares new x- and y-axis labels for the plot. 
+::: small
+`labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` declares new x- and y-axis labels for the plot.
 
-:::{.callout-tip}
-Including nice axis labels (with their units) is a critical part of [**every**]{.underline} visualization we make! 
+::: callout-tip
+Including nice axis labels (with their units) is a critical part of [**every**]{.underline} visualization we make!
 :::
 :::
 
@@ -91,7 +91,7 @@ Lab 1 revisions are due by Wednesday, April 17 (at midnight).
 4.  Download your revised HTML
 :::
 
-:::{.small}
+::: small
 ::: callout-warning
 # Reflections
 
@@ -110,15 +110,6 @@ Revisions are required to be accompanied with reflections on what you learned wh
 -   Ask questions
 -   Start revisions
 :::
-
-# Researching Group Collaborations
-
-## Pre- and Post-Collaboration Surveys
-
-If you agreed to participate...
-
--   Complete 6-question [pre-collaboration survey](https://calpolykinesiology.az1.qualtrics.com/jfe/form/SV_5hgnkqjNCFeVpxc)
--   Complete [demographic survey](https://forms.office.com/r/7jDSHSg7B5)
 
 ##  {background-color="#abdbe3"}
 
@@ -253,11 +244,57 @@ Some Rules to Play By
 ::: {style="font-size: 0.75em; color: #000000;"}
 ::: incremental
 -   Look at and understand your *raw* data before aggregating
--   Boxplots (and other plots of aggregated data) don't count as visualizing the *raw* data
+-   Boxplots don't count as visualizing the *raw* data
 :::
 :::
 
 # Lab 2
+
+<!-- ##  {background-color="#B6CADA"} -->
+
+<!-- ::: {style="font-size: 2em; color: #000000;"} -->
+
+<!-- How Smart are You? -->
+
+<!-- ::: -->
+
+<!-- ::: columns -->
+
+<!-- ::: {.column width="30%"} -->
+
+<!-- (2 minutes) -->
+
+<!-- -   Write two *criteria* would you use to *rank* yourself compared to everyone else in this class -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="2%"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="30%"} -->
+
+<!-- (3 minutes) -->
+
+<!-- -   Talk with the person on your right about the criteria you proposed -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="2%"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="30%"} -->
+
+<!-- (5 minutes) -->
+
+<!-- -   Share out -->
+
+<!-- -   Person with most vowels in name should be prepared to share! -->
+
+<!-- ::: -->
+
+<!-- ::: -->
 
 ## Departure Delays
 
@@ -268,6 +305,87 @@ Some Rules to Play By
 -   `calculate()` summary statistics
 -   Make decisions based on summary statistics
 -   Compare summary statistics to a visualization
+
+# Working in Groups
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Cooperative Learning
+:::
+
+is a structured form of small-group learning
+
+. . .
+
+</br>
+
+::: {style="font-size: 0.85em;"}
+-   Roles relate to **how** the work should be done
+    -   Roles **are not** about breaking up the work intellectually
+-   Roles allow each person to contribute to the group in significant ways
+    -   Each person's participation is necessary to complete the task
+:::
+
+##  {background-color="#B6CADA"}
+
+::: {style="font-size: 3em; color: #000000;"}
+Group Norms
+:::
+
+::: columns
+::: {.column width="45%"}
+-   Zero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism
+
+-   Respect one another
+
+-   Intent and impact *both* matter
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+-   Non-judgmental
+
+-   Take space, make space
+
+-   Embrace discomfort
+
+-   Make decisions by consensus
+:::
+:::
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+How We Learn Together
+:::
+
+::: columns
+::: {.column width="45%"}
+::: {style="font-size: 0.85em;"}
+-   No one is done until everyone is done
+
+-   You have the *right* to ask **anyone** in your group for help
+
+-   You have the *duty* to help **anyone** in your group who asks for help
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {style="font-size: 0.85em;"}
+-   Helping someone means explaining your thinking **not** giving answers or doing the work for them
+
+-   Provide a justification when you make a statement
+
+-   Think and work together -- don't divide up the work
+:::
+:::
+:::
 
 ## If you chose to participate in the group collaboration research project...
 

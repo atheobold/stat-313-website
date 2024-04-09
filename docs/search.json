@@ -4993,7 +4993,7 @@
     "href": "slides/week2-day2.html#section-8",
     "title": "The Flaws of Averages",
     "section": "",
-    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and other plots of aggregated data) don’t count as visualizing the raw data"
+    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots don’t count as visualizing the raw data"
   },
   {
     "objectID": "slides/week10-day2.html#findings",
@@ -5448,56 +5448,56 @@
     "href": "slides/week1-day1-alt.html#section-8",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Cooperative Learning\n\nis a structured form of small-group learning\n\n\n\n\nRoles relate to how the work should be done\n\nRoles are not about breaking up the work intellectually\n\nRoles allow each person to contribute to the group in significant ways\n\nEach person’s participation is necessary to complete the task"
+    "text": "Tidy Data\n\n\nExpected layout of “tidy” datasets"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-9",
     "href": "slides/week1-day1-alt.html#section-9",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space\nEmbrace discomfort\nMake decisions by consensus"
+    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n49\nmale\n7\nsmart\nchildren\n1.00\n0.25\n\n\n96\nfemale\n6\nnice\nchildren\n1.00\n1.00\n\n\n37\nfemale\n7\nnice\nchildren\n1.00\n1.00\n\n\n37\nfemale\n7\nsmart\nchildren\n0.75\n1.00\n\n\n139\nmale\n7\nsmart\nchildren\n0.75\n0.75\n\n\n135\nmale\n7\nsmart\nadults\n0.75\n0.50"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-10",
     "href": "slides/week1-day1-alt.html#section-10",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "How We Learn Together\n\n\n\n\n\nNo one is done until everyone is done\nYou have the right to ask anyone in your group for help\nYou have the duty to help anyone in your group who asks for help\n\n\n\n\n\n\n\nHelping someone means explaining your thinking not giving answers or doing the work for them\nProvide a justification when you make a statement\nThink and work together – don’t divide up the work"
+    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n19\n70.6\n178.0\n0\n103.0\n68.0\n84.5\n99.5\n\n\n21\n81.6\n184.0\n1\n119.5\n77.5\n81.5\n99.8\n\n\n36\n54.5\n167.6\n0\n96.4\n73.6\n86.9\n94.7\n\n\n40\n56.8\n168.9\n0\n98.2\n62.9\n76.8\n95.5\n\n\n32\n58.4\n173.2\n0\n97.7\n68.6\n83.0\n94.2\n\n\n49\n89.1\n182.9\n1\n115.6\n103.6\n100.7\n100.6"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-11",
     "href": "slides/week1-day1-alt.html#section-11",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Break"
+    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n23\nDec 15, 1985\n1984\n6-3\nAlvin Robertson\nSG\n\n\n20\nJan 9, 2005\n2003\n6-11\nChris Bosh\nPF\n\n\n27\nNov 21, 2016\n2011\n201cm\nJimmy Butler\nGF\n\n\n29\nDec 2, 1984\n1977\n6-11\nJack Sikma\nC\n\n\n24\nJan 4, 2004\n1999\n6-9\nElton Brand\nPF\n\n\n25\nMar 1, 1992\n1988\n6-10\nDanny Manning\nF"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-13",
     "href": "slides/week1-day1-alt.html#section-13",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Tidy Data\n\n\nExpected layout of “tidy” datasets"
+    "text": "Military Spending\n\n\n\n\n\n\n\nCountry\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n\n\n\n\nAfrica\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nUSA\n4.922642\n4.840174\n4.477401\n4.046679\n3.695891\n3.477846\n3.418941\n3.313385\n3.316244\n3.413107\n\n\nAustralia\n1.856791\n1.757078\n1.670963\n1.639861\n1.772211\n1.950601\n2.081512\n1.997974\n1.894180\n1.879802\n\n\nNorway\n1.515698\n1.451436\n1.402134\n1.413997\n1.472039\n1.507280\n1.626681\n1.622270\n1.628300\n1.684120\n\n\nSweden\n1.188288\n1.104288\n1.133304\n1.116715\n1.129776\n1.069579\n1.052833\n1.024075\n1.031100\n1.120599\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-14",
     "href": "slides/week1-day1-alt.html#section-14",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n87\nfemale\n5\nnice\nchildren\n0.75\n0.50\n\n\n123\nfemale\n5\nsmart\nadults\n1.00\n1.00\n\n\n15\nfemale\n5\nnice\nchildren\n0.75\n0.50\n\n\n33\nmale\n5\nnice\nadults\n0.75\n0.75\n\n\n140\nmale\n5\nsmart\nchildren\n0.50\n0.25\n\n\n124\nmale\n5\nnice\nchildren\n0.75\n0.75"
+    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.9\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.7\n0\n1\n5\n2\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.6\n1\n1\n4\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.5\n0\n1\n5\n4\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-15",
     "href": "slides/week1-day1-alt.html#section-15",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n43\n86.4\n179.7\n1\n115.3\n96.5\n98.2\n97.4\n\n\n22\n53.4\n168.2\n0\n94.6\n60.7\n77.0\n89.9\n\n\n21\n45.8\n152.0\n0\n87.0\n65.0\n76.7\n86.0\n\n\n35\n72.3\n160.0\n1\n121.0\n92.5\n88.5\n94.0\n\n\n43\n104.1\n165.1\n0\n127.1\n96.2\n121.1\n128.3\n\n\n42\n63.6\n175.3\n0\n99.6\n70.8\n92.1\n96.9"
+    "text": "Artwork by @allison_horst"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-16",
     "href": "slides/week1-day1-alt.html#section-16",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n24\nJan 14, 2013\n2007\n6-9\nKevin Durant\nSF\n\n\n28\nDec 10, 2000\n1993\n6-9\nChris Webber\nF-C\n\n\n25\nFeb 24, 1991\n1987\n6-7\nReggie Miller\nSG\n\n\n25\nNov 20, 1994\n1991\n6-0\nElliot Perry\nPG\n\n\n28\nFeb 3, 2002\n1994\n6-4\nJason Kidd\nPG\n\n\n28\nDec 9, 1990\n1984\n6-1\nJohn Stockton\nPG"
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-17",
@@ -5511,14 +5511,14 @@
     "href": "slides/week1-day1-alt.html#section-18",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Military Spending\n\n\n\n\n\n\n\nCountry\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n\n\n\n\nAfrica\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nUSA\n4.922642\n4.840174\n4.477401\n4.046679\n3.695891\n3.477846\n3.418941\n3.313385\n3.316244\n3.413107\n\n\nAustralia\n1.856791\n1.757078\n1.670963\n1.639861\n1.772211\n1.950601\n2.081512\n1.997974\n1.894180\n1.879802\n\n\nNorway\n1.515698\n1.451436\n1.402134\n1.413997\n1.472039\n1.507280\n1.626681\n1.622270\n1.628300\n1.684120\n\n\nSweden\n1.188288\n1.104288\n1.133304\n1.116715\n1.129776\n1.069579\n1.052833\n1.024075\n1.031100\n1.120599\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+    "text": "{fig-alt=“An image of the three different types of categorical variables, nominal, ordinal, and binary. The ‘nominal’ category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The ‘ordinal’ category has three bumblebees, one saying ‘I am happy,’ one saying ‘I am oka,” and one saying ’I am awesome!!!’. The bumblebees’ emotions represent an ordinal variable. Lastly, the ‘binary’ category references variables that have two mutually exclusive outcomes. The image displayed under ‘binary’ is a t-rex saying ‘I am extinct’ and a shark saying ‘Ha’ (because they are not extinct).”}"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-19",
     "href": "slides/week1-day1-alt.html#section-19",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nPontiac Firebird\n19.2\n8\n400.0\n175\n3.08\n3.845\n17.05\n0\n0\n3\n2\n\n\nFiat 128\n32.4\n4\n78.7\n66\n4.08\n2.200\n19.47\n1\n1\n4\n1\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.40\n0\n0\n3\n3\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.440\n18.30\n1\n0\n4\n4\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-20",
@@ -5532,14 +5532,14 @@
     "href": "slides/week1-day1-alt.html#section-21",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-24",
     "href": "slides/week1-day1-alt.html#section-24",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-26",
@@ -6432,7 +6432,7 @@
     "href": "slides/week1-day1-alt.html#section-23",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "{fig-alt=“An image of the three different types of categorical variables, nominal, ordinal, and binary. The ‘nominal’ category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The ‘ordinal’ category has three bumblebees, one saying ‘I am happy,’ one saying ‘I am oka,” and one saying ’I am awesome!!!’. The bumblebees’ emotions represent an ordinal variable. Lastly, the ‘binary’ category references variables that have two mutually exclusive outcomes. The image displayed under ‘binary’ is a t-rex saying ‘I am extinct’ and a shark saying ‘Ha’ (because they are not extinct).”}"
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
   },
   {
     "objectID": "slides/week2-day2.html",
@@ -6524,5 +6524,40 @@
     "title": "The Flaws of Averages",
     "section": "Key - Plotting Your Data",
     "text": "Key - Plotting Your Data\nNow that we’ve practiced making some plots, we know…\n\nmapping = aes(y = manufacturer, x = hwy) declares what variables are plotted on the x- and y-axis.\n\n\n\n\n\n\nTip\n\n\nThe variable names you put insides aes() must be identical to the names of the variables in the dataset!\n\n\n\n\n\n\n\nlabs(x = \"Highway Miles Per Gallon\", y = \"Car Manufacturer\") declares new x- and y-axis labels for the plot.\n\n\n\n\n\n\nTip\n\n\nIncluding nice axis labels (with their units) is a critical part of every visualization we make!"
+  },
+  {
+    "objectID": "slides/week2-day2.html#section-9",
+    "href": "slides/week2-day2.html#section-9",
+    "title": "The Flaws of Averages",
+    "section": "",
+    "text": "Cooperative Learning\n\nis a structured form of small-group learning\n\n\n\n\nRoles relate to how the work should be done\n\nRoles are not about breaking up the work intellectually\n\nRoles allow each person to contribute to the group in significant ways\n\nEach person’s participation is necessary to complete the task"
+  },
+  {
+    "objectID": "slides/week2-day2.html#section-10",
+    "href": "slides/week2-day2.html#section-10",
+    "title": "The Flaws of Averages",
+    "section": "",
+    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space\nEmbrace discomfort\nMake decisions by consensus"
+  },
+  {
+    "objectID": "slides/week2-day2.html#section-11",
+    "href": "slides/week2-day2.html#section-11",
+    "title": "The Flaws of Averages",
+    "section": "",
+    "text": "How We Learn Together\n\n\n\n\n\nNo one is done until everyone is done\nYou have the right to ask anyone in your group for help\nYou have the duty to help anyone in your group who asks for help\n\n\n\n\n\n\n\nHelping someone means explaining your thinking not giving answers or doing the work for them\nProvide a justification when you make a statement\nThink and work together – don’t divide up the work"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-12",
+    "href": "slides/week1-day1-alt.html#section-12",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-22",
+    "href": "slides/week1-day1-alt.html#section-22",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
   }
 ]
