@@ -1950,7 +1950,7 @@
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Warm-up",
-    "text": "Warm-up\n\n\n\n\n\n\n\n\n\n. . .\nWhere are variables being included in this plot?\nWhat objects are being used to represent the data?"
+    "text": "Warm-up\n\n\nWhere are variables being included in this plot?\nWhat objects are being used to represent the data?"
   },
   {
     "objectID": "slides/week2-day1.html#todays-layout",
@@ -1964,21 +1964,21 @@
     "href": "slides/week2-day1.html#section-2",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#histogram",
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\n\n\n\n\n\n\n\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
+    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
@@ -1992,14 +1992,14 @@
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat calculations are necessary for creating a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-5",
     "href": "slides/week2-day1.html#section-5",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
+    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
   },
   {
     "objectID": "slides/week2-day1.html#section-6",
@@ -2013,7 +2013,7 @@
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\n\n\n\n\n\n\n. . .\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-8",
@@ -2034,7 +2034,7 @@
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the geometric objects being plotted in a scatterplot?"
+    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-10",
@@ -2083,7 +2083,7 @@
     "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Why not use facets with a numerical variable???",
-    "text": "Why not use facets with a numerical variable???\n. . ."
+    "text": "Why not use facets with a numerical variable???"
   },
   {
     "objectID": "slides/week2-day1.html#section-14",
@@ -6460,14 +6460,14 @@
     "href": "slides/week2-day1.html#section-7",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n. . .\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#due-by-wednesday",
     "href": "slides/week2-day1.html#due-by-wednesday",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Due by Wednesday",
-    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n. . .\n\n\n\n\n\n\nDeadline Policy\n\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
+    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n\n\n\n\n\n\n\nDeadline Policy\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
   },
   {
     "objectID": "slides/week2-day1.html#deadline-policy-reminder",
