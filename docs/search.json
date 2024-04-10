@@ -1950,7 +1950,7 @@
     "href": "slides/week2-day1.html#warm-up",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Warm-up",
-    "text": "Warm-up\n\n\nWhere are variables being included in this plot?\nWhat objects are being used to represent the data?"
+    "text": "Warm-up\n\n\n\n\n\n\n\n\n\n. . .\nWhere are variables being included in this plot?\nWhat objects are being used to represent the data?"
   },
   {
     "objectID": "slides/week2-day1.html#todays-layout",
@@ -1964,21 +1964,21 @@
     "href": "slides/week2-day1.html#section-2",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#histogram",
     "href": "slides/week2-day1.html#histogram",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Histogram",
-    "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
+    "text": "Histogram\n\n\n\n\n\n\n\n\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
     "objectID": "slides/week2-day1.html#section-3",
     "href": "slides/week2-day1.html#section-3",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
   },
   {
     "objectID": "slides/week2-day1.html#section-4",
@@ -1992,14 +1992,14 @@
     "href": "slides/week2-day1.html#boxplot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
+    "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat calculations are necessary for creating a boxplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-5",
     "href": "slides/week2-day1.html#section-5",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
+    "text": "What are strengths of a density plot?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\nLess jagged than a histogram\n\n\n\n\n\nWhat are weaknesses of a density plot?\n\n\nDo not plot raw data, plot summaries (proportions) of the data!\ny-axis is difficult to interpret\nCan over smooth and hide interesting shapes"
   },
   {
     "objectID": "slides/week2-day1.html#section-6",
@@ -2013,7 +2013,7 @@
     "href": "slides/week2-day1.html#density-plot",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Density Plot",
-    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "text": "Density Plot\n\n\n\n\n\n\n\n\n\n. . .\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-8",
@@ -2034,7 +2034,7 @@
     "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
+    "text": "Scatterplots\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the geometric objects being plotted in a scatterplot?"
   },
   {
     "objectID": "slides/week2-day1.html#section-10",
@@ -2083,7 +2083,7 @@
     "href": "slides/week2-day1.html#why-not-use-facets-with-a-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Why not use facets with a numerical variable???",
-    "text": "Why not use facets with a numerical variable???"
+    "text": "Why not use facets with a numerical variable???\n. . ."
   },
   {
     "objectID": "slides/week2-day1.html#section-14",
@@ -2167,7 +2167,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29  Lab 3 Feedback\n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5  Lab 4 Feedback\n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due February 19  Lab 6 Feedback\n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due January 15  Lab 7 Feedback\n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4  Lab 8 Feedback\n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22 \n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29 \n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5 \n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due February 19 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due January 15 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -5616,14 +5616,14 @@
     "href": "slides/week1-day2.html#section-4",
     "title": "Working with Data",
     "section": "",
-    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe mother’s attributes (age, smoking status, marital status, race)\nthe father’s age\n\n\n\n\nHow would you expect this dataframe to look?"
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe mother’s attributes (age, smoking status, marital status, race)\nthe father’s age\n\n\n. . .\n\nHow would you expect this dataframe to look?"
   },
   {
     "objectID": "slides/week1-day2.html#section-5",
     "href": "slides/week1-day2.html#section-5",
     "title": "Working with Data",
     "section": "",
-    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
+    "text": "Types of Variables\n\n\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day2.html#section-6",
@@ -5637,7 +5637,7 @@
     "href": "slides/week1-day2.html#section-7",
     "title": "Working with Data",
     "section": "",
-    "text": "Your Turn\n\n\nSuppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.\n\n\n\nWhat type of variable would year be?"
+    "text": "Your Turn\n\n\nSuppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.\n. . .\n\n\nWhat type of variable would year be?"
   },
   {
     "objectID": "slides/week1-day2.html#section-8",
@@ -5651,14 +5651,14 @@
     "href": "slides/week1-day2.html#section-9",
     "title": "Working with Data",
     "section": "",
-    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n. . .\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
   },
   {
     "objectID": "slides/week1-day2.html#section-10",
     "href": "slides/week1-day2.html#section-10",
     "title": "Working with Data",
     "section": "",
-    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n. . .\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   },
   {
     "objectID": "slides/week1-day2.html#section-11",
@@ -6460,14 +6460,14 @@
     "href": "slides/week2-day1.html#section-7",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n. . .\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#due-by-wednesday",
     "href": "slides/week2-day1.html#due-by-wednesday",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Due by Wednesday",
-    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n\n\n\n\n\n\n\nDeadline Policy\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
+    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n. . .\n\n\n\n\n\n\nDeadline Policy\n\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
   },
   {
     "objectID": "slides/week2-day1.html#deadline-policy-reminder",
@@ -6559,5 +6559,19 @@
     "title": "Welcome to Stat 313!",
     "section": "",
     "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+  },
+  {
+    "objectID": "slides/week1-day2.html",
+    "href": "slides/week1-day2.html",
+    "title": "Working with Data",
+    "section": "",
+    "text": "Tidy Data"
+  },
+  {
+    "objectID": "slides/week2-day1.html",
+    "href": "slides/week2-day1.html",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "5-minutes\n\n\n\nIf you would like to participate\n\nComplete consent form (say yes)\n\n\n\n\nIf you would not like to participate\n\nComplete consent form (say no)"
   }
 ]
