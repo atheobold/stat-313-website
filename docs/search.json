@@ -4580,7 +4580,7 @@
     "href": "slides/week3-day1.html#faceted-histograms",
     "title": "Incorporating Categorical Variables",
     "section": "Faceted Histograms",
-    "text": "Faceted Histograms\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm)) + \n  geom_histogram(binwidth = 14) + \n  facet_wrap(~ section, scales = \"free\") +\n  labs(x = \"Snout to Tail Length (mm)\")"
+    "text": "Faceted Histograms\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_2_mm)) + \n  geom_histogram(binwidth = 14) + \n  facet_wrap(~ section, scales = \"free\") +\n  labs(x = \"Snout to Tail Length (mm)\")"
   },
   {
     "objectID": "slides/week3-day1.html#side-by-side-boxplots",

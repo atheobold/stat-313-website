@@ -9,8 +9,9 @@ execute:
   echo: false
 ---
 
-```{r set-up}
+```{r}
 #| include: false
+#| label: set-up
 
 library(lterdatasampler)
 library(tidyverse)
@@ -138,12 +139,14 @@ The Pipe `%>%`
 
 ::: {.column width="15%"}
 ```{r}
+#| label: pipe-image
 knitr::include_graphics("images/pipe.png")
 ```
 :::
 
 ::: {.column width="15%"}
 ```{r}
+#| label: not-a-pipe-image
 knitr::include_graphics("images/not_a_pipe.jpg")
 ```
 :::
@@ -168,6 +171,7 @@ The HJ Andrews Experimental Forest houses one of the larges long-term ecological
 #| echo: true
 #| output-location: fragment
 #| code-line-numbers: false
+#| label: group-by-summarize-trout
 trout %>% 
   group_by(section) %>% 
   summarize(
@@ -255,6 +259,7 @@ The majority of the Cutthroat trout were captured in cascades (C), pools (P), an
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
+#| label: channel-type-filter
 trout %>% 
   filter(
     unittype %in% c("C", "P", "SC")
@@ -289,6 +294,7 @@ trout %>%
 #| fig-height: 4
 #| fig-align: center
 #| code-line-numbers: false
+#| label: histogram-of-salamander-lengths
 
 ggplot(data = salamander, 
        mapping = aes(x = length_2_mm)) + 
@@ -319,13 +325,14 @@ What are possible causes for the variation in salamander length?
 ## Faceted Histograms
 
 ::: small
-```{r facet-hist}
+```{r}
 #| echo: true
 #| code-line-numbers: "|4"
 #| out-width: 95%
+#| label: faceted-histograms-of-salamander-length
 
 ggplot(data = salamander, 
-       mapping = aes(x = length_1_mm)) + 
+       mapping = aes(x = length_2_mm)) + 
   geom_histogram(binwidth = 14) + 
   facet_wrap(~ section, scales = "free") +
   labs(x = "Snout to Tail Length (mm)")
@@ -337,12 +344,13 @@ ggplot(data = salamander,
 ::: columns
 ::: {.column width="50"}
 ::: small
-```{r horizontal-boxplot}
+```{r}
 #| fig-width: 6
 #| fig-height: 3.5
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: false
+#| label: horizontal-boxplot
 
 ggplot(data = salamander, 
        mapping = aes(x = length_1_mm, 
@@ -358,12 +366,13 @@ ggplot(data = salamander,
 ::: {.column width="50"}
 ::: small
 ::: fragment
-```{r vertical-boxplot}
+```{r}
 #| fig-width: 6
 #| fig-height: 4
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: false
+#| label: vertical-boxplot
 
 ggplot(data = salamander, 
        mapping = aes(y = length_1_mm, 
@@ -382,13 +391,14 @@ ggplot(data = salamander,
 ## Colors in Boxplots
 
 ::: small
-```{r boxplot-color}
+```{r}
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: false
 #| output-location: fragment
 #| fig-width: 8
 #| fig-height: 3.5
+#| label: boxplot-color
 
 ggplot(data = salamander, 
        mapping = aes(x = length_1_mm, 
@@ -405,7 +415,8 @@ ggplot(data = salamander,
 ## Facets & Colors in Boxplots
 
 ::: small
-```{r boxplot-facets}
+```{r}
+#| label: boxplot-facets
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: false
@@ -427,11 +438,12 @@ ggplot(data = salamander,
 ## Facets & Color in Scatterplots
 
 ::: small
-```{r scatterplot-facets}
+```{r}
 #| fig-align: center
 #| echo: true
 #| code-line-numbers: false
 #| output-location: slide
+#| label: scatterplot-facets
 
 ggplot(data = salamander, 
        mapping = aes(x = length_1_mm, 
@@ -452,6 +464,7 @@ ggplot(data = salamander,
 ```{r}
 #| echo: false
 #| fig-align: center
+#| label: aesthetic-activity
 
 trout %>%
   filter(unittype %in% c("R", "I", "S")) %>% 
