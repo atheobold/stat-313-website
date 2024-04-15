@@ -61,6 +61,8 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 **(b) Are there numerical variables in the dataset? If so, what are their names?**
 
+Think about revising to be more specific about R data types not categorical variables
+
 ```{r}
 #| label: data-inspect 
 # You code for exercise 1 goes here! Yes, your answer should use code!

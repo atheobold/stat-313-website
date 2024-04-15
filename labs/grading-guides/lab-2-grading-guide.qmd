@@ -29,7 +29,7 @@ execute:
 
 ## 1 (b)
 
-**Are there numerical variables in the dataset? If so, what are their names?** 
+**Are there numerical variables in the dataset? If so, what are their names?**
 
 **Success**:
 
@@ -72,16 +72,15 @@ ggplot(data = nycflights, mapping = aes(x = dep_delay)) +
 Note: May choose their own binwidth, but that is not required!
 :::
 
-**Growing**: 
+**Growing**:
 
-- If maps `dep_delay` to y-axis instead of x-axis
+-   If maps `dep_delay` to y-axis instead of x-axis
 
 *Feedback:* For Question 2, our histograms are always made with our quantitative variable on the x-axis!
 
-- If they don't label the axis with the units
+-   If they don't label the axis with the units
 
-*Feedback*: Every plot we make should have descriptive axis labels which include the units the variable was measured in. Were departure delays measured in hours? Minutes? Seconds? Days? 
-
+*Feedback*: Every plot we make should have descriptive axis labels which include the units the variable was measured in. Were departure delays measured in hours? Minutes? Seconds? Days?
 
 ## 3 (a)
 
@@ -103,12 +102,12 @@ ggplot(data = nycflights,
 
 ```
 
-::: {.callout-note}
+::: callout-note
 # Okay if their axis labels are not adjusted
 
 If they don't have nice axis labels for this question, we don't need to mark them down. But we can give this feedback:
 
-Careful! Look at the feedback for Question 2 about your axis labels. 
+Careful! Look at the feedback for Question 2 about your axis labels.
 :::
 
 **Growing**: If code does not use correct `binwidth`s
@@ -121,7 +120,7 @@ Careful! Look at the feedback for Question 2 about your axis labels.
 
 **Success**:
 
--   Discusses how wider bins make it hard to see where there are small differences and / or how smaller bins make it easier to see differences
+-   Discusses how wider bins make it hard to see where there are small differences and / or how smaller bins make it easier to see differences (i.e., smaller bins make the distribution more specific)
 
 **Growing**:
 
@@ -160,39 +159,31 @@ filter(sfo_flights,
   dim()
 ```
 
-**Growing**: 
+**Growing**:
 
-- If they put `7` in quotations (`"7"`)
+-   If they put `7` in quotations (`"7"`)
 
 *Feedback:* We use quotations for variables that are categorical. Does R think that month is a categorical variable? (look back at what you said in Question 1b)
 
-- If they use a `>` instead of a `<`
+-   If they use a `>` instead of a `<`
 
 *Feedback*: Careful! If my flight arrived 5 minutes early, how would my arrival delay be recorded in the dataset? How does this translate to the inequality we want to use in our data filter?
 
 ## 6
 
-**When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
+**When you ran the code above it output a preview of the filtered dataset. What does this output tell you about the number of flights that met your criteria (flying into SFO, in July, and arrived early)?**
 
-They should state that 45 flights (rows) met the criteria (arrived to SFO early in July) and there are 16 variables (columns) measured on these flights.
+They should state that 45 flights (rows) met the criteria (arrived to SFO early in July).
 
 **Growing**:
 
-- If they don't interpret 45 as the number of flights -- only as the number of rows
+-   If they don't interpret 45 as the number of flights -- only as the number of rows
 
-*Feedback:* What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights? 
+*Feedback:* What are the observations included in the rows in the context of this dataset? Airplanes? Airports? Flights?
 
 -   If they interpret 45 and 16 as flight numbers
 
 *Feedback:* The 45 and the 16 refer to the size of the filtered dataset. What does that tell you in terms of the number of flights that satisfied your criteria out of the `sfo_flights` dataset?
-
-- If they say 16 is the flights that arrived early (second filter)
-
-*Feedback:* You are on the right track! The 45 and the 16 refer to the size of the filtered dataset. You are correct that the 45 refers to the number of observations / rows / flights that satisfied the criteria you specified. In Question 1a, you used two numbers to describe the size of the dataset. What did that second number represent?
-
--   If they don't interpret the conditions of the filter (SFO flights that arrived early in July)
-
-*Feedback:* What were the conditions of these 45 flights?
 
 ## 7
 
@@ -247,7 +238,7 @@ summarise(sfo_flights,
 
 *Feedback:* In Statistics it is critical to back your claim with data! How did you decide what I should expect if I am flying from NYC to SFO?
 
-- Says I will arrive early / late based on the median / mean
+-   Says I will arrive early / late based on the median / mean
 
 *Feedback*: Why is the median / mean a good measure of the "typical" delay?
 
@@ -286,7 +277,6 @@ ggplot(data = sfo_flights,
 
 *Feedback:* You were asked to give your visualization nice axis labels. It is also important for the axis label to contain the units of the variable! What units were the arrival delays measured in?
 
-
 ## 10
 
 **Using the plot above, what is your answer be to my question? What should I expect if I am flying from New York to San Francisco?**
@@ -317,7 +307,7 @@ ggplot(data = sfo_flights,
 
 -   Response **does not** discuss what could be seen in the visualizations that could not be seen in the statistics
 
-*Feedback:* You should address what you were able to SEE in the visualization (e.g., shape, skew, number of peaks) that you could not "see" in the summary statistics. 
+*Feedback:* You should address what you were able to SEE in the visualization (e.g., shape, skew, number of peaks) that you could not "see" in the summary statistics.
 
 -   Response doesn't discuss if / how the answer to the question changed
 
