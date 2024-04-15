@@ -328,7 +328,7 @@ What are possible causes for the variation in salamander length?
 ```{r}
 #| echo: true
 #| code-line-numbers: "|4"
-#| out-width: 95%
+#| out-width: 85%
 #| label: faceted-histograms-of-salamander-length
 
 ggplot(data = salamander, 
@@ -484,7 +484,7 @@ What are the aesthetics included in this plot?
 
 What is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?
 
-# [Statistical critique](../critique/critique-1.qmd)
+# [Statistical Critique](../critique/critique-1.qmd)
 
 ## Your Tasks
 
