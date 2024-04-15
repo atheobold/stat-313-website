@@ -3,7 +3,7 @@ title: "Incorporating Categorical Variables"
 format: 
   revealjs:
     logo: images/dplyr.png
-    theme: night
+    theme: style.scss
 editor: visual
 execute: 
   echo: false
@@ -163,17 +163,19 @@ If you wanted means for each level of a categorical variable, what would you do?
 The HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.
 :::
 
-</br>
-
+:::{.small}
 ```{r}
 #| echo: true
 #| output-location: fragment
 #| code-line-numbers: false
 trout %>% 
   group_by(section) %>% 
-  summarize(mean_length = mean(length_1_mm, na.rm = TRUE)
+  summarize(
+    mean_length = mean(length_1_mm, 
+                       na.rm = TRUE)
             )
 ```
+:::
 
 . . .
 
@@ -242,21 +244,23 @@ The majority of the Cutthroat trout were captured in cascades (C), pools (P), an
 
 . . .
 
-</br>
-
 <center>**What would you do?**</center>
 
 . . .
 
 </br>
 
+:::{.small}
 ```{r}
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
 trout %>% 
-  filter(unittype %in% c("C", "P", "SC"))
+  filter(
+    unittype %in% c("C", "P", "SC")
+         )
 ```
+:::
 
 . . .
 
@@ -277,7 +281,8 @@ trout %>%
 ## Salamander Size
 
 ::: columns
-::: {.column width="55%"}
+::: {.column width="70%"}
+:::{.small}
 ```{r}
 #| echo: true
 #| fig-width: 4
@@ -291,25 +296,29 @@ ggplot(data = salamander,
   labs(x = "Snout to Tail Length (mm)")
 ```
 :::
+:::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: {style="font-size: 0.9em;"}
-</br>
-
+::: {.column width="25%"}
+::: {.small}
+:::{.fragment}
 How would this histogram look if there was no variation in salamander length?
 
 </br>
+:::
 
+:::{.fragment}
 What are possible causes for the variation in salamander length?
+:::
 :::
 :::
 :::
 
 ## Faceted Histograms
 
+:::{.small}
 ```{r facet-hist}
 #| echo: true
 #| code-line-numbers: "|4"
@@ -321,11 +330,14 @@ ggplot(data = salamander,
   facet_wrap(~ section, scales = "free") +
   labs(x = "Snout to Tail Length (mm)")
 ```
+:::
+
 
 ## Side-by-Side Boxplots
 
 ::: columns
 ::: {.column width="50"}
+:::{.small}
 ```{r horizontal-boxplot}
 #| fig-width: 6
 #| fig-height: 3.5
@@ -339,11 +351,14 @@ ggplot(data = salamander,
          ) + 
   geom_boxplot() + 
   labs(x = "Snout to Tail Length (mm)", 
-       y = "Salamander Species") 
+       y = "") 
 ```
+:::
 :::
 
 ::: {.column width="50"}
+:::{.small}
+:::{.fragment}
 ```{r vertical-boxplot}
 #| fig-width: 6
 #| fig-height: 4
@@ -357,14 +372,17 @@ ggplot(data = salamander,
          ) + 
   geom_boxplot() + 
   labs(y = "Snout to Tail Length (mm)", 
-       x = "Salamander Species")
+       x = "")
 
 ```
+:::
+:::
 :::
 :::
 
 ## Colors in Boxplots
 
+:::{.small}
 ```{r boxplot-color}
 #| fig-align: center
 #| echo: true
@@ -380,12 +398,14 @@ ggplot(data = salamander,
          ) + 
   geom_boxplot() + 
   labs(x = "Snout to Tail Length (mm)", 
-       y = "Salamander Species", 
+       y = "", 
        color = "Channel Type")
 ```
+:::
 
 ## Facets & Colors in Boxplots
 
+:::{.small}
 ```{r boxplot-facets}
 #| fig-align: center
 #| echo: true
@@ -400,12 +420,14 @@ ggplot(data = salamander,
   geom_boxplot() + 
   facet_wrap(~ unittype) + 
   labs(x = "Snout to Tail Length (mm)", 
-       y = "Salamander Species", 
+       y = "", 
        color = "Section in Mack Creek")
 ```
+:::
 
 ## Facets & Color in Scatterplots
 
+:::{.small}
 ```{r scatterplot-facets}
 #| fig-align: center
 #| echo: true
@@ -417,15 +439,16 @@ ggplot(data = salamander,
                        y = weight_g, 
                        color = section)
          ) + 
-  geom_point() + 
+  geom_point(alpha = 0.25) + 
   facet_wrap(~species) +
   labs(y = "Snout to Tail Length (mm)", 
-       x = "Year", 
-       color = "Salamander Species")
+       x = "Weight (g)", 
+       color = "Section in Mack Creek")
 
 ```
+:::
 
-## Your Turn
+## Your Turn -- 90 seconds
 
 ```{r}
 #| echo: false
@@ -434,7 +457,7 @@ ggplot(data = salamander,
 trout %>%
   filter(unittype %in% c("R", "I", "S")) %>% 
   ggplot(aes(x = length_1_mm, y = weight_g, color = unittype)) + 
-  geom_jitter(alpha = 0.5) + 
+  geom_jitter(alpha = 0.8) + 
   labs(x = "Length (mm)", 
        y = "Weight (g)", 
        color = "Channel \nClassification") + 
@@ -449,8 +472,14 @@ What are the aesthetics included in this plot?
 
 What is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?
 
-##  {background-color="#D4D4D4"}
+# Statistical critique
 
-::: {style="margin-top: 100px; font-size: 4em; color: #000000;"}
-Break
-:::
+## Your Tasks
+
+1. Find your visualizations 
+  - Visualization from your Week 1 article (Statistics in Your Field)
+  - Visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph) 
+
+2. Discuss the `aes`thetics included in the plots
+3. Discuss what you believe the plot does well
+4. Discuss what improvements could be made to make the plot more clear
