@@ -928,7 +928,7 @@
     "href": "slides/week3-day2-alt.html#references",
     "title": "Week 3 Day 2",
     "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086.\n\n\nKhan, Nazim Uddin Azam, and Assad Movahed. 2000. “Role of ß Blockers in Congestive Heart Failure.” Congestive Heart Failure 6 (6): 299–312. https://doi.org/10.1111/j.1527-5299.2000.80176.x."
+    "text": "References\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086.\n\n\nKhan, Nazim Uddin Azam, and Assad Movahed. 2000. “Role of ß Blockers in Congestive Heart Failure.” Congestive Heart Failure 6 (6): 299–312. https://doi.org/10.1111/j.1527-5299.2000.80176.x."
   },
   {
     "objectID": "slides/week7-day2.html#course-updates",
@@ -1292,7 +1292,7 @@
     "href": "slides/week3-day1-alt.html#your-turn",
     "title": "Incorporating Categorical Variables",
     "section": "Your Turn",
-    "text": "Your Turn\n\n\n\n\n\n\n\n\n\nWhat are the aesthetics included in this plot?"
+    "text": "Your Turn\n\nWhat are the aesthetics included in this plot?"
   },
   {
     "objectID": "slides/week5-day2.html#section",
@@ -1911,39 +1911,11 @@
     "text": "Midterm Project Grades\n\n\n\n\n\n\n\n\n\n\nExcellent Project\nSatisfactory Project\nProgressing Project\nNo Credit\n\n\n\n\nAt most one section is marked “Satisfactory” the remainder are marked “Excellent”\nAt most one section is marked “Progressing” the remainder are marked “Satisfactory” or “Excellent”\nAt most two sections are marked “Progressing” the remainder are marked “Satisfactory”\nAt most one section is marked “Satisfactory” or “Excellent” the remainder are marked “Progressing”"
   },
   {
-    "objectID": "slides/week2-day1.html#revisions",
-    "href": "slides/week2-day1.html#revisions",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Revisions",
-    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
-  },
-  {
-    "objectID": "slides/week2-day1.html#completing-revisions",
-    "href": "slides/week2-day1.html#completing-revisions",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Completing Revisions",
-    "text": "Completing Revisions\n\nLab 1 revisions are due by Wednesday, April 17 (at midnight).\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas."
-  },
-  {
     "objectID": "slides/week2-day1.html#section",
     "href": "slides/week2-day1.html#section",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
     "text": "5-minutes\n\n\n\nIf you would like to participate\n\nComplete consent form (say yes)\n\n\n\n\nIf you would not like to participate\n\nComplete consent form (say no)"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-1",
-    "href": "slides/week2-day1.html#section-1",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
-  },
-  {
-    "objectID": "slides/week2-day1.html#my-plan",
-    "href": "slides/week2-day1.html#my-plan",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "My Plan",
-    "text": "My Plan\n\n\n\n\nWhat you can expect from me:\n\nPost coursework by Friday\nPost slides from last quarter\nExtend Lab 2 revision deadline by 1-week\nExtend Statistical Critique deadline by 1-week\nProvide 2 additional deadline extensions\n\n\n\n\n\n\n\n\nWhat I expect from you:\n\nComplete coursework\nReview / work through slides as if you were in class\n\n\n\n\n\n\n\n\nWhat I expect from your group:\n\nComplete the lab assignment as a group"
   },
   {
     "objectID": "slides/week2-day1.html#warm-up",
@@ -1960,11 +1932,11 @@
     "text": "Today’s Layout\n\nReview visualizations for numerical variables\nDiscuss the pros / cons of each visualization"
   },
   {
-    "objectID": "slides/week2-day1.html#section-2",
-    "href": "slides/week2-day1.html#section-2",
+    "objectID": "slides/week2-day1.html#section-1",
+    "href": "slides/week2-day1.html#section-1",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
+    "text": "Univariate (One Variable) Visualizations – For Numerical Data\n\n\n\n\nHistogram (or Dotplot)\nBoxplot\nDensity Plot"
   },
   {
     "objectID": "slides/week2-day1.html#histogram",
@@ -1974,18 +1946,11 @@
     "text": "Histogram\n\n\n\nIs count a variable in the dataset?\nHow did ggplot decide how tall each bar should be?"
   },
   {
-    "objectID": "slides/week2-day1.html#section-3",
-    "href": "slides/week2-day1.html#section-3",
+    "objectID": "slides/week2-day1.html#section-2",
+    "href": "slides/week2-day1.html#section-2",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "",
-    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-4",
-    "href": "slides/week2-day1.html#section-4",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
+    "text": "What are the strengths of a histogram?\n\n\nInspect shape of a distribution (skewed or symmetric)\nIdentify modes (most common values)\n\n\n\nWhat are the weaknesses of a histogram?\n\n\nDo not plot raw data, plot summaries (counts) of the data!\nSensitive to the width of the bins (binwidth)"
   },
   {
     "objectID": "slides/week2-day1.html#boxplot",
@@ -1993,6 +1958,20 @@
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Boxplot",
     "text": "Boxplot\n\n\n\n\n\n\n\n\n\n\n\nWhat calculations are necessary for creating a boxplot?"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-3",
+    "href": "slides/week2-day1.html#section-3",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "What are strengths of a boxplot?\n\n\nEasy to flag unusual observations\nEasy to see the median\n\n\n\nWhat are weaknesses of a boxplot?\n\n\nDon’t plot raw data\nOnly plot summary statistics\nHide multiple modes"
+  },
+  {
+    "objectID": "slides/week2-day1.html#density-plot",
+    "href": "slides/week2-day1.html#density-plot",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "Density Plot",
+    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
   },
   {
     "objectID": "slides/week2-day1.html#section-5",
@@ -2009,11 +1988,18 @@
     "text": "Bivariate (Two Variables) Visualizations – For Numerical Data\n\n\n\n\nScatterplots (Week 2)\nFaceted Histograms (Week 3)\nSide-by-Side Boxplots (Week 3)\nStacked Density Plots (Week 3)"
   },
   {
-    "objectID": "slides/week2-day1.html#density-plot",
-    "href": "slides/week2-day1.html#density-plot",
+    "objectID": "slides/week2-day1.html#scatterplots",
+    "href": "slides/week2-day1.html#scatterplots",
     "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Density Plot",
-    "text": "Density Plot\n\n\n\nA smooth approximation to a variable’s distribution\nPlots density (as a proportion) on the y-axis"
+    "section": "Scatterplots",
+    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
+  },
+  {
+    "objectID": "slides/week2-day1.html#section-7",
+    "href": "slides/week2-day1.html#section-7",
+    "title": "Visualizing & Summarizing Numerical Data",
+    "section": "",
+    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
   },
   {
     "objectID": "slides/week2-day1.html#section-8",
@@ -2023,53 +2009,11 @@
     "text": "Multivariate (3+ Variables) Plots\n\n\nThere are two main methods for adding a third (or fourth) variable into a data visualization:\n\n\n\n\nColors\n\n\ncreates colors for every level of a categorical variable\ncreates a gradient for different values of a quantitative variable\n\n\n\n\n\nFacets\n\n\ncreates subplots for every level of a categorical variable\nlabels each sub-plot with the value of the variable"
   },
   {
-    "objectID": "slides/week2-day1.html#section-9",
-    "href": "slides/week2-day1.html#section-9",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Recreate my plot!"
-  },
-  {
-    "objectID": "slides/week2-day1.html#scatterplots",
-    "href": "slides/week2-day1.html#scatterplots",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Scatterplots",
-    "text": "Scatterplots\n\n\nWhat are the geometric objects being plotted in a scatterplot?"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-10",
-    "href": "slides/week2-day1.html#section-10",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Recreate my plot!"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-11",
-    "href": "slides/week2-day1.html#section-11",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Recreate my plot!"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-12",
-    "href": "slides/week2-day1.html#section-12",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Recreate my plot!"
-  },
-  {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-numerical-variable",
     "href": "slides/week2-day1.html#colors-in-scatterplots-numerical-variable",
     "title": "Visualizing & Summarizing Numerical Data",
     "section": "Colors in Scatterplots – Numerical Variable",
     "text": "Colors in Scatterplots – Numerical Variable"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-13",
-    "href": "slides/week2-day1.html#section-13",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Recreate my plot!"
   },
   {
     "objectID": "slides/week2-day1.html#colors-in-scatterplots-categorical-variable",
@@ -2086,18 +2030,11 @@
     "text": "Why not use facets with a numerical variable???"
   },
   {
-    "objectID": "slides/week2-day1.html#section-14",
-    "href": "slides/week2-day1.html#section-14",
+    "objectID": "slides/week2-day1.html#due-by-wednesday",
+    "href": "slides/week2-day1.html#due-by-wednesday",
     "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots (and such) don’t count as visualizing the raw data"
-  },
-  {
-    "objectID": "slides/week2-day1.html#departure-delays",
-    "href": "slides/week2-day1.html#departure-delays",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Departure Delays",
-    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with binwidth\nFilter data to include only certain flights\nCalculate summary statistics\nCompare summary statistics with a visualization"
+    "section": "Due by Wednesday",
+    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n\n\n\n\n\n\n\nDeadline Policy\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
   },
   {
     "objectID": "slides/week9-day2.html#upcoming-deadlines",
@@ -2167,7 +2104,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22 \n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29 \n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\nStat Critique 1 Feedback\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5 \n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due February 19 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due January 15 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22 \n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29 \n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5 \n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due February 19 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due January 15 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -3187,14 +3124,14 @@
     "href": "labs/lab-2.html",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#getting-started",
     "href": "labs/lab-2.html#getting-started",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#sfo-destinations",
@@ -4608,7 +4545,7 @@
     "href": "slides/week3-day1.html#trout-size",
     "title": "Incorporating Categorical Variables",
     "section": "Trout Size",
-    "text": "Trout Size\n\nThe HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.\n\n\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_length = mean(length_1_mm, na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section                               mean_length\n  &lt;chr&gt;                                       &lt;dbl&gt;\n1 clear cut forest                             85.3\n2 upstream old growth coniferous forest        81.4\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+    "text": "Trout Size\n\nThe HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.\n\n\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_length = mean(length_1_mm, \n                       na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section                               mean_length\n  &lt;chr&gt;                                       &lt;dbl&gt;\n1 clear cut forest                             85.3\n2 upstream old growth coniferous forest        81.4\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
   },
   {
     "objectID": "slides/week3-day1.html#classifying-channel-types",
@@ -4622,7 +4559,7 @@
     "href": "slides/week3-day1.html#filter-ing-specific-channel-types",
     "title": "Incorporating Categorical Variables",
     "section": "filter()-ing Specific Channel Types",
-    "text": "filter()-ing Specific Channel Types\n\nThe majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the unittype variable.\n\n\n\n\nWhat would you do?\n\n\n\n\n\ntrout %&gt;% \n  filter(unittype %in% c(\"C\", \"P\", \"SC\"))\n\n\n\n\n\nWhy use %in% instead of ==?"
+    "text": "filter()-ing Specific Channel Types\n\nThe majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the unittype variable.\n\n\n\nWhat would you do?\n\n\n\n\n\n\ntrout %&gt;% \n  filter(\n    unittype %in% c(\"C\", \"P\", \"SC\")\n         )\n\n\n\n\n\n\nWhy use %in% instead of ==?"
   },
   {
     "objectID": "slides/week3-day1.html#incorporating-categorical-variables-into-data-visualizations",
@@ -4636,35 +4573,35 @@
     "href": "slides/week3-day1.html#salamander-size",
     "title": "Incorporating Categorical Variables",
     "section": "Salamander Size",
-    "text": "Salamander Size\n\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_2_mm)) + \n  geom_histogram(binwidth = 14) + \n  labs(x = \"Snout to Tail Length (mm)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would this histogram look if there was no variation in salamander length?\n\nWhat are possible causes for the variation in salamander length?"
+    "text": "Salamander Size\n\n\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_2_mm)) + \n  geom_histogram(binwidth = 14) + \n  labs(x = \"Snout to Tail Length (mm)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would this histogram look if there was no variation in salamander length?\n\n\n\nWhat are possible causes for the variation in salamander length?"
   },
   {
     "objectID": "slides/week3-day1.html#faceted-histograms",
     "href": "slides/week3-day1.html#faceted-histograms",
     "title": "Incorporating Categorical Variables",
     "section": "Faceted Histograms",
-    "text": "Faceted Histograms\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm)) + \n  geom_histogram(binwidth = 14) + \n  facet_wrap(~ section, scales = \"free\") +\n  labs(x = \"Snout to Tail Length (mm)\")"
+    "text": "Faceted Histograms\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm)) + \n  geom_histogram(binwidth = 14) + \n  facet_wrap(~ section, scales = \"free\") +\n  labs(x = \"Snout to Tail Length (mm)\")"
   },
   {
     "objectID": "slides/week3-day1.html#side-by-side-boxplots",
     "href": "slides/week3-day1.html#side-by-side-boxplots",
     "title": "Incorporating Categorical Variables",
     "section": "Side-by-Side Boxplots",
-    "text": "Side-by-Side Boxplots\n\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                     y = species)\n         ) + \n  geom_boxplot() + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"Salamander Species\") \n\n\n\n\n\n\n\n\n\n\nggplot(data = salamander, \n       mapping = aes(y = length_1_mm, \n                     x = species)\n         ) + \n  geom_boxplot() + \n  labs(y = \"Snout to Tail Length (mm)\", \n       x = \"Salamander Species\")"
+    "text": "Side-by-Side Boxplots\n\n\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                     y = species)\n         ) + \n  geom_boxplot() + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"\") \n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = salamander, \n       mapping = aes(y = length_1_mm, \n                     x = species)\n         ) + \n  geom_boxplot() + \n  labs(y = \"Snout to Tail Length (mm)\", \n       x = \"\")"
   },
   {
     "objectID": "slides/week3-day1.html#colors-in-boxplots",
     "href": "slides/week3-day1.html#colors-in-boxplots",
     "title": "Incorporating Categorical Variables",
     "section": "Colors in Boxplots",
-    "text": "Colors in Boxplots\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = species, \n                       color = unittype)\n         ) + \n  geom_boxplot() + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"Salamander Species\", \n       color = \"Channel Type\")"
+    "text": "Colors in Boxplots\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = species, \n                       color = unittype)\n         ) + \n  geom_boxplot() + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"\", \n       color = \"Channel Type\")"
   },
   {
     "objectID": "slides/week3-day1.html#facets-colors-in-boxplots",
     "href": "slides/week3-day1.html#facets-colors-in-boxplots",
     "title": "Incorporating Categorical Variables",
     "section": "Facets & Colors in Boxplots",
-    "text": "Facets & Colors in Boxplots\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = species, \n                       color = section)\n         ) + \n  geom_boxplot() + \n  facet_wrap(~ unittype) + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"Salamander Species\", \n       color = \"Section in Mack Creek\")"
+    "text": "Facets & Colors in Boxplots\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = species, \n                       color = section)\n         ) + \n  geom_boxplot() + \n  facet_wrap(~ unittype) + \n  labs(x = \"Snout to Tail Length (mm)\", \n       y = \"\", \n       color = \"Section in Mack Creek\")"
   },
   {
     "objectID": "slides/week3-day1.html#facets-colors-in-boxplots-output",
@@ -4678,7 +4615,7 @@
     "href": "slides/week3-day1.html#facets-color-in-scatterplots",
     "title": "Incorporating Categorical Variables",
     "section": "Facets & Color in Scatterplots",
-    "text": "Facets & Color in Scatterplots\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = section)\n         ) + \n  geom_point() + \n  facet_wrap(~species) +\n  labs(y = \"Snout to Tail Length (mm)\", \n       x = \"Year\", \n       color = \"Salamander Species\")"
+    "text": "Facets & Color in Scatterplots\n\n\nggplot(data = salamander, \n       mapping = aes(x = length_1_mm, \n                       y = weight_g, \n                       color = section)\n         ) + \n  geom_point(alpha = 0.25) + \n  facet_wrap(~species) +\n  labs(y = \"Snout to Tail Length (mm)\", \n       x = \"Weight (g)\", \n       color = \"Section in Mack Creek\")"
   },
   {
     "objectID": "slides/week3-day1.html#facets-color-in-scatterplots-output",
@@ -4688,18 +4625,18 @@
     "text": "Facets & Color in Scatterplots"
   },
   {
-    "objectID": "slides/week3-day1.html#your-turn",
-    "href": "slides/week3-day1.html#your-turn",
+    "objectID": "slides/week3-day1.html#your-turn-90-seconds",
+    "href": "slides/week3-day1.html#your-turn-90-seconds",
     "title": "Incorporating Categorical Variables",
-    "section": "Your Turn",
-    "text": "Your Turn\n\n\nWhat are the aesthetics included in this plot?\n\n\nWhat is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?"
+    "section": "Your Turn – 90 seconds",
+    "text": "Your Turn – 90 seconds\n\n\nWhat are the aesthetics included in this plot?\n\n\nWhat is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?"
   },
   {
-    "objectID": "slides/week3-day1.html#section-5",
-    "href": "slides/week3-day1.html#section-5",
+    "objectID": "slides/week3-day1.html#your-tasks",
+    "href": "slides/week3-day1.html#your-tasks",
     "title": "Incorporating Categorical Variables",
-    "section": "",
-    "text": "Break"
+    "section": "Your Tasks",
+    "text": "Your Tasks\n\nFind your visualizations\n\n\nVisualization from your Week 1 article (Statistics in Your Field)\nVisualization from the New York Times\n\n\nDiscuss the aesthetics included in the plots\nDiscuss what you believe the plot does well\nDiscuss what improvements could be made to make the plot more clear"
   },
   {
     "objectID": "slides/week9-day1.html#final-project-first-draft",
@@ -4933,6 +4870,41 @@
     "text": "Code Chunk Option\n#| label: distribution-of-residuals\n#| layout-nrow: 1\n#| eval: false\n#| echo: fenced\n\n# Residuals of first one-way ANOVA \nbroom::augment(my_model) %&gt;% \n  ggplot(mapping = aes(x = .resid)) +\n  geom_histogram() +\n  labs(x = \"Residual\")\n\n# Residuals of second one-way ANOVA \nbroom::augment(my_model) %&gt;% \n  ggplot(mapping = aes(x = .resid)) +\n  geom_histogram() +\n  labs(x = \"Residual\")"
   },
   {
+    "objectID": "slides/week2-day2.html#revisions",
+    "href": "slides/week2-day2.html#revisions",
+    "title": "The Flaws of Averages",
+    "section": "Revisions",
+    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---code-chunk-options",
+    "href": "slides/week2-day2.html#key---code-chunk-options",
+    "title": "The Flaws of Averages",
+    "section": "Key - Code Chunk Options",
+    "text": "Key - Code Chunk Options\nA code chunk option is declared after a #|. Here are some options we may want to use:\n\n\n#| label: packages – creates a label for the code chunk (describing its contents)\n#| echo: false – tells Quarto not to output the code in the rendered HTML (only the output)\n#| include: false – tells Quarto not to include the code or the output in the rendered HTML"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---previewing-your-data",
+    "href": "slides/week2-day2.html#key---previewing-your-data",
+    "title": "The Flaws of Averages",
+    "section": "Key - Previewing Your Data",
+    "text": "Key - Previewing Your Data\nThe glimpse() function is a great tool to preview the dataset you are working with! It gives you:\n\nthe dimensions of the data (rows and columns)\nthe names of the columns\nthe data type of each column (e.g., chr, dbl)\na preview of the first 10 rows of each column"
+  },
+  {
+    "objectID": "slides/week2-day2.html#key---plotting-your-data",
+    "href": "slides/week2-day2.html#key---plotting-your-data",
+    "title": "The Flaws of Averages",
+    "section": "Key - Plotting Your Data",
+    "text": "Key - Plotting Your Data\nNow that we’ve practiced making some plots, we know…\n\nmapping = aes(y = manufacturer, x = hwy) declares what variables are plotted on the x- and y-axis.\n\n\n\n\n\n\nTip\n\n\nThe variable names you put insides aes() must be identical to the names of the variables in the dataset!\n\n\n\n\n\n\n\nlabs(x = \"Highway Miles Per Gallon\", y = \"Car Manufacturer\") declares new x- and y-axis labels for the plot.\n\n\n\n\n\n\nTip\n\n\nIncluding nice axis labels (with their units) is a critical part of every visualization we make!"
+  },
+  {
+    "objectID": "slides/week2-day2.html#completing-revisions",
+    "href": "slides/week2-day2.html#completing-revisions",
+    "title": "The Flaws of Averages",
+    "section": "Completing Revisions",
+    "text": "Completing Revisions\n\nLab 1 revisions are due by Wednesday, April 17 (at midnight).\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas."
+  },
+  {
     "objectID": "slides/week2-day2.html#section",
     "href": "slides/week2-day2.html#section",
     "title": "The Flaws of Averages",
@@ -4994,6 +4966,13 @@
     "title": "The Flaws of Averages",
     "section": "",
     "text": "Some Rules to Play By\n\n\n\n\n\nLook at and understand your raw data before aggregating\nBoxplots don’t count as visualizing the raw data"
+  },
+  {
+    "objectID": "slides/week2-day2.html#departure-delays",
+    "href": "slides/week2-day2.html#departure-delays",
+    "title": "The Flaws of Averages",
+    "section": "Departure Delays",
+    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with histogram binwidth\nfilter() data to include only certain flights\ncalculate() summary statistics\nMake decisions based on summary statistics\nCompare summary statistics to a visualization"
   },
   {
     "objectID": "slides/week10-day2.html#findings",
@@ -5437,13 +5416,6 @@
     "text": "Specifications Based Grading"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-7",
-    "href": "slides/week1-day1-alt.html#section-7",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "How Smart are You?\n\n\n\n(2 minutes)\n\nWrite two criteria would you use to rank yourself compared to everyone else in this class\n\n\n\n\n(3 minutes)\n\nTalk with the person on your right about the criteria you proposed\n\n\n\n\n(5 minutes)\n\nShare out\nPerson with most vowels in name should be prepared to share!"
-  },
-  {
     "objectID": "slides/week1-day1-alt.html#section-8",
     "href": "slides/week1-day1-alt.html#section-8",
     "title": "Welcome to Stat 313!",
@@ -5470,6 +5442,13 @@
     "title": "Welcome to Stat 313!",
     "section": "",
     "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n23\nDec 15, 1985\n1984\n6-3\nAlvin Robertson\nSG\n\n\n20\nJan 9, 2005\n2003\n6-11\nChris Bosh\nPF\n\n\n27\nNov 21, 2016\n2011\n201cm\nJimmy Butler\nGF\n\n\n29\nDec 2, 1984\n1977\n6-11\nJack Sikma\nC\n\n\n24\nJan 4, 2004\n1999\n6-9\nElton Brand\nPF\n\n\n25\nMar 1, 1992\n1988\n6-10\nDanny Manning\nF"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-12",
+    "href": "slides/week1-day1-alt.html#section-12",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-13",
@@ -5500,13 +5479,6 @@
     "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-17",
-    "href": "slides/week1-day1-alt.html#section-17",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
-  },
-  {
     "objectID": "slides/week1-day1-alt.html#section-18",
     "href": "slides/week1-day1-alt.html#section-18",
     "title": "Welcome to Stat 313!",
@@ -5521,18 +5493,25 @@
     "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-20",
-    "href": "slides/week1-day1-alt.html#section-20",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Artwork by @allison_horst"
-  },
-  {
     "objectID": "slides/week1-day1-alt.html#section-21",
     "href": "slides/week1-day1-alt.html#section-21",
     "title": "Welcome to Stat 313!",
     "section": "",
     "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-22",
+    "href": "slides/week1-day1-alt.html#section-22",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-23",
+    "href": "slides/week1-day1-alt.html#section-23",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-24",
@@ -5542,46 +5521,25 @@
     "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-26",
-    "href": "slides/week1-day1-alt.html#section-26",
+    "objectID": "slides/week1-day1-alt.html#joining-the-stat-313-workspace-on-posit-cloud",
+    "href": "slides/week1-day1-alt.html#joining-the-stat-313-workspace-on-posit-cloud",
     "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+    "section": "Joining the STAT 313 Workspace on Posit Cloud",
+    "text": "Joining the STAT 313 Workspace on Posit Cloud\n\nAccess Posit Cloud from link posted on Canvas\nCreate a Cloud Student account (using your Cal Poly email)\n\n\n\n\n\n\n\n$5 / month subscription\n\n\nThe Cloud Student account costs $5 / month. You will only need to pay for three (3) months of access, for a total of $15 for the quarter.\n\n\n\n\nJoin the STAT 313 workspace"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-27",
-    "href": "slides/week1-day1-alt.html#section-27",
+    "objectID": "slides/week1-day1-alt.html#accessing-lab-1",
+    "href": "slides/week1-day1-alt.html#accessing-lab-1",
     "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+    "section": "Accessing Lab 1",
+    "text": "Accessing Lab 1\n\nAccess Lab 1 either through:\n\n\nthe link posted on Canvas\nthe Content tab in the STAT 313 workspace\n\n\nClick on Lab 1 to open the Project"
   },
   {
-    "objectID": "slides/week1-day1-alt.html#section-28",
-    "href": "slides/week1-day1-alt.html#section-28",
+    "objectID": "slides/week1-day1-alt.html#opening-the-lab-1-document",
+    "href": "slides/week1-day1-alt.html#opening-the-lab-1-document",
     "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#section-29",
-    "href": "slides/week1-day1-alt.html#section-29",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#lab-1",
-    "href": "slides/week1-day1-alt.html#lab-1",
-    "title": "Welcome to Stat 313!",
-    "section": "Lab 1",
-    "text": "Lab 1\n\nAccess Posit Cloud from link posted on Canvas\n\nCreate an Account\nJoin the STAT 313 / 513 workspace\nAccess the Lab 1 Project\nOpen the Project\n\nA video will be posted guiding you on how to work with Quarto\n\nAsk questions on Discord\nEmail / text / chat with your group members"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#section-30",
-    "href": "slides/week1-day1-alt.html#section-30",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Find Your Group!"
+    "section": "Opening the Lab 1 Document",
+    "text": "Opening the Lab 1 Document\n\nClick on the lab-1.qmd file in the lower right hand corner to open the lab assignment\n\n{fig-alt=“A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the”Files” tab, with lab-1.qmd (a Quarto file) higlighted in a purple box.}\n\nStart working!"
   },
   {
     "objectID": "slides/week1-day2.html#section",
@@ -5616,14 +5574,14 @@
     "href": "slides/week1-day2.html#section-4",
     "title": "Working with Data",
     "section": "",
-    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe mother’s attributes (age, smoking status, marital status, race)\nthe father’s age\n\n\n. . .\n\nHow would you expect this dataframe to look?"
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe mother’s attributes (age, smoking status, marital status, race)\nthe father’s age\n\n\n\n\nHow would you expect this dataframe to look?"
   },
   {
     "objectID": "slides/week1-day2.html#section-5",
     "href": "slides/week1-day2.html#section-5",
     "title": "Working with Data",
     "section": "",
-    "text": "Types of Variables\n\n\n\n\n\nDiagram of types of variables we will analyze!"
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day2.html#section-6",
@@ -5637,7 +5595,7 @@
     "href": "slides/week1-day2.html#section-7",
     "title": "Working with Data",
     "section": "",
-    "text": "Your Turn\n\n\nSuppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.\n. . .\n\n\nWhat type of variable would year be?"
+    "text": "Your Turn\n\n\nSuppose researchers have yearly data on Elephant Seal abundance on Pedras Blancas from 2010 - 2014.\n\n\n\nWhat type of variable would year be?"
   },
   {
     "objectID": "slides/week1-day2.html#section-8",
@@ -5651,14 +5609,14 @@
     "href": "slides/week1-day2.html#section-9",
     "title": "Working with Data",
     "section": "",
-    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n. . .\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
   },
   {
     "objectID": "slides/week1-day2.html#section-10",
     "href": "slides/week1-day2.html#section-10",
     "title": "Working with Data",
     "section": "",
-    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n. . .\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   },
   {
     "objectID": "slides/week1-day2.html#section-11",
@@ -6405,173 +6363,5 @@
     "title": "Stat Critique 1 Grading Guide",
     "section": "",
     "text": "Double Encoding\n\n\n\nIt’s okay if they only mention one of the aesthetics that a variable is associated with when it is mapped to multiple aesthetics.\n\n\nGrowing\n\nDoesn’t name variables mapped to each aesthetic (e.g., only says the x-axis, y-axis, and color are used)\n\nFeedback: We want you to state specifically the names of the variables mapped to each aesthetic!\n\nSays a color aesthetic is used but the same color is used for every observation\n\nFeedback: Careful! Aesthetics are places where variables are being incorporated into the plot. Is the color in this plot associated with a variable?\n\nMisses an aesthetic that is being used\n\nFeedback for general plots: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are [multiple plots / multiple colors / multiple lines] not just one. What variable is associated with these separate [plots / colors / lines]?\nFeedback for maps: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, we have “hidden” x- and y-variables. What variables are associated with the location of a state on the map?\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that are done well.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe the visualization does well.\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that could be improved.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe could be improved."
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#joining-the-stat-313-workspace-on-posit-cloud",
-    "href": "slides/week1-day1-alt.html#joining-the-stat-313-workspace-on-posit-cloud",
-    "title": "Welcome to Stat 313!",
-    "section": "Joining the STAT 313 Workspace on Posit Cloud",
-    "text": "Joining the STAT 313 Workspace on Posit Cloud\n\nAccess Posit Cloud from link posted on Canvas\nCreate a Cloud Student account (using your Cal Poly email)\n\n\n\n\n\n\n\n$5 / month subscription\n\n\nThe Cloud Student account costs $5 / month. You will only need to pay for three (3) months of access, for a total of $15 for the quarter.\n\n\n\n\nJoin the STAT 313 workspace"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#accessing-lab-1",
-    "href": "slides/week1-day1-alt.html#accessing-lab-1",
-    "title": "Welcome to Stat 313!",
-    "section": "Accessing Lab 1",
-    "text": "Accessing Lab 1\n\nAccess Lab 1 either through:\n\n\nthe link posted on Canvas\nthe Content tab in the STAT 313 workspace\n\n\nClick on Lab 1 to open the Project"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#opening-the-lab-1-document",
-    "href": "slides/week1-day1-alt.html#opening-the-lab-1-document",
-    "title": "Welcome to Stat 313!",
-    "section": "Opening the Lab 1 Document",
-    "text": "Opening the Lab 1 Document\n\nClick on the lab-1.qmd file in the lower right hand corner to open the lab assignment\n\n{fig-alt=“A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the”Files” tab, with lab-1.qmd (a Quarto file) higlighted in a purple box.}\n\nStart working!"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#section-23",
-    "href": "slides/week1-day1-alt.html#section-23",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
-  },
-  {
-    "objectID": "slides/week2-day2.html",
-    "href": "slides/week2-day2.html",
-    "title": "The Flaws of Averages",
-    "section": "",
-    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'kableExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\n\n\nSuppose…\n\n\n“Overall this instructor was educationally effective.”\n\n. . .\n\n\n\n\n\nyear\nquarter\naverage\n\n\n\n\n2021\nFall\n4.53\n\n\n2021\nFall\n4.36\n\n\n2022\nWinter\n4.18\n\n\n2022\nWinter\n4.24\n\n\n2022\nSpring\n4.83\n\n\n2022\nSpring\n4.41\n\n\n2022\nSpring\n4.00"
-  },
-  {
-    "objectID": "slides/week2-day2.html#departure-delays",
-    "href": "slides/week2-day2.html#departure-delays",
-    "title": "The Flaws of Averages",
-    "section": "Departure Delays",
-    "text": "Departure Delays\n\nInspect the nycflights dataset\nVisualize departure delays\nPlay with histogram binwidth\nfilter() data to include only certain flights\ncalculate() summary statistics\nMake decisions based on summary statistics\nCompare summary statistics to a visualization"
-  },
-  {
-    "objectID": "slides/week2-day2.html#if-you-chose-to-participate-in-the-group-collaboration-research-project",
-    "href": "slides/week2-day2.html#if-you-chose-to-participate-in-the-group-collaboration-research-project",
-    "title": "The Flaws of Averages",
-    "section": "If you chose to participate in the group collaboration research project…",
-    "text": "If you chose to participate in the group collaboration research project…\nPlease fill out the post-collaboration survey!"
-  },
-  {
-    "objectID": "slides/week2-day1.html#section-7",
-    "href": "slides/week2-day1.html#section-7",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "“The scatterplot the most generally useful invention in the history of statistical graphics.”\n\n\n\n\n\nWhat are strengths of a scatterplot?\n\n\nPlots the raw data!\nInspect form, strength, and direction of a relationship\nIdentify unusual values\n\n\n\nWhat are weaknesses of a scatterplot?\n\n\nCan get “busy” when there are lots of observations (points)"
-  },
-  {
-    "objectID": "slides/week2-day1.html#due-by-wednesday",
-    "href": "slides/week2-day1.html#due-by-wednesday",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Due by Wednesday",
-    "text": "Due by Wednesday\n\nVisualizing Numerical Data – Reading Guide, Part 2\nVisualizing & Summarizing Numerical Data – Concept Quiz\nExploring Numerical Data – R Tutorial, Part 1\nSummarizing with Statistics – R Tutorial, Part 2\n\n\n\n\n\n\n\n\nDeadline Policy\n\n\nIf you cannot submit an assignment by the deadline, you are required to submit a deadline extension request before the assignment deadline has passed."
-  },
-  {
-    "objectID": "slides/week2-day1.html#deadline-policy-reminder",
-    "href": "slides/week2-day1.html#deadline-policy-reminder",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "Deadline Policy Reminder",
-    "text": "Deadline Policy Reminder"
-  },
-  {
-    "objectID": "slides/week2-day2.html#revisions",
-    "href": "slides/week2-day2.html#revisions",
-    "title": "The Flaws of Averages",
-    "section": "Revisions",
-    "text": "Revisions\n\n\n\n“Complete” = Satisfactory\n\n\nYour images were included in the document\nYou provided responses to every question\n\n\n\n\n\n“Incomplete” = Growing\n\n\nYour images were not included in the document\nYou did not provide responses to every question"
-  },
-  {
-    "objectID": "slides/week2-day2.html#key",
-    "href": "slides/week2-day2.html#key",
-    "title": "The Flaws of Averages",
-    "section": "Key",
-    "text": "Key\nA code chunk option is declared after a #|. Here are some options we may want to use:\n\n#| label: packages – creates a label for the code chunk (describing its contents)\n#| echo: false – tells Quarto not to output the code in the rendered HTML (only the output)\n#| include: false – tells Quarto not to include the code or the output in the rendered HTML"
-  },
-  {
-    "objectID": "slides/week2-day2.html#completing-revisions",
-    "href": "slides/week2-day2.html#completing-revisions",
-    "title": "The Flaws of Averages",
-    "section": "Completing Revisions",
-    "text": "Completing Revisions\n\nLab 1 revisions are due by Wednesday, April 17 (at midnight).\n\n\n\nRead comments on Canvas\nGo back into your Lab 1 on Posit Cloud and complete your revisions\nRender your revised Lab 1\nDownload your revised HTML\n\n\n\n\n\n\n\n\n\nReflections\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, or in the comment box on Canvas."
-  },
-  {
-    "objectID": "slides/week2-day2.html#pre--and-post-collaboration-surveys",
-    "href": "slides/week2-day2.html#pre--and-post-collaboration-surveys",
-    "title": "The Flaws of Averages",
-    "section": "Pre- and Post-Collaboration Surveys",
-    "text": "Pre- and Post-Collaboration Surveys\nIf you agreed to participate…\n\nComplete 6-question pre-collaboration survey\nComplete demographic survey"
-  },
-  {
-    "objectID": "slides/week2-day2.html#key---code-chunk-options",
-    "href": "slides/week2-day2.html#key---code-chunk-options",
-    "title": "The Flaws of Averages",
-    "section": "Key - Code Chunk Options",
-    "text": "Key - Code Chunk Options\nA code chunk option is declared after a #|. Here are some options we may want to use:\n\n\n#| label: packages – creates a label for the code chunk (describing its contents)\n#| echo: false – tells Quarto not to output the code in the rendered HTML (only the output)\n#| include: false – tells Quarto not to include the code or the output in the rendered HTML"
-  },
-  {
-    "objectID": "slides/week2-day2.html#key---previewing-your-data",
-    "href": "slides/week2-day2.html#key---previewing-your-data",
-    "title": "The Flaws of Averages",
-    "section": "Key - Previewing Your Data",
-    "text": "Key - Previewing Your Data\nThe glimpse() function is a great tool to preview the dataset you are working with! It gives you:\n\nthe dimensions of the data (rows and columns)\nthe names of the columns\nthe data type of each column (e.g., chr, dbl)\na preview of the first 10 rows of each column"
-  },
-  {
-    "objectID": "slides/week2-day2.html#key---plotting-your-data",
-    "href": "slides/week2-day2.html#key---plotting-your-data",
-    "title": "The Flaws of Averages",
-    "section": "Key - Plotting Your Data",
-    "text": "Key - Plotting Your Data\nNow that we’ve practiced making some plots, we know…\n\nmapping = aes(y = manufacturer, x = hwy) declares what variables are plotted on the x- and y-axis.\n\n\n\n\n\n\nTip\n\n\nThe variable names you put insides aes() must be identical to the names of the variables in the dataset!\n\n\n\n\n\n\n\nlabs(x = \"Highway Miles Per Gallon\", y = \"Car Manufacturer\") declares new x- and y-axis labels for the plot.\n\n\n\n\n\n\nTip\n\n\nIncluding nice axis labels (with their units) is a critical part of every visualization we make!"
-  },
-  {
-    "objectID": "slides/week2-day2.html#section-9",
-    "href": "slides/week2-day2.html#section-9",
-    "title": "The Flaws of Averages",
-    "section": "",
-    "text": "Cooperative Learning\n\nis a structured form of small-group learning\n\n\n\n\nRoles relate to how the work should be done\n\nRoles are not about breaking up the work intellectually\n\nRoles allow each person to contribute to the group in significant ways\n\nEach person’s participation is necessary to complete the task"
-  },
-  {
-    "objectID": "slides/week2-day2.html#section-10",
-    "href": "slides/week2-day2.html#section-10",
-    "title": "The Flaws of Averages",
-    "section": "",
-    "text": "Group Norms\n\n\n\n\nZero tolerance for: racism, sexism, homophobia, transphobia, ageism, ableism\nRespect one another\nIntent and impact both matter\n\n\n\n\n\nNon-judgmental\nTake space, make space\nEmbrace discomfort\nMake decisions by consensus"
-  },
-  {
-    "objectID": "slides/week2-day2.html#section-11",
-    "href": "slides/week2-day2.html#section-11",
-    "title": "The Flaws of Averages",
-    "section": "",
-    "text": "How We Learn Together\n\n\n\n\n\nNo one is done until everyone is done\nYou have the right to ask anyone in your group for help\nYou have the duty to help anyone in your group who asks for help\n\n\n\n\n\n\n\nHelping someone means explaining your thinking not giving answers or doing the work for them\nProvide a justification when you make a statement\nThink and work together – don’t divide up the work"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#section-12",
-    "href": "slides/week1-day1-alt.html#section-12",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
-  },
-  {
-    "objectID": "slides/week1-day1-alt.html#section-22",
-    "href": "slides/week1-day1-alt.html#section-22",
-    "title": "Welcome to Stat 313!",
-    "section": "",
-    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
-  },
-  {
-    "objectID": "slides/week1-day2.html",
-    "href": "slides/week1-day2.html",
-    "title": "Working with Data",
-    "section": "",
-    "text": "Tidy Data"
-  },
-  {
-    "objectID": "slides/week2-day1.html",
-    "href": "slides/week2-day1.html",
-    "title": "Visualizing & Summarizing Numerical Data",
-    "section": "",
-    "text": "5-minutes\n\n\n\nIf you would like to participate\n\nComplete consent form (say yes)\n\n\n\n\nIf you would not like to participate\n\nComplete consent form (say no)"
   }
 ]

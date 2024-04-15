@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -111,7 +111,7 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -362,14 +362,14 @@ div.csl-indent {
 <section id="getting-your-visualizations" class="level3">
 <h3 class="anchored" data-anchor-id="getting-your-visualizations">Getting your visualizations</h3>
 <p>For the New York Times visualization, you can left click on the image and save it to your computer.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/save_nyt.png" class="img-fluid figure-img"></p>
 <figcaption>Figure 1: Options when left clicking on NYT visualization – select “Save Image As…” to save it to your computer</figcaption>
 </figure>
 </div>
 <p>For the visualization from your research article, you may need to take screenshot of the page and crop it to only include the image.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/placebo_crop.png" class="img-fluid figure-img"></p>
 <figcaption>Figure 2: Cropped image from scientific article</figcaption>
@@ -654,12 +654,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

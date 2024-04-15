@@ -163,7 +163,7 @@ If you wanted means for each level of a categorical variable, what would you do?
 The HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.
 :::
 
-:::{.small}
+::: small
 ```{r}
 #| echo: true
 #| output-location: fragment
@@ -250,7 +250,7 @@ The majority of the Cutthroat trout were captured in cascades (C), pools (P), an
 
 </br>
 
-:::{.small}
+::: small
 ```{r}
 #| eval: false
 #| echo: true
@@ -282,7 +282,7 @@ trout %>%
 
 ::: columns
 ::: {.column width="70%"}
-:::{.small}
+::: small
 ```{r}
 #| echo: true
 #| fig-width: 4
@@ -302,14 +302,14 @@ ggplot(data = salamander,
 :::
 
 ::: {.column width="25%"}
-::: {.small}
-:::{.fragment}
+::: small
+::: fragment
 How would this histogram look if there was no variation in salamander length?
 
 </br>
 :::
 
-:::{.fragment}
+::: fragment
 What are possible causes for the variation in salamander length?
 :::
 :::
@@ -318,7 +318,7 @@ What are possible causes for the variation in salamander length?
 
 ## Faceted Histograms
 
-:::{.small}
+::: small
 ```{r facet-hist}
 #| echo: true
 #| code-line-numbers: "|4"
@@ -332,12 +332,11 @@ ggplot(data = salamander,
 ```
 :::
 
-
 ## Side-by-Side Boxplots
 
 ::: columns
 ::: {.column width="50"}
-:::{.small}
+::: small
 ```{r horizontal-boxplot}
 #| fig-width: 6
 #| fig-height: 3.5
@@ -357,8 +356,8 @@ ggplot(data = salamander,
 :::
 
 ::: {.column width="50"}
-:::{.small}
-:::{.fragment}
+::: small
+::: fragment
 ```{r vertical-boxplot}
 #| fig-width: 6
 #| fig-height: 4
@@ -382,7 +381,7 @@ ggplot(data = salamander,
 
 ## Colors in Boxplots
 
-:::{.small}
+::: small
 ```{r boxplot-color}
 #| fig-align: center
 #| echo: true
@@ -405,7 +404,7 @@ ggplot(data = salamander,
 
 ## Facets & Colors in Boxplots
 
-:::{.small}
+::: small
 ```{r boxplot-facets}
 #| fig-align: center
 #| echo: true
@@ -427,7 +426,7 @@ ggplot(data = salamander,
 
 ## Facets & Color in Scatterplots
 
-:::{.small}
+::: small
 ```{r scatterplot-facets}
 #| fig-align: center
 #| echo: true
@@ -472,14 +471,15 @@ What are the aesthetics included in this plot?
 
 What is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?
 
-# Statistical critique
+# [Statistical critique](../critique/critique-1.qmd)
 
 ## Your Tasks
 
-1. Find your visualizations 
-  - Visualization from your Week 1 article (Statistics in Your Field)
-  - Visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph) 
+1.  Find your visualizations
 
-2. Discuss the `aes`thetics included in the plots
-3. Discuss what you believe the plot does well
-4. Discuss what improvements could be made to make the plot more clear
+-   Visualization from your Week 1 article (Statistics in Your Field)
+-   Visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph)
+
+2.  Discuss the `aes`thetics included in the plots
+3.  Discuss what you believe the plot does well
+4.  Discuss what improvements could be made to make the plot more clear
