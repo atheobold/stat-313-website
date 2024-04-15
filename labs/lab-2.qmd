@@ -146,10 +146,10 @@ Note that you can separate the conditions using commas if you want flights that 
 filter(sfo_flights, 
        month == __, 
        arr_delay > __) %>% 
-  dim()
+  glimpse()
 ```
 
-**Question 6 -- When you ran the code above it output two numbers. What do those numbers tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
+**Question 6 -- When you ran the code above output a preview of the filtered dataset. What does this output tell you about the number of flights that met your criteria (SFO, July, arrived early)?**
 
 ## Data Summaries
 
