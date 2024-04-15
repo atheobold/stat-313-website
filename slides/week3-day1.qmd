@@ -3,7 +3,7 @@ title: "Incorporating Categorical Variables"
 format: 
   revealjs:
     logo: images/dplyr.png
-    theme: style.scss
+    theme: [simple, style.scss]
 editor: visual
 execute: 
   echo: false

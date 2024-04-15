@@ -788,7 +788,7 @@
     "href": "slides/week3-day2-alt.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.30\nNONE\n2017-09-05\nNA\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n20\nNA\nCascade torrent salamander\n40\n72\n1.95\nNONE\n1994-08-30\nNA\n\n\n2001\nMACKOG-M\nOG\nM\n1\n11\nC\n24\nNA\nCoastal giant salamander\n59\n101\nNA\nNONE\n2001-08-21\nCUT TAIL\n\n\n1999\nMACKOG-M\nOG\nM\n2\n9\nC\n24\nNA\nCoastal giant salamander\n26\n54\nNA\nNONE\n1999-09-02\nNA\n\n\n1998\nMACKCC-L\nCC\nL\n1\n2\nSC\n13\nNA\nCutthroat trout\n45\nNA\nNA\nNONE\n1998-09-04\nNA\n\n\n2017\nMACKCC-M\nCC\nM\n1\n9\nC\n5\nNA\nCutthroat trout\n43\nNA\n0.89\nNONE\n2017-09-06\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2012\nMACKOG-U\nOG\nU\n1\n16\nSC\n2\nNA\nCascade torrent salamander\n26\n47\n0.50\nNONE\n2012-09-07\nNA\n\n\n1995\nMACKCC-L\nCC\nL\n1\n2\nC\n26\nNA\nCoastal giant salamander\n68\n115\n11.10\nNONE\n1995-08-30\nNA\n\n\n2011\nMACKOG-L\nOG\nL\n1\n1\nC\n14\nNA\nCoastal giant salamander\n58\n101\n7.51\nNONE\n2011-09-14\nNA\n\n\n2006\nMACKCC-U\nCC\nU\n1\n10\nP\n11\nNA\nCutthroat trout\n91\nNA\nNA\nRV\n2006-09-06\nNA\n\n\n1998\nMACKCC-U\nCC\nU\n1\n6\nC\n18\nNA\nCutthroat trout\n60\nNA\nNA\nNONE\n1998-09-09\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2-alt.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -928,7 +928,7 @@
     "href": "slides/week3-day2-alt.html#references",
     "title": "Week 3 Day 2",
     "section": "References",
-    "text": "References\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086.\n\n\nKhan, Nazim Uddin Azam, and Assad Movahed. 2000. “Role of ß Blockers in Congestive Heart Failure.” Congestive Heart Failure 6 (6): 299–312. https://doi.org/10.1111/j.1527-5299.2000.80176.x."
+    "text": "References\n\n\n\n\n\n\n\n\nKeller, Sarah N., and Timothy Wilkinson. 2017. “Preventing Suicide in Montana: A Community-Based Theatre Intervention.” Journal of Social Marketing 7 (4): 423–40. https://doi.org/10.1108/jsocm-12-2016-0086.\n\n\nKhan, Nazim Uddin Azam, and Assad Movahed. 2000. “Role of ß Blockers in Congestive Heart Failure.” Congestive Heart Failure 6 (6): 299–312. https://doi.org/10.1111/j.1527-5299.2000.80176.x."
   },
   {
     "objectID": "slides/week7-day2.html#course-updates",
