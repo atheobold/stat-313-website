@@ -82,8 +82,6 @@ Your group received a "Growing" on *at least one* question
 ::: small
 -   Units in axis labels (Q2 & Q9)
     -   What unit were the departure / arrival delays measured in?
--   dimensions of filtered data (Q6)
-    -   How do the two numbers output relate to the size of the filtered dataset?
 -   Justifying *why* I should expect to be early / late (Q8 & Q10)
     -   Why is the mean / median a reasonable estimate of the "typical" delay?
     -   What aspect(s) of the distribution did you use to decide what a "typical" delay is?
@@ -94,7 +92,7 @@ Your group received a "Growing" on *at least one* question
 The person who typed your lab needs to make their project "public"
 
 1.  Open Posit Cloud
-2.  Go to the STAT 313 / 513 workspace
+2.  Go to the STAT 313 workspace
 3.  Click on "Your Content"
 4.  Open the settings for your Lab 1 project
 
@@ -119,7 +117,7 @@ The person who typed your lab needs to make their project "public"
 
 ## Completing Revisions
 
-Lab 2 revisions are due by Thursday, February 1.
+Lab 2 revisions are due by Wednesday, April 24.
 
 ::: small
 1.  Read comments on Canvas
@@ -127,7 +125,7 @@ Lab 2 revisions are due by Thursday, February 1.
 3.  Complete your revisions
 4.  Render your revised Lab 2
 5.  Download your revised HTML
-6.  Submit your revisions to the [Lab 2 Revisions]{.underline} assignment
+6.  Submit your revisions to the [original Lab 2]{.underline} assignment
 :::
 
 ::: callout-warning
@@ -429,42 +427,8 @@ The intake form for a local heart clinic asks the following question:
 What information are the doctors missing?
 :::
 
-## Data Feminism
+<!-- ## Choosing What to Measure -->
 
-::: columns
-::: {.column width="55%"}
-![](images/feminist.png)
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: {style="font-size: 1.15em;"}
--   Data science by whom?
-
--   Data science for whom?
-
--   Data sets about whom?
-
--   Data science with whose values?
-:::
-:::
-:::
-
-## Principles of Data Feminism
-
-::: columns
-::: {.column width="60%"}
-![](images/principles_data_feminism.PNG)
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="35%"}
-![](images/data_feminism_book.jpg)
-:::
-:::
+<!-- `openintro` data on births -- classifying race as white and non-white -->
 
 ## References

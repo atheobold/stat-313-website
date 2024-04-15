@@ -4853,14 +4853,14 @@
     "href": "slides/week3-day2.html#common-mistakes",
     "title": "Week 3 Day 2",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\n\nUnits in axis labels (Q2 & Q9)\n\nWhat unit were the departure / arrival delays measured in?\n\ndimensions of filtered data (Q6)\n\nHow do the two numbers output relate to the size of the filtered dataset?\n\nJustifying why I should expect to be early / late (Q8 & Q10)\n\nWhy is the mean / median a reasonable estimate of the “typical” delay?\nWhat aspect(s) of the distribution did you use to decide what a “typical” delay is?"
+    "text": "Common Mistakes\n\n\nUnits in axis labels (Q2 & Q9)\n\nWhat unit were the departure / arrival delays measured in?\n\nJustifying why I should expect to be early / late (Q8 & Q10)\n\nWhy is the mean / median a reasonable estimate of the “typical” delay?\nWhat aspect(s) of the distribution did you use to decide what a “typical” delay is?"
   },
   {
     "objectID": "slides/week3-day2.html#copying-the-lab-last-weeks-recorder",
     "href": "slides/week3-day2.html#copying-the-lab-last-weeks-recorder",
     "title": "Week 3 Day 2",
     "section": "Copying the Lab – Last Week’s Recorder",
-    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 / 513 workspace\nClick on “Your Content”\nOpen the settings for your Lab 1 project"
+    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 workspace\nClick on “Your Content”\nOpen the settings for your Lab 1 project"
   },
   {
     "objectID": "slides/week3-day2.html#copying-the-lab-last-weeks-recorder-1",
@@ -4881,7 +4881,7 @@
     "href": "slides/week3-day2.html#completing-revisions",
     "title": "Week 3 Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Thursday, February 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the Lab 2 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2.html#todays-data",
@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n2013\nMACKOG-M\nOG\nM\n2\n11\nC\n9\nNA\nCoastal giant salamander\n45\n87\n3.30\nNONE\n2013-09-05\nNA\n\n\n2009\nMACKCC-U\nCC\nU\n1\n7\nC\n95\nNA\nCoastal giant salamander\n55\n99\n5.96\nNONE\n2009-09-15\nNA\n\n\n2010\nMACKCC-U\nCC\nU\n1\n11\nC\n2\nNA\nCutthroat trout\n45\nNA\n0.98\nNONE\n2010-09-08\nNA\n\n\n2015\nMACKCC-L\nCC\nL\n2\n2\nSC\n5\n18553418\nCutthroat trout\n104\nNA\n11.00\nNONE\n2015-08-31\nRECAP\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2019\nMACKOG-M\nOG\nM\n1\n8\nSC\n17\nNA\nCascade torrent salamander\n28\n52\n0.8\nNONE\n2019-09-04\nTorrent salamander\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.3\nNONE\n2017-09-05\nNA\n\n\n2003\nMACKCC-U\nCC\nU\n1\n9\nC\n38\nNA\nCoastal giant salamander\n85\n155\nNA\nNONE\n2003-09-02\nNA\n\n\n1994\nMACKCC-U\nCC\nU\n1\n16\nP\n14\nNA\nCoastal giant salamander\n114\n190\nNA\nNONE\n1994-08-31\nNA\n\n\n2001\nMACKOG-L\nOG\nL\n1\n1\nP\n9\nNA\nCutthroat trout\n78\nNA\nNA\nNONE\n2001-08-21\nNA\n\n\n2010\nMACKOG-M\nOG\nM\n1\n11\nC\n2\n26207003\nCutthroat trout\n126\nNA\n21.4\nNONE\n2010-09-10\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -6328,5 +6328,12 @@
     "title": "Stat Critique 1 Grading Guide",
     "section": "",
     "text": "Double Encoding\n\n\n\nIt’s okay if they only mention one of the aesthetics that a variable is associated with when it is mapped to multiple aesthetics.\n\n\nGrowing\n\nDoesn’t name variables mapped to each aesthetic (e.g., only says the x-axis, y-axis, and color are used)\n\nFeedback: We want you to state specifically the names of the variables mapped to each aesthetic!\n\nSays a color aesthetic is used but the same color is used for every observation\n\nFeedback: Careful! Aesthetics are places where variables are being incorporated into the plot. Is the color in this plot associated with a variable?\n\nMisses an aesthetic that is being used\n\nFeedback for general plots: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are [multiple plots / multiple colors / multiple lines] not just one. What variable is associated with these separate [plots / colors / lines]?\nFeedback for maps: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, we have “hidden” x- and y-variables. What variables are associated with the location of a state on the map?\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that are done well.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe the visualization does well.\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that could be improved.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe could be improved."
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure-4",
+    "href": "slides/week3-day2.html#choosing-what-to-measure-4",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure",
+    "text": "Choosing What to Measure\nopenintro data on births – classifying race as white and non-white"
   }
 ]
