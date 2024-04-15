@@ -59,9 +59,7 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 **(a) How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)**
 
-**(b) Are there numerical variables in the dataset? If so, what are their names?**
-
-Think about revising to be more specific about R data types not categorical variables
+**(b) Are there numerical variables in the dataset? If so, what are their names?** *Hint: What data types are numerical variables stored as?*
 
 ```{r}
 #| label: data-inspect 
