@@ -3511,14 +3511,14 @@
     "href": "labs/lab-3.html",
     "title": "Lab 3: Incorporating Categorical Variables",
     "section": "",
-    "text": "You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheatsheets” from Weeks 2 & 3 will be very helpful while completing this assignment.\n\n\n\nIn this lab, we will explore and visualize the data using packages housed in the tidyverse suite of packages.\n\n## Package for ggplot and dplyr tools\nlibrary(tidyverse)\n\n## Package for ecological data\nlibrary(lterdatasampler)\n\n## Package for density ridge plots\nlibrary(ggridges)\n\n\n\n\nIn this lab we will work with data from the H.J. Andrews Experimental Forest. The following is a description of the data:\n\nPopulations of West Slope cutthroat trout (Onchorhyncus clarki clarki) in two standard reaches of Mack Creek in the H.J. Andrews Experimental Forest have been monitored since 1987. Monitoring of Pacific Giant Salamanders, Dicamptodon tenebrosus began in 1993. The two standard reaches are in a section of clearcut forest (ca. 1963) and an upstream 500 year old coniferous forest. Sub-reaches are sampled with 2-pass electrofishing, and all captured vertebrates are measured and weighed. Additionally, a set of channel measurements are taken with each sampling. This study constitutes one of the longest continuous records of salmonid populations on record.\n\nFirst, we’ll view the and_vertebrates dataframe where these data are stored.\n\nView(and_vertebrates)\n\n\n\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?and_vertebrates\n\nQuestion 1 – How large is the and_vertebrates dataset? (i.e. How many rows and columns does the dataset have?)\n\n## Your code for question 1 (and 2) goes here!\n\nQuestion 2 – Are there categorical variables in the dataset? If so, what are their names?\n\n\n\nThe species variable refers to the species of the animal which was captured. You can use the distinct() function to access the distinct values of a categorical variable (e.g., distinct(nycflights, carrier)). Notice the first input is the name of the dataset and the second input is the name of the categorical variable!\nQuestion 3 – Use the distinct() function to discover the levels / values of the species variable.\n\n## Your code for question 3 goes here!"
+    "text": "You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheat sheets” from Weeks 2 & 3 will be very helpful while completing this assignment.\n\n\n\nIn this lab, we will explore and visualize the data using packages housed in the tidyverse suite of packages.\n\n## Package for ggplot and dplyr tools\nlibrary(tidyverse)\n\n## Package for ecological data\nlibrary(lterdatasampler)\n\n## Package for density ridge plots\nlibrary(ggridges)\n\n\n\n\nIn this lab we will work with data from the H.J. Andrews Experimental Forest. The following is a description of the data:\n\nPopulations of West Slope cutthroat trout (Onchorhyncus clarki clarki) in two standard reaches of Mack Creek in the H.J. Andrews Experimental Forest have been monitored since 1987. Monitoring of Pacific Giant Salamanders, Dicamptodon tenebrosus began in 1993. The two standard reaches are in a section of clearcut forest (ca. 1963) and an upstream 500 year old coniferous forest. Sub-reaches are sampled with 2-pass electrofishing, and all captured vertebrates are measured and weighed. Additionally, a set of channel measurements are taken with each sampling. This study constitutes one of the longest continuous records of salmonid populations on record.\n\nFirst, we’ll view the and_vertebrates dataframe where these data are stored.\n\nView(and_vertebrates)\n\n\n\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?and_vertebrates\n\nQuestion 1 – How large is the and_vertebrates dataset? (i.e. How many rows and columns does the dataset have?)\n\n## Your code for question 1 (and 2) goes here!\n\nQuestion 2 – Are there categorical variables in the dataset? If so, what are their names? Hint: What data types are categorical variables stored as?\n\n\n\nThe species variable refers to the species of the animal which was captured. You can use the distinct() function to access the distinct values of a categorical variable (e.g., distinct(nycflights, carrier)). Notice the first input is the name of the dataset and the second input is the name of the categorical variable!\nQuestion 3 – Use the distinct() function to discover the levels / values of the species variable.\n\n## Your code for question 3 goes here!"
   },
   {
     "objectID": "labs/lab-3.html#r-resources",
     "href": "labs/lab-3.html#r-resources",
     "title": "Lab 3: Incorporating Categorical Variables",
     "section": "",
-    "text": "You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheatsheets” from Weeks 2 & 3 will be very helpful while completing this assignment."
+    "text": "You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheat sheets” from Weeks 2 & 3 will be very helpful while completing this assignment."
   },
   {
     "objectID": "labs/lab-3.html#load-packages",
@@ -3539,7 +3539,7 @@
     "href": "labs/lab-3.html#exploring-the-dataset",
     "title": "Lab 3: Incorporating Categorical Variables",
     "section": "",
-    "text": "The codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?and_vertebrates\n\nQuestion 1 – How large is the and_vertebrates dataset? (i.e. How many rows and columns does the dataset have?)\n\n## Your code for question 1 (and 2) goes here!\n\nQuestion 2 – Are there categorical variables in the dataset? If so, what are their names?"
+    "text": "The codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?and_vertebrates\n\nQuestion 1 – How large is the and_vertebrates dataset? (i.e. How many rows and columns does the dataset have?)\n\n## Your code for question 1 (and 2) goes here!\n\nQuestion 2 – Are there categorical variables in the dataset? If so, what are their names? Hint: What data types are categorical variables stored as?"
   },
   {
     "objectID": "labs/lab-3.html#accessing-the-levels-of-a-variable",
@@ -3553,7 +3553,7 @@
     "href": "labs/lab-3.html#adding-categorical-variables",
     "title": "Lab 3: Incorporating Categorical Variables",
     "section": "Adding Categorical Variables",
-    "text": "Adding Categorical Variables\nWhen we are interested in comparing the distribution of a numerical variable across groups of a categorical variable, we “typically” see people use stacked histograms or side-by-side boxplots. I believe an unsung hero of these types of comparisons is the ridge plot.\nAs introduced in Introduction to Modern Statistics, a ridge plot essentially has multiple density plots stacked in the same plotting window. A key feature of ridge plots is a categorical variable is always on the y-axis, with a numeric variable on the x-axis.\nIn R, we use the geom_density_ridges() function from the ggridges package to create a ridge plot. Yes, this is new, but don’t worry! The function has the same layout as things you’ve seen before.\nQuestion 7 – Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (unittype). Be sure to add nice axis labels to your plot, which describe the variables being plotted (and their units)!\n\nggplot(data = trout, \n       mapping = aes(x = &lt;NUMERICAL VARIABLE&gt;, \n                     y = &lt;CATEGORICAL VARIABLE&gt;)\n       ) +\n  geom_density_ridges() \n\nQuestion 8 – Modify your plot from #7 to incorporate the section of the forest into your plot, using either color or facets.\nHint: The fill aesthetic will fill the ridge plots with color.\nQuestion 9 – Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections? Be sure to address how the centers and shapes of these distributions compare!"
+    "text": "Adding Categorical Variables\nWhen we are interested in comparing the distribution of a numerical variable across groups of a categorical variable, we “typically” see people use stacked histograms or side-by-side boxplots. I believe an unsung hero of these types of comparisons is the ridge plot.\nAs introduced in Introduction to Modern Statistics, a ridge plot essentially has multiple density plots stacked in the same plotting window. A key feature of ridge plots is a categorical variable is always on the y-axis, with a numeric variable on the x-axis.\nIn R, we use the geom_density_ridges() function from the ggridges package to create a ridge plot. Yes, this is new, but don’t worry! The function has the same layout as things you’ve seen before.\nQuestion 7 – Fill in the code below to create a ridge plot comparing the lengths of Cutthroat trout between the different types of channels (unittype). Be sure to add nice axis labels to your plot, which describe the variables being plotted (and their units)!\n\nggplot(data = trout, \n       mapping = aes(x = &lt;NUMERICAL VARIABLE&gt;, \n                     y = &lt;CATEGORICAL VARIABLE&gt;)\n       ) +\n  geom_density_ridges() \n\nQuestion 8 – Modify your plot from #7 to incorporate the section of the forest into your plot, using either color or facets. Hint: The fill aesthetic will fill the ridge plots with color.\nQuestion 9 – Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections? Be sure to address how the centers and shapes of ALL these distributions compare!"
   },
   {
     "objectID": "labs/lab-4.html",
@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2019\nMACKOG-M\nOG\nM\n1\n8\nSC\n17\nNA\nCascade torrent salamander\n28\n52\n0.8\nNONE\n2019-09-04\nTorrent salamander\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.3\nNONE\n2017-09-05\nNA\n\n\n2003\nMACKCC-U\nCC\nU\n1\n9\nC\n38\nNA\nCoastal giant salamander\n85\n155\nNA\nNONE\n2003-09-02\nNA\n\n\n1994\nMACKCC-U\nCC\nU\n1\n16\nP\n14\nNA\nCoastal giant salamander\n114\n190\nNA\nNONE\n1994-08-31\nNA\n\n\n2001\nMACKOG-L\nOG\nL\n1\n1\nP\n9\nNA\nCutthroat trout\n78\nNA\nNA\nNONE\n2001-08-21\nNA\n\n\n2010\nMACKOG-M\nOG\nM\n1\n11\nC\n2\n26207003\nCutthroat trout\n126\nNA\n21.4\nNONE\n2010-09-10\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n1999\nMACKOG-U\nOG\nU\n1\n11\nC\n12\nNA\nCoastal giant salamander\n54\n97\nNA\nNONE\n1999-09-02\nNA\n\n\n2016\nMACKOG-L\nOG\nL\n1\n3\nC\n22\nNA\nCoastal giant salamander\n46\n80\n3.23\nNONE\n2016-09-07\nNA\n\n\n2017\nMACKCC-U\nCC\nU\n1\n12\nC\n8\nNA\nCutthroat trout\n45\nNA\n0.91\nNONE\n2017-09-06\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n1\n2\nSC\n42\nNA\nCutthroat trout\n34\nNA\nNA\nNONE\n2001-08-20\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -4923,21 +4923,21 @@
     "href": "slides/week3-day2.html#step-2-group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(mean_mass = mean(weight_g, \n                             na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
   },
   {
     "objectID": "slides/week3-day2.html#are-they-different",
     "href": "slides/week3-day2.html#are-they-different",
     "title": "Week 3 Day 2",
     "section": "Are they different?",
-    "text": "Are they different?\n\n\n\n\n\n\n\n\nForest Section\nMean Biomass\n\n\n\n\nClear cut\n9.380571\n\n\nOld growth\n8.213796\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\n\n\n\n\n\n\n\n\nForest Section\nMean Biomass\n\n\n\n\nClear cut\n9.380571\n\n\nOld growth\n8.213796\n\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2.html#lets-make-a-visualization",
     "href": "slides/week3-day2.html#lets-make-a-visualization",
     "title": "Week 3 Day 2",
     "section": "Let’s Make a Visualization!",
-    "text": "Let’s Make a Visualization!\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = section)) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of Forest\")"
+    "text": "Let’s Make a Visualization!\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = section)\n       ) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of HJ Andrews Experimental Forest\")"
   },
   {
     "objectID": "slides/week3-day2.html#are-they-different-1",
@@ -4972,7 +4972,7 @@
     "href": "slides/week3-day2.html#visualization-2.0-incorporating-color",
     "title": "Week 3 Day 2",
     "section": "Visualization 2.0 – Incorporating Color",
-    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)\n       ) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of HJ Andrews \\nExperimental Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
   },
   {
     "objectID": "slides/week3-day2.html#visualization-2.0-incorporating-color-output",
@@ -4986,7 +4986,7 @@
     "href": "slides/week3-day2.html#visualization-2.0-incorporating-facets",
     "title": "Week 3 Day 2",
     "section": "Visualization 2.0 – Incorporating Facets",
-    "text": "Visualization 2.0 – Incorporating Facets\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = unittype)) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of Forest\") +\n  facet_wrap(~section)"
+    "text": "Visualization 2.0 – Incorporating Facets\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     y = unittype)) +\n  geom_density_ridges() +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       y = \"Section of HJ Andrews Experimental Forest\") +\n  facet_wrap(~section)"
   },
   {
     "objectID": "slides/week3-day2.html#visualization-2.0-incorporating-facets-output",
@@ -5021,7 +5021,7 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure-3",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure",
-    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is your sex?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
+    "text": "Choosing What to Measure\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
   },
   {
     "objectID": "slides/week3-day2.html#data-feminism",
@@ -6335,5 +6335,61 @@
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure",
     "text": "Choosing What to Measure\nopenintro data on births – classifying race as white and non-white"
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---gender",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---gender",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Gender",
+    "text": "Choosing What to Measure - Gender\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Gender",
+    "text": "Choosing What to Measure - Gender\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---sex",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---sex",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Sex",
+    "text": "Choosing What to Measure - Sex\n\\(\\beta\\) blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen (Khan and Movahed 2000)."
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---sex-1",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---sex-1",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Sex",
+    "text": "Choosing What to Measure - Sex\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---race",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---race",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Race",
+    "text": "Choosing What to Measure - Race\nEvery year, the US publishes a large dataset on the public birth records for babies born that year. These data contain information about the baby, the pregnancy, and the birth parent(s)."
+  },
+  {
+    "objectID": "slides/week3-day2.html#choosing-what-to-measure---race-1",
+    "href": "slides/week3-day2.html#choosing-what-to-measure---race-1",
+    "title": "Week 3 Day 2",
+    "section": "Choosing What to Measure - Race",
+    "text": "Choosing What to Measure - Race\nLooking at the births14 dataset, the race of the mother was classified as:\n\nwhite\nnonwhite\n\n\n \n\nWhat information are researchers missing?"
+  },
+  {
+    "objectID": "slides/week3-day2.html#section",
+    "href": "slides/week3-day2.html#section",
+    "title": "Week 3 Day 2",
+    "section": "",
+    "text": "If you wanted to find the mean mass for Cutthroat trout in each section, what would you do?"
+  },
+  {
+    "objectID": "slides/week3-day2.html#group_by-multiple-variables",
+    "href": "slides/week3-day2.html#group_by-multiple-variables",
+    "title": "Week 3 Day 2",
+    "section": "group_by() Multiple Variables",
+    "text": "group_by() Multiple Variables\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g, \n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
   }
 ]

@@ -136,7 +136,74 @@ Revisions are required to be accompanied with reflections on what you learned wh
 :::
 :::
 
-# Review
+# Ethical Considerations with Categorical Variables
+
+## Choosing What to Measure - Gender
+
+Keller et al. [-@keller2017] designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.
+
+. . .
+
+</br>
+
+Students attending the *Let's Talk* theater workshop, were asked to report their gender, race, and age.
+
+## Choosing What to Measure - Gender
+
+Researchers provided students with the following question:
+
+> What is your gender?
+>
+> Male, Female, Other
+
+. . .
+
+</br> </br>
+
+::: {style="font-size: 1.5em; color: #0F4C81"}
+What information are the researchers missing?
+:::
+
+## Choosing What to Measure - Sex
+
+$\beta$ blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen [@khan2000].
+
+## Choosing What to Measure - Sex
+
+The intake form for a local heart clinic asks the following question:
+
+> What is sex were you assigned at birth?
+>
+> Male, Female, Other
+
+. . .
+
+</br> </br>
+
+::: {style="font-size: 1.5em; color: #0F4C81"}
+What information are the doctors missing?
+:::
+
+## Choosing What to Measure - Race
+
+Every year, the US publishes a large dataset on the public birth records for babies born that year. These data contain information about the baby, the pregnancy, and the birth parent(s). 
+
+## Choosing What to Measure - Race
+
+Looking at the [`births14`](https://www.openintro.org/data/index.php?data=births14) dataset, the race of the mother was classified as:
+
+- white
+- nonwhite
+
+. . .
+
+</br> </br>
+
+::: {style="font-size: 1.5em; color: #0F4C81"}
+What information are researchers missing?
+:::
+
+# Lab 3
 
 ## Today's Data
 
@@ -196,27 +263,29 @@ trout <- filter(and_vertebrates,
 
 trout %>% 
   group_by(section) %>% 
-  summarize(mean_mass = mean(weight_g, 
-                             na.rm = TRUE)
+  summarize(
+    mean_mass = mean(weight_g,
+                     na.rm = TRUE)
             )
 ```
 
 . . .
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="35%"}
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-**Why `na.rm = TRUE`?**
+::: {.column width="60%"}
+**Remember `na.rm = TRUE` is important if there are missing values!**
 :::
 :::
 
 ## Are they different?
 
+:::{.large}
 ```{r}
 #| label: fish-mean-mass-table
 
@@ -229,6 +298,7 @@ trout %>%
          `Mean Biomass` = mean_mass) %>% 
   gt::gt()
 ```
+:::
 
 Would you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?
 
@@ -245,10 +315,11 @@ Would you conclude there is a difference in fish biomass between clear cut and o
 
 ggplot(data = trout, 
        mapping = aes(x = weight_g, 
-                     y = section)) +
+                     y = section)
+       ) +
   geom_density_ridges() +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       y = "Section of Forest") 
+       y = "Section of HJ Andrews Experimental Forest") 
 ```
 
 ## Are they different?
@@ -262,7 +333,7 @@ ggplot(data = trout,
                      y = section)) +
   geom_density_ridges() +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       y = "Section of Forest") + 
+       y = "Section of HJ Andrews Experimental Forest") +
   my_theme
 ```
 
@@ -317,7 +388,7 @@ not sampled by unit
 
 ## If you wanted to find the mean mass for Cutthroat trout for each *type of channel* in each *section*, what would you do? {background-color="#B6CADA"}
 
-## `group_by()` + `summarize()`
+## `group_by()` Multiple Variables
 
 ```{r}
 #| label: section-channel-mass
@@ -327,8 +398,9 @@ not sampled by unit
 
 trout %>% 
   group_by(section, unittype) %>% 
-  summarize(mean_mass = mean(weight_g, 
-                             na.rm = TRUE)
+  summarize(
+    mean_mass = mean(weight_g, 
+                     na.rm = TRUE)
             )
 ```
 
@@ -346,10 +418,11 @@ trout %>%
 ggplot(data = trout, 
        mapping = aes(x = weight_g, 
                      fill = section, 
-                     y = unittype)) +
+                     y = unittype)
+       ) +
   geom_density_ridges(alpha = 0.5) +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       fill = "Section of Forest", 
+       fill = "Section of HJ Andrews \nExperimental Forest", 
        y = "Type of Channel")
 ```
 
@@ -375,60 +448,8 @@ ggplot(data = trout,
                      y = unittype)) +
   geom_density_ridges() +
   labs(x = "Weight of Cutthroat Trout (g)", 
-       y = "Section of Forest") +
+       y = "Section of HJ Andrews Experimental Forest") +
   facet_wrap(~section)
 ```
-
-# Ethical Considerations
-
-## Choosing What to Measure
-
-Keller et al. [-@keller2017] designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.
-
-. . .
-
-</br>
-
-Students attending the *Let's Talk* theater workshop, were asked to report their gender, race, and age.
-
-## Choosing What to Measure
-
-Researchers provided students with the following question:
-
-> What is your gender?
->
-> Male, Female, Other
-
-. . .
-
-</br> </br>
-
-::: {style="font-size: 1.5em; color: #0F4C81"}
-What information are the researchers missing?
-:::
-
-## Choosing What to Measure
-
-$\beta$ blockers have been shown to improve survival in patients with congestive heart failure. These medicines block the effects of the hormone epinephrine (adrenaline). Research suggests that beta blockers have a differing effect for individuals with high levels of estrogen [@khan2000].
-
-## Choosing What to Measure
-
-The intake form for a local heart clinic asks the following question:
-
-> What is your sex?
->
-> Male, Female, Other
-
-. . .
-
-</br> </br>
-
-::: {style="font-size: 1.5em; color: #0F4C81"}
-What information are the doctors missing?
-:::
-
-<!-- ## Choosing What to Measure -->
-
-<!-- `openintro` data on births -- classifying race as white and non-white -->
 
 ## References
