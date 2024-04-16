@@ -4919,7 +4919,7 @@ vertical-align: -.125em;
 <h1>Getting started</h1>
 <section id="r-resources" class="level2">
 <h2 class="anchored" data-anchor-id="r-resources">R Resources</h2>
-<p>You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheatsheets” from Weeks 2 &amp; 3 will be very helpful while completing this assignment.</p>
+<p>You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the “cheat sheets” from Weeks 2 &amp; 3 will be very helpful while completing this assignment.</p>
 </section>
 <section id="load-packages" class="level2">
 <h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
@@ -4956,7 +4956,7 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code for question 1 (and 2) goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 2 – Are there categorical variables in the dataset? If so, what are their names?</strong></p>
+<p><strong>Question 2 – Are there categorical variables in the dataset? If so, what are their names?</strong> <em>Hint: What data types are categorical variables stored as?</em></p>
 </section>
 <section id="accessing-the-levels-of-a-variable" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-the-levels-of-a-variable">Accessing the Levels of a Variable</h2>
@@ -4979,8 +4979,8 @@ vertical-align: -.125em;
 <section id="data-visualizations" class="level1">
 <h1>Data Visualizations</h1>
 <p>Alright, now that we’ve gotten our data ready for analysis, let’s start with some visualizations</p>
-<p><strong>Question 5 – Using <code>ggplot()</code> create a visualization of the <em>distribution</em> of the lengths of the Cutthroat trout (from the <code>trout</code> dataset you <code>filter</code>ed above).</strong> <em>Your plot should have axis lables that describe the variable being plotted, and its associated units!</em></p>
-<p><em>Keep in mind your plot should only extend to 101mm if you completed #4 correctly.</em></p>
+<p><strong>Question 5 – Using <code>ggplot()</code> create a visualization of the <em>distribution</em> of the lengths of the Cutthroat trout (from the <code>trout</code> dataset you <code>filter</code>ed above).</strong> <em>Your plot should have axis labels that describe the variable being plotted, and its associated units!</em></p>
+<p><em>Keep in mind the smallest value on your plot should be 101mm if you completed #4 correctly.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code for question 6 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -4998,9 +4998,8 @@ vertical-align: -.125em;
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 8 – Modify your plot from #7 to incorporate the <code>section</code> of the forest into your plot, using either <code>color</code> or <code>facet</code>s.</strong></p>
-<p><em>Hint: The <code>fill</code> aesthetic will <strong>fill</strong> the ridge plots with color.</em></p>
-<p><strong>Question 9 – Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?</strong> <em>Be sure to address how the centers and shapes of these distributions compare!</em></p>
+<p><strong>Question 8 – Modify your plot from #7 to incorporate the <code>section</code> of the forest into your plot, using either <code>color</code> or <code>facet</code>s.</strong> <em>Hint: The <code>fill</code> aesthetic will <strong>fill</strong> the ridge plots with color.</em></p>
+<p><strong>Question 9 – Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?</strong> <em>Be sure to address how the centers and shapes of ALL these distributions compare!</em></p>
 </section>
 </section>
 <section id="data-summaries" class="level1">
@@ -5014,8 +5013,7 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code for question 12 goes here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 12 – How do the differences in these averages compare with what you saw in your visualization in Question 9? Why do you believe they are similar or different from what you saw in the visualizations?</strong></p>
-<p><em>Hint: Your response should directly compare the statistics you got in Question 12 with the density ridges you saw in Question 8.</em></p>
+<p><strong>Question 12 – How do the differences in these averages compare with what you saw in your visualization in Question 9? Why do you believe they are similar or different from what you saw in the visualizations?</strong> <em>Hint: Your response should directly compare the statistics you got in Question 11 with the density ridges you saw in Question 8.</em></p>
 
 
 </section>

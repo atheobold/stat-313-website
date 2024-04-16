@@ -15,7 +15,7 @@ execute:
 
 ## R Resources
 
-You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the "cheatsheets" from Weeks 2 & 3 will be very helpful while completing this assignment.
+You should have at least one member of your lab group pull up the R resources from Canvas. Specifically, the "cheat sheets" from Weeks 2 & 3 will be very helpful while completing this assignment.
 
 ## Load packages
 
@@ -70,7 +70,7 @@ The **codebook** (description of the variables) can be accessed by pulling up th
 
 ```
 
-**Question 2 -- Are there categorical variables in the dataset? If so, what are their names?**
+**Question 2 -- Are there categorical variables in the dataset? If so, what are their names?** *Hint: What data types are categorical variables stored as?*
 
 ## Accessing the Levels of a Variable
 
@@ -102,9 +102,9 @@ trout <- ...
 
 Alright, now that we've gotten our data ready for analysis, let's start with some visualizations
 
-**Question 5 -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).** *Your plot should have axis lables that describe the variable being plotted, and its associated units!*
+**Question 5 -- Using `ggplot()` create a visualization of the *distribution* of the lengths of the Cutthroat trout (from the `trout` dataset you `filter`ed above).** *Your plot should have axis labels that describe the variable being plotted, and its associated units!*
 
-*Keep in mind your plot should only extend to 101mm if you completed #4 correctly.*
+*Keep in mind the smallest value on your plot should be 101mm if you completed #4 correctly.*
 
 ```{r}
 #| label: distribution-of-filtered-lengths
@@ -136,11 +136,9 @@ ggplot(data = trout,
 
 ```
 
-**Question 8 -- Modify your plot from #7 to incorporate the `section` of the forest into your plot, using either `color` or `facet`s.**
+**Question 8 -- Modify your plot from #7 to incorporate the `section` of the forest into your plot, using either `color` or `facet`s.** *Hint: The `fill` aesthetic will **fill** the ridge plots with color.*
 
-*Hint: The `fill` aesthetic will **fill** the ridge plots with color.*
-
-**Question 9 -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?** *Be sure to address how the centers and shapes of these distributions compare!*
+**Question 9 -- Based on your plot, how different are the lengths of the Cutthroat trout between the different channel types and forest sections?** *Be sure to address how the centers and shapes of ALL these distributions compare!*
 
 # Data Summaries
 
@@ -162,6 +160,4 @@ Paired with visualizations, summary statistics can provide a clearer picture for
 
 ```
 
-**Question 12 -- How do the differences in these averages compare with what you saw in your visualization in Question 9? Why do you believe they are similar or different from what you saw in the visualizations?**
-
-*Hint: Your response should directly compare the statistics you got in Question 12 with the density ridges you saw in Question 8.*
+**Question 12 -- How do the differences in these averages compare with what you saw in your visualization in Question 9? Why do you believe they are similar or different from what you saw in the visualizations?** *Hint: Your response should directly compare the statistics you got in Question 11 with the density ridges you saw in Question 8.*
