@@ -4838,8 +4838,8 @@
     "objectID": "slides/week3-day2.html#revisions-due-tonight",
     "href": "slides/week3-day2.html#revisions-due-tonight",
     "title": "Week 3 Day 2",
-    "section": "",
-    "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+    "section": "Revisions Due Tonight",
+    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   },
   {
     "objectID": "slides/week3-day2.html#a-grading-reminder",
@@ -4881,7 +4881,7 @@
     "href": "slides/week3-day2.html#completing-revisions",
     "title": "Week 3 Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2.html#todays-data",
@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n1999\nMACKOG-U\nOG\nU\n1\n11\nC\n12\nNA\nCoastal giant salamander\n54\n97\nNA\nNONE\n1999-09-02\nNA\n\n\n2016\nMACKOG-L\nOG\nL\n1\n3\nC\n22\nNA\nCoastal giant salamander\n46\n80\n3.23\nNONE\n2016-09-07\nNA\n\n\n2017\nMACKCC-U\nCC\nU\n1\n12\nC\n8\nNA\nCutthroat trout\n45\nNA\n0.91\nNONE\n2017-09-06\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n1\n2\nSC\n42\nNA\nCutthroat trout\n34\nNA\nNA\nNONE\n2001-08-20\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n. . .\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2008\nMACKOG-M\nOG\nM\n1\n6\nSC\n26\nNA\nCoastal giant salamander\n55\n100\nNA\nNONE\n2008-09-16\nNA\n\n\n1994\nMACKCC-L\nCC\nL\n1\n2\nC\n47\nNA\nCoastal giant salamander\n66\n125\n12.12\nNONE\n1994-08-30\nNA\n\n\n1999\nMACKOG-L\nOG\nL\n1\n1\nP\n1\nNA\nCutthroat trout\n118\nNA\nNA\nNONE\n1999-09-01\nNA\n\n\n2004\nMACKOG-U\nOG\nU\n1\n14\nP\n11\nNA\nCutthroat trout\n91\nNA\nNA\nNONE\n2004-09-09\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -4923,7 +4923,7 @@
     "href": "slides/week3-day2.html#step-2-group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n. . .\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
   },
   {
     "objectID": "slides/week3-day2.html#are-they-different",
@@ -4944,7 +4944,7 @@
     "href": "slides/week3-day2.html#are-they-different-1",
     "title": "Week 3 Day 2",
     "section": "Are they different?",
-    "text": "Are they different?\n\n\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2.html#lets-add-in-the-type-of-channel",
@@ -4972,7 +4972,7 @@
     "href": "slides/week3-day2.html#visualization-2.0-incorporating-color",
     "title": "Week 3 Day 2",
     "section": "Visualization 2.0 – Incorporating Color",
-    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)\n       ) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of HJ Andrews \\nExperimental Forest\", \n       y = \"Type of Channel\")\n\n\n\n\n\n\n\n\n. . .\n\nWhy put unittype on the y-axis instead of section???"
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)\n       ) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of HJ Andrews \\nExperimental Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
   },
   {
     "objectID": "slides/week3-day2.html#visualization-2.0-incorporating-color-output",
@@ -6341,14 +6341,14 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---gender",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Gender",
-    "text": "Choosing What to Measure - Gender\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n. . .\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+    "text": "Choosing What to Measure - Gender\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
     "href": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Gender",
-    "text": "Choosing What to Measure - Gender\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the researchers missing?"
+    "text": "Choosing What to Measure - Gender\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---sex",
@@ -6362,7 +6362,7 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---sex-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Sex",
-    "text": "Choosing What to Measure - Sex\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the doctors missing?"
+    "text": "Choosing What to Measure - Sex\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---race",
@@ -6376,7 +6376,7 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---race-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Race",
-    "text": "Choosing What to Measure - Race\nLooking at the births14 dataset, the race of the mother was classified as:\n\nwhite\nnonwhite\n\n. . .\n \n\nWhat information are researchers missing?"
+    "text": "Choosing What to Measure - Race\nLooking at the births14 dataset, the race of the mother was classified as:\n\nwhite\nnonwhite\n\n\n \n\nWhat information are researchers missing?"
   },
   {
     "objectID": "slides/week3-day2.html#section",
@@ -6390,7 +6390,7 @@
     "href": "slides/week3-day2.html#group_by-multiple-variables",
     "title": "Week 3 Day 2",
     "section": "group_by() Multiple Variables",
-    "text": "group_by() Multiple Variables\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g, \n                     na.rm = TRUE)\n            )\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+    "text": "group_by() Multiple Variables\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g, \n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
   },
   {
     "objectID": "slides/week3-day2.html",

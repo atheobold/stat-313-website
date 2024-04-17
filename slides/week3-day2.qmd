@@ -186,14 +186,14 @@ What information are the doctors missing?
 
 ## Choosing What to Measure - Race
 
-Every year, the US publishes a large dataset on the public birth records for babies born that year. These data contain information about the baby, the pregnancy, and the birth parent(s). 
+Every year, the US publishes a large dataset on the public birth records for babies born that year. These data contain information about the baby, the pregnancy, and the birth parent(s).
 
 ## Choosing What to Measure - Race
 
 Looking at the [`births14`](https://www.openintro.org/data/index.php?data=births14) dataset, the race of the mother was classified as:
 
-- white
-- nonwhite
+-   white
+-   nonwhite
 
 . . .
 
@@ -285,7 +285,7 @@ trout %>%
 
 ## Are they different?
 
-:::{.large}
+::: large
 ```{r}
 #| label: fish-mean-mass-table
 
