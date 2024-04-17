@@ -1915,7 +1915,7 @@
     "href": "slides/week3-day1.html#in-r",
     "title": "Incorporating Categorical Variables",
     "section": "In R…",
-    "text": "In R…\ncategorical variables can have either character or factor data types\n\n\nfactor – structured & fixed number of levels / options\n\ncan be ordered or unordered\n\n\n\n\ncharacter – unstructured & variable number of levels\n\nis inherently unordered"
+    "text": "In R…\ncategorical variables can have either character or factor data types\n\n. . .\nfactor – structured & fixed number of levels / options\n\ncan be ordered or unordered\n\n\n. . .\ncharacter – unstructured & variable number of levels\n\nis inherently unordered"
   },
   {
     "objectID": "slides/week3-day1.html#section-1",
@@ -1957,7 +1957,7 @@
     "href": "slides/week3-day1.html#trout-size",
     "title": "Incorporating Categorical Variables",
     "section": "Trout Size",
-    "text": "Trout Size\n\nThe HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.\n\n\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_length = mean(length_1_mm, \n                       na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section                               mean_length\n  &lt;chr&gt;                                       &lt;dbl&gt;\n1 clear cut forest                             85.3\n2 upstream old growth coniferous forest        81.4\n\n\n\n\n\n\n\nWhy na.rm = TRUE?"
+    "text": "Trout Size\n\nThe HJ Andrews Experimental Forest houses one of the larges long-term ecological research stations, specifically researching cutthroat trout and salamanders in clear cut or old growth sections of Mack Creek.\n\n\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_length = mean(length_1_mm, \n                       na.rm = TRUE)\n            )\n\n# A tibble: 2 × 2\n  section                               mean_length\n  &lt;chr&gt;                                       &lt;dbl&gt;\n1 clear cut forest                             85.3\n2 upstream old growth coniferous forest        81.4\n\n\n\n. . .\n\n\n\nWhy na.rm = TRUE?"
   },
   {
     "objectID": "slides/week3-day1.html#classifying-channel-types",
@@ -1971,7 +1971,7 @@
     "href": "slides/week3-day1.html#filter-ing-specific-channel-types",
     "title": "Incorporating Categorical Variables",
     "section": "filter()-ing Specific Channel Types",
-    "text": "filter()-ing Specific Channel Types\n\nThe majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the unittype variable.\n\n\n\nWhat would you do?\n\n\n\n\n\n\ntrout %&gt;% \n  filter(\n    unittype %in% c(\"C\", \"P\", \"SC\")\n         )\n\n\n\n\n\n\nWhy use %in% instead of ==?"
+    "text": "filter()-ing Specific Channel Types\n\nThe majority of the Cutthroat trout were captured in cascades (C), pools (P), and side channels (SC). Suppose we want to only retain these levels of the unittype variable.\n\n. . .\n\nWhat would you do?\n\n. . .\n\n\n\ntrout %&gt;% \n  filter(\n    unittype %in% c(\"C\", \"P\", \"SC\")\n         )\n\n\n. . .\n\n\nWhy use %in% instead of ==?"
   },
   {
     "objectID": "slides/week3-day1.html#incorporating-categorical-variables-into-data-visualizations",
@@ -2041,7 +2041,7 @@
     "href": "slides/week3-day1.html#your-turn-90-seconds",
     "title": "Incorporating Categorical Variables",
     "section": "Your Turn – 90 seconds",
-    "text": "Your Turn – 90 seconds\n\n\nWhat are the aesthetics included in this plot?\n\n\nWhat is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?"
+    "text": "Your Turn – 90 seconds\n\n\n\n\n\n\n\n\n\n. . .\nWhat are the aesthetics included in this plot?\n. . .\nWhat is one aspect of this plot that you believe is well done? What is one aspect of the plot that could be improved?"
   },
   {
     "objectID": "slides/week3-day1.html#your-tasks",
@@ -3392,14 +3392,14 @@
     "href": "labs/lab-2.html",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names? Hint: What data types are numerical variables stored as?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names? Hint: What data types are numerical variables stored as?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#getting-started",
     "href": "labs/lab-2.html#getting-started",
     "title": "Lab 2: Visualizing and Summarizing Numerical Data",
     "section": "",
-    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names? Hint: What data types are numerical variables stored as?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
+    "text": "Let’s load the following packages:\n\nThe tidyverse “umbrella” package which houses a suite of many different R packages for data wrangling and data visualization\nThe openintro R package: houses the dataset we will be working with\n\n\n# Package for functions \nlibrary(tidyverse)\n\n# Package for data\nlibrary(openintro)\n\n\n\n\nThe Bureau of Transportation Statistics (BTS) is a statistical agency that is a part of the Research and Innovative Technology Administration (RITA). As its name implies, BTS collects and makes transportation data available, such as the flights data we will be working with in this lab.\nFirst, we’ll view the nycflights data frame. Run the following code to load in the data:\n\ndata(nycflights)\n\nThe codebook (description of the variables) can be accessed by pulling up the help file by typing a ? before the name of the dataset:\n\n?nycflights\n\nRemember that you can use glimpse() to take a quick peek at your data to understand its contents better.\nQuestion 1\n(a) How large is the nycflights dataset? (i.e. How many rows and columns does it have?)\n(b) Are there numerical variables in the dataset? If so, what are their names? Hint: What data types are numerical variables stored as?\n\n# You code for exercise 1 goes here! Yes, your answer should use code!\n\n\n\n\nLet’s start by examining the distribution of departure delays (dep_delay) of all flights with a histogram.\nQuestion 2 – Create a histogram of the dep_delay variable from the nycflights data. Don’t forget to give your visualization informative axis labels that include the units the variable was measured in!\n\n# Your code for exercise 2 goes here! \n\nHistograms are generally a very good way to see the shape of a single distribution of numerical data, but that shape can change depending on how the data into different bins.\nYou can easily define the binwidth you want to use, by specifying the binwidth argument inside of geom_histogram(), like so:\ngeom_histogram(binwidth = 15)\nQuestion 3\n(a) Make two other histograms, one with a binwidth of 15 and one with a binwidth of 150. Feel free to copy-and-paste the code you used for Question 2 and modify the binwidth.\n# Your code for exercise 3 goes here! \n\n\n\n\n\n(b) How do these three histograms compare? Are features revealed in one that are obscured in another?"
   },
   {
     "objectID": "labs/lab-2.html#sfo-destinations",
@@ -4436,7 +4436,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due January 15  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due January 22  Lab 2 Feedback\n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due January 29 \n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due February 5 \n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due February 19 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due January 15 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due March 4 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due April 8  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due April 15  Lab 2 Feedback\n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due April 22 \n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due April 29 \n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due May 13 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due May 20 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due May 27 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4838,8 +4838,8 @@
     "objectID": "slides/week3-day2.html#revisions-due-tonight",
     "href": "slides/week3-day2.html#revisions-due-tonight",
     "title": "Week 3 Day 2",
-    "section": "Revisions Due Tonight",
-    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
   },
   {
     "objectID": "slides/week3-day2.html#a-grading-reminder",
@@ -4881,7 +4881,7 @@
     "href": "slides/week3-day2.html#completing-revisions",
     "title": "Week 3 Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2.html#todays-data",
@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n1999\nMACKOG-U\nOG\nU\n1\n11\nC\n12\nNA\nCoastal giant salamander\n54\n97\nNA\nNONE\n1999-09-02\nNA\n\n\n2016\nMACKOG-L\nOG\nL\n1\n3\nC\n22\nNA\nCoastal giant salamander\n46\n80\n3.23\nNONE\n2016-09-07\nNA\n\n\n2017\nMACKCC-U\nCC\nU\n1\n12\nC\n8\nNA\nCutthroat trout\n45\nNA\n0.91\nNONE\n2017-09-06\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n1\n2\nSC\n42\nNA\nCutthroat trout\n34\nNA\nNA\nNONE\n2001-08-20\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n1999\nMACKOG-U\nOG\nU\n1\n11\nC\n12\nNA\nCoastal giant salamander\n54\n97\nNA\nNONE\n1999-09-02\nNA\n\n\n2016\nMACKOG-L\nOG\nL\n1\n3\nC\n22\nNA\nCoastal giant salamander\n46\n80\n3.23\nNONE\n2016-09-07\nNA\n\n\n2017\nMACKCC-U\nCC\nU\n1\n12\nC\n8\nNA\nCutthroat trout\n45\nNA\n0.91\nNONE\n2017-09-06\nNA\n\n\n2001\nMACKCC-L\nCC\nL\n1\n2\nSC\n42\nNA\nCutthroat trout\n34\nNA\nNA\nNONE\n2001-08-20\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n. . .\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -4923,7 +4923,7 @@
     "href": "slides/week3-day2.html#step-2-group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n. . .\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
   },
   {
     "objectID": "slides/week3-day2.html#are-they-different",
@@ -4944,7 +4944,7 @@
     "href": "slides/week3-day2.html#are-they-different-1",
     "title": "Week 3 Day 2",
     "section": "Are they different?",
-    "text": "Are they different?\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
+    "text": "Are they different?\n\n\n\n\n\n\n\n\n\nWould you conclude there is a difference in fish biomass between clear cut and old growth sections of the HJ Andrews Forest?"
   },
   {
     "objectID": "slides/week3-day2.html#lets-add-in-the-type-of-channel",
@@ -4972,7 +4972,7 @@
     "href": "slides/week3-day2.html#visualization-2.0-incorporating-color",
     "title": "Week 3 Day 2",
     "section": "Visualization 2.0 – Incorporating Color",
-    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)\n       ) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of HJ Andrews \\nExperimental Forest\", \n       y = \"Type of Channel\")\n\n\n\n\nWhy put unittype on the y-axis instead of section???"
+    "text": "Visualization 2.0 – Incorporating Color\n\nggplot(data = trout, \n       mapping = aes(x = weight_g, \n                     fill = section, \n                     y = unittype)\n       ) +\n  geom_density_ridges(alpha = 0.5) +\n  labs(x = \"Weight of Cutthroat Trout (g)\", \n       fill = \"Section of HJ Andrews \\nExperimental Forest\", \n       y = \"Type of Channel\")\n\n\n\n\n\n\n\n\n. . .\n\nWhy put unittype on the y-axis instead of section???"
   },
   {
     "objectID": "slides/week3-day2.html#visualization-2.0-incorporating-color-output",
@@ -6341,14 +6341,14 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---gender",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Gender",
-    "text": "Choosing What to Measure - Gender\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
+    "text": "Choosing What to Measure - Gender\nKeller et al. (2017) designed a study to examine whether a community-based suicide prevention project could increase willingness to seek professional help for suicidal ideation among eastern Montana youth.\n. . .\n\nStudents attending the Let’s Talk theater workshop, were asked to report their gender, race, and age."
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
     "href": "slides/week3-day2.html#choosing-what-to-measure---gender-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Gender",
-    "text": "Choosing What to Measure - Gender\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n\n \n\nWhat information are the researchers missing?"
+    "text": "Choosing What to Measure - Gender\nResearchers provided students with the following question:\n\nWhat is your gender?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the researchers missing?"
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---sex",
@@ -6362,7 +6362,7 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---sex-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Sex",
-    "text": "Choosing What to Measure - Sex\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n\n \n\nWhat information are the doctors missing?"
+    "text": "Choosing What to Measure - Sex\nThe intake form for a local heart clinic asks the following question:\n\nWhat is sex were you assigned at birth?\nMale, Female, Other\n\n. . .\n \n\nWhat information are the doctors missing?"
   },
   {
     "objectID": "slides/week3-day2.html#choosing-what-to-measure---race",
@@ -6376,7 +6376,7 @@
     "href": "slides/week3-day2.html#choosing-what-to-measure---race-1",
     "title": "Week 3 Day 2",
     "section": "Choosing What to Measure - Race",
-    "text": "Choosing What to Measure - Race\nLooking at the births14 dataset, the race of the mother was classified as:\n\nwhite\nnonwhite\n\n\n \n\nWhat information are researchers missing?"
+    "text": "Choosing What to Measure - Race\nLooking at the births14 dataset, the race of the mother was classified as:\n\nwhite\nnonwhite\n\n. . .\n \n\nWhat information are researchers missing?"
   },
   {
     "objectID": "slides/week3-day2.html#section",
@@ -6390,6 +6390,20 @@
     "href": "slides/week3-day2.html#group_by-multiple-variables",
     "title": "Week 3 Day 2",
     "section": "group_by() Multiple Variables",
-    "text": "group_by() Multiple Variables\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g, \n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+    "text": "group_by() Multiple Variables\n\ntrout %&gt;% \n  group_by(section, unittype) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g, \n                     na.rm = TRUE)\n            )\n\n# A tibble: 13 × 3\n# Groups:   section [2]\n   section    unittype mean_mass\n   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1 Clear cut  C             8.47\n 2 Clear cut  P            13.4 \n 3 Clear cut  R             8.06\n 4 Clear cut  S             4.34\n 5 Clear cut  SC            4.80\n 6 Clear cut  &lt;NA&gt;         16.3 \n 7 Old growth C             7.58\n 8 Old growth I             9.81\n 9 Old growth IP            1.39\n10 Old growth P            10.4 \n11 Old growth R             6.66\n12 Old growth SC            5.38\n13 Old growth &lt;NA&gt;         13.4"
+  },
+  {
+    "objectID": "slides/week3-day2.html",
+    "href": "slides/week3-day2.html",
+    "title": "Week 3 Day 2",
+    "section": "",
+    "text": "If you submitted revisions and your grade is still “Incomplete” – you forgot to submit reflections! Please add these as a comment to your assignment by the end of the day."
+  },
+  {
+    "objectID": "slides/week3-day1.html",
+    "href": "slides/week3-day1.html",
+    "title": "Incorporating Categorical Variables",
+    "section": "",
+    "text": "How would you describe a categorical variable?"
   }
 ]
