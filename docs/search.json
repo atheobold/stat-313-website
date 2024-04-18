@@ -4860,7 +4860,7 @@
     "href": "slides/week3-day2.html#copying-the-lab-last-weeks-recorder",
     "title": "Week 3 Day 2",
     "section": "Copying the Lab – Last Week’s Recorder",
-    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 workspace\nClick on “Your Content”\nOpen the settings for your Lab 1 project"
+    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 workspace\nClick on “Your Content”\nOpen the settings for your Lab 2 project"
   },
   {
     "objectID": "slides/week3-day2.html#copying-the-lab-last-weeks-recorder-1",
@@ -4874,14 +4874,14 @@
     "href": "slides/week3-day2.html#copying-the-lab-everyone-else",
     "title": "Week 3 Day 2",
     "section": "Copying the Lab – Everyone Else",
-    "text": "Copying the Lab – Everyone Else\n\nFind your group member’s lab (you can use the search bar to search for their name)\n\n\n\nOpen their Lab 2 project\nSelect “Save a Permanent Copy”"
+    "text": "Copying the Lab – Everyone Else\n\n\nFind your group member’s lab (you can use the search bar to search for their name)\n\n\n\n\n\nOpen their Lab 2 project\nSelect “Save a Permanent Copy”"
   },
   {
     "objectID": "slides/week3-day2.html#completing-revisions",
     "href": "slides/week3-day2.html#completing-revisions",
     "title": "Week 3 Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 2 revisions are due by Wednesday, April 24.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 2\nDownload your revised HTML\nSubmit your revisions to the original Lab 2 assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 2 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
   },
   {
     "objectID": "slides/week3-day2.html#todays-data",
@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n2002\nMACKCC-L\nCC\nL\n2\n2\nSC\n13\nNA\nCascade torrent salamander\n35\n59\nNA\nNONE\n2002-08-26\nNA\n\n\n2008\nMACKOG-M\nOG\nM\n1\n6\nSC\n26\nNA\nCoastal giant salamander\n55\n100\nNA\nNONE\n2008-09-16\nNA\n\n\n1994\nMACKCC-L\nCC\nL\n1\n2\nC\n47\nNA\nCoastal giant salamander\n66\n125\n12.12\nNONE\n1994-08-30\nNA\n\n\n1999\nMACKOG-L\nOG\nL\n1\n1\nP\n1\nNA\nCutthroat trout\n118\nNA\nNA\nNONE\n1999-09-01\nNA\n\n\n2004\nMACKOG-U\nOG\nU\n1\n14\nP\n11\nNA\nCutthroat trout\n91\nNA\nNA\nNONE\n2004-09-09\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n20\nNA\nCascade torrent salamander\n40\n72\n1.95\nNONE\n1994-08-30\nNA\n\n\n2012\nMACKOG-U\nOG\nU\n1\n16\nSC\n1\nNA\nCascade torrent salamander\n39\n61\n1.20\nNONE\n2012-09-07\nNA\n\n\n2003\nMACKCC-U\nCC\nU\n2\n9\nC\n10\nNA\nCoastal giant salamander\n62\n113\nNA\nNONE\n2003-09-02\nNA\n\n\n1997\nMACKCC-L\nCC\nL\n1\n1\nC\n113\nNA\nCoastal giant salamander\n59\n111\n8.51\nNONE\n1997-08-26\nNA\n\n\n2012\nMACKOG-U\nOG\nU\n1\n15\nC\n4\nNA\nCutthroat trout\n54\nNA\n1.50\nNONE\n2012-09-07\nNA\n\n\n1992\nMACKCC-U\nCC\nU\n1\n15\nC\n38\nNA\nCutthroat trout\n54\nNA\n1.59\nNONE\n1992-09-02\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",

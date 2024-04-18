@@ -94,7 +94,7 @@ The person who typed your lab needs to make their project "public"
 1.  Open Posit Cloud
 2.  Go to the STAT 313 workspace
 3.  Click on "Your Content"
-4.  Open the settings for your Lab 1 project
+4.  Open the settings for your Lab 2 project
 
 ![](images/open-project-settings.png)
 
@@ -106,12 +106,16 @@ The person who typed your lab needs to make their project "public"
 
 ## Copying the Lab -- Everyone Else
 
+:::{.small}
 1.  Find your group member's lab (you can use the search bar to search for their name)
+:::
 
 ![](images/search-for-name.png)
 
+:::{.small}
 2.  Open their Lab 2 project
 3.  Select "Save a Permanent Copy"
+:::
 
 ![](images/save-a-copy.png)
 
@@ -132,7 +136,7 @@ Lab 2 revisions are due by Wednesday, April 24.
 # Reflections
 
 ::: small
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 1 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 2 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
 :::
 :::
 
