@@ -4902,7 +4902,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n1994\nMACKCC-L\nCC\nL\n1\n3\nSC\n20\nNA\nCascade torrent salamander\n40\n72\n1.95\nNONE\n1994-08-30\nNA\n\n\n2012\nMACKOG-U\nOG\nU\n1\n16\nSC\n1\nNA\nCascade torrent salamander\n39\n61\n1.20\nNONE\n2012-09-07\nNA\n\n\n2003\nMACKCC-U\nCC\nU\n2\n9\nC\n10\nNA\nCoastal giant salamander\n62\n113\nNA\nNONE\n2003-09-02\nNA\n\n\n1997\nMACKCC-L\nCC\nL\n1\n1\nC\n113\nNA\nCoastal giant salamander\n59\n111\n8.51\nNONE\n1997-08-26\nNA\n\n\n2012\nMACKOG-U\nOG\nU\n1\n15\nC\n4\nNA\nCutthroat trout\n54\nNA\n1.50\nNONE\n2012-09-07\nNA\n\n\n1992\nMACKCC-U\nCC\nU\n1\n15\nC\n38\nNA\nCutthroat trout\n54\nNA\n1.59\nNONE\n1992-09-02\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2003\nMACKOG-U\nOG\nU\n1\n18\nP\n21\nNA\nCascade torrent salamander\n42\n75\nNA\nNONE\n2003-09-03\nNA\n\n\n2017\nMACKOG-M\nOG\nM\n1\n8\nSC\n20\nNA\nCascade torrent salamander\n30\n51\n0.65\nNONE\n2017-09-07\nNA\n\n\n2019\nMACKCC-L\nCC\nL\n1\n1\nC\n16\n1044070\nCoastal giant salamander\n63\n107\n10.10\nNONE\n2019-09-03\nCut tail\n\n\n2013\nMACKCC-U\nCC\nU\n1\n7\nC\n112\n19093013\nCoastal giant salamander\n69\n126\n12.00\nNONE\n2013-09-03\nNA\n\n\n2005\nMACKOG-U\nOG\nU\n1\n15\nC\n12\nNA\nCutthroat trout\n140\nNA\nNA\nLV\n2005-09-01\nNA\n\n\n2017\nMACKCC-U\nCC\nU\n2\n9\nC\n10\nNA\nCutthroat trout\n38\nNA\n0.49\nNONE\n2017-09-06\nNA\n\n\n1990\nMACKCC-L\nCC\nL\n1\n3\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1990-08-15\nnot sampled\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -4923,7 +4923,7 @@
     "href": "slides/week3-day2.html#step-2-group_by-summarize",
     "title": "Week 3 Day 2",
     "section": "Step 2: group_by() + summarize()",
-    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
+    "text": "Step 2: group_by() + summarize()\n\ntrout %&gt;% \n  group_by(section) %&gt;% \n  summarize(\n    mean_mass = mean(weight_g,\n                     na.rm = TRUE)\n            )\n\n\n\n# A tibble: 2 × 2\n  section    mean_mass\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Clear cut       9.38\n2 Old growth      8.21\n\n\n\n\n\n\n\n\n\n\nRemember na.rm = TRUE is important if there are missing values!"
   },
   {
     "objectID": "slides/week3-day2.html#are-they-different",

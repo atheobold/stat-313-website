@@ -276,14 +276,16 @@ trout %>%
 . . .
 
 ::: columns
-::: {.column width="35%"}
+::: {.column width="20%"}
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="60%"}
+::: {.column width="75%"}
+:::{.small}
 **Remember `na.rm = TRUE` is important if there are missing values!**
+:::
 :::
 :::
 
