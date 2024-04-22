@@ -19,7 +19,7 @@ execute:
 library(tidyverse)
 library(lterdatasampler)
 
-# New package from reading
+# New package from reading -- to get regression table
 library(moderndive)
 ```
 
@@ -119,9 +119,9 @@ Finally, to get the regression equation, we need grab the coefficients out of th
 
 **Question 8 -- Using the coefficient estimates above, write out the estimated regression equation.** *Your equation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
 
-**Question 9 -- Interpret the value of the slope coefficient.** *Your interpretation needs to be in the context of the variables, not in generic* $x$ and $y$ statements!
+**Question 9 -- Interpret the value of the slope coefficient.** *Your interpretation needs to be in the context of the variables*!
 
-**Question 10 -- Sometimes interpreting a 1-unit increase in the explanatory variable is not a meaningful change, so we instead use larger increases. Based on your slope interpretation from Q9, what do you expect to happen to the duration of ice for an incease of 100 years?**
+**Question 10 -- Sometimes interpreting a 1-unit increase in the explanatory variable is not a meaningful change, so we instead use larger increases. Based on your slope interpretation from Q9, what do you expect to happen to the duration of ice cover for an increase of 100 years?**
 
 ## A preview of what's to come
 
