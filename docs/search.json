@@ -1180,7 +1180,7 @@
     "href": "slides/week4-day2.html#revisions-due-tonight",
     "title": "Week 4, Day 2",
     "section": "Revisions Due Tonight",
-    "text": "Revisions Due Tonight\nIf you submitted revisions and your grade is still “Incomplete” – either you forgot to submit reflections or you are being asked to complete a second round of revisions."
+    "text": "Revisions Due Tonight\nPlease make sure you submitted reflections with your revisions! If there are not revisions present when I start grading them tomorrow morning, your revisions are not eligible to be regraded."
   },
   {
     "objectID": "slides/week4-day2.html#a-grading-reminder",
@@ -1201,7 +1201,7 @@
     "href": "slides/week4-day2.html#copying-the-lab-last-weeks-recorder",
     "title": "Week 4, Day 2",
     "section": "Copying the Lab – Last Week’s Recorder",
-    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 / 513 workspace\nClick on “Your Content”\nOpen the settings for your Lab 3 project"
+    "text": "Copying the Lab – Last Week’s Recorder\nThe person who typed your lab needs to make their project “public”\n\nOpen Posit Cloud\nGo to the STAT 313 workspace\nClick on “Your Content”\nOpen the settings for your Lab 3 project"
   },
   {
     "objectID": "slides/week4-day2.html#copying-the-lab-last-weeks-recorder-1",
@@ -1222,7 +1222,7 @@
     "href": "slides/week4-day2.html#completing-revisions",
     "title": "Week 4, Day 2",
     "section": "Completing Revisions",
-    "text": "Completing Revisions\nLab 3 revisions are due by Thursday, February 8.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the Lab 3 Revisions assignment\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas."
+    "text": "Completing Revisions\nLab 3 revisions are due by Wednesday, May 1.\n\n\nRead comments on Canvas\nCopy your group’s lab assignment\nComplete your revisions\nRender your revised Lab 3\nDownload your revised HTML\nSubmit your revisions to the original Lab 3 assignment portal\n\n\n\n\n\n\n\n\nReflections\n\n\n\nRevisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 file (next to the problems you revised), in a Word document, or in the comment box on Canvas."
   },
   {
     "objectID": "slides/week4-day2.html#least-squares",
@@ -1236,7 +1236,7 @@
     "href": "slides/week4-day2.html#regression",
     "title": "Week 4, Day 2",
     "section": "“regression”",
-    "text": "“regression”\n\n\n\n\n\n\n\nCoined by Francis Galton in the 19th century\nDescribed a biological phenomenon\n\nHeights of children of tall parents tend to be tall, but shorter than their parents"
+    "text": "“regression”\n\n\n\n\n\n\n\n\nCoined by Francis Galton in the 19th century\nDescribed a biological phenomenon\n\nHeights of children of tall parents tend to be tall, but shorter than their parents\n“regression to the mean”"
   },
   {
     "objectID": "slides/week4-day2.html#a-polymath",
@@ -1250,14 +1250,14 @@
     "href": "slides/week4-day2.html#the-invention-of-eugenics",
     "title": "Week 4, Day 2",
     "section": "The Invention of Eugenics",
-    "text": "The Invention of Eugenics\n\n\n\nThe science of heredity could help humanity better itself through breeding.\nBased on Greek eugenes, meaning “well-born”\nGalton served as founding president of the British Eugenics Society\n\n\n\n\n\n“What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction.”"
+    "text": "The Invention of Eugenics\n\n\n\nBased on Greek eugenes, meaning “well-born”\nThe science of heredity could help humanity better itself through breeding.\nGalton served as founding president of the British Eugenics Society\n\n\n\n\n\n\n“What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction.”\nFrancis Galton"
   },
   {
     "objectID": "slides/week4-day2.html#and-then-it-spread",
     "href": "slides/week4-day2.html#and-then-it-spread",
     "title": "Week 4, Day 2",
     "section": "And then it spread…",
-    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references American eugenics\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
+    "text": "And then it spread…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMein Kampf references the ideas of British and American eugenicists\nDeclared non-Aryan races inferior\nBelieved Germans should do everything possible to make sure their gene pool stayed “pure”"
   },
   {
     "objectID": "slides/week4-day2.html#but-wasnt-that-a-long-time-ago",
@@ -1278,7 +1278,7 @@
     "href": "slides/week4-day2.html#section",
     "title": "Week 4, Day 2",
     "section": "",
-    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://www.wnycstudios.org\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
+    "text": "More Information\n\n\nRadiolab Presents: G\n\n“G” is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.\nhttps://radiolab.org/series/radiolab-presents-g\n\nHow Eugenics shaped Statistics\n\nhttps://nautil.us"
   },
   {
     "objectID": "slides/week4-day2.html#todays-data",
@@ -1299,7 +1299,7 @@
     "href": "slides/week4-day2.html#data-layout",
     "title": "Week 4, Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n2016-01-11\n2016-03-13\n62\n2015\n\n\nLake Mendota\n1962-12-12\n1963-04-03\n112\n1962\n\n\nLake Mendota\n1959-12-29\n1960-04-12\n105\n1959\n\n\nLake Mendota\n1890-01-14\n1890-03-30\n75\n1889\n\n\nLake Monona\n1932-01-30\n1932-03-30\n60\n1931\n\n\nLake Monona\n1991-12-16\n1992-03-16\n91\n1991\n\n\nLake Monona\n1853-12-21\nNA\nNA\n1853\n\n\nLake Monona\n1869-11-24\n1870-04-11\n138\n1869"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nlakeid\nice_on\nice_off\nice_duration\nyear\n\n\n\n\nLake Mendota\n1880-11-23\n1881-05-03\n161\n1880\n\n\nLake Mendota\n1932-12-10\n1933-04-04\n115\n1932\n\n\nLake Mendota\n2003-01-04\n2003-04-03\n89\n2002\n\n\nLake Mendota\n1953-12-30\n1954-03-25\n85\n1953\n\n\nLake Monona\n1963-12-18\n1964-03-19\n92\n1963\n\n\nLake Monona\n1989-12-07\n1990-03-15\n98\n1989\n\n\nLake Monona\n1985-12-06\n1986-03-29\n113\n1985\n\n\nLake Monona\n1996-12-20\n1997-03-26\n96\n1996\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecording the year of the winter\n\n\nHow is the year variable related to the ice_on and ice_off variables?"
   },
   {
     "objectID": "slides/week4-day1.html#section",
@@ -1327,14 +1327,14 @@
     "href": "slides/week4-day1.html#section-3",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\noutliers"
+    "text": "Your Turn!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow would your characterize this relationship?\n\nform\ndirection\nstrength\nunusual observations"
   },
   {
     "objectID": "slides/week4-day1.html#cleaning-filtering-the-data",
     "href": "slides/week4-day1.html#cleaning-filtering-the-data",
     "title": "Introduction to Linear Regression",
     "section": "Cleaning & Filtering the Data",
-    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n\n\n\n\n\n\n\nChange in scope of inference\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto!"
+    "text": "Cleaning & Filtering the Data\nIt seems like pregnancies with a gestation less than 28 weeks have a non-linear relationship with a baby’s birth weight, so we will filter these observations out of our dataset.\n\n\nbirths_post28 &lt;- ncbirths %&gt;% \n  drop_na(weight, weeks) %&gt;% \n  filter(weeks &gt; 28)\n\n\n\n\n\n\n\n\n\nChange in scope of inference\n\n\nRemoving these observations narrows the population of births we are able to make inferences onto! In this case, what population could we infer our findings onto?"
   },
   {
     "objectID": "slides/week4-day1.html#section-4",
@@ -1369,7 +1369,7 @@
     "href": "slides/week4-day1.html#writing-the-regression-equation",
     "title": "Introduction to Linear Regression",
     "section": "Writing the Regression Equation",
-    "text": "Writing the Regression Equation\n\n\n\n\nPopulation Model\n\\(y = \\beta_0 + \\beta_1 \\cdot x + \\epsilon\\)\n\n\\(y\\) = response\n\\(\\beta_0\\) = population intercept\n\\(\\beta_1\\) = population slope\n\\(\\epsilon\\) = errors / residuals\n\n\n\n\n\nSample Model\n\\(\\widehat{y} = b_0 + b_1 \\cdot x\\)\n\nWhy does this equation have a hat on \\(y\\)?"
+    "text": "Writing the Regression Equation\n\n\n\n\nPopulation Model\n\\(y = \\beta_0 + \\beta_1 \\cdot x + \\epsilon\\)\n\n\\(y\\) = response\n\\(\\beta_0\\) = population intercept\n\\(\\beta_1\\) = population slope\n\\(\\epsilon\\) = errors / residuals\n\n\n\n\n\nSample Model\n\\(\\widehat{y} = b_0 + b_1 \\cdot x\\)\n\n\\(b_0\\) = sample intercept\n\\(b_1\\) = sample slope\n\nWhy does this equation have a hat on \\(y\\)?"
   },
   {
     "objectID": "slides/week4-day1.html#step-1-fit-a-linear-regression",
@@ -1383,7 +1383,7 @@
     "href": "slides/week4-day1.html#step-2-obtain-coefficient-table",
     "title": "Introduction to Linear Regression",
     "section": "Step 2: Obtain coefficient table",
-    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346"
+    "text": "Step 2: Obtain coefficient table\n\nget_regression_table(weeks_lm)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nget_regression_table()\n\n\nThis function lives in the moderndive package, so we will need to load in this package (e.g., library(moderndive) if we want to use the get_regression_table() function."
   },
   {
     "objectID": "slides/week4-day1.html#section-7",
@@ -1397,7 +1397,7 @@
     "href": "slides/week4-day1.html#section-8",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
+    "text": "Estimated regression equation\n\n\\[\\widehat{y} = b_0 + b_1 \\cdot x\\]\n\n\n\n\n\nweeks_lm &lt;- lm(weight ~ weeks, \n               data = births_post28)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n-5.003\n0.582\n-8.603\n0\n-6.144\n-3.862\n\n\nweeks\n0.316\n0.015\n21.010\n0\n0.287\n0.346\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite out the estimated regression equation!"
   },
   {
     "objectID": "slides/week4-day1.html#section-9",
@@ -1439,7 +1439,7 @@
     "href": "slides/week4-day1.html#section-12",
     "title": "Introduction to Linear Regression",
     "section": "",
-    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline?"
+    "text": "Indicator Variables\n\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline"
   },
   {
     "objectID": "slides/week4-day1.html#a-more-intuitive-equation",
@@ -6405,5 +6405,54 @@
     "title": "Incorporating Categorical Variables",
     "section": "",
     "text": "How would you describe a categorical variable?"
+  },
+  {
+    "objectID": "slides/week4-day1.html#step-4-write-estimated-regression-equation",
+    "href": "slides/week4-day1.html#step-4-write-estimated-regression-equation",
+    "title": "Introduction to Linear Regression",
+    "section": "Step 4: Write Estimated Regression Equation",
+    "text": "Step 4: Write Estimated Regression Equation\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\n\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot Smoker\\]\n\n\n\nBut what does \\(Smoker\\) represent???"
+  },
+  {
+    "objectID": "slides/week4-day1.html#choosing-a-baseline-group",
+    "href": "slides/week4-day1.html#choosing-a-baseline-group",
+    "title": "Introduction to Linear Regression",
+    "section": "Choosing a Baseline Group",
+    "text": "Choosing a Baseline Group\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n7.246\n0.046\n158.369\n0.000\n7.157\n7.336\n\n\nhabit: smoker\n-0.418\n0.128\n-3.270\n0.001\n-0.668\n-0.167\n\n\n\n\n\n\n\n\nBased on the regression table, what habit group was chosen to be the baseline group?"
+  },
+  {
+    "objectID": "slides/week4-day1.html#categorical-explanatory-variables",
+    "href": "slides/week4-day1.html#categorical-explanatory-variables",
+    "title": "Introduction to Linear Regression",
+    "section": "Categorical Explanatory Variables",
+    "text": "Categorical Explanatory Variables\n\n\\[\n  \\widehat{y} = b_0 + b_1 \\cdot x\n\\]\n\n\n\n\n\\(x\\) is a categorical variable with levels:\n\n\"nonsmoker\"\n\"smoker\"\n\n\n\n\nWe need to convert to:\n\na “baseline” group\n“offsets” / adjustments to the baseline"
+  },
+  {
+    "objectID": "slides/week4-day1.html#rewriting-in-terms-of-indicator-variables",
+    "href": "slides/week4-day1.html#rewriting-in-terms-of-indicator-variables",
+    "title": "Introduction to Linear Regression",
+    "section": "Rewriting in Terms of Indicator Variables",
+    "text": "Rewriting in Terms of Indicator Variables\n\\[\\widehat{weight} = 7.23 - 0.4 \\cdot 1_{smoker}(x)\\]\nwhere\n\n\\(1_{smoker}(x) = 1\\) if the mother was a \"smoker\"\n\\(1_{smoker}(x) = 0\\) if the mother was a \"nonsmoker\""
+  },
+  {
+    "objectID": "slides/week4-day1.html#project-proposal",
+    "href": "slides/week4-day1.html#project-proposal",
+    "title": "Introduction to Linear Regression",
+    "section": "Project Proposal",
+    "text": "Project Proposal\n\n\nChoose a dataset\nChoose one numerical response variable\nChoose one numerical explanatory variable\nChoose a second explanatory variable, it can be either numerical or categorical\n\n\n\n\n\n\n\n\nChecking values of your numerical variable(s)\n\n\n\nYour numerical variable cannot have a small number of values (e.g., 2 or 3). You can use the distinct() function to determine the unique values of your variable. For example, by running distinct(hbr_maples, year) I would discover that year only has two values (2003 and 2004), meaning year is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!\n\n\n\n\n\n\nWrite your Introduction"
+  },
+  {
+    "objectID": "slides/week4-day1.html#causal-inference",
+    "href": "slides/week4-day1.html#causal-inference",
+    "title": "Introduction to Linear Regression",
+    "section": "Causal Inference",
+    "text": "Causal Inference\nWe just concluded that babies born to a \"smoker\" weigh, on average, 0.4 pounds less than babies born to a \"nonsmoker\".\n \n\nCan we conclude that smoking caused these babies to weigh less? Why or why not?"
+  },
+  {
+    "objectID": "slides/week4-day2.html#would-you-be-in-this-class",
+    "href": "slides/week4-day2.html#would-you-be-in-this-class",
+    "title": "Week 4, Day 2",
+    "section": "Would you be in this class?",
+    "text": "Would you be in this class?\n\n\n\nIs your skin white?\nAre you blonde?\nDo you have blue eyes?\n\n\n\nWere your ancestors poor?\nAre you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?\nDo you identify as LGBTQIQ+?"
   }
 ]

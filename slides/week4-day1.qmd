@@ -168,7 +168,7 @@ How would your characterize this relationship?
 -   form
 -   direction
 -   strength
--   outliers
+-   unusual observations
 :::
 :::
 
@@ -190,81 +190,13 @@ births_post28 <- ncbirths %>%
 
 . . .
 
+:::{.small}
 ::: callout-caution
 # Change in scope of inference
 
-Removing these observations narrows the population of births we are able to make inferences onto!
+Removing these observations narrows the population of births we are able to make inferences onto! In this case, what population could we infer our findings onto?
 :::
-
-<!-- ##  -->
-
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-
-<!-- What if you added another variable? -->
-
-<!-- ::: -->
-
-<!-- . . . -->
-
-<!-- ::: columns -->
-
-<!-- ::: {.column width="40%"} -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: false -->
-
-<!-- #| fig-align: center -->
-
-<!-- ncbirths %>%  -->
-
-<!-- ggplot(aes(x = weeks, y = weight)) + -->
-
-<!--   geom_jitter() +  -->
-
-<!--   labs(x = "Length of pregnancy (in weeks)", -->
-
-<!--        y = "Birth weight of baby (in lbs)") +  -->
-
-<!--   my_theme -->
-
-<!-- ``` -->
-
-<!-- ::: -->
-
-<!-- ::: {.column width="60%"} -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: false -->
-
-<!-- #| fig-align: center -->
-
-<!-- ncbirths %>%  -->
-
-<!--   drop_na(habit) %>%  -->
-
-<!--   ggplot(aes(x = weeks, y = weight, color = habit)) + -->
-
-<!--   geom_jitter(alpha = 0.5) +  -->
-
-<!--   labs(x = "Length of pregnancy (in weeks)", -->
-
-<!--        y = "Birth weight of baby (in lbs)",  -->
-
-<!--        color = "Habit") +  -->
-
-<!--   my_theme + -->
-
-<!--   theme(legend.text = element_text(size = 16),  -->
-
-<!--         legend.title = element_text(size = 20)) -->
-
-<!-- ``` -->
-
-<!-- ::: -->
-
-<!-- ::: -->
+:::
 
 # Summarizing a Linear Relationship
 
@@ -398,7 +330,13 @@ $\widehat{y} = b_0 + b_1 \cdot x$
 
 </br>
 
+$b_0$ = sample intercept
+
+$b_1$ = sample slope
+
+:::{.fragment}
 [Why does this equation have a hat on $y$?]{style="color: #e28743;"}
+:::
 :::
 :::
 :::
@@ -428,6 +366,18 @@ get_regression_table(weeks_lm) %>%
   gt::gt()
 ```
 
+. . .
+
+</br>
+
+:::{.small}
+:::{.callout-note}
+# `get_regression_table()`
+
+This function lives in the **moderndive** package, so we will need to load in this package (e.g., `library(moderndive`) if we want to use the `get_regression_table()` function.
+:::
+:::
+
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
@@ -446,11 +396,30 @@ $$\widehat{y} = b_0 + b_1 \cdot x$$
 
 . . .
 
+::: columns
+::: {.column width="48%"}
+:::{.small}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+#| eval: false
+weeks_lm <- lm(weight ~ weeks, 
+               data = births_post28)
+```
+:::
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="50%"}
 ```{r}
 #| code-line-numbers: false
 get_regression_table(weeks_lm) %>% 
   gt::gt()
 ```
+:::
+:::
 
 . . .
 
@@ -458,7 +427,7 @@ get_regression_table(weeks_lm) %>%
 
 <center>
 
-[Write out the estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"}
+[Write out the estimated regression equation!]{style="color: #e28743;"}
 
 ##  {background-color="#b76352"}
 
@@ -496,62 +465,6 @@ $\widehat{weight} = `r filter(births_table, term == "intercept")$estimate`+`r fi
 . . .
 
 [What would the residual be for a pregnancy that lasted 39 weeks and whose baby weighed 7.63 pounds?]{style="color: #e28743; font-size: 1.5em;"}
-
-<!-- ##  -->
-
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-
-<!-- A different explanatory variable -->
-
-<!-- ::: -->
-
-<!-- ```{r} -->
-
-<!-- #| code-line-numbers: false -->
-
-<!-- #| echo: true -->
-
-<!-- weight_gain_lm <- lm(weight ~ gained, data = births_post26) -->
-
-<!-- get_regression_table(weight_gain_lm) -->
-
-<!-- ``` -->
-
-<!-- . . . -->
-
-<!-- </br> -->
-
-<!-- [Write out this estimated regression equation!]{style="color: #e28743; font-size: 1.5em;"} -->
-
-<!-- ##  -->
-
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-
-<!-- How would you choose which model is better?! -->
-
-<!-- ::: -->
-
-<!-- . . . -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: true -->
-
-<!-- #| code-line-numbers: false -->
-
-<!-- births_post26 %>%  -->
-
-<!--   drop_na(weight, gained, weeks) %>%  -->
-
-<!--   summarize(cor_weeks = cor(weight, weeks),  -->
-
-<!--             R_sq_weeks = cor_weeks^2,  -->
-
-<!--             cor_gained = cor(weight, gained), -->
-
-<!--             R_sq_gained = cor_gained^2) -->
-
-<!-- ``` -->
 
 # Linear Regression with One Categorical Explanatory Variable
 
@@ -606,7 +519,7 @@ gt::gt()
 :::
 :::
 
-## Estimated Regression Equation
+## Step 4: Write Estimated Regression Equation
 
 ```{r}
 get_regression_table(habit_lm) %>% 
@@ -625,11 +538,7 @@ $$\widehat{weight} = 7.23 - 0.4 \cdot Smoker$$
 
 [But what does $Smoker$ represent???]{style="color: #e28743; font-size: 1.25em;"}
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Indicator Variables
-:::
+## Categorical Explanatory Variables
 
 <center>$$
   \widehat{y} = b_0 + b_1 \cdot x
@@ -656,11 +565,18 @@ We need to convert to:
 :::
 :::
 
-. . .
+## Choosing a Baseline Group
 
-[Based on the regression table, what `habit` group was chosen to be the baseline?]{style="color: #e28743; font-size: 1.25em;"}
+```{r}
+get_regression_table(habit_lm) %>% 
+gt::gt()
+```
 
-## A More Intuitive Equation
+</br>
+
+[Based on the regression table, what `habit` group was chosen to be the baseline group?]{style="color: #e28743; font-size: 1.25em;"}
+
+## Rewriting in Terms of Indicator Variables
 
 $$\widehat{weight} = 7.23 - 0.4 \cdot 1_{smoker}(x)$$
 
@@ -682,45 +598,36 @@ Given the equation, what is the estimated mean birth weight for nonsmoking mothe
 
 For smoking mothers?
 
-# Choose Your Adventure
+## Causal Inference
 
-## [Statistical Critique](../critique/critique-1.qmd)
+We just concluded that babies born to a `"smoker"` weigh, on average, 0.4 pounds less than babies born to a `"nonsmoker"`. 
 
-::: small
-1.  Get out the article you picked for *Statistics in Your Field* (Week 1)
+</br>
+</br>
 
-2.  Choose a visualization from the article
-:::
+. . .
 
-::: callout-tip
-# Use a table if there are no visualizations
-:::
+Can we conclude that smoking [caused]{style="color: #e28743;"} these babies to weigh less? Why or why not?
 
-::: small
-3.  Where are **variables** being used in the visualization / table? Those are the aesthetics!
+# Midterm Project Step 1
 
-4.  Write a critique of the good / bad aspects of the plot
-
-*Repeat with a "pop" visualization from the [New York Times](https://www.nytimes.com/column/whats-going-on-in-this-graph).*
-:::
-
-## Midterm Project Proposal
+## [Project Proposal](../project/midterm-proposal-313.qmd)
 
 ::: small
 1.  Choose a dataset
 
-2.  Choose a numerical response variable
+2.  Choose one numerical response variable
 
-3.  Choose a numerical explanatory variable
+3.  Choose one numerical explanatory variable
 
-4.  Choose a second explanatory variable, either numerical or categorical
+4.  Choose a second explanatory variable, it can be either numerical or categorical
 :::
 
 ::: callout-tip
 # Checking values of your numerical variable(s)
 
 ::: small
-Your numerical variable **cannot** have a small (e.g., 2 or 3) number of values. You can use the `distinct()` function to determine the unique values of your variable. For example, by running `distinct(hbr_maples, year)` I would discover that `year` only has two values (2003 and 2004), meaning `year` is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!
+Your numerical variable **cannot** have a small number of values (e.g., 2 or 3). You can use the `distinct()` function to determine the unique values of your variable. For example, by running `distinct(hbr_maples, year)` I would discover that `year` only has two values (2003 and 2004), meaning `year` is not eligible to be a numerical response or explanatory variable. It could, however, be a categorical explanatory variable!
 :::
 :::
 

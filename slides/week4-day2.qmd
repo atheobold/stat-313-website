@@ -24,7 +24,7 @@ options(show.signif.stars = FALSE)
 
 ## Revisions Due Tonight
 
-If you submitted revisions and your grade is still "Incomplete" -- either you forgot to submit reflections or you are being asked to complete a second round of revisions.
+Please make sure you submitted reflections with your revisions! If there are not revisions present when I start grading them tomorrow morning, your revisions are not eligible to be regraded.
 
 # Lab 3
 
@@ -76,7 +76,7 @@ Your group received a "Growing" on *at least one* question
 The person who typed your lab needs to make their project "public"
 
 1.  Open Posit Cloud
-2.  Go to the STAT 313 / 513 workspace
+2.  Go to the STAT 313 workspace
 3.  Click on "Your Content"
 4.  Open the settings for your Lab 3 project
 
@@ -101,7 +101,7 @@ The person who typed your lab needs to make their project "public"
 
 ## Completing Revisions
 
-Lab 3 revisions are due by Thursday, February 8.
+Lab 3 revisions are due by Wednesday, May 1.
 
 ::: small
 1.  Read comments on Canvas
@@ -109,14 +109,14 @@ Lab 3 revisions are due by Thursday, February 8.
 3.  Complete your revisions
 4.  Render your revised Lab 3
 5.  Download your revised HTML
-6.  Submit your revisions to the [Lab 3 Revisions]{.underline} assignment
+6.  Submit your revisions to the [original Lab 3]{.underline} assignment portal
 :::
 
 ::: callout-warning
 # Reflections
 
 ::: small
-Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
+Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 3 file (next to the problems you revised), in a Word document, or in the comment box on Canvas.
 :::
 :::
 
@@ -160,15 +160,16 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 :::
 
 ::: {.column width="55%"}
+:::{.incremental}
 -   Coined by Francis Galton in the 19th century
 
 -   Described a biological phenomenon
 
     -   Heights of children of tall parents tend to be tall, but shorter than their parents
+    -   "regression to the mean"
 :::
 :::
-
-<!-- A phenomenon also known as regression toward the mean. -->
+:::
 
 ## A "polymath"
 
@@ -195,18 +196,22 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 
 ::: columns
 ::: {.column width="50%"}
--   The science of heredity could help humanity better itself through breeding.
-
 -   Based on Greek *eugenes*, meaning "well-born"
 
--   Galton served as founding president of the British Eugenics Society
+-   The science of heredity could help humanity better itself through breeding.
+
+-   Galton served as founding president of the [British Eugenics Society](https://en.wikipedia.org/wiki/Adelphi_Genetics_Forum)
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-> "What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction."
+:::{.small}
+> "What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction." 
+>
+> Francis Galton
+:::
 :::
 :::
 
@@ -223,7 +228,7 @@ knitr::include_graphics("images/hitler.jpg")
 :::
 
 ::: {.column width="50%"}
--   *Mein Kampf* references American eugenics
+-   *Mein Kampf* references the ideas of British and American eugenicists
 
 -   Declared non-Aryan races inferior
 
@@ -268,7 +273,7 @@ In 1957 "conservatorship" was introduced "to avoid the stigma of incompetency"
 :::
 :::
 
-## Would you exist?
+## Would you be in this class?
 
 . . .
 
@@ -301,7 +306,7 @@ More Information
 
 -   Radiolab Presents: G
     -   "G" is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.
-    -   [https://www.wnycstudios.org](https://www.wnycstudios.org/podcasts/radiolab/projects/radiolab-presents-g)
+    - <https://radiolab.org/series/radiolab-presents-g>
 -   How Eugenics shaped Statistics
     -   [https://nautil.us](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
 
@@ -329,9 +334,20 @@ More Information
 #| label: data-preview
 #| echo: false
 
+set.seed(1234)
+
 ntl_icecover %>% 
   group_by(lakeid) %>% 
   slice_sample(n = 4) %>% 
   ungroup() %>% 
   gt::gt()
 ```
+
+. . .
+
+:::{.callout-tip}
+# Recording the `year` of the winter
+
+How is the `year` variable related to the `ice_on` and `ice_off` variables?
+
+:::
