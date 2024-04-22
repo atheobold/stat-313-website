@@ -160,7 +160,7 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 :::
 
 ::: {.column width="55%"}
-:::{.incremental}
+::: incremental
 -   Coined by Francis Galton in the 19th century
 
 -   Described a biological phenomenon
@@ -207,8 +207,8 @@ Used to determine, from astronomical observations, the orbits of bodies about th
 :::
 
 ::: {.column width="45%"}
-:::{.small}
-> "What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction." 
+::: small
+> "What nature does blindly, slowly and ruthlessly, man may do providently, quickly, and kindly. As it lies within his power, so it becomes his duty to work in that direction."
 >
 > Francis Galton
 :::
@@ -306,7 +306,7 @@ More Information
 
 -   Radiolab Presents: G
     -   "G" is a multi-episode exploration of one of the most dangerous ideas of the past century: the concept of intelligence.
-    - <https://radiolab.org/series/radiolab-presents-g>
+    -   <https://radiolab.org/series/radiolab-presents-g>
 -   How Eugenics shaped Statistics
     -   [https://nautil.us](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics)
 
@@ -345,9 +345,8 @@ ntl_icecover %>%
 
 . . .
 
-:::{.callout-tip}
+::: callout-tip
 # Recording the `year` of the winter
 
 How is the `year` variable related to the `ice_on` and `ice_off` variables?
-
 :::

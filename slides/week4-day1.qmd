@@ -190,7 +190,7 @@ births_post28 <- ncbirths %>%
 
 . . .
 
-:::{.small}
+::: small
 ::: callout-caution
 # Change in scope of inference
 
@@ -334,7 +334,7 @@ $b_0$ = sample intercept
 
 $b_1$ = sample slope
 
-:::{.fragment}
+::: fragment
 [Why does this equation have a hat on $y$?]{style="color: #e28743;"}
 :::
 :::
@@ -370,8 +370,8 @@ get_regression_table(weeks_lm) %>%
 
 </br>
 
-:::{.small}
-:::{.callout-note}
+::: small
+::: callout-note
 # `get_regression_table()`
 
 This function lives in the **moderndive** package, so we will need to load in this package (e.g., `library(moderndive`) if we want to use the `get_regression_table()` function.
@@ -398,7 +398,7 @@ $$\widehat{y} = b_0 + b_1 \cdot x$$
 
 ::: columns
 ::: {.column width="48%"}
-:::{.small}
+::: small
 ```{r}
 #| echo: true
 #| code-line-numbers: false
@@ -600,10 +600,9 @@ For smoking mothers?
 
 ## Causal Inference
 
-We just concluded that babies born to a `"smoker"` weigh, on average, 0.4 pounds less than babies born to a `"nonsmoker"`. 
+We just concluded that babies born to a `"smoker"` weigh, on average, 0.4 pounds less than babies born to a `"nonsmoker"`.
 
-</br>
-</br>
+</br> </br>
 
 . . .
 

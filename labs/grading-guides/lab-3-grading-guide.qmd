@@ -73,7 +73,7 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 -   using `<` instead of `>`
 
-*Feedback:* Careful! What lengths of trout were you told to include in the dataset? We think really small fish are not catchable, so we decided to remove them from the dataset.  
+*Feedback:* Careful! What lengths of trout were you told to include in the dataset? We think really small fish are not catchable, so we decided to remove them from the dataset.
 
 -   using the wrong variable / value (e.g., wrong spelling of Cutthroat trout, putting 101 in quotations)
 
@@ -102,6 +102,10 @@ The can use %\>% or pass in `and_vertebrates` as first argument
 
 *Feedback for not including axis labels with units:* Every plot we make should have descriptive axis labels which include the units the variable was measured in. What unit were the length of each trout measured in?
 
+-   The y-axis label doesn't reflect that we are plotting counts
+
+*Feedback:* Great job changing your y-axis label! The label you chose makes it a bit unclear what is being plotted on the y-axis. Remember, the original label was "count," so our label should say something about the number of observations (trout) that are being plotted.
+
 ## Question 6 -- Sources of variation
 
 **Success:** Names three "reasonable" sources of variation in trout length
@@ -128,10 +132,6 @@ ggplot(data = trout,
 
 *Feedback:* It is important for the axis label to contain the units of the variable. What units were the lengths measured in?
 
--   y-axis should say something about the type of channel
-
-*Feedback:* It is important for the axis label to describe the variable that is being measured. What would be a good y-axis title for what the `unittype` variable measured?
-
 ## Question 8 -- Adding another categorical variable
 
 **Success:** Uses either color or facets to incorporate `species`
@@ -150,7 +150,11 @@ ggplot(data = trout,
 
 ```
 
-**Growing:** If doesn't use facets or colors
+**Growing:**
+
+-   y-axis should say something about the type of channel
+
+*Feedback:* It is important for the axis label to describe the variable that is being measured. What would be a good y-axis title for what the `unittype` variable measured?
 
 ::: callout-note
 # Not marking down on axis label
@@ -158,6 +162,7 @@ ggplot(data = trout,
 If they got a growing on #8 for an axis label, they don't get a growing here.
 :::
 
+- If doesn't use facets or colors
 ::: callout-note
 # If they used `color` instead of `fill`
 
@@ -176,7 +181,7 @@ If they got a growing on #8 for an axis label, they don't get a growing here.
 
 -   If they say the distributions are all fairly similar
 
-*Feedback:* While I would agree that most of these distributions are fairly similar (they overlap a lot), there are a few channel types where the lengths of trout are quite different between clear cut and old growth forests. Which channel types are these? In these channel types, how do the distributions of fish lengths differ (e.g., are trout in the CC section larger?)? 
+*Feedback:* While I would agree that most of these distributions are fairly similar (they overlap a lot), there are a few channel types where the lengths of trout are quite different between clear cut and old growth forests. Which channel types are these? In these channel types, how do the distributions of fish lengths differ (e.g., are trout in the CC section larger?)?
 
 -   Comparisons are incomplete
 
@@ -223,10 +228,8 @@ trout %>%
 -   States that the averages are all fairly similar (comparing the centers)
 -   Connects averages with the skew seen in the visualizations
 
-**Growing:** 
+**Growing:**
 
-- If their statement doesn't connect the means to the shape of the distributions seen in Question 8
+-   If their statement doesn't connect the means to the shape of the distributions seen in Question 8
 
 **Feedback:** Note that in Question 11 you are specifically using the mean to summarize the center of the distribution. In Question 8 you saw the shape of each channel / forest section's distribution. Based on what you saw, how do the shapes of the distributions influence the means you are seeing in Question 11?
-
-

@@ -467,6 +467,10 @@ Note
 <li>Not including axis label with units (mm)</li>
 </ul>
 <p><em>Feedback for not including axis labels with units:</em> Every plot we make should have descriptive axis labels which include the units the variable was measured in. What unit were the length of each trout measured in?</p>
+<ul>
+<li>The y-axis label doesn’t reflect that we are plotting counts</li>
+</ul>
+<p><em>Feedback:</em> Great job changing your y-axis label! The label you chose makes it a bit unclear what is being plotted on the y-axis. Remember, the original label was “count,” so our label should say something about the number of observations (trout) that are being plotted.</p>
 <section id="question-6-sources-of-variation" class="level2">
 <h2 class="anchored" data-anchor-id="question-6-sources-of-variation">Question 6 – Sources of variation</h2>
 <p><strong>Success:</strong> Names three “reasonable” sources of variation in trout length</p>
@@ -488,10 +492,6 @@ Note
 <li>Doesn’t include units (mm) in x-axis label</li>
 </ul>
 <p><em>Feedback:</em> It is important for the axis label to contain the units of the variable. What units were the lengths measured in?</p>
-<ul>
-<li>y-axis should say something about the type of channel</li>
-</ul>
-<p><em>Feedback:</em> It is important for the axis label to describe the variable that is being measured. What would be a good y-axis title for what the <code>unittype</code> variable measured?</p>
 </section>
 <section id="question-8-adding-another-categorical-variable" class="level2">
 <h2 class="anchored" data-anchor-id="question-8-adding-another-categorical-variable">Question 8 – Adding another categorical variable</h2>
@@ -508,7 +508,11 @@ Note
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> length_1_mm, <span class="at">y =</span> unittype, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Growing:</strong> If doesn’t use facets or colors</p>
+<p><strong>Growing:</strong></p>
+<ul>
+<li>y-axis should say something about the type of channel</li>
+</ul>
+<p><em>Feedback:</em> It is important for the axis label to describe the variable that is being measured. What would be a good y-axis title for what the <code>unittype</code> variable measured?</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -522,19 +526,10 @@ Not marking down on axis label
 <p>If they got a growing on #8 for an axis label, they don’t get a growing here.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If they used <code>color</code> instead of <code>fill</code>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Feedback:</em> The <code>color</code> aesthetic only colors the outside of the ridge plot. However, if you were to use the <code>fill</code> aesthetic the entire ridge would be filled with color!</p>
-</div>
-</div>
+<ul>
+<li>If doesn’t use facets or colors ::: callout-note # If they used <code>color</code> instead of <code>fill</code></li>
+</ul>
+<p><em>Feedback:</em> The <code>color</code> aesthetic only colors the outside of the ridge plot. However, if you were to use the <code>fill</code> aesthetic the entire ridge would be filled with color! :::</p>
 </section>
 <section id="question-9-based-on-the-plot-how-different-are-the-lengths-between-the-channel-types-and-forest-sections" class="level2">
 <h2 class="anchored" data-anchor-id="question-9-based-on-the-plot-how-different-are-the-lengths-between-the-channel-types-and-forest-sections">Question 9 – Based on the plot, how different are the lengths between the channel types and forest sections?</h2>
