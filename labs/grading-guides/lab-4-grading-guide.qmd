@@ -44,7 +44,7 @@ ggplot(data = ntl_icecover,
 
 -   Swaps the x- and y-variable
 
-**Feedback:** Careful! Which variable is supposed to be the response? 
+**Feedback:** Careful! Which variable is supposed to be the response?
 
 # Question 3 -- Describe the regression line
 
@@ -61,9 +61,9 @@ ggplot(data = ntl_icecover,
 
 *Feedback:* You were asked to describe the form, direction, strength, and unusual points. Make sure you discuss all four aspects!
 
--   If they say there are unusual points / outliers but don't say where. The description should point to the exact x **and** y location (not just one or the other). 
+-   If they say there are unusual points / outliers but don't say where. The description should point to the exact x **and** y location (not just one or the other).
 
-*Feedback:* If you believe there are unusual observations you need to tell the reader where these points are, which includes both their x- and y-coordinates! 
+*Feedback:* If you believe there are unusual observations you need to tell the reader where these points are, which includes both their x- and y-coordinates!
 
 # Question 4 -- Add a regression line
 
@@ -113,9 +113,9 @@ my_model <- lm(ice_duration ~ year, data = ntl_icecover)
 
 -   Swaps response and explanatory
 
-*Feedback:* Careful! With the `lm()` function the response variable goes first (before the `~`) and the explanatory comes second (after the `~`). Which variable were you instructed to use as the response? 
+*Feedback:* Careful! With the `lm()` function the response variable goes first (before the `~`) and the explanatory comes second (after the `~`). Which variable were you instructed to use as the response?
 
-When you make this change, your coefficient table (and resulting interpretations) will change! These changes to Questions 8, 9, 10, and 11 should be included in your revisions. 
+When you make this change, your coefficient table (and resulting interpretations) will change! These changes to Questions 8, 9, 10, and 11 should be included in your revisions.
 
 # Question 7 -- Get regression table
 
@@ -184,7 +184,7 @@ If they use x and y in the equation but then define what variables they are asso
 
 -   Uses the word "cause"
 
-*Feedback:* The word "cause" in statistics means a very specific thing. We can only use cause and effect statements in an experiment. Was this study an experiment? If not, what word would be more appropriate to use? 
+*Feedback:* The word "cause" in statistics means a very specific thing. We can only use cause and effect statements in an experiment. Was this study an experiment? If not, what word would be more appropriate to use?
 
 # Question 10 -- 100 Year Increase
 
@@ -197,7 +197,7 @@ If they use x and y in the equation but then define what variables they are asso
 
 -   Uses y-intercept when increasing 100 years
 
-*Feedback:* Careful! Look back at your interpretation for Question 9. Did you include the y-intercept when you interpreted the value of the slope? How can you translate what you did in Question 9 to an increase of 100 years instead of 1 year? 
+*Feedback:* Careful! Look back at your interpretation for Question 9. Did you include the y-intercept when you interpreted the value of the slope? How can you translate what you did in Question 9 to an increase of 100 years instead of 1 year?
 
 -   Don't provide an estimate of the change
 
@@ -209,7 +209,7 @@ If they use x and y in the equation but then define what variables they are asso
 
 ```{r}
 ggplot(data = ntl_icecover, 
-       mapping = aes(y = ice_duration, x = year, fill = "lakeid")) +
+       mapping = aes(y = ice_duration, x = year, color = "lakeid")) +
   geom_point() +
   geom_smooth(method = "lm") +
   labs(x = "Year", 
@@ -222,7 +222,6 @@ If they got a Growing for Question 4 from using a wiggly line, they don't need t
 
 **Growing**:
 
-- If they use `fill` instead of `color`
+-   If they use `fill` instead of `color`
 
-*Feedback:* I know it is confusing, but to change the color of the points and the lines in a scatterplot we need to use the `color` aesthetic, not the `fill`. 
-
+*Feedback:* I know it is confusing, but to change the color of the points and the lines in a scatterplot we need to use the `color` aesthetic, not the `fill`.

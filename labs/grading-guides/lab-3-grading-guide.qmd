@@ -162,12 +162,9 @@ ggplot(data = trout,
 If they got a growing on #8 for an axis label, they don't get a growing here.
 :::
 
-- If doesn't use facets or colors
-::: callout-note
-# If they used `color` instead of `fill`
+-   If doesn't use facets or colors ::: callout-note \# If they used `color` instead of `fill`
 
-*Feedback:* The `color` aesthetic only colors the outside of the ridge plot. However, if you were to use the `fill` aesthetic the entire ridge would be filled with color!
-:::
+*Feedback:* The `color` aesthetic only colors the outside of the ridge plot. However, if you were to use the `fill` aesthetic the entire ridge would be filled with color! :::
 
 ## Question 9 -- Based on the plot, how different are the lengths between the channel types and forest sections?
 
@@ -215,7 +212,7 @@ trout %>%
 
 ```{r mean-length-2}
 trout %>%
-  group_by(unittype, species) %>%
+  group_by(unittype, section) %>%
   summarize(mean_length = mean(length_1_mm))
 ```
 
