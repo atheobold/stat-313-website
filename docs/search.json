@@ -1194,7 +1194,7 @@
     "href": "slides/week4-day2.html#common-mistakes",
     "title": "Week 4, Day 2",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\n\nCategorical variables in R (Q2)\n\nWhat data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?\n\nComparing distributions between groups (Q9)\n\nAre the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?\nAre the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?\nWas every channel type observed in both sections of forest?\n\nComparing group means with distributions (Q11)\n\nWhere did you believe the “center” of the distribution was?\nIs that different from the means you are seeing? Why do you think that is?"
+    "text": "Common Mistakes\n\n\n\nCategorical variables in R (Q2)\n\nWhat data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?\nThe output of glimpse() can help!\n\nComparing distributions between groups (Q9)\n\nWere trout observed in every channel type in both sections of forest?\n\nCalculating group means (Q10)\n\ngroup_by()creates groups based on a categorical variable not based on the dataset\ngroup_by(species) not group_by(trout)"
   },
   {
     "objectID": "slides/week4-day2.html#copying-the-lab-last-weeks-recorder",

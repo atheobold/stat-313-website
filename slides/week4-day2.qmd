@@ -60,15 +60,16 @@ Your group received a "Growing" on *at least one* question
 ## Common Mistakes
 
 ::: small
+:::{.incremental}
 -   **Categorical variables in R (Q2)**
-    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?
+    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates? 
+    -   The output of `glimpse()` can help!
 -   **Comparing distributions between groups (Q9)**
-    -   Are the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?
-    -   Are the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?
-    -   Was every channel type observed in both sections of forest?
--   **Comparing group means with distributions (Q11)**
-    -   Where did you believe the "center" of the distribution was?
-    -   Is that different from the means you are seeing? Why do you think that is?
+    -   Were trout observed in every channel type in both sections of forest?
+-   **Calculating group means (Q10)**
+    -   `group_by()`creates groups based on a categorical variable [**not**]{.underline} based on the dataset
+    - `group_by(species)` [**not**]{.underline} `group_by(trout)`
+:::
 :::
 
 ## Copying the Lab -- Last Week's Recorder

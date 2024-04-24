@@ -369,23 +369,24 @@
 <section id="common-mistakes" class="slide level2">
 <h2>Common Mistakes</h2>
 <div class="small">
+<div>
 <ul>
-<li><strong>Categorical variables in R (Q2)</strong>
+<li class="fragment"><strong>Categorical variables in R (Q2)</strong>
 <ul>
-<li>What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?</li>
+<li class="fragment">What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?</li>
+<li class="fragment">The output of <code>glimpse()</code> can help!</li>
 </ul></li>
-<li><strong>Comparing distributions between groups (Q9)</strong>
+<li class="fragment"><strong>Comparing distributions between groups (Q9)</strong>
 <ul>
-<li>Are the distributions (centers, spreads, shapes) similar between the channel types? Are any channel types different?</li>
-<li>Are the distributions (centers, spreads, shapes) similar between the forest sections? Are any sections different?</li>
-<li>Was every channel type observed in both sections of forest?</li>
+<li class="fragment">Were trout observed in every channel type in both sections of forest?</li>
 </ul></li>
-<li><strong>Comparing group means with distributions (Q11)</strong>
+<li class="fragment"><strong>Calculating group means (Q10)</strong>
 <ul>
-<li>Where did you believe the “center” of the distribution was?</li>
-<li>Is that different from the means you are seeing? Why do you think that is?</li>
+<li class="fragment"><code>group_by()</code>creates groups based on a categorical variable <u><strong>not</strong></u> based on the dataset</li>
+<li class="fragment"><code>group_by(species)</code> <u><strong>not</strong></u> <code>group_by(trout)</code></li>
 </ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="copying-the-lab-last-weeks-recorder" class="slide level2">
