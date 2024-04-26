@@ -6,13 +6,11 @@ format:
 editor: visual
 ---
 
-# Reminders About Deadlines
+## Reminders About Deadlines
 
-##  {background-color="#B6CADA"}
+-   Lab 3 Revisions are due today (Wednesday, May 1)
 
--   Lab 3 Revisions are due today (Thursday, February 8)
-
--   Lab 4 Revisions are due next Thursday (February 15)
+-   Lab 4 Revisions are due next Wednesday (May 8)
 
 ::: callout-caution
 # Making a copy of your group's Lab 4
@@ -49,59 +47,59 @@ If you were the recorder (typer) for your group, you need to [make your project 
 
 # Coding a Multiple Linear Regression
 
-##  {background-color="#B6CADA"}
+##  Step 0 -- Read in Your Data
 
-::: {style="font-size: 2em; color: #000000;"}
-Step 0 -- Read in Your Data
-:::
-
-::: columns
-::: {.column width="47%"}
-STAT 313
-
-::: small
 -   Locate what package your data live in (found in the directions for the midterm project proposal)
 
 -   Load in the package you need!
 
 -   Get started!
-:::
-:::
 
-::: {.column width="3%"}
-:::
+<!-- ::: columns -->
+<!-- ::: {.column width="47%"} -->
+<!-- STAT 313 -->
 
-::: {.column width="50%"}
-STAT 513
+<!-- ::: small -->
+<!-- -   Locate what package your data live in (found in the directions for the midterm project proposal) -->
 
-::: small
--   Upload your formatted dataset to your Midterm Project on Posit Cloud
--   Write the following code to load in your dataset:
-:::
-:::
-:::
+<!-- -   Load in the package you need! -->
+
+<!-- -   Get started! -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: {.column width="3%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- STAT 513 -->
+
+<!-- ::: small -->
+<!-- -   Upload your formatted dataset to your Midterm Project on Posit Cloud -->
+<!-- -   Write the following code to load in your dataset: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
 </br>
 
 ```{r}
 #| eval: false
 #| echo: true
-name_you_want <- read_xlsx("name of your dataset.xlsx")
-```
+#| code-line-numbers: false
 
-**OR**
+library(openintro)
+```
 
 ```{r}
 #| eval: false
-#| echo: true
+#| echo: false
 name_you_want <- read_csv("name of your dataset.csv")
+
+name_you_want <- read_xlsx("name of your dataset.xlsx")
 ```
 
-##  {background-color="#B6CADA"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Step 1 -- Visualizations
-:::
+##  Step 1 -- Visualizations
 
 ::: columns
 ::: {.column width="47%"}
@@ -134,17 +132,15 @@ Step 1 -- Visualizations
 :::
 :::
 
+. . .
+
 ::: callout-warning
 # No `theme_classic()`
 
 I like grid lines! Please use `theme_bw()` instead!
 :::
 
-##  {background-color="#D4D4D4"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Step 2 -- Decide the "Best" Model
-:::
+##  Step 2 -- Decide the "Best" Model
 
 ::: columns
 ::: {.column width="45%"}
@@ -169,11 +165,7 @@ Step 2 -- Decide the "Best" Model
 :::
 :::
 
-##  {background-color="#D4D4D4"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Step 3 -- Fit the regression model with `lm()`
-:::
+##  Step 3 -- Fit the regression model you chose with `lm()`
 
 ::: columns
 ::: {.column width="45%"}
@@ -181,6 +173,19 @@ Step 3 -- Fit the regression model with `lm()`
 
 ::: {style="color: #0F4C81; font-size: 0.75em"}
 -   Are both variables included? Use a `+` to separate them!
+
+:::{.small}
+```{r}
+#| eval: false
+#| echo: true
+#| label: two-num-model
+#| code-line-numbers: false
+
+my_model <- lm(size ~ latitude + water_temp, 
+               data = pie_crab)
+```
+:::
+
 :::
 :::
 
@@ -190,70 +195,42 @@ Step 3 -- Fit the regression model with `lm()`
 ::: {.column width="45%"}
 [One Categorical & One Numerical Variable]{.underline}
 
-::: {style="color: #0F4C81; font-size: 0.75em"}
+::: {style="color: #0F4C81; font-size: 0.65em"}
 -   Are the slopes different? You need to fit a different slopes model! Use a `*` to separate the variables!
 
+:::{.small}
+```{r}
+#| eval: false
+#| echo: true
+#| label: interaction-model
+#| code-line-numbers: false
+
+my_model <- lm(tail_l ~ age + pop, 
+               data = possum)
+```
+:::
+
 -   Are the slopes similar? You need to fit a parallel slopes model! Use a `+` to separate the variables!
+
+:::{.small}
+```{r}
+#| eval: false
+#| echo: true
+#| label: parallel-model
+#| code-line-numbers: false
+
+my_model <- lm(weight ~ weeks + habit, 
+               data = births14)
+```
+:::
 :::
 :::
 :::
 
-##  {background-color="#D4D4D4"}
-
-::: {style="font-size: 2em; color: #000000;"}
-Step 4: Get the coefficients with `get_regression_table()`
-:::
+## Step 4: Get the coefficients with `get_regression_table()`
 
 ##  {background-color="#D4D4D4"}
 
 ::: {style="font-size: 5em; color: #000000;"}
 Now interpret!
 :::
-
-<!-- ##  {background-color="#B6CADA"} -->
-
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-
-<!-- **Hermeneutics** hərmə'n(y)o͞odiks -->
-
-<!-- ::: -->
-
-<!-- > *the study of interpretation* -->
-
-<!-- </br> -->
-
-<!-- . . . -->
-
-<!-- > "Philosophically, hermeneutics concerns the meaning of interpretation--its basic nature, scope and validity, and its place within and implications for human existance." -->
-
-<!-- ##  {background-color="#D4D4D4"} -->
-
-<!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
-
-<!-- **Statistical Hermeneutics** -->
-
-<!-- ::: -->
-
-<!-- > "The study of the interpretation of results and conclusions based on statistical theory, methods, and reasoning." -->
-
-<!-- . . . -->
-
-<!-- -   The complexities in interpretations of statistical models, results, etc. are often downplayed and taken for granted. -->
-
-<!-- -   It is not often that we are hit with an *explicit* call to discuss our *implicit* interpretations of the statements that arise from our use of statistical methods and results. -->
-
-<!-- ##  {background-color="#D4D4D4"} -->
-
-<!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
-
-<!-- Better for Science -->
-
-<!-- ::: -->
-
-<!-- > "Modern science despite all of the methodological and technological sophistication, has failed to account for the basic epistemic foundation on which it lies." -->
-
-<!-- . . . -->
-
-<!-- -   Hermeneutics possesses a positive attitude toward the finitude of human understanding. -->
-
-<!--     -   The concern is not to eradicate our finitude, but to recognize the consequences of our limits. -->

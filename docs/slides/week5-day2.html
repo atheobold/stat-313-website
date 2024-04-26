@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>STAT 313 / 513 - Midterm Project Work Day</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,16 +396,11 @@
 </div>
 
 </section>
-<section>
-<section id="reminders-about-deadlines" class="title-slide slide level1 center">
-<h1>Reminders About Deadlines</h1>
-
-</section>
-<section id="section" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
+<section id="reminders-about-deadlines" class="slide level2">
+<h2>Reminders About Deadlines</h2>
 <ul>
-<li><p>Lab 3 Revisions are due today (Thursday, February 8)</p></li>
-<li><p>Lab 4 Revisions are due next Thursday (February 15)</p></li>
+<li><p>Lab 3 Revisions are due today (Wednesday, May 1)</p></li>
+<li><p>Lab 4 Revisions are due next Wednesday (May 8)</p></li>
 </ul>
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
@@ -423,7 +418,7 @@
 <ul>
 <li>The first draft of your Midterm Project is due on <u>Sunday at midnight</u>.</li>
 </ul>
-</section></section>
+</section>
 <section>
 <section id="comments-from-project-proposals" class="title-slide slide level1 center">
 <h1>Comments from Project Proposals</h1>
@@ -460,47 +455,39 @@
 <h1>Coding a Multiple Linear Regression</h1>
 
 </section>
-<section id="section-1" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 0 – Read in Your Data</p>
-</div>
-<div class="columns">
-<div class="column" style="width:47%;">
-<p>STAT 313</p>
-<div class="small">
+<section id="step-0-read-in-your-data" class="slide level2">
+<h2>Step 0 – Read in Your Data</h2>
 <ul>
 <li><p>Locate what package your data live in (found in the directions for the midterm project proposal)</p></li>
 <li><p>Load in the package you need!</p></li>
 <li><p>Get started!</p></li>
 </ul>
-</div>
-</div><div class="column" style="width:3%;">
-
-</div><div class="column" style="width:50%;">
-<p>STAT 513</p>
-<div class="small">
-<ul>
-<li>Upload your formatted dataset to your Midterm Project on Posit Cloud</li>
-<li>Write the following code to load in your dataset:</li>
-</ul>
-</div>
-</div>
-</div>
+<!-- ::: columns -->
+<!-- ::: {.column width="47%"} -->
+<!-- STAT 313 -->
+<!-- ::: small -->
+<!-- -   Locate what package your data live in (found in the directions for the midterm project proposal) -->
+<!-- -   Load in the package you need! -->
+<!-- -   Get started! -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="3%"} -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- STAT 513 -->
+<!-- ::: small -->
+<!-- -   Upload your formatted dataset to your Midterm Project on Posit Cloud -->
+<!-- -   Write the following code to load in your dataset: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>name_you_want <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"name of your dataset.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>OR</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>name_you_want <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"name of your dataset.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-2" class="slide level2" data-background-color="#B6CADA">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 1 – Visualizations</p>
-</div>
+<section id="step-1-visualizations" class="slide level2">
+<h2>Step 1 – Visualizations</h2>
 <div class="columns">
 <div class="column" style="width:47%;">
 <p><u>Two Numerical Variables</u></p>
@@ -548,6 +535,7 @@
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -561,12 +549,10 @@
 </div>
 </div>
 </div>
-</section>
-<section id="section-3" class="slide level2" data-background-color="#D4D4D4">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 2 – Decide the “Best” Model</p>
 </div>
+</section>
+<section id="step-2-decide-the-best-model" class="slide level2">
+<h2>Step 2 – Decide the “Best” Model</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><u>Two Numerical Variables</u></p>
@@ -588,11 +574,8 @@
 </div>
 </div>
 </section>
-<section id="section-4" class="slide level2" data-background-color="#D4D4D4">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 3 – Fit the regression model with <code>lm()</code></p>
-</div>
+<section id="step-3-fit-the-regression-model-you-chose-with-lm" class="slide level2">
+<h2>Step 3 – Fit the regression model you chose with <code>lm()</code></h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><u>Two Numerical Variables</u></p>
@@ -600,62 +583,55 @@
 <ul>
 <li>Are both variables included? Use a <code>+</code> to separate them!</li>
 </ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(size <span class="sc">~</span> latitude <span class="sc">+</span> water_temp, </span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pie_crab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
 <p><u>One Categorical &amp; One Numerical Variable</u></p>
-<div style="color: #0F4C81; font-size: 0.75em">
+<div style="color: #0F4C81; font-size: 0.65em">
 <ul>
-<li><p>Are the slopes different? You need to fit a different slopes model! Use a <code>*</code> to separate the variables!</p></li>
-<li><p>Are the slopes similar? You need to fit a parallel slopes model! Use a <code>+</code> to separate the variables!</p></li>
+<li>Are the slopes different? You need to fit a different slopes model! Use a <code>*</code> to separate the variables!</li>
 </ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> age <span class="sc">+</span> pop, </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> possum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li>Are the slopes similar? You need to fit a parallel slopes model! Use a <code>+</code> to separate the variables!</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">+</span> habit, </span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> births14)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="section-5" class="slide level2" data-background-color="#D4D4D4">
-<h2></h2>
-<div style="font-size: 2em; color: #000000;">
-<p>Step 4: Get the coefficients with <code>get_regression_table()</code></p>
-</div>
+<section id="step-4-get-the-coefficients-with-get_regression_table" class="slide level2">
+<h2>Step 4: Get the coefficients with <code>get_regression_table()</code></h2>
 </section>
-<section id="section-6" class="slide level2" data-background-color="#D4D4D4">
+<section id="section" class="slide level2" data-background-color="#D4D4D4">
 <h2></h2>
 <div style="font-size: 5em; color: #000000;">
 <p>Now interpret!</p>
 </div>
-<!-- ##  {background-color="#B6CADA"} -->
-<!-- ::: {style="font-size: 2em; color: #000000;"} -->
-<!-- **Hermeneutics** hərmə'n(y)o͞odiks -->
-<!-- ::: -->
-<!-- > *the study of interpretation* -->
-<!-- </br> -->
-<!-- . . . -->
-<!-- > "Philosophically, hermeneutics concerns the meaning of interpretation--its basic nature, scope and validity, and its place within and implications for human existance." -->
-<!-- ##  {background-color="#D4D4D4"} -->
-<!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
-<!-- **Statistical Hermeneutics** -->
-<!-- ::: -->
-<!-- > "The study of the interpretation of results and conclusions based on statistical theory, methods, and reasoning." -->
-<!-- . . . -->
-<!-- -   The complexities in interpretations of statistical models, results, etc. are often downplayed and taken for granted. -->
-<!-- -   It is not often that we are hit with an *explicit* call to discuss our *implicit* interpretations of the statements that arise from our use of statistical methods and results. -->
-<!-- ##  {background-color="#D4D4D4"} -->
-<!-- ::: {style="font-size: 2em; color: #0F4C81;"} -->
-<!-- Better for Science -->
-<!-- ::: -->
-<!-- > "Modern science despite all of the methodological and technological sophistication, has failed to account for the basic epistemic foundation on which it lies." -->
-<!-- . . . -->
-<!-- -   Hermeneutics possesses a positive attitude toward the finitude of human understanding. -->
-<!--     -   The concern is not to eradicate our finitude, but to recognize the consequences of our limits. -->
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 

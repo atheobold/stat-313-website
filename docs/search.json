@@ -5357,7 +5357,7 @@
     "href": "slides/week5-day2.html#section",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Lab 3 Revisions are due today (Thursday, February 8)\nLab 4 Revisions are due next Thursday (February 15)\n\n\n\n\n\n\n\nMaking a copy of your group’s Lab 4\n\n\nIf you were the recorder (typer) for your group, you need to make your project public. If you were not the recorder, you need to make a copy of your group’s project.\n\n\n\n\nThe first draft of your Midterm Project is due on Sunday at midnight."
+    "text": "Now interpret!"
   },
   {
     "objectID": "slides/week5-day2.html#for-every-dataset-in-stat-313",
@@ -5385,35 +5385,35 @@
     "href": "slides/week5-day2.html#section-1",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 0 – Read in Your Data\n\n\n\nSTAT 313\n\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\nSTAT 513\n\n\nUpload your formatted dataset to your Midterm Project on Posit Cloud\nWrite the following code to load in your dataset:\n\n\n\n\n\n\nname_you_want &lt;- read_xlsx(\"name of your dataset.xlsx\")\n\nOR\n\nname_you_want &lt;- read_csv(\"name of your dataset.csv\")"
+    "text": "Step 4: Get the coefficients with get_regression_table()"
   },
   {
     "objectID": "slides/week5-day2.html#section-2",
     "href": "slides/week5-day2.html#section-2",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 1 – Visualizations\n\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\nI like grid lines! Please use theme_bw() instead!"
+    "text": "Now interpret!"
   },
   {
     "objectID": "slides/week5-day2.html#section-3",
     "href": "slides/week5-day2.html#section-3",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 2 – Decide the “Best” Model\n\n\n\nTwo Numerical Variables\n\n\nIf there appears to be a relationship with the colors – include both variables!\nIf the colors are equally dispersed throughout the plot – choose the one variable that has the stronger relationship (larger slope)!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nLook at the plot where the lines are allowed to be different! Does it look like they are?"
+    "text": "Now interpret!"
   },
   {
     "objectID": "slides/week5-day2.html#section-4",
     "href": "slides/week5-day2.html#section-4",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 3 – Fit the regression model with lm()\n\n\n\nTwo Numerical Variables\n\n\nAre both variables included? Use a + to separate them!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nAre the slopes different? You need to fit a different slopes model! Use a * to separate the variables!\nAre the slopes similar? You need to fit a parallel slopes model! Use a + to separate the variables!"
+    "text": "Step 4: Get the coefficients with get_regression_table()"
   },
   {
     "objectID": "slides/week5-day2.html#section-5",
     "href": "slides/week5-day2.html#section-5",
     "title": "Midterm Project Work Day",
     "section": "",
-    "text": "Step 4: Get the coefficients with get_regression_table()"
+    "text": "Now interpret!"
   },
   {
     "objectID": "slides/week5-day2.html#section-6",
@@ -6468,5 +6468,68 @@
     "title": "Introduction to Linear Regression",
     "section": "",
     "text": "Relationships Between Variables\n. . ."
+  },
+  {
+    "objectID": "slides/week5-day1.html#plan-for-wednesday",
+    "href": "slides/week5-day1.html#plan-for-wednesday",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Plan for Wednesday",
+    "text": "Plan for Wednesday\nNo lab – focus on getting all the coding accomplished for the Midterm Project"
+  },
+  {
+    "objectID": "slides/week5-day1.html#steps-before-wednesday",
+    "href": "slides/week5-day1.html#steps-before-wednesday",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Steps Before Wednesday",
+    "text": "Steps Before Wednesday\n\nInsert the description of your dataset and variables (from the Midterm Proposal) into the “Introduction” of your project\nPose a research question about your selected variables, which can be addressed with multiple linear regression\nInsert the code to create the required two (or three) visualizations\nWrite a description of what you see in the visualizations\nMake a decision which model you believe is “best”"
+  },
+  {
+    "objectID": "slides/week5-day2.html#reminders-about-deadlines",
+    "href": "slides/week5-day2.html#reminders-about-deadlines",
+    "title": "Midterm Project Work Day",
+    "section": "Reminders About Deadlines",
+    "text": "Reminders About Deadlines\n\nLab 3 Revisions are due today (Wednesday, May 1)\nLab 4 Revisions are due next Wednesday (May 8)\n\n\n\n\n\n\n\nMaking a copy of your group’s Lab 4\n\n\nIf you were the recorder (typer) for your group, you need to make your project public. If you were not the recorder, you need to make a copy of your group’s project.\n\n\n\n\nThe first draft of your Midterm Project is due on Sunday at midnight."
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-0-read-in-your-data",
+    "href": "slides/week5-day2.html#step-0-read-in-your-data",
+    "title": "Midterm Project Work Day",
+    "section": "Step 0 – Read in Your Data",
+    "text": "Step 0 – Read in Your Data\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(openintro)"
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-1-visualizations",
+    "href": "slides/week5-day2.html#step-1-visualizations",
+    "title": "Midterm Project Work Day",
+    "section": "Step 1 – Visualizations",
+    "text": "Step 1 – Visualizations\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\nI like grid lines! Please use theme_bw() instead!"
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-2-decide-the-best-model",
+    "href": "slides/week5-day2.html#step-2-decide-the-best-model",
+    "title": "Midterm Project Work Day",
+    "section": "Step 2 – Decide the “Best” Model",
+    "text": "Step 2 – Decide the “Best” Model\n\n\nTwo Numerical Variables\n\n\nIf there appears to be a relationship with the colors – include both variables!\nIf the colors are equally dispersed throughout the plot – choose the one variable that has the stronger relationship (larger slope)!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nLook at the plot where the lines are allowed to be different! Does it look like they are?"
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-3-fit-the-regression-model-with-lm",
+    "href": "slides/week5-day2.html#step-3-fit-the-regression-model-with-lm",
+    "title": "Midterm Project Work Day",
+    "section": "Step 3 – Fit the regression model with lm()",
+    "text": "Step 3 – Fit the regression model with lm()\n\n\nTwo Numerical Variables\n\n\nAre both variables included? Use a + to separate them!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nAre the slopes different? You need to fit a different slopes model! Use a * to separate the variables!\nAre the slopes similar? You need to fit a parallel slopes model! Use a + to separate the variables!"
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-4-get-the-coefficients-with-get_regression_table",
+    "href": "slides/week5-day2.html#step-4-get-the-coefficients-with-get_regression_table",
+    "title": "Midterm Project Work Day",
+    "section": "Step 4: Get the coefficients with get_regression_table()",
+    "text": "Step 4: Get the coefficients with get_regression_table()"
+  },
+  {
+    "objectID": "slides/week5-day2.html#step-3-fit-the-regression-model-you-chose-with-lm",
+    "href": "slides/week5-day2.html#step-3-fit-the-regression-model-you-chose-with-lm",
+    "title": "Midterm Project Work Day",
+    "section": "Step 3 – Fit the regression model you chose with lm()",
+    "text": "Step 3 – Fit the regression model you chose with lm()\n\n\nTwo Numerical Variables\n\n\nAre both variables included? Use a + to separate them!\n\n\n\nmy_model &lt;- lm(size ~ latitude + water_temp, \n               data = pie_crab)\n\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nAre the slopes different? You need to fit a different slopes model! Use a * to separate the variables!\n\n\n\nmy_model &lt;- lm(tail_l ~ age + pop, \n               data = possum)\n\n\n\nAre the slopes similar? You need to fit a parallel slopes model! Use a + to separate the variables!\n\n\n\nmy_model &lt;- lm(weight ~ weeks + habit, \n               data = births14)"
   }
 ]

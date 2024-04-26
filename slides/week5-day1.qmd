@@ -35,7 +35,7 @@ my_theme <- theme_bw() +
 
 3.  Start Midterm Project write-up
 
-## Plan for Thursday
+## Plan for Wednesday
 
 **No lab** -- focus on getting **all** the coding accomplished for the Midterm Project
 
@@ -46,7 +46,7 @@ To get everyone feedback on their drafts in a timely manner, the first drafts ar
 ::: callout-caution
 # Deadline Extension
 
-A deadline extension is permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).
+A deadline extension [**is**]{.underline} permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).
 :::
 
 # Multiple Linear Regression
@@ -368,7 +368,7 @@ Once you have found other students working on the same dataset, complete [the sa
 
 # Midterm Project Work Time
 
-## Steps Before Thursday (STAT 313)
+## Steps Before Wednesday
 
 1.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project
 
@@ -380,20 +380,20 @@ Once you have found other students working on the same dataset, complete [the sa
 
 5.  Make a decision which model you believe is "best"
 
-## Steps Before Thursday (STAT 513)
+<!-- ## Steps Before Wednesday (STAT 513) -->
 
-::: small
-1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd)
+<!-- ::: small -->
+<!-- 1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd) -->
 
-2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project
+<!-- 2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project -->
 
-3.  Pose a research question about your selected variables, **which can be addressed with multiple linear regression**
+<!-- 3.  Pose a research question about your selected variables, **which can be addressed with multiple linear regression** -->
 
-4.  Work with Dr. Theobold to write code to read in your data!
+<!-- 4.  Work with Dr. Theobold to write code to read in your data! -->
 
-5.  Insert the code to create the required two (or three) visualizations
+<!-- 5.  Insert the code to create the required two (or three) visualizations -->
 
-6.  Write a description of what you see in the visualizations
+<!-- 6.  Write a description of what you see in the visualizations -->
 
-7.  Make a decision which model you believe is "best"
-:::
+<!-- 7.  Make a decision which model you believe is "best" -->
+<!-- ::: -->
