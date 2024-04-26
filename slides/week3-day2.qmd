@@ -106,13 +106,13 @@ The person who typed your lab needs to make their project "public"
 
 ## Copying the Lab -- Everyone Else
 
-:::{.small}
+::: small
 1.  Find your group member's lab (you can use the search bar to search for their name)
 :::
 
 ![](images/search-for-name.png)
 
-:::{.small}
+::: small
 2.  Open their Lab 2 project
 3.  Select "Save a Permanent Copy"
 :::
@@ -283,7 +283,7 @@ trout %>%
 :::
 
 ::: {.column width="75%"}
-:::{.small}
+::: small
 **Remember `na.rm = TRUE` is important if there are missing values!**
 :::
 :::

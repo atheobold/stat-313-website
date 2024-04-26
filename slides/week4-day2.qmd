@@ -60,15 +60,15 @@ Your group received a "Growing" on *at least one* question
 ## Common Mistakes
 
 ::: small
-:::{.incremental}
+::: incremental
 -   **Categorical variables in R (Q2)**
-    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates? 
+    -   What data types does R use to store categorical variables? Integers? Characters? Doubles? Factors? Dates?
     -   The output of `glimpse()` can help!
 -   **Comparing distributions between groups (Q9)**
     -   Were trout observed in every channel type in both sections of forest?
 -   **Calculating group means (Q10)**
     -   `group_by()`creates groups based on a categorical variable [**not**]{.underline} based on the dataset
-    - `group_by(species)` [**not**]{.underline} `group_by(trout)`
+    -   `group_by(species)` [**not**]{.underline} `group_by(trout)`
 :::
 :::
 
