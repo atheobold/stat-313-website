@@ -59,7 +59,7 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 **(a) How large is the `nycflights` dataset? (i.e. How many rows and columns does it have?)**
 
-**(b) Are there numerical variables in the dataset? If so, what are their names?** *Hint: What data types are numerical variables stored as?*
+**(b) What are the names of the variables R believes are numerical?** *Hint: What data types are numerical variables stored as?*
 
 ```{r}
 #| label: data-inspect 
@@ -67,6 +67,8 @@ Remember that you can use `glimpse()` to take a quick peek at your data to under
 
 
 ```
+
+**(c) Of the numerical variables you named in (b), which variables behave more like a categorical variable?**
 
 ### Departure Delays
 
