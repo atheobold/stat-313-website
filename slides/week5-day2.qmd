@@ -6,11 +6,15 @@ format:
 editor: visual
 ---
 
-## Reminders About Deadlines
+# Reminders About Deadlines
+
+## Revision Deadlines
 
 -   Lab 3 Revisions are due today (May 1)
 
 -   Second round of revisions for Lab 2 are due today (May 1)
+
+-   Statistical Critique revisions are due next Wednesday (May 8)
 
 -   Lab 4 Revisions are due next Wednesday (May 8)
 
@@ -20,11 +24,19 @@ editor: visual
 If you were the recorder (typer) for your group, you need to [make your project public](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder). If you were not the recorder, you need to [make a copy of your group's project](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else).
 :::
 
--   The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}.
+## Midterm Project 
+
+The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}.
+
+::: callout-caution
+# Deadline Extension
+
+A deadline extension [**is**]{.underline} permitted for the first draft. Deadline extensions [**are not**]{.underline} permitted for the final version (due next week).
+:::
 
 # Comments from Project Proposals
 
-## For Every Dataset (in STAT 313)
+## For Every Dataset
 
 -   [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
 
@@ -49,7 +61,7 @@ If you were the recorder (typer) for your group, you need to [make your project 
 
 # Coding a Multiple Linear Regression
 
-##  Step 0 -- Read in Your Data
+## Step 0 -- Read in Your Data
 
 -   Locate what package your data live in (found in the directions for the midterm project proposal)
 
@@ -58,29 +70,41 @@ If you were the recorder (typer) for your group, you need to [make your project 
 -   Get started!
 
 <!-- ::: columns -->
+
 <!-- ::: {.column width="47%"} -->
+
 <!-- STAT 313 -->
 
 <!-- ::: small -->
+
 <!-- -   Locate what package your data live in (found in the directions for the midterm project proposal) -->
 
 <!-- -   Load in the package you need! -->
 
 <!-- -   Get started! -->
+
 <!-- ::: -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="3%"} -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="50%"} -->
+
 <!-- STAT 513 -->
 
 <!-- ::: small -->
+
 <!-- -   Upload your formatted dataset to your Midterm Project on Posit Cloud -->
+
 <!-- -   Write the following code to load in your dataset: -->
+
 <!-- ::: -->
+
 <!-- ::: -->
+
 <!-- ::: -->
 
 </br>
@@ -101,7 +125,7 @@ name_you_want <- read_csv("name of your dataset.csv")
 name_you_want <- read_xlsx("name of your dataset.xlsx")
 ```
 
-##  Step 1 -- Visualizations
+## Step 1 -- Visualizations
 
 ::: columns
 ::: {.column width="47%"}
@@ -142,7 +166,7 @@ name_you_want <- read_xlsx("name of your dataset.xlsx")
 I like grid lines! Please use `theme_bw()` instead!
 :::
 
-##  Step 2 -- Decide the "Best" Model
+## Step 2 -- Decide the "Best" Model
 
 ::: columns
 ::: {.column width="45%"}
@@ -167,7 +191,7 @@ I like grid lines! Please use `theme_bw()` instead!
 :::
 :::
 
-##  Step 3 -- Fit the regression model you chose with `lm()`
+## Step 3 -- Fit the regression model you chose with `lm()`
 
 ::: columns
 ::: {.column width="45%"}
@@ -176,7 +200,7 @@ I like grid lines! Please use `theme_bw()` instead!
 ::: {style="color: #0F4C81; font-size: 0.75em"}
 -   Are both variables included? Use a `+` to separate them!
 
-:::{.small}
+::: small
 ```{r}
 #| eval: false
 #| echo: true
@@ -187,7 +211,6 @@ my_model <- lm(size ~ latitude + water_temp,
                data = pie_crab)
 ```
 :::
-
 :::
 :::
 
@@ -200,7 +223,7 @@ my_model <- lm(size ~ latitude + water_temp,
 ::: {style="color: #0F4C81; font-size: 0.65em"}
 -   Are the slopes different? You need to fit a different slopes model! Use a `*` to separate the variables!
 
-:::{.small}
+::: small
 ```{r}
 #| eval: false
 #| echo: true
@@ -214,7 +237,7 @@ my_model <- lm(tail_l ~ age + pop,
 
 -   Are the slopes similar? You need to fit a parallel slopes model! Use a `+` to separate the variables!
 
-:::{.small}
+::: small
 ```{r}
 #| eval: false
 #| echo: true

@@ -51,8 +51,9 @@ A deadline extension [**is**]{.underline} permitted for the first draft. Deadlin
 
 ## Reminders About Deadlines
 
--   Midterm Project Proposal is / was due [today]{.underline} by 5pm
--   Lab 3 Revisions are due Wednesday (May 1)
+-   Midterm Project Proposal is due [today]{.underline} by 5pm
+-   Lab 3 revisions are due Wednesday (May 1)
+-   Statistical Critique revisions are due next Wednesday (May 8)
 -   Second round of Lab 2 revisions are due by Wednesday (May 1)
 
 # Multiple Linear Regression
@@ -389,6 +390,7 @@ Once you have found other students working on the same dataset, complete [the sa
 <!-- ## Steps Before Wednesday (STAT 513) -->
 
 <!-- ::: small -->
+
 <!-- 1.  Create a [nicely formatted version of your dataset](../project/data-formatting-513.qmd) -->
 
 <!-- 2.  Insert the description of your dataset and variables (from the Midterm Proposal) into the "Introduction" of your project -->
@@ -402,4 +404,5 @@ Once you have found other students working on the same dataset, complete [the sa
 <!-- 6.  Write a description of what you see in the visualizations -->
 
 <!-- 7.  Make a decision which model you believe is "best" -->
+
 <!-- ::: -->
