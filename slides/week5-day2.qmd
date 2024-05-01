@@ -24,7 +24,7 @@ editor: visual
 If you were the recorder (typer) for your group, you need to [make your project public](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-last-weeks-recorder). If you were not the recorder, you need to [make a copy of your group's project](https://atheobold.github.io/stat-313-website/slides/week4-day2.html#copying-the-lab-everyone-else).
 :::
 
-## Midterm Project 
+## Midterm Project
 
 The first draft of your Midterm Project is due on [Sunday at midnight]{.underline}.
 
@@ -36,17 +36,23 @@ A deadline extension [**is**]{.underline} permitted for the first draft. Deadlin
 
 # Comments from Project Proposals
 
-## For Every Dataset
-
--   [Every]{.underine} dataset is included in an R package! You need to find which package that is and load it in!
-
--   If your dataset is associated with a publication, that publication should be referenced in your Introduction!
-
 ## Introduction Versus Methods
 
--   The description of your data goes and your research question goes in your Introduction.
+-   The description of your data goes in your Introduction.
 
--   The description of your variables goes at the beginning of your Methods!
+-   The description of your variables goes at the beginning of your Methods, in the Variables subsection!
+
+## Data Description -- A Word of Caution
+
+Be cautious in how you are using the resources I provided---do not copy these descriptions. 
+
+Inserting a verbatim copy of the descriptions seen in the data resources is [**plagiarism**]{.underline}. 
+
+:::{.callout-caution}
+# In text citation
+
+If you wish to borrow elements of these descriptions, you need to quote them and provide a reference to the resource. e.g., "This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children" (United States Department of Health and Human Services, 2014). 
+:::
 
 ## Specific Dataset Advice
 
@@ -55,8 +61,6 @@ A deadline extension [**is**]{.underline} permitted for the first draft. Deadlin
 -   For the `hbr_maples` data, you cannot use `year` as a numerical variable. There are only two years of data!
 
 -   For the `pie_crabs` data:
-
-    -   `size` should be the response variable
     -   `site` and `latitude` measure the [same]{.underline} thing
 
 # Coding a Multiple Linear Regression
@@ -107,7 +111,7 @@ A deadline extension [**is**]{.underline} permitted for the first draft. Deadlin
 
 <!-- ::: -->
 
-</br>
+. . .
 
 ```{r}
 #| eval: false
@@ -116,6 +120,24 @@ A deadline extension [**is**]{.underline} permitted for the first draft. Deadlin
 
 library(openintro)
 ```
+
+**OR** 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+library(lterdatasampler)
+```
+
+. . .
+
+:::{.callout-caution}
+# moderndive Package
+
+We will be using the **moderndive** package to get our regression tables, so **do not** remove this package from your project!
+:::
 
 ```{r}
 #| eval: false
@@ -129,6 +151,7 @@ name_you_want <- read_xlsx("name of your dataset.xlsx")
 
 ::: columns
 ::: {.column width="47%"}
+:::{.fragment .fade-in-then-semi-out	}
 [Two Numerical Variables]{.underline}
 
 ::: callout-tip
@@ -136,8 +159,10 @@ name_you_want <- read_xlsx("name of your dataset.xlsx")
 :::
 
 ::: small
--   Visualize the model with **both** variables -- `color` gradient
--   Visualize **two** simple linear regression models -- one for each variable
+1. Visualize the model with **both** variables, using a `color` gradient
+2. Visualize a simple linear regression with the one explanatory variable
+3. Visualize a simple linear regression with the other explanatory variable
+:::
 :::
 :::
 
@@ -145,6 +170,7 @@ name_you_want <- read_xlsx("name of your dataset.xlsx")
 :::
 
 ::: {.column width="50%"}
+:::{.fragment}
 [One Categorical & One Numerical Variable]{.underline}
 
 ::: callout-tip
@@ -152,18 +178,11 @@ name_you_want <- read_xlsx("name of your dataset.xlsx")
 :::
 
 ::: small
--   Visualize the model using `geom_smooth(method = "lm")`
--   Visualize the model using `geom_parallel_slopes()`
+1. Visualize the "different slopes" multiple linear regression using `geom_smooth(method = "lm")`
+2. Visualize the "parallel slopes" multiple linear regression using`geom_parallel_slopes()`
 :::
 :::
 :::
-
-. . .
-
-::: callout-warning
-# No `theme_classic()`
-
-I like grid lines! Please use `theme_bw()` instead!
 :::
 
 ## Step 2 -- Decide the "Best" Model
@@ -172,7 +191,7 @@ I like grid lines! Please use `theme_bw()` instead!
 ::: {.column width="45%"}
 [Two Numerical Variables]{.underline}
 
-::: {style="color: #0F4C81; font-size: 0.75em"}
+::: {style="color: #0F4C81; font-size: 0.85em"}
 -   If there appears to be a relationship with the colors -- include **both** variables!
 
 -   If the colors are equally dispersed throughout the plot -- choose the [**one**]{.underline} variable that has the [**stronger**]{.underline} relationship (larger slope)!
@@ -185,8 +204,12 @@ I like grid lines! Please use `theme_bw()` instead!
 ::: {.column width="45%"}
 [One Categorical & One Numerical Variable]{.underline}
 
-::: {style="color: #0F4C81; font-size: 0.75em"}
+::: {style="color: #0F4C81; font-size: 0.85em"}
 -   Look at the plot where the lines are allowed to be different! Does it look like they are?
+
+-   If the lines look different -- you should use the different slopes (interaction) model! 
+
+-   If the lines look similar -- you should use the parallel slopes (additive) model! 
 :::
 :::
 :::
@@ -230,7 +253,7 @@ my_model <- lm(size ~ latitude + water_temp,
 #| label: interaction-model
 #| code-line-numbers: false
 
-my_model <- lm(tail_l ~ age + pop, 
+my_model <- lm(tail_l ~ age * pop, 
                data = possum)
 ```
 :::

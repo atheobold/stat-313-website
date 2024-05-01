@@ -445,19 +445,30 @@
 <h1>Comments from Project Proposals</h1>
 
 </section>
-<section id="for-every-dataset" class="slide level2">
-<h2>For Every Dataset</h2>
-<ul>
-<li><p><span class="underine">Every</span> dataset is included in an R package! You need to find which package that is and load it in!</p></li>
-<li><p>If your dataset is associated with a publication, that publication should be referenced in your Introduction!</p></li>
-</ul>
-</section>
 <section id="introduction-versus-methods" class="slide level2">
 <h2>Introduction Versus Methods</h2>
 <ul>
-<li><p>The description of your data goes and your research question goes in your Introduction.</p></li>
-<li><p>The description of your variables goes at the beginning of your Methods!</p></li>
+<li><p>The description of your data goes in your Introduction.</p></li>
+<li><p>The description of your variables goes at the beginning of your Methods, in the Variables subsection!</p></li>
 </ul>
+</section>
+<section id="data-description-a-word-of-caution" class="slide level2">
+<h2>Data Description – A Word of Caution</h2>
+<p>Be cautious in how you are using the resources I provided—do not copy these descriptions.</p>
+<p>Inserting a verbatim copy of the descriptions seen in the data resources is <u><strong>plagiarism</strong></u>.</p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>In text citation</strong></p>
+</div>
+<div class="callout-content">
+<p>If you wish to borrow elements of these descriptions, you need to quote them and provide a reference to the resource. e.g., “This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children” (United States Department of Health and Human Services, 2014).</p>
+</div>
+</div>
+</div>
 </section>
 <section id="specific-dataset-advice" class="slide level2">
 <h2>Specific Dataset Advice</h2>
@@ -466,7 +477,6 @@
 <li><p>For the <code>hbr_maples</code> data, you cannot use <code>year</code> as a numerical variable. There are only two years of data!</p></li>
 <li><p>For the <code>pie_crabs</code> data:</p>
 <ul>
-<li><code>size</code> should be the response variable</li>
 <li><code>site</code> and <code>latitude</code> measure the <u>same</u> thing</li>
 </ul></li>
 </ul>
@@ -502,15 +512,36 @@
 <!-- ::: -->
 <!-- ::: -->
 <!-- ::: -->
-<p><br></p>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>OR</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lterdatasampler)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>moderndive Package</strong></p>
+</div>
+<div class="callout-content">
+<p>We will be using the <strong>moderndive</strong> package to get our regression tables, so <strong>do not</strong> remove this package from your project!</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-1-visualizations" class="slide level2">
 <h2>Step 1 – Visualizations</h2>
 <div class="columns">
 <div class="column" style="width:47%;">
+<div class="fragment fade-in-then-semi-out">
 <p><u>Two Numerical Variables</u></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -526,14 +557,17 @@
 </div>
 </div>
 <div class="small">
-<ul>
-<li>Visualize the model with <strong>both</strong> variables – <code>color</code> gradient</li>
-<li>Visualize <strong>two</strong> simple linear regression models – one for each variable</li>
-</ul>
+<ol type="1">
+<li>Visualize the model with <strong>both</strong> variables, using a <code>color</code> gradient</li>
+<li>Visualize a simple linear regression with the one explanatory variable</li>
+<li>Visualize a simple linear regression with the other explanatory variable</li>
+</ol>
+</div>
 </div>
 </div><div class="column" style="width:3%;">
 
 </div><div class="column" style="width:50%;">
+<div class="fragment">
 <p><u>One Categorical &amp; One Numerical Variable</u></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -549,24 +583,10 @@
 </div>
 </div>
 <div class="small">
-<ul>
-<li>Visualize the model using <code>geom_smooth(method = "lm")</code></li>
-<li>Visualize the model using <code>geom_parallel_slopes()</code></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>No <code>theme_classic()</code></strong></p>
-</div>
-<div class="callout-content">
-<p>I like grid lines! Please use <code>theme_bw()</code> instead!</p>
+<ol type="1">
+<li>Visualize the “different slopes” multiple linear regression using <code>geom_smooth(method = "lm")</code></li>
+<li>Visualize the “parallel slopes” multiple linear regression using<code>geom_parallel_slopes()</code></li>
+</ol>
 </div>
 </div>
 </div>
@@ -577,7 +597,7 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><u>Two Numerical Variables</u></p>
-<div style="color: #0F4C81; font-size: 0.75em">
+<div style="color: #0F4C81; font-size: 0.85em">
 <ul>
 <li><p>If there appears to be a relationship with the colors – include <strong>both</strong> variables!</p></li>
 <li><p>If the colors are equally dispersed throughout the plot – choose the <u><strong>one</strong></u> variable that has the <u><strong>stronger</strong></u> relationship (larger slope)!</p></li>
@@ -587,9 +607,11 @@
 
 </div><div class="column" style="width:45%;">
 <p><u>One Categorical &amp; One Numerical Variable</u></p>
-<div style="color: #0F4C81; font-size: 0.75em">
+<div style="color: #0F4C81; font-size: 0.85em">
 <ul>
-<li>Look at the plot where the lines are allowed to be different! Does it look like they are?</li>
+<li><p>Look at the plot where the lines are allowed to be different! Does it look like they are?</p></li>
+<li><p>If the lines look different – you should use the different slopes (interaction) model!</p></li>
+<li><p>If the lines look similar – you should use the parallel slopes (additive) model!</p></li>
 </ul>
 </div>
 </div>
@@ -606,8 +628,8 @@
 </ul>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(size <span class="sc">~</span> latitude <span class="sc">+</span> water_temp, </span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pie_crab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(size <span class="sc">~</span> latitude <span class="sc">+</span> water_temp, </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pie_crab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -621,8 +643,8 @@
 </ul>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> age <span class="sc">+</span> pop, </span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> possum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> age <span class="sc">*</span> pop, </span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> possum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -630,8 +652,8 @@
 </ul>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">+</span> habit, </span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> births14)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>my_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> weeks <span class="sc">+</span> habit, </span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> births14)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

@@ -5371,14 +5371,14 @@
     "href": "slides/week5-day2.html#introduction-versus-methods",
     "title": "Midterm Project Work Day",
     "section": "Introduction Versus Methods",
-    "text": "Introduction Versus Methods\n\nThe description of your data goes and your research question goes in your Introduction.\nThe description of your variables goes at the beginning of your Methods!"
+    "text": "Introduction Versus Methods\n\nThe description of your data goes in your Introduction.\nThe description of your variables goes at the beginning of your Methods, in the Variables subsection!"
   },
   {
     "objectID": "slides/week5-day2.html#specific-dataset-advice",
     "href": "slides/week5-day2.html#specific-dataset-advice",
     "title": "Midterm Project Work Day",
     "section": "Specific Dataset Advice",
-    "text": "Specific Dataset Advice\n\nFor the and_vertebrates data, you should include species as an explanatory variable. If you don’t you are assuming the same relationship applies to trout AND salamanders.\nFor the hbr_maples data, you cannot use year as a numerical variable. There are only two years of data!\nFor the pie_crabs data:\n\nsize should be the response variable\nsite and latitude measure the same thing"
+    "text": "Specific Dataset Advice\n\nFor the and_vertebrates data, you should include species as an explanatory variable. If you don’t you are assuming the same relationship applies to trout AND salamanders.\nFor the hbr_maples data, you cannot use year as a numerical variable. There are only two years of data!\nFor the pie_crabs data:\n\nsite and latitude measure the same thing"
   },
   {
     "objectID": "slides/week5-day2.html#section-1",
@@ -6495,21 +6495,21 @@
     "href": "slides/week5-day2.html#step-0-read-in-your-data",
     "title": "Midterm Project Work Day",
     "section": "Step 0 – Read in Your Data",
-    "text": "Step 0 – Read in Your Data\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(openintro)"
+    "text": "Step 0 – Read in Your Data\n\nLocate what package your data live in (found in the directions for the midterm project proposal)\nLoad in the package you need!\nGet started!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(openintro)\n\nOR\n\nlibrary(lterdatasampler)\n\n\n\n\n\n\n\n\n\nmoderndive Package\n\n\nWe will be using the moderndive package to get our regression tables, so do not remove this package from your project!"
   },
   {
     "objectID": "slides/week5-day2.html#step-1-visualizations",
     "href": "slides/week5-day2.html#step-1-visualizations",
     "title": "Midterm Project Work Day",
     "section": "Step 1 – Visualizations",
-    "text": "Step 1 – Visualizations\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables – color gradient\nVisualize two simple linear regression models – one for each variable\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the model using geom_smooth(method = \"lm\")\nVisualize the model using geom_parallel_slopes()\n\n\n\n\n\n\n\n\n\n\n\nNo theme_classic()\n\n\nI like grid lines! Please use theme_bw() instead!"
+    "text": "Step 1 – Visualizations\n\n\n\nTwo Numerical Variables\n\n\n\n\n\n\nThree total visualizations\n\n\n\n\n\n\n\n\nVisualize the model with both variables, using a color gradient\nVisualize a simple linear regression with the one explanatory variable\nVisualize a simple linear regression with the other explanatory variable\n\n\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\n\n\n\n\nTwo total visualizations\n\n\n\n\n\n\n\n\nVisualize the “different slopes” multiple linear regression using geom_smooth(method = \"lm\")\nVisualize the “parallel slopes” multiple linear regression usinggeom_parallel_slopes()"
   },
   {
     "objectID": "slides/week5-day2.html#step-2-decide-the-best-model",
     "href": "slides/week5-day2.html#step-2-decide-the-best-model",
     "title": "Midterm Project Work Day",
     "section": "Step 2 – Decide the “Best” Model",
-    "text": "Step 2 – Decide the “Best” Model\n\n\nTwo Numerical Variables\n\n\nIf there appears to be a relationship with the colors – include both variables!\nIf the colors are equally dispersed throughout the plot – choose the one variable that has the stronger relationship (larger slope)!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nLook at the plot where the lines are allowed to be different! Does it look like they are?"
+    "text": "Step 2 – Decide the “Best” Model\n\n\nTwo Numerical Variables\n\n\nIf there appears to be a relationship with the colors – include both variables!\nIf the colors are equally dispersed throughout the plot – choose the one variable that has the stronger relationship (larger slope)!\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nLook at the plot where the lines are allowed to be different! Does it look like they are?\nIf the lines look different – you should use the different slopes (interaction) model!\nIf the lines look similar – you should use the parallel slopes (additive) model!"
   },
   {
     "objectID": "slides/week5-day2.html#step-3-fit-the-regression-model-with-lm",
@@ -6530,7 +6530,7 @@
     "href": "slides/week5-day2.html#step-3-fit-the-regression-model-you-chose-with-lm",
     "title": "Midterm Project Work Day",
     "section": "Step 3 – Fit the regression model you chose with lm()",
-    "text": "Step 3 – Fit the regression model you chose with lm()\n\n\nTwo Numerical Variables\n\n\nAre both variables included? Use a + to separate them!\n\n\n\nmy_model &lt;- lm(size ~ latitude + water_temp, \n               data = pie_crab)\n\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nAre the slopes different? You need to fit a different slopes model! Use a * to separate the variables!\n\n\n\nmy_model &lt;- lm(tail_l ~ age + pop, \n               data = possum)\n\n\n\nAre the slopes similar? You need to fit a parallel slopes model! Use a + to separate the variables!\n\n\n\nmy_model &lt;- lm(weight ~ weeks + habit, \n               data = births14)"
+    "text": "Step 3 – Fit the regression model you chose with lm()\n\n\nTwo Numerical Variables\n\n\nAre both variables included? Use a + to separate them!\n\n\n\nmy_model &lt;- lm(size ~ latitude + water_temp, \n               data = pie_crab)\n\n\n\n\n\n\nOne Categorical & One Numerical Variable\n\n\nAre the slopes different? You need to fit a different slopes model! Use a * to separate the variables!\n\n\n\nmy_model &lt;- lm(tail_l ~ age * pop, \n               data = possum)\n\n\n\nAre the slopes similar? You need to fit a parallel slopes model! Use a + to separate the variables!\n\n\n\nmy_model &lt;- lm(weight ~ weeks + habit, \n               data = births14)"
   },
   {
     "objectID": "slides/week5-day1.html#reminders-about-deadlines",
@@ -6559,5 +6559,12 @@
     "title": "Midterm Project Work Day",
     "section": "For Every Dataset",
     "text": "For Every Dataset\n\nEvery dataset is included in an R package! You need to find which package that is and load it in!\nIf your dataset is associated with a publication, that publication should be referenced in your Introduction!"
+  },
+  {
+    "objectID": "slides/week5-day2.html#data-description-a-word-of-caution",
+    "href": "slides/week5-day2.html#data-description-a-word-of-caution",
+    "title": "Midterm Project Work Day",
+    "section": "Data Description – A Word of Caution",
+    "text": "Data Description – A Word of Caution\nBe cautious in how you are using the resources I provided—do not copy these descriptions.\nInserting a verbatim copy of the descriptions seen in the data resources is plagiarism.\n\n\n\n\n\n\nIn text citation\n\n\nIf you wish to borrow elements of these descriptions, you need to quote them and provide a reference to the resource. e.g., “This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children” (United States Department of Health and Human Services, 2014)."
   }
 ]
