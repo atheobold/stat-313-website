@@ -8,21 +8,13 @@ editor: visual
 ## Deadline Reminders
 
 -   Lab 4 revisions are due tonight
--   Statistical Critique 1 revisions are due next Thursday
+-   Statistical Critique 1 revisions are due tonight
 -   The final version of your Midterm Project is due Sunday at midnight
 
 ::: callout-important
 # Deadline Extensions
 
-You **cannot** request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. **Do not ride the line.**
-:::
-
-. . .
-
-::: callout-warning
-# Responding to Questions / Issues
-
-I **will not** be responding to emails / Discord messages this weekend.
+You **cannot** request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. **Do not ride the line.**
 :::
 
 # Midterm Project Review
@@ -174,7 +166,8 @@ and_vertebrates %>%
   labs(x = "Length (mm)", 
       y = "", 
       color = "Species",
-      title = "Comparing Weight (g) versus Length (mm) \nfor Vertebrates in Mack Creek") +
+      title = "Comparing Weight (g) versus Length (mm)",
+      subtitle = "for Different Vertebrate Species in Mack Creek") +
   theme_minimal() +
   scale_color_brewer(palette = "Dark2")
 
@@ -197,7 +190,7 @@ pie_crab %>%
       color = "Water Temperature (C)",
       title = "Size of Fiddler Crabs (mm) Across the Atlantic Coast") +
   theme_minimal() +
-  scale_color_viridis_c(option = "viridis")
+  scale_color_viridis_c(option = "magma", direction = -1)
 
 ```
 
@@ -218,24 +211,6 @@ pie_crab %>%
 :::
 
 </center>
-
-## 
-
-::: {style="font-size: 1.25em; color: #000000;"}
-"**Data is the new oil."**
-:::
-
-> The Economist, Intel CEO, Reliance Industrices CEO, UAE Minister of Artifical Intelligence, Google execs, etc., mainly elite white men
-
-. . .
-
-::: {style="font-size: 1.25em; color: #000000;"}
-**"Data is the same old oppression."**
-:::
-
-> BIWOC, white women, Indigenous people, immigrant communities, LGBTQ+ individuals, + more
-
-![](images/books.jpg)
 
 ## Does your phone recognize your face?
 

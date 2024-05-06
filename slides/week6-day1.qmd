@@ -25,10 +25,12 @@ library(palmerpenguins)
 :::
 :::
 
+. . .
+
 ::: callout-caution
 # Revision Deadline
 
-Revisions for Statistical Critiques are due next Thursday (February 22)
+Revisions for Statistical Critiques are due on Wednesday (May 8)
 :::
 
 # Midterm Project
@@ -46,10 +48,15 @@ Revisions for Statistical Critiques are due next Thursday (February 22)
 
 ## Data Visualizations & Coefficient Interpretations
 
+::: incremental
 -   Descriptions of your visualizations should address:
     -   form, direction, strength, and unusual points
+
+-   Descriptions of your visualizations should go **immediately below** the visualization, *before* the "Proposed Statistical Model" section
+
 -   You should interpret **every** coefficient from your regression equation(s)!
     -   Every y-intercept and every slope
+:::
 
 ## Study Limitations -- Scope of Inference
 
@@ -439,7 +446,7 @@ If you're not interested in prediction, what should you use instead?
 >
 > *Introduction to Modern Statistics*
 
-# For Thursday
+# For Wednesday
 
 ## Peer Review
 

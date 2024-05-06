@@ -725,7 +725,7 @@
     "href": "slides/week6-day2.html#deadline-reminders",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Deadline Reminders",
-    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due next Thursday\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. Do not ride the line.\n\n\n\n\n\n\n\n\n\n\nResponding to Questions / Issues\n\n\nI will not be responding to emails / Discord messages this weekend."
+    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
   },
   {
     "objectID": "slides/week6-day2.html#help-your-peers",
@@ -795,7 +795,7 @@
     "href": "slides/week6-day2.html#an-example-for-categorical",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "An Example for Categorical",
-    "text": "An Example for Categorical\n\nand_vertebrates %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                     y = weight_g, \n                     color = species)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Length (mm)\", \n      y = \"\", \n      color = \"Species\",\n      title = \"Comparing Weight (g) versus Length (mm) \\nfor Vertebrates in Mack Creek\") +\n  theme_minimal() +\n  scale_color_brewer(palette = \"Dark2\")"
+    "text": "An Example for Categorical\n\nand_vertebrates %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                     y = weight_g, \n                     color = species)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Length (mm)\", \n      y = \"\", \n      color = \"Species\",\n      title = \"Comparing Weight (g) versus Length (mm)\",\n      subtitle = \"for Different Vertebrate Species in Mack Creek\") +\n  theme_minimal() +\n  scale_color_brewer(palette = \"Dark2\")"
   },
   {
     "objectID": "slides/week6-day2.html#an-example-for-categorical-output",
@@ -809,7 +809,7 @@
     "href": "slides/week6-day2.html#an-example-for-continuous",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "An Example for Continuous",
-    "text": "An Example for Continuous\n\npie_crab %&gt;% \n  ggplot(mapping = aes(x = latitude, \n                     y = size, \n                     color = water_temp)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Latitude\", \n      y = \"\", \n      color = \"Water Temperature (C)\",\n      title = \"Size of Fiddler Crabs (mm) Across the Atlantic Coast\") +\n  theme_minimal() +\n  scale_color_viridis_c(option = \"viridis\")"
+    "text": "An Example for Continuous\n\npie_crab %&gt;% \n  ggplot(mapping = aes(x = latitude, \n                     y = size, \n                     color = water_temp)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Latitude\", \n      y = \"\", \n      color = \"Water Temperature (C)\",\n      title = \"Size of Fiddler Crabs (mm) Across the Atlantic Coast\") +\n  theme_minimal() +\n  scale_color_viridis_c(option = \"magma\", direction = -1)"
   },
   {
     "objectID": "slides/week6-day2.html#an-example-for-continuous-output",
@@ -5791,7 +5791,7 @@
     "href": "slides/week6-day1.html#feedback-revisions",
     "title": "Variable Selection in Multiple Regression",
     "section": "Feedback & Revisions",
-    "text": "Feedback & Revisions\n\n\n\nYou are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n\n\n\n\n\n\nRevision Deadline\n\n\nRevisions for Statistical Critiques are due next Thursday (February 22)"
+    "text": "Feedback & Revisions\n\n\n\nYou are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n\n\n\n\n\n\n\nRevision Deadline\n\n\nRevisions for Statistical Critiques are due on Wednesday (May 8)"
   },
   {
     "objectID": "slides/week6-day1.html#research-questions",
@@ -5805,7 +5805,7 @@
     "href": "slides/week6-day1.html#data-visualizations-coefficient-interpretations",
     "title": "Variable Selection in Multiple Regression",
     "section": "Data Visualizations & Coefficient Interpretations",
-    "text": "Data Visualizations & Coefficient Interpretations\n\nDescriptions of your visualizations should address:\n\nform, direction, strength, and unusual points\n\nYou should interpret every coefficient from your regression equation(s)!\n\nEvery y-intercept and every slope"
+    "text": "Data Visualizations & Coefficient Interpretations\n\n\nDescriptions of your visualizations should address:\n\nform, direction, strength, and unusual points\n\nDescriptions of your visualizations should go immediately below the visualization, before the “Proposed Statistical Model” section\nYou should interpret every coefficient from your regression equation(s)!\n\nEvery y-intercept and every slope"
   },
   {
     "objectID": "slides/week6-day1.html#study-limitations-scope-of-inference",
@@ -5840,7 +5840,7 @@
     "href": "slides/week6-day1.html#section-1",
     "title": "Variable Selection in Multiple Regression",
     "section": "",
-    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n429\n86\n3.9\n42\n7.833\nmale\nnot minority\nenglish\ntenured\nnot formal\nblack&white\n17\n20\nupper\n\n\n147\n27\n4.4\n52\n4.833\nmale\nminority\nnon-english\ntenured\nformal\ncolor\n13\n16\nupper\n\n\n134\n24\n4.5\n64\n4.167\nmale\nnot minority\nenglish\ntenured\nnot formal\ncolor\n51\n68\nupper"
+    "text": "Lots of available predictor variables\n\n\nevals:\n\n\n\n\n\nID\nprof_ID\nscore\nage\nbty_avg\ngender\nethnicity\nlanguage\nrank\npic_outfit\npic_color\ncls_did_eval\ncls_students\ncls_level\n\n\n\n\n193\n35\n4.6\n54\n2.333\nmale\nnot minority\nenglish\ntenured\nformal\ncolor\n16\n17\nupper\n\n\n406\n82\n5.0\n57\n2.833\nmale\nnot minority\nenglish\ntenured\nnot formal\nblack&white\n6\n15\nupper\n\n\n104\n19\n4.4\n46\n4.333\nfemale\nnot minority\nenglish\ntenured\nnot formal\nblack&white\n23\n29\nupper"
   },
   {
     "objectID": "slides/week6-day1.html#section-2",

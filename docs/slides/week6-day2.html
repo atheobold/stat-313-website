@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <meta name="author" content="STAT 313">
   <title>STAT 313 / 513 - Midterm Project Feedback, Visualization Best (Better) Practices &amp; Machine Learning</title>
@@ -406,7 +406,7 @@ STAT 313
 <h2>Deadline Reminders</h2>
 <ul>
 <li>Lab 4 revisions are due tonight</li>
-<li>Statistical Critique 1 revisions are due next Thursday</li>
+<li>Statistical Critique 1 revisions are due tonight</li>
 <li>The final version of your Midterm Project is due Sunday at midnight</li>
 </ul>
 <div class="callout callout-important callout-titled callout-style-default">
@@ -418,22 +418,7 @@ STAT 313
 <p><strong>Deadline Extensions</strong></p>
 </div>
 <div class="callout-content">
-<p>You <strong>cannot</strong> request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 12:00am on Monday. <strong>Do not ride the line.</strong></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Responding to Questions / Issues</strong></p>
-</div>
-<div class="callout-content">
-<p>I <strong>will not</strong> be responding to emails / Discord messages this weekend.</p>
-</div>
+<p>You <strong>cannot</strong> request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. <strong>Do not ride the line.</strong></p>
 </div>
 </div>
 </div>
@@ -568,9 +553,10 @@ STAT 313
 <span id="cb1-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length (mm)"</span>, </span>
 <span id="cb1-7"><a></a>      <span class="at">y =</span> <span class="st">""</span>, </span>
 <span id="cb1-8"><a></a>      <span class="at">color =</span> <span class="st">"Species"</span>,</span>
-<span id="cb1-9"><a></a>      <span class="at">title =</span> <span class="st">"Comparing Weight (g) versus Length (mm) </span><span class="sc">\n</span><span class="st">for Vertebrates in Mack Creek"</span>) <span class="sc">+</span></span>
-<span id="cb1-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-11"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a></a>      <span class="at">title =</span> <span class="st">"Comparing Weight (g) versus Length (mm)"</span>,</span>
+<span id="cb1-10"><a></a>      <span class="at">subtitle =</span> <span class="st">"for Different Vertebrate Species in Mack Creek"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-12"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -595,7 +581,7 @@ STAT 313
 <span id="cb2-8"><a></a>      <span class="at">color =</span> <span class="st">"Water Temperature (C)"</span>,</span>
 <span id="cb2-9"><a></a>      <span class="at">title =</span> <span class="st">"Size of Fiddler Crabs (mm) Across the Atlantic Coast"</span>) <span class="sc">+</span></span>
 <span id="cb2-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-11"><a></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section><section id="an-example-for-continuous-output" class="slide level2 output-location-slide"><h2>An Example for Continuous</h2><div class="cell output-location-slide">
@@ -627,24 +613,6 @@ STAT 313
 <p><strong>Data is Power</strong></p>
 </div>
 </center>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<div style="font-size: 1.25em; color: #000000;">
-<p>“<strong>Data is the new oil.”</strong></p>
-</div>
-<blockquote>
-<p>The Economist, Intel CEO, Reliance Industrices CEO, UAE Minister of Artifical Intelligence, Google execs, etc., mainly elite white men</p>
-</blockquote>
-<div class="fragment">
-<div style="font-size: 1.25em; color: #000000;">
-<p><strong>“Data is the same old oppression.”</strong></p>
-</div>
-<blockquote>
-<p>BIWOC, white women, Indigenous people, immigrant communities, LGBTQ+ individuals, + more</p>
-</blockquote>
-<p><img data-src="images/books.jpg"></p>
-</div>
 </section>
 <section id="does-your-phone-recognize-your-face" class="slide level2">
 <h2>Does your phone recognize your face?</h2>
@@ -696,12 +664,12 @@ STAT 313
 <span id="cb3-12"><a></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 
