@@ -2,6 +2,7 @@
 title: "Model Justification"
 format: html
 editor: visual
+embed-resources: true
 execute: 
   echo: false
   message: false

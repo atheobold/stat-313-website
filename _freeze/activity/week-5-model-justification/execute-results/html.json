@@ -1,7 +1,8 @@
 {
-  "hash": "0f1ec90b0a6ecf212bfd416077aa01f5",
+  "hash": "130dc4ca6f7ee05fbfd4c67a8c6761e7",
   "result": {
-    "markdown": "---\ntitle: \"Model Justification\"\nformat: html\neditor: visual\nexecute: \n  echo: false\n  message: false\n  warning: false\n---\n\n\n\n\nThis study seeks to investigate how the relationship between average SAT math scores and the percentage of students who are economically disadvantaged differs based on the size of the school. As seen in the plot below, the slope for this relationship was found to be similar across the different levels of schools. Therefore, this study used a parallel slopes (additive) multiple linear regression model.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](week-5-model-justification_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n**What do you feel is missing from this model justification?**\n",
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Model Justification\"\nformat: html\neditor: visual\nembed-resources: true\nexecute: \n  echo: false\n  message: false\n  warning: false\n---\n\n\n\n\nThis study seeks to investigate how the relationship between average SAT math scores and the percentage of students who are economically disadvantaged differs based on the size of the school. As seen in the plot below, the slope for this relationship was found to be similar across the different levels of schools. Therefore, this study used a parallel slopes (additive) multiple linear regression model.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](week-5-model-justification_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n**What do you feel is missing from this model justification?**\n",
     "supporting": [
       "week-5-model-justification_files/figure-html"
     ],
