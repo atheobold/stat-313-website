@@ -59,9 +59,9 @@ website:
             text: R Resources
       - section: "Projects"
         contents:
-          - href: project/midterm-project-directions.qmd
+          - href: project/midterm-project/midterm-project-directions.qmd
             text: Midterm Project Description
-          - href: project/final-project-directions.qmd
+          - href: project/final-project/final-project-directions.qmd
             text: Final Project Description
       - section: "Weekly materials"
         contents:

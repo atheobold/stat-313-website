@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 313 / 513 - STAT 513: Midterm Project Proposal</title>
+<title>STAT 313 / 513 - Final Project Guidelines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../weeks/week-0.html" rel="next">
+<link href="../../project/midterm-project/midterm-project-directions.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -66,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -78,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">STAT 513: Midterm Project Proposal</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../project/midterm-project/midterm-project-directions.html">Projects</a></li><li class="breadcrumb-item"><a href="../../project/final-project/final-project-directions.html">Final Project Description</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -92,8 +123,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-313-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -119,31 +150,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -160,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
@@ -177,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -185,22 +216,22 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Projects</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/midterm-project/midterm-project-directions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Project Description</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/final-project-directions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../project/final-project/final-project-directions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Final Project Description</span></a>
   </div>
 </li>
@@ -217,67 +248,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-7.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-8.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-9.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
@@ -292,25 +323,31 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link active" data-scroll-target="#your-task"><span class="header-section-number">0.1</span> Your Task</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#step-1-picking-a-dataset" id="toc-step-1-picking-a-dataset" class="nav-link active" data-scroll-target="#step-1-picking-a-dataset"><span class="header-section-number">1</span> Step 1: Picking a Dataset</a>
-  <ul class="collapse">
-  <li><a href="#option-1-use-your-own-data" id="toc-option-1-use-your-own-data" class="nav-link" data-scroll-target="#option-1-use-your-own-data"><span class="header-section-number">1.1</span> Option 1 – Use your own data</a></li>
-  <li><a href="#option-2-acquire-a-dataset-from-your-adviser" id="toc-option-2-acquire-a-dataset-from-your-adviser" class="nav-link" data-scroll-target="#option-2-acquire-a-dataset-from-your-adviser"><span class="header-section-number">1.2</span> Option 2 – Acquire a dataset from your adviser</a></li>
-  <li><a href="#deliverable" id="toc-deliverable" class="nav-link" data-scroll-target="#deliverable"><span class="header-section-number">1.3</span> Deliverable</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">1.1</span> Data Description</a></li>
+  <li><a href="#questions-of-interest" id="toc-questions-of-interest" class="nav-link" data-scroll-target="#questions-of-interest"><span class="header-section-number">1.2</span> Questions of Interest</a></li>
   </ul></li>
-  <li><a href="#step-2-writing-an-introduction" id="toc-step-2-writing-an-introduction" class="nav-link" data-scroll-target="#step-2-writing-an-introduction"><span class="header-section-number">2</span> Step 2: Writing an Introduction</a></li>
-  <li><a href="#step-3-submitting-on-canvas" id="toc-step-3-submitting-on-canvas" class="nav-link" data-scroll-target="#step-3-submitting-on-canvas"><span class="header-section-number">3</span> Step 3: Submitting on Canvas</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">3</span> Findings</a>
+  <ul class="collapse">
+  <li><a href="#one-way-anova-models" id="toc-one-way-anova-models" class="nav-link" data-scroll-target="#one-way-anova-models"><span class="header-section-number">3.1</span> One-Way ANOVA Models</a></li>
+  <li><a href="#two-way-anova-additive-model" id="toc-two-way-anova-additive-model" class="nav-link" data-scroll-target="#two-way-anova-additive-model"><span class="header-section-number">3.2</span> Two-Way ANOVA Additive Model</a></li>
+  <li><a href="#model-validity" id="toc-model-validity" class="nav-link" data-scroll-target="#model-validity"><span class="header-section-number">3.3</span> Model Validity</a></li>
+  </ul></li>
+  <li><a href="#study-limitations" id="toc-study-limitations" class="nav-link" data-scroll-target="#study-limitations"><span class="header-section-number">4</span> Study Limitations</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">5</span> Conclusions</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../project/midterm-project/midterm-project-directions.html">Projects</a></li><li class="breadcrumb-item"><a href="../../project/final-project/final-project-directions.html">Final Project Description</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">STAT 513: Midterm Project Proposal</h1>
-<p class="subtitle lead">Due February 5, 2023 by 5pm</p>
+<h1 class="title">Final Project Guidelines</h1>
 </div>
 
 
@@ -327,63 +364,223 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This week you will get started on your midterm project by selecting what dataset you wish to analyze and writing an introduction about the dataset you chose.</p>
-<section id="step-1-picking-a-dataset" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Step 1: Picking a Dataset</h1>
-<section id="option-1-use-your-own-data" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="option-1-use-your-own-data"><span class="header-section-number">1.1</span> Option 1 – Use your own data</h2>
-<p>If you have a dataset from your research which you believe can be appropriately modeled with a <em>linear regression</em>, you can propose to use these data.</p>
-</section>
-<section id="option-2-acquire-a-dataset-from-your-adviser" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="option-2-acquire-a-dataset-from-your-adviser"><span class="header-section-number">1.2</span> Option 2 – Acquire a dataset from your adviser</h2>
-<p>If you do not have a dataset from your research, then you are expected to work with your adviser to obtain a dataset relevant to your research / project.</p>
-</section>
-<section id="deliverable" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="deliverable"><span class="header-section-number">1.3</span> Deliverable</h2>
-<p>For the <strong>Midterm Project Proposal</strong> assignment on Canvas, you are required to submit the data you have chosen to use as an Excel file (stored as either a .csv or .xlsx).</p>
-</section>
-</section>
-<section id="step-2-writing-an-introduction" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Step 2: Writing an Introduction</h1>
-<p><strong>Step 1:</strong> Describe the context of your dataset in your own words! How were the data collected? Was there a study these data came from? I don’t know <strong>anything</strong> about your data, so I expect for this description to be <em>extensive</em>.</p>
-<p><strong>Step 2:</strong> Choose your variables</p>
-<p>We will using a simple linear regression to analyze the data you chose. Thus, there are some stipulations for the variables you can choose. You <strong>must</strong> choose</p>
-<ul>
-<li>one numeric variable for the response variable</li>
-<li>one numeric variable for the explanatory variable</li>
-</ul>
-<p>Once you have each of these variables decided, you then need to choose one additional explanatory variable. This additional explanatory variable can be either numerical or categorical.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="your-task" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="your-task"><span class="header-section-number">0.1</span> Your Task</h2>
+<p>For this project, you are expected to use a two-way ANOVA to investigate the relationship between <strong>one</strong> <u>numerical</u> response variable and <strong>two</strong> <u>categorical</u> explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Write-up
+Discretizing numerical variables
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Describe each variable you chose for your analysis—How was the variable measured? What unit was the variable measured in? What types of values does the variable take on (this is especially important if you chose a categorical variable)?</p>
+<p>If you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in <code>R</code> as <code>R</code> assumes all variables with numbers should be numerical.</p>
+<p>You will need Dr.&nbsp;Theobold’s help to perform this task. Dr.&nbsp;Theobold will work with you to convert your variable as long as you request help <strong>before</strong> <strong>Thursday, March 7 at 4pm.</strong></p>
 </div>
 </div>
 </section>
-<section id="step-3-submitting-on-canvas" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Step 3: Submitting on Canvas</h1>
-<p>For the <strong>Midterm Project Proposal</strong> assignment on Canvas, your proposal is required to consist of <strong>both</strong> components (dataset and description).</p>
-<p>You are allowed to use any text editing software to make your proposal (e.g., Word, Pages, Google Docs), but your submission <strong>must be a PDF</strong>. If you are unsure how to save your file as a PDF, I recommend using Google!</p>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<section id="data-description" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">1.1</span> Data Description</h2>
+<p>In 4-6 sentences describe:</p>
+<ul>
+<li>how the data were collected</li>
+<li>the context of the data (e.g., are the data from from a published study?)</li>
+<li>the background of the research problem (e.g., why were the data collected?)</li>
+</ul>
+</section>
+<section id="questions-of-interest" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="questions-of-interest"><span class="header-section-number">1.2</span> Questions of Interest</h2>
+<p>State the question(s) of interest you will address with your statistical analysis. The more specific you define the question of interest here, the easier the rest of the analysis and report will be. The research questions should be phrased in terms of your <strong>alternative hypothesis</strong>, meaning it should start with “Does the mean ___ differ based on ___ …”. Your <em>Findings</em> section should directly address the question(s) you pose here.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Multiple research questions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This week you are starting with research questions are appropriate for the one-way ANOVA models you are fitting. However, you may find that you need to add research questions based on the models you fit in Week 10!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="methods" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Methods</h1>
+<p>This section should lay out the steps, decisions, and logic leading to the statistical model you will use to answer the research question of interest.</p>
+<ul>
+<li>Describe the response and explanatory variables, <strong>how they were measured</strong>, and their associated units. For categorical variables, describe the levels of the categorical variable.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the levels of your variable are abbreviations, you are expected to state exactly what each abbreviation means (e.g., <code>CC</code> represents the “clear cut” section of the forest).</p>
+</div>
+</div>
+<ul>
+<li><p>Produce data visualizations exploring the relationship(s) you are interested in investigating. For your project everyone will have <strong>three</strong> visualizations:</p>
+<ul>
+<li>a visualization of the relationship between your response variable and <strong>explanatory variable 1</strong></li>
+<li>a visualization of the relationship between your response variable and <strong>explanatory variable 2</strong></li>
+<li>a visualization of the relationship between your response variable and <strong>both</strong> explanatory variables</li>
+</ul></li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Ridge plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember, you are required to submit the dataset you have chosen to analyze as an Excel file (.csv or .xlsx).</p>
+<p>In Lab 3 you learned how to make density ridge plots, the most recommended visualization for numerical and categorical variables. <strong>For your project you are required to use density ridge plots</strong>, boxplots will not be accepted. If you are unsure how to accomplish this task, look back over Lab 3 and the <a href="../../resources/week3.docx">Week 3 R resources</a>.</p>
+<p>Keep in mind, every visualization should have nicely formatted axis labels (with units)!</p>
 </div>
 </div>
+<ul>
+<li>Describe what you see in the visualizations, making direct references to the plots!</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not visually selecting a model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unlike the Midterm Project, you <strong>will not</strong> be choosing what statistical model to fit based on the visualizations.</p>
+</div>
+</div>
+</section>
+<section id="findings" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Findings</h1>
+<p>In this section you will write up your findings for your question of interest. I’ve created an example of how this section could look <a href="final-project-help/owa-to-twa-model-selection-process.qmd">in this document</a>.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(\alpha\)</span> threshold
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>At the beginning of your analysis</strong>, you must state what <span class="math inline">\(\alpha\)</span> threshold was used to make decisions regarding your hypothesis tests.</p>
+</div>
+</div>
+<section id="one-way-anova-models" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="one-way-anova-models"><span class="header-section-number">3.1</span> One-Way ANOVA Models</h2>
+<p>Everyone starts here! In this section, you need to do the following:</p>
+<ul>
+<li>Fit <strong>two</strong> one-way ANOVA models – one model for each categorical explanatory variable</li>
+<li>Obtain the ANOVA table for the model</li>
+<li>Based on the ANOVA table, <strong>state what decision was reached</strong> for the hypothesis in the one-way ANOVA model</li>
+<li>Based on the decision you made, <strong>state what you can conclude</strong> regarding the relationship between your variables</li>
+</ul>
+</section>
+<section id="two-way-anova-additive-model" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="two-way-anova-additive-model"><span class="header-section-number">3.2</span> Two-Way ANOVA Additive Model</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+When to proceed
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you rejected the null hypothesis for <strong>both</strong> one-way ANOVA models, you can proceed to fitting a two-way ANOVA model</p>
+</div>
+</div>
+<ul>
+<li><p>Fit a two-way ANOVA additive model</p></li>
+<li><p>Obtain the tidy ANOVA table for the model</p></li>
+<li><p>Based on the ANOVA table, state what decision was reached <strong>for each hypothesis</strong> in the two-way ANOVA additive model.</p></li>
+<li><p>Based on the decision you made, state what you can conclude regarding the relationship between your variables.</p></li>
+</ul>
+</section>
+<section id="model-validity" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="model-validity"><span class="header-section-number">3.3</span> Model Validity</h2>
+<ul>
+<li>Evaluate the LINE conditions of both one-way ANOVA models</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Condition violations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr.&nbsp;Theobold <strong>before</strong> <strong>Thursday, March 7 at 4pm</strong>!</p>
+</div>
+</div>
+<ul>
+<li>Based on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”</li>
+</ul>
+</section>
+</section>
+<section id="study-limitations" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Study Limitations</h1>
+<p>Write a 6-8 sentence statement on what can be inferred from the design of the study and the results of your statistical analysis. Specifically, answer these two questions and comment on their implications:</p>
+<ul>
+<li>Based on the sampling method used, what larger population can you infer the results or your analysis onto?</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your statement needs to include a description of (1) how the data were collected, and (2) the population to whom the results can be applied. You must justify your reasoning for #2 using information from the design of the study.</p>
+<p>Generic statements (e.g., “these observations were representative so we can infer onto the entire population”) are not sufficient. Your description should include a description of <em>why</em> the sample is / is not representative of the population and <em>how</em> that influences the population you can infer the results onto.</p>
+</div>
+</div>
+<ul>
+<li>Based on the design of the study, what type of statements can be made about the relationship between the explanatory and response variables?</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your statement needs to include a description of (1) how the study was designed, and (2) what statements can be made about the relationship between the variables. You must justify your reasoning for #2 by making direct reference to the variables included in the study.</p>
+<p>Generic statements (e.g., “this was an observational study so we can’t make causal statements”) are not sufficient. Your description should include a description of <em>why</em> the study was observational and <em>why</em> you cannot make causal statements for observational studies.</p>
+</div>
+</div>
+</section>
+<section id="conclusions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Conclusions</h1>
+<p>Based on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.</p>
 
 
 </section>
@@ -776,6 +973,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../project/midterm-project/midterm-project-directions.html" class="pagination-link  aria-label=" midterm="" project="" description"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm Project Description</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../weeks/week-0.html" class="pagination-link" aria-label="Week 0">
+        <span class="nav-page-text">Week 0</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

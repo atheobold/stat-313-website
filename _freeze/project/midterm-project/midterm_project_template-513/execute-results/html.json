@@ -1,0 +1,15 @@
+{
+  "hash": "202f0ef2e34227ab53d22321718b07eb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Your Title Goes Here! Make it fun!\"\nauthor: \"Your Name Here!\"\nformat: \n  html:\n    code-tools: true\n    embed-resources: true\neditor: visual\nexecute: \n  echo: false\n  message: false\n  warning: false\n---\n\n::: {.cell}\n\n:::\n\n\n## Introduction\n\n## Methods\n\n### Variables\n\n### Data Visualizations\n\n\n::: {.cell layout-nrow=\"1\" layout-align=\"center\"}\n\n:::\n\n\n### Proposed Statistical Model\n\n## Findings\n\n### Multiple Linear Regression Model\n\n\n::: {.cell}\n\n:::\n\n\n### Model Interpretations\n\n## Study Limitations\n\n## Conclusions\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
