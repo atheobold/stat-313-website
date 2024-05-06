@@ -1,0 +1,115 @@
+---
+title: "Midterm Project Feedback Guide"
+---
+
+## **Research Questions**
+
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Excellent    | Question is posed in terms of the multiple linear regression model:                                                                                                           |
+|              |                                                                                                                                                                               |
+|              | -   one numerical & one categorical explanatory variables - if the relationship (between x and y) differs based on the categorical variable                                   |
+|              |                                                                                                                                                                               |
+|              | -   two numerical explanatory variables – if there is a relationship between each explanatory variable and the response **in the same equation** (not two separate questions) |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Satisfactory | Research questions are correctly framed in terms of relationships, but don't reflect the multiple regression being explored.                                                  |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Progressing  | Research questions are not posed as questions!                                                                                                                                |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+## **Variables of Interest**
+
++-------------------+-------------------------------------------------------------------------------------------------+
+| Present           | Outlines all three variables of interest:                                                       |
+|                   |                                                                                                 |
+|                   | -   How was each variable measured? – this needs to be connected to the data collection methods |
+|                   |                                                                                                 |
+|                   | -   What units was each variable measured in?                                                   |
++-------------------+-------------------------------------------------------------------------------------------------+
+| Partially Present | Missing details about units OR how the variables were measured                                  |
++-------------------+-------------------------------------------------------------------------------------------------+
+| Missing           | Missing details about units AND how the variables were measured                                 |
++-------------------+-------------------------------------------------------------------------------------------------+
+
+## Data Visualizations
+
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Present           | Creates all required visualizations:                                                                                                        |
+|                   |                                                                                                                                             |
+|                   | -   Two visualizations for one numerical and one categorical explanatory variables – parallel slopes & different slopes                     |
+|                   |                                                                                                                                             |
+|                   | -   Three visualizations for two numerical explanatory variables – one with all three variables included (color gradient), one for each SLR |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Partially Present | Missing one of the required visualizations                                                                                                  |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Missing           | All visualizations are missing                                                                                                              |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Visualization Descriptions
+
++-------------------+-------------------------------------------------------+
+| Present           | Describes each of the visualizations                  |
++-------------------+-------------------------------------------------------+
+| Partially Present | At least one visualization is not described           |
++-------------------+-------------------------------------------------------+
+| Missing           | Does not describe visualizations                      |
++-------------------+-------------------------------------------------------+
+
+## Proposed Statistical Model
+
++-------------------+--------------------------------------------------------------------------------+
+| Present           | States what statistical model was selected                                     |
++-------------------+--------------------------------------------------------------------------------+
+| Partially Present | Describes what visualization was chosen, not what statistical model was chosen |
++-------------------+--------------------------------------------------------------------------------+
+| Missing           | Does not state what model or visualization was chosen                          |
++-------------------+--------------------------------------------------------------------------------+
+
+## Writes out Regression Equation(s)
+
++-------------------+------------------------------------------------------------------------------------------------------------------------+
+| Present           | Regression equation is included, and, if needed, indicator variables or multiple equations are used to separate groups |
++-------------------+------------------------------------------------------------------------------------------------------------------------+
+| Partially Present | Only one equation is provided when there should be multiple equations                                                  |
++-------------------+------------------------------------------------------------------------------------------------------------------------+
+| Missing           | No equation                                                                                                            |
++-------------------+------------------------------------------------------------------------------------------------------------------------+
+
+## Interprets Model Coefficients
+
++-------------------+------------------------------------------------------------+
+| Present           | Interpretations for every intercept and slope are provided |
++-------------------+------------------------------------------------------------+
+| Partially Present | Some intercept and / or slope interpretations are missing  |
++-------------------+------------------------------------------------------------+
+| Missing           | None of the coefficients are interpreted                   |
++-------------------+------------------------------------------------------------+
+
+## Study Limitations - Graded by Dr. Theobold
+
+### Scope of Inference
+
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| Excellent                        | Clearly states who the analysis can be inferred to, connecting to sampling methodology used.                                             |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| Satisfactory                     | Statement regarding who the analysis can be inferred to is mostly clear, with connections to the sampling methodology used.              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| Progressing                      | Statement regarding who the analysis can be inferred to is mostly unclear, with few if any connections to the sampling methodology used. |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+#### Cause & Effect
+
+|              |                                                                                                                                                         |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Excellent    | Clearly states what relationships can be inferred between the variables, connecting to the design of the study.                                         |
+| Satisfactory | Statement regarding what relationships can be inferred between the variables is mostly clear, with connections to the design of the study.              |
+| Progressing  | Statement regarding what relationships can be inferred between the variables is mostly unclear, with few if any connections to the design of the study. |
+
+## Conclusion – Graded by Dr. Theobold
+
++---------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| Present             | Connects visualization and regression model to research question posed in the *Introduction*.                                      |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| Partially Present   | Discusses research question posed in the *Introduction*, but is missing connections to the visualization OR the regression model.  |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| Missing             | Does not discuss the research question posed in the *Introduction*.                                                                |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------+
