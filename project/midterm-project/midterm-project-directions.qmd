@@ -41,7 +41,8 @@ This section should lay out the steps, decisions, and logic leading to the stati
 
 ::: callout-tip
 # Deciding on a Statistical Model
-The statistical model you fit in the next section depends on what you see in your visualization. [Click here](midterm-project-help/model-selection.qmd) for a flowchart of how you should select the statistical model that is best for your situation.
+
+The statistical model you fit in the next section depends on what you see in your visualization. [Click here](../midterm-project-help/model-selection.qmd) for a flowchart of how you should select the statistical model that is best for your situation.
 :::
 
 # Findings
@@ -53,6 +54,7 @@ In this section you will write up your findings for each research question of in
 
 ::: callout-tip
 # Table of Coefficents
+
 Use the `get_regression_table()` function from the **moderndive** package to provide nicely formatted output from your regression model.
 :::
 
