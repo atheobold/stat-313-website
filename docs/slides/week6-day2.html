@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <meta name="author" content="STAT 313">
   <title>STAT 313 / 513 - Midterm Project Feedback, Visualization Best (Better) Practices &amp; Machine Learning</title>
@@ -436,163 +436,153 @@ STAT 313
 <li><p>Do the plots have nice axis labels?</p></li>
 <li><p>Can you easily find the regression equations? Do the equations make sense?</p></li>
 <li><p>Do the interpretations / conclusions from the equations make sense?</p></li>
-<li><p>Do they justify <em>who</em> they can infer their results onto?</p></li>
-<li><p>Do they justify why they can / cannot use <em>causal</em> language?</p></li>
 </ul>
 </section></section>
-<section>
 <section id="peer-feedback" class="title-slide slide level1 center">
 <h1>Peer Feedback</h1>
 
 </section>
-<section id="formatting-guidelines" class="slide level2">
-<h2>Formatting Guidelines</h2>
-<ul>
-<li>Don’t write in bullet points</li>
-<li>Avoid redundancy as much as possible</li>
-<li>Make contents easy to navigate
-<ul>
-<li>Use subheaders and / or boldface to indicate important content</li>
-<li>Place your regression equations on their own line</li>
-</ul></li>
-</ul>
-</section>
-<section id="section" class="slide level2" data-background-color="black" data-background-image="images/glamour-of-graphics.jpg" data-background-size="contain">
-<h2></h2>
-<div style="font-size: 3em; color: #ed8402;">
-<p>Better Practices for Data Visualization</p>
-</div>
-</section>
-<section id="some-guidelines" class="slide level2">
-<h2>Some Guidelines</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li>Titles should be top left aligned (usually)</li>
-<li>Don’t make people tilt their head</li>
-<li>Alignment should create clean lines and symmetry</li>
-<li>Remove and lighten grids as much as possible</li>
-</ul>
-</div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:55%;">
-<ul>
-<li>Legends suck</li>
-<li>Whitespace is like garlic; take the amount you need and then triple it</li>
-<li>Fonts matter</li>
-<li>Color is hard</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="some-guidelines-1" class="slide level2">
-<h2>Some Guidelines</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li>Titles should be top left aligned (usually)</li>
-<li><span style="color: #ed8402;">Don’t make people tilt their head</span></li>
-<li>Alignment should create clean lines and symmetry</li>
-<li><span style="color: #ed8402;">Remove and lighten grids as much as possible</span></li>
-</ul>
-</div><div class="column" style="width:5%;">
+<section>
+<section id="study-limitations" class="title-slide slide level1 center">
+<h1>Study Limitations</h1>
 
-</div><div class="column" style="width:55%;">
-<ul>
-<li>Legends suck</li>
-<li>Whitespace is like garlic; take the amount you need and then triple it</li>
-<li>Fonts matter</li>
-<li><span style="color: #ed8402;">Color is hard</span></li>
-</ul>
-</div>
-</div>
 </section>
-<section id="dont-make-people-tilt-their-head" class="slide level2">
-<h2>Don’t make people <span style="color: #34605f;">tilt</span> their head</h2>
-
-<img data-src="images/plot-title.png" class="r-stretch"></section>
-<section id="tailoring-colors" class="slide level2">
-<h2>Tailoring Colors</h2>
-<p>Different color palettes are available through a variety of R packages. Popular options include:</p>
-<div class="columns">
-<div class="column" style="width:47%;">
+<section id="based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto" class="slide level2">
+<h2>Based on how the study was designed, what population can you infer these results onto?</h2>
 <div class="fragment">
-<p><a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">RColorBrewer</a></p>
-<p><img data-src="images/color-brewer.png"></p>
-</div>
-</div><div class="column" style="width:3%;">
-
-</div><div class="column" style="width:47%;">
-<div class="fragment">
-<p><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></p>
-<p><img data-src="images/viridis.png"></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><a href="https://github.com/EmilHvitfeldt/r-color-palettes">This website</a> provides an exhaustive list of color themes.</p>
-</div>
-</section>
-<section id="grids-remove-and-lighten-as-much-as-possible" class="slide level2">
-<h2>Grids: <span style="color: #34605f;">remove and lighten</span> as much as possible</h2>
-
-<img data-src="images/backgrounds.png" class="r-stretch"></section>
-<section id="a-reasonable-option-theme_minimal" class="slide level2">
-<h2>A Reasonable Option – <code>theme_minimal()</code></h2>
 <p><br></p>
-
-<img data-src="week6-day2_files/figure-revealjs/example-theme-minimal-1.png" width="960" class="r-stretch"></section>
-<section id="an-example-for-categorical" class="slide level2">
-<h2>An Example for Categorical</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>and_vertebrates <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> length_1_mm, </span>
-<span id="cb1-3"><a></a>                     <span class="at">y =</span> weight_g, </span>
-<span id="cb1-4"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb1-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length (mm)"</span>, </span>
-<span id="cb1-7"><a></a>      <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb1-8"><a></a>      <span class="at">color =</span> <span class="st">"Species"</span>,</span>
-<span id="cb1-9"><a></a>      <span class="at">title =</span> <span class="st">"Comparing Weight (g) versus Length (mm)"</span>,</span>
-<span id="cb1-10"><a></a>      <span class="at">subtitle =</span> <span class="st">"for Different Vertebrate Species in Mack Creek"</span>) <span class="sc">+</span></span>
-<span id="cb1-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-12"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Justify</strong> what population you believe your analysis can be inferred onto.</p>
+<ul>
+<li>The sample of [possums / professors / crabs]?</li>
+<li>Some larger population of [possums / professors / crabs]?</li>
+</ul>
+<p>Your justification needs to connect with how the researchers collected their data!</p>
 </div>
-
 </section>
-<section id="an-example-for-categorical-output" class="slide level2 output-location-slide"><h2>An Example for Categorical</h2><div class="cell output-location-slide">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="week6-day2_files/figure-revealjs/example-color-discrete-1.png" width="960"></p>
-</figure>
+<section id="based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables" class="slide level2">
+<h2>Based on how the study was designed, what can you say about the relationships between the variables?</h2>
+<p><br></p>
+<div class="fragment">
+<p>Stating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!</p>
+<ul>
+<li>What <strong>specifically</strong> would have the researchers have needed to do in order to use causal language?</li>
+</ul>
+<!-- ##  {background-color="black" background-image="images/glamour-of-graphics.jpg" background-size="contain"} -->
+<!-- ::: {style="font-size: 3em; color: #ed8402;"} -->
+<!-- Better Practices for Data Visualization -->
+<!-- ::: -->
+<!-- ## Some Guidelines -->
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- -   Titles should be top left aligned (usually) -->
+<!-- -   Don’t make people tilt their head -->
+<!-- -   Alignment should create clean lines and symmetry -->
+<!-- -   Remove and lighten grids as much as possible -->
+<!-- ::: -->
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
+<!-- ::: {.column width="55%"} -->
+<!-- -   Legends suck -->
+<!-- -   Whitespace is like garlic; take the amount you need and then triple it -->
+<!-- -   Fonts matter -->
+<!-- -   Color is hard -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## Some Guidelines -->
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- -   Titles should be top left aligned (usually) -->
+<!-- -   [Don’t make people tilt their head]{style="color: #ed8402;"} -->
+<!-- -   Alignment should create clean lines and symmetry -->
+<!-- -   [Remove and lighten grids as much as possible]{style="color: #ed8402;"} -->
+<!-- ::: -->
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
+<!-- ::: {.column width="55%"} -->
+<!-- -   Legends suck -->
+<!-- -   Whitespace is like garlic; take the amount you need and then triple it -->
+<!-- -   Fonts matter -->
+<!-- -   [Color is hard]{style="color: #ed8402;"} -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## Don’t make people [tilt]{style="color: #34605f;"} their head -->
+<!-- ![](images/plot-title.png) -->
+<!-- ## Tailoring Colors -->
+<!-- Different color palettes are available through a variety of R packages. Popular options include: -->
+<!-- ::: columns -->
+<!-- ::: {.column width="47%"} -->
+<!-- ::: fragment -->
+<!-- [RColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html) -->
+<!-- ![](images/color-brewer.png) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="3%"} -->
+<!-- ::: -->
+<!-- ::: {.column width="47%"} -->
+<!-- ::: fragment -->
+<!-- [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) -->
+<!-- ![](images/viridis.png) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- . . . -->
+<!-- [This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes. -->
+<!-- ## Grids: [remove and lighten]{style="color: #34605f;"} as much as possible -->
+<!-- ![](images/backgrounds.png) -->
+<!-- ## A Reasonable Option -- `theme_minimal()` -->
+<!-- </br> -->
+<!-- ```{r} -->
+<!-- #| label: example-theme-minimal -->
+<!-- library(tidyverse) -->
+<!-- library(openintro) -->
+<!-- library(ggridges) -->
+<!-- library(lterdatasampler) -->
+<!-- ggplot(data = nycflights,  -->
+<!--        mapping = aes(x = dep_delay)) + -->
+<!--   geom_histogram() + -->
+<!--   labs(x = "Departure Delays (min)",  -->
+<!--       y = "",  -->
+<!--       title = "Number of Delayed Flights Leaving NYC Airports") + -->
+<!--   theme_minimal() -->
+<!-- ``` -->
+<!-- ## An Example for Categorical -->
+<!-- ```{r} -->
+<!-- #| label: example-color-discrete -->
+<!-- #| echo: true -->
+<!-- #| output-location: slide -->
+<!-- and_vertebrates %>%  -->
+<!--   ggplot(mapping = aes(x = length_1_mm,  -->
+<!--                      y = weight_g,  -->
+<!--                      color = species)) + -->
+<!--   geom_point(alpha = 0.5) + -->
+<!--   labs(x = "Length (mm)",  -->
+<!--       y = "",  -->
+<!--       color = "Species", -->
+<!--       title = "Comparing Weight (g) versus Length (mm)", -->
+<!--       subtitle = "for Different Vertebrate Species in Mack Creek") + -->
+<!--   theme_minimal() + -->
+<!--   scale_color_brewer(palette = "Dark2") -->
+<!-- ``` -->
+<!-- ## An Example for Continuous -->
+<!-- ```{r} -->
+<!-- #| label: example-color-gradient -->
+<!-- #| echo: true -->
+<!-- #| output-location: slide -->
+<!-- pie_crab %>%  -->
+<!--   ggplot(mapping = aes(x = latitude,  -->
+<!--                      y = size,  -->
+<!--                      color = water_temp)) + -->
+<!--   geom_point(alpha = 0.5) + -->
+<!--   labs(x = "Latitude",  -->
+<!--       y = "",  -->
+<!--       color = "Water Temperature (C)", -->
+<!--       title = "Size of Fiddler Crabs (mm) Across the Atlantic Coast") + -->
+<!--   theme_minimal() + -->
+<!--   scale_color_viridis_c(option = "magma", direction = -1) -->
+<!-- ``` -->
 </div>
-</div>
-</div></section><section id="an-example-for-continuous" class="slide level2">
-<h2>An Example for Continuous</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>pie_crab <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> latitude, </span>
-<span id="cb2-3"><a></a>                     <span class="at">y =</span> size, </span>
-<span id="cb2-4"><a></a>                     <span class="at">color =</span> water_temp)) <span class="sc">+</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb2-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Latitude"</span>, </span>
-<span id="cb2-7"><a></a>      <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb2-8"><a></a>      <span class="at">color =</span> <span class="st">"Water Temperature (C)"</span>,</span>
-<span id="cb2-9"><a></a>      <span class="at">title =</span> <span class="st">"Size of Fiddler Crabs (mm) Across the Atlantic Coast"</span>) <span class="sc">+</span></span>
-<span id="cb2-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-11"><a></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-</section><section id="an-example-for-continuous-output" class="slide level2 output-location-slide"><h2>An Example for Continuous</h2><div class="cell output-location-slide">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="week6-day2_files/figure-revealjs/example-color-gradient-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div></section></section>
+</section></section>
 <section id="machine-learning" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
 
@@ -605,7 +595,7 @@ STAT 313
 <p>“the use and development of computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyze and draw inferences from patterns in data”</p>
 </blockquote>
 </section>
-<section id="section-1" class="slide level2" data-background-color="#B6CADA">
+<section id="section" class="slide level2" data-background-color="#B6CADA">
 <h2></h2>
 <p><br></p>
 <center>
@@ -650,26 +640,26 @@ STAT 313
 <section id="a-more-automated-option" class="slide level2">
 <h2>A More Automated Option</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|2,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>evals_train <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
-<span id="cb3-5"><a></a>         <span class="sc">-</span>score,</span>
-<span id="cb3-6"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>,</span>
-<span id="cb3-7"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span></span>
-<span id="cb3-8"><a></a>         ) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
-<span id="cb3-10"><a></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
-<span id="cb3-11"><a></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-12"><a></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>evals_train <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">map</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">lm</span>(score <span class="sc">~</span> .x <span class="sc">+</span> <span class="er">&lt;</span>VARIABLES SELECTED<span class="sc">&gt;</span>, <span class="at">data =</span> evals_train)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a></a>  <span class="fu">map_df</span>(<span class="at">.f =</span> <span class="sc">~</span><span class="fu">get_regression_summaries</span>(.x)<span class="sc">$</span>adj_r_squared) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>ID, </span>
+<span id="cb1-5"><a></a>         <span class="sc">-</span>score,</span>
+<span id="cb1-6"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">1</span> SELECTED<span class="sc">&gt;</span>,</span>
+<span id="cb1-7"><a></a>         <span class="sc">-</span><span class="er">&lt;</span>VARIABLE <span class="dv">2</span> SELECTED<span class="sc">&gt;</span></span>
+<span id="cb1-8"><a></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb1-10"><a></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, </span>
+<span id="cb1-11"><a></a>               <span class="at">values_to =</span> <span class="st">"adj_r_sq"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a></a>  <span class="fu">slice_max</span>(adj_r_sq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 

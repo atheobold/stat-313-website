@@ -5766,7 +5766,7 @@
     "href": "slides/week6-day2.html#help-your-peers",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "Help your peers!",
-    "text": "Help your peers!\n\nAre the arguments / sentences easy to understand? Does the report flow?\nIs the same information included in multiple places?\nDo the plots have nice axis labels?\nCan you easily find the regression equations? Do the equations make sense?\nDo the interpretations / conclusions from the equations make sense?\nDo they justify who they can infer their results onto?\nDo they justify why they can / cannot use causal language?"
+    "text": "Help your peers!\n\nAre the arguments / sentences easy to understand? Does the report flow?\nIs the same information included in multiple places?\nDo the plots have nice axis labels?\nCan you easily find the regression equations? Do the equations make sense?\nDo the interpretations / conclusions from the equations make sense?"
   },
   {
     "objectID": "slides/week6-day2.html#formatting-guidelines",
@@ -5780,7 +5780,7 @@
     "href": "slides/week6-day2.html#section",
     "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
-    "text": "Better Practices for Data Visualization"
+    "text": "Data is Power"
   },
   {
     "objectID": "slides/week6-day2.html#some-guidelines",
@@ -6363,5 +6363,19 @@
     "title": "Stat Critique 1 Grading Guide",
     "section": "",
     "text": "Double Encoding\n\n\n\nIt’s okay if they only mention one of the aesthetics that a variable is associated with when it is mapped to multiple aesthetics.\n\n\nGrowing\n\nDoesn’t name variables mapped to each aesthetic (e.g., only says the x-axis, y-axis, and color are used)\n\nFeedback: We want you to state specifically the names of the variables mapped to each aesthetic!\n\nSays a color aesthetic is used but the same color is used for every observation\n\nFeedback: Careful! Aesthetics are places where variables are being incorporated into the plot. Is the color in this plot associated with a variable?\n\nMisses an aesthetic that is being used\n\nFeedback for general plots: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are [multiple plots / multiple colors / multiple lines] not just one. What variable is associated with these separate [plots / colors / lines]?\nFeedback for maps: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, we have “hidden” x- and y-variables. What variables are associated with the location of a state on the map?\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that are done well.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe the visualization does well.\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that could be improved.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe could be improved."
+  },
+  {
+    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
+    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Based on how the study was designed, what population can you infer these results onto?",
+    "text": "Based on how the study was designed, what population can you infer these results onto?\n\n\nJustify what population you believe your analysis can be inferred onto.\n\nThe sample of [possums / professors / crabs]?\nSome larger population of [possums / professors / crabs]?\n\nYour justification needs to connect with how the researchers collected their data!"
+  },
+  {
+    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
+    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
+    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
+    "section": "Based on how the study was designed, what can you say about the relationships between the variables?",
+    "text": "Based on how the study was designed, what can you say about the relationships between the variables?\n\n\nStating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!\n\nWhat specifically would have the researchers have needed to do in order to use causal language?"
   }
 ]
