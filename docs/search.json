@@ -875,7 +875,7 @@
     "href": "slides/week7-day2.html#course-updates",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Course Updates",
-    "text": "Course Updates\n\nStatistical Critique 1 revisions are due tonight\nMidterm Projects will be graded by Sunday\nLab 6 revisions will be due next Thursday\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+    "text": "Course Updates\n\nLab 4 revisions are due tonight (May 15)\nMidterm Projects will be graded by Sunday (May 19)\nLab 6 revisions will be due next Wednesday (May 22)\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
   },
   {
     "objectID": "slides/week7-day2.html#section",
@@ -980,7 +980,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00453\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00353\n0.00452\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
@@ -1043,7 +1043,7 @@
     "href": "slides/week7-day2.html#how-do-we-interpret-this-interval",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "How do we interpret this interval?",
-    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0020159\n-0.0000684\n\n\n\n\n\n\n\n\n\nWe are 90% confident that the for every 100 gram increase in a penguin’s body mass (~0.25lbs), the length of a male penguin’s bill is between 0.068 and 2.02mm shorter than a female penguin’s bill."
+    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0020159\n-0.0000684\n\n\n\n\n\n\n\n\n\nWe are 90% confident that the for every 10,000 gram increase in a penguin’s body mass (~25lbs), the length of a male penguin’s bill is between 0.68 and 20.2mm shorter than a female penguin’s bill."
   },
   {
     "objectID": "slides/week7-day2.html#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length",
@@ -5955,7 +5955,7 @@
     "href": "slides/week7-day1.html#virtual-sampling",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nIsabelle Harvey\nHEAD COACH - 12 MONTH\n51685.07\n\n\nNathan Miles Garcia\nHead Coach 5\n83672.00\n\n\nWilliam Clark\nHead Coach 5\n468.00\n\n\nJoe Pasternack\nHead Coach 5\n449881.00\n\n\nAlonzo J Carter\nHEAD COACH - 12 MONTH\n197763.89\n\n\nNeil Mcguire\nHead Coach 5\n189662.00\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nBeau Baldwin\nAsc Head Coach Crd 4\n708408\n\n\nEric Christian Newman\nHead Coach 5\n163991\n\n\nGray Horn\nHead Coach 5\n41566\n\n\nJames Mora\nIntercol Ath Head Coach Ex\n2990145\n\n\nJonathan Pascale\nHead Coach 5\n130035\n\n\nMarc Alan Hunt\nIntercol Ath Head Coach Ex\n97869\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
@@ -6391,5 +6391,12 @@
     "title": "Variable Selection in Multiple Regression",
     "section": "",
     "text": "You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n. . .\n\n\n\n\n\n\nRevision Deadline\n\n\n\nRevisions for Statistical Critiques are due on Wednesday (May 8)"
+  },
+  {
+    "objectID": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "href": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
+    "section": "Each group has a different sample of 25 UC & CSU coach salaries.",
+    "text": "Each group has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
   }
 ]
