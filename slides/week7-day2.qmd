@@ -19,9 +19,9 @@ options(scipen = 999)
 
 ## Course Updates
 
--   Statistical Critique 1 revisions are due tonight
--   Midterm Projects will be graded by Sunday
--   Lab 6 revisions will be due next Thursday
+-   Lab 4 revisions are due tonight (May 15)
+-   Midterm Projects will be graded by Sunday (May 19)
+-   Lab 6 revisions will be due next Wednesday (May 22)
 
 ::: callout-caution
 # Don't forget reflections!
@@ -539,7 +539,7 @@ observed_fit <- penguins %>%
 ::: callout-tip
 # Syntax changes
 
-When we have **multiple** explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. We also use the `fit()` function instead of the `calculate()` function.
+When we have [**multiple**]{.underline} explanatory variables, we need to use the "tilde" (`~`) syntax to specify our model. We also use the `fit()` function instead of the `calculate()` function.
 :::
 
 ## Getting our Observed Statistic
@@ -603,7 +603,7 @@ get_confidence_interval(bootstrap_fits,
 
 . . .
 
-> We are 90% confident that the for every 100 gram increase in a penguin's body mass (\~0.25lbs), the length of a **male** penguin's bill is between 0.068 and 2.02mm shorter than a **female** penguin's bill.
+> We are 90% confident that the for every 10,000 gram increase in a penguin's body mass (\~25lbs), the length of a **male** penguin's bill is between 0.68 and 20.2mm [shorter]{.underline} than a **female** penguin's bill.
 
 ## How do body mass and flipper length influence a penguin's bill length?
 

@@ -57,7 +57,7 @@ You can pull out the adjusted $R^2$ for this model using the `get_regression_sum
 get_regression_summaries(one_mean)
 ```
 
-Based on this output, we are starting with a **really** low adjusted $R^2$. So, things can only get better from here!
+Based on this output, we are starting with a **really** low adjusted $R^2$. So, things can only get better from here! 🙃
 
 ### Step 1
 
@@ -297,4 +297,4 @@ full_model <- lm(score ~ ., data = evals)
 step(full_model, direction = "forward")
 ```
 
-6.  **Did the `step()` function choose the same model as you? If your "best" models do not not agree, why do you think this might have happened?**
+6.  **Did the `step()` function choose the same model as you? If your "best" models do not not agree, why do you think this might have happened?** *Hint: The output after `Call:` tells you what final model was chosen*

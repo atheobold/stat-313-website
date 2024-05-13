@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>STAT 313 / 513 - Sampling Variability – The Heart of Statistical Inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -410,8 +410,8 @@
 <h1>Individual Samples</h1>
 
 </section>
-<section id="each-table-has-a-different-sample-of-25-uc-csu-coach-salaries." class="slide level2">
-<h2>Each table has a different sample of 25 UC &amp; CSU coach salaries.</h2>
+<section id="each-group-has-a-different-sample-of-25-uc-csu-coach-salaries." class="slide level2">
+<h2>Each group has a different sample of 25 UC &amp; CSU coach salaries.</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div style="font-size: 1.5em; color: #000000;">
@@ -568,34 +568,34 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Isabelle Harvey</td>
-<td style="text-align: left;">HEAD COACH - 12 MONTH</td>
-<td style="text-align: right;">51685.07</td>
+<td style="text-align: left;">Beau Baldwin</td>
+<td style="text-align: left;">Asc Head Coach Crd 4</td>
+<td style="text-align: right;">708408</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nathan Miles Garcia</td>
+<td style="text-align: left;">Eric Christian Newman</td>
 <td style="text-align: left;">Head Coach 5</td>
-<td style="text-align: right;">83672.00</td>
+<td style="text-align: right;">163991</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">William Clark</td>
+<td style="text-align: left;">Gray Horn</td>
 <td style="text-align: left;">Head Coach 5</td>
-<td style="text-align: right;">468.00</td>
+<td style="text-align: right;">41566</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Joe Pasternack</td>
-<td style="text-align: left;">Head Coach 5</td>
-<td style="text-align: right;">449881.00</td>
+<td style="text-align: left;">James Mora</td>
+<td style="text-align: left;">Intercol Ath Head Coach Ex</td>
+<td style="text-align: right;">2990145</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Alonzo J Carter</td>
-<td style="text-align: left;">HEAD COACH - 12 MONTH</td>
-<td style="text-align: right;">197763.89</td>
+<td style="text-align: left;">Jonathan Pascale</td>
+<td style="text-align: left;">Head Coach 5</td>
+<td style="text-align: right;">130035</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Neil Mcguire</td>
-<td style="text-align: left;">Head Coach 5</td>
-<td style="text-align: right;">189662.00</td>
+<td style="text-align: left;">Marc Alan Hunt</td>
+<td style="text-align: left;">Intercol Ath Head Coach Ex</td>
+<td style="text-align: right;">97869</td>
 </tr>
 </tbody>
 </table>
@@ -725,65 +725,13 @@
 <div style="font-size: 4em; color: #000000;">
 <p>Sampling Activity!</p>
 </div>
-<!-- ##  -->
-<!-- ::: {style="font-size: 3em; color: #000000;"} -->
-<!-- Sampling Strategies -->
-<!-- ::: -->
-<!-- ```{r pop-to-sample} -->
-<!-- #| echo: false -->
-<!-- #| fig-align: center -->
-<!-- par_og <- par(no.readonly = TRUE) # save original par -->
-<!-- par(mar = rep(0, 4)) -->
-<!-- plot(c(0, 2), -->
-<!--      c(0, 1.1), -->
-<!--      type = 'n', -->
-<!--      axes = FALSE,  -->
-<!--      xlab = "", -->
-<!--      ylab = "") -->
-<!-- temp <- seq(0, 2 * pi, 2 * pi / 100) -->
-<!-- x <- 0.5 + 0.5 * cos(temp) -->
-<!-- y <- 0.5 + 0.5 * sin(temp) -->
-<!-- lines(x, y) -->
-<!-- s <- matrix(runif(700), ncol = 2) -->
-<!-- S <- matrix(NA, 350, 2) -->
-<!-- j <- 0 -->
-<!-- for (i in 1:nrow(s)) { -->
-<!--   if(sum((s[i, ] - 0.5)^2) < 0.23){ -->
-<!--     j <- j + 1 -->
-<!--     S[j, ] <- s[i, ] -->
-<!--   } -->
-<!-- } -->
-<!-- points(S, col = COL[1, 3], pch = 20) -->
-<!-- text(0.5, 1, 'population', pos = 3, cex = 1.3) -->
-<!-- set.seed(50) -->
-<!-- N <- sample(j, 25) -->
-<!-- lines((x - 0.5) / 2 + 1.5, (y - 0.5) / 2 +  0.5, pch = 20) -->
-<!-- SS <- (S[N, ] - 0.5) / 2 + 0.5 -->
-<!-- these <- c(2, 5, 11, 10, 12) -->
-<!-- points(SS[these, 1] + 1, -->
-<!--        SS[these, 2], -->
-<!--        col = COL[4, 2], -->
-<!--        pch = 20, -->
-<!--        cex = 1.5) -->
-<!-- text(1.5, 0.75, 'sample', pos = 3, cex = 1.3) -->
-<!-- for (i in these) { -->
-<!--   arrows(S[N[i], 1], S[N[i], 2], -->
-<!--          SS[i, 1] + 1 - 0.03, SS[i, 2], -->
-<!--          length = 0.08, col = COL[5], lwd = 1.5) -->
-<!-- } -->
-<!-- par(par_og) # restore original par -->
-<!-- ``` -->
-<!-- ##  -->
-<!-- ::: {style="font-size: 2.5em; color: #000000;"} -->
-<!-- What types of samples could we collect? Are some methods "better" than other methods? -->
-<!-- ::: -->
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 

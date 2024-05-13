@@ -1,5 +1,5 @@
 ---
-title: "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning"
+title: "Midterm Project Feedback & Machine Learning"
 author: "STAT 313"
 format: revealjs
 editor: visual
@@ -31,168 +31,181 @@ You **cannot** request deadline extensions for the final version of your Midterm
 
 -   Do the interpretations / conclusions from the equations make sense?
 
--   Do they justify *who* they can infer their results onto?
-
--   Do they justify why they can / cannot use *causal* language?
-
 # Peer Feedback
 
-## Formatting Guidelines
+# Study Limitations
 
--   Don't write in bullet points
--   Avoid redundancy as much as possible
--   Make contents easy to navigate
-    -   Use subheaders and / or boldface to indicate important content
-    -   Place your regression equations on their own line
-
-##  {background-color="black" background-image="images/glamour-of-graphics.jpg" background-size="contain"}
-
-::: {style="font-size: 3em; color: #ed8402;"}
-Better Practices for Data Visualization
-:::
-
-## Some Guidelines
-
-::: columns
-::: {.column width="40%"}
--   Titles should be top left aligned (usually)
--   Don’t make people tilt their head
--   Alignment should create clean lines and symmetry
--   Remove and lighten grids as much as possible
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
--   Legends suck
--   Whitespace is like garlic; take the amount you need and then triple it
--   Fonts matter
--   Color is hard
-:::
-:::
-
-## Some Guidelines
-
-::: columns
-::: {.column width="40%"}
--   Titles should be top left aligned (usually)
--   [Don’t make people tilt their head]{style="color: #ed8402;"}
--   Alignment should create clean lines and symmetry
--   [Remove and lighten grids as much as possible]{style="color: #ed8402;"}
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
--   Legends suck
--   Whitespace is like garlic; take the amount you need and then triple it
--   Fonts matter
--   [Color is hard]{style="color: #ed8402;"}
-:::
-:::
-
-## Don’t make people [tilt]{style="color: #34605f;"} their head
-
-![](images/plot-title.png)
-
-## Tailoring Colors
-
-Different color palettes are available through a variety of R packages. Popular options include:
-
-::: columns
-::: {.column width="47%"}
-::: fragment
-[RColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
-
-![](images/color-brewer.png)
-:::
-:::
-
-::: {.column width="3%"}
-:::
-
-::: {.column width="47%"}
-::: fragment
-[viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
-
-![](images/viridis.png)
-:::
-:::
-:::
+## Based on how the study was designed, what population can you infer these results onto?
 
 . . .
 
-[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes.
+</br>
 
-## Grids: [remove and lighten]{style="color: #34605f;"} as much as possible
+**Justify** what population you believe your analysis can be inferred onto. 
 
-![](images/backgrounds.png)
+- The sample of [possums / professors / crabs]?
+- Some larger population of [possums / professors / crabs]?
 
-## A Reasonable Option -- `theme_minimal()`
+Your justification needs to connect with how the researchers collected their data! 
+
+## Based on how the study was designed, what can you say about the relationships between the variables?
 
 </br>
 
-```{r}
-#| label: example-theme-minimal
+. . .
 
-library(tidyverse)
-library(openintro)
-library(ggridges)
-library(lterdatasampler)
+Stating that the study was "observational" doesn't tell me that you understand what would be required to use cause-and-effect language!
 
-ggplot(data = nycflights, 
-       mapping = aes(x = dep_delay)) +
-  geom_histogram() +
-  labs(x = "Departure Delays (min)", 
-      y = "", 
-      title = "Number of Delayed Flights Leaving NYC Airports") +
-  theme_minimal()
-```
+- What **specifically** would have the researchers have needed to do in order to use causal language?
 
-## An Example for Categorical
+<!-- ##  {background-color="black" background-image="images/glamour-of-graphics.jpg" background-size="contain"} -->
 
-```{r}
-#| label: example-color-discrete
-#| echo: true
-#| output-location: slide
+<!-- ::: {style="font-size: 3em; color: #ed8402;"} -->
+<!-- Better Practices for Data Visualization -->
+<!-- ::: -->
 
-and_vertebrates %>% 
-  ggplot(mapping = aes(x = length_1_mm, 
-                     y = weight_g, 
-                     color = species)) +
-  geom_point(alpha = 0.5) +
-  labs(x = "Length (mm)", 
-      y = "", 
-      color = "Species",
-      title = "Comparing Weight (g) versus Length (mm)",
-      subtitle = "for Different Vertebrate Species in Mack Creek") +
-  theme_minimal() +
-  scale_color_brewer(palette = "Dark2")
+<!-- ## Some Guidelines -->
 
-```
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- -   Titles should be top left aligned (usually) -->
+<!-- -   Don’t make people tilt their head -->
+<!-- -   Alignment should create clean lines and symmetry -->
+<!-- -   Remove and lighten grids as much as possible -->
+<!-- ::: -->
 
-## An Example for Continuous
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-```{r}
-#| label: example-color-gradient
-#| echo: true
-#| output-location: slide
+<!-- ::: {.column width="55%"} -->
+<!-- -   Legends suck -->
+<!-- -   Whitespace is like garlic; take the amount you need and then triple it -->
+<!-- -   Fonts matter -->
+<!-- -   Color is hard -->
+<!-- ::: -->
+<!-- ::: -->
 
-pie_crab %>% 
-  ggplot(mapping = aes(x = latitude, 
-                     y = size, 
-                     color = water_temp)) +
-  geom_point(alpha = 0.5) +
-  labs(x = "Latitude", 
-      y = "", 
-      color = "Water Temperature (C)",
-      title = "Size of Fiddler Crabs (mm) Across the Atlantic Coast") +
-  theme_minimal() +
-  scale_color_viridis_c(option = "magma", direction = -1)
+<!-- ## Some Guidelines -->
 
-```
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- -   Titles should be top left aligned (usually) -->
+<!-- -   [Don’t make people tilt their head]{style="color: #ed8402;"} -->
+<!-- -   Alignment should create clean lines and symmetry -->
+<!-- -   [Remove and lighten grids as much as possible]{style="color: #ed8402;"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="55%"} -->
+<!-- -   Legends suck -->
+<!-- -   Whitespace is like garlic; take the amount you need and then triple it -->
+<!-- -   Fonts matter -->
+<!-- -   [Color is hard]{style="color: #ed8402;"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Don’t make people [tilt]{style="color: #34605f;"} their head -->
+
+<!-- ![](images/plot-title.png) -->
+
+<!-- ## Tailoring Colors -->
+
+<!-- Different color palettes are available through a variety of R packages. Popular options include: -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="47%"} -->
+<!-- ::: fragment -->
+<!-- [RColorBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html) -->
+
+<!-- ![](images/color-brewer.png) -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: {.column width="3%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="47%"} -->
+<!-- ::: fragment -->
+<!-- [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) -->
+
+<!-- ![](images/viridis.png) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- . . . -->
+
+<!-- [This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes. -->
+
+<!-- ## Grids: [remove and lighten]{style="color: #34605f;"} as much as possible -->
+
+<!-- ![](images/backgrounds.png) -->
+
+<!-- ## A Reasonable Option -- `theme_minimal()` -->
+
+<!-- </br> -->
+
+<!-- ```{r} -->
+<!-- #| label: example-theme-minimal -->
+
+<!-- library(tidyverse) -->
+<!-- library(openintro) -->
+<!-- library(ggridges) -->
+<!-- library(lterdatasampler) -->
+
+<!-- ggplot(data = nycflights,  -->
+<!--        mapping = aes(x = dep_delay)) + -->
+<!--   geom_histogram() + -->
+<!--   labs(x = "Departure Delays (min)",  -->
+<!--       y = "",  -->
+<!--       title = "Number of Delayed Flights Leaving NYC Airports") + -->
+<!--   theme_minimal() -->
+<!-- ``` -->
+
+<!-- ## An Example for Categorical -->
+
+<!-- ```{r} -->
+<!-- #| label: example-color-discrete -->
+<!-- #| echo: true -->
+<!-- #| output-location: slide -->
+
+<!-- and_vertebrates %>%  -->
+<!--   ggplot(mapping = aes(x = length_1_mm,  -->
+<!--                      y = weight_g,  -->
+<!--                      color = species)) + -->
+<!--   geom_point(alpha = 0.5) + -->
+<!--   labs(x = "Length (mm)",  -->
+<!--       y = "",  -->
+<!--       color = "Species", -->
+<!--       title = "Comparing Weight (g) versus Length (mm)", -->
+<!--       subtitle = "for Different Vertebrate Species in Mack Creek") + -->
+<!--   theme_minimal() + -->
+<!--   scale_color_brewer(palette = "Dark2") -->
+
+<!-- ``` -->
+
+<!-- ## An Example for Continuous -->
+
+<!-- ```{r} -->
+<!-- #| label: example-color-gradient -->
+<!-- #| echo: true -->
+<!-- #| output-location: slide -->
+
+<!-- pie_crab %>%  -->
+<!--   ggplot(mapping = aes(x = latitude,  -->
+<!--                      y = size,  -->
+<!--                      color = water_temp)) + -->
+<!--   geom_point(alpha = 0.5) + -->
+<!--   labs(x = "Latitude",  -->
+<!--       y = "",  -->
+<!--       color = "Water Temperature (C)", -->
+<!--       title = "Size of Fiddler Crabs (mm) Across the Atlantic Coast") + -->
+<!--   theme_minimal() + -->
+<!--   scale_color_viridis_c(option = "magma", direction = -1) -->
+
+<!-- ``` -->
 
 # Machine Learning
 
