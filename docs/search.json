@@ -980,7 +980,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00353\n0.00452\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00451\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
@@ -2226,7 +2226,7 @@
     "href": "index.html",
     "title": "STAT 313: Applied Experimental Design and Regression Models",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due April 8  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due April 15  Lab 2 Feedback\n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due April 22  Lab 3 Feedback\n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n Statistical Critique 1 Feedback\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due April 29  Lab 4 Feedback\n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\nFeedback: 📣\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due May 13 \n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due May 20 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due May 27 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nPrepare\nLecture Slides\nActivity\nLab\nCritique\nProject\n\n\n\n\n0\nSun, March 31\nWelcome to Stat 313 Course Set-up\n📖\n\n\n\n\n\n\n\n1\nMon, April 1 (no class)\nCourse Structure & Statistics Review\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 3\nIntroduction to Data\n\n🎥\n📋\n💻  Due April 8  Lab 1 Feedback\n\n\n\n\n2\nMon, April 8\nVisualizing & Summarizing Numerical Variables\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, April 10\nThe Flaws of Averages\n\n🖥\n\n💻  Due April 15  Lab 2 Feedback\n\n\n\n\n3\nMon, April 15\nIncorporating Categorical Variables\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 17\nEthics & Categorical Variables\n\n🖥\n\n💻  Due April 22  Lab 3 Feedback\n\n\n\n\n\nMon, April 22\nStatistical Critique Due\n\n\n\n\n✍\n Statistical Critique 1 Feedback\n\n\n\n4\nMon, April 22\nIntroduction to Linear Regression\n📖\n🖥\n\n\n\n\n\n\n\nWed, April 24\nThe Ugly History of Linear Regression\n\n🖥\n\n💻  Due April 29  Lab 4 Feedback\n\n\n\n\n\nMon, April 29\nMidterm Project Proposal\n\n\n\n\n\n📁 STAT 313\n\n\n5\nMon, April 29\nIntroduction to Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 1\nWork Day – Coding a Multiple Linear Regression\n\n🖥\n📋\n\n\n\n\n\n\nSun, May 5\nMidterm Project First Draft Due\n\n\n\n\n\nGrading Rubric: ✅\nFeedback: 📣\n\n\n6\nMon, May 6\nVariable Selection in Multiple Linear Regression\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 8\nMachine Learning\n\n🖥\n\n💻  Due May 13  Lab 6 Feedback\n\n\n\n\n\nSun, May 12\nMidterm Project Final Version Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\n7\nMon, May 13\nSampling Variability\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 15\nConfidence Intervals\n\n🖥\n\n💻  Due May 20 \n\n\n\n\n8\nMon, May 20\np-values & Hypothesis Tests\n📖\n🖥\n📋\n\n\n\n\n\n\nWed, May 22\nSimulation-based Methods vs. Theory-based Methods\n\n🖥\n\n💻  Due May 27 \n\n\n\n\n\nMon, May 27\nStatistical Critique 2 Due\n\n\n\n\n✍\n\n\n\n9\nMon, May 27\nOne-Way Analysis of Variance (OWA)\n📖\n🖥\n\n\n\n\n\n\n\n\nWed, May 29\nInference for OWA & Model Selection\n\n🖥\nAssessing Independence: 📋\n\n\n\n\n\n\nSun, June 2\nFinal Project First Draft Due\n\n\n\n\n\nInstructions: 📁  Grading Rubric: ✅\n\n\n10\nMon, June 3\nTwo-Way ANOVA (TWA) Models\n📖\n🖥\nOne-way to Two-way Model Selection Process: 📋\n\n\n\n\n\n\nWed, June 5\nLast Day of STAT 313\n\n🖥\n\n\n\nWhat should not be in your project: 📋\n\n\n\nSun, June 9\nFinal Project Final Version Due\n\n\n\n\n\nGrading Rubric: ✅\n\n\nFinals Week\n\nFinal Presentations\n\n\n\n\n\nPresentation Instructions:📁\n\n\n\nSTAT 313-01\nWed, June 12 10:10am - 1:00pm\n\n\n\n\n\n\n\n\n\nSTAT 313-02\nTues, June 11 7:10am - 10:00am\nYes, your final is at 7:10am. 😫",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -5955,7 +5955,7 @@
     "href": "slides/week7-day1.html#virtual-sampling",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nBeau Baldwin\nAsc Head Coach Crd 4\n708408\n\n\nEric Christian Newman\nHead Coach 5\n163991\n\n\nGray Horn\nHead Coach 5\n41566\n\n\nJames Mora\nIntercol Ath Head Coach Ex\n2990145\n\n\nJonathan Pascale\nHead Coach 5\n130035\n\n\nMarc Alan Hunt\nIntercol Ath Head Coach Ex\n97869\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nRyan Jorden\nIntercol Ath Head Coach Ex\n181065.0\n\n\nMike Blasquez\nAsc Head Coach Crd 4\n197727.0\n\n\nJorge Salcedo\nIntercol Ath Head Coach Ex\n70761.0\n\n\nJamie J Christian\nHEAD COACH - 12 MONTH\n191865.5\n\n\nJohn Margaritis\nHead Coach 5\n271706.0\n\n\nRonald Lowell Dubois\nHead Coach 5\n52930.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
@@ -6398,5 +6398,26 @@
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Each group has a different sample of 25 UC & CSU coach salaries.",
     "text": "Each group has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
+  },
+  {
+    "objectID": "slides/week7-day1.html",
+    "href": "slides/week7-day1.html",
+    "title": "Sampling Variability – The Heart of Statistical Inference",
+    "section": "",
+    "text": "Salaries of football coaches"
+  },
+  {
+    "objectID": "slides/week7-day2.html",
+    "href": "slides/week7-day2.html",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "",
+    "text": "Lab 4 revisions are due tonight (May 15)\nMidterm Projects will be graded by Sunday (May 19)\nLab 6 revisions will be due next Wednesday (May 22)\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+  },
+  {
+    "objectID": "slides/week6-day2.html",
+    "href": "slides/week6-day2.html",
+    "title": "Midterm Project Feedback & Machine Learning",
+    "section": "",
+    "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
   }
 ]
