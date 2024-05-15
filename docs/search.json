@@ -2002,7 +2002,7 @@
     "href": "slides/week8-day1.html#the-p-value-is",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "The p-value is…",
-    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\nWhy did we get a warning?"
+    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\nWhy did we get a warning?"
   },
   {
     "objectID": "slides/week8-day1.html#how-do-we-interpret-a-p-value",
