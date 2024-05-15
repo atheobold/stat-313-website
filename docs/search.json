@@ -952,7 +952,7 @@
     "href": "slides/week7-day2.html#section-8",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about our sample?"
+    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about the original sample?"
   },
   {
     "objectID": "slides/week7-day2.html#section-9",
@@ -980,7 +980,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00355\n0.00451\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00352\n0.00458\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
@@ -5758,8 +5758,8 @@
     "objectID": "slides/week6-day2.html#deadline-reminders",
     "href": "slides/week6-day2.html#deadline-reminders",
     "title": "Midterm Project Feedback & Machine Learning",
-    "section": "Deadline Reminders",
-    "text": "Deadline Reminders\n\nLab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
+    "section": "",
+    "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
   },
   {
     "objectID": "slides/week6-day2.html#help-your-peers",
@@ -5864,7 +5864,7 @@
     "href": "slides/week6-day2.html#does-your-phone-recognize-your-face",
     "title": "Midterm Project Feedback & Machine Learning",
     "section": "Does your phone recognize your face?",
-    "text": "Does your phone recognize your face?\n\nJoy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face."
+    "text": "Does your phone recognize your face?\n\n\n\nJoy Buolamwini found that she had to put on a white mask for the facial detection program to “see” her face."
   },
   {
     "objectID": "slides/week6-day2.html#how-does-google-label-your-images",
@@ -6369,14 +6369,14 @@
     "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
     "title": "Midterm Project Feedback & Machine Learning",
     "section": "Based on how the study was designed, what population can you infer these results onto?",
-    "text": "Based on how the study was designed, what population can you infer these results onto?\n\n\nJustify what population you believe your analysis can be inferred onto.\n\nThe sample of [possums / professors / crabs]?\nSome larger population of [possums / professors / crabs]?\n\nYour justification needs to connect with how the researchers collected their data!"
+    "text": "Based on how the study was designed, what population can you infer these results onto?\n. . .\n\nJustify what population you believe your analysis can be inferred onto.\n\nThe sample of [possums / professors / crabs]?\nSome larger population of [possums / professors / crabs]?\n\nYour justification needs to connect with how the researchers collected their data!"
   },
   {
     "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
     "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
     "title": "Midterm Project Feedback & Machine Learning",
     "section": "Based on how the study was designed, what can you say about the relationships between the variables?",
-    "text": "Based on how the study was designed, what can you say about the relationships between the variables?\n\n\nStating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!\n\nWhat specifically would have the researchers have needed to do in order to use causal language?"
+    "text": "Based on how the study was designed, what can you say about the relationships between the variables?\n\n. . .\nStating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!\n\nWhat specifically would have the researchers have needed to do in order to use causal language?"
   },
   {
     "objectID": "project/midterm-project/midterm-project-contract.html",
@@ -6419,5 +6419,12 @@
     "title": "Midterm Project Feedback & Machine Learning",
     "section": "",
     "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
+  },
+  {
+    "objectID": "slides/week7-day2.html#water-temperature-and-latitude",
+    "href": "slides/week7-day2.html#water-temperature-and-latitude",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Water Temperature and Latitude",
+    "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
   }
 ]

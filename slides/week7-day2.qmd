@@ -333,7 +333,7 @@ Why do we resample *with replacement* when creating a bootstrap distribution?
 
 </br>
 
-When we resample with replacement from our original sample what are we assuming about our sample?
+When we resample with replacement from our original sample what are we assuming about the original sample?
 
 ## 
 
@@ -657,3 +657,29 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 . . .
 
 > Holding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin's bill length.
+
+# Lab 7
+
+## Water Temperature and Latitude
+
+::: columns
+::: {.column width="50%"}
+:::{.small}
+> When including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other. 
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/maine-coastline.webp)
+:::
+:::
+
+. . .
+
+What is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?
+
+
+
