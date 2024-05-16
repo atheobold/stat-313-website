@@ -55,7 +55,7 @@ null_dist <- hbr_maples %>%
 
 ## Upcoming Deadlines
 
--   Lab 6 revisions are due on Thursday (by midnight)
+-   Lab 6 revisions are due on Wednesday (by midnight)
 -   Statistical Critique 2 is due next Monday (at 5pm)
 -   Final revisions on **all** assignments will be accepted until Sunday, March 17
 
@@ -568,7 +568,7 @@ Causal statements **do not** come from random / representative samples!
 
 ::: small
 | **Excellent Project**                                                             | **Satisfactory Project**                                                                           | **Progressing Project**                                                               | **No Credit**                                                                                      |
-|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+|------------------|-------------------|------------------|-------------------|
 | At most one section is marked "Satisfactory" the remainder are marked "Excellent" | At most one section is marked "Progressing" the remainder are marked "Satisfactory" or "Excellent" | At most two sections are marked "Progressing" the remainder are marked "Satisfactory" | At most one section is marked "Satisfactory" or "Excellent" the remainder are marked "Progressing" |
 :::
 
