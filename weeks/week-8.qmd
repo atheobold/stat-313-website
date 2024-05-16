@@ -24,44 +24,7 @@ execute:
 
 # Concept Quiz -- Due Monday by the start of class
 
-**1. Which of the following are *always* true for hypothesis statements?**
-
--   They are about sample statistics.
--   They are about relationships between variables.
--   They are about population parameters.
--   They are about differences in groups.
-
-**2. Which of the following are true about a null distribution?** (select all that apply)
-
--   It is a distribution of statistics.
--   The values on the distribution represent what might have happened if the null hypothesis was true.
--   The values on the distribution represent what might have happened if the alternative hypothesis was true.
--   It is a distribution of sample observations.
-
-**3. Which of the following are true about a p-value?** (select all that apply)
-
--   It is calculated assuming the null hypothesis is true.
--   It is the probability the null hypothesis is true.
--   It quantifies how "surprising" our data are.
--   It compares the observed statistic to a distribution of values that could have happened if the null was true.
--   It is calculated assuming the alternative hypothesis is true.
--   It is a probability.
-
-**4. Which of the following is true about a small p-value?**
-
--   The sample statistic is unlikely to have happened by chance.
--   The sample size was large.
--   The sample statistic is unlikely to have happened if the null hypothesis was true.
--   The sample statistic was large.
-
-**5. If you obtain a large p-value, what can you conclude about your hypotheses?**
-
--   We cannot say the alternative hypothesis is false.
--   We cannot say the null hypothesis is false.
--   The null hypothesis is true.
--   The alternative hypothesis is true.
-
-**6. Match each procedure to the question it addresses.**
+**1. Match each procedure to the question it addresses.**
 
 ::: columns
 ::: {.column width="40%"}
@@ -81,34 +44,79 @@ hypothesis tests
 :::
 :::
 
-**7. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?**
+**2. Which of the following are *always* true for hypothesis statements?**
+
+-   They are about sample statistics.
+-   They are about relationships between variables.
+-   They are about population parameters.
+-   They are about differences in groups.
+
+**3. To simulate what could have happened if the [null hypothesis was true / alternative hypothesis was true], we [separate the (x, y) pairs / keep the (x, y) pairs together] and [resample with replacement / randomly reassign a new y to each x].**
+
+**4. Which of the following are true about a null distribution?** (select all that apply)
+
+-   It is a distribution of statistics.
+-   The values on the distribution represent what might have happened if the null hypothesis was true.
+-   The values on the distribution represent what might have happened if the alternative hypothesis was true.
+-   It is a distribution of sample observations.
+
+**5. Name [one]{.underline} similarity between a permutation distribution and a bootstrap distribution.**
+
+**6. Name [one]{.underline} difference between a permutation distribution and a bootstrap distribution.**
+
+**7. For linear regression, the null distribution is always centered at ____.**
+
+**8. Which of the following are true about a p-value?** (select all that apply)
+
+-   It is calculated assuming the null hypothesis is true.
+-   It is the probability the null hypothesis is true.
+-   It quantifies how "surprising" our data are.
+-   It compares the observed statistic to a distribution of values that could have happened if the null was true.
+-   It is calculated assuming the alternative hypothesis is true.
+-   It is a probability.
+
+**9. Which of the following is true about a small p-value?**
+
+-   The sample statistic is unlikely to have happened by chance.
+-   The sample size was large.
+-   The sample statistic is unlikely to have happened if the null hypothesis was true.
+-   The sample statistic was large.
+
+**10. If you obtain a large p-value, what can you conclude about your hypotheses?**
+
+-   We cannot say the alternative hypothesis is false.
+-   We cannot say the null hypothesis is false.
+-   The null hypothesis is true.
+-   The alternative hypothesis is true.
+
+**11. If the probability of a Type I error goes down, what can you say about the probability of a Type II error?**
 
 -   The probability of a Type II error goes down.
 -   The probability of a Type II error stays the same.
 -   The probability of a Type II error goes up.
 
-**8. If you obtained a small p-value (e.g., 0.02), what could you say about what you would expect if you constructed a 95% confidence interval?**
+**12. If you obtained a small p-value (e.g., 0.02), what could you say about what you would expect if you constructed a 95% confidence interval?**
 
 -   It would contain the null hypothesized value.
 -   It would not contain the null hypothesized value.
 -   It would contain the sample statistic.
 -   It would contain the true population parameter.
 
-**9. In a regression table, what is the "statistic" value associated with the slope?**
+**13. In a regression table, what is the "statistic" value associated with the slope?**
 
 -   a bootstrap statistic
 -   a z-statistic
 -   the sample slope statistic
 -   a t-statistic
 
-**10. In a regression table, how is the p-value calculated?**
+**14. In a regression table, how is the p-value calculated?**
 
 -   Using a permutation distribution with 1000 resamples
 -   Using a bootstrap distribution with 1000 samples
 -   Using a Normal distribution
 -   Using a t-distribution
 
-**11. What are the required conditions for linear regression?** (select all that apply)
+**15. What are the required conditions for linear regression?** (select all that apply)
 
 -   a random sample was taken
 -   equal variance of residuals
@@ -119,13 +127,22 @@ hypothesis tests
 -   normality of residuals
 -   normality of observations
 
-**12. Which of the following would violate the condition of independence?** (select all that apply)
+**16. In the scatterplot of stem dry mass versus stem length, what condition appears to be violated?** (select all that apply)
+
+-   equal variance of residuals
+-   linear relationship between x and y
+-   independence of observations
+-   normality of residuals
+
+**17. Which of the following would violate the condition of independence?** (select all that apply)
 
 -   collecting a non-random sample
 -   observations related geographically (spatially)
 -   observations that are related in time (temporally)
 -   repeated observations on the same person
 -   observations related biologically
+
+**18. When conducting a hypothesis test (in general), we assume the [observations / variables] are independent. When conducting a hypothesis test for a linear regression, the conditions require that the [observations / variables] are independent.**
 
 # R Tutorial -- Due Wednesday by the start of class
 
