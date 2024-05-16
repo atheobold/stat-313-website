@@ -6426,5 +6426,12 @@
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Water Temperature and Latitude",
     "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
+  },
+  {
+    "objectID": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
+    "href": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Part Zero: p-values in Multiple Linear Regression",
+    "text": "Part Zero: p-values in Multiple Linear Regression\nFor the first step of this critique, you are required to read about how p-values can be used in the context of multiple linear regression: Extending to Multiple Linear Regression"
   }
 ]

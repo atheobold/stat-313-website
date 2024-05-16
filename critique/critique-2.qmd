@@ -17,13 +17,13 @@ In your second statistical critique, you will focus on critiquing another key as
 
 This critique involves coding! You can find a template for critique on [Posit Cloud](https://posit.cloud/).
 
-# Part Zero: p-values in Multiple Linear Regression
+## Part Zero: p-values in Multiple Linear Regression
 
 For the first step of this critique, you are required to read about how p-values can be used in the context of multiple linear regression: [Extending to Multiple Linear Regression](../weeks/chapters/week-8-reading-mlr.qmd "Extending to Multiple Linear Regression")
 
 # Part One: Revisiting the Midterm Project
 
-For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. You need to copy-and-paste the code you wrote in your Midterm Project to create your 2-3 visualizations. After these visualizations, you should write a 2-3 sentence justification as to *why* you chose the model you did in your Midterm Project.
+For the first part of this critique, you are going to revisit the model you selected for your Midterm Project. You need to copy-and-paste the code you wrote in your Midterm Project to create your 2-3 visualizations. After these visualizations, you should write a 2-3 sentence justification as to *why* you chose the model you did in your Midterm Project. This should be copied from the "Proposed Statistical Model" section of your Midterm Project!
 
 # Part Two: Using p-values Instead
 
@@ -100,7 +100,7 @@ In March of 2019, Valentin Amrhein, Sander Greenland, Blake McShane and more tha
 
 For Part Three, you are going to inspect what the publication requirements are for journal the article you selected (in Week 1) was published in.
 
-::: callout-tip
+::: callout-caution
 # Statistics in Your Field
 
 You are revisiting (again) the article you chose in Week 1 for the "Statistics in your Field" assignment!
@@ -116,4 +116,4 @@ Feel free to type out what you find while searching the journal or simply copy-a
 
 # Part Four: Lessons Learned
 
-Now that you have explored the use of p-values for model selection and publication criteria, write down **two** things you have learned that you will take with you.
+Now that you have explored the use of p-values for model selection and publication criteria, write down **two** things you have learned that you will take with you in your future courses / research. 
