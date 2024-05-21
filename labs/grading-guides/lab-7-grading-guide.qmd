@@ -165,6 +165,10 @@ Note that every group will get a different interval, due to the randomness of bo
 
 > We need to be specific about the what parameter we believe is in our interval. The slope statistic is measuring the relationship between which variables?
 
+*If they don't include a population:*
+
+> What population does this interval apply to? Where were these marshes located? What population would you characterize these 13 marshes belonging to? That is the population your interval applies to!
+
 *If they have state an incorrect population*:
 
 > Careful! Are you analyzing data on crabs or on marshes? Where were these marshes located? What population would you characterize these 13 marshes belonging to? That is the population your interval applies to!

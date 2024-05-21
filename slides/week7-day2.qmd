@@ -664,8 +664,8 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 
 ::: columns
 ::: {.column width="50%"}
-:::{.small}
-> When including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other. 
+::: small
+> When including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.
 :::
 :::
 
@@ -680,6 +680,3 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 . . .
 
 What is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?
-
-
-

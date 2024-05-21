@@ -980,7 +980,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00352\n0.00458\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00349\n0.00456\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
@@ -2819,7 +2819,7 @@
     "href": "labs/grading-guides/lab-7-grading-guide.html#question-8",
     "title": "Lab 7 Grading Guide",
     "section": "Question 8",
-    "text": "Question 8\nTo earn a Success:\nThe interpretation must state:\n\nconfidence: they are 90% confident\nstatistic: the slope between water temperature and latitude\npopulation: for all marshes along the eastern US\ninterval: is between [lower bound] and [upper bound]\n\n\n\n\n\n\n\nNote\n\n\n\nNote that every group will get a different interval, due to the randomness of bootstrapping!\n\n\nIf they don’t state their confidence:\n\nHow much confidence do you have in your interval?\n\nIf they don’t state the statistic in context:\n\nWe need to be specific about the what parameter we believe is in our interval. The slope statistic is measuring the relationship between which variables?\n\nIf they have state an incorrect population:\n\nCareful! Are you analyzing data on crabs or on marshes? Where were these marshes located? What population would you characterize these 13 marshes belonging to? That is the population your interval applies to!"
+    "text": "Question 8\nTo earn a Success:\nThe interpretation must state:\n\nconfidence: they are 90% confident\nstatistic: the slope between water temperature and latitude\npopulation: for all marshes along the eastern US\ninterval: is between [lower bound] and [upper bound]\n\n\n\n\n\n\n\nNote\n\n\n\nNote that every group will get a different interval, due to the randomness of bootstrapping!\n\n\nIf they don’t state their confidence:\n\nHow much confidence do you have in your interval?\n\nIf they don’t state the statistic in context:\n\nWe need to be specific about the what parameter we believe is in our interval. The slope statistic is measuring the relationship between which variables?\n\nIf they don’t include a population:\n\nWhat population does this interval apply to? Where were these marshes located? What population would you characterize these 13 marshes belonging to? That is the population your interval applies to!\n\nIf they have state an incorrect population:\n\nCareful! Are you analyzing data on crabs or on marshes? Where were these marshes located? What population would you characterize these 13 marshes belonging to? That is the population your interval applies to!"
   },
   {
     "objectID": "labs/grading-guides/lab-7-grading-guide.html#question-9",
@@ -6433,5 +6433,12 @@
     "title": "Statistical Critique 2: Exploring p-values",
     "section": "Part Zero: p-values in Multiple Linear Regression",
     "text": "Part Zero: p-values in Multiple Linear Regression\nFor the first step of this critique, you are required to read about how p-values can be used in the context of multiple linear regression: Extending to Multiple Linear Regression"
+  },
+  {
+    "objectID": "slides/week8-day1.html",
+    "href": "slides/week8-day1.html",
+    "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
+    "section": "",
+    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project\n\n\n\n\n\n\n\n\nLab 6 revisions are due on Wednesday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions.\n\n\n\n\n\n\nyou…\n\n\n\nunderstand the importance of sampling variability\nknow about using confidence intervals to estimate a range of plausible values for the population parameter\nwant to know how p-values fit in\n\n\n\n\n\n\nWhat if I want to know if the population parameter differs from a specific value?\n\n. . .\n\n\nHypothesis test!\n\n\n\n\n\n\nHypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n. . .\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true\n\n\n\n\n. . .\n\nPermutation!\n\n\n\n\n\n\nAssumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n. . .\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
   }
 ]
