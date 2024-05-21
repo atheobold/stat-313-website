@@ -147,15 +147,9 @@ anova(bill_lm) %>%
 `bill_depth_mm`: With a p-value of 0.234, I would conclude there is not a relationship between bill depth and bill length (after accounting for body mass)!
 :::
 
-# 15-minute Work Session
+# Last week we covered confidence intervals, this week we're learning more about hypothesis tests.
 
-# What did we do on Tuesday?
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-We carried out a hypothesis test!
-:::
+## Testing for a Population Slope ($\beta_1$)
 
 ::: columns
 ::: {.column width="35%"}
@@ -183,47 +177,271 @@ ggplot(data = evals,
 :::
 :::
 
+. . .
+
 ::: {style="font-size: 1em; color: #ed8402;"}
 What do these hypotheses mean *in words*?
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-By creating a permutation distribution!
-:::
-
-```{r evals-permute}
-#| echo: true
-null_dist <- evals %>% 
-  specify(response = score, 
-          explanatory = bty_avg) %>% 
-  hypothesise(null = "independence") %>% 
-  generate(reps = 1000, type = "permute") %>% 
-  calculate(stat = "slope")
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-And visualizing where our observed statistic fell on the distribution
-:::
+## What do you think?
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="50%"}
+$\widehat{score} = 3.88 + 0.066 \times \text{bty_avg}$
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
 ```{r}
-visualise(null_dist) +
-  shade_p_value(obs_stat = obs_slope, direction = "two-sided") +
-  labs(x = "Permuted Slope Statistic")
+#| message: false
+#| fig-align: center
+
+ggplot(data = evals, 
+       mapping = aes(x = bty_avg, y = score)) +
+  geom_jitter() + 
+  geom_smooth(method = "lm") +
+  labs(x = "Average Beauty Score", 
+       y = "Course Evaluation Score") +
+  my_theme
+```
+:::
+:::
+
+. . .
+
+::: {style="font-size: 1.5em; color: #b76352;"}
+Will we reject $H_0$?
+:::
+
+# How will we decide?
+
+# How will we decide?
+
+:::{.midi}
+by generating statistics that could have happened if $H_0$ was true and comparing our observed statistic to these statistics to see how unusual it is
+:::
+
+## If $H_0$ was true then...
+
+</br> 
+
+$\beta_1$ = 0 
+
+</br> 
+
+which means...
+
+# How do we generate statistics that could have happened if $H_0$ was true?
+
+## One possible shuffle
+
+::: columns
+::: {.column width="40%"}
+```{r}
+#| label: shuffle-scores
+#| echo: false
+#| cache: true
+
+evals_shuffle <- evals %>% 
+  select(score, bty_avg) %>% 
+  mutate(shuffled_score = sample(score, 
+                                size = nrow(evals), 
+                                replace = FALSE)
+        )
+
+evals_shuffle %>% 
+  slice_sample(n = 25) %>% 
+  gt::gt()
 ```
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="35%"}
-::: {style="font-size: 1.5em; color: #34605f;"}
-What would you estimate the p-value to be?
+::: {.column width="55%"}
+:::{.fragment}
+Which results in a slope statistic of...
+
+```{r}
+lm(score ~ bty_avg, data = evals_shuffle) %>% 
+  broom::tidy() %>% 
+  filter(term == "bty_avg") %>% 
+  pull(estimate)
+```
+
+:::
+:::
+:::
+
+# But that's just **one** statistic!
+
+# But that's just **one** statistic!
+
+We want a sampling distribution of **lots** of statistics that could have happened if $H_0$ was true!
+
+## Lots of statistics that could have happened if $H_0$ was true
+
+```{r}
+#| label: evals-permute
+#| cache: true
+
+null_dist <- evals %>% 
+  specify(response = score, 
+          explanatory = bty_avg) %>% 
+  hypothesise(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "slope")
+
+visualise(null_dist) +
+  labs(x = "Slope Statistic", 
+       title = "")
+```
+
+## Where does our observed statistic fall on this distribution?
+
+```{r}
+#| label: null-dist
+
+visualise(null_dist) +
+  labs(x = "Slope Statistic", 
+       title = "") +
+  xlim(-0.08, 0.08) +
+  scale_x_continuous(breaks = seq(-0.08, 0.08, by = 0.01))
+```
+
+## Is our observed statistic *likely* to happen if the null was true?
+
+. . .
+
+If it is unlikely to happen, then we should reject $H_0$! 
+
+Why???
+
+. . .
+
+The probability of observing a statistic as or more extreme than 0.0666 is approximately 0%. 
+
+# What conclusion would you reach about the relationship between professors' evaluation scores and their attractiveness?
+
+# The conclusion we reached depends on our p-value being reliable. 
+
+# The conclusion we reached depends on our p-value being reliable. 
+
+How can we know if our p-value is reliable?
+
+## Model Conditions
+
+For our p-value to be trustworthy, we need to know that the conditions of our model are not violated. 
+
+. . .
+
+::: columns
+::: {.column width="40%"}
+For linear regression we are assuming...
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+**L**inear relationship between $x$ and $y$
+
+</br>
+
+**I**ndepdent observations
+
+</br>
+
+**N**ormality of residuals
+
+</br>
+
+**E**qual variance of residuals
+:::
+:::
+
+## What happens if the conditions are violated?
+
+In general, when the conditions associated with these methods are violated, we will [underestimate]{.underline} the true standard error (spread) of the sampling distribution.
+
+. . .
+
+-   Our p-values will be **too** small!
+-   Our confidence intervals will be **too** narrow!
+-   We will make more Type I errors than we expect!
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+**L**inear relationship between $x$ and $y$
+:::
+
+```{r}
+#| fig-align: center
+
+and_vertebrates %>%
+  filter(species != "Cascade torrent salamander") %>% 
+  ggplot(mapping = aes(x = length_1_mm, 
+                       y = weight_g, 
+                       color = species)) +
+  geom_point() + 
+  labs(x = "Length (mm)", 
+       y = "Weight (g)") +
+  my_theme
+```
+
+. . .
+
+**What should we do?**
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Variable transformation!
+:::
+
+```{r transform}
+#| fig-align: center
+
+and_vertebrates %>%
+  filter(species != "Cascade torrent salamander") %>% 
+  ggplot(mapping = aes(x = length_1_mm, 
+                       y = weight_g, 
+                       color = species)) +
+  geom_jitter(alpha = 0.5) + 
+  labs(x = "Log Transformed Length (mm)", 
+       y = "Log Transformed Weight (g)", 
+       color = "Species") +
+  scale_x_log10() +
+  scale_y_log10() +
+  my_theme
+```
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+**I**ndependence of observations
+:::
+
+::: columns
+::: {.column width="40%"}
+The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, prof_ID) %>% nrow()` professors. Meaning, professors have **multiple** observations.
+
+</br>
+
+*What can we do?*
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+::: fragment
+**Best** -- use a random effects model
+
+**Reasonable** -- collapse the multiple scores into a single score
 :::
 :::
 :::
@@ -231,28 +449,98 @@ What would you estimate the p-value to be?
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-And calculated the p-value
+**N**ormality of residuals
 :::
 
-```{r}
-#| echo: true
+```{r non-normal}
 
-get_p_value(null_dist, 
-            obs_stat = obs_slope, 
-            direction = "two-sided")
+fish <- and_vertebrates %>%
+  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander")) 
+
+curved_lm <- lm(weight_g ~ length_1_mm, data = fish)
+
+get_regression_points(curved_lm) %>% 
+  ggplot(mapping = aes(x = residual)) + 
+  geom_histogram() + 
+  labs(x = "Residual") +
+  my_theme
 ```
 
 . . .
 
-</br>
-
-What would you decide for this hypothesis test? What conclusion would you reach about these hypotheses?
+**What should we do?**
 
 ## 
 
-::: {style="font-size: 2.5em; color: #000000;"}
-How would this process have changed if we used theory-based methods instead?
+::: {style="font-size: 2em; color: #000000;"}
+Variable transformation!
 :::
+
+```{r normal}
+
+fish <- and_vertebrates %>%
+  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander"))
+
+not_curved_lm <- lm(log(weight_g) ~ log(length_1_mm), data = fish)
+
+broom::augment(not_curved_lm) %>% 
+  mutate(.resid = `log(weight_g)` - `.fitted`) %>% 
+  ggplot(mapping = aes(x = .resid)) + 
+  geom_histogram(binwidth = 0.1) + 
+  labs(x = "Residual") +
+  xlim(c(-0.5, 0.5)) +
+  my_theme
+```
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+**E**qual variance of residuals
+:::
+
+```{r non-constant-variance}
+#| fig-align: center
+
+ggplot(data = hbr_maples, 
+       mapping = aes(x = stem_length, y = stem_dry_mass)
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    x = "Stem Length (mm)",
+    y = "Stem Dry Mass (g)"
+    ) +
+  theme_minimal() + 
+  my_theme
+```
+
+. . .
+
+**What should we do?**
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Variable transformation!
+:::
+
+```{r}
+ggplot(data = hbr_maples, 
+       mapping = aes(x = stem_length, y = stem_dry_mass)
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    x = "Stem Length (mm)",
+    y = "Log Transformed Stem Dry Mass (g)"
+  ) +
+  theme_minimal() + 
+  scale_y_log10() +
+  my_theme
+```
+
+
+##
 
 ## 
 
@@ -460,267 +748,7 @@ The normality of a sampling distribution depends **heavily** on model conditions
 :::
 :::
 
-## 
 
-::: {style="font-size: 2em; color: #000000;"}
-What are these "conditions"?
-:::
-
-. . .
-
-::: columns
-::: {.column width="40%"}
-For linear regression we are assuming...
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-**L**inear relationship between $x$ and $y$
-
-</br>
-
-**I**ndepdent observations
-
-</br>
-
-**N**ormality of residuals
-
-</br>
-
-**E**qual variance of residuals
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**L**inear relationship between $x$ and $y$
-:::
-
-```{r}
-#| fig-align: center
-
-and_vertebrates %>%
-  filter(species != "Cascade torrent salamander") %>% 
-  ggplot(mapping = aes(x = length_1_mm, 
-                       y = weight_g, 
-                       color = species)) +
-  geom_point() + 
-  labs(x = "Length (mm)", 
-       y = "Weight (g)") +
-  my_theme
-```
-
-. . .
-
-**What should we do?**
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Variable transformation!
-:::
-
-```{r transform}
-#| fig-align: center
-
-and_vertebrates %>%
-  filter(species != "Cascade torrent salamander") %>% 
-  ggplot(mapping = aes(x = length_1_mm, 
-                       y = weight_g, 
-                       color = species)) +
-  geom_jitter(alpha = 0.5) + 
-  labs(x = "Log Transformed Length (mm)", 
-       y = "Log Transformed Weight (g)", 
-       color = "Species") +
-  scale_x_log10() +
-  scale_y_log10() +
-  my_theme
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**I**ndependence of observations
-:::
-
-::: columns
-::: {.column width="40%"}
-The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, prof_ID) %>% nrow()` professors. Meaning, professors have **multiple** observations.
-
-</br>
-
-*What can we do?*
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-::: fragment
-**Best** -- use a random effects model
-
-**Reasonable** -- collapse the multiple scores into a single score
-:::
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**N**ormality of residuals
-:::
-
-```{r non-normal}
-
-fish <- and_vertebrates %>%
-  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander")) 
-
-curved_lm <- lm(weight_g ~ length_1_mm, data = fish)
-
-get_regression_points(curved_lm) %>% 
-  ggplot(mapping = aes(x = residual)) + 
-  geom_histogram() + 
-  labs(x = "Residual") +
-  my_theme
-```
-
-. . .
-
-**What should we do?**
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Variable transformation!
-:::
-
-```{r normal}
-
-fish <- and_vertebrates %>%
-  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander"))
-
-not_curved_lm <- lm(log(weight_g) ~ log(length_1_mm), data = fish)
-
-broom::augment(not_curved_lm) %>% 
-  mutate(.resid = `log(weight_g)` - `.fitted`) %>% 
-  ggplot(mapping = aes(x = .resid)) + 
-  geom_histogram(binwidth = 0.1) + 
-  labs(x = "Residual") +
-  xlim(c(-0.5, 0.5)) +
-  my_theme
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-**E**qual variance of residuals
-:::
-
-```{r non-constant-variance}
-#| fig-align: center
-
-ggplot(data = hbr_maples, 
-       mapping = aes(x = stem_length, y = stem_dry_mass)
-       ) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(
-    x = "Stem Length (mm)",
-    y = "Stem Dry Mass (g)"
-    ) +
-  theme_minimal() + 
-  my_theme
-```
-
-. . .
-
-**What should we do?**
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Variable transformation!
-:::
-
-```{r}
-ggplot(data = hbr_maples, 
-       mapping = aes(x = stem_length, y = stem_dry_mass)
-       ) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(
-    x = "Stem Length (mm)",
-    y = "Log Transformed Stem Dry Mass (g)"
-  ) +
-  theme_minimal() + 
-  scale_y_log10() +
-  my_theme
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Are these conditions required for **both** methods?
-:::
-
-. . .
-
-::: columns
-::: {.column width="40%"}
-::: {style="font-size: 1.5em; color: #34605f;"}
-Simulation-based Methods
-:::
-
-::: {style="font-size: 0.75em; color: #000000;"}
--   Linearity of Relationship
-
--   Independence of Observations
-
--   Equal Variance of Residuals
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-::: {style="font-size: 1.5em; color: #34605f;"}
-Theory-based Methods
-:::
-
-::: {style="font-size: 0.75em; color: #000000;"}
--   Linearity of Relationship
--   Independence of Observations
-:::
-
-::: {style="font-size: 0.75em; color: #ed8402;"}
--   Normality of Residuals
-:::
-
-::: {style="font-size: 0.75em; color: #000000;"}
--   Equal Variance of Residuals
-:::
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-What happens if the conditions are violated?
-:::
-
-. . .
-
-In general, when the conditions associated with these methods are violated, the permutation and $t$-distributions will [underestimate]{.underline} the true standard error of the sampling distribution.
-
-. . .
-
--   Our p-values will be **too** small!
--   Our confidence intervals will be **too** narrow!
--   We will make more Type I errors than we expect!
 
 # Lab 8
 
