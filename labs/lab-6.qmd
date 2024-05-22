@@ -167,42 +167,13 @@ Alright, now you should have 13 more models to compare! Like before, you need to
 
 As you might have expected, in this step we add a *third* variable to our top model from the previous step. This process should be getting familiar at this point!
 
-This process of fitting 12-14 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! This is how the code looks:
-
-```         
-evals %>% 
-  map(.f = ~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)) %>% 
-  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %>% 
-  select(-score,
-         -<VARIABLE 1 SELECTED>,
-         -<VARIABLE 2 SELECTED>
-         ) %>% 
-  pivot_longer(cols = everything(), 
-               names_to = "variable", 
-               values_to = "adj_r_sq") %>% 
-  slice_max(adj_r_sq)
-```
-
-Woah, that's a lot. The only thing you need to change is:
+This process of fitting 12-14 models at a time is getting rather tedious! So, I've written some code that will carry out this process for us in **one** pipeline! The only thing you need to change is:
 
 -   add in the names of the variables you selected in Steps 1 & 2 in the `~lm(score ~ .x + <VARIABLES SELECTED>, data = evals)` step
 
 -   add in the names of the variables you selected in Steps 1 & 2 in the `select(-ID, -score, -<VARIABLE 1 SELECTED>, -<VARIABLE 2 SELECTED>)` step
 
-For example, if you chose `gender` and `age` in Steps 1 and 2, your code on the first line would look like:
-
-```         
-map(.f = ~lm(score ~ .x + gender + age, data = evals)) %>% 
-```
-
-and your code on the fourth line would look like:
-
-```         
-  select(-score,
-         -gender,
-         -sex
-         ) %>% 
-```
+For example, if you chose `gender` and `age` in Steps 1 and 2, your code on the first line would look like `map(.f = ~lm(score ~ .x + gender + age, data = evals)) %>%` and your code on the fourth line would look like `select(-score, -gender, -age) %>%`.
 
 Your turn!
 
