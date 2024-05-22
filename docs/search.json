@@ -4373,7 +4373,7 @@
     "href": "slides/week8-day2.html#common-mistakes",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about crabs not marshes\n\n\nQuestion 11 (Bootstrap Assumptions):\n\nDid not talk about the sample of marshes\nStated population was crabs"
+    "text": "Common Mistakes\n\nQuestion 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
   },
   {
     "objectID": "slides/week8-day2.html#first-steps",
@@ -4443,7 +4443,7 @@
     "href": "slides/week8-day2.html#section-4",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat can we do?\n\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
+    "text": "Independence of observations\n\n\n\nThe evals dataset contains 463 observations on 94 professors. Meaning, professors have multiple observations.\n\nWhat should we do?\n\n\n\n\nBest – use a random effects model\nReasonable – collapse the multiple scores into a single score"
   },
   {
     "objectID": "slides/week8-day2.html#section-5",
@@ -6509,7 +6509,7 @@
     "href": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Is our observed statistic likely to happen if the null was true?",
-    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 is approximately 0%."
+    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%."
   },
   {
     "objectID": "slides/week8-day2.html#model-conditions",
@@ -6537,7 +6537,7 @@
     "href": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What if we can’t fix a condition being violated?",
-    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
+    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L, I, and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
   },
   {
     "objectID": "slides/week8-day2.html#mathematical-theory-based-methods",

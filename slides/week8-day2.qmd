@@ -30,17 +30,18 @@ obs_slope <- evals %>%
 
 ## Common Mistakes
 
-**Question 8** (Interpret Confidence Interval):
+</br>
 
--   Did not include population in interpretation
--   Stated interval was about crabs not marshes
+**Question 6** (Bootstrap Distribution):
+
+-   Did not use an informative axis label
 
 </br>
 
-**Question 11** (Bootstrap Assumptions):
+**Question 8** (Interpret Confidence Interval):
 
--   Did not talk about the sample of marshes
--   Stated population was crabs
+-   Did not include population in interpretation
+-   Stated interval was about "all marshes" (no geographical information)
 
 # Statistical Critique 2
 
@@ -322,7 +323,7 @@ Why???
 
 . . .
 
-The probability of observing a statistic as or more extreme than 0.0666 is approximately 0%.
+The probability of observing a statistic as or more extreme than 0.0666 if $H_0$ was true is approximately 0%.
 
 # What conclusion would you reach about the relationship between professors' evaluation scores and their attractiveness?
 
@@ -396,7 +397,7 @@ and_vertebrates %>%
 
 . . .
 
-**What should we do?**
+***What should we do?***
 
 ## 
 
@@ -433,7 +434,7 @@ The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, 
 
 </br>
 
-*What can we do?*
+***What should we do?***
 :::
 
 ::: {.column width="5%"}
@@ -472,7 +473,7 @@ ggplot(data = hbr_maples,
 
 . . .
 
-**What should we do?**
+***What should we do?***
 
 ## 
 
@@ -517,7 +518,7 @@ get_regression_points(curved_lm) %>%
 
 . . .
 
-**What should we do?**
+***What should we do?***
 
 ## 
 
@@ -547,7 +548,7 @@ broom::augment(not_curved_lm) %>%
 
 ::: columns
 ::: {.column width="45%"}
-For the **L** and **E** conditions...
+For the **L**, **I**, and **E** conditions...
 
 we need to ask for help!
 :::
