@@ -6509,14 +6509,14 @@
     "href": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Is our observed statistic likely to happen if the null was true?",
-    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%."
+    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%.\n\n\n\nSo, it seems like \\(H_0\\) is not a reasonable characterization of the relationship."
   },
   {
     "objectID": "slides/week8-day2.html#model-conditions",
     "href": "slides/week8-day2.html#model-conditions",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Model Conditions",
-    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndepdent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndependent observations\n\nNormality of residuals\n\nEqual variance of residuals"
   },
   {
     "objectID": "slides/week8-day2.html#condition-violations",

@@ -298,7 +298,8 @@ null_dist <- evals %>%
 
 visualise(null_dist) +
   labs(x = "Slope Statistic", 
-       title = "")
+       title = "") +
+  scale_x_continuous(breaks = seq(-0.08, 0.08, by = 0.01))
 ```
 
 ## Where does our observed statistic fall on this distribution?
@@ -323,7 +324,15 @@ Why???
 
 . . .
 
+</br> 
+
 The probability of observing a statistic as or more extreme than 0.0666 if $H_0$ was true is approximately 0%.
+
+. . .
+
+</br> 
+
+So, it seems like $H_0$ is not a reasonable characterization of the relationship. 
 
 # What conclusion would you reach about the relationship between professors' evaluation scores and their attractiveness?
 
@@ -352,7 +361,7 @@ For linear regression we are assuming...
 
 </br>
 
-**I**ndepdent observations
+**I**ndependent observations
 
 </br>
 
