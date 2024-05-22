@@ -16,7 +16,9 @@ library(palmerpenguins)
 my_theme <- theme(axis.title.x = element_text(size = 18), 
                   axis.title.y = element_text(size = 18), 
                   axis.text.x = element_text(size = 12), 
-                  axis.text.y = element_text(size = 12))
+                  axis.text.y = element_text(size = 12), 
+                  legend.text = element_text(size = 12), 
+                  legend.title = element_text(size = 18))
 
 obs_slope <- evals %>% 
   specify(response = score, 
@@ -219,17 +221,17 @@ Will we reject $H_0$?
 
 # How will we decide?
 
-:::{.midi}
+::: midi
 by generating statistics that could have happened if $H_0$ was true and comparing our observed statistic to these statistics to see how unusual it is
 :::
 
 ## If $H_0$ was true then...
 
-</br> 
+</br>
 
-$\beta_1$ = 0 
+$\beta_1$ = 0
 
-</br> 
+</br>
 
 which means...
 
@@ -261,7 +263,7 @@ evals_shuffle %>%
 :::
 
 ::: {.column width="55%"}
-:::{.fragment}
+::: fragment
 Which results in a slope statistic of...
 
 ```{r}
@@ -270,7 +272,6 @@ lm(score ~ bty_avg, data = evals_shuffle) %>%
   filter(term == "bty_avg") %>% 
   pull(estimate)
 ```
-
 :::
 :::
 :::
@@ -315,25 +316,25 @@ visualise(null_dist) +
 
 . . .
 
-If it is unlikely to happen, then we should reject $H_0$! 
+If it is unlikely to happen, then we should reject $H_0$!
 
 Why???
 
 . . .
 
-The probability of observing a statistic as or more extreme than 0.0666 is approximately 0%. 
+The probability of observing a statistic as or more extreme than 0.0666 is approximately 0%.
 
 # What conclusion would you reach about the relationship between professors' evaluation scores and their attractiveness?
 
-# The conclusion we reached depends on our p-value being reliable. 
+# The conclusion we reached depends on our p-value being reliable.
 
-# The conclusion we reached depends on our p-value being reliable. 
+# The conclusion we reached depends on our p-value being reliable.
 
 How can we know if our p-value is reliable?
 
 ## Model Conditions
 
-For our p-value to be trustworthy, we need to know that the conditions of our model are not violated. 
+For our p-value to be trustworthy, we need to know that the conditions of our model are not violated.
 
 . . .
 
@@ -388,7 +389,8 @@ and_vertebrates %>%
                        color = species)) +
   geom_point() + 
   labs(x = "Length (mm)", 
-       y = "Weight (g)") +
+       y = "Weight (g)", 
+       color = "Species") +
   my_theme
 ```
 
@@ -449,52 +451,6 @@ The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-**N**ormality of residuals
-:::
-
-```{r non-normal}
-
-fish <- and_vertebrates %>%
-  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander")) 
-
-curved_lm <- lm(weight_g ~ length_1_mm, data = fish)
-
-get_regression_points(curved_lm) %>% 
-  ggplot(mapping = aes(x = residual)) + 
-  geom_histogram() + 
-  labs(x = "Residual") +
-  my_theme
-```
-
-. . .
-
-**What should we do?**
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Variable transformation!
-:::
-
-```{r normal}
-
-fish <- and_vertebrates %>%
-  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander"))
-
-not_curved_lm <- lm(log(weight_g) ~ log(length_1_mm), data = fish)
-
-broom::augment(not_curved_lm) %>% 
-  mutate(.resid = `log(weight_g)` - `.fitted`) %>% 
-  ggplot(mapping = aes(x = .resid)) + 
-  geom_histogram(binwidth = 0.1) + 
-  labs(x = "Residual") +
-  xlim(c(-0.5, 0.5)) +
-  my_theme
-```
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
 **E**qual variance of residuals
 :::
 
@@ -539,67 +495,87 @@ ggplot(data = hbr_maples,
   my_theme
 ```
 
+## 
 
-##
+::: {style="font-size: 2em; color: #000000;"}
+**N**ormality of residuals
+:::
+
+```{r non-normal}
+
+fish <- and_vertebrates %>%
+  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander")) 
+
+curved_lm <- lm(weight_g ~ length_1_mm, data = fish)
+
+get_regression_points(curved_lm) %>% 
+  ggplot(mapping = aes(x = residual)) + 
+  geom_histogram() + 
+  labs(x = "Residual") +
+  my_theme
+```
+
+. . .
+
+**What should we do?**
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Approximating the permutation distribution
+Variable transformation!
 :::
 
+```{r normal}
+
+fish <- and_vertebrates %>%
+  filter(!species %in% c("Cascade torrent salamander", "Coastal giant salamander"))
+
+not_curved_lm <- lm(log(weight_g) ~ log(length_1_mm), data = fish)
+
+broom::augment(not_curved_lm) %>% 
+  mutate(.resid = `log(weight_g)` - `.fitted`) %>% 
+  ggplot(mapping = aes(x = .resid)) + 
+  geom_histogram(binwidth = 0.1) + 
+  labs(x = "Residual") +
+  xlim(c(-0.5, 0.5)) +
+  my_theme
+```
+
+## What if we can't fix a condition being violated?
+
+. . .
+
 ::: columns
-::: {.column width="40%"}
-A $t$-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated.
+::: {.column width="45%"}
+For the **L** and **E** conditions...
+
+we need to ask for help!
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
-```{r t-distribution}
-plot(c(-5, 5),
-     c(0, dnorm(0)),
-      type = "n", 
-     ylab = "", 
-     xlab = "",
-     axes = FALSE
-     )
+::: {.column width="45%"}
+:::{.fragment}
+For the **N** condition...
 
-at <- seq(-10, 10, 2)
-axis(1, at)
-axis(1, at - 1, rep("", length(at)), tcl = -0.1)
-abline(h = 0)
-COL. <- openintro::fadeColor(openintro::IMSCOL["blue", "full"], c("FF", "89", "68", "4C", "33"))
-COLt <- openintro::fadeColor(openintro::IMSCOL["blue", "full"], c("FF", "AA", "85", "60", "45"))
-DF <- c("normal", 8, 4, 2, 1)
-X <- seq(-10, 10, 0.02)
-Y <- dnorm(X)
-lines(X, Y, col = COL.[1])
-for (i in 2:5) {
-  Y <- dt(X, as.numeric(DF[i]))
-  lines(X, Y, col = COL.[i], lwd = 1.5)
-}
-legend(2.5, 0.4,
-  legend = c(
-    DF[1],
-    paste("t, df = ", DF[2:5], sep = "")
-  ),
-  col = COL.,
-  text.col = COLt,
-  lty = rep(1, 5),
-  lwd = 1.5
-)
-
-```
+we need to use simulation instead of mathematical formulas to get our p-value and confidence interval. 
+:::
 :::
 :::
 
-## 
+# Simulation-Based Methods versus Theory-Based Methods
 
-::: {style="font-size: 2em; color: #000000;"}
-What about the observed statistic?
+## Mathematical / Theory-based Methods
+
+:::{.incremental}
+- Are a "simpler" approach
+- Use formulas instead of simulation to obtain standard error
+- Use $t$-distribution to get p-value and confidence interval
+- Require that the residuals are normally distributed
 :::
+
+## How does this look? 
 
 ::: panel-tabset
 ## Before
@@ -607,6 +583,7 @@ What about the observed statistic?
 ```{r}
 #| echo: true
 #| label: obs-slope-code
+#| code-line-numbers: false
 
 obs_slope <- evals %>% 
   specify(response = score, 
@@ -621,19 +598,21 @@ pull(obs_slope)
 
 ## Now
 
+:::{.smaller}
 ```{r}
 #| echo: true
-#| eval: false
 #| label: obs-t-code
+#| code-line-numbers: false
 
-evals_lm <- lm(score ~ bty_avg,
-               data = evals)
+evals_lm <- lm(score ~ bty_avg, data = evals)
 
 get_regression_table(evals_lm)
 ```
+:::
 
 ```{r}
 #| label: obs-t
+#| include: false
 
 evals_lm <- lm(score ~ bty_avg,
                data = evals)
@@ -690,16 +669,11 @@ $t = \frac{b_1}{SE_{b_1}} = \frac{`r slope_stat`}{`r se`} = `r slope_stat / se`$
 ## Proof!
 
 ```{r}
-get_regression_table(evals_lm) %>% 
-  gt::gt()
+get_regression_table(evals_lm) 
 ```
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-How does R calculate the p-value?
-:::
+## How does R calculate the p-value?
 
 . . .
 
@@ -713,43 +687,87 @@ ggplot(data = tibble(x = c(-5, 5)),
                 args = list(df = nrow(evals) - 2), 
                 color = "blue", 
                 linewidth = 1.5) +
-  ylab("") +
+  labs(y = "", 
+       x = "t-statistic") +
   scale_y_continuous(breaks = NULL) +
-  geom_vline(xintercept = pull(t_stat), color = "red", linewidth = 1.5)
+  geom_vline(xintercept = pull(t_stat), color = "red", linewidth = 1.5) +
+  my_theme
 
 ```
 
-## 
-
-::: {style="font-size: 3.5em; color: #34605f;"}
-Did we get similar results between these methods?
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Why not always use theoretical methods?
-:::
-
 . . .
 
+:::{.callout-note}
+# Different $t$-distributions
+
+A $t$-distribution has a *slightly* different shape depending on the sample size. Technically, we are using a $t$-distribution with $n - 2$ degrees of freedom to get our p-value. 
+:::
+
+# Did we get similar results between these methods?
+
+# Did we get similar results between these methods?
+
+Why do you think that is?
+
+## Approximating the permutation distribution
+
 ::: columns
-::: {.column width="45%"}
-Theory-based methods only hold if the sampling distribution is normally shaped.
+::: {.column width="40%"}
+A $t$-distribution can be a reasonable approximation for the permutation distribution [if the normality condition is not violated]{.underline}.
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-::: fragment
-The normality of a sampling distribution depends **heavily** on model conditions.
+::: {.column width="55%"}
+```{r t-distribution}
+plot(c(-5, 5),
+     c(0, dnorm(0)),
+      type = "n", 
+     ylab = "", 
+     xlab = "",
+     axes = FALSE
+     )
+
+at <- seq(-10, 10, 2)
+axis(1, at)
+axis(1, at - 1, rep("", length(at)), tcl = -0.1)
+abline(h = 0)
+COL. <- openintro::fadeColor(openintro::IMSCOL["blue", "full"], c("FF", "89", "68", "4C", "33"))
+COLt <- openintro::fadeColor(openintro::IMSCOL["blue", "full"], c("FF", "AA", "85", "60", "45"))
+DF <- c("normal", 8, 4, 2, 1)
+X <- seq(-10, 10, 0.02)
+Y <- dnorm(X)
+lines(X, Y, col = COL.[1])
+
+for (i in 2:5) {
+  Y <- dt(X, as.numeric(DF[i]))
+  lines(X, Y, col = COL.[i], lwd = 1.5)
+}
+legend(2.5, 0.4,
+  legend = c(
+    DF[1],
+    paste("t, df = ", DF[2:5], sep = "")
+  ),
+  col = COL.,
+  text.col = COLt,
+  lty = rep(1, 5),
+  lwd = 1.5
+)
+
+```
 :::
 :::
-:::
 
 
+## ![](images/gapminder.png)
 
-# Lab 8
+> What is the relationship between life expectancy GDP per capita?
 
-<!-- Overview of what they are exploring -->
+. . .
+
+- Decide on a variable transformation
+- Assess model conditions (L, I, N, E)
+- Compare hypothesis test results between simulation-based methods and theory-based methods
+
+

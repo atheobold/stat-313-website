@@ -874,43 +874,43 @@
     "objectID": "slides/week7-day2.html#course-updates",
     "href": "slides/week7-day2.html#course-updates",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
-    "section": "Course Updates",
-    "text": "Course Updates\n\nLab 4 revisions are due tonight (May 15)\nMidterm Projects will be graded by Sunday (May 19)\nLab 6 revisions will be due next Wednesday (May 22)\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
+    "section": "",
+    "text": "Lab 4 revisions are due tonight (May 15)\nMidterm Projects will be graded by Sunday (May 19)\nLab 6 revisions will be due next Wednesday (May 22)\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
   },
   {
     "objectID": "slides/week7-day2.html#section",
     "href": "slides/week7-day2.html#section",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Approximate the variability you’d expect to see in other samples!\n\n\n\n\nBootstrapping!"
+    "text": "Approximate the variability you’d expect to see in other samples!\n\n. . .\n\n\nBootstrapping!"
   },
   {
     "objectID": "slides/week7-day2.html#section-1",
     "href": "slides/week7-day2.html#section-1",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "A Bootstrap Resample\n\n\n\nAssumes the original sample is “representative” of observations in the population.\n\n\n\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n\n\n\nWe can use the statistics from these bootstrap resamples to approximate the true sampling distribution!"
+    "text": "A Bootstrap Resample\n\n. . .\n\nAssumes the original sample is “representative” of observations in the population.\n\n. . .\n\nUses the original sample to generate new samples that might have occurred with additional sampling.\n\n\n. . .\n\nWe can use the statistics from these bootstrap resamples to approximate the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#section-2",
     "href": "slides/week7-day2.html#section-2",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Estimating a population parameter\n\n\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n\n\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n\n\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
+    "text": "Estimating a population parameter\n\n. . .\n\nWe are interested in knowing how a statistic varies from sample to sample.\n\n. . .\n\nKnowing a statistic’s behavior helps us make better / more informed decisions!\n\n. . .\n\nThis helps us estimate what values are more or less likely for the population parameter to have."
   },
   {
     "objectID": "slides/week7-day2.html#section-3",
     "href": "slides/week7-day2.html#section-3",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do I get this plausible range of values?\n\n\n\n\nBootstrapping!\n\n\n\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n\n\n\n\nThis is your bootstrap resample.\n\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n\n\n\n\nThese are your bootstrap statistics"
+    "text": "How do I get this plausible range of values?\n\n. . .\n\n\nBootstrapping!\n\n. . .\n\n\nFrom your original sample, resample with replacement the same number of times as your original sample.\n\n\n. . .\n\n\nThis is your bootstrap resample.\n\n\n. . .\n\n\nRepeat this process many, many times.\n\n\n. . .\n\n\nCalculate a numerical summary (e.g., mean, median) for each bootstrap resample.\n\n\n. . .\n\n\nThese are your bootstrap statistics"
   },
   {
     "objectID": "slides/week7-day2.html#section-4",
     "href": "slides/week7-day2.html#section-4",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Bootstrap Distribution\n\n\n\na distribution of the bootstrap statistics from every bootstrap resample\n\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n\n\n\nApproximates the true sampling distribution!"
+    "text": "Bootstrap Distribution\n\n. . .\n\na distribution of the bootstrap statistics from every bootstrap resample\n\n. . .\n\nDisplays the variability in the statistic that could have happened with repeated sampling.\n. . .\n\nApproximates the true sampling distribution!"
   },
   {
     "objectID": "slides/week7-day2.html#statistic-beta_1",
@@ -924,14 +924,14 @@
     "href": "slides/week7-day2.html#in-this-sample-of-344-penguins",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "In this sample of 344 penguins…",
-    "text": "In this sample of 344 penguins…\n\\[\\widehat{\\text{bill length}} = 26.899 + 0.004 \\times \\text{body mass}\\]\n\n\n\nWhat slope could have happened in a different sample of penguins?"
+    "text": "In this sample of 344 penguins…\n\\[\\widehat{\\text{bill length}} = 26.899 + 0.004 \\times \\text{body mass}\\]\n. . .\n\n\nWhat slope could have happened in a different sample of penguins?"
   },
   {
     "objectID": "slides/week7-day2.html#section-5",
     "href": "slides/week7-day2.html#section-5",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Generating bootstrap resamples and calculating bootstrap statistics\n\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: generate() bootstrap resamples\n\n\nStep 3: calculate() the statistic of interest"
+    "text": "Generating bootstrap resamples and calculating bootstrap statistics\n\n. . .\n\nStep 1: specify() your response and explanatory variables\n. . .\nStep 2: generate() bootstrap resamples\n. . .\nStep 3: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-6",
@@ -945,21 +945,21 @@
     "href": "slides/week7-day2.html#section-7",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Step 2: Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n\nreps – the number of resamples you want to generate\n\n\"bootstrap\" – the method that should be used to generate the new samples"
+    "text": "Step 2: Generate your resamples!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 500, type = \"bootstrap\")\n\n\n. . .\nreps – the number of resamples you want to generate\n\n\"bootstrap\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week7-day2.html#section-8",
     "href": "slides/week7-day2.html#section-8",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Your turn!\n\n\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about the original sample?"
+    "text": "Your turn!\n\n. . .\n\nWhy do we resample with replacement when creating a bootstrap distribution?\n\nWhen we resample with replacement from our original sample what are we assuming about the original sample?"
   },
   {
     "objectID": "slides/week7-day2.html#section-9",
     "href": "slides/week7-day2.html#section-9",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Step 3: Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 1000, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n\"slope\" – the statistic of interest"
+    "text": "Step 3: Calculate your statistics!\n\n\npenguins %&gt;% \n  specify(response = bill_length_mm, \n          explanatory = body_mass_g) %&gt;% \n  generate(reps = 1000, \n           type = \"bootstrap\") %&gt;% \n  calculate(stat = \"slope\")\n\n\n. . .\n\"slope\" – the statistic of interest"
   },
   {
     "objectID": "slides/week7-day2.html#section-10",
@@ -980,21 +980,21 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00349\n0.00456\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00349\n0.00456\n\n\n\n\n\n\n\n. . .\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
     "href": "slides/week7-day2.html#section-13",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "How do we interpret this interval?\n\n\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n\n\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm."
+    "text": "How do we interpret this interval?\n\n. . .\n\n\n“We are 95% confident the slope of the relationship between bill length and body mass for all penguins in the Palmer Archipelago is between 0.00355 and 0.00453\n\n\n. . .\n\n\n\n“For every 1 gram increase in a penguin’s body mass, we are 95% confident the length of the penguin’s bill will increase between 0.00355 and 0.00453mm."
   },
   {
     "objectID": "slides/week7-day2.html#section-14",
     "href": "slides/week7-day2.html#section-14",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "Classic interpretation mistakes\n\n\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n\n\n\n“We are 95% confident the sample statistic is in our interval.”"
+    "text": "Classic interpretation mistakes\n\n. . .\n\n\n“95% of the time the population parameter would fall between 0.00355 and 0.00453.”\n\n\n. . .\n\n“We are 95% confident the sample statistic is in our interval.”"
   },
   {
     "objectID": "slides/week7-day2.html#how-does-the-relationship-between-bill-length-and-body-mass-change-based-on-a-penguins-sex",
@@ -1008,14 +1008,14 @@
     "href": "slides/week7-day2.html#what-changes",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "What changes?",
-    "text": "What changes?\nThe original sample of 344 penguins were broken down into the following groups (plus 11 NA values):\n\n\n\n\n\nSex\nSample Size\n\n\n\n\nfemale\n165\n\n\nmale\n168\n\n\n\n\n\n\n\n\nBefore we resampled with replacement 344 times.\n\nIf we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?"
+    "text": "What changes?\nThe original sample of 344 penguins were broken down into the following groups (plus 11 NA values):\n\n\n\n\n\nSex\nSample Size\n\n\n\n\nfemale\n165\n\n\nmale\n168\n\n\n\n\n\n\n\n. . .\nBefore we resampled with replacement 344 times.\n\nIf we resample with replacement 333 times, are we guaranteed to get 165 female penguins and 168 male penguins in each sample?"
   },
   {
     "objectID": "slides/week7-day2.html#getting-our-observed-statistic",
     "href": "slides/week7-day2.html#getting-our-observed-statistic",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Getting our Observed Statistic",
-    "text": "Getting our Observed Statistic\nStep 1: Fitting our Model\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g * sex) %&gt;%\n  fit()\n\n\n\n\n\n\n\n\nSyntax changes\n\n\nWhen we have multiple explanatory variables, we need to use the “tilde” (~) syntax to specify our model. We also use the fit() function instead of the calculate() function."
+    "text": "Getting our Observed Statistic\nStep 1: Fitting our Model\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g * sex) %&gt;%\n  fit()\n\n\n\n\n\n\n\n\nSyntax changes\n\n\n\nWhen we have multiple explanatory variables, we need to use the “tilde” (~) syntax to specify our model. We also use the fit() function instead of the calculate() function."
   },
   {
     "objectID": "slides/week7-day2.html#getting-our-observed-statistic-1",
@@ -1043,14 +1043,14 @@
     "href": "slides/week7-day2.html#how-do-we-interpret-this-interval",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "How do we interpret this interval?",
-    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0020159\n-0.0000684\n\n\n\n\n\n\n\n\n\nWe are 90% confident that the for every 10,000 gram increase in a penguin’s body mass (~25lbs), the length of a male penguin’s bill is between 0.68 and 20.2mm shorter than a female penguin’s bill."
+    "text": "How do we interpret this interval?\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n-0.0020159\n-0.0000684\n\n\n\n\n\n\n\n. . .\n\nWe are 90% confident that the for every 10,000 gram increase in a penguin’s body mass (~25lbs), the length of a male penguin’s bill is between 0.68 and 20.2mm shorter than a female penguin’s bill."
   },
   {
     "objectID": "slides/week7-day2.html#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length",
     "href": "slides/week7-day2.html#how-do-body-mass-and-flipper-length-influence-a-penguins-bill-length",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "How do body mass and flipper length influence a penguin’s bill length?",
-    "text": "How do body mass and flipper length influence a penguin’s bill length?\n\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  fit()\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
+    "text": "How do body mass and flipper length influence a penguin’s bill length?\n. . .\n\n\nobserved_fit &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  fit()\n\nbootstrap_fits &lt;- penguins %&gt;%\n  specify(bill_length_mm ~ body_mass_g + flipper_length_mm) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  fit()"
   },
   {
     "objectID": "slides/week7-day2.html#visualizing-bootstrap-distributions",
@@ -1064,14 +1064,14 @@
     "href": "slides/week7-day2.html#obtaining-and-interpreting-confidence-intervals",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Obtaining and Interpreting Confidence Intervals",
-    "text": "Obtaining and Interpreting Confidence Intervals\n\n\n\n\n\nterm\nLower Bound\nUpper Bound\n\n\n\n\nbody_mass_g\n-0.0002028\n0.0015676\n\n\nflipper_length_mm\n0.1728445\n0.2663523\n\n\nintercept\n-9.4472566\n3.5454740\n\n\n\n\n\n\n\n\nHow would you interpret the confidence interval for flipper_length_mm? For body_mass_g?"
+    "text": "Obtaining and Interpreting Confidence Intervals\n\n\n\n\n\nterm\nLower Bound\nUpper Bound\n\n\n\n\nbody_mass_g\n-0.0002028\n0.0015676\n\n\nflipper_length_mm\n0.1728445\n0.2663523\n\n\nintercept\n-9.4472566\n3.5454740\n\n\n\n\n\n\n\n. . .\nHow would you interpret the confidence interval for flipper_length_mm? For body_mass_g?"
   },
   {
     "objectID": "slides/week7-day2.html#holding-the-other-variables-constant",
     "href": "slides/week7-day2.html#holding-the-other-variables-constant",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Holding the Other Variable(s) Constant",
-    "text": "Holding the Other Variable(s) Constant\n\nHolding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin’s bill length.\n\n\n\nHolding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin’s bill length."
+    "text": "Holding the Other Variable(s) Constant\n\nHolding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin’s bill length.\n\n. . .\n\nHolding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin’s bill length."
   },
   {
     "objectID": "slides/week1-day1.html#section",
@@ -1833,15 +1833,15 @@
     "objectID": "slides/week8-day1.html#weeks-8-9-10",
     "href": "slides/week8-day1.html#weeks-8-9-10",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "Weeks 8, 9, & 10",
-    "text": "Weeks 8, 9, & 10\n\n\n\nWeek 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
+    "section": "",
+    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project"
   },
   {
     "objectID": "slides/week8-day1.html#upcoming-deadlines",
     "href": "slides/week8-day1.html#upcoming-deadlines",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "Upcoming Deadlines",
-    "text": "Upcoming Deadlines\n\nLab 6 revisions are due on Wednesday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions."
+    "section": "",
+    "text": "Lab 6 revisions are due on Wednesday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions."
   },
   {
     "objectID": "slides/week8-day1.html#section",
@@ -1855,28 +1855,28 @@
     "href": "slides/week8-day1.html#section-1",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What if I want to know if the population parameter differs from a specific value?\n\n\n\n\nHypothesis test!"
+    "text": "What if I want to know if the population parameter differs from a specific value?\n\n. . .\n\n\nHypothesis test!"
   },
   {
     "objectID": "slides/week8-day1.html#section-2",
     "href": "slides/week8-day1.html#section-2",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "Hypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true"
+    "text": "Hypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n. . .\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true"
   },
   {
     "objectID": "slides/week8-day1.html#how-can-we-approximate-what-could-have-happened-if-the-null-was-true",
     "href": "slides/week8-day1.html#how-can-we-approximate-what-could-have-happened-if-the-null-was-true",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "How can we approximate what could have happened if the null was true?",
-    "text": "How can we approximate what could have happened if the null was true?\n\n\nPermutation!"
+    "section": "",
+    "text": ". . .\n\nPermutation!"
   },
   {
     "objectID": "slides/week8-day1.html#a-permutation-resample",
     "href": "slides/week8-day1.html#a-permutation-resample",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "A Permutation Resample",
-    "text": "A Permutation Resample\n\n\nAssumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
+    "section": "",
+    "text": "Assumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n. . .\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#testing-a-population-parameter",
@@ -1890,21 +1890,21 @@
     "href": "slides/week8-day1.html#how-do-i-get-a-p-value",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "How do I get a p-value?",
-    "text": "How do I get a p-value?\n\n\n\nPermuting!\n\n\n\n\n\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n\n\n\n\n\n\nThis is your permuted resample.\n\n\n\n\n\n\nRepeat this process many, many times.\n\n\n\n\n\n\nCalculate a numerical summary (e.g., slope) for each permutation resample.\n\n\n\n\n\n\nThese are your permuted statistics."
+    "text": "How do I get a p-value?\n. . .\n\n\nPermuting!\n\n. . .\n\n\nFrom your original sample, separate the \\(x\\) values from the \\(y\\) values.\nCreate new ordered pairs by randomly pairing \\(x\\) values with \\(y\\) values (permuting the labels).\n\n\n. . .\n\n\nThis is your permuted resample.\n\n\n. . .\n\n\nRepeat this process many, many times.\n\n\n. . .\n\n\nCalculate a numerical summary (e.g., slope) for each permutation resample.\n\n\n. . .\n\n\nThese are your permuted statistics."
   },
   {
     "objectID": "slides/week8-day1.html#permutation-distribution",
     "href": "slides/week8-day1.html#permutation-distribution",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Permutation Distribution",
-    "text": "Permutation Distribution\n\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n\n\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n\n\n\nApproximates the true sampling distribution under the null!"
+    "text": "Permutation Distribution\n. . .\n\ndefinition: a distribution of the permuted statistics from every permuted resample\n\n. . .\nDisplays the variability in the statistic that could have happened with repeated sampling, if the null hypothesis was true.\n. . .\n\nApproximates the true sampling distribution under the null!"
   },
   {
     "objectID": "slides/week8-day1.html#section-3",
     "href": "slides/week8-day1.html#section-3",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "How do I get my p-value?\n\n\nCompare the observed statistic with the statistics produced assuming the null hypothesis was true.\n\n\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
+    "text": "How do I get my p-value?\n\n. . .\nCompare the observed statistic with the statistics produced assuming the null hypothesis was true.\n. . .\n\n\nA p-value summarizes the probability of obtaining a sample statistic as or more extreme than what we observed, if the null hypothesis was true."
   },
   {
     "objectID": "slides/week8-day1.html#section-4",
@@ -1925,21 +1925,21 @@
     "href": "slides/week8-day1.html#section-5",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "",
-    "text": "What condition do we need to be worried about?"
+    "text": ". . .\n\nWhat condition do we need to be worried about?"
   },
   {
     "objectID": "slides/week8-day1.html#in-this-sample-of-359-sugar-maples",
     "href": "slides/week8-day1.html#in-this-sample-of-359-sugar-maples",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "In this sample of 359 sugar maples…",
-    "text": "In this sample of 359 sugar maples…\n\\[\\widehat{\\text{stem dry mass}} = -0.043 + 0.001 \\times \\text{stem length}\\]\n\n\n\nWhat slope could have happened if there was no relationship between stem length and stem dry mass?"
+    "text": "In this sample of 359 sugar maples…\n\\[\\widehat{\\text{stem dry mass}} = -0.043 + 0.001 \\times \\text{stem length}\\]\n. . .\n\n\nWhat slope could have happened if there was no relationship between stem length and stem dry mass?"
   },
   {
     "objectID": "slides/week8-day1.html#generating-a-permuted-resample-and-calculating-permuted-statistics",
     "href": "slides/week8-day1.html#generating-a-permuted-resample-and-calculating-permuted-statistics",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Generating a permuted resample and calculating permuted statistics",
-    "text": "Generating a permuted resample and calculating permuted statistics\n\n\nStep 1: specify() your response and explanatory variables\n\n\nStep 2: hypothesize() what would happen under the null\n\n\nStep 3: generate() permuted resamples\n\n\nStep 4: calculate() the statistic of interest"
+    "text": "Generating a permuted resample and calculating permuted statistics\n\n. . .\nStep 1: specify() your response and explanatory variables\n. . .\nStep 2: hypothesize() what would happen under the null\n. . .\nStep 3: generate() permuted resamples\n. . .\nStep 4: calculate() the statistic of interest"
   },
   {
     "objectID": "slides/week8-day1.html#step-1-specify-your-variables",
@@ -1953,14 +1953,14 @@
     "href": "slides/week8-day1.html#step-2-state-your-hypothesis",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Step 2: State your hypothesis!",
-    "text": "Step 2: State your hypothesis!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n\n\n\n\n\n\n\nIndependence of variables\n\n\nNote! This is different from assuming your observations are independent!"
+    "text": "Step 2: State your hypothesis!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\")\n\n\n\"independence\" – the assumed relationship between the explanatory and response variables under the null hypothesis\n. . .\n\n\n\n\n\n\nIndependence of variables\n\n\n\nNote! This is different from assuming your observations are independent!"
   },
   {
     "objectID": "slides/week8-day1.html#step-3-generate-your-resamples",
     "href": "slides/week8-day1.html#step-3-generate-your-resamples",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Step 3: Generate your resamples!",
-    "text": "Step 3: Generate your resamples!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
+    "text": "Step 3: Generate your resamples!\n\nhbr_maples %&gt;% \n  specify(response = stem_dry_mass,\n          explanatory = stem_length) %&gt;% \n  hypothesize(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\")\n\n. . .\n\n\n\nreps – the number of resamples you want to generate\n\n\n\n\"permute\" – the method that should be used to generate the new samples"
   },
   {
     "objectID": "slides/week8-day1.html#dont-worry",
@@ -2002,28 +2002,28 @@
     "href": "slides/week8-day1.html#the-p-value-is",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "The p-value is…",
-    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n\n\n\nWhy did we get a warning?"
+    "text": "The p-value is…\n\nget_p_value(null_dist, \n            obs_stat = obs_slope, \n            direction = \"two-sided\") \n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0\n\n\n. . .\n\n\nWhy did we get a warning?"
   },
   {
     "objectID": "slides/week8-day1.html#how-do-we-interpret-a-p-value",
     "href": "slides/week8-day1.html#how-do-we-interpret-a-p-value",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "How do we interpret a p-value?",
-    "text": "How do we interpret a p-value?\n\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n\n\n\nThe probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
+    "text": "How do we interpret a p-value?\n. . .\nNeed:\n\nprobability of what we saw in the data\nassuming the null hypothesis is true\n\n. . .\n\nThe probability of observing a slope statistic (for the relationship between stem length and stem dry mass) as or more extreme than what was observed is less than 1 in 1000, if there was no relationship between a sugar maple’s stem length and stem dry mass."
   },
   {
     "objectID": "slides/week8-day1.html#classic-interpretation-mistakes",
     "href": "slides/week8-day1.html#classic-interpretation-mistakes",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Classic interpretation mistakes",
-    "text": "Classic interpretation mistakes\n\n\n“The probability that the null hypothesis is true is about 0%.”\n\n\n\nYou assume the null is true when you calculate a p-value!"
+    "text": "Classic interpretation mistakes\n\n\n“The probability that the null hypothesis is true is about 0%.”\n\n. . .\n\nYou assume the null is true when you calculate a p-value!"
   },
   {
     "objectID": "slides/week8-day1.html#midterm-projects-study-limitations",
     "href": "slides/week8-day1.html#midterm-projects-study-limitations",
     "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
     "section": "Midterm Projects – Study Limitations",
-    "text": "Midterm Projects – Study Limitations\n\nYou must justify why you believe you can infer onto a population larger than your sample!\n\n\nCausal statements do not come from random / representative samples!"
+    "text": "Midterm Projects – Study Limitations\n\nYou must justify why you believe you can infer onto a population larger than your sample!\n. . .\n\nCausal statements do not come from random / representative samples!"
   },
   {
     "objectID": "slides/week8-day1.html#midterm-project-grades",
@@ -3015,7 +3015,7 @@
     "href": "labs/lab-6.html#forward-selection",
     "title": "Lab 6: Predicting Professor Evaluation Scores",
     "section": "Forward Selection",
-    "text": "Forward Selection\nThe forward selection process starts with a model with no predictor variables. That means, this model predicts the same mean evaluation score for every professor. I’ve fit this model for you below!\n\none_mean &lt;- lm(score ~ 1, data = evals)\n\nYou can pull out the adjusted \\(R^2\\) for this model using the get_regression_summaries() function.\n\nget_regression_summaries(one_mean)\n\nBased on this output, we are starting with a really low adjusted \\(R^2\\). So, things can only get better from here! 🙃\n\nStep 1\nRules: You can only add a variable to the model if it improves the adjusted \\(R^2\\) by at least 2% (0.02).\nAlright, so now we get cooking. The next step is to fit every model with one explanatory variable. I’ve provided a list of every explanatory variable you are allowed to consider!\n\nrank – rank of professor\nethnicity – ethnicity of the professor\ngender – gender of the professor\nlanguage – language of school where professor received education\nage – age of the professor\ncls_perc_eval – the percentage of students who completed the evaluation\ncls_level – class level\ncls_profs – number of professors teaching sections in course: single, multiple\ncls_credits – credits of class: one credit (lab, PE, etc.), multi credit\nbty_avg – average beauty rating of the professor\npic_outfit – outfit of professor in picture\npic_color – color of professor’s picture\nlarge_class – whether the class had over 100 students\neval_completion – proportion of students who completed the evaluation\n\nWoof, that’s 14 different variables. That means, for this first round, you will need to compare the adjusted \\(R^2\\) for 12 different models to decide what variable should be added.\nEvery model you fit will have the same format:\nname_of_model &lt;- lm(score ~ &lt;variable&gt;, data = evals)\nBut, the name of the model will need to change. I’ve started the process for you, using the naming style of one_ followed by the variable name (e.g., one_id, one_bty, etc.).\n\none_rank &lt;- lm(score ~ rank, data = evals)\none_ethnicity &lt;- lm(score ~ ethnicity, data = evals)\none_gender &lt;- lm(score ~ gender, data = evals)\none_language &lt;- lm(score ~ language, data = evals)\none_age &lt;- lm(score ~ age, data = evals)\none_perc_eval &lt;- lm(score ~ cls_perc_eval, data = evals)\none_level &lt;- lm(score ~ cls_level, data = evals)\n\n## Now, you need to fit the other seven models! \n\nAlright, now that you’ve fit the models, you need to inspect the adjusted \\(R^2\\) values to see which of these 14 models is the “top” model – the model with the highest adjusted \\(R^2\\)! Similar to before, I’ve provided you with some code to get you started, but you need to write the remaining code.\n\nget_regression_summaries(one_rank)\nget_regression_summaries(one_ethnicity)\nget_regression_summaries(one_gender)\nget_regression_summaries(one_language)\nget_regression_summaries(one_age)\nget_regression_summaries(one_perc_eval)\nget_regression_summaries(one_level)\n\n## Now, you need to compare the other seven models! \n\n1. What model was your top model? Specifically, which variable was selected to be included?\n\n\nStep 2 - Adding a Second Variable\nAlright, you’ve added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: every model you fit needs to contain the variable you decided to add. So, if you decided to add the bty_avg variable, every model you fit would look like this:\nname_of_model &lt;- lm(score ~ bty_avg + &lt;variable&gt;, data = evals)\nAgain, the name of the model will need to change. This round, you are on your own – I’ve provided you with no code. Here are my recommendations:\n\nname each model two_ followed by the names of both variables included in the model (e.g., two_bty_id)\ngo through each variable step-by-step just like you did before\n\n\n## Code to fit all 13 models that add a second variable to your top model goes here!\n\nAlright, now you should have 13 more models to compare! Like before, you need to inspect the adjusted \\(R^2\\) values to see which of these 13 models is the “top” model.\nRules: You can only add a variable to the model if it improves adjusted \\(R^2\\) by at least 2% (0.02) from the model you chose in Question 1.\n\n## Code to compare all 13 models you fit goes here!\n\n2. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 3 - Adding a Third Variable\nAs you might have expected, in this step we add a third variable to our top model from the previous step. This process should be getting familiar at this point!\nThis process of fitting 12-14 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in one pipeline! This is how the code looks:\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score,\n         -&lt;VARIABLE 1 SELECTED&gt;,\n         -&lt;VARIABLE 2 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\nWoah, that’s a lot. The only thing you need to change is:\n\nadd in the names of the variables you selected in Steps 1 & 2 in the ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals) step\nadd in the names of the variables you selected in Steps 1 & 2 in the select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) step\n\nFor example, if you chose gender and age in Steps 1 and 2, your code on the first line would look like:\nmap(.f = ~lm(score ~ .x + gender + age, data = evals)) %&gt;% \nand your code on the fourth line would look like:\n  select(-score,\n         -gender,\n         -sex\n         ) %&gt;% \nYour turn!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 & 2\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 & 2\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;\n           ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 2 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!\n3. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 4 - Adding a Fourth Variable\nIf you decided to add a variable in Step 3, then you keep going! If you didn’t add a variable in Step 3, then you stop!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, & 3\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 & 3\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n4. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 5 - Adding a Fifth Variable\nIf you decided to add a variable in Step 4, then you keep going! If you didn’t add a variable in Step 4, then you stop!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;,\n         -&lt;VARIABLE 4 SELECTED&gt;\n          ) %&gt;%  \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 4 is the “best” model!\n5. What model was your top model? You must state which variables are included in the model you chose!"
+    "text": "Forward Selection\nThe forward selection process starts with a model with no predictor variables. That means, this model predicts the same mean evaluation score for every professor. I’ve fit this model for you below!\n\none_mean &lt;- lm(score ~ 1, data = evals)\n\nYou can pull out the adjusted \\(R^2\\) for this model using the get_regression_summaries() function.\n\nget_regression_summaries(one_mean)\n\nBased on this output, we are starting with a really low adjusted \\(R^2\\). So, things can only get better from here! 🙃\n\nStep 1\nRules: You can only add a variable to the model if it improves the adjusted \\(R^2\\) by at least 2% (0.02).\nAlright, so now we get cooking. The next step is to fit every model with one explanatory variable. I’ve provided a list of every explanatory variable you are allowed to consider!\n\nrank – rank of professor\nethnicity – ethnicity of the professor\ngender – gender of the professor\nlanguage – language of school where professor received education\nage – age of the professor\ncls_perc_eval – the percentage of students who completed the evaluation\ncls_level – class level\ncls_profs – number of professors teaching sections in course: single, multiple\ncls_credits – credits of class: one credit (lab, PE, etc.), multi credit\nbty_avg – average beauty rating of the professor\npic_outfit – outfit of professor in picture\npic_color – color of professor’s picture\nlarge_class – whether the class had over 100 students\neval_completion – proportion of students who completed the evaluation\n\nWoof, that’s 14 different variables. That means, for this first round, you will need to compare the adjusted \\(R^2\\) for 12 different models to decide what variable should be added.\nEvery model you fit will have the same format:\nname_of_model &lt;- lm(score ~ &lt;variable&gt;, data = evals)\nBut, the name of the model will need to change. I’ve started the process for you, using the naming style of one_ followed by the variable name (e.g., one_id, one_bty, etc.).\n\none_rank &lt;- lm(score ~ rank, data = evals)\none_ethnicity &lt;- lm(score ~ ethnicity, data = evals)\none_gender &lt;- lm(score ~ gender, data = evals)\none_language &lt;- lm(score ~ language, data = evals)\none_age &lt;- lm(score ~ age, data = evals)\none_perc_eval &lt;- lm(score ~ cls_perc_eval, data = evals)\none_level &lt;- lm(score ~ cls_level, data = evals)\n\n## Now, you need to fit the other seven models! \n\nAlright, now that you’ve fit the models, you need to inspect the adjusted \\(R^2\\) values to see which of these 14 models is the “top” model – the model with the highest adjusted \\(R^2\\)! Similar to before, I’ve provided you with some code to get you started, but you need to write the remaining code.\n\nget_regression_summaries(one_rank)\nget_regression_summaries(one_ethnicity)\nget_regression_summaries(one_gender)\nget_regression_summaries(one_language)\nget_regression_summaries(one_age)\nget_regression_summaries(one_perc_eval)\nget_regression_summaries(one_level)\n\n## Now, you need to compare the other seven models! \n\n1. What model was your top model? Specifically, which variable was selected to be included?\n\n\nStep 2 - Adding a Second Variable\nAlright, you’ve added one variable, the next step is to decide if you should add a second variable. This process looks nearly identical to the previous step, with one major change: every model you fit needs to contain the variable you decided to add. So, if you decided to add the bty_avg variable, every model you fit would look like this:\nname_of_model &lt;- lm(score ~ bty_avg + &lt;variable&gt;, data = evals)\nAgain, the name of the model will need to change. This round, you are on your own – I’ve provided you with no code. Here are my recommendations:\n\nname each model two_ followed by the names of both variables included in the model (e.g., two_bty_id)\ngo through each variable step-by-step just like you did before\n\n\n## Code to fit all 13 models that add a second variable to your top model goes here!\n\nAlright, now you should have 13 more models to compare! Like before, you need to inspect the adjusted \\(R^2\\) values to see which of these 13 models is the “top” model.\nRules: You can only add a variable to the model if it improves adjusted \\(R^2\\) by at least 2% (0.02) from the model you chose in Question 1.\n\n## Code to compare all 13 models you fit goes here!\n\n2. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 3 - Adding a Third Variable\nAs you might have expected, in this step we add a third variable to our top model from the previous step. This process should be getting familiar at this point!\nThis process of fitting 12-14 models at a time is getting rather tedious! So, I’ve written some code that will carry out this process for us in one pipeline! The only thing you need to change is:\n\nadd in the names of the variables you selected in Steps 1 & 2 in the ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals) step\nadd in the names of the variables you selected in Steps 1 & 2 in the select(-ID, -score, -&lt;VARIABLE 1 SELECTED&gt;, -&lt;VARIABLE 2 SELECTED&gt;) step\n\nFor example, if you chose gender and age in Steps 1 and 2, your code on the first line would look like map(.f = ~lm(score ~ .x + gender + age, data = evals)) %&gt;% and your code on the fourth line would look like select(-score, -gender, -age) %&gt;%.\nYour turn!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1 & 2\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1 & 2\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;\n           ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 2 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 2 is the “best” model!\n3. What model was your top model? State which variables are included in the model you chose!\n\n\nStep 4 - Adding a Fourth Variable\nIf you decided to add a variable in Step 3, then you keep going! If you didn’t add a variable in Step 3, then you stop!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, & 3\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2 & 3\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 3 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 3 is the “best” model!\n4. What model was your top model? You must state which variables are included in the model you chose!\n\n\nStep 5 - Adding a Fifth Variable\nIf you decided to add a variable in Step 4, then you keep going! If you didn’t add a variable in Step 4, then you stop!\n\n## Change the &lt;VARIABLES SELECTED&gt; in line 2 to the names of the variables you selected in Steps 1, 2, 3 & 4\n## Change the &lt;VARIABLE 1 SELECTED&gt; and &lt;VARIABLE 2 SELECTED&gt; in line 4 to the names of the variables you selected in Steps 1, 2, 3 & 4\n\nevals %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-score, \n         -&lt;VARIABLE 1 SELECTED&gt;, \n         -&lt;VARIABLE 2 SELECTED&gt;, \n         -&lt;VARIABLE 3 SELECTED&gt;,\n         -&lt;VARIABLE 4 SELECTED&gt;\n          ) %&gt;%  \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)\n\nThe output of this code is the variable that has the highest adjusted \\(R^2\\). Compare this value to the value of your “top” model from Step 4 and see if it improved adjusted \\(R^2\\) by at least 2% (0.02). If so, this variable should be added. If not, then your model from Step 4 is the “best” model!\n5. What model was your top model? You must state which variables are included in the model you chose!"
   },
   {
     "objectID": "labs/lab-6.html#comparing-with-the-step-function",
@@ -3169,7 +3169,7 @@
     "href": "labs/lab-8.html#data-visualization",
     "title": "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests",
     "section": "Data Visualization",
-    "text": "Data Visualization\n1. Create a scatterplot of the relationship between life expectancy (response) and GDP (explanatory).\nRemember to include nice axis labels (with units!).\nWhat you see should make you concerned about using a linear regression! So, let’s play with some variable transformations.\nYou can explore if a log-transformation of the y-variable would make the relationship more linear by adding a scale_y_log10() layer to your plot, like so:\n\nlterdatasampler::hbr_maples %&gt;% \n  ggplot(mapping = aes(x = stem_length, \n                       y = stem_dry_mass)\n         ) +\n  geom_point() + \n  scale_y_log10()\n\nSimilarly, you can a log-transformation of the x-variable would be helpful by adding a scale_x_log10() layer to your plot.\n2. Using scale_x_log10() and scale_y_log10(), decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be one plot for this problem!\nRemember to include nice axis labels (with any transformed units!)."
+    "text": "Data Visualization\n1. Create a scatterplot of the relationship between life expectancy (response) and GDP (explanatory).\nRemember to include nice axis labels (with units!).\nWhat you see should make you concerned about using a linear regression! So, let’s play with some variable transformations.\nYou can explore if a log-transformation of the y-variable would make the relationship more linear by adding a scale_y_log10() layer to your plot. Similarly, you can a log-transformation of the x-variable would be helpful by adding a scale_x_log10() layer to your plot.\n2. Using scale_x_log10() and scale_y_log10(), decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be one plot for this problem!\nRemember to include nice axis labels (with any transformed units!)."
   },
   {
     "objectID": "labs/lab-8.html#assessing-model-conditions",
@@ -3183,21 +3183,21 @@
     "href": "labs/lab-8.html#stating-the-hypotheses",
     "title": "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests",
     "section": "Stating the Hypotheses",
-    "text": "Stating the Hypotheses\nNow that you’ve decided which regression appears the most linear, let’s perform a hypothesis test for the slope coefficient.\n7. Write the hypotheses in words for testing if there is a linear relationship between the variables you used for your model in #3.\nKeep in mind, if you log-transformed y, you are testing if there is a linear relationship between log(y) and x!\n\\(H_0\\):\n\\(H_A\\):"
+    "text": "Stating the Hypotheses\nNow that you’ve decided which regression appears the most linear, let’s perform a hypothesis test for the slope coefficient.\n7. Write the hypotheses in words for testing if there is a linear relationship between the variables you used for your model in #3. Keep in mind, if you log-transformed y, you are testing if there is a linear relationship between log(y) and x!\n\\(H_0\\):\n\\(H_A\\):"
   },
   {
     "objectID": "labs/lab-8.html#obtaining-a-p-value-using-simulation",
     "href": "labs/lab-8.html#obtaining-a-p-value-using-simulation",
     "title": "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests",
     "section": "Obtaining a p-value Using Simulation",
-    "text": "Obtaining a p-value Using Simulation\nNext, we will work through creating a permutation distribution using tools from the infer package.\n8. First, we need to find the observed slope statistic, which we will save as obs_slope.\nKeep in mind, if you log-transformed y, you need to use log(y) as your response variable!\n\nobs_slope &lt;-  gapminder %&gt;%\n  specify(response = ____, explanatory = ____) %&gt;%\n  calculate(stat = \"slope\")\n\nAfter you have calculated your observed statistic, you need to create a permutation distribution of statistics that might have occurred if the null hypothesis was true.\n9. Generate 500 permuted statistics for the permutation distribution and save these statistics in an object named null_dist.\n\nnull_dist &lt;- \n\nWe can visualize this null distribution with the following code:\n\nvisualise(null_dist) \n\nNow that you have calculated the observed statistic and generated a permutation distribution, you can calculate the p-value for your hypothesis test using the function get_p_value() from the infer package.\n10. Fill in the code below to calculate the p-value for the hypothesis test you stated in #7.\n\nget_p_value(null_dist, \n            obs_stat = ____, \n            direction = ____)\n\n11. Based on your p-value and an \\(\\alpha = 0.1\\), what decision would you reach regarding the hypotheses you stated in #7?"
+    "text": "Obtaining a p-value Using Simulation\nNext, we will work through creating a permutation distribution using tools from the infer package.\n8. First, we need to find the observed slope statistic, which we will save as obs_slope. Keep in mind, if you log-transformed y, you need to use log(y) as your response variable!\n\nobs_slope &lt;-  gapminder %&gt;%\n  specify(response = ____, explanatory = ____) %&gt;%\n  calculate(stat = \"slope\")\n\nAfter you have calculated your observed statistic, you need to create a permutation distribution of statistics that might have occurred if the null hypothesis was true.\n9. Generate 500 permuted statistics for the permutation distribution and save these statistics in an object named null_dist.\n\nnull_dist &lt;- \n\nWe can visualize this null distribution with the following code:\n\nvisualise(null_dist) \n\nNow that you have calculated the observed statistic and generated a permutation distribution, you can calculate the p-value for your hypothesis test using the function get_p_value() from the infer package.\n10. Fill in the code below to calculate the p-value for the hypothesis test you stated in #7.\n\nget_p_value(null_dist, \n            obs_stat = ____, \n            direction = ____)\n\n11. Based on your p-value and an \\(\\alpha = 0.1\\), what decision would you reach regarding the hypotheses you stated in #7?"
   },
   {
     "objectID": "labs/lab-8.html#obtaining-a-p-value-using-theory",
     "href": "labs/lab-8.html#obtaining-a-p-value-using-theory",
     "title": "Lab 8: Evaluating Conditions & Conducting Hypothesis Tests",
     "section": "Obtaining a p-value Using Theory",
-    "text": "Obtaining a p-value Using Theory\nAs we saw in the reading this week, the output from the get_regression_table() function provides us with theory-based estimates of our standard error, \\(t\\)-statistic, and p-value.\n12. Use the get_regression_table() function to obtain the theory-based p-value for your hypothesis test.\nHint: You’ll want to use the model you fit in #3.\n13. How does this p-value compare to what you obtained in #11?\n14. Why do you believe these p-values were similar or different?\n15. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why? Note: If you believe neither are reliable, say so and state why."
+    "text": "Obtaining a p-value Using Theory\nAs we saw in the reading this week, the output from the get_regression_table() function provides us with theory-based estimates of our standard error, \\(t\\)-statistic, and p-value.\n12. Use the get_regression_table() function to obtain the theory-based p-value for your hypothesis test.\nHint: You’ll want to use the model you fit in #3.\n13. How does this p-value compare to what you obtained in #11?\n14. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why? Note: If you believe neither are reliable, say so and state why."
   },
   {
     "objectID": "labs/lab-2.html",
@@ -4450,7 +4450,7 @@
     "href": "slides/week8-day2.html#section-5",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Normality of residuals\n\n\n\nWhat should we do?"
+    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-6",
@@ -4464,7 +4464,7 @@
     "href": "slides/week8-day2.html#section-7",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
+    "text": "Normality of residuals\n\n\n\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-8",
@@ -4478,42 +4478,42 @@
     "href": "slides/week8-day2.html#section-9",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Variable transformation!"
+    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}} = \\frac{0.067}{0.014952} = 4.4809947\\)\n\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
   },
   {
     "objectID": "slides/week8-day2.html#section-10",
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
+    "text": "What is the relationship between life expectancy GDP per capita?\n\n\n\nDecide on a variable transformation\nAssess model conditions (L, I, N, E)\nCompare hypothesis test results between simulation-based methods and theory-based methods"
   },
   {
     "objectID": "slides/week8-day2.html#section-11",
     "href": "slides/week8-day2.html#section-11",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What about the observed statistic?\n\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg,\n               data = evals)\n\nget_regression_table(evals_lm)\n\n\n\n# A tibble: 1 × 1\n  statistic\n      &lt;dbl&gt;\n1      4.09"
+    "text": "Did we get similar results between these methods?"
   },
   {
     "objectID": "slides/week8-day2.html#section-12",
     "href": "slides/week8-day2.html#section-12",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}} = \\frac{0.067}{0.014952} = 4.4809947\\)\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd_error\nstatistic\np_value\nlower_ci\nupper_ci\n\n\n\n\nintercept\n3.880\n0.076\n50.961\n0\n3.731\n4.030\n\n\nbty_avg\n0.067\n0.016\n4.090\n0\n0.035\n0.099"
+    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
   },
   {
     "objectID": "slides/week8-day2.html#section-13",
     "href": "slides/week8-day2.html#section-13",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "How does R calculate the p-value?"
+    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
   },
   {
     "objectID": "slides/week8-day2.html#section-14",
     "href": "slides/week8-day2.html#section-14",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Did we get similar results between these methods?"
+    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
   },
   {
     "objectID": "slides/week8-day2.html#section-15",
@@ -6425,7 +6425,7 @@
     "href": "slides/week7-day2.html#water-temperature-and-latitude",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Water Temperature and Latitude",
-    "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
+    "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n. . .\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
   },
   {
     "objectID": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
@@ -6531,5 +6531,40 @@
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What happens if the conditions are violated?",
     "text": "What happens if the conditions are violated?\nIn general, when the conditions associated with these methods are violated, we will underestimate the true standard error (spread) of the sampling distribution.\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
+  },
+  {
+    "objectID": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
+    "href": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "What if we can’t fix a condition being violated?",
+    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
+  },
+  {
+    "objectID": "slides/week8-day2.html#mathematical-theory-based-methods",
+    "href": "slides/week8-day2.html#mathematical-theory-based-methods",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Mathematical / Theory-based Methods",
+    "text": "Mathematical / Theory-based Methods\n\n\nAre a “simpler” approach\nUse formulas instead of simulation to obtain standard error\nUse \\(t\\)-distribution to get p-value and confidence interval\nRequire that the residuals are normally distributed"
+  },
+  {
+    "objectID": "slides/week8-day2.html#how-does-this-look",
+    "href": "slides/week8-day2.html#how-does-this-look",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How does this look?",
+    "text": "How does this look?\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg, data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+  },
+  {
+    "objectID": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
+    "href": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How does R calculate the p-value?",
+    "text": "How does R calculate the p-value?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifferent \\(t\\)-distributions\n\n\nA \\(t\\)-distribution has a slightly different shape depending on the sample size. Technically, we are using a \\(t\\)-distribution with \\(n - 2\\) degrees of freedom to get our p-value."
+  },
+  {
+    "objectID": "slides/week8-day2.html#approximating-the-permutation-distribution",
+    "href": "slides/week8-day2.html#approximating-the-permutation-distribution",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Approximating the permutation distribution",
+    "text": "Approximating the permutation distribution\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if the normality condition is not violated."
   }
 ]
