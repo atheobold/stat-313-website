@@ -22,7 +22,7 @@ library(moderndive)
 
 # Today's Data
 
-Here is a description of the `gapminder` dataset as written by two of your peers:
+Here is a description of the `gapminder` dataset as written by a past STAT 313 student:
 
 > The gapminder dataset contains data representing three numerical attributes of a country: its average life expectancy in years, its population, and its per-capita GDP in "international dollars" (a hypothetical currency with the purchasing power of the U.S. dollar in 2005).
 
@@ -61,19 +61,7 @@ data(gapminder)
 
 What you see should make you concerned about using a linear regression! So, let's play with some variable transformations.
 
-You can explore if a log-transformation of the y-variable would make the relationship more linear by adding a `scale_y_log10()` layer to your plot, like so:
-
-```{r}
-#| label: example-log-transformation
-lterdatasampler::hbr_maples %>% 
-  ggplot(mapping = aes(x = stem_length, 
-                       y = stem_dry_mass)
-         ) +
-  geom_point() + 
-  scale_y_log10()
-```
-
-Similarly, you can a log-transformation of the x-variable would be helpful by adding a `scale_x_log10()` layer to your plot.
+You can explore if a log-transformation of the y-variable would make the relationship more linear by adding a `scale_y_log10()` layer to your plot. Similarly, you can a log-transformation of the x-variable would be helpful by adding a `scale_x_log10()` layer to your plot.
 
 **2. Using `scale_x_log10()` and `scale_y_log10()`, decide on what relationship between life expectancy and GDP per capita appears the most linear. There should only be *one* plot for this problem!**
 
@@ -147,9 +135,7 @@ broom::augment(gapminder_lm) %>%
 
 Now that you've decided which regression appears the most linear, let's perform a hypothesis test for the slope coefficient.
 
-**7. Write the hypotheses [*in words*]{.underline} for testing if there is a linear relationship between the variables you used for your model in #3.**
-
-*Keep in mind, if you log-transformed y, you are testing if there is a linear relationship between log(y) and x!*
+**7. Write the hypotheses [*in words*]{.underline} for testing if there is a linear relationship between the variables you used for your model in #3.** *Keep in mind, if you log-transformed y, you are testing if there is a linear relationship between log(y) and x!*
 
 $H_0$:
 
@@ -159,9 +145,7 @@ $H_A$:
 
 Next, we will work through creating a permutation distribution using tools from the **infer** package.
 
-**8. First, we need to find the observed slope statistic, which we will save as `obs_slope`.**
-
-*Keep in mind, if you log-transformed y, you need to use log(y) as your response variable!*
+**8. First, we need to find the observed slope statistic, which we will save as `obs_slope`.** *Keep in mind, if you log-transformed y, you need to use log(y) as your response variable!*
 
 ```{r}
 #| label: calculate-obs-slope
@@ -219,6 +203,4 @@ As we saw in the reading this week, the output from the `get_regression_table()`
 
 **13. How does this p-value compare to what you obtained in #11?**
 
-**14. Why do you believe these p-values were similar or different?**
-
-**15. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?** *Note: If you believe neither are reliable, say so and state why.*
+**14. Based on your answers to #4-6, which p-value do you believe is the most reliable? Why?** *Note: If you believe neither are reliable, say so and state why.*
