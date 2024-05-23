@@ -4401,7 +4401,7 @@
     "href": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "How do I know what model is “best” from the ANOVA table?",
-    "text": "How do I know what model is “best” from the ANOVA table?\nFor 1 numerical & 1 categorical explanatory variables\n\nLook at the interaction line (e.g., bill_depth_mm:species), it is testing if the slopes are different!\n\n\nanova(species_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbill_depth_mm\n1\n561.5708\n561.570850\n93.96508\n9.384795e-20\n\n\nspecies\n2\n7460.3201\n3730.160057\n624.15060\n7.116342e-114\n\n\nbill_depth_mm:species\n2\n134.2515\n67.125732\n11.23184\n1.897629e-05\n\n\nResiduals\n336\n2008.0631\n5.976378\nNA\nNA"
+    "text": "How do I know what model is “best” from the ANOVA table?\nFor 1 numerical & 1 categorical explanatory variables\n\nLook at the interaction line (e.g., bill_depth_mm:species), it is testing if the slopes are different!\n\n\nanova(species_lm)\n\n\n\n\n\n\n\n\n\nterm\nDf\nSum Sq\nMean Sq\nF value\nPr(&gt;F)\n\n\n\n\nbill_depth_mm\n1\n561.5708\n561.570850\n93.96508\n9.384795e-20\n\n\nspecies\n2\n7460.3201\n3730.160057\n624.15060\n7.116342e-114\n\n\nbill_depth_mm:species\n2\n134.2515\n67.125732\n11.23184\n1.897629e-05\n\n\nResiduals\n336\n2008.0631\n5.976378\nNA\nNA"
   },
   {
     "objectID": "slides/week8-day2.html#section",
@@ -4415,7 +4415,7 @@
     "href": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table-1",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "How do I know what model is “best” from the ANOVA table?",
-    "text": "How do I know what model is “best” from the ANOVA table?\nFor 2 numerical explanatory variables\n\nLook at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!\n\n\nanova(bill_lm)\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nbody_mass_g\n1\n3599.71136\n3599.71136\n186.673943\n3.685224e-34\n\n\nbill_depth_mm\n1\n27.41605\n27.41605\n1.421742\n2.339508e-01\n\n\nResiduals\n339\n6537.07813\n19.28342\nNA\nNA"
+    "text": "How do I know what model is “best” from the ANOVA table?\nFor 2 numerical explanatory variables\n\nLook at the p-value for each variable, it is testing if that variable has a relationship with the response (conditional on the other variable being in the model)!\n\n\nanova(bill_lm)\n\n\n\n\n\n\n\n\n\nterm\nDf\nSum Sq\nMean Sq\nF value\nPr(&gt;F)\n\n\n\n\nbody_mass_g\n1\n3599.71136\n3599.71136\n186.673943\n3.685224e-34\n\n\nbill_depth_mm\n1\n27.41605\n27.41605\n1.421742\n2.339508e-01\n\n\nResiduals\n339\n6537.07813\n19.28342\nNA\nNA"
   },
   {
     "objectID": "slides/week8-day2.html#section-1",
