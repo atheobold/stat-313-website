@@ -80,44 +80,6 @@ library(ggridges)
 
 ## Model Validity
 
-```{r}
-#| label: distribution-of-residuals
-#| layout-nrow: 1
-
-# Residuals of first one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")
-
-# Residuals of second one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")
-```
-
-```{r}
-#| label: residuals-versus-fitted
-#| layout-nrow: 1
-
-# Residuals versus fitted for first one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
-  geom_jitter() + 
-  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
-  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
-       y = "Residuals")
-
-# Residuals versus fitted for second one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(y = .resid, x = `<NAME OF EXPLANATORY VARIABLE>`)) +
-  geom_jitter() + 
-  geom_hline(yintercept = 0, color = "red", linewidth = 3) +
-  labs(x = "<NAME OF EXPLANATORY VARIABLE>", 
-       y = "Residuals")
-```
-
 # Study Limitations
 
 # Conclusions

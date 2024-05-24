@@ -630,7 +630,7 @@
     "href": "project/final-project/final-project-directions.html",
     "title": "Final Project Guidelines",
     "section": "",
-    "text": "For this project, you are expected to use a two-way ANOVA to investigate the relationship between one numerical response variable and two categorical explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.\n\n\n\n\n\n\nDiscretizing numerical variables\n\n\n\nIf you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in R as R assumes all variables with numbers should be numerical.\nYou will need Dr. Theobold’s help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help before Thursday, March 7 at 4pm.",
+    "text": "For this project, you are expected to use a two-way ANOVA to investigate the relationship between one numerical response variable and two categorical explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.\n\n\n\n\n\n\nDiscretizing numerical variables\n\n\n\nIf you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in R as R assumes all variables with numbers should be numerical.\nYou will need Dr. Theobold’s help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help before Friday, May 31 at 4pm.",
     "crumbs": [
       "Projects",
       "Final Project Description"
@@ -641,7 +641,7 @@
     "href": "project/final-project/final-project-directions.html#your-task",
     "title": "Final Project Guidelines",
     "section": "",
-    "text": "For this project, you are expected to use a two-way ANOVA to investigate the relationship between one numerical response variable and two categorical explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.\n\n\n\n\n\n\nDiscretizing numerical variables\n\n\n\nIf you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in R as R assumes all variables with numbers should be numerical.\nYou will need Dr. Theobold’s help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help before Thursday, March 7 at 4pm.",
+    "text": "For this project, you are expected to use a two-way ANOVA to investigate the relationship between one numerical response variable and two categorical explanatory variables. You are permitted to use the same dataset as your Midterm Project, so long as there are at least two categorical variables to choose from.\n\n\n\n\n\n\nDiscretizing numerical variables\n\n\n\nIf you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in R as R assumes all variables with numbers should be numerical.\nYou will need Dr. Theobold’s help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help before Friday, May 31 at 4pm.",
     "crumbs": [
       "Projects",
       "Final Project Description"
@@ -696,7 +696,7 @@
     "href": "project/final-project/final-project-directions.html#model-validity",
     "title": "Final Project Guidelines",
     "section": "3.3 Model Validity",
-    "text": "3.3 Model Validity\n\nEvaluate the LINE conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Thursday, March 7 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
+    "text": "3.3 Model Validity\n\nEvaluate the LINE conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Friday, May 31 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
     "crumbs": [
       "Projects",
       "Final Project Description"
