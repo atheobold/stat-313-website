@@ -16,7 +16,7 @@ For this project, you are expected to use a two-way ANOVA to investigate the rel
 
 If you would like to analyze a discrete numerical variable (e.g., number of pets) as a categorical variable, you will need to convert that variable into a categorical variable in `R` as `R` assumes all variables with numbers should be numerical.
 
-You will need Dr. Theobold's help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help **before** **Thursday, March 7 at 4pm.**
+You will need Dr. Theobold's help to perform this task. Dr. Theobold will work with you to convert your variable as long as you request help **before** **Friday, May 31 at 4pm.**
 :::
 
 # Introduction
@@ -113,7 +113,7 @@ If you rejected the null hypothesis for **both** one-way ANOVA models, you can p
 ::: callout-caution
 # Condition violations
 
-If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold **before** **Thursday, March 7 at 4pm**!
+If you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold **before** **Friday, May 31 at 4pm**!
 :::
 
 -   Based on your analysis of the conditions, describe whether you believe the tests you performed are "reliable."
