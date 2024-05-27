@@ -627,9 +627,11 @@ What would you conclude regarding the mean minimum evaluation score for differen
 :::
 :::
 
-:::{.fragment}
+## Large p-values $\neq$ evidence for the null hypothesis! 
+
 ![](images/No evidence against the null.png)
-:::
+
+
 # What if we didn't believe the normality condition was violated?
 
 ## Theory-based Methods
