@@ -159,12 +159,6 @@ If you categorical variable has **two** levels, you need to use a `"diff in mean
 
 ## Model Validity
 
-:::{.callout-important}
-# Delete the code templates I provided!
-:::
-
-</br>
-
 You can assess the normality and equal variance conditions based on the density ridge plots you make!
 
 # Where are we headed next week? 
@@ -222,3 +216,7 @@ There are four options for `legend.position`
 5. `"top"` (generally my preference)
 :::
 :::
+
+## 
+
+![](images/Cause and effect.png)

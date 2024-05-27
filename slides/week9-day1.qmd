@@ -28,21 +28,28 @@ evals_small <- moderndive::evals %>%
                                      "older faculty", "nearly retired")
                           )
          ) %>% 
-  distinct(prof_ID, .keep_all = TRUE) 
+  distinct(prof_ID, .keep_all = TRUE) %>% 
+  ungroup()
+
+my_theme <- theme(axis.title = element_text(size = 72), 
+        axis.text.y = element_text(size = 18), 
+        axis.text.x = element_text(size = 16)
+        ) +
+  theme_bw()
 ```
 
 # Week 9
 
 ## Final Project First Draft
 
-**Step 1** - Due by Wednesday 
+**Step 1** - Due by tonight! 
 
 :::{.small}
 - Introduction (Data description, research questions)
 :::
 . . .
 
-**Step 2** - Due by Friday
+**Step 2** - Due by Thursday
 
 :::{.small}
 - Methods (Data visualizations)
@@ -77,9 +84,8 @@ ggplot(data = evals_small,
   labs(x = "", 
        y = "", 
        title = "Relationship between faculty's age and their minimum evaluation score") +
-  theme(axis.title = element_text(size = 72), 
-        axis.text.y = element_text(size = 16), 
-        axis.text.x = element_text(size = 14))
+  my_theme +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
 ```
 
 ## 
@@ -98,9 +104,8 @@ ggplot(data = evals_small,
   labs(x = "", 
        y = "", 
        title = "Minimum Evaluation Scores for Faculty of Different Age Groups") +
-  theme(axis.title = element_text(size = 72), 
-        axis.text.y = element_text(size = 16), 
-        axis.text.x = element_text(size = 14))
+  my_theme +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
 ```
 
 # Why?
@@ -125,13 +130,7 @@ Analysis of variance (ANOVA) compares the means of three of more groups to detec
 
 # Visualizations for an ANOVA
 
-## 
-
-::: {style="font-size: 2.5em; color: #000000;"}
-Visualizing Group Differences
-:::
-
-</br>
+# Visualizations for an ANOVA
 
 We want visualizations that allow for us to easily compare:
 
@@ -151,10 +150,8 @@ ggplot(data = evals_small,
   labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
        y = "",
        x = "") +
-  theme(axis.title = element_text(size = 72), 
-        axis.text.y = element_text(size = 16), 
-        axis.text.x = element_text(size = 14)
-        )
+  my_theme +
+  scale_x_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
 ```
 
 . . .
@@ -182,7 +179,22 @@ What can you say about the variability *within* the age groups?
 Step 1: Compare your groups
 :::
 
-![](images/groups.png)
+<!-- ![](images/groups.png) -->
+
+```{r}
+#| echo: false
+#| out-width: 70%
+#| label: compare-groups
+
+ggplot(data = evals_small, 
+       mapping = aes(x = age_cat, y = min_eval)) + 
+  geom_jitter(width = 0.1) + 
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  my_theme +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
+```
 
 ## 
 
@@ -190,11 +202,34 @@ Step 1: Compare your groups
 Step 2: Find the overall mean
 :::
 
-![](images/overall_mean.png)
+```{r}
+#| echo: false
+#| out-width: 70%
+#| label: overall-mean
+
+overall_mean <- summarise(evals_small, 
+                          mean = mean(min_eval)
+                          ) %>% 
+  pull()
+
+ggplot(data = evals_small, 
+       mapping = aes(y = min_eval, x = "c")) + 
+  geom_jitter(width = 0.2) + 
+  geom_hline(yintercept = overall_mean, color = "red", lwd = 2) +
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  my_theme +
+  theme(axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank()) +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
+```
+
+<!-- ![](images/overall_mean.png) -->
 
 . . .
 
-::: {style="font-size: 1.5em; color: #ed8402;"}
+::: {style="font-size: 1.25em; color: #ed8402;"}
 This ignores the groups and finds [one]{.underline} mean for every observation!
 :::
 
@@ -204,23 +239,105 @@ This ignores the groups and finds [one]{.underline} mean for every observation!
 Step 3: Find the group means
 :::
 
-![](images/group_means.png)
+```{r}
+#| echo: false
+#| out-width: 70%
+#| label: group-means
+
+group_means <- evals_small %>% 
+  group_by(age_cat) %>% 
+  summarise(mean = mean(min_eval)
+                          ) %>% 
+  mutate(
+    position = c(1, 2, 3, 4)
+         )
+
+ggplot(data = evals_small, 
+       mapping = aes(x = age_cat, y = min_eval)) + 
+  geom_jitter(width = 0.1) + 
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  my_theme +
+  geom_segment(data = group_means, 
+               mapping = aes(y = mean,
+                             x = position - 0.25, 
+                             xend = position + 0.25), 
+               color = "purple", 
+               lwd = 1.5
+               ) +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
+```
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 4: Calculate the sum of squares
+Step 4: Calculate the sum of squares *between* groups
 :::
 
-![](images/sum_of_squares.png)
+```{r}
+#| echo: false
+#| out-width: 70%
+#| label: sum-of-squares
+
+ggplot(data = evals_small, 
+       mapping = aes(x = age_cat, y = min_eval)) + 
+  geom_jitter(width = 0.1) + 
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  my_theme +
+  geom_segment(data = group_means, 
+               mapping = aes(y = mean,
+                             x = position - 0.25, 
+                             xend = position + 0.25), 
+               color = "purple", 
+               lwd = 1.5
+               ) +
+  geom_hline(yintercept = overall_mean, 
+             color = "red", 
+             lwd = 1.5, 
+             lty = "dashed") +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
+```
 
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 5: Calculate the F-statistic
+Step 5: Calculate the sum of squares *within* groups
 :::
 
-![](images/f_stat.png)
+```{r}
+#| echo: false
+#| out-width: 70%
+#| label: sum-of-squares-2
+
+ggplot(data = evals_small, 
+       mapping = aes(x = age_cat, y = min_eval)) + 
+  geom_jitter(width = 0.1) + 
+  labs(title = "Minimum Evaluation Scores for Faculty of Different Age Groups", 
+       y = "",
+       x = "") +
+  my_theme +
+  geom_segment(data = group_means, 
+               mapping = aes(y = mean,
+                             x = position - 0.25, 
+                             xend = position + 0.25), 
+               color = "purple", 
+               lwd = 1.5
+               ) +
+  scale_y_continuous(breaks = seq(from = 2, to = 5, by = 0.5))
+```
+
+## 
+
+::: {style="font-size: 2em; color: #000000;"}
+Step 6: Calculate the F-statistic
+:::
+
+
+
+![](images/sum-of-squares.jpeg)
 
 <!-- ::: {style="color: #B6CADA;"} -->
 <!-- Can an F-statistic be negative? -->
@@ -229,7 +346,7 @@ Step 5: Calculate the F-statistic
 ## 
 
 ::: {style="font-size: 2em; color: #000000;"}
-Step 6: Find the p-value
+Step 7: Find the p-value
 :::
 
 ![](images/f_dist.png)
@@ -248,8 +365,10 @@ An $F$-distribution is a variant of the $t$-distribution, and is also defined by
 
 This distribution is defined by **two** different degrees of freedom:
 
-1.  from the numerator (MSG) : $k - 1$
-2.  from the denominator (MSE) : $n - k$
+:::{.small}
+1.  from the numerator (MSG) : $k$ (number of groups) $- 1$
+2.  from the denominator (MSE) : $n$ (number of observations) $- k$ 
+:::
 
 ## 
 
@@ -261,7 +380,9 @@ Two degrees of freedom!
 
 ::: columns
 ::: {.column width="45%"}
+:::{.small}
 Changing the numerator degrees of freedom
+:::
 
 ![](images/f_num_df.png)
 :::
@@ -270,7 +391,9 @@ Changing the numerator degrees of freedom
 :::
 
 ::: {.column width="45%"}
+:::{.small}
 Changing the denominator degrees of freedom
+:::
 
 ![](images/f_denom_df.png)
 :::
@@ -326,6 +449,11 @@ NO!
 Which condition(s) are required to use "theory-based" methods?
 :::
 
+</br>
+
+:::{.fragment}
+All three!
+:::
 :::
 
 ::: {.column width="3%"}
@@ -336,6 +464,12 @@ Which condition(s) are required to use "theory-based" methods?
 ::: {style="font-size: 1.25em; color: #000000;"}
 Which condition(s) are required to use "simulation-based" methods?
 :::
+:::
+
+</br>
+
+:::{.fragment}
+All but normality!
 :::
 :::
 :::
@@ -362,7 +496,7 @@ ggplot(data = evals_small,
 . . .
 
 ::: {style="font-size: 1.5em; color: #34605f;"}
-What do you think?
+What do you think? Which method should we use?
 :::
 
 # Simulation-based Methods
@@ -493,6 +627,9 @@ What would you conclude regarding the mean minimum evaluation score for differen
 :::
 :::
 
+:::{.fragment}
+![](images/No evidence against the null.png)
+:::
 # What if we didn't believe the normality condition was violated?
 
 ## Theory-based Methods
@@ -570,66 +707,7 @@ In 4-6 sentences, introduce / describe your data.
 Outline the [**two**]{.underline} questions your research seeks to address.
 
 - You will have one question for each one-way ANOVA model
-- Your question should be in terms of "group means" not "relationships"
+- Your question should be in terms of "differences in group means" not "relationships"
 :::
 :::
 :::
-
-## Removing / Silencing Code Templates
-
-:::{.small}
-Your `final_project.qmd` file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8). 
-
-These [do not]{.underline} need to be used for your Introduction. So, you need to "turn off" these code chunks to turn in your Introduction! 
-:::
-
-. . .
-
-</br>
-
-:::{.small}
-There are two ways to do this:
-
-1. In the YAML (at the top of your document) add `eval: false` to your `execute` options
-2. In each code chunk (there are two) add `eval: false` to your code chunk options
-:::
-
-## YAML Option
-
-```
----
-title: "Your Title Goes Here! Make it fun!"
-author: "Your Name Here!"
-format:
-  html:
-    code-tools: true
-editor: visual
-embed-resources: true
-execute:
-  echo: false
-  message: false
-  warning: false
-  eval: false
----
-```
-
-## Code Chunk Option
-
-```
-#| label: distribution-of-residuals
-#| layout-nrow: 1
-#| eval: false
-#| echo: fenced
-
-# Residuals of first one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")
-
-# Residuals of second one-way ANOVA 
-broom::augment(my_model) %>% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")
-```

@@ -4723,7 +4723,7 @@
     "href": "slides/week9-day1.html#final-project-first-draft",
     "title": "ANalysis Of VAriance",
     "section": "Final Project First Draft",
-    "text": "Final Project First Draft\nStep 1 - Due by Wednesday\n\n\nIntroduction (Data description, research questions)\n\n\n\nStep 2 - Due by Friday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n\n\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
+    "text": "Final Project First Draft\nStep 1 - Due by tonight!\n\n\nIntroduction (Data description, research questions)\n\n\n\nStep 2 - Due by Thursday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n\n\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
   },
   {
     "objectID": "slides/week9-day1.html#section",
@@ -4758,70 +4758,70 @@
     "href": "slides/week9-day1.html#section-4",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Visualizing Group Differences\n\n\nWe want visualizations that allow for us to easily compare:\n\nthe center (mean) of the groups\nthe spread (variability) of the groups"
+    "text": "What can you say about the differences between the age groups?\n\n\n\nWhat can you say about the variability within the age groups?"
   },
   {
     "objectID": "slides/week9-day1.html#section-5",
     "href": "slides/week9-day1.html#section-5",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "What can you say about the differences between the age groups?\n\n\n\nWhat can you say about the variability within the age groups?"
+    "text": "Step 1: Compare your groups"
   },
   {
     "objectID": "slides/week9-day1.html#section-6",
     "href": "slides/week9-day1.html#section-6",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 1: Compare your groups"
+    "text": "Step 2: Find the overall mean\n\n\n\n\n\nThis ignores the groups and finds one mean for every observation!"
   },
   {
     "objectID": "slides/week9-day1.html#section-7",
     "href": "slides/week9-day1.html#section-7",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 2: Find the overall mean\n\n\n\n\nThis ignores the groups and finds one mean for every observation!"
+    "text": "Step 3: Find the group means"
   },
   {
     "objectID": "slides/week9-day1.html#section-8",
     "href": "slides/week9-day1.html#section-8",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 3: Find the group means"
+    "text": "Step 4: Calculate the sum of squares between groups"
   },
   {
     "objectID": "slides/week9-day1.html#section-9",
     "href": "slides/week9-day1.html#section-9",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 4: Calculate the sum of squares"
+    "text": "Step 5: Calculate the sum of squares within groups"
   },
   {
     "objectID": "slides/week9-day1.html#section-10",
     "href": "slides/week9-day1.html#section-10",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 5: Calculate the F-statistic"
+    "text": "Step 6: Calculate the F-statistic"
   },
   {
     "objectID": "slides/week9-day1.html#section-11",
     "href": "slides/week9-day1.html#section-11",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Step 6: Find the p-value"
+    "text": "Step 7: Find the p-value"
   },
   {
     "objectID": "slides/week9-day1.html#section-12",
     "href": "slides/week9-day1.html#section-12",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "F-distribution\n\nAn \\(F\\)-distribution is a variant of the \\(t\\)-distribution, and is also defined by degrees of freedom.\n\n\nThis distribution is defined by two different degrees of freedom:\n\nfrom the numerator (MSG) : \\(k - 1\\)\nfrom the denominator (MSE) : \\(n - k\\)"
+    "text": "F-distribution\n\nAn \\(F\\)-distribution is a variant of the \\(t\\)-distribution, and is also defined by degrees of freedom.\n\n\nThis distribution is defined by two different degrees of freedom:\n\n\nfrom the numerator (MSG) : \\(k\\) (number of groups) \\(- 1\\)\nfrom the denominator (MSE) : \\(n\\) (number of observations) \\(- k\\)"
   },
   {
     "objectID": "slides/week9-day1.html#section-13",
     "href": "slides/week9-day1.html#section-13",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "Two degrees of freedom!\n\n\n\n\nChanging the numerator degrees of freedom\n\n\n\n\nChanging the denominator degrees of freedom"
+    "text": "Two degrees of freedom!\n\n\n\n\n\nChanging the numerator degrees of freedom\n\n\n\n\n\n\nChanging the denominator degrees of freedom"
   },
   {
     "objectID": "slides/week9-day1.html#section-14",
@@ -4842,14 +4842,14 @@
     "href": "slides/week9-day1.html#choosing-a-method",
     "title": "ANalysis Of VAriance",
     "section": "Choosing a Method",
-    "text": "Choosing a Method\n\n\n\n\nWhich condition(s) are required to use “theory-based” methods?\n\n\n\n\n\n\nWhich condition(s) are required to use “simulation-based” methods?"
+    "text": "Choosing a Method\n\n\n\n\nWhich condition(s) are required to use “theory-based” methods?\n\n\n\nAll three!\n\n\n\n\n\n\nWhich condition(s) are required to use “simulation-based” methods?\n\n\n\n\nAll but normality!"
   },
   {
     "objectID": "slides/week9-day1.html#section-15",
     "href": "slides/week9-day1.html#section-15",
     "title": "ANalysis Of VAriance",
     "section": "",
-    "text": "What do you think?"
+    "text": "What do you think? Which method should we use?"
   },
   {
     "objectID": "slides/week9-day1.html#step-1-calculating-the-observed-f-statistic",
@@ -4926,7 +4926,7 @@
     "href": "slides/week9-day1.html#introduction-research-questions",
     "title": "ANalysis Of VAriance",
     "section": "Introduction & Research Questions",
-    "text": "Introduction & Research Questions\n\n\nIn 4-6 sentences, introduce / describe your data.\n\nWhat is the context of the data?\nFor what purpose were these data collected?\n\n\n\n\n\nOutline the two questions your research seeks to address.\n\nYou will have one question for each one-way ANOVA model\nYour question should be in terms of “group means” not “relationships”"
+    "text": "Introduction & Research Questions\n\n\nIn 4-6 sentences, introduce / describe your data.\n\nWhat is the context of the data?\nFor what purpose were these data collected?\n\n\n\n\n\nOutline the two questions your research seeks to address.\n\nYou will have one question for each one-way ANOVA model\nYour question should be in terms of “differences in group means” not “relationships”"
   },
   {
     "objectID": "slides/week9-day1.html#removing-silencing-code-templates",

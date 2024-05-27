@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>STAT 313 / 513 - ANalysis Of VAriance</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -403,14 +403,14 @@
 </section>
 <section id="final-project-first-draft" class="slide level2">
 <h2>Final Project First Draft</h2>
-<p><strong>Step 1</strong> - Due by Wednesday</p>
+<p><strong>Step 1</strong> - Due by tonight!</p>
 <div class="small">
 <ul>
 <li>Introduction (Data description, research questions)</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Step 2</strong> - Due by Friday</p>
+<p><strong>Step 2</strong> - Due by Thursday</p>
 <div class="small">
 <ul>
 <li>Methods (Data visualizations)</li>
@@ -470,24 +470,21 @@
 <li>Summarize the differences with one number</li>
 </ul>
 </section></section>
-<section>
 <section id="visualizations-for-an-anova" class="title-slide slide level1 center">
 <h1>Visualizations for an ANOVA</h1>
 
 </section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<div style="font-size: 2.5em; color: #000000;">
-<p>Visualizing Group Differences</p>
-</div>
-<p><br></p>
+
+<section>
+<section id="visualizations-for-an-anova-1" class="title-slide slide level1 center">
+<h1>Visualizations for an ANOVA</h1>
 <p>We want visualizations that allow for us to easily compare:</p>
 <ul>
 <li>the center (mean) of the groups</li>
 <li>the spread (variability) of the groups</li>
 </ul>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 
 <img data-src="week9-day1_files/figure-revealjs/age-cat-density-1.png" style="width:70.0%" class="r-stretch"><div class="fragment">
@@ -509,53 +506,62 @@
 <h1>Carrying out an ANOVA</h1>
 
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Step 1: Compare your groups</p>
 </div>
+<!-- ![](images/groups.png) -->
 
-<img data-src="images/groups.png" class="r-stretch"></section>
-<section id="section-7" class="slide level2">
+<img data-src="week9-day1_files/figure-revealjs/compare-groups-1.png" style="width:70.0%" class="r-stretch"></section>
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Step 2: Find the overall mean</p>
 </div>
 
-<img data-src="images/overall_mean.png" class="r-stretch"><div class="fragment">
-<div style="font-size: 1.5em; color: #ed8402;">
+<!-- ![](images/overall_mean.png) -->
+<img data-src="week9-day1_files/figure-revealjs/overall-mean-1.png" style="width:70.0%" class="r-stretch"><div class="fragment">
+<div style="font-size: 1.25em; color: #ed8402;">
 <p>This ignores the groups and finds <u>one</u> mean for every observation!</p>
 </div>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
 <p>Step 3: Find the group means</p>
 </div>
 
-<img data-src="images/group_means.png" class="r-stretch"></section>
+<img data-src="week9-day1_files/figure-revealjs/group-means-1.png" style="width:70.0%" class="r-stretch"></section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div style="font-size: 2em; color: #000000;">
+<p>Step 4: Calculate the sum of squares <em>between</em> groups</p>
+</div>
+
+<img data-src="week9-day1_files/figure-revealjs/sum-of-squares-1.png" style="width:70.0%" class="r-stretch"></section>
 <section id="section-9" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 4: Calculate the sum of squares</p>
+<p>Step 5: Calculate the sum of squares <em>within</em> groups</p>
 </div>
 
-<img data-src="images/sum_of_squares.png" class="r-stretch"></section>
+<img data-src="week9-day1_files/figure-revealjs/sum-of-squares-2-1.png" style="width:70.0%" class="r-stretch"></section>
 <section id="section-10" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 5: Calculate the F-statistic</p>
+<p>Step 6: Calculate the F-statistic</p>
 </div>
 
 <!-- ::: {style="color: #B6CADA;"} -->
 <!-- Can an F-statistic be negative? -->
 <!-- ::: -->
-<img data-src="images/f_stat.png" class="r-stretch"></section>
+<img data-src="images/sum-of-squares.jpeg" class="r-stretch"></section>
 <section id="section-11" class="slide level2">
 <h2></h2>
 <div style="font-size: 2em; color: #000000;">
-<p>Step 6: Find the p-value</p>
+<p>Step 7: Find the p-value</p>
 </div>
 
 <img data-src="images/f_dist.png" class="r-stretch"></section>
@@ -568,10 +574,12 @@
 <div class="fragment">
 <p><br></p>
 <p>This distribution is defined by <strong>two</strong> different degrees of freedom:</p>
+<div class="small">
 <ol type="1">
-<li>from the numerator (MSG) : <span class="math inline">\(k - 1\)</span></li>
-<li>from the denominator (MSE) : <span class="math inline">\(n - k\)</span></li>
+<li>from the numerator (MSG) : <span class="math inline">\(k\)</span> (number of groups) <span class="math inline">\(- 1\)</span></li>
+<li>from the denominator (MSE) : <span class="math inline">\(n\)</span> (number of observations) <span class="math inline">\(- k\)</span></li>
 </ol>
+</div>
 </div>
 </section>
 <section id="section-13" class="slide level2">
@@ -582,12 +590,16 @@
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:45%;">
+<div class="small">
 <p>Changing the numerator degrees of freedom</p>
+</div>
 <p><img data-src="images/f_num_df.png"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
+<div class="small">
 <p>Changing the denominator degrees of freedom</p>
+</div>
 <p><img data-src="images/f_denom_df.png"></p>
 </div>
 </div>
@@ -644,6 +656,10 @@
 <div style="font-size: 1.25em; color: #000000;">
 <p>Which condition(s) are required to use “theory-based” methods?</p>
 </div>
+<p><br></p>
+<div class="fragment">
+<p>All three!</p>
+</div>
 </div><div class="column" style="width:3%;">
 
 </div><div class="column" style="width:47%;">
@@ -651,6 +667,10 @@
 <div style="font-size: 1.25em; color: #000000;">
 <p>Which condition(s) are required to use “simulation-based” methods?</p>
 </div>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>All but normality!</p>
 </div>
 </div>
 </div>
@@ -660,7 +680,7 @@
 
 <img data-src="week9-day1_files/figure-revealjs/conditions-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <div style="font-size: 1.5em; color: #34605f;">
-<p>What do you think?</p>
+<p>What do you think? Which method should we use?</p>
 </div>
 </div>
 </section></section>
@@ -743,6 +763,9 @@ Explanatory: age_cat (factor)
 </div>
 </div>
 </div>
+<div class="fragment">
+<p><img data-src="images/No evidence against the null.png"></p>
+</div>
 </section></section>
 <section>
 <section id="what-if-we-didnt-believe-the-normality-condition-was-violated" class="title-slide slide level1 center">
@@ -814,71 +837,18 @@ Explanatory: age_cat (factor)
 <p>Outline the <u><strong>two</strong></u> questions your research seeks to address.</p>
 <ul>
 <li>You will have one question for each one-way ANOVA model</li>
-<li>Your question should be in terms of “group means” not “relationships”</li>
+<li>Your question should be in terms of “differences in group means” not “relationships”</li>
 </ul>
 </div>
 </div>
 </div>
-</section>
-<section id="removing-silencing-code-templates" class="slide level2">
-<h2>Removing / Silencing Code Templates</h2>
-<div class="small">
-<p>Your <code>final_project.qmd</code> file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8).</p>
-<p>These <u>do not</u> need to be used for your Introduction. So, you need to “turn off” these code chunks to turn in your Introduction!</p>
-</div>
-<div class="fragment">
-<p><br></p>
-<div class="small">
-<p>There are two ways to do this:</p>
-<ol type="1">
-<li>In the YAML (at the top of your document) add <code>eval: false</code> to your <code>execute</code> options</li>
-<li>In each code chunk (there are two) add <code>eval: false</code> to your code chunk options</li>
-</ol>
-</div>
-</div>
-</section>
-<section id="yaml-option" class="slide level2">
-<h2>YAML Option</h2>
-<pre><code>---
-title: "Your Title Goes Here! Make it fun!"
-author: "Your Name Here!"
-format:
-  html:
-    code-tools: true
-editor: visual
-embed-resources: true
-execute:
-  echo: false
-  message: false
-  warning: false
-  eval: false
----</code></pre>
-</section>
-<section id="code-chunk-option" class="slide level2">
-<h2>Code Chunk Option</h2>
-<pre><code>#| label: distribution-of-residuals
-#| layout-nrow: 1
-#| eval: false
-#| echo: fenced
 
-# Residuals of first one-way ANOVA 
-broom::augment(my_model) %&gt;% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")
 
-# Residuals of second one-way ANOVA 
-broom::augment(my_model) %&gt;% 
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residual")</code></pre>
-
-<div class="quarto-auto-generated-content">
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 
