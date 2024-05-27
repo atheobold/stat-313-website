@@ -198,15 +198,15 @@ get_p_value(null_dist,
             direction = "two-sided")
 ```
 
-:::{.callout-note}
+::: callout-note
 # Consistent with alternative hypothesis
 
-If they said the relationship was positive in the alternative, then their `direction` should be `"greater"`. 
+If they said the relationship was positive in the alternative, then their `direction` should be `"greater"`.
 :::
 
 **Growing:**
 
-*If they don't use a direction that is consistent with what they said in their alternative (`"two-sided"` or `"greater"`):
+\*If they don't use a direction that is consistent with what they said in their alternative (`"two-sided"` or `"greater"`):
 
 > How many tails are there in the hypotheses stated in #7?
 
@@ -245,19 +245,6 @@ This doesn't need to be consistent, since we aren't making a confidence interval
 **To earn a Success**: States that the p-value is essentially the same
 
 ## Question 14
-
-**To earn a Success**:
-
--   states that the permutation distribution is approximately Normal
--   states that a t-distribution is a reasonable approximation
-
-**Growing:**
-
-*If they don't reference the permutation distribution*:
-
-> Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?
-
-## Question 15
 
 **To earn a Success**: Answer must agree with what they said in #4-6
 

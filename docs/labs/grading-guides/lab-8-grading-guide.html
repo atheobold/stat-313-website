@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -154,7 +154,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -370,7 +370,6 @@ window.Quarto = {
   <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
   <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
   <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
-  <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-313-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -631,19 +630,6 @@ It’s okay if their <code>conf.level</code> isn’t 0.9
 </section>
 <section id="question-14" class="level2">
 <h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
-<p><strong>To earn a Success</strong>:</p>
-<ul>
-<li>states that the permutation distribution is approximately Normal</li>
-<li>states that a t-distribution is a reasonable approximation</li>
-</ul>
-<p><strong>Growing:</strong></p>
-<p><em>If they don’t reference the permutation distribution</em>:</p>
-<blockquote class="blockquote">
-<p>Theory-based methods are an approximation for simulation-based methods. Based on the permutation distribution you created, do you believe a t-distribution is a good approximation for THIS permutation distribution? Why or why not?</p>
-</blockquote>
-</section>
-<section id="question-15" class="level2">
-<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
 <p><strong>To earn a Success</strong>: Answer must agree with what they said in #4-6</p>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -829,12 +815,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
