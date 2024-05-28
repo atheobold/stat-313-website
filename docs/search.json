@@ -2162,15 +2162,15 @@
     "objectID": "slides/week9-day2.html#upcoming-deadlines",
     "href": "slides/week9-day2.html#upcoming-deadlines",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
-    "section": "",
-    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
+    "section": "Upcoming Deadlines",
+    "text": "Upcoming Deadlines\n\nLab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Wednesday\nStatistical Critique 2 revisions are due next Wednesday\nFinal revisions on all assignments will be accepted until Sunday, June 9\n\n\n\n\n\n\n\nDon’t forget reflections!"
   },
   {
     "objectID": "slides/week9-day2.html#common-mistakes",
     "href": "slides/week9-day2.html#common-mistakes",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\n\nQuestions 1 & 2 – Your axis labels should contain units and indicate if your variables were transformed!\n\n\nQuestion 6 – Equal variance is not about equal points above and below the line!\n\n\n\nQuestion 11 – Your hypothesis test decision should state what \\(\\alpha\\) was used!\n\n\n\nQuestion 14 – The \\(t\\)-distribution approximates the permutation distribution!\n\n\n\nQuestion 15 – Both theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions."
+    "text": "Common Mistakes\n\n\nQuestions 1 & 2 – Your axis labels should contain units and indicate if your variables were transformed!\n\n\nQuestion 6 – Equal variance is not about equal points above and below the line!\n\n\n\nQuestion 11 – Your hypothesis test decision should state what \\(\\alpha\\) was used!\n\n\n\nQuestion 15 – Both theory-based and simulation-based methods have conditions and the reliability of a p-value depends on those conditions."
   },
   {
     "objectID": "slides/week9-day2.html#visualizations-density-ridges",
@@ -2191,35 +2191,35 @@
     "href": "slides/week9-day2.html#theory-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Theory-based Method",
-    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n. . .\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
+    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
   },
   {
     "objectID": "slides/week9-day2.html#simulation-based-method",
     "href": "slides/week9-day2.html#simulation-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Simulation-based Method",
-    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
+    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
   },
   {
     "objectID": "slides/week9-day2.html#model-validity",
     "href": "slides/week9-day2.html#model-validity",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Model Validity",
-    "text": "Model Validity\nYou can assess the normality and equal variance conditions based on the density ridge plots you make!"
+    "text": "Model Validity\n\nAre your p-values trustworthy?\n\nInspect the conditions of your model!\n\n\n\n\nIndependence of Observations\nLook at how the data were collected!\n\n\n\n\nNormality of Residuals (Responses)\nUse the density ridge plots!\n\n\n\n\n\nEqual Variances of Each Group\nUse the density ridge plots!"
   },
   {
     "objectID": "slides/week9-day2.html#two-way-anova",
     "href": "slides/week9-day2.html#two-way-anova",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Two-way ANOVA",
-    "text": "Two-way ANOVA\n\n\n\nPicking joint bandwidth of 0.25"
+    "text": "Two-way ANOVA"
   },
   {
     "objectID": "slides/week9-day2.html#code-for-plot",
     "href": "slides/week9-day2.html#code-for-plot",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Code for Plot",
-    "text": "Code for Plot\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\nLegend Positions\n\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
+    "text": "Code for Plot\n\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nLegend Positions\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
   },
   {
     "objectID": "index.html",
