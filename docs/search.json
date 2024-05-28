@@ -1456,14 +1456,14 @@
     "href": "slides/week10-day1.html#wrapping-up-revisions",
     "title": "Week 10: Two-way ANOVA",
     "section": "Wrapping Up Revisions",
-    "text": "Wrapping Up Revisions\n\n\nStatistical Critique 2 revisions are due by Thursday\nLab 8 revisions are due by Thursday\nFinal revisions on all assignments will be accepted until this Sunday, March 17\n\n\n\n\n\n\n\n\n\nOne round of revisions\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions."
+    "text": "Wrapping Up Revisions\n\n\nStatistical Critique 2 revisions are due by Wednesday\nLab 8 revisions are due by Wednesday\nFinal revisions on all assignments will be accepted until this Sunday, June 9\n\n\n\n\n\n\n\n\n\nOne round of revisions\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions."
   },
   {
     "objectID": "slides/week10-day1.html#final-project",
     "href": "slides/week10-day1.html#final-project",
     "title": "Week 10: Two-way ANOVA",
     "section": "Final Project",
-    "text": "Final Project\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Thursday\n\nPrint your report!"
+    "text": "Final Project\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Wednesday\n\nPrint your report!"
   },
   {
     "objectID": "slides/week10-day1.html#section",
@@ -1512,7 +1512,7 @@
     "href": "slides/week10-day1.html#theory-based-two-way-anova",
     "title": "Week 10: Two-way ANOVA",
     "section": "Theory-based Two-Way ANOVA",
-    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.016057515\n0.0160575147\n71.86801\n3.285643e-15\n\n\nyear_cat\n1\n0.118720475\n0.1187204750\n531.35277\n1.034508e-60\n\n\nwatershed:year_cat\n1\n0.003445855\n0.0034458550\n15.42248\n1.148968e-04\n\n\nResiduals\n221\n0.049378166\n0.0002234306\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
+    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.014936833\n0.014936833\n80.86903\n1.110444e-16\n\n\nyear_cat\n1\n0.109201385\n0.109201385\n591.22372\n2.156127e-64\n\n\nwatershed:year_cat\n1\n0.005832409\n0.005832409\n31.57706\n5.739567e-08\n\n\nResiduals\n221\n0.040819583\n0.000184704\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
   },
   {
     "objectID": "slides/week10-day1.html#how-are-those-p-values-calculated",
@@ -1547,7 +1547,7 @@
     "href": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
     "title": "Week 10: Two-way ANOVA",
     "section": "Testing for a relationship for each variable",
-    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0005563435\n5.563435e-04\n7.118603\n8.479264e-03\n\n\nwatershed\n1\n0.0029220631\n2.922063e-03\n37.388783\n8.206184e-09\n\n\nResiduals\n148\n0.0115667133\n7.815347e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
+    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0002022607\n2.022607e-04\n3.452617\n6.508593e-02\n\n\nwatershed\n1\n0.0030830794\n3.083079e-03\n52.628583\n1.923319e-11\n\n\nResiduals\n152\n0.0089044403\n5.858184e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
   },
   {
     "objectID": "slides/week10-day1.html#lets-see",
@@ -1582,7 +1582,7 @@
     "href": "slides/week10-day1.html#additive-model-hypothesis-tests",
     "title": "Week 10: Two-way ANOVA",
     "section": "Additive Model Hypothesis Tests",
-    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0376934983\n1\n482.301032\n2.023579e-48\n\n\nwatershed\n0.0029220631\n1\n37.388783\n8.206184e-09\n\n\nelevation\n0.0004471432\n1\n5.721348\n1.801533e-02\n\n\nResiduals\n0.0115667133\n148\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
+    "text": "Additive Model Hypothesis Tests\n\n\n\n\n\n\n\n\nterm\nsumsq\ndf\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.0383562305\n1\n654.746045\n5.795570e-57\n\n\nwatershed\n0.0030830794\n1\n52.628583\n1.923319e-11\n\n\nelevation\n0.0003151988\n1\n5.380486\n2.169436e-02\n\n\nResiduals\n0.0089044403\n152\nNA\nNA\n\n\n\n\n\n\n\n\n\nWhat do you think the is the elevation line testing?\n\nWhat would you decide?"
   },
   {
     "objectID": "slides/week10-day1.html#keeping-non-significant-variables",
@@ -1617,7 +1617,7 @@
     "href": "slides/week10-day1.html#your-options",
     "title": "Week 10: Two-way ANOVA",
     "section": "Your Options",
-    "text": "Your Options\n\nComplete your revisions on Lab 8\nComplete your revisions on Statistical Critique 2\nFit your two-way ANOVA model for your Final Project and interpret the results\nFinish any remaining revisions on lab or statistical critiques"
+    "text": "Your Options\n\nComplete your revisions on Lab 8\nComplete your revisions on Statistical Critique 2\nFit your two-way ANOVA model for your Final Project and interpret the results\nFinish any remaining revisions on labs"
   },
   {
     "objectID": "slides/week3-day2.html#revisions-due-tonight",

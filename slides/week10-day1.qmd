@@ -41,9 +41,9 @@ hbr_maples_small <- bind_rows(hbr_maples_w1,
 ## Wrapping Up Revisions
 
 ::: incremental
--   Statistical Critique 2 revisions are due by Thursday
--   Lab 8 revisions are due by Thursday
--   Final revisions on **all** assignments will be accepted until this Sunday, March 17
+-   Statistical Critique 2 revisions are due by Wednesday
+-   Lab 8 revisions are due by Wednesday
+-   Final revisions on **all** assignments will be accepted until this Sunday, June 9
 :::
 
 . . .
@@ -51,13 +51,13 @@ hbr_maples_small <- bind_rows(hbr_maples_w1,
 ::: callout-caution
 # One round of revisions
 
-You will only have time for *one* round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.
+You will only have time for ***one*** round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.
 :::
 
 ## Final Project
 
 -   Feedback (from me) will be provided no later than Thursday evening
--   Peer feedback on Thursday
+-   Peer feedback on Wednesday
     -   Print your report!
 
 # Two-Way ANOVA Models
@@ -498,4 +498,4 @@ For the sake of time, we **are not** fitting interaction models for the Final Pr
 1.  Complete your revisions on Lab 8
 2.  Complete your revisions on Statistical Critique 2
 3.  Fit your two-way ANOVA model for your Final Project and interpret the results
-4.  Finish any remaining revisions on lab or statistical critiques
+4.  Finish any remaining revisions on labs
