@@ -2966,7 +2966,7 @@
     "href": "labs/grading-guides/lab-8-grading-guide.html#question-11",
     "title": "Lab 8 Grading Guide",
     "section": "Question 11",
-    "text": "Question 11\nTo earn a Success: States they reject \\(H_0\\) because the p-value is less than 0.1\nGrowing:\nIf they don’t reference their significance level:\n\nCareful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?\n\nIf they do not make a decision:\n\nYou were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?"
+    "text": "Question 11\nTo earn a Success: States they reject \\(H_0\\) because the p-value is less than 0.1\nIt is okay if they do not make a decision but conclude that there is a relationship, but give the following feedback:\n\nYou were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?\n\n\nGrowing:\nIf they don’t reference their significance level:\n\nCareful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?"
   },
   {
     "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-12",
@@ -6580,5 +6580,19 @@
     "title": "ANalysis Of VAriance",
     "section": "Large p-values \\(\\neq\\) evidence for the null hypothesis!",
     "text": "Large p-values \\(\\neq\\) evidence for the null hypothesis!"
+  },
+  {
+    "objectID": "slides/week9-day1.html",
+    "href": "slides/week9-day1.html",
+    "title": "ANalysis Of VAriance",
+    "section": "",
+    "text": "Step 1 - Due by tonight!\n\n\nIntroduction (Data description, research questions)\n\n\n. . .\nStep 2 - Due by Thursday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n. . .\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
+  },
+  {
+    "objectID": "slides/week8-day2.html",
+    "href": "slides/week8-day2.html",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "",
+    "text": "Question 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
   }
 ]
