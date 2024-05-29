@@ -214,15 +214,16 @@ If they said the relationship was positive in the alternative, then their `direc
 
 **To earn a Success**: States they reject $H_0$ because the p-value is less than 0.1
 
-**Growing:**
+*It is okay if they do not make a decision but conclude that there is a relationship, but give the following feedback*:
+
+> You were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?
+
+**\
+Growing:**
 
 *If they don't reference their significance level:*
 
 > Careful! Hypothesis test decisions can differ based on the significance threshold that was used. What threshold did you use?
-
-*If they do not make a decision*:
-
-> You were asked to make a decision regarding the hypotheses, which has two possible options. Which option do you choose and why?
 
 ## Question 12
 
