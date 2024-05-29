@@ -334,15 +334,15 @@ Why???
 
 . . .
 
-</br> 
+</br>
 
 The probability of observing a statistic as or more extreme than 0.0666 if $H_0$ was true is approximately 0%.
 
 . . .
 
-</br> 
+</br>
 
-So, it seems like $H_0$ is not a reasonable characterization of the relationship. 
+So, it seems like $H_0$ is not a reasonable characterization of the relationship.
 
 # What conclusion would you reach about the relationship between professors' evaluation scores and their attractiveness?
 
@@ -576,10 +576,10 @@ we need to ask for help!
 :::
 
 ::: {.column width="45%"}
-:::{.fragment}
+::: fragment
 For the **N** condition...
 
-we need to use simulation instead of mathematical formulas to get our p-value and confidence interval. 
+we need to use simulation instead of mathematical formulas to get our p-value and confidence interval.
 :::
 :::
 :::
@@ -588,14 +588,14 @@ we need to use simulation instead of mathematical formulas to get our p-value an
 
 ## Mathematical / Theory-based Methods
 
-:::{.incremental}
-- Are a "simpler" approach
-- Use formulas instead of simulation to obtain standard error
-- Use $t$-distribution to get p-value and confidence interval
-- Require that the residuals are normally distributed
+::: incremental
+-   Are a "simpler" approach
+-   Use formulas instead of simulation to obtain standard error
+-   Use $t$-distribution to get p-value and confidence interval
+-   Require that the residuals are normally distributed
 :::
 
-## How does this look? 
+## How does this look?
 
 ::: panel-tabset
 ## Before
@@ -618,7 +618,7 @@ pull(obs_slope)
 
 ## Now
 
-:::{.smaller}
+::: smaller
 ```{r}
 #| echo: true
 #| label: obs-t-code
@@ -717,10 +717,10 @@ ggplot(data = tibble(x = c(-5, 5)),
 
 . . .
 
-:::{.callout-note}
+::: callout-note
 # Different $t$-distributions
 
-A $t$-distribution has a *slightly* different shape depending on the sample size. Technically, we are using a $t$-distribution with $n - 2$ degrees of freedom to get our p-value. 
+A $t$-distribution has a *slightly* different shape depending on the sample size. Technically, we are using a $t$-distribution with $n - 2$ degrees of freedom to get our p-value.
 :::
 
 # Did we get similar results between these methods?
@@ -779,15 +779,12 @@ legend(2.5, 0.4,
 :::
 :::
 
-
 ## ![](images/gapminder.png)
 
 > What is the relationship between life expectancy GDP per capita?
 
 . . .
 
-- Decide on a variable transformation
-- Assess model conditions (L, I, N, E)
-- Compare hypothesis test results between simulation-based methods and theory-based methods
-
-
+-   Decide on a variable transformation
+-   Assess model conditions (L, I, N, E)
+-   Compare hypothesis test results between simulation-based methods and theory-based methods
