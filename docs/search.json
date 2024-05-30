@@ -696,7 +696,7 @@
     "href": "project/final-project/final-project-directions.html#model-validity",
     "title": "Final Project Guidelines",
     "section": "3.3 Model Validity",
-    "text": "3.3 Model Validity\n\nEvaluate the LINE conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Friday, May 31 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
+    "text": "3.3 Model Validity\n\nEvaluate the conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Friday, May 31 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
     "crumbs": [
       "Projects",
       "Final Project Description"
@@ -1455,15 +1455,15 @@
     "objectID": "slides/week10-day1.html#wrapping-up-revisions",
     "href": "slides/week10-day1.html#wrapping-up-revisions",
     "title": "Week 10: Two-way ANOVA",
-    "section": "Wrapping Up Revisions",
-    "text": "Wrapping Up Revisions\n\n\nStatistical Critique 2 revisions are due by Wednesday\nLab 8 revisions are due by Wednesday\nFinal revisions on all assignments will be accepted until this Sunday, June 9\n\n\n\n\n\n\n\n\n\nOne round of revisions\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions."
+    "section": "",
+    "text": "Statistical Critique 2 revisions are due by Wednesday\nLab 8 revisions are due by Wednesday\nFinal revisions on all assignments will be accepted until this Sunday, June 9\n\n\n. . .\n\n\n\n\n\n\nOne round of revisions\n\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions."
   },
   {
     "objectID": "slides/week10-day1.html#final-project",
     "href": "slides/week10-day1.html#final-project",
     "title": "Week 10: Two-way ANOVA",
-    "section": "Final Project",
-    "text": "Final Project\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Wednesday\n\nPrint your report!"
+    "section": "",
+    "text": "Feedback (from me) will be provided no later than Thursday evening\nPeer feedback on Wednesday\n\nPrint your report!"
   },
   {
     "objectID": "slides/week10-day1.html#section",
@@ -1498,35 +1498,35 @@
     "href": "slides/week10-day1.html#research-question",
     "title": "Week 10: Two-way ANOVA",
     "section": "Research Question",
-    "text": "Research Question\n\nDoes the relationship between stem dry mass and calcium treatment for sugar maples differ based on the year the treatment was applied?\n\n\n\nOr, because the study was an experiment…\n\nDoes the effect of calcium treatment on the stem dry mass of sugar maples differ based on the year of the treatment?"
+    "text": "Research Question\n\nDoes the relationship between stem dry mass and calcium treatment for sugar maples differ based on the year the treatment was applied?\n\n. . .\n\nOr, because the study was an experiment…\n\nDoes the effect of calcium treatment on the stem dry mass of sugar maples differ based on the year of the treatment?"
   },
   {
     "objectID": "slides/week10-day1.html#conditions",
     "href": "slides/week10-day1.html#conditions",
     "title": "Week 10: Two-way ANOVA",
     "section": "Conditions",
-    "text": "Conditions\n\nIndependence of observations\n\n\n\nObservations are independent within groups and between groups\n\n\n\n\nEqual variability of the groups\n\n\n\nThe spread of the distributions are similar across groups\n\n\n\n\n\nNormality of the residuals\n\n\n\nThe distribution of residuals for each group is approximately normal"
+    "text": "Conditions\n\nIndependence of observations\n\n\n\nObservations are independent within groups and between groups\n\n\n. . .\n\nEqual variability of the groups\n\n\n\nThe spread of the distributions are similar across groups\n\n\n. . .\n\nNormality of the residuals\n\n\n\nThe distribution of residuals for each group is approximately normal"
   },
   {
     "objectID": "slides/week10-day1.html#theory-based-two-way-anova",
     "href": "slides/week10-day1.html#theory-based-two-way-anova",
     "title": "Week 10: Two-way ANOVA",
     "section": "Theory-based Two-Way ANOVA",
-    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.014936833\n0.014936833\n80.86903\n1.110444e-16\n\n\nyear_cat\n1\n0.109201385\n0.109201385\n591.22372\n2.156127e-64\n\n\nwatershed:year_cat\n1\n0.005832409\n0.005832409\n31.57706\n5.739567e-08\n\n\nResiduals\n221\n0.040819583\n0.000184704\nNA\nNA\n\n\n\n\n\n\n\n\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n\n\n\n\nDoes it?"
+    "text": "Theory-based Two-Way ANOVA\n\naov(stem_dry_mass ~ watershed * year_cat, \n    data = hbr_maples_small)\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nwatershed\n1\n0.014936833\n0.014936833\n80.86903\n1.110444e-16\n\n\nyear_cat\n1\n0.109201385\n0.109201385\n591.22372\n2.156127e-64\n\n\nwatershed:year_cat\n1\n0.005832409\n0.005832409\n31.57706\n5.739567e-08\n\n\nResiduals\n221\n0.040819583\n0.000184704\nNA\nNA\n\n\n\n\n\n\n\n. . .\n\nThe watershed:year_cat line is testing if the relationship between the calcium treatment (watershed) and stem dry mass differs between 2003 and 2004.\n\n. . .\n\n\nDoes it?"
   },
   {
     "objectID": "slides/week10-day1.html#how-are-those-p-values-calculated",
     "href": "slides/week10-day1.html#how-are-those-p-values-calculated",
     "title": "Week 10: Two-way ANOVA",
     "section": "How are those p-values calculated?",
-    "text": "How are those p-values calculated?\nThe p-values in the previous table use Type I sums of squares.\n\nType I sums of squares are “sequential,” meaning variables are tested in the order they are listed.\n\n\n\nSo, the p-value for watershed:year_cat is conditional on including watershed and year_cat as explanatory variables.\n\n\n\nIs that what we want????"
+    "text": "How are those p-values calculated?\nThe p-values in the previous table use Type I sums of squares.\n\nType I sums of squares are “sequential,” meaning variables are tested in the order they are listed.\n\n. . .\n\nSo, the p-value for watershed:year_cat is conditional on including watershed and year_cat as explanatory variables.\n. . .\n\nIs that what we want????"
   },
   {
     "objectID": "slides/week10-day1.html#testing-main-effects",
     "href": "slides/week10-day1.html#testing-main-effects",
     "title": "Week 10: Two-way ANOVA",
     "section": "Testing “main effects”",
-    "text": "Testing “main effects”\nIf there is evidence of an interaction, we do not test if the main effects are “significant.”\n\n\nWhy?\n\n\n\nThe interactions depend on these variables, so they should be included in the model!"
+    "text": "Testing “main effects”\nIf there is evidence of an interaction, we do not test if the main effects are “significant.”\n. . .\n\nWhy?\n. . .\n\nThe interactions depend on these variables, so they should be included in the model!"
   },
   {
     "objectID": "slides/week10-day1.html#interpreting-main-effects",
@@ -1547,7 +1547,7 @@
     "href": "slides/week10-day1.html#testing-for-a-relationship-for-each-variable",
     "title": "Week 10: Two-way ANOVA",
     "section": "Testing for a relationship for each variable",
-    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0002022607\n2.022607e-04\n3.452617\n6.508593e-02\n\n\nwatershed\n1\n0.0030830794\n3.083079e-03\n52.628583\n1.923319e-11\n\n\nResiduals\n152\n0.0089044403\n5.858184e-05\nNA\nNA\n\n\n\n\n\n\n\n\n\n\nDo you think it matters which variable comes first?"
+    "text": "Testing for a relationship for each variable\n\naov(stem_dry_mass ~ elevation + watershed, \n    data = hbr_maples_small) %&gt;% \n  tidy()\n\n\n\n\n\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nelevation\n1\n0.0002022607\n2.022607e-04\n3.452617\n6.508593e-02\n\n\nwatershed\n1\n0.0030830794\n3.083079e-03\n52.628583\n1.923319e-11\n\n\nResiduals\n152\n0.0089044403\n5.858184e-05\nNA\nNA\n\n\n\n\n\n\n\n\n. . .\n\nDo you think it matters which variable comes first?"
   },
   {
     "objectID": "slides/week10-day1.html#lets-see",
@@ -1561,14 +1561,14 @@
     "href": "slides/week10-day1.html#sequential-versus-partial-sums-of-squares",
     "title": "Week 10: Two-way ANOVA",
     "section": "Sequential Versus Partial Sums of Squares",
-    "text": "Sequential Versus Partial Sums of Squares\nSimilar to before, the p-values in the ANOVA table use Type I (sequential) sums of squares.\n\n\n\nThe p-value for each variable is conditional on the variable(s) that came before it.\nThe p-value for elevation is conditional on watershed being included in the model\nThe p-value for watershed is conditional on…nothing.\n\n\n\n\n\nIf we want the p-value for each explanatory variable to be conditional on every variable included in the model, then we need to use a different type of sums of squares!"
+    "text": "Sequential Versus Partial Sums of Squares\nSimilar to before, the p-values in the ANOVA table use Type I (sequential) sums of squares.\n\n\n\nThe p-value for each variable is conditional on the variable(s) that came before it.\nThe p-value for elevation is conditional on watershed being included in the model\nThe p-value for watershed is conditional on…nothing.\n\n\n\n. . .\n\nIf we want the p-value for each explanatory variable to be conditional on every variable included in the model, then we need to use a different type of sums of squares!"
   },
   {
     "objectID": "slides/week10-day1.html#partial-sums-of-squares",
     "href": "slides/week10-day1.html#partial-sums-of-squares",
     "title": "Week 10: Two-way ANOVA",
     "section": "Partial Sums of Squares",
-    "text": "Partial Sums of Squares\n\nType III sums of squares are “partial,” meaning every term in the model is tested in light of the other terms in the model.\n\n\n\n\nThe p-value for elevation is conditional on watershed being included in the model\nThe p-value for watershed is conditional on elevation being included in the model\n\n\n\n\n\n\n\n\n\n\nOnly different for variables that were not first\n\n\nWe could have used Type III sums of squares for the interaction model and would have gotten the same p-value!"
+    "text": "Partial Sums of Squares\n\nType III sums of squares are “partial,” meaning every term in the model is tested in light of the other terms in the model.\n\n. . .\n\n\nThe p-value for elevation is conditional on watershed being included in the model\nThe p-value for watershed is conditional on elevation being included in the model\n\n\n. . .\n\n\n\n\n\n\nOnly different for variables that were not first\n\n\n\nWe could have used Type III sums of squares for the interaction model and would have gotten the same p-value!"
   },
   {
     "objectID": "slides/week10-day1.html#getting-the-conditional-tests-for-every-variable",
@@ -1589,7 +1589,7 @@
     "href": "slides/week10-day1.html#keeping-non-significant-variables",
     "title": "Week 10: Two-way ANOVA",
     "section": "Keeping “Non-significant” Variables",
-    "text": "Keeping “Non-significant” Variables\n\nShould you always remove variables with “large” p-values from an ANOVA?\n\n\nNo!\nEven “non-significant” variables explain some amount of the variation in the response. Which makes your estimates of a treatment effect more precise!"
+    "text": "Keeping “Non-significant” Variables\n\nShould you always remove variables with “large” p-values from an ANOVA?\n. . .\n\nNo!\nEven “non-significant” variables explain some amount of the variation in the response. Which makes your estimates of a treatment effect more precise!"
   },
   {
     "objectID": "slides/week10-day1.html#hypothesis-test-steps",
@@ -2162,8 +2162,8 @@
     "objectID": "slides/week9-day2.html#upcoming-deadlines",
     "href": "slides/week9-day2.html#upcoming-deadlines",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
-    "section": "Upcoming Deadlines",
-    "text": "Upcoming Deadlines\n\nLab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Wednesday\nStatistical Critique 2 revisions are due next Wednesday\nFinal revisions on all assignments will be accepted until Sunday, June 9\n\n\n\n\n\n\n\nDon’t forget reflections!"
+    "section": "",
+    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Wednesday\nStatistical Critique 2 revisions are due next Wednesday\nFinal revisions on all assignments will be accepted until Sunday, June 9\n\n\n\n\n\n\n\nDon’t forget reflections!"
   },
   {
     "objectID": "slides/week9-day2.html#common-mistakes",
@@ -2191,21 +2191,21 @@
     "href": "slides/week9-day2.html#theory-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Theory-based Method",
-    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
+    "text": "Theory-based Method\n\nTo fit a theory-based ANOVA, you use the following code:\n\nmy_model &lt;- aov(&lt;NAME OF RESPONSE VARIABLE&gt; ~ &lt;NAME OF EXPLANATORY VARIABLE&gt;, \n                data = &lt;NAME OF DATASET&gt;)\n\n\n. . .\n\n\n\n\n\n\nOnly use if normality is not violated!\n\n\n\nIf you look at your density ridge plots and you believe the normality condition is violated, you should not use a theory-based method!"
   },
   {
     "objectID": "slides/week9-day2.html#simulation-based-method",
     "href": "slides/week9-day2.html#simulation-based-method",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Simulation-based Method",
-    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
+    "text": "Simulation-based Method\n\nTo fit a simulation-based ANOVA, you need to carry out the following steps:\n\nfind the observed statistic\nsimulate statistics that could have happened if the null was true\nvisualize the distribution of simulated statistics (your permutation distribution)\ncalculate the p-value for your observed statistic\n\n\n\n\n\n\n\n\n2 levels versus 3 levels\n\n\n\nIf you categorical variable has two levels, you need to use a \"diff in means\" statistic, not an F-statistic!"
   },
   {
     "objectID": "slides/week9-day2.html#model-validity",
     "href": "slides/week9-day2.html#model-validity",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Model Validity",
-    "text": "Model Validity\n\nAre your p-values trustworthy?\n\nInspect the conditions of your model!\n\n\n\n\nIndependence of Observations\nLook at how the data were collected!\n\n\n\n\nNormality of Residuals (Responses)\nUse the density ridge plots!\n\n\n\n\n\nEqual Variances of Each Group\nUse the density ridge plots!"
+    "text": "Model Validity\n\nAre your p-values trustworthy?\n\nInspect the conditions of your model!\n. . .\n\n\n\nIndependence of Observations\nLook at how the data were collected!\n\n\n\n\nNormality of Residuals (Responses)\nUse the density ridge plots!\n\n\n\n\n\nEqual Variances of Each Group\nUse the density ridge plots!"
   },
   {
     "objectID": "slides/week9-day2.html#two-way-anova",
@@ -2219,7 +2219,7 @@
     "href": "slides/week9-day2.html#code-for-plot",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "Code for Plot",
-    "text": "Code for Plot\n\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nLegend Positions\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
+    "text": "Code for Plot\n\n\nggplot(data = evals_small, \n       mapping = aes(y = age_cat, x = min_eval, fill = gender)) + \n  geom_density_ridges(alpha = 0.5) + \n  scale_fill_brewer(palette = \"PRGn\") +\n  labs(y = \"\",\n       title = \"Gaps between male and female faculty evaluation scores become more pronounced with age\", \n       x = \"\", \n       fill = \"Professor's Sex\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nLegend Positions\n\n\n\n\nThere are four options for legend.position\n\n\"none\" (removes the legend)\n\"left\" (difficult to read with the y-axis label)\n\"right\" (the default position)\n\"bottom\" (difficult to read with the x-axis label)\n\"top\" (generally my preference)"
   },
   {
     "objectID": "index.html",
@@ -4372,8 +4372,8 @@
     "objectID": "slides/week8-day2.html#common-mistakes",
     "href": "slides/week8-day2.html#common-mistakes",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Common Mistakes",
-    "text": "Common Mistakes\n\nQuestion 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
+    "section": "",
+    "text": "Question 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
   },
   {
     "objectID": "slides/week8-day2.html#first-steps",
@@ -4394,7 +4394,7 @@
     "href": "slides/week8-day2.html#what-is-the-most-complex-model",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What is the “most complex” model?",
-    "text": "What is the “most complex” model?\nFor 1 numerical & 1 categorical explanatory variables\n\nFit the different slopes (interaction) model\n\n\nspecies_lm &lt;- lm(bill_length_mm ~ bill_depth_mm * species, \n                  data = penguins)\n\n\n\nFor 2 numerical explanatory variables\n\nFit the model with both variables included:\n\n\nbill_lm &lt;- lm(bill_length_mm ~ body_mass_g + bill_depth_mm, \n                  data = penguins)"
+    "text": "What is the “most complex” model?\nFor 1 numerical & 1 categorical explanatory variables\n\nFit the different slopes (interaction) model\n\n\nspecies_lm &lt;- lm(bill_length_mm ~ bill_depth_mm * species, \n                  data = penguins)\n\n. . .\n\nFor 2 numerical explanatory variables\n\nFit the model with both variables included:\n\n\nbill_lm &lt;- lm(bill_length_mm ~ body_mass_g + bill_depth_mm, \n                  data = penguins)"
   },
   {
     "objectID": "slides/week8-day2.html#how-do-i-know-what-model-is-best-from-the-anova-table",
@@ -4429,7 +4429,7 @@
     "href": "slides/week8-day2.html#section-2",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\nWhat should we do?"
+    "text": "Linear relationship between \\(x\\) and \\(y\\)\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-3",
@@ -4450,7 +4450,7 @@
     "href": "slides/week8-day2.html#section-5",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Equal variance of residuals\n\n\n\nWhat should we do?"
+    "text": "Equal variance of residuals\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-6",
@@ -4464,7 +4464,7 @@
     "href": "slides/week8-day2.html#section-7",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "Normality of residuals\n\n\n\nWhat should we do?"
+    "text": "Normality of residuals\n\n\n\n\n\n\n\n\n\n\n. . .\nWhat should we do?"
   },
   {
     "objectID": "slides/week8-day2.html#section-8",
@@ -4485,7 +4485,7 @@
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
-    "text": "What is the relationship between life expectancy GDP per capita?\n\n\n\nDecide on a variable transformation\nAssess model conditions (L, I, N, E)\nCompare hypothesis test results between simulation-based methods and theory-based methods"
+    "text": "What is the relationship between life expectancy GDP per capita?\n\n. . .\n\nDecide on a variable transformation\nAssess model conditions (L, I, N, E)\nCompare hypothesis test results between simulation-based methods and theory-based methods"
   },
   {
     "objectID": "slides/week8-day2.html#section-11",
@@ -6446,7 +6446,7 @@
     "href": "slides/week8-day2.html#testing-for-a-population-slope-beta_1",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Testing for a Population Slope (\\(\\beta_1\\))",
-    "text": "Testing for a Population Slope (\\(\\beta_1\\))\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
+    "text": "Testing for a Population Slope (\\(\\beta_1\\))\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\n\nWhat do these hypotheses mean in words?"
   },
   {
     "objectID": "slides/week8-day2.html#how",
@@ -6502,21 +6502,21 @@
     "href": "slides/week8-day2.html#what-do-you-think",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What do you think?",
-    "text": "What do you think?\n\n\n\\(\\widehat{score} = 3.88 + 0.066 \\times \\text{bty_avg}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWill we reject \\(H_0\\)?"
+    "text": "What do you think?\n\n\n\\(\\widehat{score} = 3.88 + 0.066 \\times \\text{bty_avg}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\n\nWill we reject \\(H_0\\)?"
   },
   {
     "objectID": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
     "href": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Is our observed statistic likely to happen if the null was true?",
-    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%.\n\n\n\nSo, it seems like \\(H_0\\) is not a reasonable characterization of the relationship."
+    "text": "Is our observed statistic likely to happen if the null was true?\n. . .\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n. . .\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%.\n. . .\n\nSo, it seems like \\(H_0\\) is not a reasonable characterization of the relationship."
   },
   {
     "objectID": "slides/week8-day2.html#model-conditions",
     "href": "slides/week8-day2.html#model-conditions",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "Model Conditions",
-    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndependent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n. . .\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndependent observations\n\nNormality of residuals\n\nEqual variance of residuals"
   },
   {
     "objectID": "slides/week8-day2.html#condition-violations",
@@ -6530,14 +6530,14 @@
     "href": "slides/week8-day2.html#what-happens-if-the-conditions-are-violated",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What happens if the conditions are violated?",
-    "text": "What happens if the conditions are violated?\nIn general, when the conditions associated with these methods are violated, we will underestimate the true standard error (spread) of the sampling distribution.\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
+    "text": "What happens if the conditions are violated?\nIn general, when the conditions associated with these methods are violated, we will underestimate the true standard error (spread) of the sampling distribution.\n. . .\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
   },
   {
     "objectID": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
     "href": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "What if we can’t fix a condition being violated?",
-    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L, I, and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
+    "text": "What if we can’t fix a condition being violated?\n. . .\n\n\nFor the L, I, and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
   },
   {
     "objectID": "slides/week8-day2.html#mathematical-theory-based-methods",
@@ -6558,7 +6558,7 @@
     "href": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "How does R calculate the p-value?",
-    "text": "How does R calculate the p-value?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifferent \\(t\\)-distributions\n\n\nA \\(t\\)-distribution has a slightly different shape depending on the sample size. Technically, we are using a \\(t\\)-distribution with \\(n - 2\\) degrees of freedom to get our p-value."
+    "text": "How does R calculate the p-value?\n. . .\n\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\n\n\nDifferent \\(t\\)-distributions\n\n\n\nA \\(t\\)-distribution has a slightly different shape depending on the sample size. Technically, we are using a \\(t\\)-distribution with \\(n - 2\\) degrees of freedom to get our p-value."
   },
   {
     "objectID": "slides/week8-day2.html#approximating-the-permutation-distribution",
@@ -6572,7 +6572,7 @@
     "href": "slides/week9-day2.html",
     "title": "Coding a One-way ANOVA – Final Project Work Day",
     "section": "",
-    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
+    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Wednesday\nStatistical Critique 2 revisions are due next Wednesday\nFinal revisions on all assignments will be accepted until Sunday, June 9\n\n\n\n\n\n\n\nDon’t forget reflections!"
   },
   {
     "objectID": "slides/week9-day1.html#large-p-values-neq-evidence-for-the-null-hypothesis",
@@ -6594,5 +6594,12 @@
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
     "text": "Question 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
+  },
+  {
+    "objectID": "slides/week10-day1.html",
+    "href": "slides/week10-day1.html",
+    "title": "Week 10: Two-way ANOVA",
+    "section": "",
+    "text": "Statistical Critique 2 revisions are due by Wednesday\nLab 8 revisions are due by Wednesday\nFinal revisions on all assignments will be accepted until this Sunday, June 9\n\n\n. . .\n\n\n\n\n\n\nOne round of revisions\n\n\n\nYou will only have time for one round of revisions on Lab 8 and Statistical Critique 2, so make sure you feel confident about your revisions.\n\n\n\n\n\n\nFeedback (from me) will be provided no later than Thursday evening\nPeer feedback on Wednesday\n\nPrint your report!"
   }
 ]
