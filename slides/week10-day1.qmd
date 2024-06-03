@@ -40,11 +40,7 @@ hbr_maples_small <- bind_rows(hbr_maples_w1,
 
 ## Wrapping Up Revisions
 
-::: incremental
--   Statistical Critique 2 revisions are due by Wednesday
--   Lab 8 revisions are due by Wednesday
--   Final revisions on **all** assignments will be accepted until this Sunday, June 9
-:::
+The final round of revisions on **all** assignments are due by Sunday, June 9.
 
 . . .
 
@@ -74,7 +70,7 @@ Two-way ANOVA
 Goal:
 :::
 
-Assess if [multiple]{style="color: #0F4C81"} categorical variables have a relationship with the response.
+Assess if [multiple]{.underline} categorical variables have a relationship with the response.
 
 ## Modeling Options
 
@@ -85,7 +81,7 @@ Additive Model
 :::
 
 ::: fragment
-Assess if each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.
+Each explanatory variable has a meaningful relationship with the response, conditional on the variable(s) included in the model.
 :::
 :::
 
@@ -95,7 +91,7 @@ Interaction Model
 :::
 
 ::: fragment
-Assess if the relationship between one categorical explanatory variable and the response **differs** based on the values of another categorical variable.
+The relationship between one categorical explanatory variable and the response **differs** based on the values of another categorical variable.
 :::
 :::
 :::
@@ -146,7 +142,7 @@ hbr_maples_small %>%
 
 ## Research Question
 
-> Does the relationship between stem dry mass and calcium treatment for sugar maples differ based on the year the treatment was applied?
+> Does the relationship between mean stem dry mass and calcium treatment for sugar maples differ based on the year the treatment was applied?
 
 . . .
 
@@ -174,10 +170,10 @@ Or, because the study was an experiment...
 
 . . .
 
--   Normality of the residuals
+-   Normality of the residuals / responses
 
 ::: small
-> The distribution of residuals for each group is approximately normal
+> The distribution of responses for each group is approximately normal
 :::
 
 ## Theory-based Two-Way ANOVA
@@ -200,13 +196,18 @@ aov(stem_dry_mass ~ watershed * year_cat,
 aov(stem_dry_mass ~ watershed * year_cat, 
     data = hbr_maples_small) %>% 
   tidy() %>% 
+  rename(`Sum Sq` = sumsq, 
+          Df = df, 
+         `Mean Sq` = meansq, 
+          `F value` = statistic, 
+          `Pr(>F)` = p.value) %>% 
   gt::gt()
 ```
 
 . . .
 
 ::: small
-The `watershed:year_cat` line is testing if the relationship between the calcium treatment (`watershed`) and stem dry mass differs between 2003 and 2004.
+The `watershed:year_cat` line is testing if the relationship between the calcium treatment (`watershed`) and mean stem dry mass differs between 2003 and 2004.
 :::
 
 . . .
@@ -251,7 +252,7 @@ The interactions depend on these variables, so they should be included in the mo
 
 ## Interpreting "main effects"
 
-When interaction effects are present, the interpretation of the main effects is incomplete or misleading
+When interaction effects are present, an interpretation of main effects is incomplete or misleading
 
 ::: center
 ![](images/car-interaction.png)
@@ -271,7 +272,7 @@ hbr_maples_small %>%
   ggplot(mapping = aes(y = elevation, x = stem_dry_mass, fill = watershed)) + 
   geom_density_ridges(alpha = 0.5, scale = 1) +
   labs(y = "",
-       title = "Effect of Calcium Treatment on Stem Dry Mass Across Different Years",
+       title = "Effect of Calcium Treatment on Stem Dry Mass Across Different Elevations",
        x = "Stem Dry Mass (g)", 
        fill = "") + 
   theme(axis.title = element_text(size = 18), 
@@ -300,6 +301,11 @@ aov(stem_dry_mass ~ elevation + watershed,
 #| echo: false
 aov(stem_dry_mass ~ elevation + watershed, data = hbr_maples_small) %>% 
   tidy() %>% 
+  rename(`Sum Sq` = sumsq, 
+          Df = df, 
+          `Mean Sq` = meansq,
+          `F value` = statistic, 
+          `Pr(>F)` = p.value) %>% 
   gt() 
 ```
 
@@ -329,6 +335,11 @@ aov(stem_dry_mass ~ watershed + elevation,
 #| echo: false
 aov(stem_dry_mass ~ watershed + elevation, data = hbr_maples) %>% 
   tidy() %>% 
+  rename(`Sum Sq` = sumsq, 
+          Df = df, 
+          `Mean Sq` = meansq,
+          `F value` = statistic, 
+          `Pr(>F)` = p.value) %>% 
   gt() 
 ```
 
@@ -375,6 +386,10 @@ We could have used Type III sums of squares for the interaction model and would 
 
 ## Getting the Conditional Tests for Every Variable
 
+::: callout-tip
+# Load in the `car` package!
+:::
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -389,10 +404,6 @@ water_elev_lm <- lm(stem_dry_mass ~ watershed + elevation,
 Anova(water_elev_lm, type = "III")
 ```
 
-::: callout-tip
-# Load in the `car` package!
-:::
-
 ## Additive Model Hypothesis Tests
 
 ```{r}
@@ -404,6 +415,10 @@ water_elev_lm <- lm(stem_dry_mass ~ watershed + elevation,
 
 Anova(water_elev_lm, type = "III") %>% 
   tidy() %>% 
+  rename(`Sum Sq` = sumsq, 
+          Df = df, 
+          `F value` = statistic, 
+          `Pr(>F)` = p.value) %>% 
   gt::gt()
 ```
 
@@ -437,7 +452,7 @@ Even "non-significant" variables explain some amount of the variation in the res
 
 ::: columns
 ::: {.column width="35%"}
-::: {style="font-size: 1.5em;"}
+::: {style="font-size: 1.25em;"}
 Step 1: Fit a one-way ANOVA model for each categorical variable
 :::
 :::
@@ -447,7 +462,7 @@ Step 1: Fit a one-way ANOVA model for each categorical variable
 
 ::: {.column width="60%"}
 ::: fragment
-::: {style="font-size: 1.5em; color: #0F4C81;"}
+::: {style="font-size: 1.25em; color: #0F4C81;"}
 Step 2: Decide if each explanatory variable has a meaningful relationship with the response variable
 :::
 :::
@@ -461,7 +476,7 @@ Step 2: Decide if each explanatory variable has a meaningful relationship with t
 
 ## Step 3 -- Fit an Additive Two-way ANOVA
 
-If there is evidence that **both** variables have a relationship with the response variable, then you fit an *additive* two-way ANOVA.
+If there is evidence that ***both*** variables have a relationship with the response variable, then you fit an *additive* two-way ANOVA.
 
 ```{r}
 #| label: twa-additive-template
