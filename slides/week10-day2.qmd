@@ -34,10 +34,16 @@ trout <- filter(and_vertebrates,
 . . .
 
 ::: incremental
--   Lab 8 revisions due tonight
--   Statistical Critique revisions due tonight
--   All other final revisions are due by Sunday
--   Final Project is due by Sunday
+-   Final revisions are due by Sunday at midnight
+-   Final Project is due by Sunday at midnight
+:::
+
+. . .
+
+::: callout-important
+# Deadline Extensions
+
+You **cannot** request deadline extensions for the final version of your Final Project. The assignment portal closes at 11:59pm on Sunday. **Do not ride the line.**
 :::
 
 # Peer Review Session (45-minutes)
@@ -190,7 +196,7 @@ Look back at your visualizations -- which group(s) look the most different?
 ::: fragment
 Did you fail to reject the null hypothesis for your one-way ANOVA?
 
-Look back at your visualizations -- do all of the groups look the same?
+Look back at your visualizations -- do all of the groups look relatively similar?
 :::
 :::
 :::

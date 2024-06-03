@@ -5094,7 +5094,7 @@
     "href": "slides/week10-day2.html#overall-conclusions",
     "title": "STAT 313 Last Day",
     "section": "Overall Conclusions",
-    "text": "Overall Conclusions\n\n\nBased on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.\n\n\n\n\n\n\n\nDid you distributions look similar but your hypothesis test said at least one group was different?\nThink about how sample size effects p-values!\n\n\n\n\n\n\nDid you reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – which group(s) look the most different?\n\n\n\n\n\n\n\nDid you fail to reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – do all of the groups look the same?"
+    "text": "Overall Conclusions\n\n\nBased on the results of your analysis what is your conclusion for the questions of interest? Connect your conclusion(s) to the relationships you saw in the visualizations you made and the results of your hypothesis tests.\n\n\n\n\n\n\n\nDid you distributions look similar but your hypothesis test said at least one group was different?\nThink about how sample size effects p-values!\n\n\n\n\n\n\nDid you reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – which group(s) look the most different?\n\n\n\n\n\n\n\nDid you fail to reject the null hypothesis for your one-way ANOVA?\nLook back at your visualizations – do all of the groups look relatively similar?"
   },
   {
     "objectID": "slides/week10-day2.html#do-you-have-really-skewed-data",
