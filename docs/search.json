@@ -696,7 +696,7 @@
     "href": "project/final-project/final-project-directions.html#model-validity",
     "title": "Final Project Guidelines",
     "section": "3.3 Model Validity",
-    "text": "3.3 Model Validity\n\nEvaluate the LINE conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Friday, May 31 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
+    "text": "3.3 Model Validity\n\nEvaluate the conditions of both one-way ANOVA models\n\n\n\n\n\n\n\nCondition violations\n\n\n\nIf you find through the study design and / or your visualizations that certain model conditions are violated, you are expected to do your best to remedy these violations. If you need help figuring out how to do this, email Dr. Theobold before Friday, May 31 at 4pm!\n\n\n\nBased on your analysis of the conditions, describe whether you believe the tests you performed are “reliable.”",
     "crumbs": [
       "Projects",
       "Final Project Description"
@@ -1072,6 +1072,13 @@
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "Holding the Other Variable(s) Constant",
     "text": "Holding the Other Variable(s) Constant\n\nHolding body mass constant, we are 95% confident that a 1mm increase in flipper length is associated with between a 0.173 and 0.266mm increase in a penguin’s bill length.\n\n\n\nHolding flipper length constant, we are 95% confident that a 100 gram increase in body mass is associated with between a 0.203mm decrease and a 0.157mm increase in a penguin’s bill length."
+  },
+  {
+    "objectID": "slides/week7-day2.html#water-temperature-and-latitude",
+    "href": "slides/week7-day2.html#water-temperature-and-latitude",
+    "title": "Confidence Intervals – Real Life Sampling Distributions",
+    "section": "Water Temperature and Latitude",
+    "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
   },
   {
     "objectID": "slides/week1-day1.html#section",
@@ -2990,13 +2997,6 @@
     "text": "Question 14\nTo earn a Success: Answer must agree with what they said in #4-6\n\n\nIf they said equal variance and / or independence was violated, they must say that neither p-value is reliable.\n\n\n\nIf they said normality was violated but equal variance and independence were not violated, they must say that the simulation-based p-value is more reliable.\n\n\n\nIf they said none of the conditions were violated, they must say that both p-values are reliable.\n\n\nGrowing:\nIf they choose the wrong method:\n\nLook back at the conditions required for each of these methods. Which conditions did you say were violated? What does that imply for the method(s) which give you the most reliable p-value?"
   },
   {
-    "objectID": "labs/grading-guides/lab-8-grading-guide.html#question-15",
-    "href": "labs/grading-guides/lab-8-grading-guide.html#question-15",
-    "title": "Lab 8 Grading Guide",
-    "section": "Question 15",
-    "text": "Question 15\nTo earn a Success: Answer must agree with what they said in #4-6\n\n\nIf they said equal variance and / or independence was violated, they must say that neither p-value is reliable.\n\n\n\nIf they said normality was violated but equal variance and independence were not violated, they must say that the simulation-based p-value is more reliable.\n\n\n\nIf they said none of the conditions were violated, they must say that both p-values are reliable.\n\n\nGrowing:\nIf they choose the wrong method:\n\nLook back at the conditions required for each of these methods. Which conditions did you say were violated? What does that imply for the method(s) which give you the most reliable p-value?"
-  },
-  {
     "objectID": "labs/lab-6.html",
     "href": "labs/lab-6.html",
     "title": "Lab 6: Predicting Professor Evaluation Scores",
@@ -4425,6 +4425,69 @@
     "text": "body_mass_g: With a p-value of approximately 0, I would conclude there is a relationship between body mass and bill length (after accounting for bill depth)!\n\n\n\nbill_depth_mm: With a p-value of 0.234, I would conclude there is not a relationship between bill depth and bill length (after accounting for body mass)!"
   },
   {
+    "objectID": "slides/week8-day2.html#testing-for-a-population-slope-beta_1",
+    "href": "slides/week8-day2.html#testing-for-a-population-slope-beta_1",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Testing for a Population Slope (\\(\\beta_1\\))",
+    "text": "Testing for a Population Slope (\\(\\beta_1\\))\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
+  },
+  {
+    "objectID": "slides/week8-day2.html#what-do-you-think",
+    "href": "slides/week8-day2.html#what-do-you-think",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "What do you think?",
+    "text": "What do you think?\n\n\n\\(\\widehat{score} = 3.88 + 0.066 \\times \\text{bty_avg}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWill we reject \\(H_0\\)?"
+  },
+  {
+    "objectID": "slides/week8-day2.html#if-h_0-was-true-then",
+    "href": "slides/week8-day2.html#if-h_0-was-true-then",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "If \\(H_0\\) was true then…",
+    "text": "If \\(H_0\\) was true then…\n\n\\(\\beta_1\\) = 0\n\nwhich means…"
+  },
+  {
+    "objectID": "slides/week8-day2.html#one-possible-shuffle",
+    "href": "slides/week8-day2.html#one-possible-shuffle",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "One possible shuffle",
+    "text": "One possible shuffle\n\n\n\n\n\n\n\n\n\n\nscore\nbty_avg\nshuffled_score\n\n\n\n\n4.7\n3.000\n2.8\n\n\n3.6\n4.833\n4.6\n\n\n4.3\n4.333\n4.5\n\n\n4.8\n3.500\n2.8\n\n\n3.7\n3.000\n3.7\n\n\n3.6\n3.167\n3.9\n\n\n4.3\n3.167\n4.1\n\n\n3.5\n4.833\n3.6\n\n\n3.6\n4.333\n3.5\n\n\n4.6\n7.333\n4.6\n\n\n4.4\n2.500\n4.4\n\n\n4.5\n4.333\n4.3\n\n\n4.2\n2.833\n3.4\n\n\n4.8\n6.500\n3.3\n\n\n4.3\n4.000\n4.8\n\n\n4.8\n3.667\n4.1\n\n\n3.1\n1.667\n4.7\n\n\n4.6\n6.500\n4.0\n\n\n4.8\n5.000\n4.5\n\n\n4.1\n6.167\n4.8\n\n\n4.5\n4.167\n3.5\n\n\n3.6\n3.000\n4.7\n\n\n4.8\n6.167\n4.1\n\n\n4.8\n3.667\n4.1\n\n\n3.8\n3.167\n4.4\n\n\n\n\n\n\n\n\n\n\n\nWhich results in a slope statistic of…\n\n\n[1] 0.06663704"
+  },
+  {
+    "objectID": "slides/week8-day2.html#lots-of-statistics-that-could-have-happened-if-h_0-was-true",
+    "href": "slides/week8-day2.html#lots-of-statistics-that-could-have-happened-if-h_0-was-true",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Lots of statistics that could have happened if \\(H_0\\) was true",
+    "text": "Lots of statistics that could have happened if \\(H_0\\) was true"
+  },
+  {
+    "objectID": "slides/week8-day2.html#where-does-our-observed-statistic-fall-on-this-distribution",
+    "href": "slides/week8-day2.html#where-does-our-observed-statistic-fall-on-this-distribution",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Where does our observed statistic fall on this distribution?",
+    "text": "Where does our observed statistic fall on this distribution?"
+  },
+  {
+    "objectID": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
+    "href": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Is our observed statistic likely to happen if the null was true?",
+    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%.\n\n\n\nSo, it seems like \\(H_0\\) is not a reasonable characterization of the relationship."
+  },
+  {
+    "objectID": "slides/week8-day2.html#model-conditions",
+    "href": "slides/week8-day2.html#model-conditions",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Model Conditions",
+    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndependent observations\n\nNormality of residuals\n\nEqual variance of residuals"
+  },
+  {
+    "objectID": "slides/week8-day2.html#what-happens-if-the-conditions-are-violated",
+    "href": "slides/week8-day2.html#what-happens-if-the-conditions-are-violated",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "What happens if the conditions are violated?",
+    "text": "What happens if the conditions are violated?\nIn general, when the conditions associated with these methods are violated, we will underestimate the true standard error (spread) of the sampling distribution.\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
+  },
+  {
     "objectID": "slides/week8-day2.html#section-2",
     "href": "slides/week8-day2.html#section-2",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
@@ -4474,6 +4537,27 @@
     "text": "Variable transformation!"
   },
   {
+    "objectID": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
+    "href": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "What if we can’t fix a condition being violated?",
+    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L, I, and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
+  },
+  {
+    "objectID": "slides/week8-day2.html#mathematical-theory-based-methods",
+    "href": "slides/week8-day2.html#mathematical-theory-based-methods",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Mathematical / Theory-based Methods",
+    "text": "Mathematical / Theory-based Methods\n\n\nAre a “simpler” approach\nUse formulas instead of simulation to obtain standard error\nUse \\(t\\)-distribution to get p-value and confidence interval\nRequire that the residuals are normally distributed"
+  },
+  {
+    "objectID": "slides/week8-day2.html#how-does-this-look",
+    "href": "slides/week8-day2.html#how-does-this-look",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How does this look?",
+    "text": "How does this look?\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg, data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
+  },
+  {
     "objectID": "slides/week8-day2.html#section-9",
     "href": "slides/week8-day2.html#section-9",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
@@ -4481,95 +4565,25 @@
     "text": "How did R calculate the \\(t\\)-statistic?\n\n\nStep 1: SEStep 2: t-statisticProof!\n\n\n\n\n\\(SE_{b_1} = \\frac{\\frac{s_y}{s_x} \\cdot \\sqrt{1 - r^2}}{\\sqrt{n - 2}}\\)\n\n\n\n\n\n[1] 0.01495204\n\n\n\n\n\n\n\\(t = \\frac{b_1}{SE_{b_1}} = \\frac{0.067}{0.014952} = 4.4809947\\)\n\n\n\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
   },
   {
+    "objectID": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
+    "href": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "How does R calculate the p-value?",
+    "text": "How does R calculate the p-value?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifferent \\(t\\)-distributions\n\n\nA \\(t\\)-distribution has a slightly different shape depending on the sample size. Technically, we are using a \\(t\\)-distribution with \\(n - 2\\) degrees of freedom to get our p-value."
+  },
+  {
+    "objectID": "slides/week8-day2.html#approximating-the-permutation-distribution",
+    "href": "slides/week8-day2.html#approximating-the-permutation-distribution",
+    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
+    "section": "Approximating the permutation distribution",
+    "text": "Approximating the permutation distribution\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if the normality condition is not violated."
+  },
+  {
     "objectID": "slides/week8-day2.html#section-10",
     "href": "slides/week8-day2.html#section-10",
     "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
     "section": "",
     "text": "What is the relationship between life expectancy GDP per capita?\n\n\n\nDecide on a variable transformation\nAssess model conditions (L, I, N, E)\nCompare hypothesis test results between simulation-based methods and theory-based methods"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-11",
-    "href": "slides/week8-day2.html#section-11",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Did we get similar results between these methods?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-12",
-    "href": "slides/week8-day2.html#section-12",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-13",
-    "href": "slides/week8-day2.html#section-13",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Approximating the permutation distribution\n\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if certain conditions are not violated."
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-14",
-    "href": "slides/week8-day2.html#section-14",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-15",
-    "href": "slides/week8-day2.html#section-15",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Why not always use theoretical methods?\n\n\n\n\nTheory-based methods only hold if the sampling distribution is normally shaped.\n\n\n\n\nThe normality of a sampling distribution depends heavily on model conditions."
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-16",
-    "href": "slides/week8-day2.html#section-16",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Variable transformation!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-17",
-    "href": "slides/week8-day2.html#section-17",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-18",
-    "href": "slides/week8-day2.html#section-18",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-19",
-    "href": "slides/week8-day2.html#section-19",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-20",
-    "href": "slides/week8-day2.html#section-20",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Are these conditions required for both methods?\n\n\n\n\n\nSimulation-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\nEqual Variance of Residuals\n\n\n\n\n\n\nTheory-based Methods\n\n\n\nLinearity of Relationship\nIndependence of Observations\n\n\n\n\nNormality of Residuals\n\n\n\n\nEqual Variance of Residuals"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-21",
-    "href": "slides/week8-day2.html#section-21",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#section-22",
-    "href": "slides/week8-day2.html#section-22",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "What happens if the conditions are violated?\n\n\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
   },
   {
     "objectID": "slides/week3-day1.html#section",
@@ -4901,6 +4915,13 @@
     "text": "Making a Decision & Reaching a Conclusion\n\n\nFor a p-value of 0.254, what decision would you reach regarding your hypothesis test?\n\n\n\n\nWhat would you conclude regarding the mean minimum evaluation score for different age groups of faculty?"
   },
   {
+    "objectID": "slides/week9-day1.html#large-p-values-neq-evidence-for-the-null-hypothesis",
+    "href": "slides/week9-day1.html#large-p-values-neq-evidence-for-the-null-hypothesis",
+    "title": "ANalysis Of VAriance",
+    "section": "Large p-values \\(\\neq\\) evidence for the null hypothesis!",
+    "text": "Large p-values \\(\\neq\\) evidence for the null hypothesis!"
+  },
+  {
     "objectID": "slides/week9-day1.html#theory-based-methods",
     "href": "slides/week9-day1.html#theory-based-methods",
     "title": "ANalysis Of VAriance",
@@ -4927,27 +4948,6 @@
     "title": "ANalysis Of VAriance",
     "section": "Introduction & Research Questions",
     "text": "Introduction & Research Questions\n\n\nIn 4-6 sentences, introduce / describe your data.\n\nWhat is the context of the data?\nFor what purpose were these data collected?\n\n\n\n\n\nOutline the two questions your research seeks to address.\n\nYou will have one question for each one-way ANOVA model\nYour question should be in terms of “differences in group means” not “relationships”"
-  },
-  {
-    "objectID": "slides/week9-day1.html#removing-silencing-code-templates",
-    "href": "slides/week9-day1.html#removing-silencing-code-templates",
-    "title": "ANalysis Of VAriance",
-    "section": "Removing / Silencing Code Templates",
-    "text": "Removing / Silencing Code Templates\n\nYour final_project.qmd file contains code templates for evaluating the conditions of your ANOVA model (like you did in Lab 8).\nThese do not need to be used for your Introduction. So, you need to “turn off” these code chunks to turn in your Introduction!\n\n\n\n\nThere are two ways to do this:\n\nIn the YAML (at the top of your document) add eval: false to your execute options\nIn each code chunk (there are two) add eval: false to your code chunk options"
-  },
-  {
-    "objectID": "slides/week9-day1.html#yaml-option",
-    "href": "slides/week9-day1.html#yaml-option",
-    "title": "ANalysis Of VAriance",
-    "section": "YAML Option",
-    "text": "YAML Option\n---\ntitle: \"Your Title Goes Here! Make it fun!\"\nauthor: \"Your Name Here!\"\nformat:\n  html:\n    code-tools: true\neditor: visual\nembed-resources: true\nexecute:\n  echo: false\n  message: false\n  warning: false\n  eval: false\n---"
-  },
-  {
-    "objectID": "slides/week9-day1.html#code-chunk-option",
-    "href": "slides/week9-day1.html#code-chunk-option",
-    "title": "ANalysis Of VAriance",
-    "section": "Code Chunk Option",
-    "text": "Code Chunk Option\n#| label: distribution-of-residuals\n#| layout-nrow: 1\n#| eval: false\n#| echo: fenced\n\n# Residuals of first one-way ANOVA \nbroom::augment(my_model) %&gt;% \n  ggplot(mapping = aes(x = .resid)) +\n  geom_histogram() +\n  labs(x = \"Residual\")\n\n# Residuals of second one-way ANOVA \nbroom::augment(my_model) %&gt;% \n  ggplot(mapping = aes(x = .resid)) +\n  geom_histogram() +\n  labs(x = \"Residual\")"
   },
   {
     "objectID": "slides/week2-day2.html#revisions",
@@ -5769,93 +5769,23 @@
     "text": "Help your peers!\n\nAre the arguments / sentences easy to understand? Does the report flow?\nIs the same information included in multiple places?\nDo the plots have nice axis labels?\nCan you easily find the regression equations? Do the equations make sense?\nDo the interpretations / conclusions from the equations make sense?"
   },
   {
-    "objectID": "slides/week6-day2.html#formatting-guidelines",
-    "href": "slides/week6-day2.html#formatting-guidelines",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Formatting Guidelines",
-    "text": "Formatting Guidelines\n\nDon’t write in bullet points\nAvoid redundancy as much as possible\nMake contents easy to navigate\n\nUse subheaders and / or boldface to indicate important content\nPlace your regression equations on their own line"
+    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
+    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
+    "title": "Midterm Project Feedback & Machine Learning",
+    "section": "Based on how the study was designed, what population can you infer these results onto?",
+    "text": "Based on how the study was designed, what population can you infer these results onto?\n\n\nJustify what population you believe your analysis can be inferred onto.\n\nThe sample of [possums / professors / crabs]?\nSome larger population of [possums / professors / crabs]?\n\nYour justification needs to connect with how the researchers collected their data!"
+  },
+  {
+    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
+    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
+    "title": "Midterm Project Feedback & Machine Learning",
+    "section": "Based on how the study was designed, what can you say about the relationships between the variables?",
+    "text": "Based on how the study was designed, what can you say about the relationships between the variables?\n\n\nStating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!\n\nWhat specifically would have the researchers have needed to do in order to use causal language?"
   },
   {
     "objectID": "slides/week6-day2.html#section",
     "href": "slides/week6-day2.html#section",
     "title": "Midterm Project Feedback & Machine Learning",
-    "section": "",
-    "text": "Data is Power"
-  },
-  {
-    "objectID": "slides/week6-day2.html#some-guidelines",
-    "href": "slides/week6-day2.html#some-guidelines",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Some Guidelines",
-    "text": "Some Guidelines\n\n\n\nTitles should be top left aligned (usually)\nDon’t make people tilt their head\nAlignment should create clean lines and symmetry\nRemove and lighten grids as much as possible\n\n\n\n\n\nLegends suck\nWhitespace is like garlic; take the amount you need and then triple it\nFonts matter\nColor is hard"
-  },
-  {
-    "objectID": "slides/week6-day2.html#some-guidelines-1",
-    "href": "slides/week6-day2.html#some-guidelines-1",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Some Guidelines",
-    "text": "Some Guidelines\n\n\n\nTitles should be top left aligned (usually)\nDon’t make people tilt their head\nAlignment should create clean lines and symmetry\nRemove and lighten grids as much as possible\n\n\n\n\n\nLegends suck\nWhitespace is like garlic; take the amount you need and then triple it\nFonts matter\nColor is hard"
-  },
-  {
-    "objectID": "slides/week6-day2.html#dont-make-people-tilt-their-head",
-    "href": "slides/week6-day2.html#dont-make-people-tilt-their-head",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Don’t make people tilt their head",
-    "text": "Don’t make people tilt their head"
-  },
-  {
-    "objectID": "slides/week6-day2.html#tailoring-colors",
-    "href": "slides/week6-day2.html#tailoring-colors",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Tailoring Colors",
-    "text": "Tailoring Colors\nDifferent color palettes are available through a variety of R packages. Popular options include:\n\n\n\nRColorBrewer\n\n\n\n\n\n\nviridis\n\n\n\n\n\nThis website provides an exhaustive list of color themes."
-  },
-  {
-    "objectID": "slides/week6-day2.html#grids-remove-and-lighten-as-much-as-possible",
-    "href": "slides/week6-day2.html#grids-remove-and-lighten-as-much-as-possible",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "Grids: remove and lighten as much as possible",
-    "text": "Grids: remove and lighten as much as possible"
-  },
-  {
-    "objectID": "slides/week6-day2.html#a-reasonable-option-theme_minimal",
-    "href": "slides/week6-day2.html#a-reasonable-option-theme_minimal",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "A Reasonable Option – theme_minimal()",
-    "text": "A Reasonable Option – theme_minimal()"
-  },
-  {
-    "objectID": "slides/week6-day2.html#an-example-for-categorical",
-    "href": "slides/week6-day2.html#an-example-for-categorical",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "An Example for Categorical",
-    "text": "An Example for Categorical\n\nand_vertebrates %&gt;% \n  ggplot(mapping = aes(x = length_1_mm, \n                     y = weight_g, \n                     color = species)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Length (mm)\", \n      y = \"\", \n      color = \"Species\",\n      title = \"Comparing Weight (g) versus Length (mm)\",\n      subtitle = \"for Different Vertebrate Species in Mack Creek\") +\n  theme_minimal() +\n  scale_color_brewer(palette = \"Dark2\")"
-  },
-  {
-    "objectID": "slides/week6-day2.html#an-example-for-categorical-output",
-    "href": "slides/week6-day2.html#an-example-for-categorical-output",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "An Example for Categorical",
-    "text": "An Example for Categorical"
-  },
-  {
-    "objectID": "slides/week6-day2.html#an-example-for-continuous",
-    "href": "slides/week6-day2.html#an-example-for-continuous",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "An Example for Continuous",
-    "text": "An Example for Continuous\n\npie_crab %&gt;% \n  ggplot(mapping = aes(x = latitude, \n                     y = size, \n                     color = water_temp)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Latitude\", \n      y = \"\", \n      color = \"Water Temperature (C)\",\n      title = \"Size of Fiddler Crabs (mm) Across the Atlantic Coast\") +\n  theme_minimal() +\n  scale_color_viridis_c(option = \"magma\", direction = -1)"
-  },
-  {
-    "objectID": "slides/week6-day2.html#an-example-for-continuous-output",
-    "href": "slides/week6-day2.html#an-example-for-continuous-output",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
-    "section": "An Example for Continuous",
-    "text": "An Example for Continuous"
-  },
-  {
-    "objectID": "slides/week6-day2.html#section-1",
-    "href": "slides/week6-day2.html#section-1",
-    "title": "Midterm Project Feedback, Visualization Best (Better) Practices & Machine Learning",
     "section": "",
     "text": "Data is Power"
   },
@@ -5902,11 +5832,11 @@
     "text": "A More Automated Option\n\nevals_train %&gt;% \n  map(.f = ~lm(score ~ .x + &lt;VARIABLES SELECTED&gt;, data = evals_train)) %&gt;% \n  map_df(.f = ~get_regression_summaries(.x)$adj_r_squared) %&gt;% \n  select(-ID, \n         -score,\n         -&lt;VARIABLE 1 SELECTED&gt;,\n         -&lt;VARIABLE 2 SELECTED&gt;\n         ) %&gt;% \n  pivot_longer(cols = everything(), \n               names_to = \"variable\", \n               values_to = \"adj_r_sq\") %&gt;% \n  slice_max(adj_r_sq)"
   },
   {
-    "objectID": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
-    "href": "slides/week7-day1.html#each-table-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "objectID": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
+    "href": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
     "title": "Sampling Variability – The Heart of Statistical Inference",
-    "section": "Each table has a different sample of 25 UC & CSU coach salaries.",
-    "text": "Each table has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
+    "section": "Each group has a different sample of 25 UC & CSU coach salaries.",
+    "text": "Each group has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
   },
   {
     "objectID": "slides/week7-day1.html#section",
@@ -6344,6 +6274,13 @@
     "text": "Assignment Details\nIn your second statistical critique, you will focus on critiquing another key aspect of any statistical argument—statistical significance. No doubt you have seen \\(p\\)-values in a previous statistical course and / or disciplinary course, and this week you’re adding to that knowledge. For this critique you will compare the model you selected in your Midterm Project with what model you would have chosen based on a statistical test.\nThis critique involves coding! You can find a template for critique on Posit Cloud."
   },
   {
+    "objectID": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
+    "href": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
+    "title": "Statistical Critique 2: Exploring p-values",
+    "section": "Part Zero: p-values in Multiple Linear Regression",
+    "text": "Part Zero: p-values in Multiple Linear Regression\nFor the first step of this critique, you are required to read about how p-values can be used in the context of multiple linear regression: Extending to Multiple Linear Regression"
+  },
+  {
     "objectID": "critique/critique-2.html#footnotes",
     "href": "critique/critique-2.html#footnotes",
     "title": "Statistical Critique 2: Exploring p-values",
@@ -6363,236 +6300,5 @@
     "title": "Stat Critique 1 Grading Guide",
     "section": "",
     "text": "Double Encoding\n\n\n\nIt’s okay if they only mention one of the aesthetics that a variable is associated with when it is mapped to multiple aesthetics.\n\n\nGrowing\n\nDoesn’t name variables mapped to each aesthetic (e.g., only says the x-axis, y-axis, and color are used)\n\nFeedback: We want you to state specifically the names of the variables mapped to each aesthetic!\n\nSays a color aesthetic is used but the same color is used for every observation\n\nFeedback: Careful! Aesthetics are places where variables are being incorporated into the plot. Is the color in this plot associated with a variable?\n\nMisses an aesthetic that is being used\n\nFeedback for general plots: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, there are [multiple plots / multiple colors / multiple lines] not just one. What variable is associated with these separate [plots / colors / lines]?\nFeedback for maps: You’ve got a great start, but there are some aesthetics in this plot that are missing from your description. Technically, we have “hidden” x- and y-variables. What variables are associated with the location of a state on the map?\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that are done well.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe the visualization does well.\n\n\n\nGrowing\n\nOnly says one thing the visualization does well\n\nFeedback: Careful! You were asked to provide TWO aspects of the visualization that could be improved.\n\nAt least one statement about what the visualization does well is unclear\n\nFeedback: I’m having a hard time understanding what specific aspect you believe could be improved."
-  },
-  {
-    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
-    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-population-can-you-infer-these-results-onto",
-    "title": "Midterm Project Feedback & Machine Learning",
-    "section": "Based on how the study was designed, what population can you infer these results onto?",
-    "text": "Based on how the study was designed, what population can you infer these results onto?\n\n\nJustify what population you believe your analysis can be inferred onto.\n\nThe sample of [possums / professors / crabs]?\nSome larger population of [possums / professors / crabs]?\n\nYour justification needs to connect with how the researchers collected their data!"
-  },
-  {
-    "objectID": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
-    "href": "slides/week6-day2.html#based-on-how-the-study-was-designed-what-can-you-say-about-the-relationships-between-the-variables",
-    "title": "Midterm Project Feedback & Machine Learning",
-    "section": "Based on how the study was designed, what can you say about the relationships between the variables?",
-    "text": "Based on how the study was designed, what can you say about the relationships between the variables?\n\n\nStating that the study was “observational” doesn’t tell me that you understand what would be required to use cause-and-effect language!\n\nWhat specifically would have the researchers have needed to do in order to use causal language?"
-  },
-  {
-    "objectID": "project/midterm-project/midterm-project-contract.html",
-    "href": "project/midterm-project/midterm-project-contract.html",
-    "title": "Midterm Project Plan",
-    "section": "",
-    "text": "For the Midterm Project I am striving to earn a:\n\nExcellent\nSatisfactory\nProgressing\n\nHow will you use the feedback you’ve received from Dr. Theobold, the notes you received from your peers, and the grading rubric to revise your project?"
-  },
-  {
-    "objectID": "slides/week6-day1.html",
-    "href": "slides/week6-day1.html",
-    "title": "Variable Selection in Multiple Regression",
-    "section": "",
-    "text": "You are expected to directly state what variable(s) are associated with each aesthetic (e.g., the x-axis is associated with time).\nAesthetics are associated with variables\n\nIf there is only one color / shape / linetype being used in the plot, it is not associated with a variable!\nIf there are multiple plots, then there is a variable associated with how the plots are separated!\n\n\n\n\n. . .\n\n\n\n\n\n\nRevision Deadline\n\n\n\nRevisions for Statistical Critiques are due on Wednesday (May 8)"
-  },
-  {
-    "objectID": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
-    "href": "slides/week7-day1.html#each-group-has-a-different-sample-of-25-uc-csu-coach-salaries.",
-    "title": "Sampling Variability – The Heart of Statistical Inference",
-    "section": "Each group has a different sample of 25 UC & CSU coach salaries.",
-    "text": "Each group has a different sample of 25 UC & CSU coach salaries.\n\n\n\nFirst…\n\n\neach person samples 10 salaries\ncalculate the median\nwrite your median on a post-it note\nplace your median on the class plot\n\n\n\n\n\nThen…\n\neveryone works together to calculate the median of all 25 salaries"
-  },
-  {
-    "objectID": "slides/week7-day1.html",
-    "href": "slides/week7-day1.html",
-    "title": "Sampling Variability – The Heart of Statistical Inference",
-    "section": "",
-    "text": "Salaries of football coaches"
-  },
-  {
-    "objectID": "slides/week7-day2.html",
-    "href": "slides/week7-day2.html",
-    "title": "Confidence Intervals – Real Life Sampling Distributions",
-    "section": "",
-    "text": "Lab 4 revisions are due tonight (May 15)\nMidterm Projects will be graded by Sunday (May 19)\nLab 6 revisions will be due next Wednesday (May 22)\n\n\n\n\n\n\n\nDon’t forget reflections!\n\n\n\nIf your reflections are not present by the deadline for revisions, your revisions are not eligible to be regraded. Please don’t forget your reflections!"
-  },
-  {
-    "objectID": "slides/week6-day2.html",
-    "href": "slides/week6-day2.html",
-    "title": "Midterm Project Feedback & Machine Learning",
-    "section": "",
-    "text": "Lab 4 revisions are due tonight\nStatistical Critique 1 revisions are due tonight\nThe final version of your Midterm Project is due Sunday at midnight\n\n\n\n\n\n\n\nDeadline Extensions\n\n\n\nYou cannot request deadline extensions for the final version of your Midterm Project. The assignment portal closes at 11:59pm on Sunday. Do not ride the line."
-  },
-  {
-    "objectID": "slides/week7-day2.html#water-temperature-and-latitude",
-    "href": "slides/week7-day2.html#water-temperature-and-latitude",
-    "title": "Confidence Intervals – Real Life Sampling Distributions",
-    "section": "Water Temperature and Latitude",
-    "text": "Water Temperature and Latitude\n\n\n\n\nWhen including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.\n\n\n\n\n\n\n\n\n\nWhat is the relationship between water temperature and latitude for salt marshes along the Atlantic coast?"
-  },
-  {
-    "objectID": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
-    "href": "critique/critique-2.html#part-zero-p-values-in-multiple-linear-regression",
-    "title": "Statistical Critique 2: Exploring p-values",
-    "section": "Part Zero: p-values in Multiple Linear Regression",
-    "text": "Part Zero: p-values in Multiple Linear Regression\nFor the first step of this critique, you are required to read about how p-values can be used in the context of multiple linear regression: Extending to Multiple Linear Regression"
-  },
-  {
-    "objectID": "slides/week8-day1.html",
-    "href": "slides/week8-day1.html",
-    "title": "🧑🏽‍🔬 P-values & Hypothesis Tests",
-    "section": "",
-    "text": "Week 8\n\nLearn about hypothesis testing for SLR & MLR\nCompare “visual” model selection with p-value model selection\n\n\n\n\nWeek 9\n\nLearn about one-way ANOVA\nGet started on first portion of Final Project\n\n\n\n\nWeek 10\n\nLearn about two-way ANOVA\nFinish Final Project\n\n\n\n\n\n\n\n\nLab 6 revisions are due on Wednesday (by midnight)\nStatistical Critique 2 is due next Monday (at 5pm)\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nRevision Deadlines\n\n\n\nIf you did not submit revisions by the deadline (or forgot to include your reflections), your assignment is not eligible for additional revisions.\n\n\n\n\n\n\nyou…\n\n\n\nunderstand the importance of sampling variability\nknow about using confidence intervals to estimate a range of plausible values for the population parameter\nwant to know how p-values fit in\n\n\n\n\n\n\nWhat if I want to know if the population parameter differs from a specific value?\n\n. . .\n\n\nHypothesis test!\n\n\n\n\n\n\nHypothesis test goal:\n\n\nAssess how different what we saw in our data is from what could have happened if the null hypothesis was true*\n\n. . .\n\n*For hypothesis tests, we live in an alternative universe where \\(H_0\\) is true\n\n\n\n\n. . .\n\nPermutation!\n\n\n\n\n\n\nAssumes the original sample is “representative” of observations in the population\nUses the original sample to generate new samples that might have occurred if the null hypothesis was true.\n\n\n. . .\n\nWe can use statistics from these resamples to approximate the true sampling distribution under the null!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#testing-for-a-population-slope-beta_1",
-    "href": "slides/week8-day2.html#testing-for-a-population-slope-beta_1",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Testing for a Population Slope (\\(\\beta_1\\))",
-    "text": "Testing for a Population Slope (\\(\\beta_1\\))\n\n\n\\[H_0: \\beta_1 = 0\\]\n\\[H_A: \\beta_1 \\neq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do these hypotheses mean in words?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#how",
-    "href": "slides/week8-day2.html#how",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "How?",
-    "text": "How?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#by-generating-statistics-that-could-have-happened-if-h_0-was-true",
-    "href": "slides/week8-day2.html#by-generating-statistics-that-could-have-happened-if-h_0-was-true",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "By generating statistics that could have happened if \\(H_0\\) was true",
-    "text": "By generating statistics that could have happened if \\(H_0\\) was true\n\nBy creating a permutation distribution!\n\n\nnull_dist &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  hypothesise(null = \"independence\") %&gt;% \n  generate(reps = 1000, type = \"permute\") %&gt;% \n  calculate(stat = \"slope\")"
-  },
-  {
-    "objectID": "slides/week8-day2.html#if-h_0-was-true-then",
-    "href": "slides/week8-day2.html#if-h_0-was-true-then",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "If \\(H_0\\) was true then…",
-    "text": "If \\(H_0\\) was true then…\n\n\\(\\beta_1\\) = 0\n\nwhich means…"
-  },
-  {
-    "objectID": "slides/week8-day2.html#how-do-we-generating-statistics-that-could-have-happened-if-h_0-was-true",
-    "href": "slides/week8-day2.html#how-do-we-generating-statistics-that-could-have-happened-if-h_0-was-true",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "How do we generating statistics that could have happened if \\(H_0\\) was true?",
-    "text": "How do we generating statistics that could have happened if \\(H_0\\) was true?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#one-possible-shuffle",
-    "href": "slides/week8-day2.html#one-possible-shuffle",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "One possible shuffle",
-    "text": "One possible shuffle\n\n\n\n\n\n\n\n\n\n\nscore\nbty_avg\nshuffled_score\n\n\n\n\n4.7\n3.000\n2.8\n\n\n3.6\n4.833\n4.6\n\n\n4.3\n4.333\n4.5\n\n\n4.8\n3.500\n2.8\n\n\n3.7\n3.000\n3.7\n\n\n3.6\n3.167\n3.9\n\n\n4.3\n3.167\n4.1\n\n\n3.5\n4.833\n3.6\n\n\n3.6\n4.333\n3.5\n\n\n4.6\n7.333\n4.6\n\n\n4.4\n2.500\n4.4\n\n\n4.5\n4.333\n4.3\n\n\n4.2\n2.833\n3.4\n\n\n4.8\n6.500\n3.3\n\n\n4.3\n4.000\n4.8\n\n\n4.8\n3.667\n4.1\n\n\n3.1\n1.667\n4.7\n\n\n4.6\n6.500\n4.0\n\n\n4.8\n5.000\n4.5\n\n\n4.1\n6.167\n4.8\n\n\n4.5\n4.167\n3.5\n\n\n3.6\n3.000\n4.7\n\n\n4.8\n6.167\n4.1\n\n\n4.8\n3.667\n4.1\n\n\n3.8\n3.167\n4.4\n\n\n\n\n\n\n\n\n\n\n\nWhich results in a slope statistic of…\n\n\n[1] 0.06663704"
-  },
-  {
-    "objectID": "slides/week8-day2.html#lots-of-statistics-that-could-have-happened-if-h_0-was-true",
-    "href": "slides/week8-day2.html#lots-of-statistics-that-could-have-happened-if-h_0-was-true",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Lots of statistics that could have happened if \\(H_0\\) was true",
-    "text": "Lots of statistics that could have happened if \\(H_0\\) was true"
-  },
-  {
-    "objectID": "slides/week8-day2.html#where-does-our-observed-statistic-fall-on-this-distribution",
-    "href": "slides/week8-day2.html#where-does-our-observed-statistic-fall-on-this-distribution",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Where does our observed statistic fall on this distribution?",
-    "text": "Where does our observed statistic fall on this distribution?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#what-do-you-think",
-    "href": "slides/week8-day2.html#what-do-you-think",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "What do you think?",
-    "text": "What do you think?\n\n\n\\(\\widehat{score} = 3.88 + 0.066 \\times \\text{bty_avg}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWill we reject \\(H_0\\)?"
-  },
-  {
-    "objectID": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
-    "href": "slides/week8-day2.html#is-our-observed-statistic-likely-to-happen-if-the-null-was-true",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Is our observed statistic likely to happen if the null was true?",
-    "text": "Is our observed statistic likely to happen if the null was true?\n\nIf it is unlikely to happen, then we should reject \\(H_0\\)!\nWhy???\n\n\n\nThe probability of observing a statistic as or more extreme than 0.0666 if \\(H_0\\) was true is approximately 0%.\n\n\n\nSo, it seems like \\(H_0\\) is not a reasonable characterization of the relationship."
-  },
-  {
-    "objectID": "slides/week8-day2.html#model-conditions",
-    "href": "slides/week8-day2.html#model-conditions",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Model Conditions",
-    "text": "Model Conditions\nFor our p-value to be trustworthy, we need to know that the conditions of our model are not violated.\n\n\n\nFor linear regression we are assuming…\n\n\n\nLinear relationship between \\(x\\) and \\(y\\)\n\nIndependent observations\n\nNormality of residuals\n\nEqual variance of residuals"
-  },
-  {
-    "objectID": "slides/week8-day2.html#condition-violations",
-    "href": "slides/week8-day2.html#condition-violations",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Condition Violations",
-    "text": "Condition Violations\nIn general, when the conditions associated with these methods are violated, the permutation and \\(t\\)-distributions will underestimate the true standard error of the sampling distribution.\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#what-happens-if-the-conditions-are-violated",
-    "href": "slides/week8-day2.html#what-happens-if-the-conditions-are-violated",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "What happens if the conditions are violated?",
-    "text": "What happens if the conditions are violated?\nIn general, when the conditions associated with these methods are violated, we will underestimate the true standard error (spread) of the sampling distribution.\n\n\nOur p-values will be too small!\nOur confidence intervals will be too narrow!\nWe will make more Type I errors than we expect!"
-  },
-  {
-    "objectID": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
-    "href": "slides/week8-day2.html#what-if-we-cant-fix-a-condition-being-violated",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "What if we can’t fix a condition being violated?",
-    "text": "What if we can’t fix a condition being violated?\n\n\n\nFor the L, I, and E conditions…\nwe need to ask for help!\n\n\n\n\nFor the N condition…\nwe need to use simulation instead of mathematical formulas to get our p-value and confidence interval."
-  },
-  {
-    "objectID": "slides/week8-day2.html#mathematical-theory-based-methods",
-    "href": "slides/week8-day2.html#mathematical-theory-based-methods",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Mathematical / Theory-based Methods",
-    "text": "Mathematical / Theory-based Methods\n\n\nAre a “simpler” approach\nUse formulas instead of simulation to obtain standard error\nUse \\(t\\)-distribution to get p-value and confidence interval\nRequire that the residuals are normally distributed"
-  },
-  {
-    "objectID": "slides/week8-day2.html#how-does-this-look",
-    "href": "slides/week8-day2.html#how-does-this-look",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "How does this look?",
-    "text": "How does this look?\n\nBeforeNow\n\n\n\nobs_slope &lt;- evals %&gt;% \n  specify(response = score, \n          explanatory = bty_avg) %&gt;% \n  calculate(stat = \"slope\")\n\n\n\n   bty_avg \n0.06663704 \n\n\n\n\n\n\nevals_lm &lt;- lm(score ~ bty_avg, data = evals)\n\nget_regression_table(evals_lm)\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept    3.88      0.076     51.0        0    3.73     4.03 \n2 bty_avg      0.067     0.016      4.09       0    0.035    0.099"
-  },
-  {
-    "objectID": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
-    "href": "slides/week8-day2.html#how-does-r-calculate-the-p-value",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "How does R calculate the p-value?",
-    "text": "How does R calculate the p-value?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifferent \\(t\\)-distributions\n\n\nA \\(t\\)-distribution has a slightly different shape depending on the sample size. Technically, we are using a \\(t\\)-distribution with \\(n - 2\\) degrees of freedom to get our p-value."
-  },
-  {
-    "objectID": "slides/week8-day2.html#approximating-the-permutation-distribution",
-    "href": "slides/week8-day2.html#approximating-the-permutation-distribution",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "Approximating the permutation distribution",
-    "text": "Approximating the permutation distribution\n\n\nA \\(t\\)-distribution can be a reasonable approximation for the permutation distribution if the normality condition is not violated."
-  },
-  {
-    "objectID": "slides/week9-day2.html",
-    "href": "slides/week9-day2.html",
-    "title": "Coding a One-way ANOVA – Final Project Work Day",
-    "section": "",
-    "text": "Lab 7 revisions are due today (by midnight)\nLab 8 revisions are due next Thursday\nStatistical Critique 2 will be graded by Friday, revisions will be due next Thursday\nFinal revisions on all assignments will be accepted until Sunday, March 17\n\n\n\n\n\n\n\nDon’t forget reflections!"
-  },
-  {
-    "objectID": "slides/week9-day1.html#large-p-values-neq-evidence-for-the-null-hypothesis",
-    "href": "slides/week9-day1.html#large-p-values-neq-evidence-for-the-null-hypothesis",
-    "title": "ANalysis Of VAriance",
-    "section": "Large p-values \\(\\neq\\) evidence for the null hypothesis!",
-    "text": "Large p-values \\(\\neq\\) evidence for the null hypothesis!"
-  },
-  {
-    "objectID": "slides/week9-day1.html",
-    "href": "slides/week9-day1.html",
-    "title": "ANalysis Of VAriance",
-    "section": "",
-    "text": "Step 1 - Due by tonight!\n\n\nIntroduction (Data description, research questions)\n\n\n. . .\nStep 2 - Due by Thursday\n\n\nMethods (Data visualizations)\nFindings (Data analysis)\n\n\n. . .\nStep 3 - Due by Sunday\n\n\nStudy Limitations\nConclusion"
-  },
-  {
-    "objectID": "slides/week8-day2.html",
-    "href": "slides/week8-day2.html",
-    "title": "🔬 Simulation-Based Methods versus Theory-Based Methods",
-    "section": "",
-    "text": "Question 6 (Bootstrap Distribution):\n\nDid not use an informative axis label\n\n\nQuestion 8 (Interpret Confidence Interval):\n\nDid not include population in interpretation\nStated interval was about “all marshes” (no geographical information)"
   }
 ]
