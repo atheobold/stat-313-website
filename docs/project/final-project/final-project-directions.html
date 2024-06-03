@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -122,7 +122,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/cp-stat-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -471,7 +471,7 @@ Not visually selecting a model
 </section>
 <section id="findings" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Findings</h1>
-<p>In this section you will write up your findings for your question of interest. I’ve created an example of how this section could look <a href="final-project-help/owa-to-twa-model-selection-process.qmd">in this document</a>.</p>
+<p>In this section you will write up your findings for your question of interest. I’ve created an example of how this section could look <a href="../../project/final-project-help/owa-to-twa-model-selection-process.html">in this document</a>.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -520,7 +520,7 @@ When to proceed
 <section id="model-validity" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="model-validity"><span class="header-section-number">3.3</span> Model Validity</h2>
 <ul>
-<li>Evaluate the LINE conditions of both one-way ANOVA models</li>
+<li>Evaluate the conditions of both one-way ANOVA models</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -747,12 +747,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

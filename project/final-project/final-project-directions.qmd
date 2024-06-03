@@ -73,7 +73,7 @@ Unlike the Midterm Project, you **will not** be choosing what statistical model 
 
 # Findings
 
-In this section you will write up your findings for your question of interest. I've created an example of how this section could look [in this document](final-project-help/owa-to-twa-model-selection-process.qmd).
+In this section you will write up your findings for your question of interest. I've created an example of how this section could look [in this document](../final-project-help/owa-to-twa-model-selection-process.qmd).
 
 ::: callout-caution
 # $\alpha$ threshold
@@ -108,7 +108,7 @@ If you rejected the null hypothesis for **both** one-way ANOVA models, you can p
 
 ## Model Validity
 
--   Evaluate the LINE conditions of both one-way ANOVA models
+-   Evaluate the conditions of both one-way ANOVA models
 
 ::: callout-caution
 # Condition violations
