@@ -8,7 +8,7 @@ project:
 
 website:
   page-navigation: true
-  favicon: images/favicon.svg
+  favicon: images/favicon-2.png
   title: "STAT 313 / 513"
   description: "Homepage for STAT 313 / 513 - Applied Experimental Design and Regression Models at Cal Poly"
   site-url: "https://atheobold.github.io/stat-313-website"
