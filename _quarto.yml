@@ -1,11 +1,14 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
   resources:
     - "*.docx"
 
 website:
   page-navigation: true
+  favicon: images/favicon.svg
   title: "STAT 313 / 513"
   description: "Homepage for STAT 313 / 513 - Applied Experimental Design and Regression Models at Cal Poly"
   site-url: "https://atheobold.github.io/stat-313-website"
@@ -19,7 +22,7 @@ website:
 
   sidebar:
     background: "#D9E3E4"
-    logo: "images/cp-stat-hex.png"
+    logo: "images/website-logo.png"
     pinned: true
     align: center
     tools:
