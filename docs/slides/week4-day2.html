@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -8,9 +9,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.5.57">
 
-  <title>STAT 313 / 513 - Week 4, Day 2</title>
+  <title>STAT 313 / 513 – Week 4, Day 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -363,8 +364,7 @@
 </div>
 <p><br></p>
 <p>Your group received a “Growing” on <em>at least one</em> question</p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="common-mistakes" class="slide level2">
 <h2>Common Mistakes</h2>
@@ -480,8 +480,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div style="font-size: 0.75em;">
 <p>Used to determine, from astronomical observations, the orbits of bodies about the Sun.</p>
 </div>
@@ -504,8 +503,7 @@
 </ul></li>
 </ul>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="a-polymath" class="slide level2">
 <h2>A “polymath”</h2>
@@ -520,8 +518,7 @@
 <li><p>He invented standard deviation, correlation, linear regression, ANOVA</p></li>
 <li><p>Galton’s developments and discoveries were fueled in large part by his fascination with the science of heredity.</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 <!-- Galton was wrestling with the unanswered question of how different traits stayed stable in a population over generations, building on the work of his cousin Charles Darwin, who had published On the Origin of Species in 1859. -->
 </section>
 <section id="the-invention-of-eugenics" class="slide level2">
@@ -542,8 +539,7 @@
 <p>Francis Galton</p>
 </blockquote>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="and-then-it-spread" class="slide level2">
 <h2>And then it spread…</h2>
@@ -566,8 +562,7 @@
 <li><p>Declared non-Aryan races inferior</p></li>
 <li><p>Believed Germans should do everything possible to make sure their gene pool stayed “pure”</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
 <section id="but-wasnt-that-a-long-time-ago" class="slide level2">
 <h2>But wasn’t that a long time ago?</h2>
@@ -604,8 +599,7 @@
 <p>In 1957 “conservatorship” was introduced “to avoid the stigma of incompetency”</p>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="would-you-be-in-this-class" class="slide level2">
 <h2>Would you be in this class?</h2>
@@ -621,8 +615,7 @@
 <p>Were your ancestors poor?</p>
 <p>Are you Muslim, Hindu, Buddhist, Sikh, Tao, or Jewish?</p>
 <p>Do you identify as LGBTQIQ+?</p>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="section" class="slide level2">
@@ -1110,7 +1103,7 @@
 }
 </style>
 
-<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="lakeid" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">lakeid</th>
@@ -1485,18 +1478,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1528,7 +1510,47 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-313-website");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1565,7 +1587,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
