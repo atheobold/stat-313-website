@@ -5,16 +5,27 @@ format:
     number-sections: true
     number-depth: 2
     section-divs: true
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
   message: false
 ---
 
+```{r}
+#| label: load-package-for-ims-exercises
+#| include: false
+
+library(openintro)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+
 Welcome!
 
-In this coursework, you'll get a refresher on the foundational components of statistics and data, investigate how statistics is used in your major, and think critically about the philosophy of statistical inference.
+In this coursework, you'll get a refresher on the foundational components of statistics and data. 
 
 ## Learning Outcomes
 
@@ -24,15 +35,11 @@ By the end of this coursework you should be able to:
 
 -   explain the different types of variables a study can have
 
+-   describe the observations (rows) in a dataset
+
+-   describe the variables (columns) in a dataset 
+
 -   illustrate the difference between explanatory and response variables
-
--   delineate the difference between a population and a sample
-
--   compare and contrast different sampling methods
-
--   outline what is necessary to make an experiment an "experiment"
-
--   characterize the differences between observational studies and experiments
 
 # Prepare
 
@@ -42,23 +49,63 @@ Let's start off by reading a refresher on some of the foundational concepts for 
 
 📖 [**Required Reading:** *Introduction to Modern Statistics* -- Hello Data](https://openintro-ims.netlify.app/data-hello.html)
 
-📖 [**Required Reading:** *Introduction to Modern Statistics* -- Study Design](https://openintro-ims.netlify.app/data-design.html)
-
 ### Reading Guide -- Due Wednesday by noon
 
 [Download the Word Document](reading-guide/week1-reading.docx)
 
-*Note:* There is **one** combined reading guide for both chapters.
-
 ::: callout-caution
-# Submission (Due Wednesday, April 3 by the start of class)
+# Submission (Due Wednesday, April 2 by the start of class)
 
 Submit your completed reading guide to the Canvas assignment portal!
 :::
 
 ## Concept Quiz -- Due Wednesday by the start of class
 
-**1. What are the different types of variables that can appear in a dataset? Select all that apply!**
+**The data frame below contains information on runners in the 2017 Cherry Blossom Run, which is an annual road race that takes place in Washington, DC. Most runners participate in a 10-mile run while a smaller fraction take part in a 5k run or walk.**
+
+```{r}
+#| label: code-from-ims-for-data-preview
+
+run17_to_print <- run17 |>
+  rownames_to_column() |>
+  rename_with(str_to_title) |>
+  rename(
+    ` ` = Rowname,
+    Net = Net_sec,
+    Clock = Clock_sec,
+    Pace = Pace_sec,
+    `City / Country` = City
+    )
+
+run17_1_to_5 <- run17_to_print |>
+  slice(1:5) |>
+  mutate(across(.cols = everything(), .fns = as.character))
+
+run17_n <- run17_to_print |>
+  slice(nrow(run17)) |>
+  mutate(across(.cols = everything(), .fns = as.character))
+
+run17_filler <- run17_to_print |>
+  slice(1) |>
+  mutate(across(.cols = everything(), 
+                .fns = ~str_replace(.x, pattern = ".*", replacement = "...")
+                )
+         )
+
+run17_1_to_5 |>
+  bind_rows(run17_filler) |>
+  bind_rows(run17_n) |>
+  kbl(linesep = "", booktabs = TRUE, align = "llllclcccl") |>
+  kable_styling(
+    bootstrap_options = c("striped", "condensed"),
+    latex_options = "HOLD_position"
+    ) |>
+  add_header_above(c(" " = 6, "Time" = 2, " " = 2))
+```
+    
+**1. How many observations and how many variables are included in these data?**
+
+**2. What are the different types of variables that can appear in a dataset? Select all that apply!**
 
 -   discrete numerical
 -   ordinal categorical
@@ -66,43 +113,28 @@ Submit your completed reading guide to the Canvas assignment portal!
 -   continuous numerical
 -   discrete categorical
 
-**2. Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? Select all that apply!**
+**3. Just because a variable has numeric values, does not mean it is a numeric variable. Which of the following variables appear numerical but behave like a categorical variable? Select all that apply!**
 
 -   zip code
 -   GPA
 -   height
 -   year in school
 
-**3. Which of the following statements are true about observational studies and experiments? Select all that apply!**
+**Data were collected on 344 penguins living on three islands (Torgersen, Biscoe, and Dream) in the Palmer Archipelago, Antarctica. In addition to which island each penguin lives on, the data contains information on the species of the penguin (Adelie, Chinstrap, or Gentoo), its bill length, bill depth, and flipper length (measured in millimeters), its body mass (measured in grams), and the sex of the penguin (female or male).**
 
--   Experiments randomly assign the explanatory variable
--   Observational studies randomly assign the explanatory variable
--   Observational studies can make causal statements about the relationship between the explanatory and response variables
--   Experiments can make causal statements about the relationship between the explanatory and response variables
+**4. There are ___ observations (cases) in these data and ___ variables.**
 
-**4. What are different methods for sampling from a population? Select all that apply!**
+**5. Which of the following variables are numerical?**
 
--   simple random sampling
--   stratified random sampling
--   cluster sampling
--   multistage sampling
--   convenience sampling
+- island
+- species
+- bill depth
+- body mass
+- bill length
+- flipper length
+- sex
 
-**5. Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.**
-
-::: columns
-::: {.column width="35%"}
-**stratified sampling**
-
-**cluster sampling**
-:::
-
-::: {.column width="35%"}
-*groups of observations are created, groups are randomly selected, every observation in the selected group is sampled*
-
-*groups of observations are created, observations within a group are randomly sampled*
-:::
-:::
+**6. There are ___ species of penguins included in these data: ___, ___, and ___.**
 
 # R Tutorial -- Due Wednesday by the start of class
 
@@ -111,21 +143,6 @@ Submit your completed reading guide to the Canvas assignment portal!
 ::: callout-caution
 # Submission
 
-Submit a screenshot of the completion page to the Canvas assignment portal!
+Submit a screenshot of the completion page (the last page of the tutorial) to
+the Canvas assignment portal!
 :::
-
-# Statistics in Your Field
-
-Now let's investigate how statistics is used in your discipline.
-
-Find a peer-reviewed article from a journal in your field that performs a statistical analysis somewhere in the paper. You **do not** need to be familiar with the analysis they do. That being said, if you want to find a paper that uses a statistical method we'll cover in this class, look for a paper that uses "linear regression" or "ANOVA."
-
-The Library is a great resource for this! The [following website (https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU)](https://csu-calpoly.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALS_PSU:01CALS_PSU) has a list of journals by discipline that are available through the library.
-
-::: callout-tip
-If you are having a hard time finding a peer reviewed journal article, here is a video of me talking through how I found one: <https://www.youtube.com/watch?v=ui8ibJ0Pkhs>
-:::
-
-## Statistical Critique Step 0 -- Due Monday, April 8 by 5pm
-
-Upload a PDF of your journal article to the Canvas assignment portal.

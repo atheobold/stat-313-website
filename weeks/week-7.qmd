@@ -5,12 +5,58 @@ format:
     number-sections: true
     number-depth: 2
     section-divs: true
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
   message: false
 ---
+
+<!-- Add Study Design Chapter from IMS to this week! -->
+
+<!-- By the end of this coursework you should be able to: -->
+
+<!-- -   delineate the difference between a population and a sample -->
+
+<!-- -   compare and contrast different sampling methods -->
+
+<!-- -   outline what is necessary to make an experiment an "experiment" -->
+
+<!-- -   characterize the differences between observational studies and experiments -->
+
+📖 [**Required Reading:** *Introduction to Modern Statistics* -- Study Design](https://openintro-ims.netlify.app/data-design.html)
+
+**3. Which of the following statements are true about observational studies and experiments? Select all that apply!**
+
+-   Experiments randomly assign the explanatory variable
+-   Observational studies randomly assign the explanatory variable
+-   Observational studies can make causal statements about the relationship between the explanatory and response variables
+-   Experiments can make causal statements about the relationship between the explanatory and response variables
+
+**4. What are different methods for sampling from a population? Select all that apply!**
+
+-   simple random sampling
+-   stratified random sampling
+-   cluster sampling
+-   multistage sampling
+-   convenience sampling
+
+**5. Cluster sampling and stratified sampling both rely on grouping observations, but have important differences. Match each method to how observations are randomly sampled.**
+
+::::: columns
+::: {.column width="35%"}
+**stratified sampling**
+
+**cluster sampling**
+:::
+
+::: {.column width="35%"}
+*groups of observations are created, groups are randomly selected, every observation in the selected group is sampled*
+
+*groups of observations are created, observations within a group are randomly sampled*
+:::
+:::::
+
 
 # Textbook Reading -- Part 1
 
@@ -36,7 +82,7 @@ execute:
 
 **1. Match each item to it's respective analogy:**
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 point estimate
 
@@ -51,7 +97,7 @@ fishing with a net
 
 fishing with a spear
 :::
-:::
+::::::
 
 **2. To create a 95% confidence interval using the percentile method, what percentiles of the bootstrap distribution do you need to calculate?**
 
