@@ -78,7 +78,7 @@ knitr::include_graphics(here::here("images",
 
 [**Required Reading:** Incorporating Categorical Variables into Visualizations](https://openintro-ims.netlify.app/explore-categorical.html#comparing-numerical-data-across-groups)
 
-::: {.callout-tip}
+::: callout-tip
 # Only read Section 4.6!
 :::
 
@@ -95,7 +95,7 @@ knitr::include_graphics(here::here("images",
 ```
 :::
 
-::: {.callout-tip}
+::: callout-tip
 # Read Sections 3.3 - 3.6!
 :::
 
@@ -165,13 +165,13 @@ This does not go inside the `aes()` function!
 
 **5. In Lab 2, you worked with the `nycflights` dataset, which contained information on flights departing from NYC airports. If we wanted to know the average departure delay for every airline in the dataset (e.g., Delta, Allegiant, United), what steps would we need to use? Match the code to its corresponding step.**
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
-Step 1 `%>%` 
+Step 1 `%>%`
 
 Step 2 `%>%`
 
-Step 3 
+Step 3
 :::
 
 ::: {.column width="5%"}
@@ -186,7 +186,7 @@ Step 3
 
 `summarize(mean_dd = mean(dep_delay))`
 :::
-:::
+::::::
 
 **6. What function did you learn that is used for converting a numerical variable to a categorical variable (a process called discretizing)?**
 
@@ -202,12 +202,9 @@ Step 3
 
 ## R Tutorial -- Due Wednesday by the start of class
 
-It has come to my attention that Posit Cloud has removed their tutorials in 
-favor of what they are calling "recipes"---short tutorials on how to do 
-specific things in R. 
+It has come to my attention that Posit Cloud has removed their tutorials in favor of what they are calling "recipes"---short tutorials on how to do specific things in R.
 
-So, I'm pivoting to a different tutorial that uses `group_by()`---the tool you 
-are learning this week---to explore different sampling strategies. 
+So, I'm pivoting to a different tutorial that uses `group_by()`---the tool you are learning this week---to explore different sampling strategies.
 
 [**Required Tutorial:** Sampling Strategies & Experimental Design](https://openintro.shinyapps.io/ims-01-data-03/#section-sampling-in-r)
 

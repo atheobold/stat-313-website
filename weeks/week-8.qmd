@@ -5,7 +5,7 @@ format:
     number-sections: true
     number-depth: 2
     section-divs: true
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
@@ -26,7 +26,7 @@ execute:
 
 **1. Match each procedure to the question it addresses.**
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 confidence intervals
 
@@ -42,7 +42,7 @@ hypothesis tests
 -   Is the population parameter different from 0?
 -   Is the value of the parameter different from a specified quantity?
 :::
-:::
+::::::
 
 **2. Which of the following are *always* true for hypothesis statements?**
 
@@ -51,7 +51,7 @@ hypothesis tests
 -   They are about population parameters.
 -   They are about differences in groups.
 
-**3. To simulate what could have happened if the [null hypothesis was true / alternative hypothesis was true], we [separate the (x, y) pairs / keep the (x, y) pairs together] and [resample with replacement / randomly reassign a new y to each x].**
+**3. To simulate what could have happened if the \[null hypothesis was true / alternative hypothesis was true\], we \[separate the (x, y) pairs / keep the (x, y) pairs together\] and \[resample with replacement / randomly reassign a new y to each x\].**
 
 **4. Which of the following are true about a null distribution?** (select all that apply)
 
@@ -64,7 +64,7 @@ hypothesis tests
 
 **6. Name [one]{.underline} difference between a permutation distribution and a bootstrap distribution.**
 
-**7. For linear regression, the null distribution is always centered at ____.**
+**7. For linear regression, the null distribution is always centered at \_\_\_\_.**
 
 **8. Which of the following are true about a p-value?** (select all that apply)
 
@@ -142,7 +142,7 @@ hypothesis tests
 -   repeated observations on the same person
 -   observations related biologically
 
-**18. When conducting a hypothesis test (in general), we assume the [observations / variables] are independent. When conducting a hypothesis test for a linear regression, the conditions require that the [observations / variables] are independent.**
+**18. When conducting a hypothesis test (in general), we assume the \[observations / variables\] are independent. When conducting a hypothesis test for a linear regression, the conditions require that the \[observations / variables\] are independent.**
 
 # R Tutorial -- Due Wednesday by the start of class
 

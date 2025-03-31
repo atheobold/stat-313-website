@@ -2,14 +2,10 @@
 title: "Course Setup and Structure"
 format: 
   html: 
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
     section-divs: true
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
@@ -33,7 +29,7 @@ We'll be using Discord to interact with our peers and group members.
 
 Discord is a platform for text chatting, voice chatting, and screen sharing.Through Discord, you can ask me public questions, we can meet one-on-one or in small group.
 
-Click here to join the STAT 313 Discord server -- <https://discord.gg/VsVngnDz46>
+Click here to join the STAT 313 Discord server -- <https://discord.gg/VWQUdkrXXt>
 
 When you join the server, you will be given some suggestions to get started.
 

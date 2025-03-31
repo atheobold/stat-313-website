@@ -5,7 +5,7 @@ format:
     number-sections: true
     number-depth: 2
     section-divs: true
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
@@ -57,7 +57,7 @@ In addition, the example uses Roseanne Barr as one of the celebrity endorsers---
 
 **1. Match each two-way ANOVA model to its correct description.**
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 </br>
 
@@ -79,13 +79,13 @@ The relationship between one factor and the response remains the same across all
 
 There is a significant relationship between each factor and the response.
 :::
-:::
+:::::
 
 </br>
 
 **2. Match each two-way ANOVA model to its multiple linear regression counterpart.**
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 **additive model**
 
@@ -100,7 +100,7 @@ different slopes
 
 parallel slopes
 :::
-:::
+::::::
 
 </br>
 

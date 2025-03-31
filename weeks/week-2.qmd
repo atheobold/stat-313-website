@@ -1,11 +1,11 @@
 ---
 title: "Week Two: Summarizing & Visualizing Numerical Data"
-format:
-  html:
+format: 
+  html: 
     number-sections: true
     number-depth: 2
     section-divs: true
-editor: visual
+editor: source
 execute: 
   echo: true
   warning: false
