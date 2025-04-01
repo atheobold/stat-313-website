@@ -19,32 +19,38 @@ execute:
   message: false
 ---
 
-**Instructor: Dr. Allison Theobold** -- call me [**Dr. Theobold**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing) or Dr. T! I use **they / she** pronouns (that is my order of preference).
+::: {.panel-tabset}
 
-# Welcoming Classroom
+# Instructor Info 
 
-I value diversity, inclusion and equity in this (and every) class. I hold the fundamental belief that everyone is fully capable of learning and doing statistics. There is more than one way to address a statistical problem, and our learning will be richer by being open to different ideas, rejecting stereotypes, and being aware of---in order to minimize---our biases. I look forward to getting to know you all as individuals and as a learning community.
+:::::: columns
+::: {.column width="50%"}
+**Instructor: Dr. Allison Theobold** -- you can call me [**Dr. Theobold**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing) or [**Dr. T**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing)! I use **they / she** pronouns (that is my order of preference). 😊
 
-# Key information
+**Email**: atheobol\@calpoly.edu[^1]  
+**Office**: Building 25, Office 105
 
-### Class meetings
+[^1]: See @sec-help for information on what you can expect when you email me.
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](images/headshot.jpg){fig-alt="A headshot of Dr. Theobold, in a pink blazer at the top floor of Building 25, overlooking Bishop Peak" width="60%"}
+:::
+::::::
+
+# Class meetings
 
 **Room:** Baker Science (Building 180), Room 272
 
 **Times:**
 
--   Stat 313, Section 01: 12:10-2:00pm
--   Stat 313, Section 02: 4:10-6:00pm
+-   Stat 313, Section 01: 12:10 - 2:00pm
+-   Stat 313, Section 02: 4:10 - 6:00pm
 
-### How to contact me
-
-**Email**: atheobol\@calpoly.edu[^1]
-
-[^1]: See @sec-help for information on what you can expect when you email me.
-
-**Office**: Building 25 Office 105 (by Statistics Department Office)
-
-### Student Hours
+# Student Hours {#sec-OH}
 
 Student hours (more commonly referred to as office hours) are times I have set aside to meet with you outside of class. I like the name "student hours," as I feel it more clearly communicates the intention of this time -- talking with students. During student hours, you can ask questions about *any* course material you find challenging, are confused about, or would like to talk through with someone. You can also ask about the expectations for certain assignments or for expectations for the course. It is also possible for you to come to office hours with your peers, even if you don't have any questions of your own! Hearing other students’ questions may bring up questions you have and can help you practice applying your knowledge and skills by helping other students.
 
@@ -58,27 +64,45 @@ Some general tips for coming to student hours:
 
 Another use for student hours is to talk with me about your interests, your own research or opportunities for research, or asking for a letter of recommendation. I love getting to know my students better, and office hours are a great time for you just to drop by and say 👋 ! I am also happy to talk with you about tough things going on in your life. I care a lot about you and want to help you in any way I can. ❤️
 
-This quarter I will be holding student hours on Mondays and Wednesdays at the following times:
+This quarter I will be holding student hours on Mondays, Tuesdays, Wednesdays, 
+and Thursdays at the same time---so it is easy to remember!
 
 +-----------------+--------------------------------------------------+
 | Day             | Time                                             |
 +=================+==================================================+
-| Mondays         | 3:10pm -- 4:00pm (in-person)                     |
+| Mondays         | 12:10pm -- 1:00pm (in-person)                    |
 +-----------------+--------------------------------------------------+
-| Wednesdays      | 2:10 pm - 3:00 pm (individual meetings via Zoom) |
-|                 |                                                  |
-|                 | 3:10 - 4:00 (in-person)                          |
+| Tuesdays        | 12:10pm -- 1:00pm (on Zoom)                      |
++-----------------+--------------------------------------------------+
+| Wednesdays      | 12:10pm -- 1:00pm (in-person)                    |
++-----------------+--------------------------------------------------+
+| Thursdays       | 12:10 pm - 1:00 pm (on Zoom)                     |
 +-----------------+--------------------------------------------------+
 
-I will typically hold student hours in my office (25-105), but may choose to move to the outside vestibule between wings of the building (where all the whiteboards are) or the Statistics department conference room. If we're meeting somewhere other than my office, I will leave a sign on the door indicating where we're meeting!
+I will typically hold student hours in my office (25-105), but may choose to
+move to the outside vestibule between wings of the building (where all the
+whiteboards are) or the Statistics department conference room. If we're meeting
+somewhere other than my office, I will leave a sign on the door indicating where
+we're meeting!
 
-### Personal Meetings
+# Personal Meetings 
 
-If you would like to talk with me one-on-one about anything (e.g., grades, research), I've reserved time on Wednesdays from 2:10pm to 3:00pm for individual appointments. You can make 10-minute appointments through the following link: <https://calendly.com/allisontheobold/office-hour-appointment>
+If you would like to talk with me one-on-one about anything (e.g., grades,
+research), I've reserved time on Tuesdays and Thursdays from 12:10pm to 1:00pm
+for individual appointments. You can make 10-minute appointments through the
+following link: <https://calendly.com/allisontheobold>
 
-I do request that you make appointments at least 2-hours ahead of time, so I don't accidentally miss our meeting!
+I do request that you make appointments at least 3-hours ahead of time, so I
+don't accidentally miss our meeting!
 
-If you need to meet, but none of the student hours work for you please let me know! It is possible we can communicate asynchronously through Discord or email, but I am happy to schedule a meeting during another time if necessary.
+If you need to meet, but none of the student hours work for you please let me
+know! It is possible we can communicate asynchronously through Discord or email,
+but I am happy to schedule a meeting during another time if necessary.
+
+# Welcoming Classroom
+
+I value diversity, inclusion and equity in this (and every) class. I hold the fundamental belief that everyone is fully capable of learning and doing statistics. There is more than one way to address a statistical problem, and our learning will be richer by being open to different ideas, rejecting stereotypes, and being aware of---in order to minimize---our biases. I look forward to getting to know you all as individuals and as a learning community.
+:::
 
 ------------------------------------------------------------------------
 
@@ -88,7 +112,7 @@ For this course we will be using one main textbook, accompanied by additional re
 
 ## Textbooks
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 ![Çetinkaya-Rundel and Hardin, **Introduction to Modern Statistics**. <https://openintro-ims.netlify.app/>](images/ims.png)
 :::
@@ -100,11 +124,11 @@ For this course we will be using one main textbook, accompanied by additional re
 ::: {.column width="45%"}
 ![Ismay & Kim, **Modern Dive: Statistical Inference via Data Science**. <https://moderndive.com>](images/modern_dive_cover.png)
 :::
-:::
+::::::
 
 ## Required Technology
 
-::: columns
+:::::::: columns
 ::: {.column width="28%"}
 ![`R` is the statistical software we will be using in this course (<https://cran.r-project.org/>)](images/R.jpeg){width="50%"}
 :::
@@ -122,14 +146,14 @@ For this course we will be using one main textbook, accompanied by additional re
 ::: {.column width="28%"}
 ![For questions of general interest, such as course clarifications or conceptual questions, please use the Class Discord Server. Refer to the Day One Class Setup materials for more information on how to effectively use this server.](images/discord.jpeg){width="50%"}
 :::
-:::
+::::::::
 
 ::: callout-caution
 # Posit Cloud Student Subscription
 
-For this course, you will be required to enroll in the [Cloud Student](https://posit.cloud/plans/student), which costs $5 per month. The subscription plan gives you access to the STAT 313 workspace, 75-hours of computing time each month, and collaborative editing. 
+For this course, you will be required to enroll in the [Cloud Student](https://posit.cloud/plans/student), which costs \$5 per month. The subscription plan gives you access to the STAT 313 workspace, 75-hours of computing time each month, and collaborative editing.
 
-Note, to qualify for the student subscription you **must** use your Cal Poly email address for your account. 
+Note, to qualify for the student subscription you **must** use your Cal Poly email address for your account.
 :::
 
 # What is this class?
@@ -138,7 +162,7 @@ Note, to qualify for the student subscription you **must** use your Cal Poly ema
 
 ## My course goals
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 **Data Visualization & Summarization**
 
@@ -214,7 +238,7 @@ Note, to qualify for the student subscription you **must** use your Cal Poly ema
 
 -   describe the connection between confidence intervals and hypothesis testing
 :::
-:::
+::::::
 
 # Grade Breakdown {#sec-grades}
 
@@ -232,17 +256,20 @@ Note, to qualify for the student subscription you **must** use your Cal Poly ema
 | **Critiques & Lab Assignments\ | at least 8 Satisfactory[^2] | at least 7 Satisfactory | at least 6 Satisfactory | 5 or fewer Satisfactory |
 | (9 total)**                    |                             |                         |                         |                         |
 +--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
+| **Peer Evaluations (7 total)** | all 7 completed             | at least 6 completed    | at least 5 completed    | 4 or fewer completed    |
++--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
 | **Midterm Project**            | Excellent                   | Satisfactory            | Progressing             | No Credit               |
 +--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
 | **Final Project**              | Excellent                   | Satisfactory            | Progressing             | No Credit               |
 +--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+
 
-<!-- +--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+ -->
-<!-- | **Peer Evaluations\            | 2 completed                 | at least 1 completed    | at least 1 completed    | none completed          | -->
-<!-- | (3 total)**                    |                             |                         |                         |                         | -->
-
-
 [^2]: A "Satisfactory" lab or critique occurs when **every** problem has been marked *Satisfactory.*
+
+<!-- +--------------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+ -->
+
+<!-- | **Peer Evaluations\            | 2 completed                 | at least 1 completed    | at least 1 completed    | none completed          | -->
+
+<!-- | (3 total)**                    |                             |                         |                         |                         | -->
 
 I will set + / - grades based on how close you are to the next higher (or lower) letter grade. For example, if you meet all the criteria for an A but only completed 8 satisfactory labs and critiques, you would earn an A-. Similarly, if you meet all the criteria for an A, but received a Satisfactory on a project you would earn an A-.
 
@@ -311,6 +338,14 @@ Revisions **must** include a reflection describing how you revised your thinking
 
 **Submit your revision to the same assignment box on Canvas as your original. This helps me keep track of who has outstanding revisions.**
 
+### Peer Evaluations
+
+For quite some time I have been interested in what we, as your professors, can do to make group collaborations better for *every* student.
+
+Following the lab assignment each week you are required to complete a short (4-question) survey regarding your experiences collaborating with your partner. I use these evaluations to gauge people's collaborative experiences and to identify any instances where it would be beneficial to change groups or meet 1-1 with group members.
+
+On Wednesdays, I will bring personalized paper evaluation slips (with your name on it) to class. Once your group has finished the lab, you can come up and grab your evaluation slip. I ask that you take 3-minutes to *thoughtfully* respond to each of the questions. Your responses do not influence your grade or your partner's grade, but I ask that you take them seriously.
+
 ## Synthesize statistical ideas
 
 ### Midterm & Final Projects
@@ -327,11 +362,11 @@ The module for each week will be released on Friday by 5pm, so you can look over
 
 ### Getting help {#sec-help}
 
-This quarter, I am instating a policy that **I do not respond to emails with questions of general interest**, such as deadline clarifications or conceptual questions. If you have one of these questions, please ask your question on our course Discord server. 
+This quarter, I am instating a policy that **I do not respond to emails with questions of general interest**, such as deadline clarifications or conceptual questions. If you have one of these questions, please ask your question on our course Discord server.
 
 **Discord:** We will use Discord to manage questions and responses regarding course content. There are channels for the different components of each week (e.g., Week 1 Lab Assignment). Please **do not** send an email about homework questions or questions about the course material. It is incredibly helpful for others in the course to see the questions you have and the responses to those questions. I will try to answer any questions posted to Discord within 3-4 hours (unless it is posted at midnight). If you think you can answer another student's question, please respond!
 
-:::{callout-note}
+::: {callout-note}
 # Responding to Private Messages
 
 If you use private email or messaging to ask a question that should be public, I may simply answer it in Discord instead. Please don't take this personally! It just means that you asked a good question, and I think the rest of the class could benefit from seeing the answer.
@@ -411,45 +446,7 @@ In summary: Be good to each other.
 
 ## Working in teams
 
-When completing lab assignments, you will work in a team of three students. In Week 2, you will be assigned to a group and you will work in this same group for three total weeks (Weeks 2 - 4). Then, in Week 5 you will be assigned to a new group of three students, which you will collaborate with for the next three weeks (Weeks 5 - 7). Finally, in Week 8, you will be assigned to one final group which you will collaborate with for the final three weeks of the quarter (Weeks 8 - 10).
-
-<!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
-
-<!-- | **Resource Manager**                                                                                      | **Recorder / Reporter**                                                                   | **Team Captain**                                           | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- | Manages the resources the team needs to complete the task                                                 | Manages in-class report                                                                   | Manages team participation                                 | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- | -   Responsible for pulling up resources necessary for completing the lab (e.g., R Cheatsheets, textbook) | -   Responsible for organizing and recording answers to the assignment during discussions | -   Leads discussion                                       | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- | -   If                                                                                                    | -   Compiles a summary of the solutions discussed                                         | -   Encourages participation                               | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- | -   Finds compromises                                                                                     | -   Solicits feedback on summaries from other group members                               | -   Makes sure everyone understands the task               | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- | -                                                                                                         | -   Responsible for submitting final version of assignment                                |     Substitutes for absent roles                           | -->
-
-<!-- |                                                                                                           |                                                                                           |                                                            | -->
-
-<!-- |                                                                                                           |                                                                                           | -   Calls professor / TA over for **group questions only** | -->
-
-<!-- +-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------+ -->
-
-### Researching Group Collaborations
-
-For quite some time I have been interested in what we, as your professors, can do to make group collaborations better for *every* student. This is a substantial area of my research, and, as such, I will be collecting data on your experiences collaborating with your peers in STAT 313. Every week, I will request for your to complete a pre-lab and a post-lab survey, detailing your feelings about your upcoming collaboration and your perceptions for how the collaboration went. Results from this study will provide our research team with a better understanding of (1) the impact of collaborative experiences on student self-perception, and (2) how to facilitate collaborative experiences that are beneficial for every student
-
-During Week 1, you will be asked to complete a form consenting to participate in this study. Your participation in this research will not directly affect your course grade. If you agree to participate, you will complete a weekly surveys regarding your experiences before and after collaborating in your group. Based on the results of your surveys from Weeks 2-8, you may be invited to participate in a 30-minute interview with an undergraduate student researcher, discussing your experiences collaborating with your peers.
-
-If you have questions regarding this study or would like to be informed of the results when the study is completed, please contact me (Dr. Theobold) at atheobol\@calpoly.edu. If you have concerns regarding the manner in which the study is conducted, you may contact Dr. Michael Black, Chair of the Cal Poly Institutional Review Board, at (805) 756-2894, mblack\@calpoly.edu, or Trish Brock, Director of Research Compliance, at (805) 756-1450, pbrock\@calpoly.edu.
+When completing lab assignments, you will work in a team of two students. In Week 2, you will be assigned to a group and you will work in this same group for two weeks (Weeks 2 & 3). Then, in Week 4 you will be assigned to a new group of two students, with whom you will collaborate with for the next two weeks (Weeks 4 & 5). This process will continue for Weeks 6 & 7, and Weeks 8 & 9. You will work with four different partners by the end of STAT 313.
 
 ## What constitutes plagiarism in a statistics class?
 
