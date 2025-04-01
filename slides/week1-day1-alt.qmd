@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Stat 313!"
 title-slide-attributes:
-    data-background-image: /images/background-bikeshare.png
+    data-background-image: /images/course-logo.png
     data-background-size: stretch
     data-background-opacity: "0.75"
 format: 
@@ -63,19 +63,23 @@ Why do you believe your discipline requires / expects you to take this course?
 
 # Who am I?
 
-## 
+## About Me...
 
-::: {style="font-size: 2em; color: #000000;"}
-About Me...
+
+::: columns
+::: {.column width="48%"}
+![](images/netherlands.jpg){fig-alt="Three images of things related to Dr. Theobold's life. The first image is of a field of purple flowers from Dr. Theobold's spring break trip to Amsterdam." width=80%}
+
+![](images/kitties.JPG){fig-alt="The third image is of Dr. Theobold's two cats snuggled in a cat bed together." width=80%}
 :::
 
-```{r}
-#| layout-nrow: 1
-#| label: pictures
-#| fig-alt: "Three images of things related to Dr. Theobold's life. The first image is of Dr. Theobold running across a bridge in a trail race. The second image is of Dr. Theobold's mountain bike at the top of a local hiking trail. The third image is of Dr. Theobold's two cats snuggled in a cat bed together."
+::: {.column width="2%"}
+:::
 
-knitr::include_graphics(c("images/running.jpg", "images/biking.JPG", "images/kitties.JPG"))
-```
+::: {.column width="48%"}
+![](images/running.jpg){fig-alt="The second image is of Dr. Theobold running across a bridge in a trail race." width=80%}
+:::
+:::
 
 # What can I expect from this class?
 
@@ -93,7 +97,7 @@ What is Statistics?
 Statistics is the study of how best to collect, analyze, and draw conclusions from data.
 :::
 
-> *Introduction to Modern Statistics*
+*Introduction to Modern Statistics*
 
 ## 
 
@@ -208,13 +212,7 @@ Tidy Data
 
 ![Expected layout of "tidy" datasets](images/tidy-1.png)
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Gender stereotypes in 5-7 year old children
-:::
-
-</br>
+## Gender Stereotypes
 
 ::: {style="font-size: 0.75em;"}
 ```{r gender-stereotypes}
@@ -229,11 +227,18 @@ children_gender_stereo[[2]] %>%
 ```
 :::
 
-## 
+. . .
 
-::: {style="font-size: 1.5em; color: #000000;"}
-Body girth and skeletal diameter measurements
+</br> 
+
+::: {.centered}
+::: {style="color: #b76352;"}
+What are the observations in these data? i.e., What separates one row from the 
+other rows?
 :::
+:::
+
+## Body Girth and Skeletal Diameter
 
 ::: {style="font-size: 0.75em;"}
 ```{r body-girth}
@@ -247,13 +252,17 @@ bdims %>%
 ```
 :::
 
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-NBA player of the week
-:::
+. . .
 
 </br>
+
+::: {.centered}
+::: {style="color: #b76352;"}
+What are the observations in these data?
+:::
+:::
+
+## NBA Player of the Week
 
 ::: {style="font-size: 0.75em;"}
 ```{r nba}
@@ -267,6 +276,16 @@ nba %>%
 ```
 :::
 
+. . .
+
+</br>
+
+::: {.centered}
+::: {style="color: #b76352;"}
+What are the observations in these data?
+:::
+:::
+
 ##  {background-color="#B6CADA"}
 
 ::: {style="font-size: 3em; color: #000000;"}
@@ -276,25 +295,24 @@ Your Turn
 ::: {style="font-size: 0.75em;"}
 Every year, the US releases to the public a large data set containing information on births recorded in the country.
 
-A total of 13 variables were collected on every birth, including information about:
+A total of 12 variables were collected on every birth, including information about:
 
 -   the birth (baby weight, sex of baby, premie status)
--   the pregnancy (hospital visits, length of gestation, )
--   the birth parent's attributes (age, smoking status, marital status, race)
+-   the pregnancy (hospital visits, length of gestation, weight gained)
+-   the birth parent's attributes (age, high-risk status, smoking status, 
+marital status, race)
 -   the partner's age
 :::
 
 . . .
 
+::: {.centered}
 ::: {style="color: #b76352;"}
-How would you expect this dataframe to look?
+If you were to open this dataset in Excel, how would you expect it to look? 
+:::
 :::
 
-## 
-
-::: {style="font-size: 2em;"}
-Military Spending
-:::
+## Military Spending
 
 ::: {style="font-size: 0.75em;"}
 ```{r}
@@ -324,15 +342,13 @@ military %>%
 
 </br>
 
+::: {.centered}
 ::: {style="color: #b76352;"}
 Do these data satisfy the "tidy" principles?
 :::
-
-## 
-
-::: {style="font-size: 2em;"}
-Vehicle Efficiency
 :::
+
+## Vehicle Efficiency
 
 ::: {style="font-size: 0.75em;"}
 ```{r}
@@ -351,8 +367,10 @@ mtcars %>%
 
 </br>
 
+::: {.centered}
 ::: {style="color: #b76352;"}
 Do these data satisfy the "tidy" principles?
+:::
 :::
 
 ##  {background-color="#B6CADA"}
@@ -371,13 +389,13 @@ Types of Variables
 
 ##  {background-color="#B6CADA"}
 
-<center>
-![](images/continuous-discrete.jpeg){fig-alt="An image of a baby chick and a baby octopus. The baby chick is under the 'continuous' banner, and says the chick is 3.1 inches tall and weighs 34.16 grams, representing two variables that are measured continuously. The octopus is under the 'discrete' banner, and says the octopus has 8 arms and 4 spots, representing two variables that are measured discretely."}
-</center>
+::: {.centered}
+![](images/continuous-discrete.jpeg){fig-alt="An image of a baby chick and a baby octopus. The baby chick is under the 'continuous' banner, and says the chick is 3.1 inches tall and weighs 34.16 grams, representing two variables that are measured continuously. The octopus is under the 'discrete' banner, and says the octopus has 8 arms and 4 spots, representing two variables that are measured discretely." width=80%}
+:::
 
 ##  {background-color="#B6CADA"}
 
-![](images/nominal_ordinal_binary.png){fig-alt="An image of the three different types of categorical variables, nominal, ordinal, and binary. The 'nominal' category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The 'ordinal' category has three bumblebees, one saying 'I am happy,' one saying 'I am oka," and one saying 'I am awesome!!!'. The bumblebees' emotions represent an ordinal variable. Lastly, the 'binary' category references variables that have two mutually exclusive outcomes. The image displayed under 'binary' is a t-rex saying 'I am extinct' and a shark saying 'Ha' (because they are not extinct)."}
+![](images/nominal_ordinal_binary.png){fig-alt="An image of the three different types of categorical variables, nominal, ordinal, and binary. The 'nominal' category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The 'ordinal' category has three bumblebees, one saying 'I am happy,' one saying 'I am okay,' and one saying 'I am awesome!!!'. The bumblebees' emotions represent an ordinal variable. Lastly, the 'binary' category references variables that have two mutually exclusive outcomes. The image displayed under 'binary' is a t-rex saying 'I am extinct' and a shark saying 'Ha' (because they are not extinct)." width=80%}
 
 ## 
 
@@ -400,7 +418,7 @@ Write down one example of:
 . . .
 
 ::: {style="font-size: 1.5em; color: #e28743;"}
-Share out!
+Share with your neighbor!
 :::
 
 #  {background-color="#B6CADA"}
@@ -447,66 +465,6 @@ How might it differ from `fct`?
 :::
 :::
 
-# Other Foundational Concepts
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Types of Studies
-:::
-
-::: columns
-::: {.column width="40%"}
-*Experiment*
-
--   randomization
--   replication
--   controlling
--   blocking
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-*Observational Study*
-
--   collect data in a way that does not directly interfere with how the data arise
-:::
-:::
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Relationships Between Variables
-:::
-
-</br>
-
-explanatory variable $\rightarrow$ *might affect* $\rightarrow$ response variable
-
-. . .
-
--   If two variables are not associated, then they are said to be **independent**.
-
--   If two variables are associated, then they are said to be **dependent**.
-
-## 
-
-::: {style="font-size: 2em; color: #000000;"}
-Causal Inference
-:::
-
-</br>
-
-association $\neq$ causation
-
-</br>
-
-. . .
-
-What do you need to say that the explanatory variable [*causes*]{style="color: #e28743;"} a change in the response variable?
-
 # Lab 1
 
 ## Joining the STAT 313 Workspace on Posit Cloud
@@ -536,8 +494,6 @@ The Cloud Student account costs $5 / month. You will only need to pay for three 
 
 6. Click on the `lab-1.qmd` file in the lower right hand corner to open the lab assignment
 
-![](images/open-lab-1.png){fig-alt="A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the "Files" tab, with lab-1.qmd (a Quarto file) higlighted in a purple box.}
+![](images/open-lab-1.png){fig-alt="A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the 'Files' tab, with lab-1.qmd (a Quarto file) higlighted in a purple box."}
 
 7. Start working! 
-
-

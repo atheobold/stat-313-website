@@ -4632,42 +4632,42 @@
     "href": "slides/week1-day1-alt.html#section",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "About Me…"
+    "text": "What is Statistics?\n\n\n\nScientists seek to answer questions using rigorous methods and careful observations. These observations – collected from the likes of field notes, surveys, and experiments – form the backbone of a statistical investigation and are called data.\n\n\nStatistics is the study of how best to collect, analyze, and draw conclusions from data.\n\nIntroduction to Modern Statistics"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-1",
     "href": "slides/week1-day1-alt.html#section-1",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "What is Statistics?\n\n\n\nScientists seek to answer questions using rigorous methods and careful observations. These observations – collected from the likes of field notes, surveys, and experiments – form the backbone of a statistical investigation and are called data.\n\n\nStatistics is the study of how best to collect, analyze, and draw conclusions from data.\n\n\nIntroduction to Modern Statistics"
+    "text": "What Statistics Is To Me\n\n \n\n\n\n\nThe data science cycle – Wickham & Grolemund"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-2",
     "href": "slides/week1-day1-alt.html#section-2",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "What Statistics Is To Me\n\n \n\n\n\n\nThe data science cycle – Wickham & Grolemund"
+    "text": "What you can expect in STAT 313\n\nThis course will teach you the fundamentals of linear models—simple linear regression, multiple linear regression, and analysis of variance—and experimental design. You will extend the concepts covered in your Stat I course, to:\n\n\nwork with data in a reproducible way (using R)\nvisualize and summarize a variety of datasets (in R)\ncritically evaluate the use of Statistics\nperform statistical analyses to answer research questions (using R)"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-3",
     "href": "slides/week1-day1-alt.html#section-3",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "What you can expect in STAT 313\n\nThis course will teach you the fundamentals of linear models—simple linear regression, multiple linear regression, and analysis of variance—and experimental design. You will extend the concepts covered in your Stat I course, to:\n\n\nwork with data in a reproducible way (using R)\nvisualize and summarize a variety of datasets (in R)\ncritically evaluate the use of Statistics\nperform statistical analyses to answer research questions (using R)"
+    "text": "Coding 🙀\n\n\nCoding is a huge part of how doing statistics in the wild looks.\n\n\n\nEveryone is coming from a different background\nDifferent aspects of the course will be difficult to different people\nYou will be given coding resources each week\nUse your peers to support your learning"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-4",
     "href": "slides/week1-day1-alt.html#section-4",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Coding 🙀\n\n\nCoding is a huge part of how doing statistics in the wild looks.\n\n\n\nEveryone is coming from a different background\nDifferent aspects of the course will be difficult to different people\nYou will be given coding resources each week\nUse your peers to support your learning"
+    "text": "Course Components\n\n\n\n\nBefore Class\n\n\nReading Guides\nConcept Quizzes\nR Tutorials\n\n\n\n\n\nDuring Class\n\n\nGroup Discussion\nHands-on Activities\nLab Assignments\n\n\n\n\n\nOutside of Class\n\n\nStatistical Critiques\nMidterm Project\nFinal Project"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-5",
     "href": "slides/week1-day1-alt.html#section-5",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Course Components\n\n\n\n\nBefore Class\n\n\nReading Guides\nConcept Quizzes\nR Tutorials\n\n\n\n\n\nDuring Class\n\n\nGroup Discussion\nHands-on Activities\nLab Assignments\n\n\n\n\n\nOutside of Class\n\n\nStatistical Critiques\nMidterm Project\nFinal Project"
+    "text": "Specifications Based Grading"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-6",
@@ -4681,98 +4681,98 @@
     "href": "slides/week1-day1-alt.html#section-8",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Tidy Data\n\n\nExpected layout of “tidy” datasets"
+    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 12 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, weight gained)\nthe birth parent’s attributes (age, high-risk status, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\n\nIf you were to open this dataset in Excel, how would you expect it to look?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-9",
     "href": "slides/week1-day1-alt.html#section-9",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n49\nmale\n7\nsmart\nchildren\n1.00\n0.25\n\n\n96\nfemale\n6\nnice\nchildren\n1.00\n1.00\n\n\n37\nfemale\n7\nnice\nchildren\n1.00\n1.00\n\n\n37\nfemale\n7\nsmart\nchildren\n0.75\n1.00\n\n\n139\nmale\n7\nsmart\nchildren\n0.75\n0.75\n\n\n135\nmale\n7\nsmart\nadults\n0.75\n0.50"
+    "text": "Artwork by @allison_horst"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-10",
     "href": "slides/week1-day1-alt.html#section-10",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Body girth and skeletal diameter measurements\n\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n19\n70.6\n178.0\n0\n103.0\n68.0\n84.5\n99.5\n\n\n21\n81.6\n184.0\n1\n119.5\n77.5\n81.5\n99.8\n\n\n36\n54.5\n167.6\n0\n96.4\n73.6\n86.9\n94.7\n\n\n40\n56.8\n168.9\n0\n98.2\n62.9\n76.8\n95.5\n\n\n32\n58.4\n173.2\n0\n97.7\n68.6\n83.0\n94.2\n\n\n49\n89.1\n182.9\n1\n115.6\n103.6\n100.7\n100.6"
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-11",
     "href": "slides/week1-day1-alt.html#section-11",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "NBA player of the week\n\n\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n23\nDec 15, 1985\n1984\n6-3\nAlvin Robertson\nSG\n\n\n20\nJan 9, 2005\n2003\n6-11\nChris Bosh\nPF\n\n\n27\nNov 21, 2016\n2011\n201cm\nJimmy Butler\nGF\n\n\n29\nDec 2, 1984\n1977\n6-11\nJack Sikma\nC\n\n\n24\nJan 4, 2004\n1999\n6-9\nElton Brand\nPF\n\n\n25\nMar 1, 1992\n1988\n6-10\nDanny Manning\nF"
+    "text": "Artwork by @allison_horst"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-12",
     "href": "slides/week1-day1-alt.html#section-12",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Your Turn\n\n\nEvery year, the US releases to the public a large data set containing information on births recorded in the country.\nA total of 13 variables were collected on every birth, including information about:\n\nthe birth (baby weight, sex of baby, premie status)\nthe pregnancy (hospital visits, length of gestation, )\nthe birth parent’s attributes (age, smoking status, marital status, race)\nthe partner’s age\n\n\n\n\nHow would you expect this dataframe to look?"
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-13",
     "href": "slides/week1-day1-alt.html#section-13",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Military Spending\n\n\n\n\n\n\n\nCountry\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n\n\n\n\nAfrica\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nUSA\n4.922642\n4.840174\n4.477401\n4.046679\n3.695891\n3.477846\n3.418941\n3.313385\n3.316244\n3.413107\n\n\nAustralia\n1.856791\n1.757078\n1.670963\n1.639861\n1.772211\n1.950601\n2.081512\n1.997974\n1.894180\n1.879802\n\n\nNorway\n1.515698\n1.451436\n1.402134\n1.413997\n1.472039\n1.507280\n1.626681\n1.622270\n1.628300\n1.684120\n\n\nSweden\n1.188288\n1.104288\n1.133304\n1.116715\n1.129776\n1.069579\n1.052833\n1.024075\n1.031100\n1.120599\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare with your neighbor!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-14",
     "href": "slides/week1-day1-alt.html#section-14",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.9\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.7\n0\n1\n5\n2\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.6\n1\n1\n4\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.5\n0\n1\n5\n4\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-15",
     "href": "slides/week1-day1-alt.html#section-15",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Artwork by @allison_horst"
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-16",
     "href": "slides/week1-day1-alt.html#section-16",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Types of Variables\n\n\n\nDiagram of types of variables we will analyze!"
+    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-18",
     "href": "slides/week1-day1-alt.html#section-18",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "{fig-alt=“An image of the three different types of categorical variables, nominal, ordinal, and binary. The ‘nominal’ category has a turtle, snail, and butterfly and represents variables with unordered descriptions. The ‘ordinal’ category has three bumblebees, one saying ‘I am happy,’ one saying ‘I am oka,” and one saying ’I am awesome!!!’. The bumblebees’ emotions represent an ordinal variable. Lastly, the ‘binary’ category references variables that have two mutually exclusive outcomes. The image displayed under ‘binary’ is a t-rex saying ‘I am extinct’ and a shark saying ‘Ha’ (because they are not extinct).”}"
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-19",
     "href": "slides/week1-day1-alt.html#section-19",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Your Turn (90-seconds)\n\n\nWrite down one example of:\n\na continuous, numerical variable\na discrete, numerical variable\nan ordinal, categorical variable\na regular, categorical variable\n\n\n\nShare out!"
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-21",
     "href": "slides/week1-day1-alt.html#section-21",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-22",
     "href": "slides/week1-day1-alt.html#section-22",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Types of Studies\n\n\n\nExperiment\n\nrandomization\nreplication\ncontrolling\nblocking\n\n\n\n\nObservational Study\n\ncollect data in a way that does not directly interfere with how the data arise"
+    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-23",
     "href": "slides/week1-day1-alt.html#section-23",
     "title": "Welcome to Stat 313!",
     "section": "",
-    "text": "Relationships Between Variables\n\n\nexplanatory variable \\(\\rightarrow\\) might affect \\(\\rightarrow\\) response variable\n\n\nIf two variables are not associated, then they are said to be independent.\nIf two variables are associated, then they are said to be dependent."
+    "text": "Causal Inference\n\n\nassociation \\(\\neq\\) causation\n\n\nWhat do you need to say that the explanatory variable causes a change in the response variable?"
   },
   {
     "objectID": "slides/week1-day1-alt.html#section-24",
@@ -4800,7 +4800,7 @@
     "href": "slides/week1-day1-alt.html#opening-the-lab-1-document",
     "title": "Welcome to Stat 313!",
     "section": "Opening the Lab 1 Document",
-    "text": "Opening the Lab 1 Document\n\nClick on the lab-1.qmd file in the lower right hand corner to open the lab assignment\n\n{fig-alt=“A screenshot of the lower right hand panel of Posit Cloud. The image displays the documents listed under the”Files” tab, with lab-1.qmd (a Quarto file) higlighted in a purple box.}\n\nStart working!"
+    "text": "Opening the Lab 1 Document\n\nClick on the lab-1.qmd file in the lower right hand corner to open the lab assignment\n\n\n\nStart working!"
   },
   {
     "objectID": "slides/week3-day1-alt.html#in-r",
@@ -6135,5 +6135,75 @@
     "title": "Lab 1: Welcome to Quarto!",
     "section": "",
     "text": "When you click the Render button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Rendering a document is similar to running the code within the document, as Quarto performs the same action (running each chunk of code) in order to render your final document.\nQuestion 5: Click on the “Render” button to produce an HTML file (you may need to enable popups to see the rendered document). Do you see the above code chunk (load-packages) in the rendered HTML document? Why do you think this is the case?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#about-me",
+    "href": "slides/week1-day1-alt.html#about-me",
+    "title": "Welcome to Stat 313!",
+    "section": "About Me…",
+    "text": "About Me…"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-7",
+    "href": "slides/week1-day1-alt.html#section-7",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Tidy Data\n\n\nExpected layout of “tidy” datasets"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-17",
+    "href": "slides/week1-day1-alt.html#section-17",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#section-20",
+    "href": "slides/week1-day1-alt.html#section-20",
+    "title": "Welcome to Stat 313!",
+    "section": "",
+    "text": "Data Types in R\n\n\n\nglimpse(births_small)\n\nRows: 1,000\nColumns: 10\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;fct&gt; male, female, female, male, female, female, female, mal…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…\n\n\n\n\n\nWhat do you think dbl means?\nHow is that different from int?\n\n\n\nWhat does chr mean?\nHow might it differ from fct?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#gender-stereotypes-in-5-7-year-old-children",
+    "href": "slides/week1-day1-alt.html#gender-stereotypes-in-5-7-year-old-children",
+    "title": "Welcome to Stat 313!",
+    "section": "Gender stereotypes in 5-7 year old children",
+    "text": "Gender stereotypes in 5-7 year old children\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n125\nfemale\n5\nnice\nchildren\n1.00\n1.00\n\n\n134\nfemale\n6\nsmart\nadults\n0.25\n0.50\n\n\n98\nfemale\n5\nsmart\nadults\n0.75\n0.75\n\n\n43\nmale\n6\nsmart\nchildren\n1.00\n0.75\n\n\n8\nfemale\n6\nsmart\nchildren\n0.25\n0.75\n\n\n127\nfemale\n6\nnice\nchildren\n1.00\n1.00\n\n\n\n\n\n\n\n\n\nWhat are the observations in these data? i.e., What separates one row from the other rows?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#gender-stereotypes",
+    "href": "slides/week1-day1-alt.html#gender-stereotypes",
+    "title": "Welcome to Stat 313!",
+    "section": "Gender Stereotypes",
+    "text": "Gender Stereotypes\n\n\n\n\n\n\nsubject\nsex\nage\ntrait\ntarget\nstereotype\nhigh_achieve_caution\n\n\n\n\n31\nfemale\n7\nsmart\nchildren\n0.00\n1.00\n\n\n119\nfemale\n7\nnice\nchildren\n1.00\n1.00\n\n\n11\nmale\n6\nsmart\nchildren\n0.75\n0.75\n\n\n43\nmale\n6\nnice\nadults\n1.00\n0.75\n\n\n125\nfemale\n5\nnice\nchildren\n1.00\n1.00\n\n\n135\nmale\n7\nsmart\nadults\n0.75\n0.50\n\n\n\n\n\n\n\n\n\n\n\n\nWhat are the observations in these data? i.e., What separates one row from the other rows?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#body-girth-and-skeletal-diameter",
+    "href": "slides/week1-day1-alt.html#body-girth-and-skeletal-diameter",
+    "title": "Welcome to Stat 313!",
+    "section": "Body Girth and Skeletal Diameter",
+    "text": "Body Girth and Skeletal Diameter\n\n\n\n\n\n\nage\nwgt\nhgt\nsex\nsho_gi\nwai_gi\nnav_gi\nhip_gi\n\n\n\n\n25\n54.2\n170.9\n0\n97.7\n61.0\n71.8\n91.6\n\n\n22\n72.9\n170.0\n0\n106.3\n81.8\n96.5\n99.3\n\n\n32\n62.7\n165.1\n0\n103.5\n72.0\n91.9\n103.9\n\n\n21\n82.8\n180.3\n1\n115.0\n85.0\n94.5\n105.0\n\n\n23\n86.4\n175.3\n1\n120.0\n84.2\n88.9\n97.5\n\n\n19\n50.2\n162.2\n0\n93.3\n62.6\n72.9\n87.4\n\n\n\n\n\n\n\n\n\n\n\n\nWhat are the observations in these data?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#nba-player-of-the-week",
+    "href": "slides/week1-day1-alt.html#nba-player-of-the-week",
+    "title": "Welcome to Stat 313!",
+    "section": "NBA Player of the Week",
+    "text": "NBA Player of the Week\n\n\n\n\n\n\nAge\nDate\nDraft Year\nHeight\nPlayer\nPosition\n\n\n\n\n27\nJan 25, 2004\n1995\n6-11\nKevin Garnett\nPF\n\n\n24\nDec 15, 1996\n1992\n7-1\nShaquille O'Neal\nC\n\n\n26\nApr 1, 2007\n2002\n7-6\nYao Ming\nC\n\n\n27\nMar 4, 2013\n2005\n6-3\nMonta Ellis\nG\n\n\n38\nApr 13, 2015\n1997\n6-11\nTim Duncan\nFC\n\n\n28\nNov 13, 1994\n1989\n6-0\nTim Hardaway\nPG\n\n\n\n\n\n\n\n\n\n\n\n\nWhat are the observations in these data?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#military-spending",
+    "href": "slides/week1-day1-alt.html#military-spending",
+    "title": "Welcome to Stat 313!",
+    "section": "Military Spending",
+    "text": "Military Spending\n\n\n\n\n\n\nCountry\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n\n\n\n\nAfrica\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nUSA\n4.922642\n4.840174\n4.477401\n4.046679\n3.695891\n3.477846\n3.418941\n3.313385\n3.316244\n3.413107\n\n\nAustralia\n1.856791\n1.757078\n1.670963\n1.639861\n1.772211\n1.950601\n2.081512\n1.997974\n1.894180\n1.879802\n\n\nNorway\n1.515698\n1.451436\n1.402134\n1.413997\n1.472039\n1.507280\n1.626681\n1.622270\n1.628300\n1.684120\n\n\nSweden\n1.188288\n1.104288\n1.133304\n1.116715\n1.129776\n1.069579\n1.052833\n1.024075\n1.031100\n1.120599\n\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
+  },
+  {
+    "objectID": "slides/week1-day1-alt.html#vehicle-efficiency",
+    "href": "slides/week1-day1-alt.html#vehicle-efficiency",
+    "title": "Welcome to Stat 313!",
+    "section": "Vehicle Efficiency",
+    "text": "Vehicle Efficiency\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nHornet 4 Drive\n21.4\n6\n258.0\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nAMC Javelin\n15.2\n8\n304.0\n150\n3.15\n3.435\n17.30\n0\n0\n3\n2\n\n\nMerc 450SL\n17.3\n8\n275.8\n180\n3.07\n3.730\n17.60\n0\n0\n3\n3\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.50\n0\n1\n5\n4\n\n\n\n\n\n\n\n\n\n\n\n\nDo these data satisfy the “tidy” principles?"
   }
 ]
