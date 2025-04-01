@@ -8,7 +8,7 @@
 
 <meta name="author" content="Your Name Here!">
 
-<title>Lab 1: Welcome to Posit Cloud! – STAT 313 / 513</title>
+<title>Lab 1: Welcome to Quarto! – STAT 313 / 513</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4745,7 +4745,7 @@ vertical-align: -.125em;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Welcome to Posit Cloud!</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Welcome to Quarto!</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -4964,7 +4964,8 @@ vertical-align: -.125em;
   <ul class="collapse">
   <li><a href="#formatting-your-document" id="toc-formatting-your-document" class="nav-link" data-scroll-target="#formatting-your-document">Formatting your Document</a></li>
   <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code">R Code</a></li>
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
+  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code">Running Code</a></li>
+  <li><a href="#rendering-a-html-document" id="toc-rendering-a-html-document" class="nav-link" data-scroll-target="#rendering-a-html-document">Rendering a HTML Document</a></li>
   <li><a href="#including-code-output" id="toc-including-code-output" class="nav-link" data-scroll-target="#including-code-output">Including Code Output</a></li>
   <li><a href="#including-plots" id="toc-including-plots" class="nav-link" data-scroll-target="#including-plots">Including Plots</a></li>
   </ul></li>
@@ -4976,7 +4977,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Welcome to Posit Cloud!</h1>
+<h1 class="title">Lab 1: Welcome to Quarto!</h1>
 </div>
 
 
@@ -5003,13 +5004,13 @@ vertical-align: -.125em;
 <h1>Quarto</h1>
 <p>This is a Quarto document!</p>
 <p>Quarto is a software that allows you to interweave text and R code to create HTML, PDF, and Microsoft Word documents</p>
-<p>There are two ways to view a Quarto document, (1) as the “Source” file, or (2) as the “Visual” file. We will <strong>only</strong> use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word.</p>
+<p>There are two ways to view a Quarto document, (1) as the “Source” file, or (2) as the “Visual” file. We will <strong>only</strong> use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word or Google Docs.</p>
 <section id="formatting-your-document" class="level2">
 <h2 class="anchored" data-anchor-id="formatting-your-document">Formatting your Document</h2>
 <p>Similar to a Word Doc, there are a variety of ways you can spice up a Quarto document! Let’s explore a few.</p>
 <p><strong>Question 1:</strong> Using the formatting options, make a numbered list of your top three favorite animals.</p>
 <p><strong>Question 2:</strong> Using the formatting options, insert an image of your favorite animal.</p>
-<p><strong>Question 3:</strong> Now, change the “Formatting your Document” section name to the name of your favorite animal. Make sure your header is a level 1 – use the Header 1 formatting option!</p>
+<p><strong>Question 3:</strong> Now, change the “Formatting your Document” section name to “My Favorite Animals”. Make sure your header is a level 1 – use the Header 1 formatting option!</p>
 </section>
 <section id="r-code" class="level2">
 <h2 class="anchored" data-anchor-id="r-code">R Code</h2>
@@ -5022,28 +5023,39 @@ vertical-align: -.125em;
 <li><p>Code comments which are denoted by a <code>#</code> symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.</p></li>
 </ol>
 </section>
-<section id="rendering" class="level2">
-<h2 class="anchored" data-anchor-id="rendering">Rendering</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.</p>
-<p><strong>Question 4:</strong> Do you see the above code chunk when you render the document? Why do you think this is the case?</p>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+<p>In order for us to be able to use the contents of the <code>tidyverse</code> package (e.g., data, functions), we need to run the code chunk above! There are a few ways to do this:</p>
+<ol type="1">
+<li>Clicking on the green “play” button in the upper right hand corner of the document. <em>This will run <strong>all</strong> the code included in the code chunk.</em></li>
+<li>Putting your cursor in the code chunk and using a keyboard shortcut to run the code. On a PC the shortcut is Control + Enter (pressed at the same time). On a Mac the shortcut is Command + Return. <em>This will run a <strong>single</strong> line of code, so you may need to do this multiple times is there is more than one line of code!</em></li>
+</ol>
+<p><strong>Question 4:</strong> Run the code in the above code chunk (<code>load-packages</code>) using either of these methods. What output do you see? What do you think this output is telling you?</p>
+</section>
+<section id="rendering-a-html-document" class="level2">
+<h2 class="anchored" data-anchor-id="rendering-a-html-document">Rendering a HTML Document</h2>
+<p>When you click the <strong>Render</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Rendering a document is similar to running the code <em>within</em> the document, as Quarto performs the same action (running each chunk of code) in order to render your final document.</p>
+<p><strong>Question 5:</strong> Click on the “Render” button to produce an HTML file (<em>you may need to enable popups to see the rendered document</em>). Do you see the above code chunk (<code>load-packages</code>) in the rendered HTML document? Why do you think this is the case?</p>
 </section>
 <section id="including-code-output" class="level2">
 <h2 class="anchored" data-anchor-id="including-code-output">Including Code Output</h2>
 <p>You can include code output in your rendered document:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Question 5:</strong> What do you think the above code does? What type of output does it give you?<br>
-<em>Hint: You have saw this type of output on Tuesday!<br>
-</em></p>
+<p><strong>Question 6:</strong> Run the code above to see a preview of the <code>mpg</code> dataset. What are the observations (cases) in these data?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also preview a dataset using the <code>glimpse()</code> function.</p>
+<p><strong>Question 7:</strong> Run the code above and compare the output to the previous code (<code>mpg</code>). How is the output different? Which output do you prefer?</p>
 </section>
 <section id="including-plots" class="level2">
 <h2 class="anchored" data-anchor-id="including-plots">Including Plots</h2>
-<p>You can also embed plots in the rendered document.</p>
-<p>Here is an example of a plot.</p>
-<p><strong>Question 6</strong>: What do you think the <code>echo: false</code> option does in the above code chunk?</p>
-<p><strong>Question 7:</strong> What do you think the <code>mapping = aes(y = manufacturer, x = hwy))</code> code does?</p>
-<p><strong>Question 8:</strong> What do you think the <code>labs(x = &quot;Highway Miles Per Gallon&quot;, y = &quot;Car Manufacturer&quot;)</code> code does?</p>
+<p>You can also embed plots in the rendered document. Here is an example of a plot:</p>
+<p><strong>Question 8</strong>: What do you think the <code>echo: false</code> option does in the above code chunk? <em>Hint: Render the document and see what you see!</em></p>
+<p><strong>Question 9:</strong> What do you think the <code>mapping = aes(y = manufacturer, x = hwy))</code> code does?</p>
+<p><strong>Question 10:</strong> What do you think the <code>labs(x = &quot;Highway Miles Per Gallon&quot;, y = &quot;Car Manufacturer&quot;)</code> code does?</p>
 
 
 </section>

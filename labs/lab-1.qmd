@@ -1,5 +1,5 @@
 ---
-title: "Lab 1: Welcome to Posit Cloud!"
+title: "Lab 1: Welcome to Quarto!"
 author: "Your Name Here!"
 format: html
 editor: visual
@@ -15,7 +15,7 @@ This is a Quarto document!
 
 Quarto is a software that allows you to interweave text and R code to create HTML, PDF, and Microsoft Word documents
 
-There are two ways to view a Quarto document, (1) as the "Source" file, or (2) as the "Visual" file. We will **only** use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word.
+There are two ways to view a Quarto document, (1) as the "Source" file, or (2) as the "Visual" file. We will **only** use the Visual option in this class, as it allows you to interact with Quarto similar to how you interact with Word or Google Docs.
 
 ## Formatting your Document
 
@@ -25,7 +25,7 @@ Similar to a Word Doc, there are a variety of ways you can spice up a Quarto doc
 
 **Question 2:** Using the formatting options, insert an image of your favorite animal.
 
-**Question 3:** Now, change the "Formatting your Document" section name to the name of your favorite animal. Make sure your header is a level 1 -- use the Header 1 formatting option!
+**Question 3:** Now, change the "Formatting your Document" section name to "My Favorite Animals". Make sure your header is a level 1 -- use the Header 1 formatting option!
 
 ## R Code
 
@@ -52,15 +52,32 @@ This code chunk has two things we want to pay attention to:
 
 2.  Code comments which are denoted by a `#` symbol. Code comments are a way for you (and me) to write what the code is doing, without R thinking what we are writing is code it should execute.
 
-## Rendering
+## Running Code
 
-When you click the **Render** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+In order for us to be able to use the contents of the `tidyverse` package (e.g., data, functions), we need to run the code chunk above! There are a few ways to do this:
 
-**Question 4:** Do you see the above code chunk when you render the document? Why do you think this is the case?
+1.  Clicking on the green "play" button in the upper right hand corner of the document. *This will run **all** the code included in the code chunk.*
+2.  Putting your cursor in the code chunk and using a keyboard shortcut to run the code. On a PC the shortcut is Control + Enter (pressed at the same time). On a Mac the shortcut is Command + Return. *This will run a **single** line of code, so you may need to do this multiple times is there is more than one line of code!*
+
+**Question 4:** Run the code in the above code chunk (`load-packages`) using either of these methods. What output do you see? What do you think this output is telling you?
+
+## Rendering a HTML Document
+
+When you click the **Render** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Rendering a document is similar to running the code *within* the document, as Quarto performs the same action (running each chunk of code) in order to render your final document.
+
+**Question 5:** Click on the "Render" button to produce an HTML file (*you may need to enable popups to see the rendered document*). Do you see the above code chunk (`load-packages`) in the rendered HTML document? Why do you think this is the case?
 
 ## Including Code Output
 
 You can include code output in your rendered document:
+
+```{r}
+#| label: mpg-data
+
+mpg
+```
+
+**Question 6:** Run the code above to see a preview of the `mpg` dataset. What are the observations (cases) in these data?
 
 ```{r}
 #| label: mpg-glimpse
@@ -68,15 +85,13 @@ You can include code output in your rendered document:
 glimpse(mpg)
 ```
 
-**Question 5:** What do you think the above code does? What type of output does it give you?\
-*Hint: You have saw this type of output on Tuesday!\
-*
+We can also preview a dataset using the `glimpse()` function.
+
+**Question 7:** Run the code above and compare the output to the previous code (`mpg`). How is the output different? Which output do you prefer?
 
 ## Including Plots
 
-You can also embed plots in the rendered document.
-
-Here is an example of a plot.
+You can also embed plots in the rendered document. Here is an example of a plot:
 
 ```{r}
 #| echo: false
@@ -89,8 +104,8 @@ ggplot(data = mpg,
        y = "Car Manufacturer")
 ```
 
-**Question 6**: What do you think the `echo: false` option does in the above code chunk?
+**Question 8**: What do you think the `echo: false` option does in the above code chunk? *Hint: Render the document and see what you see!*
 
-**Question 7:** What do you think the `mapping = aes(y = manufacturer, x = hwy))` code does?
+**Question 9:** What do you think the `mapping = aes(y = manufacturer, x = hwy))` code does?
 
-**Question 8:** What do you think the `labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` code does?
+**Question 10:** What do you think the `labs(x = "Highway Miles Per Gallon", y = "Car Manufacturer")` code does?
