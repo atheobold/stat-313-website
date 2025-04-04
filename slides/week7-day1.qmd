@@ -44,8 +44,8 @@ uc <- coaches %>%
 
 ## Each group has a different sample of 25 UC & CSU coach salaries.
 
-::: columns
-::: {.column width="45%"}
+:::::::: columns
+:::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #000000;"}
 **First**...
 :::
@@ -54,19 +54,19 @@ uc <- coaches %>%
 -   calculate the median
 -   write your median on a post-it note
 -   place your median on the class plot
-:::
+::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #000000;"}
 **Then**...
 :::
 
 everyone works together to calculate the median of all 25 salaries
-:::
-:::
+::::
+::::::::
 
 ##  {background-color="#B6CADA"}
 
@@ -84,7 +84,7 @@ Why or why not?
 
 ## Precision & Accuracy
 
-::: columns
+:::::: columns
 ::: {.column width="55%"}
 ![](images/accuracy_vs_precision.jpg)
 :::
@@ -99,7 +99,7 @@ Why or why not?
 
 -   Larger sample sizes ensure our point estimates are precise.
 :::
-:::
+::::::
 
 ## Statistical Inference
 
@@ -107,7 +107,7 @@ There were `r nrow(coaches)` "Head Coaches" at University of California and Cali
 
 </br>
 
-::: columns
+::::::: columns
 ::: {.column width="45%"}
 **Median salary for all `r nrow(coaches)` coaches**
 
@@ -117,12 +117,12 @@ There were `r nrow(coaches)` "Head Coaches" at University of California and Cali
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: fragment
 Was the median of your sample of 25 coaches a good estimate of the salary for all 252 coaches?
 :::
-:::
-:::
+::::
+:::::::
 
 ## Sampling Framework
 
@@ -144,14 +144,14 @@ Was the median of your sample of 25 coaches a good estimate of the salary for al
 Statistical Inference Reasoning
 :::
 
-::: incremental
+:::: incremental
 ::: small
 -   If the sampling is done at random
 -   then the sample should be representative of the population
 -   any result based on the sample can generalize to the population
 -   the point estimate is a "good guess" of the unknown population parameter
 :::
-:::
+::::
 
 . . .
 
@@ -167,7 +167,7 @@ Every group had a random sample of 25 coach salaries, so why were some of the me
 
 </br>
 
-::: columns
+::::::: columns
 ::: {.column width="40%"}
 What do we get when we take multiple samples?
 :::
@@ -175,31 +175,31 @@ What do we get when we take multiple samples?
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+:::: {.column width="55%"}
 ::: fragment
 A distribution of statistics!
 :::
-:::
-:::
+::::
+:::::::
 
 </br>
 
-::: columns
-::: {.column width="40%"}
+:::::::: columns
+:::: {.column width="40%"}
 ::: fragment
 Why do we want a distribution of statistics?
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+:::: {.column width="55%"}
 ::: fragment
 Understanding the *variability* of a statistic is the heart of statistical inference!
 :::
-:::
-:::
+::::
+::::::::
 
 ## Virtual Sampling
 

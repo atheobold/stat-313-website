@@ -175,7 +175,7 @@ Approximates the true sampling distribution!
 
 # Penguins!
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 ![](images/adelie_penguin.jpg)
 :::
@@ -186,7 +186,7 @@ Approximates the true sampling distribution!
 ::: {.column width="45%"}
 ![](images/chinstrap_penguin.jpeg)
 :::
-:::
+::::::
 
 ## Statistic: $\beta_1$
 
@@ -202,7 +202,7 @@ boot1_CI <- get_confidence_interval(boot1,
                                     type = "percentile") 
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="70%"}
 ```{r scatterplot}
 #| message: false
@@ -228,7 +228,7 @@ ggplot(data = penguins,
 ::: {.column width="25%"}
 The relationship between penguin's bill length and body mass for **all** penguins in the Palmer Archipelago
 :::
-:::
+::::::
 
 ## In this sample of `r nrow(penguins)` penguins...
 
@@ -662,12 +662,12 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 
 ## Water Temperature and Latitude
 
-::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 ::: small
 > When including both water temperature and latitude in a multiple linear regression, we get coefficients that contradict the relationships seen in the visualizations. This only happens if the explanatory variables are highly correlated with each other.
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 :::
@@ -675,7 +675,7 @@ How would you interpret the confidence interval for `flipper_length_mm`? For `bo
 ::: {.column width="45%"}
 ![](images/maine-coastline.webp)
 :::
-:::
+:::::::
 
 . . .
 

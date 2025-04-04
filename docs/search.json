@@ -1145,7 +1145,7 @@
     "href": "slides/week7-day1.html#virtual-sampling",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nRyan Jorden\nIntercol Ath Head Coach Ex\n181065.0\n\n\nMike Blasquez\nAsc Head Coach Crd 4\n197727.0\n\n\nJorge Salcedo\nIntercol Ath Head Coach Ex\n70761.0\n\n\nJamie J Christian\nHEAD COACH - 12 MONTH\n191865.5\n\n\nJohn Margaritis\nHead Coach 5\n271706.0\n\n\nRonald Lowell Dubois\nHead Coach 5\n52930.0\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nWalter Chun\nHead Coach 5\n166190\n\n\nTimothy Cupello\nHead Coach 5\n125167\n\n\nGabrielle Toyo Houston\nHead Coach 5\n43815\n\n\nColin Cashman Truex\nHead Coach 5\n98524\n\n\nMichael Sealy\nIntercol Ath Head Coach Ex\n267266\n\n\nClifton Trotter\nHead Coach 5\n4500\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
@@ -5745,7 +5745,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00352\n0.00448\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00359\n0.00456\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",
