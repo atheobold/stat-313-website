@@ -24,34 +24,34 @@ null_dist <- hbr_maples %>%
 
 ## Weeks 8, 9, & 10
 
-::: columns
-::: {.column width="30%"}
+::::::::: columns
+:::: {.column width="30%"}
 ::: fragment
 **Week 8**
 
 -   Learn about hypothesis testing for SLR & MLR
 -   Compare "visual" model selection with p-value model selection
 :::
-:::
+::::
 
-::: {.column width="30%"}
+:::: {.column width="30%"}
 ::: fragment
 **Week 9**
 
 -   Learn about one-way ANOVA
 -   Get started on first portion of Final Project
 :::
-:::
+::::
 
-::: {.column width="30%"}
+:::: {.column width="30%"}
 ::: fragment
 **Week 10**
 
 -   Learn about two-way ANOVA
 -   Finish Final Project
 :::
-:::
-:::
+::::
+:::::::::
 
 ## Upcoming Deadlines
 
@@ -247,26 +247,26 @@ Your turn!
 **What is one similarity and one difference between**
 :::
 
-::: columns
-::: {.column width="45%"}
+:::::::: columns
+:::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #76b5c5;"}
 a permutation distribution
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #e28743;"}
 a bootstrap distribution
 :::
-:::
-:::
+::::
+::::::::
 
 ## Exploring the `hbr_maples` dataset!
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 ![](images/hbr_maples.jpg)
 :::
@@ -279,7 +279,7 @@ a bootstrap distribution
 
 `stem_dry_mass`: a number denoting the dry mass of the stem in grams
 :::
-:::
+::::::
 
 ## 
 
@@ -412,7 +412,7 @@ hbr_maples %>%
 
 </br>
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 `reps` -- the number of resamples you want to generate
 :::
@@ -423,7 +423,7 @@ hbr_maples %>%
 ::: {.column width="45%"}
 `"permute"` -- the method that should be used to generate the new samples
 :::
-:::
+::::::
 
 ## Don't worry,
 
@@ -567,8 +567,8 @@ Causal statements **do not** come from random / representative samples!
 ## Midterm Project Grades
 
 ::: small
-| **Excellent Project**                                                             | **Satisfactory Project**                                                                           | **Progressing Project**                                                               | **No Credit**                                                                                      |
-|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Excellent Project** | **Satisfactory Project** | **Progressing Project** | **No Credit** |
+|----|----|----|----|
 | At most one section is marked "Satisfactory" the remainder are marked "Excellent" | At most one section is marked "Progressing" the remainder are marked "Satisfactory" or "Excellent" | At most two sections are marked "Progressing" the remainder are marked "Satisfactory" | At most one section is marked "Satisfactory" or "Excellent" the remainder are marked "Progressing" |
 :::
 

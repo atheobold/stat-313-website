@@ -164,7 +164,7 @@ anova(bill_lm) %>%
 
 ## Testing for a Population Slope ($\beta_1$)
 
-::: columns
+:::::: columns
 ::: {.column width="35%"}
 $$H_0: \beta_1 = 0$$
 
@@ -188,7 +188,7 @@ ggplot(data = evals,
   my_theme
 ```
 :::
-:::
+::::::
 
 . . .
 
@@ -198,7 +198,7 @@ What do these hypotheses mean *in words*?
 
 ## What do you think?
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 $\widehat{score} = 3.88 + 0.066 \times \text{bty_avg}$
 :::
@@ -220,7 +220,7 @@ ggplot(data = evals,
   my_theme
 ```
 :::
-:::
+::::::
 
 . . .
 
@@ -250,7 +250,7 @@ which means...
 
 ## One possible shuffle
 
-::: columns
+::::::: columns
 ::: {.column width="40%"}
 ```{r}
 #| label: shuffle-scores
@@ -273,7 +273,7 @@ evals_shuffle %>%
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+:::: {.column width="55%"}
 ::: fragment
 Which results in a slope statistic of...
 
@@ -284,8 +284,8 @@ lm(score ~ bty_avg, data = evals_shuffle) %>%
   pull(estimate)
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 # But that's just **one** statistic!
 
@@ -358,7 +358,7 @@ For our p-value to be trustworthy, we need to know that the conditions of our mo
 
 . . .
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 For linear regression we are assuming...
 :::
@@ -381,7 +381,7 @@ For linear regression we are assuming...
 
 **E**qual variance of residuals
 :::
-:::
+::::::
 
 ## What happens if the conditions are violated?
 
@@ -447,7 +447,7 @@ and_vertebrates %>%
 **I**ndependence of observations
 :::
 
-::: columns
+::::::: columns
 ::: {.column width="40%"}
 The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, prof_ID) %>% nrow()` professors. Meaning, professors have **multiple** observations.
 
@@ -459,14 +459,14 @@ The `evals` dataset contains `r nrow(evals)` observations on `r distinct(evals, 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+:::: {.column width="55%"}
 ::: fragment
 **Best** -- use a random effects model
 
 **Reasonable** -- collapse the multiple scores into a single score
 :::
-:::
-:::
+::::
+:::::::
 
 ## 
 
@@ -565,7 +565,7 @@ broom::augment(not_curved_lm) %>%
 
 . . .
 
-::: columns
+::::::: columns
 ::: {.column width="45%"}
 For the **L**, **I**, and **E** conditions...
 
@@ -575,14 +575,14 @@ we need to ask for help!
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: fragment
 For the **N** condition...
 
 we need to use simulation instead of mathematical formulas to get our p-value and confidence interval.
 :::
-:::
-:::
+::::
+:::::::
 
 # Simulation-Based Methods versus Theory-Based Methods
 
@@ -597,7 +597,7 @@ we need to use simulation instead of mathematical formulas to get our p-value an
 
 ## How does this look?
 
-::: panel-tabset
+:::: panel-tabset
 ## Before
 
 ```{r}
@@ -647,7 +647,7 @@ slope_stat <- filter(coef_table, term == "bty_avg") %>%
 
 t_stat
 ```
-:::
+::::
 
 ## 
 
@@ -655,10 +655,10 @@ t_stat
 How did R calculate the $t$-statistic?
 :::
 
-::: panel-tabset
+::::::: panel-tabset
 ## Step 1: SE
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 $SE_{b_1} = \frac{\frac{s_y}{s_x} \cdot \sqrt{1 - r^2}}{\sqrt{n - 2}}$
 :::
@@ -680,7 +680,7 @@ se <- se_num / se_denom
 se
 ```
 :::
-:::
+::::::
 
 ## Step 2: t-statistic
 
@@ -691,7 +691,7 @@ $t = \frac{b_1}{SE_{b_1}} = \frac{`r slope_stat`}{`r se`} = `r slope_stat / se`$
 ```{r}
 get_regression_table(evals_lm) 
 ```
-:::
+:::::::
 
 ## How does R calculate the p-value?
 
@@ -731,7 +731,7 @@ Why do you think that is?
 
 ## Approximating the permutation distribution
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 A $t$-distribution can be a reasonable approximation for the permutation distribution [if the normality condition is not violated]{.underline}.
 :::
@@ -777,7 +777,7 @@ legend(2.5, 0.4,
 
 ```
 :::
-:::
+::::::
 
 ## ![](images/gapminder.png)
 

@@ -1145,7 +1145,7 @@
     "href": "slides/week7-day1.html#virtual-sampling",
     "title": "Sampling Variability – The Heart of Statistical Inference",
     "section": "Virtual Sampling",
-    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nWalter Chun\nHead Coach 5\n166190\n\n\nTimothy Cupello\nHead Coach 5\n125167\n\n\nGabrielle Toyo Houston\nHead Coach 5\n43815\n\n\nColin Cashman Truex\nHead Coach 5\n98524\n\n\nMichael Sealy\nIntercol Ath Head Coach Ex\n267266\n\n\nClifton Trotter\nHead Coach 5\n4500\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
+    "text": "Virtual Sampling\n\nrep_sample_n(coaches, \n             size = 25, \n             reps = 1, \n             replace = FALSE)\n\n\n\n\n\n\n\n\nEmployee Name\nJob Title\nTotal Pay & Benefits\n\n\n\n\nMichael A Scholl\nHEAD COACH - 12 MONTH\n194850\n\n\nShawn Palmer Gallup\nAsc Head Coach Crd 4\n34243\n\n\nStacey Scott\nHead Coach 5\n12850\n\n\nAlbert Martins\nHead Coach 5\n80318\n\n\nRyan Jorden\nIntercol Ath Head Coach Ex\n181065\n\n\nClifton Trotter\nHead Coach 5\n4500\n\n\n\n\n\n\n\n\n\n\\(\\vdots\\)"
   },
   {
     "objectID": "slides/week7-day1.html#section-2",
@@ -4989,7 +4989,7 @@
     "href": "slides/week3-day2.html#data-layout",
     "title": "Week 3 Day 2",
     "section": "Data Layout",
-    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2013\nMACKCC-L\nCC\nL\n2\n2\nSC\n12\nNA\nCascade torrent salamander\n34\n59\n0.80\nNONE\n2013-09-03\nNA\n\n\n2004\nMACKCC-L\nCC\nL\n1\n2\nSC\n33\nNA\nCascade torrent salamander\n42\n73\nNA\nNONE\n2004-09-02\nNA\n\n\n2010\nMACKOG-L\nOG\nL\n2\n5\nP\n3\nNA\nCoastal giant salamander\n56\n103\n7.11\nNONE\n2010-09-09\nNA\n\n\n1993\nMACKCC-L\nCC\nL\n1\n5\nC\n11\nNA\nCoastal giant salamander\n88\n166\nNA\nNONE\n1993-09-01\nNA\n\n\n1987\nMACKCC-M\nCC\nM\n1\n8\nC\n11\nNA\nCutthroat trout\n112\nNA\n12.25\nNONE\n1987-10-07\nNA\n\n\n2006\nMACKOG-M\nOG\nM\n1\n11\nC\n25\nNA\nCutthroat trout\n103\nNA\nNA\nLV\n2006-09-07\nNA\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
+    "text": "Data Layout\n\n\n\n\n\n\n\n\nyear\nsitecode\nsection\nreach\npass\nunitnum\nunittype\nvert_index\npitnumber\nspecies\nlength_1_mm\nlength_2_mm\nweight_g\nclip\nsampledate\nnotes\n\n\n\n\n2017\nMACKCC-L\nCC\nL\n1\n2\nSC\n29\nNA\nCascade torrent salamander\n39\n67\n1.30\nNONE\n2017-09-05\nNA\n\n\n2003\nMACKCC-L\nCC\nL\n1\n2\nSC\n48\nNA\nCascade torrent salamander\n33\n55\nNA\nNONE\n2003-09-02\nNA\n\n\n1995\nMACKOG-L\nOG\nL\n2\n2\nC\n10\nNA\nCoastal giant salamander\n26\n49\n0.70\nNONE\n1995-08-29\nNA\n\n\n2019\nMACKOG-U\nOG\nU\n1\n12\nP\n13\n1043544\nCoastal giant salamander\n120\n192\n50.00\nNONE\n2019-09-05\nNA\n\n\n2015\nMACKCC-U\nCC\nU\n1\n9\nC\n75\n19055544\nCutthroat trout\n122\nNA\n17.14\nNONE\n2015-09-01\nRECAP\n\n\n2005\nMACKCC-L\nCC\nL\n1\n2\nSC\n34\nNA\nCutthroat trout\n85\nNA\nNA\nNONE\n2005-08-31\nNA\n\n\n1995\nMACKOG-M\nOG\nM\n1\n10\nS\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-29\nJAM\n\n\n1995\nMACKCC-M\nCC\nM\n1\n9\nSC\n1\nNA\nNA\nNA\nNA\nNA\nNONE\n1995-08-30\nDRY\n\n\n\n\n\n\n\n\nWhat are the observations / rows in this dataset?"
   },
   {
     "objectID": "slides/week3-day2.html#if-you-wanted-to-find-the-mean-mass-for-cutthroat-trout-in-each-section-what-would-you-do",
@@ -5745,7 +5745,7 @@
     "href": "slides/week7-day2.html#section-12",
     "title": "Confidence Intervals – Real Life Sampling Distributions",
     "section": "",
-    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00359\n0.00456\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
+    "text": "The 95% confidence interval is…\n\n\nget_confidence_interval(boot1, \n                        level = 0.95, \n                        type = \"percentile\")\n\n\n\n\n\n\n\nLower Bound\nUpper Bound\n\n\n\n\n0.00352\n0.00452\n\n\n\n\n\n\n\n\nWhat do we hope is captured by this interval?"
   },
   {
     "objectID": "slides/week7-day2.html#section-13",

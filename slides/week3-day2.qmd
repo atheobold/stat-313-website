@@ -52,8 +52,8 @@ If you submitted revisions and your grade is still "Incomplete" -- you forgot to
 
 <br>
 
-::: columns
-::: {.column width="47%"}
+:::::::: columns
+:::: {.column width="47%"}
 ::: {style="font-size: 1.25em;"}
 "Complete" = Satisfactory
 :::
@@ -61,12 +61,12 @@ If you submitted revisions and your grade is still "Incomplete" -- you forgot to
 <br>
 
 Your group obtained a "Success" on **every** question
-:::
+::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="47%"}
+:::: {.column width="47%"}
 ::: {style="font-size: 1.25em;"}
 "Incomplete" = Growing
 :::
@@ -74,8 +74,8 @@ Your group obtained a "Success" on **every** question
 <br>
 
 Your group received a "Growing" on *at least one* question
-:::
-:::
+::::
+::::::::
 
 ## Common Mistakes
 
@@ -132,13 +132,13 @@ Lab 2 revisions are due by Wednesday, April 24.
 6.  Submit your revisions to the [original Lab 2]{.underline} assignment
 :::
 
-::: callout-warning
+:::: callout-warning
 # Reflections
 
 ::: small
 Revisions are required to be accompanied with reflections on what you learned while completing your revisions. These can be written in your Lab 2 Quarto file (next to the problems you revised), in a Word document, in the comment box on Canvas.
 :::
-:::
+::::
 
 # Ethical Considerations with Categorical Variables
 
@@ -275,19 +275,19 @@ trout %>%
 
 . . .
 
-::: columns
+::::::: columns
 ::: {.column width="20%"}
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="75%"}
+:::: {.column width="75%"}
 ::: small
 **Remember `na.rm = TRUE` is important if there are missing values!**
 :::
-:::
-:::
+::::
+:::::::
 
 ## Are they different?
 
@@ -351,7 +351,7 @@ Would you conclude there is a difference in fish biomass between clear cut and o
 The channels (`unittype`) of the Mack Creek which were sampled were classified into the following groups:
 :::
 
-::: columns
+:::::: columns
 ::: {.column width="15%"}
 `"C"`
 
@@ -390,7 +390,7 @@ side channel
 
 not sampled by unit
 :::
-:::
+::::::
 
 ## If you wanted to find the mean mass for Cutthroat trout for each *type of channel* in each *section*, what would you do? {background-color="#B6CADA"}
 
