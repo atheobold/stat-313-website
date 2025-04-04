@@ -4,7 +4,6 @@ format:
   revealjs:
     theme: style.scss
 editor: visual
-embed-resources: true
 execute: 
   echo: false
 ---
@@ -198,7 +197,7 @@ What type of variable would year be?
 Types of Studies
 :::
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 *Experiment*
 
@@ -216,7 +215,7 @@ Types of Studies
 
 -   collect data in a way that does not directly interfere with how the data arise
 :::
-:::
+::::::
 
 ## 
 
@@ -277,7 +276,7 @@ glimpse(births_small)
 ```
 :::
 
-::: columns
+:::::: columns
 ::: {.column width="45%"}
 What do you think `dbl` means?
 
@@ -292,4 +291,4 @@ What does `chr` mean?
 
 How might it differ from `fct`?
 :::
-:::
+::::::
